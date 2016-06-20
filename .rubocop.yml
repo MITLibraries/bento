@@ -1,0 +1,19 @@
+Documentation:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - db/**/*
+    - config/**/*
+    - bin/delayed_job
+
+ClassLength:
+  Exclude:
+    - test/**/*
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
