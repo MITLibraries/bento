@@ -1,6 +1,13 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  ENV['EDS_URL'] = 'https://eds-api.ebscohost.com'
+  ENV['ARTICLES_FILTER'] = '&facetfilter=1,SourceType:Academic Journals'
+  ENV['BOOKS_FILTER'] = '&facetfilter=1,SourceType:Books,SourceType:eBooks,SourceType:Music Scores'
+  ENV['EDS_USER_ID'] = 'FAKE_EDS_USER_ID'
+  ENV['EDS_PASSWORD'] = 'FAKE_EDS_PASSWORD'
+  ENV['EDS_PROFILE'] = 'FAKE_EDS_PROFILE'
+
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
   # your test database is "scratch space" for the test suite and is wiped

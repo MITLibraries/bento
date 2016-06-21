@@ -3,6 +3,7 @@ ruby '2.3.1'
 
 gem 'rails', '4.2.6'
 gem 'devise'
+gem 'http'
 gem 'http_logger'
 gem 'jquery-rails'
 gem 'less-rails'
@@ -34,4 +35,6 @@ group :test do
   gem 'minitest-reporters'
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
+  gem 'vcr'
+  gem 'webmock'
 end

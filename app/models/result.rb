@@ -1,6 +1,9 @@
 class Result
   include ActiveModel::Validations
-  validates_presence_of :title, :year, :url, :type
+  validates :title, presence: true
+  validates :year, presence: true
+  validates :url, presence: true
+  validates :type, presence: true
 
   attr_accessor :title, :year, :url, :type, :authors, :citation, :online
   def initialize(title, year, url, type)

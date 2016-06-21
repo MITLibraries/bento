@@ -12,6 +12,50 @@ require 'minitest/rails/capybara'
 require 'minitest/reporters'
 Minitest::Reporters.use!
 
+VCR.configure do |config|
+  config.ignore_localhost = true
+  config.cassette_library_dir = 'test/vcr_cassettes'
+  config.hook_into :webmock
+
+  config.filter_sensitive_data('FakeAuthenticationtoken') do |interaction|
+    if interaction.request.headers['X-Authenticationtoken']
+      interaction.request.headers['X-Authenticationtoken'].first
+    end
+  end
+  config.filter_sensitive_data('FakeAuthenticationtoken') do |interaction|
+    if interaction.response.headers['X-Authenticationtoken']
+      interaction.response.headers['X-Authenticationtoken'].first
+    end
+  end
+  config.filter_sensitive_data('FakeAuthenticationtoken') do |interaction|
+    JSON.parse(interaction.response.body)['AuthToken']
+  end
+
+  config.filter_sensitive_data('FakeSessiontoken') do |interaction|
+    if interaction.request.headers['X-Sessiontoken']
+      interaction.request.headers['X-Sessiontoken'].first
+    end
+  end
+  config.filter_sensitive_data('FakeSessiontoken') do |interaction|
+    if interaction.response.headers['X-Sessiontoken']
+      interaction.response.headers['X-Sessiontoken'].first
+    end
+  end
+  config.filter_sensitive_data('FakeSessiontoken') do |interaction|
+    JSON.parse(interaction.response.body)['SessionToken']
+  end
+
+  config.filter_sensitive_data('"UserId":"FAKE_EDS_USER_ID"') do
+    "\"UserId\":\"#{ENV['EDS_USER_ID']}\""
+  end
+  config.filter_sensitive_data('"Password":"FAKE_EDS_PASSWORD"') do
+    "\"Password\":\"#{ENV['EDS_PASSWORD']}\""
+  end
+  config.filter_sensitive_data('&profile=FAKE_EDS_PROFILE') do
+    "&profile=#{ENV['EDS_PROFILE']}"
+  end
+end
+
 module ActiveSupport
   class TestCase
     # Setup all fixtures in test/fixtures/*.yml for all tests in alpha order.
