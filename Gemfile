@@ -3,6 +3,7 @@ ruby '2.3.1'
 
 gem 'rails', '4.2.6'
 gem 'devise'
+gem 'hashie'
 gem 'http'
 gem 'http_logger'
 gem 'jquery-rails'

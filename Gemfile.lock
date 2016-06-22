@@ -266,6 +266,7 @@ DEPENDENCIES
   byebug
   coveralls
   devise
+  hashie
   http
   http_logger
   jquery-rails

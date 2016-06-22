@@ -13,13 +13,61 @@ class SearchEds
 
   def search(term)
     return 'invalid credentials' unless @auth_token
-    @results['articles'] = search_filtered(term, ARTICLES_FILTER)
-    @results['books'] = search_filtered(term, BOOKS_FILTER)
+    @results['raw_articles'] = search_filtered(term, ARTICLES_FILTER)
+    @results['raw_books'] = search_filtered(term, BOOKS_FILTER)
     end_session
+    @results['articles'] = to_result(@results['raw_articles'])
+    @results['books'] = to_result(@results['raw_books'])
     @results
   end
 
   private
+
+  # Translate EDS results into local result model
+  def to_result(results)
+    results.extend Hashie::Extensions::DeepFind
+    norm = {}
+    norm['total'] = results.deep_find('TotalHits')
+    norm['results'] = []
+    extract_results(results, norm)
+    norm
+  end
+
+  def extract_results(results, norm)
+    results['SearchResult']['Data']['Records'].each do |record|
+      record.extend Hashie::Extensions::DeepFind
+      result = Result.new(title(record), year(record),
+                          link(record), type(record))
+      result.authors = authors(record)
+      norm['results'] << result
+    end
+  end
+
+  def title(record)
+    bibentity = record['RecordInfo']['BibRecord']['BibEntity']
+    bibentity['Titles'].first['TitleFull']
+  end
+
+  def year(record)
+    relationships(record).deep_find('Y')
+  end
+
+  def link(record)
+    record.deep_find('PLink')
+  end
+
+  def type(record)
+    record.deep_find('PubType')
+  end
+
+  def authors(record)
+    relationships(record).deep_find_all('NameFull')
+  end
+
+  def relationships(record)
+    relationships = record['RecordInfo']['BibRecord']['BibRelationships']
+    relationships.extend Hashie::Extensions::DeepFind
+  end
 
   def search_url(term)
     [EDS_URL, '/edsapi/rest/Search?query=', URI.escape(term).to_s,
