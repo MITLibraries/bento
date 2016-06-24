@@ -1,0 +1,17 @@
+<%= render partial: "form" %>
+
+<div class="col-sm-6">
+  <h4>Articles</h4>
+  <% @results['articles']['results'].each do |result| %>
+    <%= render partial: "result", locals: {result: result} %>
+  <% end %>
+  View all <%= @results['articles']['total'] %> articles.
+</div>
+
+<div class="col-sm-6">
+  <h4>Books and Stuff</h4>
+  <% @results['books']['results'].each do |result| %>
+    <%= render partial: "result", locals: {result: result} %>
+  <% end %>
+  View all <%= @results['books']['total'] %> books.
+</div>

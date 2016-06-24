@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+     <h3 class="panel-title"><%= result.title %> <%= result.year %></h3>
+  </div>
+  <div class="panel-body">
+    <%= result.authors.join('; ') if result.authors %><br />
+    <%= link_to('View', result.url) %>
+  </div>
+</div>

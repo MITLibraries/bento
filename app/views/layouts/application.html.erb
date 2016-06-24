@@ -45,48 +45,17 @@
       <div class="wrap-outer-header-local layout-band <%= 'reasons' if params[:rainbows] %>">
         <div class="wrap-header-local">
           <div class="local-identity">
-            <h2 class="title title-site"><a href="/">Public Access QuickSubmit</a></h2>
-          </div>
-          <div class="wrap-local-nav">
-            <div class="wrap-bar">
-              <nav class="local-nav">
-                <a href="#">Local Nav Goes Here</a>
-              </nav>
-              <nav class="nav-user">
-                <% if user_signed_in? %>
-                  <%= link_to("Sign out", destroy_user_session_path, method: :delete, id: "sign_in", class: 'action-auth')  %>
-                <% else %>
-                  <% if ENV['FAKE_AUTH_ENABLED'] == 'true' %>
-                    <%= link_to("Sign in", user_developer_omniauth_authorize_path, id: "sign_in", class: 'action-auth') %>
-                  <% else %>
-                    <%= link_to("Sign in", user_mit_oauth2_omniauth_authorize_path, id: "sign_in", class: 'action-auth') %>
-                  <% end %>
-                <% end %>
-              </nav>
-            </div>
+            <h2 class="title title-site"><a href="/">Bento Search</a></h2>
           </div>
         </div>
       </div>
       <div class="wrap-outer-content layout-band">
-        <div class="wrap-content layout-3q1q">
+        <div class="wrap-content layout-4q">
           <main id="content-main" class="content-main" role="main">
             <%= bootstrap_flash %>
             <%= yield %>
           </main>
           <!-- close content-main -->
-
-          <aside class="content-sup">
-
-            <div class="bit">
-              <h3 class="title">Related</h3>
-              <ul>
-                <li><a href="#">Example Link 1</a></li>
-                <li><a href="#">Another Link</a></li>
-                <li><a href="#">Yet another links</a></li>
-              </ul>
-            </div>
-
-          </aside>
         </div>
       </div>
       <div class="wrap-outer-footer layout-band">

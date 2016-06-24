@@ -25,7 +25,6 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
     OmniAuth.config.mock_auth[:mit_oauth2] = :invalid_credentials
     silence_omniauth { get_via_redirect '/users/auth/mit_oauth2/callback' }
     assert_response :success
-    assert_select '#sign_in', 'Sign in'
   end
 
   test 'accessing callback with for new user' do

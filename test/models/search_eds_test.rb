@@ -18,7 +18,6 @@ class SearchEdsTest < ActiveSupport::TestCase
   test 'normalized articles have expected title' do
     VCR.use_cassette('valid search and credentials') do
       query = SearchEds.new.search('popcorn')
-      pp query['articles']['results'].first.title
       assert_equal(
         'Sowing time of popcorn during the summer harvest under',
         query['articles']['results'].first.title.split[0...9].join(' ')

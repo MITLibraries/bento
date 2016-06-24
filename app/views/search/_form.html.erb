@@ -1,0 +1,11 @@
+<form class="form-horizontal" action="/search/bento" method="get">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Search</label>
+    <div class="col-xs-8">
+      <input type="search" class="form-control" id="inputText" name="q" placeholder="Enter your search" value="<%= params[:q] %>">
+    </div>
+    <div class="col-xs-2">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+</form>
