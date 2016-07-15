@@ -1,17 +1,23 @@
 <%= render partial: "form" %>
 
 <div class="col-sm-6">
-  <h4>Articles</h4>
+  <h2>Articles and Stuff</h2>
+
   <% @results['articles']['results'].each do |result| %>
     <%= render partial: "result", locals: {result: result} %>
   <% end %>
-  View all <%= @results['articles']['total'] %> articles.
+
+  <%= link_to("View all #{@results['articles']['total']} like this.",
+              "#{ENV['EDS_NO_ALEPH_URI']}#{params[:q]}") %>
 </div>
 
 <div class="col-sm-6">
-  <h4>Books and Stuff</h4>
+  <h2>Books and Stuff</h2>
+
   <% @results['books']['results'].each do |result| %>
     <%= render partial: "result", locals: {result: result} %>
   <% end %>
-  View all <%= @results['books']['total'] %> books.
+
+  <%= link_to("View all #{@results['books']['total']} like this.",
+              "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
 </div>
