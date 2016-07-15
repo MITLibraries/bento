@@ -2,9 +2,10 @@ require 'test_helper'
 
 class SearchEdsTest < ActiveSupport::TestCase
   test 'valid search with valid credentials returns results' do
-    VCR.use_cassette('valid search and credentials') do
+    VCR.use_cassette('valid search and credentials',
+                     allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn')
-      assert_equal(2746, query['articles']['total'])
+      assert_equal(39_274, query['articles']['total'])
     end
   end
 
@@ -16,7 +17,8 @@ class SearchEdsTest < ActiveSupport::TestCase
   end
 
   test 'normalized articles have expected title' do
-    VCR.use_cassette('valid search and credentials') do
+    VCR.use_cassette('valid search and credentials',
+                     allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn')
       assert_equal(
         'Sowing time of popcorn during the summer harvest under',
@@ -26,14 +28,16 @@ class SearchEdsTest < ActiveSupport::TestCase
   end
 
   test 'normalized articles have expected year' do
-    VCR.use_cassette('valid search and credentials') do
+    VCR.use_cassette('valid search and credentials',
+                     allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn')
       assert_equal('2015', query['articles']['results'].first.year)
     end
   end
 
   test 'normalized articles have expected url' do
-    VCR.use_cassette('valid search and credentials') do
+    VCR.use_cassette('valid search and credentials',
+                     allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn')
       assert_equal(
         'http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&db=edsihs&AN=221456993819438',
@@ -43,14 +47,16 @@ class SearchEdsTest < ActiveSupport::TestCase
   end
 
   test 'normalized articles have expected type' do
-    VCR.use_cassette('valid search and credentials') do
+    VCR.use_cassette('valid search and credentials',
+                     allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn')
       assert_equal('Academic Journal', query['articles']['results'].first.type)
     end
   end
 
   test 'normalized articles have expected authors' do
-    VCR.use_cassette('valid search and credentials') do
+    VCR.use_cassette('valid search and credentials',
+                     allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn')
       assert_equal(
         'Marques, Odair Jose',
