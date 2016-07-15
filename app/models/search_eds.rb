@@ -2,20 +2,24 @@ class SearchEds
   attr_reader :results
 
   EDS_URL = ENV['EDS_URL'].freeze
-  ARTICLES_FILTER = URI.escape(ENV['ARTICLES_FILTER']).freeze
-  BOOKS_FILTER = URI.escape(ENV['BOOKS_FILTER']).freeze
+  EDS_NO_ALEPH_PROFILE = ENV['EDS_NO_ALEPH_PROFILE'].freeze
+  EDS_ALEPH_PROFILE = ENV['EDS_ALEPH_PROFILE'].freeze
 
   def initialize
     @auth_token = uid_auth
-    @session_key = create_session if @auth_token
     @results = {}
   end
 
   def search(term)
     return 'invalid credentials' unless @auth_token
-    @results['raw_articles'] = search_filtered(term, ARTICLES_FILTER)
-    @results['raw_books'] = search_filtered(term, BOOKS_FILTER)
+    @session_key = create_session(EDS_NO_ALEPH_PROFILE) if @auth_token
+    @results['raw_articles'] = search_filtered(term)
     end_session
+
+    @session_key = create_session(EDS_ALEPH_PROFILE) if @auth_token
+    @results['raw_books'] = search_filtered(term)
+    end_session
+
     @results['articles'] = to_result(@results['raw_articles'])
     @results['books'] = to_result(@results['raw_books'])
     @results
@@ -76,11 +80,11 @@ class SearchEds
      '&autosuggest=n'].join('')
   end
 
-  def search_filtered(term, filter)
+  def search_filtered(term)
     result = HTTP.headers(accept: 'application/json',
                           'x-authenticationToken': @auth_token,
                           'x-sessionToken': @session_key)
-                 .get("#{search_url(term)}#{filter}").to_s
+                 .get(search_url(term).to_s).to_s
     JSON.parse(result)
   end
 
@@ -94,9 +98,9 @@ class SearchEds
     json_response['AuthToken']
   end
 
-  def create_session
+  def create_session(profile)
     uri = [EDS_URL, '/edsapi/rest/CreateSession?profile=',
-           ENV['EDS_PROFILE'], '&guest=n'].join('')
+           profile, '&guest=n'].join('')
     response = HTTP.headers(accept: 'application/json',
                             "x-authenticationToken": @auth_token)
                    .get(uri)

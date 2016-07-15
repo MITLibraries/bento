@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users, :controllers => {
     :omniauth_callbacks => 'users/omniauth_callbacks'
   }
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
     delete 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  root to: 'static#home'
-  get 'static/home'
+  root to: 'search#index'
+  get 'search', to: 'search#index'
+  get 'search/bento', to: 'search#bento'
 end

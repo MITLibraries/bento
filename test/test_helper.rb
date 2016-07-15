@@ -51,9 +51,6 @@ VCR.configure do |config|
   config.filter_sensitive_data('"Password":"FAKE_EDS_PASSWORD"') do
     "\"Password\":\"#{ENV['EDS_PASSWORD']}\""
   end
-  config.filter_sensitive_data('&profile=FAKE_EDS_PROFILE') do
-    "&profile=#{ENV['EDS_PROFILE']}"
-  end
 end
 
 module ActiveSupport
@@ -67,6 +64,6 @@ end
 
 module ActionController
   class TestCase
-    include Devise::TestHelpers
+    include Devise::Test::ControllerHelpers
   end
 end

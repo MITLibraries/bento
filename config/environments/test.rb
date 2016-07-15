@@ -2,11 +2,10 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   ENV['EDS_URL'] = 'https://eds-api.ebscohost.com'
-  ENV['ARTICLES_FILTER'] = '&facetfilter=1,SourceType:Academic Journals'
-  ENV['BOOKS_FILTER'] = '&facetfilter=1,SourceType:Books,SourceType:eBooks,SourceType:Music Scores'
   ENV['EDS_USER_ID'] = 'FAKE_EDS_USER_ID'
   ENV['EDS_PASSWORD'] = 'FAKE_EDS_PASSWORD'
-  ENV['EDS_PROFILE'] = 'FAKE_EDS_PROFILE'
+  ENV['EDS_NO_ALEPH_PROFILE'] = 'apinoaleph'
+  ENV['EDS_ALEPH_PROFILE'] = 'apibarton'
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
@@ -19,9 +18,11 @@ Rails.application.configure do
   # preloads Rails for running tests, you may have to set it to true.
   config.eager_load = false
 
-  # Configure static file server for tests with Cache-Control for performance.
-  config.serve_static_files   = true
-  config.static_cache_control = 'public, max-age=3600'
+  # Configure public file server for tests with Cache-Control for performance.
+  config.public_file_server.enabled = true
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, max-age=3600'
+  }
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
@@ -32,14 +33,12 @@ Rails.application.configure do
 
   # Disable request forgery protection in test environment.
   config.action_controller.allow_forgery_protection = false
+  config.action_mailer.perform_caching = false
 
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
-
-  # Randomize the order test cases are executed.
-  config.active_support.test_order = :random
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
