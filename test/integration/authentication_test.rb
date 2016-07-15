@@ -23,7 +23,10 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
 
   test 'accessing callback without credentials redirects to signin' do
     OmniAuth.config.mock_auth[:mit_oauth2] = :invalid_credentials
-    silence_omniauth { get_via_redirect '/users/auth/mit_oauth2/callback' }
+    silence_omniauth do
+      get '/users/auth/mit_oauth2/callback'
+      follow_redirect!
+    end
     assert_response :success
   end
 
@@ -33,7 +36,8 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
                              uid: '123545',
                              info: { email: 'bob@asdf.com' })
     usercount = User.count
-    get_via_redirect '/users/auth/mit_oauth2/callback'
+    get '/users/auth/mit_oauth2/callback'
+    follow_redirect!
     assert_response :success
     assert_equal(usercount + 1, User.count)
   end
