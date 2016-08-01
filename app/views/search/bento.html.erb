@@ -7,8 +7,12 @@
     <%= render partial: "result", locals: {result: result} %>
   <% end %>
 
-  <%= link_to("View all #{@results['articles']['total']} like this.",
-              "#{ENV['EDS_NO_ALEPH_URI']}#{params[:q]}") %>
+  <% if @results['articles']['total'] > 0 %>
+    <%= link_to("View all #{@results['articles']['total']} like this.",
+                "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
+  <% else %>
+    No results found.
+  <% end %>
 </div>
 
 <div class="col-sm-6">
@@ -18,6 +22,10 @@
     <%= render partial: "result", locals: {result: result} %>
   <% end %>
 
-  <%= link_to("View all #{@results['books']['total']} like this.",
-              "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
+  <% if @results['books']['total'] > 0 %>
+    <%= link_to("View all #{@results['books']['total']} like this.",
+                "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
+  <% else %>
+    No results found.
+  <% end %>
 </div>

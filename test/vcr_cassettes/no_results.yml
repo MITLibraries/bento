@@ -1,0 +1,404 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/UIDAuth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD"}'
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '128'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Jul 2016 17:26:42 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+    http_version: 
+  recorded_at: Fri, 22 Jul 2016 17:26:42 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apinoaleph
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '100'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 88994fbf-d877-4c4d-9336-794e1ee106fa
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Jul 2016 17:26:42 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+    http_version: 
+  recorded_at: Fri, 22 Jul 2016 17:26:42 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&highlight=n&includefacets=n&pagenumber=1&query=popcornandorangejuice&resultsperpage=3&searchmode=all&sort=relevance&view=brief
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '6745'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - c749cc55-96a9-4bc9-bad9-61e407059d7e
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Jul 2016 17:26:42 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcornandorangejuice&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=brief&resultsperpage=3&pagenumber=0&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcornandorangejuice"},"RemoveAction":"removequery(1)"}]}},"SearchResult":{"Statistics":{"TotalHits":0,"TotalSearchTime":100,"Databases":[{"Id":"eric","Label":"ERIC","Status":"0","Hits":0},{"Id":"bwh","Label":"","Status":"0","Hits":0},{"Id":"egh","Label":"Environment
+        Index","Status":"0","Hits":0},{"Id":"ecn","Label":"EconLit","Status":"0","Hits":0},{"Id":"cmedm","Label":"MEDLINE","Status":"0","Hits":0},{"Id":"ufh","Label":"Communication
+        & Mass Media Complete","Status":"0","Hits":0},{"Id":"fyh","Label":"Women''s
+        Studies International","Status":"0","Hits":0},{"Id":"bth","Label":"Business
+        Source Complete","Status":"0","Hits":0},{"Id":"lxh","Label":"Library, Information
+        Science & Technology Abstracts","Status":"0","Hits":0},{"Id":"nih","Label":"The
+        Nation Archive","Status":"0","Hits":0},{"Id":"mah","Label":"Music Index","Status":"0","Hits":0},{"Id":"a9h","Label":"","Status":"0","Hits":0},{"Id":"ahl","Label":"America:
+        History & Life","Status":"0","Hits":0},{"Id":"hia","Label":"Historical Abstracts","Status":"0","Hits":0},{"Id":"8gh","Label":"GreenFILE","Status":"0","Hits":0},{"Id":"edsnbk","Label":"NewsBank","Status":"0","Hits":0},{"Id":"edslns","Label":"LexisNexis
+        U.S. Serial Set Digital Collection","Status":"0","Hits":0},{"Id":"hev","Label":"European
+        Views of the Americas: 1493 to 1750","Status":"0","Hits":0},{"Id":"edsbl","Label":"British
+        Library Document Supply Centre Inside Serials & Conference Proceedings","Status":"0","Hits":0},{"Id":"edsnba","Label":"NewsBank
+        - Archives","Status":"0","Hits":0},{"Id":"edsgpr","Label":"Government Printing
+        Office Catalog","Status":"0","Hits":0},{"Id":"edspvh","Label":"PsycCRITIQUES","Status":"0","Hits":0},{"Id":"edspdh","Label":"PsycARTICLES","Status":"0","Hits":0},{"Id":"edspzh","Label":"PsycBOOKS","Status":"0","Hits":0},{"Id":"edswah","Label":"Arts
+        & Humanities Citation Index","Status":"0","Hits":0},{"Id":"edselp","Label":"ScienceDirect","Status":"0","Hits":0},{"Id":"edspia","Label":"DBPIA","Status":"0","Hits":0},{"Id":"edsoso","Label":"Oxford
+        Scholarship Online","Status":"0","Hits":0},{"Id":"edsoho","Label":"Oxford
+        Handbooks Online","Status":"0","Hits":0},{"Id":"edsarx","Label":"arXiv","Status":"0","Hits":0},{"Id":"edsibc","Label":"Informit
+        Business Collection","Status":"0","Hits":0},{"Id":"edsiec","Label":"Informit
+        Engineering Collection","Status":"0","Hits":0},{"Id":"edsihc","Label":"Informit
+        Health Collection","Status":"0","Hits":0},{"Id":"edsihs","Label":"Informit
+        Humanities & Social Sciences Collection","Status":"0","Hits":0},{"Id":"edsilc","Label":"Informit
+        Literature & Culture Collection","Status":"0","Hits":0},{"Id":"edsind","Label":"Informit
+        Indigenous Collection","Status":"0","Hits":0},{"Id":"nlebk","Label":"eBook
+        Collection (EBSCOhost)","Status":"0","Hits":0},{"Id":"edsmer","Label":"Mergent
+        Annual Reports Collection","Status":"0","Hits":0},{"Id":"hma","Label":"Humanities
+        Abstracts (H.W. Wilson)","Status":"0","Hits":0},{"Id":"hsr","Label":"Humanities
+        & Social Sciences Index Retrospective: 1907-1984 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"air","Label":"Art
+        Index Retrospective (H.W. Wilson)","Status":"0","Hits":0},{"Id":"rga","Label":"Readers''
+        Guide Abstracts (H.W. Wilson)","Status":"0","Hits":0},{"Id":"rgr","Label":"Readers''
+        Guide Retrospective: 1890-1982 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"edsman","Label":"Manuscriptorium
+        Digital Library","Status":"0","Hits":0},{"Id":"edskis","Label":"Korean Studies
+        Information Service System (KISS)","Status":"0","Hits":0},{"Id":"edsaan","Label":"Accessible
+        Archives","Status":"0","Hits":0},{"Id":"edscrc","Label":"Credo Reference Collections","Status":"0","Hits":0},{"Id":"edszbw","Label":"ECONIS","Status":"0","Hits":0},{"Id":"nsm","Label":"Newswires","Status":"0","Hits":0},{"Id":"bpr","Label":"Business
+        Periodicals Index Retrospective: 1913-1982 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"edshvr","Label":"Hoover''s
+        Company Profiles","Status":"0","Hits":0},{"Id":"edslex","Label":"LexisNexis
+        Academic: Law Reviews","Status":"0","Hits":0},{"Id":"edsasp","Label":"Alexander
+        Street Press","Status":"0","Hits":0},{"Id":"asx","Label":"","Status":"0","Hits":0},{"Id":"edo","Label":"","Status":"0","Hits":0},{"Id":"edb","Label":"","Status":"0","Hits":0},{"Id":"edsjpi","Label":"Japanese
+        Periodical Index - 雑誌記事索引","Status":"0","Hits":0},{"Id":"edsjst","Label":"J-STAGE","Status":"0","Hits":0},{"Id":"edsoao","Label":"Grove
+        Art Online","Status":"0","Hits":0},{"Id":"edsoad","Label":"American National
+        Biography Online","Status":"0","Hits":0},{"Id":"edsomo","Label":"Grove Music
+        Online","Status":"0","Hits":0},{"Id":"edsupe","Label":"Archive of European
+        Integration","Status":"0","Hits":0},{"Id":"edsupi","Label":"Industry Studies
+        Working Papers","Status":"0","Hits":0},{"Id":"edsupa","Label":"Aphasiology
+        Archive","Status":"0","Hits":0},{"Id":"edsupp","Label":"PhilSci Archive","Status":"0","Hits":0},{"Id":"edsuph","Label":"Minority
+        Health Archive","Status":"0","Hits":0},{"Id":"edshlc","Label":"Harvard Library
+        Bibliographic Dataset","Status":"0","Hits":0},{"Id":"edsebo","Label":"Britannica
+        Online","Status":"0","Hits":0},{"Id":"edsdoj","Label":"Directory of Open Access
+        Journals","Status":"0","Hits":0},{"Id":"edsper","Label":"Persée","Status":"0","Hits":0},{"Id":"edspio","Label":"Public
+        Information Online","Status":"0","Hits":0},{"Id":"edsers","Label":"eArticle","Status":"0","Hits":0},{"Id":"edsoap","Label":"OAPEN
+        Library","Status":"0","Hits":0},{"Id":"edsffr","Label":"Freedonia Focus Reports","Status":"0","Hits":0},{"Id":"edsabc","Label":"ABC-CLIO
+        Social Studies Databases, School Edition","Status":"0","Hits":0},{"Id":"edsaca","Label":"ABC-CLIO
+        Social Studies Databases, Academic Edition","Status":"0","Hits":0},{"Id":"edsssb","Label":"Books24x7","Status":"0","Hits":0},{"Id":"edshol","Label":"HeinOnline","Status":"0","Hits":0},{"Id":"edsgsf","Label":"SOFIS
+        - Sozialwissenschaftliche Forschungsinformationen","Status":"0","Hits":0},{"Id":"edsgsl","Label":"SOLIS
+        - Sozialwissenschaftliche Literatur","Status":"0","Hits":0},{"Id":"edsocd","Label":"China\/Asia
+        On Demand","Status":"0","Hits":0},{"Id":"edsble","Label":"British Library
+        EThOS","Status":"0","Hits":0},{"Id":"edswbo","Label":"World Book","Status":"0","Hits":0},{"Id":"edsbre","Label":"Bridgeman
+        Education","Status":"0","Hits":0},{"Id":"edshld","Label":"Digital Access to
+        Scholarship at Harvard (DASH)","Status":"0","Hits":0},{"Id":"edsjsr","Label":"JSTOR
+        Journals","Status":"0","Hits":0}]},"Data":{"RecordFormat":"EP Display"}}}'
+    http_version: 
+  recorded_at: Fri, 22 Jul 2016 17:26:43 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - fac21cdd-7428-4121-b9cd-e931589ad4b6
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Jul 2016 17:26:42 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"IsSuccessful":"y"}'
+    http_version: 
+  recorded_at: Fri, 22 Jul 2016 17:26:43 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apibarton
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '100'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - f0a62fa6-65a2-4204-bb81-eb3671cd6c1a
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Jul 2016 17:26:42 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+    http_version: 
+  recorded_at: Fri, 22 Jul 2016 17:26:43 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&highlight=n&includefacets=n&pagenumber=1&query=popcornandorangejuice&resultsperpage=3&searchmode=all&sort=relevance&view=brief
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '668'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 0d5e8cfe-51a6-4b9c-9c9b-291e8b53fd0c
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Jul 2016 17:26:42 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcornandorangejuice&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=brief&resultsperpage=3&pagenumber=0&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcornandorangejuice"},"RemoveAction":"removequery(1)"}]}},"SearchResult":{"Statistics":{"TotalHits":0,"TotalSearchTime":20,"Databases":[{"Id":"cat00916a","Label":"MIT
+        Barton Catalog","Status":"0","Hits":0},{"Id":"ir00145a","Label":"MIT DOME
+        for Discovery","Status":"0","Hits":0},{"Id":"cat01763a","Label":"MIT Course
+        Reserves","Status":"0","Hits":0}]},"Data":{"RecordFormat":"EP Display"}}}'
+    http_version: 
+  recorded_at: Fri, 22 Jul 2016 17:26:43 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - f9983207-55f4-4177-9c20-e78870fdaa48
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Jul 2016 17:26:42 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"IsSuccessful":"y"}'
+    http_version: 
+  recorded_at: Fri, 22 Jul 2016 17:26:43 GMT
+recorded_with: VCR 3.0.3

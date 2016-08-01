@@ -38,6 +38,7 @@ class SearchEds
   end
 
   def extract_results(results, norm)
+    return unless results['SearchResult']['Data']['Records']
     results['SearchResult']['Data']['Records'].each do |record|
       record.extend Hashie::Extensions::DeepFind
       result = Result.new(title(record), year(record),

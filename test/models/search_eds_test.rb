@@ -65,4 +65,22 @@ class SearchEdsTest < ActiveSupport::TestCase
       assert_equal(7, query['articles']['results'].first.authors.count)
     end
   end
+
+  test 'searches with no results do not error' do
+    VCR.use_cassette('no results',
+                     allow_playback_repeats: true) do
+      query = SearchEds.new.search('popcornandorangejuice')
+      assert_equal(0, query['articles']['total'])
+      assert_equal(0, query['books']['total'])
+    end
+  end
+
+  test 'searches with article results and no book results' do
+    VCR.use_cassette('article results with no book results',
+                     allow_playback_repeats: true) do
+      query = SearchEds.new.search('"pokemon go"')
+      assert_equal(4574, query['articles']['total'])
+      assert_equal(0, query['books']['total'])
+    end
+  end
 end
