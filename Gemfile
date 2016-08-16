@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-gem 'rails', '5.0.0'
+gem 'rails', '5.0.0.1'
 gem 'devise'
 gem 'hashie'
 gem 'http'
@@ -29,7 +29,7 @@ end
 group :development do
   gem 'annotate'
   gem 'rubocop'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
 end
 
 group :test do
