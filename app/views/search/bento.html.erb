@@ -1,6 +1,6 @@
 <%= render partial: "form" %>
 
-<div class="col-sm-6">
+<div class="col-sm-4">
   <h2>Articles and Stuff</h2>
 
   <% @results['articles']['results'].each do |result| %>
@@ -15,7 +15,7 @@
   <% end %>
 </div>
 
-<div class="col-sm-6">
+<div class="col-sm-4">
   <h2>Books and Stuff</h2>
 
   <% @results['books']['results'].each do |result| %>
@@ -27,5 +27,18 @@
                 "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
   <% else %>
     No results found.
+  <% end %>
+</div>
+
+<div class="col-sm-4">
+  <h2>Website and Guides</h2>
+
+  <% @moar_results['results'].each do |result| %>
+    <%= render partial: "result", locals: {result: result} %>
+  <% end %>
+
+  <% if @moar_results['total'] > 0 %>
+    <%= link_to("View all #{@moar_results['total']} like this.",
+                "https://cse.google.com/cse?cx=#{ENV['GOOGLE_CUSTOM_SEARCH_ID']}&ie=UTF-8&q=#{params[:q]}&sa=Search#gsc.tab=0&gsc.q=#{params[:q]}") %>
   <% end %>
 </div>

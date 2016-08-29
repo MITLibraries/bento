@@ -1,7 +1,9 @@
 <div class='bento-result'>
   <h3 class='bento-title'>
     <%= link_to(result.title, result.url, class: 'bento-link') %>
-    <span class='bento-year'><%= result.year %></span>
+    <% if result.year.present? %>
+      <span class='bento-year'><%= result.year %></span>
+    <% end %>
   </h3>
   <div class='bento-body'>
     <%= result.authors.join('; ') if result.authors %><br />
