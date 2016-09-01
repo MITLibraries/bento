@@ -4,6 +4,9 @@
 # - GOOGLE_API_KEY
 # - GOOGLE_CUSTOM_SEARCH_ID
 #
+# == Optional Environment Variables:
+# - RESULTS_PER_BOX
+#
 # == See Also
 # - https://developers.google.com/custom-search/json-api/v1/overview
 # - https://github.com/google/google-api-ruby-client
@@ -25,7 +28,8 @@ class SearchGoogle
   def search(term)
     @results['raw_google'] = @service.list_cses(
       term,
-      cx: ENV['GOOGLE_CUSTOM_SEARCH_ID']
+      cx: ENV['GOOGLE_CUSTOM_SEARCH_ID'],
+      num: ENV['RESULTS_PER_BOX'] || 3
     )
     to_result(@results['raw_google'])
   end

@@ -5,7 +5,7 @@ class SearchGoogleTest < ActiveSupport::TestCase
   test 'valid google search with valid credentials returns results' do
     VCR.use_cassette('valid google search and credentials') do
       query = SearchGoogle.new.search('endnote')
-      assert_equal(1640, query['total'])
+      assert_equal(1610, query['total'])
     end
   end
 
@@ -69,7 +69,7 @@ class SearchGoogleTest < ActiveSupport::TestCase
   test 'handles pages with no metadata' do
     VCR.use_cassette('google no metadata') do
       query = SearchGoogle.new.search('weather patterns')
-      assert_equal(87, query['total'])
+      assert_equal(88, query['total'])
     end
   end
 end
