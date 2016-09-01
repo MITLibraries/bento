@@ -3,6 +3,7 @@ ruby '2.3.1'
 
 gem 'rails', '5.0.0.1'
 gem 'devise'
+gem 'google-api-client'
 gem 'hashie'
 gem 'http'
 gem 'http_logger'

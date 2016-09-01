@@ -6,6 +6,8 @@ Rails.application.configure do
   ENV['EDS_PASSWORD'] = 'FAKE_EDS_PASSWORD'
   ENV['EDS_NO_ALEPH_PROFILE'] = 'apinoaleph'
   ENV['EDS_ALEPH_PROFILE'] = 'apibarton'
+  ENV['GOOGLE_API_KEY'] = 'FAKE_GOOGLE_API_KEY'
+  ENV['GOOGLE_CUSTOM_SEARCH_ID'] = 'FAKE_GOOGLE_CUSTOM_SEARCH_ID'
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that

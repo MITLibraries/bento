@@ -1,0 +1,345 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/customsearch/v1?cx=FAKE_GOOGLE_CUSTOM_SEARCH_ID&key=FAKE_GOOGLE_API_KEY&q=weather%20patterns
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        unknown/0.0.0 google-api-ruby-client/0.9.13 Mac OS X/10.11.6
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 01 Sep 2016 15:16:53 GMT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 01 Sep 2016 15:16:54 GMT
+      Date:
+      - Thu, 01 Sep 2016 15:16:54 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"ZK6WcJ2_cdL-1Kol5cpaPQsD0mI/WMp671_sR1B2dq8dHaAeU77XQTs"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="36,35,34,33,32,31,30"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "customsearch#search",
+         "url": {
+          "type": "application/json",
+          "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&cref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+         },
+         "queries": {
+          "request": [
+           {
+            "title": "Google Custom Search - weather patterns",
+            "totalResults": "87",
+            "searchTerms": "weather patterns",
+            "count": 10,
+            "startIndex": 1,
+            "inputEncoding": "utf8",
+            "outputEncoding": "utf8",
+            "safe": "off",
+            "cx": "FAKE_GOOGLE_CUSTOM_SEARCH_ID"
+           }
+          ],
+          "nextPage": [
+           {
+            "title": "Google Custom Search - weather patterns",
+            "totalResults": "87",
+            "searchTerms": "weather patterns",
+            "count": 10,
+            "startIndex": 11,
+            "inputEncoding": "utf8",
+            "outputEncoding": "utf8",
+            "safe": "off",
+            "cx": "FAKE_GOOGLE_CUSTOM_SEARCH_ID"
+           }
+          ]
+         },
+         "context": {
+          "title": "mitlib_test"
+         },
+         "searchInformation": {
+          "searchTime": 0.153966,
+          "formattedSearchTime": "0.15",
+          "totalResults": "87",
+          "formattedTotalResults": "87"
+         },
+         "items": [
+          {
+           "kind": "customsearch#result",
+           "title": "Books - Atmospheric Sciences & Oceanography - LibGuides at MIT ...",
+           "htmlTitle": "Books - Atmospheric Sciences &amp; Oceanography - LibGuides at MIT ...",
+           "link": "http://libguides.mit.edu/c.php?g=175871&p=1158593",
+           "displayLink": "libguides.mit.edu",
+           "snippet": "Air is vital to human existence--it protects us from radiation, maintains climate and \nweather patterns, disperses seeds and pollen, and serves as an alternative ...",
+           "htmlSnippet": "Air is vital to human existence--it protects us from radiation, maintains climate and \u003cbr\u003e\n\u003cb\u003eweather patterns\u003c/b\u003e, disperses seeds and pollen, and serves as an alternative&nbsp;...",
+           "formattedUrl": "libguides.mit.edu/c.php?g=175871&p=1158593",
+           "htmlFormattedUrl": "libguides.mit.edu/c.php?g=175871&amp;p=1158593",
+           "pagemap": {
+            "cse_thumbnail": [
+             {
+              "width": "80",
+              "height": "80",
+              "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS3K-T891smPvv-yFt52Kn2dP7HFL5GFHC7YhGbjxLCHS0_Z5IwFsEnHA"
+             }
+            ],
+            "metatags": [
+             {
+              "viewport": "width=device-width, initial-scale=1.0",
+              "dc.title": "LibGuides: Atmospheric Sciences & Oceanography: Books",
+              "dc.creator": "Chris Sherratt",
+              "dc.subject": "Science",
+              "dc.description": "A guide to library research tools for atmospheric sciences & oceanography.",
+              "dc.publishers": "MIT Libraries",
+              "dc.rights": "Copyright MIT Libraries 2016",
+              "dc.language": "en",
+              "dc.identifier": "http://libguides.mit.edu/c.php?g=175871&p=1158593",
+              "dc.date.created": "Jun 28, 2008",
+              "dc.date.modified": "May 3, 2016"
+             }
+            ],
+            "cse_image": [
+             {
+              "src": "http://s3.amazonaws.com/libapps/accounts/31876/profiles/26367/gcsherra100x100.jpg"
+             }
+            ]
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "MC 184",
+           "htmlTitle": "MC 184",
+           "link": "https://libraries.mit.edu/archives/research/collections/collections-mc/pdf/mc184.pdf",
+           "displayLink": "libraries.mit.edu",
+           "snippet": "May 2, 2016 ... of large-scale weather patterns. The facility served the Air Force, the Navy, and \nthe United States. Weather Bureau. The latter, with Charney's ...",
+           "htmlSnippet": "May 2, 2016 \u003cb\u003e...\u003c/b\u003e of large-scale \u003cb\u003eweather patterns\u003c/b\u003e. The facility served the Air Force, the Navy, and \u003cbr\u003e\nthe United States. Weather Bureau. The latter, with Charney&#39;s&nbsp;...",
+           "cacheId": "fjvbWtgBFMEJ",
+           "mime": "application/pdf",
+           "fileFormat": "PDF/Adobe Acrobat",
+           "formattedUrl": "https://libraries.mit.edu/archives/research/collections/.../mc184.pdf",
+           "htmlFormattedUrl": "https://libraries.mit.edu/archives/research/collections/.../mc184.pdf",
+           "pagemap": {
+            "metatags": [
+             {
+              "producer": "Apache FOP Version 0.95",
+              "creationdate": "D:20160502091310-04'00'"
+             }
+            ]
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "Guide to the Papers of Jule G. Charney MC.0184",
+           "htmlTitle": "Guide to the Papers of Jule G. Charney MC.0184",
+           "link": "https://libraries.mit.edu/archives/research/collections/collections-mc/mc184.html",
+           "displayLink": "libraries.mit.edu",
+           "snippet": "During World War II he assisted in the training of weather officers for the armed ... \nUnit in Maryland for the routine daily prediction of large-scale weather patterns.",
+           "htmlSnippet": "During World War II he assisted in the training of weather officers for the armed ... \u003cbr\u003e\nUnit in Maryland for the routine daily prediction of large-scale \u003cb\u003eweather patterns\u003c/b\u003e.",
+           "cacheId": "LAxfuOekYZ0J",
+           "formattedUrl": "https://libraries.mit.edu/archives/research/collections/.../mc184.html",
+           "htmlFormattedUrl": "https://libraries.mit.edu/archives/research/collections/.../mc184.html",
+           "pagemap": {
+            "cse_thumbnail": [
+             {
+              "width": "121",
+              "height": "51",
+              "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTA5zC-ckyy25FjPDPCc1Ik1o9loBbSIUsZdKOJkRGE_-YA9yYTl2goFA"
+             }
+            ],
+            "cse_image": [
+             {
+              "src": "http://libraries.mit.edu/img/dome/red-on-white.gif"
+             }
+            ]
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "Massachusetts Institute of Technology Reports to the President 1987 ...",
+           "htmlTitle": "Massachusetts Institute of Technology Reports to the President 1987 ...",
+           "link": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1988.pdf",
+           "displayLink": "libraries.mit.edu",
+           "snippet": "Sep 7, 1989 ... While it is not certain that the weather in the summer of '88 is a ... of seacoast \nproperty, and changes in climate and weather patterns are likely ...",
+           "htmlSnippet": "Sep 7, 1989 \u003cb\u003e...\u003c/b\u003e While it is not certain that the weather in the summer of &#39;88 is a ... of seacoast \u003cbr\u003e\nproperty, and changes in climate and \u003cb\u003eweather patterns\u003c/b\u003e are likely&nbsp;...",
+           "mime": "application/pdf",
+           "fileFormat": "PDF/Adobe Acrobat",
+           "formattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1988.pdf",
+           "htmlFormattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1988.pdf",
+           "pagemap": {
+            "metatags": [
+             {
+              "creationdate": "D:20101217121202-05'00'",
+              "moddate": "D:20101217121228-05'00'"
+             }
+            ]
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "President's Report Issue, 1958",
+           "htmlTitle": "President&#39;s Report Issue, 1958",
+           "link": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1958.pdf",
+           "displayLink": "libraries.mit.edu",
+           "snippet": "standards of excellence, to set new patterns, to give leadership, and to lift the ..... \nities of large-scale control of weather and climate. The. Physics Department has ...",
+           "htmlSnippet": "standards of excellence, to set new \u003cb\u003epatterns\u003c/b\u003e, to give leadership, and to lift the ..... \u003cbr\u003e\nities of large-scale control of \u003cb\u003eweather\u003c/b\u003e and climate. The. Physics Department has&nbsp;...",
+           "mime": "application/pdf",
+           "fileFormat": "PDF/Adobe Acrobat",
+           "formattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1958.pdf",
+           "htmlFormattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1958.pdf",
+           "pagemap": {
+            "metatags": [
+             {
+              "creationdate": "D:20071230224117-05'00'",
+              "moddate": "D:20071230224117-05'00'"
+             }
+            ]
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "1974",
+           "htmlTitle": "1974",
+           "link": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1974.pdf",
+           "displayLink": "libraries.mit.edu",
+           "snippet": "Dec 10, 1973 ... Patterns of Growth and Change -- 1940 to 1973 ...... Earls and Sina and Ms. \nAmacher participated in Visiting Professor Piene's exhibit \"Weather, ...",
+           "htmlSnippet": "Dec 10, 1973 \u003cb\u003e...\u003c/b\u003e \u003cb\u003ePatterns\u003c/b\u003e of Growth and Change -- 1940 to 1973 ...... Earls and Sina and Ms. \u003cbr\u003e\nAmacher participated in Visiting Professor Piene&#39;s exhibit &quot;\u003cb\u003eWeather\u003c/b\u003e,&nbsp;...",
+           "mime": "application/pdf",
+           "fileFormat": "PDF/Adobe Acrobat",
+           "formattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1974.pdf",
+           "htmlFormattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1974.pdf",
+           "pagemap": {
+            "metatags": [
+             {
+              "creationdate": "D:20071230234800-05'00'",
+              "moddate": "D:20071230234800-05'00'"
+             }
+            ]
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "1950",
+           "htmlTitle": "1950",
+           "link": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1950.pdf",
+           "displayLink": "libraries.mit.edu",
+           "snippet": "heartening endorsement by industry of the pattern of coopera- tion which M. I. T. \n..... Due to weather conditions ...... weather patterns of the northern hemisphere.",
+           "htmlSnippet": "heartening endorsement by industry of the pattern of coopera- tion which M. I. T. \u003cbr\u003e\n..... Due to weather conditions ...... \u003cb\u003eweather patterns\u003c/b\u003e of the northern hemisphere.",
+           "mime": "application/pdf",
+           "fileFormat": "PDF/Adobe Acrobat",
+           "formattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1950.pdf",
+           "htmlFormattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1950.pdf",
+           "pagemap": {
+            "metatags": [
+             {
+              "creationdate": "D:20071230222024-05'00'",
+              "moddate": "D:20071230222024-05'00'"
+             }
+            ]
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "William R. Dickson Oral History Project Interviewer: Susan Crowley ...",
+           "htmlTitle": "William R. Dickson Oral History Project Interviewer: Susan Crowley ...",
+           "link": "https://libraries.mit.edu/archives/oral-history-transcripts/dickson-pdf/dickson9feb2005.pdf",
+           "displayLink": "libraries.mit.edu",
+           "snippet": "Feb 9, 2005 ... had a weather station on the roof, which had a couple of grade R .... a pattern of \npin pricks in the roll shades that would let in light and yet not ...",
+           "htmlSnippet": "Feb 9, 2005 \u003cb\u003e...\u003c/b\u003e had a \u003cb\u003eweather\u003c/b\u003e station on the roof, which had a couple of grade R .... a \u003cb\u003epattern\u003c/b\u003e of \u003cbr\u003e\npin pricks in the roll shades that would let in light and yet not&nbsp;...",
+           "cacheId": "DImOvYhTuB8J",
+           "mime": "application/pdf",
+           "fileFormat": "PDF/Adobe Acrobat",
+           "formattedUrl": "https://libraries.mit.edu/archives/oral-history.../dickson9feb2005.pdf",
+           "htmlFormattedUrl": "https://libraries.mit.edu/archives/oral-history.../dickson9feb2005.pdf",
+           "pagemap": {
+            "metatags": [
+             {
+              "creationdate": "D:20061003143142-04'00'",
+              "author": "lbeattie",
+              "creator": "PScript5.dll Version 5.2.2",
+              "producer": "Acrobat Distiller 7.0.5 (Windows)",
+              "moddate": "D:20061003143142-04'00'",
+              "title": "Microsoft Word - Dickson9Feb2005.doc"
+             }
+            ]
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "1954",
+           "htmlTitle": "1954",
+           "link": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1954.pdf",
+           "displayLink": "libraries.mit.edu",
+           "snippet": "New England this fall, by a weather radar network of the Cambridge Air Force ... \nto the need for interdepartmental activities and new professional patterns.",
+           "htmlSnippet": "New England this fall, by a \u003cb\u003eweather\u003c/b\u003e radar network of the Cambridge Air Force ... \u003cbr\u003e\nto the need for interdepartmental activities and new professional \u003cb\u003epatterns\u003c/b\u003e.",
+           "mime": "application/pdf",
+           "fileFormat": "PDF/Adobe Acrobat",
+           "formattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1954.pdf",
+           "htmlFormattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1954.pdf",
+           "pagemap": {
+            "metatags": [
+             {
+              "creationdate": "D:20071230223356-05'00'",
+              "moddate": "D:20071230223356-05'00'"
+             }
+            ]
+           }
+          },
+          {
+           "kind": "customsearch#result",
+           "title": "1955",
+           "htmlTitle": "1955",
+           "link": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1955.pdf",
+           "displayLink": "libraries.mit.edu",
+           "snippet": "a new and growing field in which the Department's Weather. Radar Research ... \npatterns rather than on mean temperature and rainfall as in the past. With the aid\n ...",
+           "htmlSnippet": "a new and growing field in which the Department&#39;s \u003cb\u003eWeather\u003c/b\u003e. Radar Research ... \u003cbr\u003e\n\u003cb\u003epatterns\u003c/b\u003e rather than on mean temperature and rainfall as in the past. With the aid\u003cbr\u003e\n&nbsp;...",
+           "mime": "application/pdf",
+           "fileFormat": "PDF/Adobe Acrobat",
+           "formattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1955.pdf",
+           "htmlFormattedUrl": "https://libraries.mit.edu/archives/mithistory/presidents-reports/1955.pdf",
+           "pagemap": {
+            "metatags": [
+             {
+              "creationdate": "D:20071230223610-05'00'",
+              "moddate": "D:20071230223610-05'00'"
+             }
+            ]
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Thu, 01 Sep 2016 15:16:54 GMT
+recorded_with: VCR 3.0.3

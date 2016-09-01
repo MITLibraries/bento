@@ -29,9 +29,8 @@ class SearchEds
 
   # Translate EDS results into local result model
   def to_result(results)
-    results.extend Hashie::Extensions::DeepFind
     norm = {}
-    norm['total'] = results.deep_find('TotalHits')
+    norm['total'] = results['SearchResult']['Statistics']['TotalHits']
     norm['results'] = []
     extract_results(results, norm)
     norm
@@ -105,8 +104,7 @@ class SearchEds
     response = HTTP.headers(accept: 'application/json',
                             "x-authenticationToken": @auth_token)
                    .get(uri)
-    json_response = JSON.parse(response)
-    json_response['SessionToken']
+    response.headers['X-Sessiontoken']
   end
 
   def end_session
