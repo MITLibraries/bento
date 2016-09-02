@@ -4,6 +4,7 @@ class SearchEds
   EDS_URL = ENV['EDS_URL'].freeze
   EDS_NO_ALEPH_PROFILE = ENV['EDS_NO_ALEPH_PROFILE'].freeze
   EDS_ALEPH_PROFILE = ENV['EDS_ALEPH_PROFILE'].freeze
+  RESULTS_PER_BOX = ENV['RESULTS_PER_BOX'] || 3
 
   def initialize
     @auth_token = uid_auth
@@ -75,9 +76,9 @@ class SearchEds
 
   def search_url(term)
     [EDS_URL, '/edsapi/rest/Search?query=', URI.escape(term).to_s,
-     '&searchmode=all', '&resultsperpage=3', '&pagenumber=1', '&sort=relevance',
-     '&highlight=n', '&includefacets=n', '&view=brief',
-     '&autosuggest=n'].join('')
+     '&searchmode=all', "&resultsperpage=#{RESULTS_PER_BOX}",
+     '&pagenumber=1', '&sort=relevance', '&highlight=n', '&includefacets=n',
+     '&view=brief', '&autosuggest=n'].join('')
   end
 
   def search_filtered(term)
