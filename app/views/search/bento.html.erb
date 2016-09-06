@@ -3,12 +3,12 @@
 <div class="col-sm-4">
   <h2>Articles and Stuff</h2>
 
-  <% @results['articles']['results'].each do |result| %>
+  <% @articles['apinoaleph']['results'].each do |result| %>
     <%= render partial: "result", locals: {result: result} %>
   <% end %>
 
-  <% if @results['articles']['total'] > 0 %>
-    <%= link_to("View all #{@results['articles']['total']} like this.",
+  <% if @articles['apinoaleph']['total'] > 0 %>
+    <%= link_to("View all #{@articles['apinoaleph']['total']} like this.",
                 "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
   <% else %>
     No results found.
@@ -18,12 +18,12 @@
 <div class="col-sm-4">
   <h2>Books and Stuff</h2>
 
-  <% @results['books']['results'].each do |result| %>
+  <% @books['apibarton']['results'].each do |result| %>
     <%= render partial: "result", locals: {result: result} %>
   <% end %>
 
-  <% if @results['books']['total'] > 0 %>
-    <%= link_to("View all #{@results['books']['total']} like this.",
+  <% if @books['apibarton']['total'] > 0 %>
+    <%= link_to("View all #{@books['apibarton']['total']} like this.",
                 "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
   <% else %>
     No results found.
@@ -33,12 +33,12 @@
 <div class="col-sm-4">
   <h2>Website and Guides</h2>
 
-  <% @moar_results['results'].each do |result| %>
+  <% @google['results'].each do |result| %>
     <%= render partial: "result", locals: {result: result} %>
   <% end %>
 
-  <% if @moar_results['total'] > 0 %>
-    <%= link_to("View all #{@moar_results['total']} like this.",
+  <% if @google['total'] > 0 %>
+    <%= link_to("View all #{@google['total']} like this.",
                 "https://cse.google.com/cse?cx=#{ENV['GOOGLE_CUSTOM_SEARCH_ID']}&ie=UTF-8&q=#{params[:q]}&sa=Search#gsc.tab=0&gsc.q=#{params[:q]}") %>
   <% end %>
 </div>

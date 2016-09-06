@@ -16,7 +16,7 @@ http_interactions:
       Host:
       - eds-api.ebscohost.com
       User-Agent:
-      - http.rb/2.0.2
+      - http.rb/2.0.3
   response:
     status:
       code: 200
@@ -35,14 +35,14 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Fri, 22 Jul 2016 17:26:42 GMT
+      - Tue, 06 Sep 2016 20:03:30 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
-    http_version: 
-  recorded_at: Fri, 22 Jul 2016 17:26:42 GMT
+    http_version:
+  recorded_at: Tue, 06 Sep 2016 20:03:31 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apinoaleph
@@ -59,7 +59,7 @@ http_interactions:
       Host:
       - eds-api.ebscohost.com
       User-Agent:
-      - http.rb/2.0.2
+      - http.rb/2.0.3
   response:
     status:
       code: 200
@@ -68,7 +68,7 @@ http_interactions:
       Cache-Control:
       - private
       Content-Length:
-      - '100'
+      - '102'
       Content-Type:
       - application/json; charset=utf-8
       Server:
@@ -78,20 +78,20 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 88994fbf-d877-4c4d-9336-794e1ee106fa
+      - 9ef05769-d5d3-4df8-8106-d4ae91f20b6d
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Fri, 22 Jul 2016 17:26:42 GMT
+      - Tue, 06 Sep 2016 20:03:31 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"SessionToken":"FakeSessiontoken"}'
-    http_version: 
-  recorded_at: Fri, 22 Jul 2016 17:26:42 GMT
+    http_version:
+  recorded_at: Tue, 06 Sep 2016 20:03:31 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&highlight=n&includefacets=n&pagenumber=1&query=popcornandorangejuice&resultsperpage=3&searchmode=all&sort=relevance&view=brief
@@ -110,7 +110,7 @@ http_interactions:
       Host:
       - eds-api.ebscohost.com
       User-Agent:
-      - http.rb/2.0.2
+      - http.rb/2.0.3
   response:
     status:
       code: 200
@@ -119,7 +119,7 @@ http_interactions:
       Cache-Control:
       - private
       Content-Length:
-      - '6745'
+      - '6744'
       Content-Type:
       - application/json; charset=utf-8
       Server:
@@ -129,18 +129,18 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - c749cc55-96a9-4bc9-bad9-61e407059d7e
+      - 46332d4a-f0fa-455f-a2f6-1b3fc2191f87
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Fri, 22 Jul 2016 17:26:42 GMT
+      - Tue, 06 Sep 2016 20:03:29 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcornandorangejuice&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=brief&resultsperpage=3&pagenumber=0&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcornandorangejuice"},"RemoveAction":"removequery(1)"}]}},"SearchResult":{"Statistics":{"TotalHits":0,"TotalSearchTime":100,"Databases":[{"Id":"eric","Label":"ERIC","Status":"0","Hits":0},{"Id":"bwh","Label":"","Status":"0","Hits":0},{"Id":"egh","Label":"Environment
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcornandorangejuice&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=brief&resultsperpage=3&pagenumber=0&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcornandorangejuice"},"RemoveAction":"removequery(1)"}]}},"SearchResult":{"Statistics":{"TotalHits":0,"TotalSearchTime":87,"Databases":[{"Id":"eric","Label":"ERIC","Status":"0","Hits":0},{"Id":"bwh","Label":"","Status":"0","Hits":0},{"Id":"egh","Label":"Environment
         Index","Status":"0","Hits":0},{"Id":"ecn","Label":"EconLit","Status":"0","Hits":0},{"Id":"cmedm","Label":"MEDLINE","Status":"0","Hits":0},{"Id":"ufh","Label":"Communication
         & Mass Media Complete","Status":"0","Hits":0},{"Id":"fyh","Label":"Women''s
         Studies International","Status":"0","Hits":0},{"Id":"bth","Label":"Business
@@ -198,8 +198,8 @@ http_interactions:
         Education","Status":"0","Hits":0},{"Id":"edshld","Label":"Digital Access to
         Scholarship at Harvard (DASH)","Status":"0","Hits":0},{"Id":"edsjsr","Label":"JSTOR
         Journals","Status":"0","Hits":0}]},"Data":{"RecordFormat":"EP Display"}}}'
-    http_version: 
-  recorded_at: Fri, 22 Jul 2016 17:26:43 GMT
+    http_version:
+  recorded_at: Tue, 06 Sep 2016 20:03:31 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
@@ -218,7 +218,7 @@ http_interactions:
       Host:
       - eds-api.ebscohost.com
       User-Agent:
-      - http.rb/2.0.2
+      - http.rb/2.0.3
   response:
     status:
       code: 200
@@ -235,170 +235,18 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - fac21cdd-7428-4121-b9cd-e931589ad4b6
+      - 0957a000-83e9-4847-a2b1-718e27e55332
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Fri, 22 Jul 2016 17:26:42 GMT
+      - Tue, 06 Sep 2016 20:03:31 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"IsSuccessful":"y"}'
-    http_version: 
-  recorded_at: Fri, 22 Jul 2016 17:26:43 GMT
-- request:
-    method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apibarton
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      X-Authenticationtoken:
-      - FakeAuthenticationtoken
-      Connection:
-      - close
-      Host:
-      - eds-api.ebscohost.com
-      User-Agent:
-      - http.rb/2.0.2
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - private
-      Content-Length:
-      - '100'
-      Content-Type:
-      - application/json; charset=utf-8
-      Server:
-      - Microsoft-IIS/7.5
-      X-Sessiontoken:
-      - FakeSessiontoken
-      X-Authenticationtoken:
-      - FakeAuthenticationtoken
-      X-Msg-Correlid:
-      - f0a62fa6-65a2-4204-bb81-eb3671cd6c1a
-      X-Aspnet-Version:
-      - 4.0.30319
-      X-Powered-By:
-      - ASP.NET
-      Date:
-      - Fri, 22 Jul 2016 17:26:42 GMT
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"SessionToken":"FakeSessiontoken"}'
-    http_version: 
-  recorded_at: Fri, 22 Jul 2016 17:26:43 GMT
-- request:
-    method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&highlight=n&includefacets=n&pagenumber=1&query=popcornandorangejuice&resultsperpage=3&searchmode=all&sort=relevance&view=brief
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      X-Authenticationtoken:
-      - FakeAuthenticationtoken
-      X-Sessiontoken:
-      - FakeSessiontoken
-      Connection:
-      - close
-      Host:
-      - eds-api.ebscohost.com
-      User-Agent:
-      - http.rb/2.0.2
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - private
-      Content-Length:
-      - '668'
-      Content-Type:
-      - application/json; charset=utf-8
-      Server:
-      - Microsoft-IIS/7.5
-      X-Sessiontoken:
-      - FakeSessiontoken
-      X-Authenticationtoken:
-      - FakeAuthenticationtoken
-      X-Msg-Correlid:
-      - 0d5e8cfe-51a6-4b9c-9c9b-291e8b53fd0c
-      X-Aspnet-Version:
-      - 4.0.30319
-      X-Powered-By:
-      - ASP.NET
-      Date:
-      - Fri, 22 Jul 2016 17:26:42 GMT
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcornandorangejuice&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=brief&resultsperpage=3&pagenumber=0&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcornandorangejuice"},"RemoveAction":"removequery(1)"}]}},"SearchResult":{"Statistics":{"TotalHits":0,"TotalSearchTime":20,"Databases":[{"Id":"cat00916a","Label":"MIT
-        Barton Catalog","Status":"0","Hits":0},{"Id":"ir00145a","Label":"MIT DOME
-        for Discovery","Status":"0","Hits":0},{"Id":"cat01763a","Label":"MIT Course
-        Reserves","Status":"0","Hits":0}]},"Data":{"RecordFormat":"EP Display"}}}'
-    http_version: 
-  recorded_at: Fri, 22 Jul 2016 17:26:43 GMT
-- request:
-    method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      X-Authenticationtoken:
-      - FakeAuthenticationtoken
-      X-Sessiontoken:
-      - FakeSessiontoken
-      Connection:
-      - close
-      Host:
-      - eds-api.ebscohost.com
-      User-Agent:
-      - http.rb/2.0.2
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - private
-      Content-Length:
-      - '20'
-      Content-Type:
-      - application/json; charset=utf-8
-      Server:
-      - Microsoft-IIS/7.5
-      X-Authenticationtoken:
-      - FakeAuthenticationtoken
-      X-Msg-Correlid:
-      - f9983207-55f4-4177-9c20-e78870fdaa48
-      X-Aspnet-Version:
-      - 4.0.30319
-      X-Powered-By:
-      - ASP.NET
-      Date:
-      - Fri, 22 Jul 2016 17:26:42 GMT
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"IsSuccessful":"y"}'
-    http_version: 
-  recorded_at: Fri, 22 Jul 2016 17:26:43 GMT
+    http_version:
+  recorded_at: Tue, 06 Sep 2016 20:03:31 GMT
 recorded_with: VCR 3.0.3
