@@ -7,7 +7,7 @@ class SearchControllerTest < ActionController::TestCase
   end
 
   test 'should get bento' do
-    VCR.use_cassette('valid search and credentials',
+    VCR.use_cassette('integrated search',
                      allow_playback_repeats: true) do
       get :bento, params: { q: 'popcorn' }
       assert_response :success

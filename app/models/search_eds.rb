@@ -2,8 +2,6 @@ class SearchEds
   attr_reader :results
 
   EDS_URL = ENV['EDS_URL'].freeze
-  EDS_NO_ALEPH_PROFILE = ENV['EDS_NO_ALEPH_PROFILE'].freeze
-  EDS_ALEPH_PROFILE = ENV['EDS_ALEPH_PROFILE'].freeze
   RESULTS_PER_BOX = ENV['RESULTS_PER_BOX'] || 3
 
   def initialize
@@ -11,18 +9,13 @@ class SearchEds
     @results = {}
   end
 
-  def search(term)
+  def search(term, profile)
     return 'invalid credentials' unless @auth_token
-    @session_key = create_session(EDS_NO_ALEPH_PROFILE) if @auth_token
-    @results['raw_articles'] = search_filtered(term)
+    @session_key = create_session(profile) if @auth_token
+    @results["raw_#{profile}"] = search_filtered(term)
     end_session
 
-    @session_key = create_session(EDS_ALEPH_PROFILE) if @auth_token
-    @results['raw_books'] = search_filtered(term)
-    end_session
-
-    @results['articles'] = to_result(@results['raw_articles'])
-    @results['books'] = to_result(@results['raw_books'])
+    @results[profile.to_s] = to_result(@results["raw_#{profile}"])
     @results
   end
 
