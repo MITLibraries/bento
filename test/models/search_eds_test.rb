@@ -5,7 +5,7 @@ class SearchEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn', 'apinoaleph')
-      assert_equal(39_812, query['apinoaleph']['total'])
+      assert_equal(39_479, query['apinoaleph']['total'])
     end
   end
 
@@ -29,7 +29,7 @@ class SearchEdsTest < ActiveSupport::TestCase
                      allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn', 'apinoaleph')
       assert_equal(
-        'Sowing time of popcorn during the summer harvest under',
+        'Popcorn! : 100 sweet and savory recipes.',
         query['apinoaleph']['results'].first.title.split[0...9].join(' ')
       )
     end
@@ -39,7 +39,7 @@ class SearchEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn', 'apinoaleph')
-      assert_equal('2015', query['apinoaleph']['results'].first.year)
+      assert_equal('2013', query['apinoaleph']['results'].first.year)
     end
   end
 
@@ -48,7 +48,7 @@ class SearchEdsTest < ActiveSupport::TestCase
                      allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn', 'apinoaleph')
       assert_equal(
-        'http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&db=edsihs&AN=221456993819438',
+        'http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&db=edshlc&AN=edshlc.013683931-2',
         query['apinoaleph']['results'].first.url
       )
     end
@@ -58,8 +58,7 @@ class SearchEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn', 'apinoaleph')
-      assert_equal('Academic Journal',
-                   query['apinoaleph']['results'].first.type)
+      assert_equal('Book', query['apinoaleph']['results'].first.type)
     end
   end
 
@@ -68,10 +67,10 @@ class SearchEdsTest < ActiveSupport::TestCase
                      allow_playback_repeats: true) do
       query = SearchEds.new.search('popcorn', 'apinoaleph')
       assert_equal(
-        'Marques, Odair Jose',
+        'Beckerman, Carol',
         query['apinoaleph']['results'].first.authors.first
       )
-      assert_equal(7, query['apinoaleph']['results'].first.authors.count)
+      assert_equal(1, query['apinoaleph']['results'].first.authors.count)
     end
   end
 
@@ -80,6 +79,34 @@ class SearchEdsTest < ActiveSupport::TestCase
                      allow_playback_repeats: true) do
       query = SearchEds.new.search('popcornandorangejuice', 'apinoaleph')
       assert_equal(0, query['apinoaleph']['total'])
+    end
+  end
+
+  test 'Handles NoMethodError: undefined method [] for nil:NilClass' do
+    # https://rollbar.com/mit-libraries/bento/items/4/
+    # The issue was the commas being treated delimiters
+    VCR.use_cassette('rollbar4') do
+      searchterm = 'R. F. Harrington, Field computation by moment methods. Macmillan, 1968'
+      query = SearchEds.new.search(searchterm, 'apinoaleph')
+      assert_equal(77612346, query['apinoaleph']['total'])
+    end
+  end
+
+  test 'Handles NoMethodError: undefined method [] for nil:NilClass again' do
+    # https://rollbar.com/mit-libraries/bento/items/4/
+    # The issue was the commas being treated delimiters
+    VCR.use_cassette('rollbar4a') do
+      searchterm = 'R. F. Harrington, Field computation by moment methods. Macmillan, 1968'
+      query = SearchEds.new.search(searchterm, 'apibarton')
+      assert_equal(1268662, query['apibarton']['total'])
+    end
+  end
+
+  test 'cleaner rf harrington' do
+    VCR.use_cassette('rollbar4b') do
+      searchterm = 'R. F. Harrington, Field computation by moment methods. Macmillan, 1968'
+      expected = 'R.+F.+Harrington+Field+computation+by+moment+methods.+Macmillan+1968'
+      assert_equal(expected, SearchEds.new.send(:clean_term, searchterm))
     end
   end
 end
