@@ -16,16 +16,27 @@ class SearchController < ApplicationController
     # Instead, we'll rely on the cache itself to expire the oldest cached
     # items when necessary.
 
+    unless strip_q.present?
+      flash[:error] = 'A search term is required.'
+      return redirect_to search_url
+    end
+
     @articles = Rails.cache.fetch("articles_#{params[:q]}_#{today}") do
-      SearchEds.new.search(params[:q], ENV['EDS_NO_ALEPH_PROFILE'])
+      SearchEds.new.search(strip_q, ENV['EDS_NO_ALEPH_PROFILE'])
     end
 
     @books = Rails.cache.fetch("books_#{params[:q]}_#{today}") do
-      SearchEds.new.search(params[:q], ENV['EDS_ALEPH_PROFILE'])
+      SearchEds.new.search(strip_q, ENV['EDS_ALEPH_PROFILE'])
     end
 
-    @google = Rails.cache.fetch("google_#{params[:q]}_#{today}") do
-      SearchGoogle.new.search(params[:q])
+    @google = Rails.cache.fetch("google_#{strip_q}_#{today}") do
+      SearchGoogle.new.search(strip_q)
     end
+  end
+
+  private
+
+  def strip_q
+    params[:q].strip
   end
 end

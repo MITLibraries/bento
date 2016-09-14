@@ -35,14 +35,14 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Tue, 06 Sep 2016 18:54:37 GMT
+      - Wed, 14 Sep 2016 17:10:31 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
     http_version: 
-  recorded_at: Tue, 06 Sep 2016 18:54:38 GMT
+  recorded_at: Wed, 14 Sep 2016 17:10:32 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apinoaleph
@@ -73,34 +73,28 @@ http_interactions:
       - application/json; charset=utf-8
       Server:
       - Microsoft-IIS/7.5
-      X-Dynatrace:
-      - PT=591656366;PA=2120103681;SP=EDSAPI;PS=-1981931378
-      - PT=591656366;PA=2120103681;SP=EDSAPI;PS=-1981931378
-      Dynatrace:
-      - PT=591656366;PA=2120103681;SP=EDSAPI;PS=-1981931378
-      - PT=591656366;PA=2120103681;SP=EDSAPI;PS=-1981931378
       X-Sessiontoken:
       - FakeSessiontoken
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - b73fb6bf-bf76-4bf8-ac57-6978cc365d60
+      - 67be138e-5036-471a-9021-7a7947bd5205
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Tue, 06 Sep 2016 18:54:37 GMT
+      - Wed, 14 Sep 2016 17:10:31 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"SessionToken":"FakeSessiontoken"}'
     http_version: 
-  recorded_at: Tue, 06 Sep 2016 18:54:38 GMT
+  recorded_at: Wed, 14 Sep 2016 17:10:32 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&highlight=n&includefacets=n&pagenumber=1&query=popcorn&resultsperpage=3&searchmode=all&sort=relevance&view=brief
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&highlight=n&includefacets=n&pagenumber=1&query=popcorn&resultsperpage=3&searchmode=smart&sort=relevance&view=brief
     body:
       encoding: US-ASCII
       string: ''
@@ -125,7 +119,7 @@ http_interactions:
       Cache-Control:
       - private
       Content-Length:
-      - '20721'
+      - '12555'
       Content-Type:
       - application/json; charset=utf-8
       Server:
@@ -135,186 +129,108 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 47da7ecc-b862-43b8-9621-e4614308b528
+      - 5450220f-5fd8-46f6-9078-563a16fd1126
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Tue, 06 Sep 2016 18:54:38 GMT
+      - Wed, 14 Sep 2016 17:10:24 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcorn&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=brief&resultsperpage=3&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcorn"},"RemoveAction":"removequery(1)"}]}},"SearchResult":{"Statistics":{"TotalHits":39812,"TotalSearchTime":296,"Databases":[{"Id":"eric","Label":"ERIC","Status":"0","Hits":75},{"Id":"bwh","Label":"","Status":"0","Hits":1518},{"Id":"egh","Label":"Environment
-        Index","Status":"0","Hits":236},{"Id":"ecn","Label":"EconLit","Status":"0","Hits":20},{"Id":"cmedm","Label":"MEDLINE","Status":"0","Hits":471},{"Id":"ufh","Label":"Communication
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcorn&sort=relevance&includefacets=n&searchmode=smart&autosuggest=n&view=brief&resultsperpage=3&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcorn"},"RemoveAction":"removequery(1)"}]}},"SearchResult":{"Statistics":{"TotalHits":39479,"TotalSearchTime":267,"Databases":[{"Id":"eric","Label":"ERIC","Status":"0","Hits":75},{"Id":"bwh","Label":"","Status":"0","Hits":1521},{"Id":"egh","Label":"Environment
+        Index","Status":"0","Hits":235},{"Id":"ecn","Label":"EconLit","Status":"0","Hits":20},{"Id":"cmedm","Label":"MEDLINE","Status":"0","Hits":471},{"Id":"ufh","Label":"Communication
         & Mass Media Complete","Status":"0","Hits":80},{"Id":"fyh","Label":"Women''s
         Studies International","Status":"0","Hits":19},{"Id":"bth","Label":"Business
-        Source Complete","Status":"0","Hits":1749},{"Id":"lxh","Label":"Library, Information
-        Science & Technology Abstracts","Status":"0","Hits":119},{"Id":"nih","Label":"The
-        Nation Archive","Status":"0","Hits":4},{"Id":"mah","Label":"Music Index","Status":"0","Hits":80},{"Id":"a9h","Label":"","Status":"0","Hits":2114},{"Id":"ahl","Label":"America:
-        History & Life","Status":"0","Hits":15},{"Id":"hia","Label":"Historical Abstracts","Status":"0","Hits":4},{"Id":"8gh","Label":"GreenFILE","Status":"0","Hits":48},{"Id":"edsnbk","Label":"NewsBank","Status":"0","Hits":14576},{"Id":"edslns","Label":"LexisNexis
-        U.S. Serial Set Digital Collection","Status":"0","Hits":0},{"Id":"hev","Label":"European
-        Views of the Americas: 1493 to 1750","Status":"0","Hits":0},{"Id":"edsbl","Label":"British
-        Library Document Supply Centre Inside Serials & Conference Proceedings","Status":"0","Hits":496},{"Id":"edsnba","Label":"NewsBank
-        - Archives","Status":"0","Hits":8037},{"Id":"edsgpr","Label":"Government Printing
+        Source Complete","Status":"0","Hits":1730},{"Id":"lxh","Label":"Library, Information
+        Science & Technology Abstracts","Status":"0","Hits":118},{"Id":"nih","Label":"The
+        Nation Archive","Status":"0","Hits":3},{"Id":"mah","Label":"Music Index","Status":"0","Hits":79},{"Id":"a9h","Label":"","Status":"0","Hits":2103},{"Id":"ahl","Label":"America:
+        History & Life","Status":"0","Hits":15},{"Id":"hia","Label":"Historical Abstracts","Status":"0","Hits":4},{"Id":"8gh","Label":"GreenFILE","Status":"0","Hits":48},{"Id":"edsnbk","Label":"NewsBank","Status":"0","Hits":14456},{"Id":"edslns","Label":"LexisNexis
+        U.S. Serial Set Digital Collection","Status":"0","Hits":0},{"Id":"edsbl","Label":"British
+        Library Document Supply Centre Inside Serials & Conference Proceedings","Status":"0","Hits":489},{"Id":"edsnba","Label":"NewsBank
+        - Archives","Status":"0","Hits":7938},{"Id":"edsgpr","Label":"Government Printing
         Office Catalog","Status":"0","Hits":6},{"Id":"edspvh","Label":"PsycCRITIQUES","Status":"0","Hits":2},{"Id":"edspdh","Label":"PsycARTICLES","Status":"0","Hits":4},{"Id":"edspzh","Label":"PsycBOOKS","Status":"0","Hits":0},{"Id":"edswah","Label":"Arts
-        & Humanities Citation Index","Status":"0","Hits":34},{"Id":"edselp","Label":"ScienceDirect","Status":"0","Hits":246},{"Id":"edspia","Label":"DBPIA","Status":"0","Hits":34},{"Id":"edsoso","Label":"Oxford
+        & Humanities Citation Index","Status":"0","Hits":32},{"Id":"edselp","Label":"ScienceDirect","Status":"0","Hits":245},{"Id":"edspia","Label":"DBPIA","Status":"0","Hits":34},{"Id":"edsoso","Label":"Oxford
         Scholarship Online","Status":"0","Hits":3},{"Id":"edsoho","Label":"Oxford
         Handbooks Online","Status":"0","Hits":0},{"Id":"edsarx","Label":"arXiv","Status":"0","Hits":21},{"Id":"edsibc","Label":"Informit
         Business Collection","Status":"0","Hits":2},{"Id":"edsiec","Label":"Informit
         Engineering Collection","Status":"0","Hits":1},{"Id":"edsihc","Label":"Informit
         Health Collection","Status":"0","Hits":2},{"Id":"edsihs","Label":"Informit
-        Humanities & Social Sciences Collection","Status":"0","Hits":12},{"Id":"edsilc","Label":"Informit
-        Literature & Culture Collection","Status":"0","Hits":7},{"Id":"edsind","Label":"Informit
-        Indigenous Collection","Status":"0","Hits":0},{"Id":"nlebk","Label":"eBook
-        Collection (EBSCOhost)","Status":"0","Hits":0},{"Id":"edsmer","Label":"Mergent
-        Annual Reports Collection","Status":"0","Hits":0},{"Id":"hma","Label":"Humanities
+        Humanities & Social Sciences Collection","Status":"0","Hits":12},{"Id":"nlebk","Label":"eBook
+        Collection (EBSCOhost)","Status":"0","Hits":0},{"Id":"hma","Label":"Humanities
         Abstracts (H.W. Wilson)","Status":"0","Hits":34},{"Id":"hsr","Label":"Humanities
         & Social Sciences Index Retrospective: 1907-1984 (H.W. Wilson)","Status":"0","Hits":9},{"Id":"air","Label":"Art
         Index Retrospective (H.W. Wilson)","Status":"0","Hits":13},{"Id":"rga","Label":"Readers''
-        Guide Abstracts (H.W. Wilson)","Status":"0","Hits":643},{"Id":"rgr","Label":"Readers''
-        Guide Retrospective: 1890-1982 (H.W. Wilson)","Status":"0","Hits":146},{"Id":"edsman","Label":"Manuscriptorium
-        Digital Library","Status":"0","Hits":0},{"Id":"edskis","Label":"Korean Studies
-        Information Service System (KISS)","Status":"0","Hits":22},{"Id":"edsaan","Label":"Accessible
-        Archives","Status":"0","Hits":2},{"Id":"edscrc","Label":"Credo Reference Collections","Status":"0","Hits":51},{"Id":"edszbw","Label":"ECONIS","Status":"0","Hits":8},{"Id":"nsm","Label":"Newswires","Status":"0","Hits":303},{"Id":"bpr","Label":"Business
+        Guide Abstracts (H.W. Wilson)","Status":"0","Hits":641},{"Id":"rgr","Label":"Readers''
+        Guide Retrospective: 1890-1982 (H.W. Wilson)","Status":"0","Hits":146},{"Id":"edskis","Label":"Korean
+        Studies Information Service System (KISS)","Status":"0","Hits":22},{"Id":"edsaan","Label":"Accessible
+        Archives","Status":"0","Hits":1},{"Id":"edscrc","Label":"Credo Reference Collections","Status":"0","Hits":51},{"Id":"edszbw","Label":"ECONIS","Status":"0","Hits":8},{"Id":"nsm","Label":"Newswires","Status":"0","Hits":303},{"Id":"bpr","Label":"Business
         Periodicals Index Retrospective: 1913-1982 (H.W. Wilson)","Status":"0","Hits":55},{"Id":"edshvr","Label":"Hoover''s
-        Company Profiles","Status":"0","Hits":29},{"Id":"edslex","Label":"LexisNexis
+        Company Profiles","Status":"0","Hits":29},{"Id":"edsilc","Label":"Informit
+        Literature & Culture Collection","Status":"0","Hits":7},{"Id":"edsind","Label":"Informit
+        Indigenous Collection","Status":"0","Hits":0},{"Id":"edslex","Label":"LexisNexis
         Academic: Law Reviews","Status":"0","Hits":26},{"Id":"edsasp","Label":"Alexander
-        Street Press","Status":"0","Hits":610},{"Id":"asx","Label":"","Status":"0","Hits":1834},{"Id":"edo","Label":"","Status":"0","Hits":2591},{"Id":"edb","Label":"","Status":"0","Hits":2985},{"Id":"edsjpi","Label":"Japanese
-        Periodical Index - 雑誌記事索引","Status":"0","Hits":9},{"Id":"edsjst","Label":"J-STAGE","Status":"0","Hits":31},{"Id":"edsoao","Label":"Grove
-        Art Online","Status":"0","Hits":0},{"Id":"edsoad","Label":"American National
-        Biography Online","Status":"0","Hits":0},{"Id":"edsomo","Label":"Grove Music
-        Online","Status":"0","Hits":0},{"Id":"edsupe","Label":"Archive of European
-        Integration","Status":"0","Hits":0},{"Id":"edsupi","Label":"Industry Studies
-        Working Papers","Status":"0","Hits":0},{"Id":"edsupa","Label":"Aphasiology
-        Archive","Status":"0","Hits":0},{"Id":"edsupp","Label":"PhilSci Archive","Status":"0","Hits":0},{"Id":"edsuph","Label":"Minority
-        Health Archive","Status":"0","Hits":0},{"Id":"edshlc","Label":"Harvard Library
-        Bibliographic Dataset","Status":"0","Hits":174},{"Id":"edsebo","Label":"Britannica
+        Street Press","Status":"0","Hits":611},{"Id":"asx","Label":"","Status":"0","Hits":1824},{"Id":"edo","Label":"","Status":"0","Hits":2567},{"Id":"edb","Label":"","Status":"0","Hits":2947},{"Id":"edsjpi","Label":"Japanese
+        Periodical Index - 雑誌記事索引","Status":"0","Hits":9},{"Id":"edsjst","Label":"J-STAGE","Status":"0","Hits":31},{"Id":"edsoad","Label":"American
+        National Biography Online","Status":"0","Hits":0},{"Id":"edsupe","Label":"Archive
+        of European Integration","Status":"0","Hits":0},{"Id":"edsupi","Label":"Industry
+        Studies Working Papers","Status":"0","Hits":0},{"Id":"edsuph","Label":"Minority
+        Health Archive","Status":"0","Hits":0},{"Id":"edsupa","Label":"Aphasiology
+        Archive","Status":"0","Hits":0},{"Id":"edsupp","Label":"PhilSci Archive","Status":"0","Hits":0},{"Id":"edshlc","Label":"Harvard
+        Library Bibliographic Dataset","Status":"0","Hits":174},{"Id":"edsebo","Label":"Britannica
         Online","Status":"0","Hits":3},{"Id":"edsdoj","Label":"Directory of Open Access
         Journals","Status":"0","Hits":95},{"Id":"edsper","Label":"Persée","Status":"0","Hits":0},{"Id":"edspio","Label":"Public
-        Information Online","Status":"0","Hits":0},{"Id":"edsers","Label":"eArticle","Status":"0","Hits":1},{"Id":"edsoap","Label":"OAPEN
-        Library","Status":"0","Hits":0},{"Id":"edsffr","Label":"Freedonia Focus Reports","Status":"0","Hits":1},{"Id":"edsabc","Label":"ABC-CLIO
+        Information Online","Status":"0","Hits":0},{"Id":"edsffr","Label":"Freedonia
+        Focus Reports","Status":"0","Hits":1},{"Id":"edsers","Label":"eArticle","Status":"0","Hits":0},{"Id":"edsabc","Label":"ABC-CLIO
         Social Studies Databases, School Edition","Status":"0","Hits":3},{"Id":"edsaca","Label":"ABC-CLIO
-        Social Studies Databases, Academic Edition","Status":"0","Hits":3},{"Id":"edsssb","Label":"Books24x7","Status":"0","Hits":0},{"Id":"edshol","Label":"HeinOnline","Status":"0","Hits":4},{"Id":"edsgsf","Label":"SOFIS
-        - Sozialwissenschaftliche Forschungsinformationen","Status":"0","Hits":0},{"Id":"edsgsl","Label":"SOLIS
-        - Sozialwissenschaftliche Literatur","Status":"0","Hits":5},{"Id":"edsocd","Label":"China\/Asia
-        On Demand","Status":"0","Hits":18},{"Id":"edsble","Label":"British Library
-        EThOS","Status":"0","Hits":5},{"Id":"edswbo","Label":"World Book","Status":"0","Hits":2},{"Id":"edsbre","Label":"Bridgeman
+        Social Studies Databases, Academic Edition","Status":"0","Hits":3},{"Id":"edshol","Label":"HeinOnline","Status":"0","Hits":4},{"Id":"edsgsl","Label":"SOLIS
+        - Sozialwissenschaftliche Literatur","Status":"0","Hits":5},{"Id":"edsoap","Label":"OAPEN
+        Library","Status":"0","Hits":0},{"Id":"edsocd","Label":"China\/Asia On Demand","Status":"0","Hits":18},{"Id":"edsble","Label":"British
+        Library EThOS","Status":"0","Hits":5},{"Id":"edswbo","Label":"World Book","Status":"0","Hits":2},{"Id":"edsbre","Label":"Bridgeman
         Education","Status":"0","Hits":12},{"Id":"edshld","Label":"Digital Access
         to Scholarship at Harvard (DASH)","Status":"0","Hits":1},{"Id":"edsjsr","Label":"JSTOR
-        Journals","Status":"0","Hits":52}]},"Data":{"RecordFormat":"EP Display","Records":[{"ResultId":1,"Header":{"DbId":"edsihs","DbLabel":"Informit
-        Humanities & Social Sciences Collection","An":"221456993819438","RelevancyScore":"2059","PubType":"Academic
-        Journal","PubTypeId":"academicJournal"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edsihs&AN=221456993819438","FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Sowing
-        time of popcorn during the summer harvest under supplemental irrigation in
-        Ferralic Nitisol and subtropical climate."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
-        fieldCode=&quot;AR&quot; term=&quot;%22Marques%2C+Odair+Jose%22&quot;&gt;Marques,
-        Odair Jose&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
-        term=&quot;%22Filho%2C+Pedro+Soares+Vidigal%22&quot;&gt;Filho, Pedro Soares
-        Vidigal&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
-        term=&quot;%22Scapim%2C+Carlos+Alberto%22&quot;&gt;Scapim, Carlos Alberto&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Bonato%2C+Carlos+Moacir%22&quot;&gt;Bonato,
-        Carlos Moacir&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
-        term=&quot;%22Okumura%2C+Ricardo+Shigueru%22&quot;&gt;Okumura, Ricardo Shigueru&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22da+Silva%2C+Luciano+Ivano%22&quot;&gt;da
-        Silva, Luciano Ivano&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
-        term=&quot;%22de+Souza%2C+Renan+Soares%22&quot;&gt;de Souza, Renan Soares&lt;\/searchLink&gt;"},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"Australian
-        Journal of Crop Science, Vol. 9, No. 5, May 2015: 413-423."},{"Name":"TitleSource","Label":"Source
-        Title","Group":"Src","Data":"&lt;searchLink fieldCode=&quot;JN&quot; term=&quot;%22Australian+Journal+of+Crop+Science%22&quot;&gt;Australian
-        Journal of Crop Science&lt;\/searchLink&gt;"},{"Name":"Subject","Label":"Subjects","Group":"Su","Data":"&lt;searchLink
-        fieldCode=&quot;DE&quot; term=&quot;%22Popcorn--Field+experiments%22&quot;&gt;Popcorn--Field
-        experiments&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
-        term=&quot;%22Corn--Sowing%22&quot;&gt;Corn--Sowing&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Grain--Yields%22&quot;&gt;Grain--Yields&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Plant+ecophysiology%22&quot;&gt;Plant
-        ecophysiology&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
-        term=&quot;%22Grain--Quality%22&quot;&gt;Grain--Quality&lt;\/searchLink&gt;"},{"Name":"URL","Label":"URL","Group":"URL","Data":"http:\/\/search.informit.com.au\/documentSummary;dn=221456993819438;res=IELHSS"}],"RecordInfo":{"BibRecord":{"BibEntity":{"PhysicalDescription":{"Pagination":{"PageCount":"11","StartPage":"413"}},"Subjects":[{"SubjectFull":"Popcorn--Field
-        experiments","Type":"general"},{"SubjectFull":"Corn--Sowing","Type":"general"},{"SubjectFull":"Grain--Yields","Type":"general"},{"SubjectFull":"Plant
-        ecophysiology","Type":"general"},{"SubjectFull":"Grain--Quality","Type":"general"}],"Titles":[{"TitleFull":"Sowing
-        time of popcorn during the summer harvest under supplemental irrigation in
-        Ferralic Nitisol and subtropical climate.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Marques,
-        Odair Jose"}}},{"PersonEntity":{"Name":{"NameFull":"Filho, Pedro Soares Vidigal"}}},{"PersonEntity":{"Name":{"NameFull":"Scapim,
-        Carlos Alberto"}}},{"PersonEntity":{"Name":{"NameFull":"Bonato, Carlos Moacir"}}},{"PersonEntity":{"Name":{"NameFull":"Okumura,
-        Ricardo Shigueru"}}},{"PersonEntity":{"Name":{"NameFull":"da Silva, Luciano
-        Ivano"}}},{"PersonEntity":{"Name":{"NameFull":"de Souza, Renan Soares"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"05","Type":"published","Y":"2015"}],"Identifiers":[{"Type":"issn-print","Value":"18352693"}],"Numbering":[{"Type":"volume","Value":"9"},{"Type":"issue","Value":"5"}],"Titles":[{"TitleFull":"Australian
-        Journal of Crop Science","Type":"main"}]}}]}}}},{"ResultId":2,"Header":{"DbId":"edsihs","DbLabel":"Informit
-        Humanities & Social Sciences Collection","An":"116478833750739","RelevancyScore":"2059","PubType":"Academic
-        Journal","PubTypeId":"academicJournal"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edsihs&AN=116478833750739","FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Combining
-        ability between tropical and temperate popcorn lines for seed quality and
-        agronomic traits."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
-        fieldCode=&quot;AR&quot; term=&quot;%22Silva+Cabral%2C+Pablo+Diego%22&quot;&gt;Silva
-        Cabral, Pablo Diego&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
-        term=&quot;%22Teixeira+do+Amaral%2C+Antonio%22&quot;&gt;Teixeira do Amaral,
-        Antonio&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
-        term=&quot;%22Pio+Viana%2C+Alexandre%22&quot;&gt;Pio Viana, Alexandre&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Duarte+Vieira%2C+Henrique%22&quot;&gt;Duarte
-        Vieira, Henrique&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
-        term=&quot;%22de+Jesus+Freitas%2C+Ismael+Lourenco%22&quot;&gt;de Jesus Freitas,
-        Ismael Lourenco&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
-        term=&quot;%22Vittorazzi%2C+Cassio%22&quot;&gt;Vittorazzi, Cassio&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Vivas%2C+Marcelo%22&quot;&gt;Vivas,
-        Marcelo&lt;\/searchLink&gt;"},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"Australian
-        Journal of Crop Science, Vol. 9, No. 4, Apr 2015: 256-263."},{"Name":"TitleSource","Label":"Source
-        Title","Group":"Src","Data":"&lt;searchLink fieldCode=&quot;JN&quot; term=&quot;%22Australian+Journal+of+Crop+Science%22&quot;&gt;Australian
-        Journal of Crop Science&lt;\/searchLink&gt;"},{"Name":"Subject","Label":"Subjects","Group":"Su","Data":"&lt;searchLink
-        fieldCode=&quot;DE&quot; term=&quot;%22Popcorn--Varieties%22&quot;&gt;Popcorn--Varieties&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Germination%22&quot;&gt;Germination&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Grain--Yields%22&quot;&gt;Grain--Yields&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Corn--Harvesting%22&quot;&gt;Corn--Harvesting&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Seeds--Quality%22&quot;&gt;Seeds--Quality&lt;\/searchLink&gt;"},{"Name":"SubjectGeographic","Label":"Geographic
-        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Brazil%22&quot;&gt;Brazil&lt;\/searchLink&gt;"},{"Name":"URL","Label":"URL","Group":"URL","Data":"http:\/\/search.informit.com.au\/documentSummary;dn=116478833750739;res=IELHSS"}],"RecordInfo":{"BibRecord":{"BibEntity":{"PhysicalDescription":{"Pagination":{"PageCount":"8","StartPage":"256"}},"Subjects":[{"SubjectFull":"Popcorn--Varieties","Type":"general"},{"SubjectFull":"Germination","Type":"general"},{"SubjectFull":"Grain--Yields","Type":"general"},{"SubjectFull":"Corn--Harvesting","Type":"general"},{"SubjectFull":"Seeds--Quality","Type":"general"},{"SubjectFull":"Brazil","Type":"general"}],"Titles":[{"TitleFull":"Combining
-        ability between tropical and temperate popcorn lines for seed quality and
-        agronomic traits.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Silva
-        Cabral, Pablo Diego"}}},{"PersonEntity":{"Name":{"NameFull":"Teixeira do Amaral,
-        Antonio"}}},{"PersonEntity":{"Name":{"NameFull":"Pio Viana, Alexandre"}}},{"PersonEntity":{"Name":{"NameFull":"Duarte
-        Vieira, Henrique"}}},{"PersonEntity":{"Name":{"NameFull":"de Jesus Freitas,
-        Ismael Lourenco"}}},{"PersonEntity":{"Name":{"NameFull":"Vittorazzi, Cassio"}}},{"PersonEntity":{"Name":{"NameFull":"Vivas,
-        Marcelo"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"04","Type":"published","Y":"2015"}],"Identifiers":[{"Type":"issn-print","Value":"18352693"}],"Numbering":[{"Type":"volume","Value":"9"},{"Type":"issue","Value":"4"}],"Titles":[{"TitleFull":"Australian
-        Journal of Crop Science","Type":"main"}]}}]}}}},{"ResultId":3,"Header":{"DbId":"a9h","DbLabel":"","An":"111108269","RelevancyScore":"2054","PubType":"Academic
-        Journal","PubTypeId":"academicJournal"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=a9h&AN=111108269","FullText":{"Links":[{"Type":"pdflink"}],"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Dynamic
-        Proteomic Characteristics and Network Integration Revealing Key Proteins for
-        Two Kernel Tissue Developments in Popcorn."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
-        fieldCode=&quot;AR&quot; term=&quot;%22Dong%2C+Yongbin%22&quot;&gt;Dong, Yongbin&lt;\/searchLink&gt;&lt;relatesTo&gt;1&lt;\/relatesTo&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Wang%2C+Qilei%22&quot;&gt;Wang,
-        Qilei&lt;\/searchLink&gt;&lt;relatesTo&gt;1&lt;\/relatesTo&gt;&lt;br \/&gt;&lt;searchLink
-        fieldCode=&quot;AR&quot; term=&quot;%22Zhang%2C+Long%22&quot;&gt;Zhang, Long&lt;\/searchLink&gt;&lt;relatesTo&gt;1&lt;\/relatesTo&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Du%2C+Chunguang%22&quot;&gt;Du,
-        Chunguang&lt;\/searchLink&gt;&lt;relatesTo&gt;2&lt;\/relatesTo&gt;&lt;br \/&gt;&lt;searchLink
-        fieldCode=&quot;AR&quot; term=&quot;%22Xiong%2C+Wenwei%22&quot;&gt;Xiong,
-        Wenwei&lt;\/searchLink&gt;&lt;relatesTo&gt;2&lt;\/relatesTo&gt;&lt;br \/&gt;&lt;searchLink
-        fieldCode=&quot;AR&quot; term=&quot;%22Chen%2C+Xinjian%22&quot;&gt;Chen, Xinjian&lt;\/searchLink&gt;&lt;relatesTo&gt;3&lt;\/relatesTo&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Deng%2C+Fei%22&quot;&gt;Deng,
-        Fei&lt;\/searchLink&gt;&lt;relatesTo&gt;1&lt;\/relatesTo&gt;&lt;br \/&gt;&lt;searchLink
-        fieldCode=&quot;AR&quot; term=&quot;%22Ma%2C+Zhiyan%22&quot;&gt;Ma, Zhiyan&lt;\/searchLink&gt;&lt;relatesTo&gt;1&lt;\/relatesTo&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Qiao%2C+Dahe%22&quot;&gt;Qiao,
-        Dahe&lt;\/searchLink&gt;&lt;relatesTo&gt;1&lt;\/relatesTo&gt;&lt;br \/&gt;&lt;searchLink
-        fieldCode=&quot;AR&quot; term=&quot;%22Hu%2C+Chunhui%22&quot;&gt;Hu, Chunhui&lt;\/searchLink&gt;&lt;relatesTo&gt;1&lt;\/relatesTo&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Ren%2C+Yangliu%22&quot;&gt;Ren,
-        Yangliu&lt;\/searchLink&gt;&lt;relatesTo&gt;1&lt;\/relatesTo&gt;&lt;br \/&gt;&lt;searchLink
-        fieldCode=&quot;AR&quot; term=&quot;%22Li%2C+Yuling%22&quot;&gt;Li, Yuling&lt;\/searchLink&gt;&lt;relatesTo&gt;1&lt;\/relatesTo&gt;&lt;i&gt;
-        yulingli@126.com&lt;\/i&gt;"},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"&lt;searchLink
-        fieldCode=&quot;JN&quot; term=&quot;%22PLoS+ONE%22&quot;&gt;PLoS ONE&lt;\/searchLink&gt;.
-        11\/20\/2015, Vol. 10 Issue 11, p1-22. 22p."},{"Name":"Subject","Label":"Subject
-        Terms","Group":"Su","Data":"*&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22CORN%22&quot;&gt;CORN&lt;\/searchLink&gt;&lt;br
-        \/&gt;*&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22METABOLISM%22&quot;&gt;METABOLISM&lt;\/searchLink&gt;&lt;br
-        \/&gt;*&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22POPCORN%22&quot;&gt;POPCORN&lt;\/searchLink&gt;&lt;br
-        \/&gt;*&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22PROTEOMICS%22&quot;&gt;PROTEOMICS&lt;\/searchLink&gt;&lt;br
-        \/&gt;*&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22ENDOSPERM%22&quot;&gt;ENDOSPERM&lt;\/searchLink&gt;&lt;br
-        \/&gt;*&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22PERICARP%22&quot;&gt;PERICARP&lt;\/searchLink&gt;&lt;br
-        \/&gt;*&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22COMPARATIVE+studies%22&quot;&gt;COMPARATIVE
-        studies&lt;\/searchLink&gt;"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Identifiers":[{"Type":"doi","Value":"10.1371\/journal.pone.0143181"}],"Languages":[{"Code":"eng","Text":"English"}],"PhysicalDescription":{"Pagination":{"PageCount":"22","StartPage":"1"}},"Subjects":[{"SubjectFull":"CORN","Type":"general"},{"SubjectFull":"METABOLISM","Type":"general"},{"SubjectFull":"POPCORN","Type":"general"},{"SubjectFull":"PROTEOMICS","Type":"general"},{"SubjectFull":"ENDOSPERM","Type":"general"},{"SubjectFull":"PERICARP","Type":"general"},{"SubjectFull":"COMPARATIVE
-        studies","Type":"general"}],"Titles":[{"TitleFull":"Dynamic Proteomic Characteristics
-        and Network Integration Revealing Key Proteins for Two Kernel Tissue Developments
-        in Popcorn.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Dong,
-        Yongbin"}}},{"PersonEntity":{"Name":{"NameFull":"Wang, Qilei"}}},{"PersonEntity":{"Name":{"NameFull":"Zhang,
-        Long"}}},{"PersonEntity":{"Name":{"NameFull":"Du, Chunguang"}}},{"PersonEntity":{"Name":{"NameFull":"Xiong,
-        Wenwei"}}},{"PersonEntity":{"Name":{"NameFull":"Chen, Xinjian"}}},{"PersonEntity":{"Name":{"NameFull":"Deng,
-        Fei"}}},{"PersonEntity":{"Name":{"NameFull":"Ma, Zhiyan"}}},{"PersonEntity":{"Name":{"NameFull":"Qiao,
-        Dahe"}}},{"PersonEntity":{"Name":{"NameFull":"Hu, Chunhui"}}},{"PersonEntity":{"Name":{"NameFull":"Ren,
-        Yangliu"}}},{"PersonEntity":{"Name":{"NameFull":"Li, Yuling"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"20","M":"11","Text":"11\/20\/2015","Type":"published","Y":"2015"}],"Identifiers":[{"Type":"issn-print","Value":"19326203"}],"Numbering":[{"Type":"volume","Value":"10"},{"Type":"issue","Value":"11"}],"Titles":[{"TitleFull":"PLoS
-        ONE","Type":"main"}]}}]}}}}]}}}'
+        Journals","Status":"0","Hits":51},{"Id":"hev","Label":"European Views of the
+        Americas: 1493 to 1750","Status":"0","Hits":0},{"Id":"edsmer","Label":"Mergent
+        Annual Reports Collection","Status":"0","Hits":0},{"Id":"edsman","Label":"Manuscriptorium
+        Digital Library","Status":"0","Hits":0},{"Id":"edsoao","Label":"Grove Art
+        Online","Status":"0","Hits":0},{"Id":"edsomo","Label":"Grove Music Online","Status":"0","Hits":0},{"Id":"edsssb","Label":"Books24x7","Status":"0","Hits":0},{"Id":"edsgsf","Label":"SOFIS
+        - Sozialwissenschaftliche Forschungsinformationen","Status":"0","Hits":0}]},"Data":{"RecordFormat":"EP
+        Display","Records":[{"ResultId":1,"Header":{"DbId":"edshlc","DbLabel":"Harvard
+        Library Bibliographic Dataset","An":"edshlc.013683931-2","RelevancyScore":"3533","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edshlc&AN=edshlc.013683931-2","ImageInfo":[{"Size":"thumb","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=S&Value=9780789326003"},{"Size":"medium","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9780789326003"}],"FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=bookitem&isbn=9780789326003&issn=&title=Popcorn!
+        : 100 sweet and savory recipes \/ Carol Beckerman.&volume=&issue=&date=20130101&btitle=Popcorn!
+        : 100 sweet and savory recipes.&aulast=Beckerman, Carol&spage=&sid=EBSCO:Harvard%20Library%20Bibliographic%20Dataset&pid=<authors>Beckerman,
+        Carol<\/authors><ui>edshlc.013683931-2<\/ui><date>20130101<\/date><db>Harvard%20Library%20Bibliographic%20Dataset<\/db>","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn!
+        : 100 sweet and savory recipes \/ Carol Beckerman."}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Cooking
+        (Popcorn)","Type":"general"},{"SubjectFull":"Popcorn","Type":"general"},{"SubjectFull":"Cookbooks","Type":"general"}],"Titles":[{"TitleFull":"Popcorn!
+        : 100 sweet and savory recipes.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Beckerman,
+        Carol"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"2013"}],"Identifiers":[{"Type":"isbn-print","Value":"9780789326003"},{"Type":"isbn-print","Value":"0789326000"}],"Titles":[{"TitleFull":"Popcorn!
+        : 100 sweet and savory recipes \/ Carol Beckerman.","Type":"main"}]}}]}}}},{"ResultId":2,"Header":{"DbId":"edshlc","DbLabel":"Harvard
+        Library Bibliographic Dataset","An":"edshlc.012840182-6","RelevancyScore":"3533","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edshlc&AN=edshlc.012840182-6","ImageInfo":[{"Size":"thumb","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=S&Value=9781570615795"},{"Size":"medium","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9781570615795"}],"FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=bookitem&isbn=9781570615795&issn=&title=Popcorn
+        \/ by Patrick Evans-Hylton.&volume=&issue=&date=20080101&btitle=Popcorn.&aulast=Evans-Hylton,
+        Patrick&spage=&sid=EBSCO:Harvard%20Library%20Bibliographic%20Dataset&pid=<authors>Evans-Hylton,
+        Patrick<\/authors><ui>edshlc.012840182-6<\/ui><date>20080101<\/date><db>Harvard%20Library%20Bibliographic%20Dataset<\/db>","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn
+        \/ by Patrick Evans-Hylton."}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Cooking
+        (Popcorn)","Type":"general"},{"SubjectFull":"Popcorn","Type":"general"}],"Titles":[{"TitleFull":"Popcorn.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Evans-Hylton,
+        Patrick"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"2008"}],"Identifiers":[{"Type":"isbn-print","Value":"9781570615795"},{"Type":"isbn-print","Value":"1570615799"}],"Titles":[{"TitleFull":"Popcorn
+        \/ by Patrick Evans-Hylton.","Type":"main"}]}}]}}}},{"ResultId":3,"Header":{"DbId":"edshlc","DbLabel":"Harvard
+        Library Bibliographic Dataset","An":"edshlc.006037753-4","RelevancyScore":"3533","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edshlc&AN=edshlc.006037753-4","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=bookitem&isbn=&issn=&title=Popcorn
+        \/ by Arthur M. Brunson and Dewayne L. Richardson.&volume=&issue=&date=19580101&atitle=Popcorn.&aulast=Brunson,
+        Arthur M.&spage=&sid=EBSCO:Harvard%20Library%20Bibliographic%20Dataset&pid=<authors>Brunson,
+        Arthur M.<\/authors><ui>edshlc.006037753-4<\/ui><date>19580101<\/date><db>Harvard%20Library%20Bibliographic%20Dataset<\/db>","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn
+        \/ by Arthur M. Brunson and Dewayne L. Richardson."}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Popcorn","Type":"general"},{"SubjectFull":"Cooking
+        (Popcorn)","Type":"general"}],"Titles":[{"TitleFull":"Popcorn.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Brunson,
+        Arthur M."}}},{"PersonEntity":{"Name":{"NameFull":"Richardson, Dewayne L."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1958"}],"Titles":[{"TitleFull":"Popcorn
+        \/ by Arthur M. Brunson and Dewayne L. Richardson.","Type":"main"}]}}]}}}}]}}}'
     http_version: 
-  recorded_at: Tue, 06 Sep 2016 18:54:39 GMT
+  recorded_at: Wed, 14 Sep 2016 17:10:32 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
@@ -350,18 +266,18 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 4421133e-ddfb-494d-b3a2-9895f067cbad
+      - 371790b4-cbf5-41fd-b248-f801b2491d2d
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Tue, 06 Sep 2016 18:54:38 GMT
+      - Wed, 14 Sep 2016 17:10:31 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"IsSuccessful":"y"}'
     http_version: 
-  recorded_at: Tue, 06 Sep 2016 18:54:39 GMT
+  recorded_at: Wed, 14 Sep 2016 17:10:32 GMT
 recorded_with: VCR 3.0.3

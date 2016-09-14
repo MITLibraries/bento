@@ -21,6 +21,12 @@ class SearchEds
 
   private
 
+  # Clean search term to match EDS expectations
+  # Commas cause problems as they seem to be interpreted as multiple params.
+  def clean_term(term)
+    URI.encode(term.strip.gsub(' ', '+').gsub(',', ''))
+  end
+
   # Translate EDS results into local result model
   def to_result(results)
     norm = {}
@@ -68,8 +74,8 @@ class SearchEds
   end
 
   def search_url(term)
-    [EDS_URL, '/edsapi/rest/Search?query=', URI.escape(term).to_s,
-     '&searchmode=all', "&resultsperpage=#{RESULTS_PER_BOX}",
+    [EDS_URL, '/edsapi/rest/Search?query=', clean_term(term),
+     '&searchmode=smart', "&resultsperpage=#{RESULTS_PER_BOX}",
      '&pagenumber=1', '&sort=relevance', '&highlight=n', '&includefacets=n',
      '&view=brief', '&autosuggest=n'].join('')
   end

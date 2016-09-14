@@ -1,0 +1,285 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/UIDAuth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD"}'
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '128'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 14 Sep 2016 17:09:07 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+    http_version:
+  recorded_at: Wed, 14 Sep 2016 17:09:07 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apibarton
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - eb03e026-7063-4140-b9fc-1a2463753d3c
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 14 Sep 2016 17:09:06 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+    http_version:
+  recorded_at: Wed, 14 Sep 2016 17:09:07 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&highlight=n&includefacets=n&pagenumber=1&query=R.%20F.%20Harrington%20Field%20computation%20by%20moment%20methods.%20Macmillan%201968&resultsperpage=3&searchmode=smart&sort=relevance&view=brief
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '11243'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 9d31b10e-49d4-42f4-ae02-512eb84bcf9f
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 14 Sep 2016 17:09:08 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,R.+F.+Harrington+Field+computation+by+moment+methods.+Macmillan+1968&sort=relevance&includefacets=n&searchmode=smart&autosuggest=n&view=brief&resultsperpage=3&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"R.
+        F. Harrington Field computation by moment methods. Macmillan 1968"},"RemoveAction":"removequery(1)"}]}},"SearchResult":{"Statistics":{"TotalHits":1268662,"TotalSearchTime":772,"Databases":[{"Id":"cat00916a","Label":"MIT
+        Barton Catalog","Status":"0","Hits":1267770},{"Id":"ir00145a","Label":"MIT
+        DOME for Discovery","Status":"0","Hits":204},{"Id":"cat01763a","Label":"MIT
+        Course Reserves","Status":"0","Hits":688}]},"Data":{"RecordFormat":"EP Display","Records":[{"ResultId":1,"Header":{"DbId":"cat00916a","DbLabel":"MIT
+        Barton Catalog","An":"mit.000654979","RelevancyScore":"1786","PubType":"eBook","PubTypeId":"ebook"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.000654979","ImageInfo":[{"Size":"thumb","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=S&Value=0780310144"},{"Size":"medium","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=0780310144"}],"CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/000654979?","Name":"MIT
+        Barton Catalog URL (cat00916a)","Category":"libCatalog","Text":"View catalog
+        record","MouseOverText":"Go to Barton catalog to find this at the MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Field
+        computation by moment methods \/ Roger F. Harrington."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Harrington%2C+Roger+F%2E%22&quot;&gt;Harrington,
+        Roger F.&lt;\/searchLink&gt;"},{"Name":"TypePub","Label":"Publication Type","Group":"TypPub","Data":"Book;
+        Computer File; eBook"},{"Name":"Subject","Label":"Subject Terms","Group":"Su","Data":"&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Physics+--+Data+processing%22&quot;&gt;Physics
+        -- Data processing&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Electromagnetic+theory+--+Data+processing%22&quot;&gt;Electromagnetic
+        theory -- Data processing&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Unified+field+theories+--+Data+processing%22&quot;&gt;Unified
+        field theories -- Data processing&lt;\/searchLink&gt;"},{"Name":"Author","Label":"Other
+        Authors","Group":"Au","Data":"&lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22IEEE+Antennas+and+Propagation+Society%2E%22&quot;&gt;IEEE
+        Antennas and Propagation Society.&lt;\/searchLink&gt;"},{"Name":"URL","Label":"Online
+        Access","Group":"URL","Data":"&lt;link linkTarget=&quot;URL&quot; linkTerm=&quot;https:\/\/library.mit.edu\/F\/?func=service-sfx&amp;doc_number=000654979&amp;line_number=0000&amp;service_type=RECORD&quot;
+        linkWindow=&quot;_blank&quot;&gt;Online Access - IEEE Xplore&lt;\/link&gt;"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Physics
+        -- Data processing","Type":"general"},{"SubjectFull":"Electromagnetic theory
+        -- Data processing","Type":"general"},{"SubjectFull":"Unified field theories
+        -- Data processing","Type":"general"}],"Titles":[{"TitleFull":"Field computation
+        by moment methods.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Harrington,
+        Roger F."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1993"}],"Identifiers":[{"Type":"isbn-print","Value":"0780310144"}],"Titles":[{"TitleFull":"Field
+        computation by moment methods \/ Roger F. Harrington.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Library
+        Storage Annex - Off Campus Collection","ShelfLocator":"QC52.H37 1993"}]}}]},{"ResultId":2,"Header":{"DbId":"cat00916a","DbLabel":"MIT
+        Barton Catalog","An":"mit.000239294","RelevancyScore":"1786","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.000239294","CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/000239294?","Name":"MIT
+        Barton Catalog URL (cat00916a)","Category":"libCatalog","Text":"View catalog
+        record","MouseOverText":"Go to Barton catalog to find this at the MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Field
+        computation by moment methods [by] Roger F. Harrington."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Harrington%2C+Roger+F%2E%22&quot;&gt;Harrington,
+        Roger F.&lt;\/searchLink&gt;"},{"Name":"TypePub","Label":"Publication Type","Group":"TypPub","Data":"Book"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Physics+--+Data+processing%22&quot;&gt;Physics
+        -- Data processing&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Electromagnetic+theory%22&quot;&gt;Electromagnetic theory&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Unified+field+theories%22&quot;&gt;Unified
+        field theories&lt;\/searchLink&gt;"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Physics
+        -- Data processing","Type":"general"},{"SubjectFull":"Electromagnetic theory","Type":"general"},{"SubjectFull":"Unified
+        field theories","Type":"general"}],"Titles":[{"TitleFull":"Field computation
+        by moment methods.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Harrington,
+        Roger F."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1968"}],"Titles":[{"TitleFull":"Field
+        computation by moment methods [by] Roger F. Harrington.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Library
+        Storage Annex - Off Campus Collection","ShelfLocator":"QC20.2.H311"}]}}]},{"ResultId":3,"Header":{"DbId":"ir00145a","DbLabel":"MIT
+        DOME for Discovery","An":"mit.1721.3.34960","RelevancyScore":"1282","PubType":"","PubTypeId":"unknown"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=ir00145a&AN=mit.1721.3.34960","CustomLinks":[{"Url":"http:\/\/hdl.handle.net\/1721.3\/34960?","Name":"MIT
+        IR Link (ir00145a)","Category":"libCatalog","Text":"Retrieve Item in MIT DOME","MouseOverText":"Retrieve
+        Item in MIT DOME"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Elevated
+        View of Kresge Auditorium, Rockwell Cage, and Briggs Field"},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"creation
+        date: between 1954-1959"},{"Name":"Publisher","Label":"Publisher","Group":"PublrInfo","Data":"Repository:
+        Rotch Visual Collections, Massachusetts Institute of Technology (Cambridge,
+        Massachusetts, United States) ID: Kepes\/Lynch Collection, 58.10"},{"Name":"NoteTitleSource","Label":"Original
+        Material","Group":"SrcInfo","Data":"20.32 x 25.4 cm (8 x 10 inches)&lt;br
+        \/&gt;gelatin silver prints"},{"Name":"Subject","Label":"Subject Terms","Group":"Su","Data":"&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22City+and+town+life%22&quot;&gt;City
+        and town life&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Auditoriums%22&quot;&gt;Auditoriums&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Cambridge+%28Mass%2E%29%22&quot;&gt;Cambridge
+        (Mass.)&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Sports+buildings%22&quot;&gt;Sports buildings&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Massachusetts+Institute+of+Technology%22&quot;&gt;Massachusetts
+        Institute of Technology&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Urban+areas%22&quot;&gt;Urban areas&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Land+use%2C+Urban%22&quot;&gt;Land
+        use, Urban&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22City+planning%22&quot;&gt;City planning&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Urban+planning+and+environment%22&quot;&gt;Urban
+        planning and environment&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Documentary+photography%22&quot;&gt;Documentary photography&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22MIT+Campus+%28Cambridge%2C+MA%29%22&quot;&gt;MIT
+        Campus (Cambridge, MA)&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Kepes%2FLynch+Photograph+Collection%22&quot;&gt;Kepes\/Lynch
+        Photograph Collection&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Kresge+Auditorium%22&quot;&gt;Kresge Auditorium&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Rockwell+Cage+%28MIT%29%22&quot;&gt;Rockwell
+        Cage (MIT)&lt;\/searchLink&gt;"},{"Name":"SubjectGeographic","Label":"Subject
+        Geographic","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Cambridge+%28Massachusetts%2C+United+States%29%22&quot;&gt;Cambridge
+        (Massachusetts, United States)&lt;\/searchLink&gt;"},{"Name":"NoteTitleSource","Label":"Relation","Group":"SrcInfo","Data":"135469"},{"Name":"URL","Label":"Access
+        URL","Group":"URL","Data":"&lt;link linkTarget=&quot;URL&quot; linkTerm=&quot;http:\/\/hdl.handle.net\/1721.3\/34960&quot;
+        linkWindow=&quot;_blank&quot;&gt;http:\/\/hdl.handle.net\/1721.3\/34960&lt;\/link&gt;"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Subjects":[{"SubjectFull":"City
+        and town life","Type":"general"},{"SubjectFull":"Auditoriums","Type":"general"},{"SubjectFull":"Cambridge
+        (Mass.)","Type":"general"},{"SubjectFull":"Sports buildings","Type":"general"},{"SubjectFull":"Massachusetts
+        Institute of Technology","Type":"general"},{"SubjectFull":"Urban areas","Type":"general"},{"SubjectFull":"Land
+        use, Urban","Type":"general"},{"SubjectFull":"City planning","Type":"general"},{"SubjectFull":"Urban
+        planning and environment","Type":"general"},{"SubjectFull":"Documentary photography","Type":"general"},{"SubjectFull":"MIT
+        Campus (Cambridge, MA)","Type":"general"},{"SubjectFull":"Kepes\/Lynch Photograph
+        Collection","Type":"general"},{"SubjectFull":"Kresge Auditorium","Type":"general"},{"SubjectFull":"Rockwell
+        Cage (MIT)","Type":"general"},{"SubjectFull":"Cambridge (Massachusetts, United
+        States)","Type":"general"}],"Titles":[{"TitleFull":"Elevated View of Kresge
+        Auditorium, Rockwell Cage, and Briggs Field","Type":"main"}]},"BibRelationships":{"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1954"}]}}]}}}}]}}}'
+    http_version:
+  recorded_at: Wed, 14 Sep 2016 17:09:08 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 371790b4-cbf5-41fd-b248-f801b2491d2d
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 14 Sep 2016 17:10:31 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"IsSuccessful":"y"}'
+    http_version:
+  recorded_at: Wed, 14 Sep 2016 17:09:08 GMT
+recorded_with: VCR 3.0.3

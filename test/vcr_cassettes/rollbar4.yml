@@ -1,0 +1,316 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/UIDAuth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD"}'
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '128'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 14 Sep 2016 17:13:12 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+    http_version:
+  recorded_at: Wed, 14 Sep 2016 17:13:13 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apinoaleph
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '100'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 012aaccc-78f3-4835-96c1-82897f27e840
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 14 Sep 2016 17:13:13 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+    http_version:
+  recorded_at: Wed, 14 Sep 2016 17:13:13 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&highlight=n&includefacets=n&pagenumber=1&query=R.%20F.%20Harrington%20Field%20computation%20by%20moment%20methods.%20Macmillan%201968&resultsperpage=3&searchmode=smart&sort=relevance&view=brief
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '15152'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 72789bef-eae0-400a-94c3-8a2b54027efd
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 14 Sep 2016 17:13:14 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,R.+F.+Harrington+Field+computation+by+moment+methods.+Macmillan+1968&sort=relevance&includefacets=n&searchmode=smart&autosuggest=n&view=brief&resultsperpage=3&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"R.
+        F. Harrington Field computation by moment methods. Macmillan 1968"},"RemoveAction":"removequery(1)"}]}},"SearchResult":{"Statistics":{"TotalHits":77612346,"TotalSearchTime":1183,"Databases":[{"Id":"eric","Label":"ERIC","Status":"0","Hits":452754},{"Id":"bwh","Label":"","Status":"0","Hits":426318},{"Id":"egh","Label":"Environment
+        Index","Status":"0","Hits":1013413},{"Id":"ecn","Label":"EconLit","Status":"0","Hits":462463},{"Id":"cmedm","Label":"MEDLINE","Status":"0","Hits":9177031},{"Id":"ufh","Label":"Communication
+        & Mass Media Complete","Status":"0","Hits":80111},{"Id":"fyh","Label":"Women''s
+        Studies International","Status":"0","Hits":98234},{"Id":"bth","Label":"Business
+        Source Complete","Status":"0","Hits":1197025},{"Id":"lxh","Label":"Library,
+        Information Science & Technology Abstracts","Status":"0","Hits":158052},{"Id":"nih","Label":"The
+        Nation Archive","Status":"0","Hits":13215},{"Id":"mah","Label":"Music Index","Status":"0","Hits":164263},{"Id":"a9h","Label":"","Status":"0","Hits":5926185},{"Id":"ahl","Label":"America:
+        History & Life","Status":"0","Hits":104782},{"Id":"hia","Label":"Historical
+        Abstracts","Status":"0","Hits":96044},{"Id":"8gh","Label":"GreenFILE","Status":"0","Hits":187455},{"Id":"edsnbk","Label":"NewsBank","Status":"0","Hits":3667684},{"Id":"edslns","Label":"LexisNexis
+        U.S. Serial Set Digital Collection","Status":"0","Hits":16623},{"Id":"hev","Label":"European
+        Views of the Americas: 1493 to 1750","Status":"0","Hits":540},{"Id":"edsbl","Label":"British
+        Library Document Supply Centre Inside Serials & Conference Proceedings","Status":"0","Hits":12243701},{"Id":"edsnba","Label":"NewsBank
+        - Archives","Status":"0","Hits":1890584},{"Id":"edsgpr","Label":"Government
+        Printing Office Catalog","Status":"0","Hits":157294},{"Id":"edspvh","Label":"PsycCRITIQUES","Status":"0","Hits":8948},{"Id":"edspdh","Label":"PsycARTICLES","Status":"0","Hits":60658},{"Id":"edspzh","Label":"PsycBOOKS","Status":"0","Hits":18031},{"Id":"edswah","Label":"Arts
+        & Humanities Citation Index","Status":"0","Hits":462255},{"Id":"edselp","Label":"ScienceDirect","Status":"0","Hits":3887687},{"Id":"edspia","Label":"DBPIA","Status":"0","Hits":148322},{"Id":"edsoso","Label":"Oxford
+        Scholarship Online","Status":"0","Hits":19590},{"Id":"edsoho","Label":"Oxford
+        Handbooks Online","Status":"0","Hits":7878},{"Id":"edsarx","Label":"arXiv","Status":"0","Hits":526942},{"Id":"edsibc","Label":"Informit
+        Business Collection","Status":"0","Hits":1716},{"Id":"edsiec","Label":"Informit
+        Engineering Collection","Status":"0","Hits":12570},{"Id":"edsihc","Label":"Informit
+        Health Collection","Status":"0","Hits":8559},{"Id":"edsihs","Label":"Informit
+        Humanities & Social Sciences Collection","Status":"0","Hits":9782},{"Id":"nlebk","Label":"eBook
+        Collection (EBSCOhost)","Status":"0","Hits":1207},{"Id":"edsmer","Label":"Mergent
+        Annual Reports Collection","Status":"0","Hits":4464},{"Id":"hma","Label":"Humanities
+        Abstracts (H.W. Wilson)","Status":"0","Hits":93829},{"Id":"hsr","Label":"Humanities
+        & Social Sciences Index Retrospective: 1907-1984 (H.W. Wilson)","Status":"0","Hits":143368},{"Id":"air","Label":"Art
+        Index Retrospective (H.W. Wilson)","Status":"0","Hits":79707},{"Id":"rga","Label":"Readers''
+        Guide Abstracts (H.W. Wilson)","Status":"0","Hits":191161},{"Id":"rgr","Label":"Readers''
+        Guide Retrospective: 1890-1982 (H.W. Wilson)","Status":"0","Hits":259611},{"Id":"edsman","Label":"Manuscriptorium
+        Digital Library","Status":"0","Hits":726},{"Id":"edskis","Label":"Korean Studies
+        Information Service System (KISS)","Status":"0","Hits":121258},{"Id":"edsaan","Label":"Accessible
+        Archives","Status":"0","Hits":11863},{"Id":"edscrc","Label":"Credo Reference
+        Collections","Status":"0","Hits":253305},{"Id":"edszbw","Label":"ECONIS","Status":"0","Hits":196228},{"Id":"nsm","Label":"Newswires","Status":"0","Hits":117061},{"Id":"bpr","Label":"Business
+        Periodicals Index Retrospective: 1913-1982 (H.W. Wilson)","Status":"0","Hits":572609},{"Id":"edshvr","Label":"Hoover''s
+        Company Profiles","Status":"0","Hits":9742},{"Id":"edsilc","Label":"Informit
+        Literature & Culture Collection","Status":"0","Hits":2846},{"Id":"edsind","Label":"Informit
+        Indigenous Collection","Status":"0","Hits":1051},{"Id":"edslex","Label":"LexisNexis
+        Academic: Law Reviews","Status":"0","Hits":46655},{"Id":"edsasp","Label":"Alexander
+        Street Press","Status":"0","Hits":110866},{"Id":"asx","Label":"","Status":"0","Hits":5734796},{"Id":"edo","Label":"","Status":"0","Hits":4120573},{"Id":"edb","Label":"","Status":"0","Hits":7679793},{"Id":"edsjpi","Label":"Japanese
+        Periodical Index - 雑誌記事索引","Status":"0","Hits":12214975},{"Id":"edsjst","Label":"J-STAGE","Status":"0","Hits":180364},{"Id":"edsoao","Label":"Grove
+        Art Online","Status":"0","Hits":2002},{"Id":"edsoad","Label":"American National
+        Biography Online","Status":"0","Hits":1245},{"Id":"edsomo","Label":"Grove
+        Music Online","Status":"0","Hits":1010},{"Id":"edsupe","Label":"Archive of
+        European Integration","Status":"0","Hits":2234},{"Id":"edsupi","Label":"Industry
+        Studies Working Papers","Status":"0","Hits":42},{"Id":"edsuph","Label":"Minority
+        Health Archive","Status":"0","Hits":740},{"Id":"edsupa","Label":"Aphasiology
+        Archive","Status":"0","Hits":325},{"Id":"edsupp","Label":"PhilSci Archive","Status":"0","Hits":855},{"Id":"edshlc","Label":"Harvard
+        Library Bibliographic Dataset","Status":"0","Hits":909134},{"Id":"edsebo","Label":"Britannica
+        Online","Status":"0","Hits":3232},{"Id":"edsdoj","Label":"Directory of Open
+        Access Journals","Status":"0","Hits":170391},{"Id":"edsper","Label":"Persée","Status":"0","Hits":26791},{"Id":"edspio","Label":"Public
+        Information Online","Status":"0","Hits":407},{"Id":"edsffr","Label":"Freedonia
+        Focus Reports","Status":"0","Hits":21},{"Id":"edsers","Label":"eArticle","Status":"0","Hits":25829},{"Id":"edsabc","Label":"ABC-CLIO
+        Social Studies Databases, School Edition","Status":"0","Hits":3604},{"Id":"edsaca","Label":"ABC-CLIO
+        Social Studies Databases, Academic Edition","Status":"0","Hits":3387},{"Id":"edsssb","Label":"Books24x7","Status":"0","Hits":3562},{"Id":"edshol","Label":"HeinOnline","Status":"0","Hits":182356},{"Id":"edsgsf","Label":"SOFIS
+        - Sozialwissenschaftliche Forschungsinformationen","Status":"0","Hits":4674},{"Id":"edsgsl","Label":"SOLIS
+        - Sozialwissenschaftliche Literatur","Status":"0","Hits":35655},{"Id":"edsoap","Label":"OAPEN
+        Library","Status":"0","Hits":438},{"Id":"edsocd","Label":"China\/Asia On Demand","Status":"0","Hits":159778},{"Id":"edsble","Label":"British
+        Library EThOS","Status":"0","Hits":82186},{"Id":"edswbo","Label":"World Book","Status":"0","Hits":511},{"Id":"edsbre","Label":"Bridgeman
+        Education","Status":"0","Hits":40329},{"Id":"edshld","Label":"Digital Access
+        to Scholarship at Harvard (DASH)","Status":"0","Hits":7033},{"Id":"edsjsr","Label":"JSTOR
+        Journals","Status":"0","Hits":1089808}]},"Data":{"RecordFormat":"EP Display","Records":[{"ResultId":1,"Header":{"DbId":"edshlc","DbLabel":"Harvard
+        Library Bibliographic Dataset","An":"edshlc.006984420-8","RelevancyScore":"1984","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edshlc&AN=edshlc.006984420-8","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=bookitem&isbn=&issn=&title=Field
+        computation by moment methods [by] Roger F. Harrington.&volume=&issue=&date=19680101&atitle=Field
+        computation by moment methods.&aulast=Harrington, Roger F.&spage=&sid=EBSCO:Harvard%20Library%20Bibliographic%20Dataset&pid=<authors>Harrington,
+        Roger F.<\/authors><ui>edshlc.006984420-8<\/ui><date>19680101<\/date><db>Harvard%20Library%20Bibliographic%20Dataset<\/db>","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Field
+        computation by moment methods [by] Roger F. Harrington."}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Physics
+        -- Data processing","Type":"general"},{"SubjectFull":"Electromagnetic theory","Type":"general"},{"SubjectFull":"Unified
+        field theories","Type":"general"}],"Titles":[{"TitleFull":"Field computation
+        by moment methods.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Harrington,
+        Roger F."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1968"}],"Titles":[{"TitleFull":"Field
+        computation by moment methods [by] Roger F. Harrington.","Type":"main"}]}}]}}}},{"ResultId":2,"Header":{"DbId":"edsarx","DbLabel":"arXiv","An":"1003.4046","RelevancyScore":"1516","PubType":"Report","PubTypeId":"report"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edsarx&AN=1003.4046","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"http:\/\/arxiv.org\/abs\/1003.4046?","Name":"EDS
+        - Arxiv","Category":"fullText","Text":"View this record from Arxiv","MouseOverText":"View
+        this record from Arxiv"},{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=bookitem&isbn=&issn=&title=&volume=&issue=Journal%20of%20Turbulence%2C%2011%2837%29%202010&date=20100321&atitle=Exploring
+        the beta distribution in variable-density turbulent mixing&aulast=Bakosi,
+        J.&spage=&sid=EBSCO:arXiv&pid=<authors>Bakosi, J.<\/authors><ui>1003.4046<\/ui><date>20100321<\/date><db>arXiv<\/db>","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Exploring
+        the beta distribution in variable-density turbulent mixing"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Bakosi%2C+J%2E%22&quot;&gt;Bakosi,
+        J.&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
+        term=&quot;%22Ristorcelli%2C+J%2E+R%2E%22&quot;&gt;Ristorcelli, J. R.&lt;\/searchLink&gt;"},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"Journal
+        of Turbulence, 11(37) 2010"},{"Name":"Subject","Label":"Subjects","Group":"Su","Data":"&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Physics+-+Fluid+Dynamics%22&quot;&gt;Physics
+        - Fluid Dynamics&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Physics+-+Computational+Physics%22&quot;&gt;Physics - Computational
+        Physics&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%2276F25%2C+76F55%2C+76M35%22&quot;&gt;76F25, 76F55, 76M35&lt;\/searchLink&gt;"},{"Name":"URL","Label":"URL","Group":"URL","Data":"&lt;link
+        linkTarget=&quot;URL&quot; linkTerm=&quot;http:\/\/arxiv.org\/abs\/1003.4046&quot;
+        linkWindow=&quot;_blank&quot;&gt;http:\/\/arxiv.org\/abs\/1003.4046&lt;\/link&gt;"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Identifiers":[{"Type":"doi","Value":"10.1080\/14685248.2010.510843"}],"Subjects":[{"SubjectFull":"Physics
+        - Fluid Dynamics","Type":"general"},{"SubjectFull":"Physics - Computational
+        Physics","Type":"general"},{"SubjectFull":"76F25, 76F55, 76M35","Type":"general"}],"Titles":[{"TitleFull":"Exploring
+        the beta distribution in variable-density turbulent mixing","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Bakosi,
+        J."}}},{"PersonEntity":{"Name":{"NameFull":"Ristorcelli, J. R."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"21","M":"03","Type":"published","Y":"2010"}],"Numbering":[{"Type":"issue","Value":"Journal
+        of Turbulence, 11(37) 2010"}]}}]}}}},{"ResultId":3,"Header":{"DbId":"edsarx","DbLabel":"arXiv","An":"cond-mat\/0105326","RelevancyScore":"1357","PubType":"Report","PubTypeId":"report"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edsarx&AN=cond-mat%2f0105326","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"http:\/\/arxiv.org\/abs\/cond-mat\/0105326?","Name":"EDS
+        - Arxiv","Category":"fullText","Text":"View this record from Arxiv","MouseOverText":"View
+        this record from Arxiv"},{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=bookitem&isbn=&issn=&title=&volume=&issue=Physical%20Review%20E%2064%2C%20article%20%23%20036117%20%282001%29&date=20010516&atitle=Correlation
+        functions, free energies and magnetizations in the two-dimensional random-field
+        Ising model&aulast=de Queiroz, S. L. A.&spage=&sid=EBSCO:arXiv&pid=<authors>de
+        Queiroz, S. L. A.<\/authors><ui>cond-mat%2F0105326<\/ui><date>20010516<\/date><db>arXiv<\/db>","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Correlation
+        functions, free energies and magnetizations in the two-dimensional random-field
+        Ising model"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22de+Queiroz%2C+S%2E+L%2E+A%2E%22&quot;&gt;de
+        Queiroz, S. L. A.&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
+        term=&quot;%22Stinchcombe%2C+R%2E+B%2E%22&quot;&gt;Stinchcombe, R. B.&lt;\/searchLink&gt;"},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"Physical
+        Review E 64, article # 036117 (2001)"},{"Name":"Subject","Label":"Subjects","Group":"Su","Data":"&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Condensed+Matter+-+Statistical+Mechanics%22&quot;&gt;Condensed
+        Matter - Statistical Mechanics&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Condensed+Matter+-+Disordered+Systems+and+Neural+Networks%22&quot;&gt;Condensed
+        Matter - Disordered Systems and Neural Networks&lt;\/searchLink&gt;"},{"Name":"URL","Label":"URL","Group":"URL","Data":"&lt;link
+        linkTarget=&quot;URL&quot; linkTerm=&quot;http:\/\/arxiv.org\/abs\/cond-mat\/0105326&quot;
+        linkWindow=&quot;_blank&quot;&gt;http:\/\/arxiv.org\/abs\/cond-mat\/0105326&lt;\/link&gt;"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Identifiers":[{"Type":"doi","Value":"10.1103\/PhysRevE.64.036117"}],"Subjects":[{"SubjectFull":"Condensed
+        Matter - Statistical Mechanics","Type":"general"},{"SubjectFull":"Condensed
+        Matter - Disordered Systems and Neural Networks","Type":"general"}],"Titles":[{"TitleFull":"Correlation
+        functions, free energies and magnetizations in the two-dimensional random-field
+        Ising model","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"de
+        Queiroz, S. L. A."}}},{"PersonEntity":{"Name":{"NameFull":"Stinchcombe, R.
+        B."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"16","M":"05","Type":"published","Y":"2001"}],"Numbering":[{"Type":"issue","Value":"Physical
+        Review E 64, article # 036117 (2001)"}]}}]}}}}]}}}'
+    http_version:
+  recorded_at: Wed, 14 Sep 2016 17:13:14 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 371790b4-cbf5-41fd-b248-f801b2491d2d
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 14 Sep 2016 17:10:31 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"IsSuccessful":"y"}'
+    http_version:
+  recorded_at: Wed, 14 Sep 2016 17:13:14 GMT
+recorded_with: VCR 3.0.3
