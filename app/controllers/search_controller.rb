@@ -8,8 +8,6 @@ class SearchController < ApplicationController
     # async searching anyway so I'm violating that rule for now with the
     # anticipation of the async work.
 
-    today = Time.zone.today.strftime('%Y%m%d')
-
     # NOTE: The cache keys used below use a combination of the api endpoint
     # name, the search parameter, and today's date to allow us to cache calls
     # for the current date without ever worrying about expiring caches.
@@ -21,20 +19,34 @@ class SearchController < ApplicationController
       return redirect_to search_url
     end
 
-    @articles = Rails.cache.fetch("articles_#{params[:q]}_#{today}") do
-      SearchEds.new.search(strip_q, ENV['EDS_NO_ALEPH_PROFILE'])
-    end
-
-    @books = Rails.cache.fetch("books_#{params[:q]}_#{today}") do
-      SearchEds.new.search(strip_q, ENV['EDS_ALEPH_PROFILE'])
-    end
-
-    @google = Rails.cache.fetch("google_#{strip_q}_#{today}") do
-      SearchGoogle.new.search(strip_q)
-    end
+    @articles = articles
+    @books = books
+    @google = google
   end
 
   private
+
+  def today
+    Time.zone.today.strftime('%Y%m%d')
+  end
+
+  def articles
+    Rails.cache.fetch("articles_#{params[:q]}_#{today}") do
+      SearchEds.new.search(strip_q, ENV['EDS_NO_ALEPH_PROFILE'])
+    end
+  end
+
+  def books
+    Rails.cache.fetch("books_#{params[:q]}_#{today}") do
+      SearchEds.new.search(strip_q, ENV['EDS_ALEPH_PROFILE'])
+    end
+  end
+
+  def google
+    Rails.cache.fetch("google_#{strip_q}_#{today}") do
+      SearchGoogle.new.search(strip_q)
+    end
+  end
 
   def strip_q
     params[:q].strip
