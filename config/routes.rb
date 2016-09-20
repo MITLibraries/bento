@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   root to: 'search#index'
   get 'search', to: 'search#index'
   get 'search/bento', to: 'search#bento'
+  get 'search/search', to: 'search#search'
 end
