@@ -86,9 +86,10 @@ class SearchEdsTest < ActiveSupport::TestCase
     # https://rollbar.com/mit-libraries/bento/items/4/
     # The issue was the commas being treated delimiters
     VCR.use_cassette('rollbar4') do
-      searchterm = 'R. F. Harrington, Field computation by moment methods. Macmillan, 1968'
+      searchterm = 'R. F. Harrington, Field computation by moment methods. '\
+                   'Macmillan, 1968'
       query = SearchEds.new.search(searchterm, 'apinoaleph')
-      assert_equal(77612346, query['apinoaleph']['total'])
+      assert_equal(77_612_346, query['apinoaleph']['total'])
     end
   end
 
@@ -96,17 +97,21 @@ class SearchEdsTest < ActiveSupport::TestCase
     # https://rollbar.com/mit-libraries/bento/items/4/
     # The issue was the commas being treated delimiters
     VCR.use_cassette('rollbar4a') do
-      searchterm = 'R. F. Harrington, Field computation by moment methods. Macmillan, 1968'
+      searchterm = 'R. F. Harrington, Field computation by moment methods. '\
+                   'Macmillan, 1968'
       query = SearchEds.new.search(searchterm, 'apibarton')
-      assert_equal(1268662, query['apibarton']['total'])
+      assert_equal(1_268_662, query['apibarton']['total'])
     end
   end
 
   test 'cleaner rf harrington' do
     VCR.use_cassette('rollbar4b') do
-      searchterm = 'R. F. Harrington, Field computation by moment methods. Macmillan, 1968'
-      expected = 'R.+F.+Harrington+Field+computation+by+moment+methods.+Macmillan+1968'
-      assert_equal(expected, SearchEds.new.send(:clean_term, searchterm))
+      searchterm = 'R. F. Harrington, Field computation by moment methods. '\
+                   'Macmillan, 1968'
+      assert_equal(
+        'R.+F.+Harrington+Field+computation+by+moment+methods.+Macmillan+1968',
+        SearchEds.new.send(:clean_term, searchterm)
+      )
     end
   end
 end

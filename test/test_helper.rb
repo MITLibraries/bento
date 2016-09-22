@@ -18,28 +18,20 @@ VCR.configure do |config|
   config.hook_into :webmock
 
   config.filter_sensitive_data('FakeAuthenticationtoken') do |interaction|
-    if interaction.request.headers['X-Authenticationtoken']
-      interaction.request.headers['X-Authenticationtoken'].first
-    end
+    interaction.request.headers['X-Authenticationtoken']&.first
   end
   config.filter_sensitive_data('FakeAuthenticationtoken') do |interaction|
-    if interaction.response.headers['X-Authenticationtoken']
-      interaction.response.headers['X-Authenticationtoken'].first
-    end
+    interaction.response.headers['X-Authenticationtoken']&.first
   end
   config.filter_sensitive_data('FakeAuthenticationtoken') do |interaction|
     JSON.parse(interaction.response.body)['AuthToken']
   end
 
   config.filter_sensitive_data('FakeSessiontoken') do |interaction|
-    if interaction.request.headers['X-Sessiontoken']
-      interaction.request.headers['X-Sessiontoken'].first
-    end
+    interaction.request.headers['X-Sessiontoken']&.first
   end
   config.filter_sensitive_data('FakeSessiontoken') do |interaction|
-    if interaction.response.headers['X-Sessiontoken']
-      interaction.response.headers['X-Sessiontoken'].first
-    end
+    interaction.response.headers['X-Sessiontoken']&.first
   end
   config.filter_sensitive_data('FakeSessiontoken') do |interaction|
     JSON.parse(interaction.response.body)['SessionToken']

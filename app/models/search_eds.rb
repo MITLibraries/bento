@@ -24,7 +24,7 @@ class SearchEds
   # Clean search term to match EDS expectations
   # Commas cause problems as they seem to be interpreted as multiple params.
   def clean_term(term)
-    URI.encode(term.strip.gsub(' ', '+').gsub(',', ''))
+    URI.encode(term.strip.tr(' ', '+').delete(','))
   end
 
   # Translate EDS results into local result model
@@ -40,11 +40,14 @@ class SearchEds
     return unless results['SearchResult']['Data']['Records']
     results['SearchResult']['Data']['Records'].each do |record|
       record.extend Hashie::Extensions::DeepFind
-      result = Result.new(title(record), year(record),
-                          link(record), type(record))
+      result = result(record)
       result.authors = authors(record)
       norm['results'] << result
     end
+  end
+
+  def result(record)
+    Result.new(title(record), year(record), link(record), type(record))
   end
 
   def title(record)

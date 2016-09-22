@@ -2,45 +2,32 @@
 
 <div class="col-sm-4">
   <h2>Articles and Stuff</h2>
-
-  <% @articles['apinoaleph']['results'].each do |result| %>
-    <%= render partial: "result", locals: {result: result} %>
-  <% end %>
-
-  <% if @articles['apinoaleph']['total'] > 0 %>
-    <%= link_to("View all #{@articles['apinoaleph']['total']} like this.",
-                "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
-  <% else %>
-    No results found.
-  <% end %>
+  <div id="articles_content">
+    Loading results...
+    <i class="fa fa-spinner fa-spin"></i>
+  </div>
 </div>
 
 <div class="col-sm-4">
   <h2>Books and Stuff</h2>
-
-  <% @books['apibarton']['results'].each do |result| %>
-    <%= render partial: "result", locals: {result: result} %>
-  <% end %>
-
-  <% if @books['apibarton']['total'] > 0 %>
-    <%= link_to("View all #{@books['apibarton']['total']} like this.",
-                "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
-  <% else %>
-    No results found.
-  <% end %>
+  <div id="books_content">
+    Loading results...
+    <i class="fa fa-spinner fa-spin"></i>
+  </div>
 </div>
 
 <div class="col-sm-4">
   <h2>Website and Guides</h2>
-
-  <% @google['results'].each do |result| %>
-    <%= render partial: "result", locals: {result: result} %>
-  <% end %>
-
-  <% if @google['total'] > 0 %>
-    <%= link_to("View all #{@google['total']} like this.",
-                "https://cse.google.com/cse?cx=#{ENV['GOOGLE_CUSTOM_SEARCH_ID']}&ie=UTF-8&q=#{params[:q]}&sa=Search#gsc.tab=0&gsc.q=#{params[:q]}") %>
-  <% else %>
-    No results found.
-  <% end %>
+  <div id="website_content">
+    Loading results...
+    <i class="fa fa-spinner fa-spin"></i>
+  </div>
 </div>
+
+<script>
+  $('#articles_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=articles")
+
+  $('#books_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=books")
+
+  $('#website_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=google")
+</script>
