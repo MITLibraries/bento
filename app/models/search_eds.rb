@@ -39,7 +39,6 @@ class SearchEds
   def extract_results(results, norm)
     return unless results['SearchResult']['Data']['Records']
     results['SearchResult']['Data']['Records'].each do |record|
-      record.extend Hashie::Extensions::DeepFind
       result = result(record)
       result.authors = authors(record)
       norm['results'] << result
@@ -56,24 +55,35 @@ class SearchEds
   end
 
   def year(record)
-    relationships(record).deep_find('Y')
+    bibentity(record)['Dates'][0]['Y']
   end
 
   def link(record)
-    record.deep_find('PLink')
+    record['PLink']
   end
 
   def type(record)
-    record.deep_find('PubType')
+    record.dig('Header', 'PubType')
   end
 
   def authors(record)
-    relationships(record).deep_find_all('NameFull')
+    contributors(record)&.map { |r| r.dig('PersonEntity', 'Name', 'NameFull') }
+  end
+
+  def contributors(record)
+    relationships(record)['HasContributorRelationships']
+  end
+
+  def bibrecord(record)
+    record.dig('RecordInfo', 'BibRecord')
+  end
+
+  def bibentity(record)
+    relationships(record)['IsPartOfRelationships'][0]['BibEntity']
   end
 
   def relationships(record)
-    relationships = record['RecordInfo']['BibRecord']['BibRelationships']
-    relationships.extend Hashie::Extensions::DeepFind
+    bibrecord(record)['BibRelationships']
   end
 
   def search_url(term)
