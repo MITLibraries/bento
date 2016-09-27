@@ -19,6 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 group :production do
   gem 'dalli'
   gem 'memcachier'
+  gem 'newrelic_rpm'
   gem 'pg'
   gem 'rails_12factor'
 end
