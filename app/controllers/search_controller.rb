@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+  before_action :validate_q!, only: [:bento, :search]
+
   def index
   end
 
@@ -6,11 +8,6 @@ class SearchController < ApplicationController
   end
 
   def search
-    unless strip_q.present?
-      flash[:error] = 'A search term is required.'
-      return redirect_to search_url
-    end
-
     @results = search_results
     return redirect_to search_url unless @results
     render layout: false
@@ -77,5 +74,11 @@ class SearchController < ApplicationController
   # Individual search engine models do additional cleaning as appropriate.
   def strip_q
     params[:q].strip
+  end
+
+  def validate_q!
+    return if params[:q].present? && strip_q.present?
+    flash[:error] = 'A search term is required.'
+    redirect_to search_url
   end
 end

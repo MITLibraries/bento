@@ -12,4 +12,9 @@ class SearchControllerTest < ActionController::TestCase
     get :bento, params: { q: 'popcorn' }
     assert_response :success
   end
+
+  test 'should handle missing q parameter' do
+    get :bento
+    assert_response :redirect
+  end
 end
