@@ -21,7 +21,7 @@ class SearchController < ApplicationController
   # Requests results from requested target
   def search_results
     return unless valid_target?
-    search_target(params[:target])
+    search_target
   end
 
   # Boolean check of whether param passed in is a valid search endpoint
@@ -44,29 +44,33 @@ class SearchController < ApplicationController
   # for the current date without ever worrying about expiring caches.
   # Instead, we'll rely on the cache itself to expire the oldest cached
   # items when necessary.
-  def search_target(target)
-    Rails.cache.fetch("#{target}_#{strip_q}_#{today}") do
-      if target == 'google'
-        search_google(strip_q)
+  def search_target
+    Rails.cache.fetch("#{params[:target]}_#{strip_q}_#{today}") do
+      if params[:target] == 'google'
+        search_google
       else
-        search_eds(strip_q, target)
+        search_eds
       end
     end
   end
 
-  # Seaches appropriate profile in EDS
-  def search_eds(q, target)
-    profile = if target == 'articles'
-                ENV['EDS_NO_ALEPH_PROFILE']
-              else
-                ENV['EDS_ALEPH_PROFILE']
-              end
-    SearchEds.new.search(q, profile)
+  # Seaches EDS
+  def search_eds
+    SearchEds.new.search(strip_q, eds_profile)
+  end
+
+  # Determines appropriate EDS profile
+  def eds_profile
+    if params[:target] == 'articles'
+      ENV['EDS_NO_ALEPH_PROFILE']
+    else
+      ENV['EDS_ALEPH_PROFILE']
+    end
   end
 
   # Searches Google Custom Search
-  def search_google(q)
-    SearchGoogle.new.search(q)
+  def search_google
+    SearchGoogle.new.search(strip_q)
   end
 
   # Strips trailing and leading white space in search term
