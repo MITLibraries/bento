@@ -1,38 +1,21 @@
-<% if params[:target] == 'articles' %>
-  <% @results['apinoaleph']['results'].each do |result| %>
-    <%= render partial: "result", locals: {result: result} %>
-  <% end %>
-
-  <% if @results['apinoaleph']['total'] > 0 %>
-    <%= link_to("View all #{number_with_delimiter(@results['apinoaleph']['total'])} like this.",
-                "#{ENV['EDS_NO_ALEPH_URI']}#{params[:q]}") %>
-  <% else %>
-    No results found.
-  <% end %>
+<% @results['results'].each do |result| %>
+  <%= render partial: "result", locals: {result: result} %>
 <% end %>
 
-<% if params[:target] == 'books' %>
-  <% @results['apibarton']['results'].each do |result| %>
-    <%= render partial: "result", locals: {result: result} %>
+<% if @results['total'] > 0 %>
+  <% if params[:target] == 'google' %>
+    <%= link_to(
+      "View all #{number_with_delimiter(@results['total'])} like this.",
+      "https://cse.google.com/cse?cx=#{ENV['GOOGLE_CUSTOM_SEARCH_ID']}&ie=UTF-8&q=#{params[:q]}&sa=Search#gsc.tab=0&gsc.q=#{params[:q]}") %>
+  <% elsif params[:target] == 'articles' %>
+    <%= link_to(
+      "View all #{number_with_delimiter(@results['total'])} like this.",
+      "#{ENV['EDS_NO_ALEPH_URI']}#{params[:q]}") %>
+  <% elsif params[:target] == 'books' %>
+    <%= link_to(
+      "View all #{number_with_delimiter(@results['total'])} like this.",
+      "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
   <% end %>
-
-  <% if @results['apibarton']['total'] > 0 %>
-    <%= link_to("View all #{number_with_delimiter(@results['apibarton']['total'])} like this.",
-                "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
-  <% else %>
-    No results found.
-  <% end %>
-<% end %>
-
-<% if params[:target] == 'google' %>
-  <% @results['results'].each do |result| %>
-    <%= render partial: "result", locals: {result: result} %>
-  <% end %>
-
-  <% if @results['total'] > 0 %>
-    <%= link_to("View all #{number_with_delimiter(@results['total'])} like this.",
-                "https://cse.google.com/cse?cx=#{ENV['GOOGLE_CUSTOM_SEARCH_ID']}&ie=UTF-8&q=#{params[:q]}&sa=Search#gsc.tab=0&gsc.q=#{params[:q]}") %>
-  <% else %>
-    No results found.
-  <% end %>
+<% else %>
+  No results found.
 <% end %>
