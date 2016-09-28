@@ -5,7 +5,7 @@
 
   <% if @results['apinoaleph']['total'] > 0 %>
     <%= link_to("View all #{number_with_delimiter(@results['apinoaleph']['total'])} like this.",
-                "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
+                "#{ENV['EDS_NO_ALEPH_URI']}#{params[:q]}") %>
   <% else %>
     No results found.
   <% end %>
@@ -31,7 +31,7 @@
 
   <% if @results['total'] > 0 %>
     <%= link_to("View all #{number_with_delimiter(@results['total'])} like this.",
-                "https://cse.results.com/cse?cx=#{ENV['GOOGLE_CUSTOM_SEARCH_ID']}&ie=UTF-8&q=#{params[:q]}&sa=Search#gsc.tab=0&gsc.q=#{params[:q]}") %>
+                "https://cse.google.com/cse?cx=#{ENV['GOOGLE_CUSTOM_SEARCH_ID']}&ie=UTF-8&q=#{params[:q]}&sa=Search#gsc.tab=0&gsc.q=#{params[:q]}") %>
   <% else %>
     No results found.
   <% end %>

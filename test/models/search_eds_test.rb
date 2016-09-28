@@ -114,4 +114,13 @@ class SearchEdsTest < ActiveSupport::TestCase
       )
     end
   end
+
+  test 'can handle missing years' do
+    VCR.use_cassette('rollbar8') do
+      searchterm = 'web of science'
+      query = SearchEds.new.search(searchterm, 'apinoaleph')
+      assert_equal(37_667_909, query['apinoaleph']['total'])
+      assert_nil(query['apinoaleph']['results'].first.year)
+    end
+  end
 end
