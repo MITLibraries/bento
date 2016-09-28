@@ -53,7 +53,8 @@ class SearchController < ApplicationController
 
   # Seaches EDS
   def search_eds
-    SearchEds.new.search(strip_q, eds_profile)
+    raw_results = SearchEds.new.search(strip_q, eds_profile)
+    NormalizeEds.new.to_result(raw_results)
   end
 
   # Determines appropriate EDS profile
@@ -67,7 +68,8 @@ class SearchController < ApplicationController
 
   # Searches Google Custom Search
   def search_google
-    SearchGoogle.new.search(strip_q)
+    raw_results = SearchGoogle.new.search(strip_q)
+    NormalizeGoogle.new.to_result(raw_results)
   end
 
   # Strips trailing and leading white space in search term
