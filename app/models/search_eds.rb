@@ -55,6 +55,7 @@ class SearchEds
   end
 
   def year(record)
+    return unless bibentity(record)['Dates']
     bibentity(record)['Dates'][0]['Y']
   end
 
