@@ -26,12 +26,12 @@ class SearchGoogle
   # @param term [string] The string we are searching for
   # @return [Hash] A Hash with search metadata and an Array of {Result}s
   def search(term)
-    @results['raw_google'] = @service.list_cses(
+    raw_results = @service.list_cses(
       term,
       cx: ENV['GOOGLE_CUSTOM_SEARCH_ID'],
       num: ENV['RESULTS_PER_BOX'] || 3
     )
-    to_result(@results['raw_google'])
+    to_result(raw_results)
   end
 
   private
@@ -39,8 +39,8 @@ class SearchGoogle
   # Translate Google results into local result model
   def to_result(results)
     norm = {}
-    norm['total'] = @results['raw_google'].queries['request'][0]
-                                          .total_results.to_i
+    norm['total'] = results.queries['request'][0]
+                           .total_results.to_i
     norm['results'] = []
     extract_results(results, norm)
     norm
