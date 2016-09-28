@@ -12,10 +12,10 @@ class SearchEds
   def search(term, profile)
     return 'invalid credentials' unless @auth_token
     @session_key = create_session(profile) if @auth_token
-    @results["raw_#{profile}"] = search_filtered(term)
+    raw_results = search_filtered(term)
     end_session
 
-    @results[profile.to_s] = to_result(@results["raw_#{profile}"])
+    @results[profile.to_s] = to_result(raw_results)
     @results
   end
 
