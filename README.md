@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/MITLibraries/bento.svg?branch=master)](https://travis-ci.org/MITLibraries/bento)
 [![Coverage Status](https://coveralls.io/repos/github/MITLibraries/bento/badge.svg?branch=master)](https://coveralls.io/github/MITLibraries/bento?branch=master)
 [![Dependency Status](https://gemnasium.com/badges/github.com/MITLibraries/bento.svg)](https://gemnasium.com/github.com/MITLibraries/bento)
-[![Apache 2 licensed](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](https://raw.githubusercontent.com/MITLibraries/bento/master/LICENSE.md)
+[![Code Climate](https://codeclimate.com/github/MITLibraries/bento/badges/gpa.svg)](https://codeclimate.com/github/MITLibraries/bento)
 
 # MIT Bento
 
@@ -26,3 +26,7 @@ The query will be appended.
  profile. The query will be appended.
 - `GOOGLE_API_KEY`: your Google Custom Search API key
 - `GOOGLE_CUSTOM_SEARCH_ID`: your Google Custom Search engine ID
+
+## Optional Environment Variables
+
+- `RESULTS_PER_BOX`: defaults to 3
