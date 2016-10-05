@@ -41,6 +41,12 @@
 
       ga('create', '<%= ENV['GOOGLE_ANALYTICS'] %>', 'auto');
       ga('send', 'pageview');
+
+      // Interaction tracking
+      $(document).ready(function(e) {
+        TrackLinks( $( '.region a' ) );
+      });
+
     </script>
     <% end %>
   </head>

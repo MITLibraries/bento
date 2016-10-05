@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-sm-4">
     <h2>Articles and Stuff</h2>
-    <div id="articles_content">
+    <div id="articles_content" class="region" data-region="articles">
       Loading results...
       <i class="fa fa-spinner fa-spin"></i>
     </div>
@@ -11,7 +11,7 @@
 
   <div class="col-sm-4">
     <h2>Books and Stuff</h2>
-    <div id="books_content">
+    <div id="books_content" class="region" data-region="books">
       Loading results...
       <i class="fa fa-spinner fa-spin"></i>
     </div>
@@ -19,7 +19,7 @@
 
   <div class="col-sm-4">
     <h2>Website and Guides</h2>
-    <div id="website_content">
+    <div id="website_content" class="region" data-region="website">
       Loading results...
       <i class="fa fa-spinner fa-spin"></i>
     </div>
@@ -28,7 +28,7 @@
 
 <hr />
 
-<div class="row">
+<div class="row region" data-region="other">
   <div class="col-sm-12">
     <h2>Not finding what you're looking for? Try these other tools:</h2>
     <dl>
@@ -46,9 +46,15 @@
 </div>
 
 <script>
-  $('#articles_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=articles")
+  $('#articles_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=articles", function() {
+    TrackLinks( $( this ).find( 'a' ) );
+  });
 
-  $('#books_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=books")
+  $('#books_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=books", function() {
+    TrackLinks( $( this ).find( 'a' ) );
+  });
 
-  $('#website_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=google")
+  $('#website_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=google", function() {
+    TrackLinks( $( this ).find( 'a' ) );
+  });
 </script>
