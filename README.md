@@ -30,3 +30,4 @@ The query will be appended.
 ## Optional Environment Variables
 
 - `RESULTS_PER_BOX`: defaults to 3
+- `GOOGLE_ANALYTICS`: Google Analytics property ID for monitoring application use
