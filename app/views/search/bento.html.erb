@@ -18,6 +18,14 @@
   </div>
 
   <div class="col-sm-4">
+    <h2>WorldCat</h2>
+    <div id="worldcat_content">
+      Loading results...
+      <i class="fa fa-spinner fa-spin"></i>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
     <h2>Website and Guides</h2>
     <div id="website_content" class="region" data-region="website">
       Loading results...
@@ -55,6 +63,10 @@
   });
 
   $('#website_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=google", function() {
+    TrackLinks( $( this ).find( 'a' ) );
+  });
+
+  $('#worldcat_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=worldcat", function() {
     TrackLinks( $( this ).find( 'a' ) );
   });
 </script>

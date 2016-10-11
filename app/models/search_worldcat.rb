@@ -2,6 +2,7 @@
 #
 # == Required Environment Variables:
 # - WORLDCAT_API_KEY
+# - WORLDCAT_URI
 #
 # == Optional Environment Variables:
 # - RESULTS_PER_BOX
@@ -27,8 +28,9 @@ class SearchWorldcat
     "#{ENV['WORLDCAT_URI']}" \
     "sru?query=srw.kw+any+%22#{term}%22" \
     '+and+srw.li+any+%22MYG%22' \
+    '&recordSchema=info%3Asrw%2Fschema%2F1%2Fdc' \
     "&wskey=#{ENV['WORLDCAT_API_KEY']}" \
-    "&count=#{ENV['RESULTS_PER_BOX'] || 3}"
+    "&maximumRecords=#{ENV['RESULTS_PER_BOX'] || 3}"
   end
 
   def clean_term(term)
