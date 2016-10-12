@@ -26,7 +26,8 @@ VCR.configure do |config|
   config.filter_sensitive_data('FakeAuthenticationtoken') do |interaction|
     begin
       JSON.parse(interaction.response.body)['AuthToken']
-    rescue
+    rescue JSON::ParserError
+      false
     end
   end
   config.filter_sensitive_data('FAKE_WORLDCAT_KEY') do
@@ -41,8 +42,10 @@ VCR.configure do |config|
   end
   config.filter_sensitive_data('FakeSessiontoken') do |interaction|
     begin
-      JSON.parse(interaction.response.body)['SessionToken']
-    rescue
+      token = JSON.parse(interaction.response.body)['SessionToken']
+      token&.tr('\\', '')
+    rescue JSON::ParserError
+      false
     end
   end
 
