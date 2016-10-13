@@ -6,6 +6,6 @@
     <% end %>
   </h3>
   <div class='bento-body'>
-    <%= result.authors.join('; ') if result.authors %><br />
+    <%= result.truncated_authors.join('; ') if result.authors %><br />
   </div>
 </div>

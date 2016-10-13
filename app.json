@@ -35,6 +35,9 @@
     "LANG": {
       "required": true
     },
+    "MAX_AUTHORS": {
+      "required": true
+    },
     "RACK_ENV": {
       "required": true
     },

@@ -28,6 +28,8 @@ The query will be appended.
 ex: `website,books,articles`
 - `GOOGLE_API_KEY`: your Google Custom Search API key
 - `GOOGLE_CUSTOM_SEARCH_ID`: your Google Custom Search engine ID
+- `MAX_AUTHORS`: the maximum number of authors displayed in any record.
+If exceeded, 'et al' will be appended after this number.
 
 ## Optional Environment Variables
 
