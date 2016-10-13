@@ -49,6 +49,12 @@
     },
     "SECRET_KEY_BASE": {
       "required": true
+    },
+    "WORLDCAT_URI": {
+      "required": true
+    },
+    "WORLDCAT_API_KEY": {
+      "required": true
     }
   },
   "formation": {
