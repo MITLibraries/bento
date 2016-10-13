@@ -8,6 +8,8 @@ Rails.application.configure do
   ENV['EDS_ALEPH_PROFILE'] = 'apibarton'
   ENV['GOOGLE_API_KEY'] = 'FAKE_GOOGLE_API_KEY'
   ENV['GOOGLE_CUSTOM_SEARCH_ID'] = 'FAKE_GOOGLE_CUSTOM_SEARCH_ID'
+  ENV['WORLDCAT_URI'] = 'http://www.worldcat.org/webservices/catalog/search/worldcat/'
+  ENV['WORLDCAT_API_KEY'] = 'FAKE_WORLDCAT_KEY'
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that

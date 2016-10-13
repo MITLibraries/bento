@@ -1,0 +1,136 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.worldcat.org/webservices/catalog/search/worldcat/sru?maximumRecords=3&query=srw.kw%20any%20%22popcorn%22%20and%20srw.li%20any%20%22MYG%22&recordSchema=info:srw/schema/1/dc&wskey=FAKE_WORLDCAT_KEY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - www.worldcat.org
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 13 Oct 2016 14:57:49 GMT
+      Server:
+      - Apache
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/xml;charset=utf-8
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <?xml-stylesheet type='text/xsl' href='/webservices/catalog/xsl/searchRetrieveResponse.xsl'?>
+
+        <searchRetrieveResponse xmlns="http://www.loc.gov/zing/srw/" xmlns:oclcterms="http://purl.org/oclc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <version>1.1</version>
+        <numberOfRecords>108</numberOfRecords>
+        <records>
+        <record>
+        <recordSchema>info:srw/schema/1/dc</recordSchema>
+        <recordPacking>xml</recordPacking>
+        <recordData>
+        <oclcdcs>
+        <dc:creator>Rosen, Marjorie.</dc:creator>
+        <dc:date>1974, ©1973</dc:date>
+        <dc:description>Emerging from Victorianism -- The twenties: wet dreams in a dry land -- The thirties: sacrificial lambs &amp; the politics of fantasy -- The forties: necessity as the mother of emancipation -- The fifties: losing ground -- Sixties into seventies: revolution &amp; renaissance?</dc:description>
+        <dc:format>448 pages : illustrations ; 18 cm</dc:format>
+        <dc:identifier>0380001772</dc:identifier>
+        <dc:identifier>9780380001774</dc:identifier>
+        <dc:language xsi:type="http://purl.org/dc/terms/ISO639-2">eng</dc:language>
+        <dc:publisher>Avon</dc:publisher>
+        <dc:subject xsi:type="http://purl.org/dc/terms/LCSH">Women in motion pictures.</dc:subject>
+        <dc:title>Popcorn Venus </dc:title>
+        <dc:type>Text</dc:type>
+        <oclcterms:recordCreationDate xsi:type="http://purl.org/oclc/terms/marc008date">750804</oclcterms:recordCreationDate>
+        <oclcterms:recordIdentifier xsi:type="http://purl.org/oclc/terms/lccn">   73078740 </oclcterms:recordIdentifier>
+        <oclcterms:recordIdentifier>1508955</oclcterms:recordIdentifier>
+        </oclcdcs>
+        </recordData>
+        </record>
+        <record>
+        <recordSchema>info:srw/schema/1/dc</recordSchema>
+        <recordPacking>xml</recordPacking>
+        <recordData>
+        <oclcdcs>
+        <dc:creator>McKenzie, Richard B.</dc:creator>
+        <dc:date>©2008</dc:date>
+        <dc:description>Explains the mysteries of the current pricing system, such as the use of the number nine in prices, why all movies cost the same, and the unintentional consequences of using environmentally-friendly fuels.</dc:description>
+        <dc:description>Preface : How price matters -- ch. 1. Price and the "law of unintended consequences" -- Hybridnomics : HOV-lane economics, California style -- Air travel safety for infants and toddlers -- 9/11 terrorists and American deaths since 9/11 -- Water crises in Southern California -- Ethanol subsidies and world hunger -- The California electricity crisis -- Concluding comments -- ch. 2. Pricing lemons, views, and university housing -- The pricing of lemons -- How prices adjust to advantages and disadvantages of property -- Why retirement does not curb the retirees' food consumption -- University mispricing -- Concluding comments -- ch. 3. Why sales -- Price discrimination theory -- A textbook case of textbook price discrimination -- The logic of after-Christmas sales -- Sales and the economics of information -- Concluding comments -- ch. 4. Why popcorn costs so much at the movies -- Differential theater ticket prices -- Uniform popcorn prices -- The high price of theater popcorn -- The misguided entrapment theory of overprices popcorn -- Movie screening contract -- The Supreme Court and the high price of theater popcorn -- The cost of theater popcorn -- on the margin! -- Concluding comments.</dc:description>
+        <dc:description>ch. 5. Why so many coupons -- Coupon and price discrimination coupons and peak-load pricing -- Evidence on couponing -- Coupon collusion -- The economics of information and coupons -- Concluding comments -- ch. 6. Why some goods are free -- Profits from zero prices -- The nature of products and pricing strategies -- The pricing of experience goods -- The pricing of network goods -- Network effects and the Microsoft antitrust case -- Optimum piracy -- The pricing of addictive goods -- Rational addiction -- Concluding comments -- ch. 7. Free printers and pricey ink cartridges -- Relative production costs and buyer entrapment -- Low- and high-volume printer users -- The relevance of search costs -- Differences in discount rates -- Gaming printer -- Cartridge deals and technical and contract solutions -- The evidence on the relative printers and their ink cartridge -- Concluding comments -- ch. 8. Why movie ticket prices are all the same -- Different price for different folks -- The puzzle of uniform ticket prices at the movies -- Past price variations -- Why uniform ticket prices -- DVD releases -- Concluding comments.</dc:description>
+        <dc:description>ch. 9. Why so many prices end with "9" -- Just-below prices as historical artifact -- Just-below pricing and information economics -- Psychological pricing as code -- Concluding comments -- ch. 10. The economics of manufacturers' rebates -- The nature of rebates -- The reasons for rebates -- Rebates and product demand -- Breakage economics -- Concluding comments -- ch. 11. The psychology and evolutionary biology of manufacturers' rebates -- Subjective weighting of costs and benefits -- Endowment effects of purchases with rebates -- Salience and procrastination -- Explanations for peoples' observed decision making -- Concluding comments -- ch. 12. The question of queues -- Queues as pricing puzzle -- The easy solutions for queues -- The economic logic of queues -- Premium tickets -- Contrived shortages and buyer loyalty -- Bandwagon effects and queues -- Single versus multiple queues -- Last-come/first-served, a solution for queue length? -- Concluding comments.</dc:description>
+        <dc:description>ch. 13. Why men earn more on average than women -- and always will -- Conventional explanations for gender-pay differences : a different conceptual framework -- Risky behavior -- The linages between mating and labor markets -- Explaining the narrowing pay gap -- The female male wage gap : hard wired or cultural? -- A summary assessment -- Concluding comments -- Bibliography -- Subject index.</dc:description>
+        <dc:format>xv, 326 pages : illustrations ; 25 cm</dc:format>
+        <dc:identifier>9780387769998</dc:identifier>
+        <dc:identifier>0387769994</dc:identifier>
+        <dc:language xsi:type="http://purl.org/dc/terms/ISO639-2">eng</dc:language>
+        <dc:publisher>Copernicus Books</dc:publisher>
+        <dc:relation xsi:type="http://purl.org/dc/terms/URI">http://bvbr.bib-bvb.de:8991/F?func=service&amp;doc_library=BVB01&amp;doc_number=016414103&amp;line_number=0001&amp;func_code=DB_RECORDS&amp;service_type=MEDIA</dc:relation>
+        <dc:subject xsi:type="http://purl.org/dc/terms/LCSH">Prices--United States.</dc:subject>
+        <dc:subject xsi:type="http://purl.org/dc/terms/LCSH">Pricing--United States.</dc:subject>
+        <dc:subject xsi:type="http://purl.org/dc/terms/LCSH">Value.</dc:subject>
+        <dc:subject xsi:type="http://purl.org/dc/terms/LCSH">Cost and standard of living--United States.</dc:subject>
+        <dc:subject xsi:type="http://purl.org/dc/terms/LCSH">United States--Economic conditions--2001-2009.</dc:subject>
+        <dc:title>Why popcorn costs so much at the movies : and other pricing puzzles </dc:title>
+        <dc:type>Text</dc:type>
+        <oclcterms:recordCreationDate xsi:type="http://purl.org/oclc/terms/marc008date">080214</oclcterms:recordCreationDate>
+        <oclcterms:recordIdentifier xsi:type="http://purl.org/oclc/terms/lccn">  2008923102</oclcterms:recordIdentifier>
+        <oclcterms:recordIdentifier>192027294</oclcterms:recordIdentifier>
+        </oclcdcs>
+        </recordData>
+        </record>
+        <record>
+        <recordSchema>info:srw/schema/1/dc</recordSchema>
+        <recordPacking>xml</recordPacking>
+        <recordData>
+        <oclcdcs>
+        <dc:creator>Maio, Kathi, 1951-</dc:creator>
+        <dc:date>©1991</dc:date>
+        <dc:description>Includes index.</dc:description>
+        <dc:format>216 pages : illustrations ; 22 cm</dc:format>
+        <dc:identifier>0895944693</dc:identifier>
+        <dc:identifier>9780895944696</dc:identifier>
+        <dc:identifier>0895944685</dc:identifier>
+        <dc:identifier>9780895944689</dc:identifier>
+        <dc:language xsi:type="http://purl.org/dc/terms/ISO639-2">eng</dc:language>
+        <dc:publisher>Crossing Press</dc:publisher>
+        <dc:subject xsi:type="http://purl.org/dc/terms/LCSH">Women in motion pictures.</dc:subject>
+        <dc:subject xsi:type="http://purl.org/dc/terms/LCSH">Sex role in motion pictures.</dc:subject>
+        <dc:subject xsi:type="http://purl.org/dc/terms/LCSH">Motion pictures--United States--Reviews.</dc:subject>
+        <dc:title>Popcorn and sexual politics : movie reviews </dc:title>
+        <dc:type>Text</dc:type>
+        <oclcterms:recordCreationDate xsi:type="http://purl.org/oclc/terms/marc008date">910116</oclcterms:recordCreationDate>
+        <oclcterms:recordIdentifier xsi:type="http://purl.org/oclc/terms/lccn">   91008500 </oclcterms:recordIdentifier>
+        <oclcterms:recordIdentifier>23082106</oclcterms:recordIdentifier>
+        </oclcdcs>
+        </recordData>
+        </record>
+        </records>
+        <nextRecordPosition>4</nextRecordPosition>
+        <resultSetIdleTime/>
+        <echoedSearchRetrieveRequest xmlns:srw="http://www.loc.gov/zing/srw/">
+        <version>1.1</version>
+        <query>srw.kw any "popcorn" and srw.li any "MYG"</query>
+        <maximumRecords>3</maximumRecords>
+        <recordSchema>info:srw/schema/1/dc</recordSchema>
+        <recordPacking>xml</recordPacking>
+        <startRecord>1</startRecord>
+        <sortKeys>relevance</sortKeys>
+        <wskey>FAKE_WORLDCAT_KEY</wskey>
+        </echoedSearchRetrieveRequest>
+        </searchRetrieveResponse>
+    http_version: 
+  recorded_at: Thu, 13 Oct 2016 14:57:50 GMT
+recorded_with: VCR 3.0.3

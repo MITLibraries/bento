@@ -24,7 +24,14 @@ VCR.configure do |config|
     interaction.response.headers['X-Authenticationtoken']&.first
   end
   config.filter_sensitive_data('FakeAuthenticationtoken') do |interaction|
-    JSON.parse(interaction.response.body)['AuthToken']
+    begin
+      JSON.parse(interaction.response.body)['AuthToken']
+    rescue JSON::ParserError
+      false
+    end
+  end
+  config.filter_sensitive_data('FAKE_WORLDCAT_KEY') do
+    (ENV['WORLDCAT_API_KEY']).to_s
   end
 
   config.filter_sensitive_data('FakeSessiontoken') do |interaction|
@@ -34,7 +41,12 @@ VCR.configure do |config|
     interaction.response.headers['X-Sessiontoken']&.first
   end
   config.filter_sensitive_data('FakeSessiontoken') do |interaction|
-    JSON.parse(interaction.response.body)['SessionToken']
+    begin
+      token = JSON.parse(interaction.response.body)['SessionToken']
+      token&.tr('\\', '')
+    rescue JSON::ParserError
+      false
+    end
   end
 
   config.filter_sensitive_data('"UserId":"FAKE_EDS_USER_ID"') do

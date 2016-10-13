@@ -18,7 +18,9 @@ class SearchController < ApplicationController
   # Requests results from requested target
   def search_results
     return unless valid_target?
-    search_target
+    Rails.cache.fetch("#{params[:target]}_#{strip_q}_#{today}") do
+      search_target
+    end
   end
 
   # Boolean check of whether param passed in is a valid search endpoint
@@ -28,7 +30,7 @@ class SearchController < ApplicationController
 
   # Array of search endpoints that are supported
   def valid_targets
-    %w(articles books google)
+    %w(articles books google worldcat)
   end
 
   # Formatted date used in creating cache keys
@@ -42,12 +44,12 @@ class SearchController < ApplicationController
   # Instead, we'll rely on the cache itself to expire the oldest cached
   # items when necessary.
   def search_target
-    Rails.cache.fetch("#{params[:target]}_#{strip_q}_#{today}") do
-      if params[:target] == 'google'
-        search_google
-      else
-        search_eds
-      end
+    if params[:target] == 'google'
+      search_google
+    elsif params[:target] == 'worldcat'
+      search_worldcat
+    else
+      search_eds
     end
   end
 
@@ -70,6 +72,12 @@ class SearchController < ApplicationController
   def search_google
     raw_results = SearchGoogle.new.search(strip_q)
     NormalizeGoogle.new.to_result(raw_results)
+  end
+
+  # Searches Google Custom Search
+  def search_worldcat
+    raw_results = SearchWorldcat.new.search(strip_q)
+    NormalizeWorldcat.new.to_result(raw_results)
   end
 
   # Strips trailing and leading white space in search term

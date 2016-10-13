@@ -15,6 +15,10 @@
     <%= link_to(
       "View all #{number_with_delimiter(@results['total'])} like this.",
       "#{ENV['EDS_ALEPH_URI']}#{params[:q]}") %>
+  <% elsif params[:target] == 'worldcat' %>
+    <%= link_to(
+      "View all #{number_with_delimiter(@results['total'])} like this.",
+      "http://www.worldcat.org/search?qt=worldcat_org_all&&q=#{params[:q]}") %>
   <% end %>
 <% else %>
   No results found.

@@ -61,6 +61,17 @@ class SearchTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'worldcat results are populated' do
+    VCR.use_cassette('popcorn worldcat',
+                     allow_playback_repeats: true) do
+      get '/search/search?q=popcorn&target=worldcat'
+      assert_response :success
+      assert_select('a.bento-link') do |value|
+        assert(value.text.include?('Popcorn Venus'))
+      end
+    end
+  end
+
   test 'invalid target' do
     get '/search/search?q=popcorn&target=hackor'
     follow_redirect!
