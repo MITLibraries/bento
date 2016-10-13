@@ -23,6 +23,9 @@
     "EDS_USER_ID": {
       "required": true
     },
+    "ENABLED_BOXES": {
+      "required": true
+    },
     "GOOGLE_API_KEY": {
       "required": true
     },

@@ -1,0 +1,3 @@
+$('#<%= id %>').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=<%= target %>", function() {
+  TrackLinks( $( this ).find( 'a' ) );
+});

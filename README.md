@@ -24,6 +24,8 @@ Search API. Appropriate credentials for both are required (see below).
 The query will be appended.
 - `EDS_NO_ALEPH_URI`: the base URI to send a user to your EDS local holdings
  profile. The query will be appended.
+- `ENABLED_BOXES`: Allows setting of the default boxes to show.
+ex: `website,books,articles`
 - `GOOGLE_API_KEY`: your Google Custom Search API key
 - `GOOGLE_CUSTOM_SEARCH_ID`: your Google Custom Search engine ID
 
