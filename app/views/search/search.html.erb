@@ -18,7 +18,7 @@
   <% elsif params[:target] == 'worldcat' %>
     <%= link_to(
       "View all #{number_with_delimiter(@results['total'])} like this.",
-      "http://www.worldcat.org/search?qt=worldcat_org_all&&q=#{params[:q]}") %>
+      "http://mit.worldcat.org/search?qt=worldcat_org_all&&q=#{params[:q]}") %>
   <% end %>
 <% else %>
   No results found.

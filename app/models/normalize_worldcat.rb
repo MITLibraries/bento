@@ -37,7 +37,7 @@ class NormalizeWorldcat
 
   # Assemble a link to a record
   def url(item)
-    'http://www.worldcat.org/oclc/' + \
+    'http://mit.worldcat.org/oclc/' + \
       item.xpath('oclcterms:recordIdentifier[not(@xsi:type)]').text.strip
   end
 end
