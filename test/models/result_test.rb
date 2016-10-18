@@ -33,6 +33,20 @@ class ResultTest < ActiveSupport::TestCase
     assert_equal(r.authors, 'Albatross, Joan')
   end
 
+  test 'short author lists not truncated' do
+    r = Result.new('title', '1997', 'http://example.com', 'Journal Article')
+    r.authors = %w(a b)
+    assert r.valid?
+    assert_equal(r.truncated_authors, %w(a b))
+  end
+
+  test 'long author lists truncated' do
+    r = Result.new('title', '1997', 'http://example.com', 'Journal Article')
+    r.authors = %w(a b c d e)
+    assert r.valid?
+    assert_equal(r.truncated_authors, ['a', 'b', 'c', 'et al'])
+  end
+
   test 'can set citation' do
     r = Result.new('title', '1997', 'http://example.com', 'Journal Article')
     r.citation = 'Journal of Stuff, vol.12, no.1, pp.2-12'

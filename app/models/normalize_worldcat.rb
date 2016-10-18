@@ -29,7 +29,7 @@ class NormalizeWorldcat
   # Assemble authors array
   def authors(item)
     authors = []
-    item.xpath('dc:creator').each do |creator|
+    item.xpath('dc:creator|dc:contributor').each do |creator|
       authors << creator.text.strip
     end
     authors
