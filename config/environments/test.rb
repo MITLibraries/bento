@@ -10,6 +10,7 @@ Rails.application.configure do
   ENV['GOOGLE_CUSTOM_SEARCH_ID'] = 'FAKE_GOOGLE_CUSTOM_SEARCH_ID'
   ENV['WORLDCAT_URI'] = 'http://www.worldcat.org/webservices/catalog/search/worldcat/'
   ENV['WORLDCAT_API_KEY'] = 'FAKE_WORLDCAT_KEY'
+  ENV['ENABLED_BOXES'] = 'website,books,articles,worldcat'
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that

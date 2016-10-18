@@ -1,72 +1,39 @@
 <%= render partial: "form" %>
 
 <div class="row">
-  <div class="col-sm-4">
-    <h2>Articles and Stuff</h2>
-    <div id="articles_content" class="region" data-region="articles">
-      Loading results...
-      <i class="fa fa-spinner fa-spin"></i>
-    </div>
-  </div>
+  <% if box_enabled?('articles') %>
+    <%= render partial: "placeholders", locals: { heading: 'Articles and Stuff', id: 'articles_content'} %>
+  <% end %>
 
-  <div class="col-sm-4">
-    <h2>Books and Stuff</h2>
-    <div id="books_content" class="region" data-region="books">
-      Loading results...
-      <i class="fa fa-spinner fa-spin"></i>
-    </div>
-  </div>
+  <% if box_enabled?('books') %>
+    <%= render partial: "placeholders", locals: { heading: 'Books and Stuff', id: 'books_content'} %>
+  <% end %>
 
-  <div class="col-sm-4">
-    <h2>WorldCat</h2>
-    <div id="worldcat_content">
-      Loading results...
-      <i class="fa fa-spinner fa-spin"></i>
-    </div>
-  </div>
+  <% if box_enabled?('worldcat') %>
+    <%= render partial: "placeholders", locals: { heading: 'WorldCat', id: 'worldcat_content'} %>
+  <% end %>
 
-  <div class="col-sm-4">
-    <h2>Website and Guides</h2>
-    <div id="website_content" class="region" data-region="website">
-      Loading results...
-      <i class="fa fa-spinner fa-spin"></i>
-    </div>
-  </div>
+  <% if box_enabled?('website') %>
+    <%= render partial: "placeholders", locals: { heading: 'Website and Guides', id: 'website_content'} %>
+  <% end %>
 </div>
 
-<hr />
-
-<div class="row region" data-region="other">
-  <div class="col-sm-12">
-    <h2>Not finding what you're looking for? Try these other tools:</h2>
-    <dl>
-      <dt><a href="//libraries.mit.edu/vera">Vera</a></dt>
-      <dd>Best for e-journals and databases owned or licensed by the MIT Libraries. Don’t search for individual articles here.</dd>
-      <dt><a href="//libraries.mit.edu/worldcat">WorldCat</a></dt>
-      <dd>Best for books and other items not owned by the MIT Libraries. Using this interface, you can request items from <a href="//libraries.mit.edu/borrow-direct">Borrow Direct</a> or <a href="//libraries.mit.edu/ilb">Interlibrary Borrowing (ILB)</a>.</dd>
-    </dl>
-    <h3>Specialized search tools &amp; guides</h2>
-    <dl>
-      <dt><a href="http://archnet.org/">Archnet</a></dt>
-      <dd>Search for resources on architecture, urbanism, environmental and landscape design, visual culture, and conservation issues related to the Muslim world.</dd>
-    </dl>
-  </div>
-</div>
+<%= render partial: "help" %>
 
 <script>
-  $('#articles_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=articles", function() {
-    TrackLinks( $( this ).find( 'a' ) );
-  });
+  <% if box_enabled?('articles') %>
+    <%= render partial: "trigger_search", locals: { target: 'articles', id: 'articles_content'} %>
+  <% end %>
 
-  $('#books_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=books", function() {
-    TrackLinks( $( this ).find( 'a' ) );
-  });
+  <% if box_enabled?('books') %>
+    <%= render partial: "trigger_search", locals: { target: 'books', id: 'books_content'} %>
+  <% end %>
 
-  $('#website_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=google", function() {
-    TrackLinks( $( this ).find( 'a' ) );
-  });
+  <% if box_enabled?('worldcat') %>
+    <%= render partial: "trigger_search", locals: { target: 'worldcat', id: 'worldcat_content'} %>
+  <% end %>
 
-  $('#worldcat_content').load("/search/search?q=<%= URI.encode(params[:q]) %>&target=worldcat", function() {
-    TrackLinks( $( this ).find( 'a' ) );
-  });
+  <% if box_enabled?('website') %>
+    <%= render partial: "trigger_search", locals: { target: 'google', id: 'website_content'} %>
+  <% end %>
 </script>

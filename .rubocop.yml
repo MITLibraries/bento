@@ -17,3 +17,12 @@ ClassLength:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Metrics/BlockLength:
+  CountComments: false  # count full line comments?
+  Max: 25
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+    - 'test/test_helper.rb'
