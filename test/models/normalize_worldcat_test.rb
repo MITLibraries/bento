@@ -30,7 +30,7 @@ class NormalizeWorldcatTest < ActiveSupport::TestCase
       raw_query = SearchWorldcat.new.search('popcorn')
       query = NormalizeWorldcat.new.to_result(raw_query)
       assert_equal(
-        'http://www.worldcat.org/oclc/1508955',
+        'http://mit.worldcat.org/oclc/1508955',
         query['results'].first.url
       )
     end
