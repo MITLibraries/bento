@@ -18,8 +18,9 @@ class NormalizeGoogle
   def extract_results(results, norm)
     return unless results.items
     results.items.each do |item|
-      result = Result.new(item.title, year_from_dc_modified(item),
-                          item.link, 'website')
+      result = Result.new(item.title, item.link)
+      result.year = year_from_dc_modified(item)
+      result.type = 'website'
       norm['results'] << result
     end
   end

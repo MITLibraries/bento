@@ -17,11 +17,10 @@ class NormalizeWorldcat
   # return them as an array of {result}s
   def extract_results(xml, norm)
     xml.xpath('//xmlns:oclcdcs').each do |item|
-      result = Result.new(item.xpath('dc:title').text.strip,
-                          item.xpath('dc:date').text.strip,
-                          url(item),
-                          'worldcat')
+      result = Result.new(item.xpath('dc:title').text.strip, url(item))
       result.authors = authors(item)
+      result.year = item.xpath('dc:date').text.strip
+      result.type = 'worldcat'
       norm['results'] << result
     end
   end
