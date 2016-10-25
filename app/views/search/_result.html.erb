@@ -7,5 +7,6 @@
   </h3>
   <div class='bento-body'>
     <%= result.truncated_authors.join('; ') if result.authors %><br />
+    <%= result.blurb.html_safe if result.blurb %><br />
   </div>
 </div>

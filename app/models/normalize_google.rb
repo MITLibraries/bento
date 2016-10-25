@@ -19,18 +19,8 @@ class NormalizeGoogle
     return unless results.items
     results.items.each do |item|
       result = Result.new(item.title, item.link)
-      result.year = year_from_dc_modified(item)
-      result.type = 'website'
+      result.blurb = item.html_snippet
       norm['results'] << result
     end
-  end
-
-  # Extract year from dc.modified meta headers if available
-  def year_from_dc_modified(item)
-    return unless item.pagemap
-    return unless item.pagemap['metatags']
-    dc_mod = item.pagemap['metatags'][0]['dc.date.modified']
-    return unless dc_mod
-    Date.parse(dc_mod).year.to_s
   end
 end
