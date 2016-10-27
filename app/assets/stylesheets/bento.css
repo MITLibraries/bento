@@ -9,3 +9,30 @@
 .bento-year {
   color: gray;
 }
+
+.bento-summary h3 {
+  display: inline-block;
+}
+
+.bento-summary ul {
+  display: inline-block;
+  padding-left: 0;
+}
+
+.bento-summary li {
+  display: inline-block;
+  padding-left: 1em;
+}
+
+.bento-summary li .count {
+  float: right;
+  padding-left: 0.25em;
+}
+
+.bento-summary li .count:before {
+  content: '(';
+}
+
+.bento-summary li .count:after {
+  content: ')';
+}

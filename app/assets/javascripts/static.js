@@ -12,3 +12,8 @@ function TrackLinks( element ) {
     ga( 'send', fields );
   });
 }
+
+function ReportSummary( category, count ) {
+  count = ( typeof count !== 'undefined' ) ? count : 0;
+  $( '.bento-summary-list li[data-region="' + category + '"] .count' ).html( count );
+}
