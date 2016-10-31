@@ -1,5 +1,26 @@
 <%= render partial: "form" %>
 
+<div class="row bento-summary">
+  <h3>Found</h3>
+  <ul class="bento-summary-list">
+    <% if box_enabled?('articles') %>
+      <li data-region="articles"><span class="count"><i class="fa fa-spinner fa-spin"></i></span> Articles</li>
+    <% end %>
+
+    <% if box_enabled?('books') %>
+      <li data-region="books"><span class="count"><i class="fa fa-spinner fa-spin"></i></span> Local Books</li>
+    <% end %>
+
+    <% if box_enabled?('worldcat') %>
+      <li data-region="worldcat"><span class="count"><i class="fa fa-spinner fa-spin"></i></span> Worldwide Books</li>
+    <% end %>
+
+    <% if box_enabled?('website') %>
+      <li data-region="google"><span class="count"><i class="fa fa-spinner fa-spin"></i></span> Webpages</li>
+    <% end %>
+  </ul>
+</div>
+
 <div class="row">
   <% if box_enabled?('articles') %>
     <%= render partial: "placeholders", locals: { heading: 'Articles and Stuff', id: 'articles_content'} %>
