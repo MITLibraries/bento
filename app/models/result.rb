@@ -1,16 +1,15 @@
 class Result
   include ActiveModel::Validations
   validates :title, presence: true
-  validates :year, presence: true
   validates :url, presence: true
-  validates :type, presence: true
 
-  attr_accessor :title, :year, :url, :type, :authors, :citation, :online
-  def initialize(title, year, url, type)
+  attr_accessor :title, :year, :url, :type, :authors, :citation, :online,
+                :year, :type, :in, :publisher, :location, :blurb, :subjects,
+                :available_url
+
+  def initialize(title, url)
     @title = title
-    @year = year
     @url = url
-    @type = type
   end
 
   # View-type method for returning a truncated list of authors.

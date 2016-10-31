@@ -13,22 +13,6 @@ class NormalizeGoogleTest < ActiveSupport::TestCase
     end
   end
 
-  test 'normalized articles have expected year' do
-    VCR.use_cassette('valid google search and credentials') do
-      raw_query = SearchGoogle.new.search('endnote')
-      query = NormalizeGoogle.new.to_result(raw_query)
-      assert_equal('2016', query['results'].first.year)
-    end
-  end
-
-  test 'normalized articles with no dc.date.modified have blank year' do
-    VCR.use_cassette('valid google search and credentials') do
-      raw_query = SearchGoogle.new.search('endnote')
-      query = NormalizeGoogle.new.to_result(raw_query)
-      assert_equal(nil, query['results'][2].year)
-    end
-  end
-
   test 'normalized articles have expected url' do
     VCR.use_cassette('valid google search and credentials') do
       raw_query = SearchGoogle.new.search('endnote')
@@ -40,11 +24,11 @@ class NormalizeGoogleTest < ActiveSupport::TestCase
     end
   end
 
-  test 'normalized articles have expected type' do
+  test 'normalized articles have expected snippet' do
     VCR.use_cassette('valid google search and credentials') do
       raw_query = SearchGoogle.new.search('endnote')
       query = NormalizeGoogle.new.to_result(raw_query)
-      assert_equal('website', query['results'].first.type)
+      assert_includes(query['results'].first.blurb, 'with LaTeX and BibTeX')
     end
   end
 

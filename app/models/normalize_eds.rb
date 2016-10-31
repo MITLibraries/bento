@@ -22,7 +22,10 @@ class NormalizeEds
   end
 
   def result(record)
-    Result.new(title(record), year(record), link(record), type(record))
+    result = Result.new(title(record), link(record))
+    result.year = year(record)
+    result.type = type(record)
+    result
   end
 
   def title(record)
