@@ -1,12 +1,43 @@
 <div class='bento-result'>
+  <%= result.type %>
   <h3 class='bento-title'>
     <%= link_to(result.title, result.url, class: 'bento-link') %>
-    <% if result.year.present? %>
-      <span class='bento-year'><%= result.year %></span>
-    <% end %>
   </h3>
   <div class='bento-body'>
-    <%= result.truncated_authors.join('; ') if result.authors %><br />
-    <%= sanitize(result.blurb) if result.blurb %><br />
+    <% if result.authors %>
+      <% result.truncated_authors.each do |author| %>
+        <%= link_to(author, "#") unless author == "et al" %>
+        <%= author if author == "et al" %>
+      <% end %>
+      <br />
+    <% end %>
+
+    <% if result.blurb %>
+      <%= sanitize(result.blurb) %><br />
+    <% end %>
+
+    <% if result.in %>
+      In <%= link_to(result.in, "#") %> <%= result.citation %> (<%= result.year %>)<br />
+    <% end %>
+
+    <% if result.subjects.present? %>
+      <ul>
+      <% result.subjects.each do |subject| %>
+        <li><%= link_to(subject, "#") %></li>
+      <% end %>
+      </ul>
+    <% end %>
+
+    <% if result.location.present? %>
+      <ul>
+      <% result.location.each do |location| %>
+        <li><%= location[0] %>: <%= location[1] %></li>
+      <% end %>
+      </ul>
+    <% end %>
+
+    <%= link_to('Link link', result.url, class: 'btn btn-default') %>
+
+    <%= image_tag(result.thumbnail) if result.thumbnail.present? %>
   </div>
 </div>

@@ -34,7 +34,7 @@ class SearchTest < ActionDispatch::IntegrationTest
       get '/search/search?q=popcorn&target=articles'
       assert_response :success
       assert_select('a.bento-link') do |value|
-        assert(value.text.include?('100 sweet and savory'))
+        assert(value.text.include?('History of northern corn leaf'))
       end
     end
   end

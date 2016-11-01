@@ -5,9 +5,9 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcorn', 'apinoaleph')
-      query = NormalizeEds.new.to_result(raw_query)
+      query = NormalizeEds.new.to_result(raw_query, 'articles')
       assert_equal(
-        'Popcorn! : 100 sweet and savory recipes.',
+        'History of northern corn leaf blight disease in the',
         query['results'].first.title.split[0...9].join(' ')
       )
     end
@@ -17,8 +17,8 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcorn', 'apinoaleph')
-      query = NormalizeEds.new.to_result(raw_query)
-      assert_equal('2013', query['results'].first.year)
+      query = NormalizeEds.new.to_result(raw_query, 'articles')
+      assert_equal('2016', query['results'].first.year)
     end
   end
 
@@ -26,9 +26,9 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcorn', 'apinoaleph')
-      query = NormalizeEds.new.to_result(raw_query)
+      query = NormalizeEds.new.to_result(raw_query, 'articles')
       assert_equal(
-        'http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&db=edshlc&AN=edshlc.013683931-2',
+        'https://sfx.mit.edu/sfx_local?rfr_id=info%3Asid%2FMIT.BENTO&rft.au=Moreira+Ribeiro%2C+Rodrigo%3Bdo+Amaral+J%C3%BAnior%2C+Ant%C3%B4nio+Teixeira%3BFerreira+Pena%2C+Guilherme%3BVivas%2C+Marcelo%3BNascimento+Kurosawa%2C+Railan%3BAzeredo+Gon%C3%A7alves%2C+Leandro+Sim%C3%B5es&rft.issue=4&rft.jtitle=Acta+Scientiarum%3A+Agronomy&rft.volume=38&rft.year=2016&rft_id=info%3Adoi%2F10.4025%2Factasciagron.v38i4.30573',
         query['results'].first.url
       )
     end
@@ -38,8 +38,8 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcorn', 'apinoaleph')
-      query = NormalizeEds.new.to_result(raw_query)
-      assert_equal('Book', query['results'].first.type)
+      query = NormalizeEds.new.to_result(raw_query, 'articles')
+      assert_equal('Academic Journal', query['results'].first.type)
     end
   end
 
@@ -47,12 +47,12 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcorn', 'apinoaleph')
-      query = NormalizeEds.new.to_result(raw_query)
+      query = NormalizeEds.new.to_result(raw_query, 'articles')
       assert_equal(
-        'Beckerman, Carol',
+        'Moreira Ribeiro, Rodrigo',
         query['results'].first.authors.first
       )
-      assert_equal(1, query['results'].first.authors.count)
+      assert_equal(6, query['results'].first.authors.count)
     end
   end
 
@@ -60,7 +60,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('no results',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcornandorangejuice', 'apinoaleph')
-      query = NormalizeEds.new.to_result(raw_query)
+      query = NormalizeEds.new.to_result(raw_query, 'articles')
       assert_equal(0, query['total'])
     end
   end
@@ -72,7 +72,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
       searchterm = 'R. F. Harrington, Field computation by moment methods. '\
                    'Macmillan, 1968'
       raw_query = SearchEds.new.search(searchterm, 'apinoaleph')
-      query = NormalizeEds.new.to_result(raw_query)
+      query = NormalizeEds.new.to_result(raw_query, 'articles')
       assert_equal(77_612_346, query['total'])
     end
   end
@@ -84,7 +84,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
       searchterm = 'R. F. Harrington, Field computation by moment methods. '\
                    'Macmillan, 1968'
       raw_query = SearchEds.new.search(searchterm, 'apibarton')
-      query = NormalizeEds.new.to_result(raw_query)
+      query = NormalizeEds.new.to_result(raw_query, 'books')
       assert_equal(1_268_662, query['total'])
     end
   end
@@ -104,9 +104,9 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('rollbar8') do
       searchterm = 'web of science'
       raw_query = SearchEds.new.search(searchterm, 'apinoaleph')
-      query = NormalizeEds.new.to_result(raw_query)
+      query = NormalizeEds.new.to_result(raw_query, 'articles')
       assert_equal(37_667_909, query['total'])
-      assert_nil(query['results'].first.year)
+      assert_nil(query['results'][0].year)
     end
   end
 end

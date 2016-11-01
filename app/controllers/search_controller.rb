@@ -56,7 +56,7 @@ class SearchController < ApplicationController
   # Seaches EDS
   def search_eds
     raw_results = SearchEds.new.search(strip_q, eds_profile)
-    NormalizeEds.new.to_result(raw_results)
+    NormalizeEds.new.to_result(raw_results, params[:target])
   end
 
   # Determines appropriate EDS profile

@@ -5,7 +5,7 @@ class Result
 
   attr_accessor :title, :year, :url, :type, :authors, :citation, :online,
                 :year, :type, :in, :publisher, :location, :blurb, :subjects,
-                :available_url
+                :available_url, :thumbnail
 
   def initialize(title, url)
     @title = title
