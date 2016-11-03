@@ -25,12 +25,14 @@ group :production do
 end
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry-rails'
   gem 'sqlite3'
 end
 
 group :development do
   gem 'annotate'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'rubocop'
   gem 'web-console'
 end

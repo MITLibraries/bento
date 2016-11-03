@@ -35,14 +35,14 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 14 Sep 2016 17:10:47 GMT
+      - Thu, 27 Oct 2016 19:06:16 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
     http_version:
-  recorded_at: Wed, 14 Sep 2016 17:10:48 GMT
+  recorded_at: Thu, 27 Oct 2016 19:06:17 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apibarton
@@ -68,7 +68,7 @@ http_interactions:
       Cache-Control:
       - private
       Content-Length:
-      - '101'
+      - '100'
       Content-Type:
       - application/json; charset=utf-8
       Server:
@@ -78,23 +78,23 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - ae8e042b-2707-44e4-a7e8-2bfc2b492c1e
+      - 63d13e07-7b1f-4075-bfef-f516d1226d02
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 14 Sep 2016 17:10:39 GMT
+      - Thu, 27 Oct 2016 19:06:16 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"SessionToken":"FakeSessiontoken"}'
     http_version:
-  recorded_at: Wed, 14 Sep 2016 17:10:48 GMT
+  recorded_at: Thu, 27 Oct 2016 19:06:17 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&highlight=n&includefacets=n&pagenumber=1&query=popcorn&resultsperpage=3&searchmode=smart&sort=relevance&view=brief
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=popcorn&resultsperpage=3&searchmode=any&sort=relevance&view=detailed
     body:
       encoding: US-ASCII
       string: ''
@@ -119,7 +119,7 @@ http_interactions:
       Cache-Control:
       - private
       Content-Length:
-      - '7269'
+      - '8412'
       Content-Type:
       - application/json; charset=utf-8
       Server:
@@ -129,37 +129,51 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - aca94a4a-8ee4-4c15-a6ce-e0d334d2f8c9
+      - d4097ded-1778-4049-a609-748288f6089a
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 14 Sep 2016 17:10:47 GMT
+      - Thu, 27 Oct 2016 19:06:17 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcorn&sort=relevance&includefacets=n&searchmode=smart&autosuggest=n&view=brief&resultsperpage=3&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcorn"},"RemoveAction":"removequery(1)"}]}},"SearchResult":{"Statistics":{"TotalHits":79,"TotalSearchTime":98,"Databases":[{"Id":"cat00916a","Label":"MIT
-        Barton Catalog","Status":"0","Hits":78},{"Id":"ir00145a","Label":"MIT DOME
-        for Discovery","Status":"0","Hits":1},{"Id":"cat01763a","Label":"MIT Course
-        Reserves","Status":"0","Hits":0}]},"Data":{"RecordFormat":"EP Display","Records":[{"ResultId":1,"Header":{"DbId":"cat00916a","DbLabel":"MIT
-        Barton Catalog","An":"mit.001739356","RelevancyScore":"3502","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001739356","ImageInfo":[{"Size":"thumb","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=S&Value=9780752889351"},{"Size":"medium","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9780752889351"}],"CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/001739356?","Name":"MIT
-        Barton Catalog URL (cat00916a)","Category":"libCatalog","Text":"View catalog
-        record","MouseOverText":"Go to Barton catalog to find this at the MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcorn&expander=fulltext&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=detailed&resultsperpage=3&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcorn"},"RemoveAction":"removequery(1)"}],"ExpandersWithAction":[{"Id":"fulltext","RemoveAction":"removeexpander(fulltext)"}]}},"SearchResult":{"Statistics":{"TotalHits":78,"TotalSearchTime":199,"Databases":[{"Id":"ir00145a","Label":"MIT
+        DOME for Discovery","Status":"0","Hits":1},{"Id":"cat01763a","Label":"MIT
+        Course Reserves","Status":"0","Hits":0},{"Id":"cat01875a","Label":"MIT Test
+        Catalog","Status":"0","Hits":77}]},"Data":{"RecordFormat":"EP Display","Records":[{"ResultId":1,"Header":{"DbId":"cat01875a","DbLabel":"MIT
+        Test Catalog","An":"mittest.001739356","RelevancyScore":"2633","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat01875a&AN=mittest.001739356","ImageInfo":[{"Size":"thumb","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=S&Value=9780752889351"},{"Size":"medium","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9780752889351"}],"CustomLinks":[{"Url":"https:\/\/walter.mit.edu\/item\/001739356?","Name":"MIT
+        Test catalog2 (copy of cat00916a) (cat01875a)","Category":"libCatalog","Text":"View
+        catalog record","MouseOverText":"Go to Barton catalog to find this at the
+        MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn
         : fifty years of rock &#39;n&#39; roll movies \/ Garry Mulholland."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
         fieldCode=&quot;AR&quot; term=&quot;%22Mulholland%2C+Garry%22&quot;&gt;Mulholland,
         Garry&lt;\/searchLink&gt;"},{"Name":"TypePub","Label":"Publication Type","Group":"TypPub","Data":"Book"},{"Name":"Subject","Label":"Subject
         Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Rock+films+--+History+and+criticism%22&quot;&gt;Rock
-        films -- History and criticism&lt;\/searchLink&gt;"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Rock
+        films -- History and criticism&lt;\/searchLink&gt;"},{"Name":"Abstract","Label":"Abstract","Group":"Ab","Data":"Review:
+        &quot;Popcorn is no straight-forward &#39;best-of&#39; list; rather it is
+        part serious critical appreciation, part celebration of perceived B-movie
+        trash. Garry Mulholland is equally at home deconstructing the likes of Performance,
+        Gimme Shelter and Jubilee as celebrating Grease, Footloose and Glitter. Along
+        the way, classics of the genre are revisited. Turkeys are disinterred. Forgotten
+        gems are dusted down and re-examined; cult classics unearthed for a new generation.&quot;
+        &quot;The main aim is to get to the essence of the film and why it matters
+        ... or perhaps doesn&#39;t. In doing so, Popcorn reminds the reader why they
+        might have entered the cinema in the first place. As with Mulholland&#39;s
+        previous books on singles and albums, and as with all great criticism, the
+        reader will unquestionably return to the source galvanised, searching out
+        old, new and classic films on DVD.&quot;--BOOK JACKET."}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Rock
         films -- History and criticism","Type":"general"}],"Titles":[{"TitleFull":"Popcorn
         : fifty years of rock ''n'' roll movies.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Mulholland,
         Garry"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"2010"}],"Identifiers":[{"Type":"isbn-print","Value":"9780752889351"},{"Type":"isbn-print","Value":"0752889354"}],"Titles":[{"TitleFull":"Popcorn
         : fifty years of rock ''n'' roll movies \/ Garry Mulholland.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Hayden
-        Library - Stacks","ShelfLocator":"PN1995.9.M86 M855 2010"}]}}]},{"ResultId":2,"Header":{"DbId":"cat00916a","DbLabel":"MIT
-        Barton Catalog","An":"mit.001245816","RelevancyScore":"3389","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001245816","CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/001245816?","Name":"MIT
-        Barton Catalog URL (cat00916a)","Category":"libCatalog","Text":"View catalog
-        record","MouseOverText":"Go to Barton catalog to find this at the MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn
+        Library - Stacks","ShelfLocator":"PN1995.9.M86 M855 2010"}]}}]},{"ResultId":2,"Header":{"DbId":"cat01875a","DbLabel":"MIT
+        Test Catalog","An":"mittest.001245816","RelevancyScore":"2147","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat01875a&AN=mittest.001245816","CustomLinks":[{"Url":"https:\/\/walter.mit.edu\/item\/001245816?","Name":"MIT
+        Test catalog2 (copy of cat00916a) (cat01875a)","Category":"libCatalog","Text":"View
+        catalog record","MouseOverText":"Go to Barton catalog to find this at the
+        MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn
         Moms : decoding representations of motherhood in American popular cinema,
         1979-1989 \/ by Robin Schneider Hauck."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
         fieldCode=&quot;AR&quot; term=&quot;%22Hauck%2C+Robin+Schneider%22&quot;&gt;Hauck,
@@ -178,10 +192,11 @@ http_interactions:
         Archives - Noncirculating Collection 3","ShelfLocator":"Thesis CMS 2003 S.M.
         THESIS"},{"Sublocation":"Hayden Library - Humanities Microforms","ShelfLocator":"Thesis
         CMS 2003 S.M. THESIS"},{"Sublocation":"Hayden Library - Stacks","ShelfLocator":"Thesis
-        CMS 2003 S.M. THESIS"}]}}]},{"ResultId":3,"Header":{"DbId":"cat00916a","DbLabel":"MIT
-        Barton Catalog","An":"mit.000346597","RelevancyScore":"3389","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.000346597","CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/000346597?","Name":"MIT
-        Barton Catalog URL (cat00916a)","Category":"libCatalog","Text":"View catalog
-        record","MouseOverText":"Go to Barton catalog to find this at the MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn
+        CMS 2003 S.M. THESIS"}]}}]},{"ResultId":3,"Header":{"DbId":"cat01875a","DbLabel":"MIT
+        Test Catalog","An":"mittest.000346597","RelevancyScore":"2147","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat01875a&AN=mittest.000346597","CustomLinks":[{"Url":"https:\/\/walter.mit.edu\/item\/000346597?","Name":"MIT
+        Test catalog2 (copy of cat00916a) (cat01875a)","Category":"libCatalog","Text":"View
+        catalog record","MouseOverText":"Go to Barton catalog to find this at the
+        MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn
         Venus \/ Marjorie Rosen."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
         fieldCode=&quot;AR&quot; term=&quot;%22Rosen%2C+Marjorie%22&quot;&gt;Rosen,
         Marjorie&lt;\/searchLink&gt;"},{"Name":"TypePub","Label":"Publication Type","Group":"TypPub","Data":"Book"},{"Name":"Subject","Label":"Subject
@@ -192,7 +207,7 @@ http_interactions:
         Venus \/ Marjorie Rosen.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Hayden
         Library - Stacks","ShelfLocator":"PN1995.9.W6.R6 1974"}]}}]}]}}}'
     http_version:
-  recorded_at: Wed, 14 Sep 2016 17:10:48 GMT
+  recorded_at: Thu, 27 Oct 2016 19:06:17 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
@@ -228,18 +243,18 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 371790b4-cbf5-41fd-b248-f801b2491d2d
+      - f15a46c5-5050-4f0e-8b5b-28d639f561a2
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 14 Sep 2016 17:10:31 GMT
+      - Thu, 27 Oct 2016 19:06:17 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"IsSuccessful":"y"}'
     http_version:
-  recorded_at: Wed, 14 Sep 2016 17:10:48 GMT
+  recorded_at: Thu, 27 Oct 2016 19:06:17 GMT
 recorded_with: VCR 3.0.3

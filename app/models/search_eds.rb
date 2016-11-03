@@ -27,9 +27,9 @@ class SearchEds
 
   def search_url(term)
     [EDS_URL, '/edsapi/rest/Search?query=', clean_term(term),
-     '&searchmode=smart', "&resultsperpage=#{RESULTS_PER_BOX}",
+     '&searchmode=any', "&resultsperpage=#{RESULTS_PER_BOX}",
      '&pagenumber=1', '&sort=relevance', '&highlight=n', '&includefacets=n',
-     '&view=brief', '&autosuggest=n'].join('')
+     '&view=detailed', '&autosuggest=n', '&expander=fulltext'].join('')
   end
 
   def search_filtered(term)

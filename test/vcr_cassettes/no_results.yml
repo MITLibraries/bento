@@ -35,14 +35,14 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 14 Sep 2016 17:10:59 GMT
+      - Thu, 27 Oct 2016 19:20:47 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
-    http_version: 
-  recorded_at: Wed, 14 Sep 2016 17:10:59 GMT
+    http_version:
+  recorded_at: Thu, 27 Oct 2016 19:20:47 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apinoaleph
@@ -68,7 +68,7 @@ http_interactions:
       Cache-Control:
       - private
       Content-Length:
-      - '100'
+      - '101'
       Content-Type:
       - application/json; charset=utf-8
       Server:
@@ -78,23 +78,23 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - b61afd9c-14af-46b2-bdbf-13eb13aedd58
+      - a3abbe1e-5c85-4237-aef1-06d0d3300249
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 14 Sep 2016 17:10:59 GMT
+      - Thu, 27 Oct 2016 19:20:47 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"SessionToken":"FakeSessiontoken"}'
-    http_version: 
-  recorded_at: Wed, 14 Sep 2016 17:11:00 GMT
+    http_version:
+  recorded_at: Thu, 27 Oct 2016 19:20:47 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&highlight=n&includefacets=n&pagenumber=1&query=popcornandorangejuice&resultsperpage=3&searchmode=smart&sort=relevance&view=brief
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=popcornandorangejuice&resultsperpage=3&searchmode=any&sort=relevance&view=detailed
     body:
       encoding: US-ASCII
       string: ''
@@ -119,7 +119,7 @@ http_interactions:
       Cache-Control:
       - private
       Content-Length:
-      - '6747'
+      - '6764'
       Content-Type:
       - application/json; charset=utf-8
       Server:
@@ -129,18 +129,18 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 011eb8d0-bb12-4ab4-accd-7c4ec63ee071
+      - 956e43d3-3cc7-4cf3-8035-ada981a97092
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 14 Sep 2016 17:10:52 GMT
+      - Thu, 27 Oct 2016 19:20:48 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcornandorangejuice&sort=relevance&includefacets=n&searchmode=smart&autosuggest=n&view=brief&resultsperpage=3&pagenumber=0&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcornandorangejuice"},"RemoveAction":"removequery(1)"}]}},"SearchResult":{"Statistics":{"TotalHits":0,"TotalSearchTime":241,"Databases":[{"Id":"eric","Label":"ERIC","Status":"0","Hits":0},{"Id":"bwh","Label":"","Status":"0","Hits":0},{"Id":"egh","Label":"Environment
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcornandorangejuice&expander=fulltext&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=detailed&resultsperpage=3&pagenumber=0&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcornandorangejuice"},"RemoveAction":"removequery(1)"}],"ExpandersWithAction":[{"Id":"fulltext","RemoveAction":"removeexpander(fulltext)"}]}},"SearchResult":{"Statistics":{"TotalHits":0,"TotalSearchTime":684,"Databases":[{"Id":"eric","Label":"ERIC","Status":"0","Hits":0},{"Id":"bwh","Label":"","Status":"0","Hits":0},{"Id":"egh","Label":"Environment
         Index","Status":"0","Hits":0},{"Id":"ecn","Label":"EconLit","Status":"0","Hits":0},{"Id":"cmedm","Label":"MEDLINE","Status":"0","Hits":0},{"Id":"ufh","Label":"Communication
         & Mass Media Complete","Status":"0","Hits":0},{"Id":"fyh","Label":"Women''s
         Studies International","Status":"0","Hits":0},{"Id":"bth","Label":"Business
@@ -159,7 +159,9 @@ http_interactions:
         Business Collection","Status":"0","Hits":0},{"Id":"edsiec","Label":"Informit
         Engineering Collection","Status":"0","Hits":0},{"Id":"edsihc","Label":"Informit
         Health Collection","Status":"0","Hits":0},{"Id":"edsihs","Label":"Informit
-        Humanities & Social Sciences Collection","Status":"0","Hits":0},{"Id":"nlebk","Label":"eBook
+        Humanities & Social Sciences Collection","Status":"0","Hits":0},{"Id":"edsilc","Label":"Informit
+        Literature & Culture Collection","Status":"0","Hits":0},{"Id":"edsind","Label":"Informit
+        Indigenous Collection","Status":"0","Hits":0},{"Id":"nlebk","Label":"eBook
         Collection (EBSCOhost)","Status":"0","Hits":0},{"Id":"edsmer","Label":"Mergent
         Annual Reports Collection","Status":"0","Hits":0},{"Id":"hma","Label":"Humanities
         Abstracts (H.W. Wilson)","Status":"0","Hits":0},{"Id":"hsr","Label":"Humanities
@@ -171,9 +173,7 @@ http_interactions:
         Information Service System (KISS)","Status":"0","Hits":0},{"Id":"edsaan","Label":"Accessible
         Archives","Status":"0","Hits":0},{"Id":"edscrc","Label":"Credo Reference Collections","Status":"0","Hits":0},{"Id":"edszbw","Label":"ECONIS","Status":"0","Hits":0},{"Id":"nsm","Label":"Newswires","Status":"0","Hits":0},{"Id":"bpr","Label":"Business
         Periodicals Index Retrospective: 1913-1982 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"edshvr","Label":"Hoover''s
-        Company Profiles","Status":"0","Hits":0},{"Id":"edsilc","Label":"Informit
-        Literature & Culture Collection","Status":"0","Hits":0},{"Id":"edsind","Label":"Informit
-        Indigenous Collection","Status":"0","Hits":0},{"Id":"edslex","Label":"LexisNexis
+        Company Profiles","Status":"0","Hits":0},{"Id":"edslex","Label":"LexisNexis
         Academic: Law Reviews","Status":"0","Hits":0},{"Id":"edsasp","Label":"Alexander
         Street Press","Status":"0","Hits":0},{"Id":"asx","Label":"","Status":"0","Hits":0},{"Id":"edo","Label":"","Status":"0","Hits":0},{"Id":"edb","Label":"","Status":"0","Hits":0},{"Id":"edsjpi","Label":"Japanese
         Periodical Index - 雑誌記事索引","Status":"0","Hits":0},{"Id":"edsjst","Label":"J-STAGE","Status":"0","Hits":0},{"Id":"edsoao","Label":"Grove
@@ -181,24 +181,24 @@ http_interactions:
         Biography Online","Status":"0","Hits":0},{"Id":"edsomo","Label":"Grove Music
         Online","Status":"0","Hits":0},{"Id":"edsupe","Label":"Archive of European
         Integration","Status":"0","Hits":0},{"Id":"edsupi","Label":"Industry Studies
-        Working Papers","Status":"0","Hits":0},{"Id":"edsuph","Label":"Minority Health
-        Archive","Status":"0","Hits":0},{"Id":"edsupa","Label":"Aphasiology Archive","Status":"0","Hits":0},{"Id":"edsupp","Label":"PhilSci
-        Archive","Status":"0","Hits":0},{"Id":"edshlc","Label":"Harvard Library Bibliographic
-        Dataset","Status":"0","Hits":0},{"Id":"edsebo","Label":"Britannica Online","Status":"0","Hits":0},{"Id":"edsdoj","Label":"Directory
-        of Open Access Journals","Status":"0","Hits":0},{"Id":"edsper","Label":"Persée","Status":"0","Hits":0},{"Id":"edspio","Label":"Public
-        Information Online","Status":"0","Hits":0},{"Id":"edsffr","Label":"Freedonia
-        Focus Reports","Status":"0","Hits":0},{"Id":"edsers","Label":"eArticle","Status":"0","Hits":0},{"Id":"edsabc","Label":"ABC-CLIO
+        Working Papers","Status":"0","Hits":0},{"Id":"edsupa","Label":"Aphasiology
+        Archive","Status":"0","Hits":0},{"Id":"edsupp","Label":"PhilSci Archive","Status":"0","Hits":0},{"Id":"edsuph","Label":"Minority
+        Health Archive","Status":"0","Hits":0},{"Id":"edsebo","Label":"Britannica
+        Online","Status":"0","Hits":0},{"Id":"edsdoj","Label":"Directory of Open Access
+        Journals","Status":"0","Hits":0},{"Id":"edsper","Label":"Persée","Status":"0","Hits":0},{"Id":"edspio","Label":"Public
+        Information Online","Status":"0","Hits":0},{"Id":"edsers","Label":"eArticle","Status":"0","Hits":0},{"Id":"edsoap","Label":"OAPEN
+        Library","Status":"0","Hits":0},{"Id":"edsffr","Label":"Freedonia Focus Reports","Status":"0","Hits":0},{"Id":"edsabc","Label":"ABC-CLIO
         Social Studies Databases, School Edition","Status":"0","Hits":0},{"Id":"edsaca","Label":"ABC-CLIO
         Social Studies Databases, Academic Edition","Status":"0","Hits":0},{"Id":"edsssb","Label":"Books24x7","Status":"0","Hits":0},{"Id":"edshol","Label":"HeinOnline","Status":"0","Hits":0},{"Id":"edsgsf","Label":"SOFIS
         - Sozialwissenschaftliche Forschungsinformationen","Status":"0","Hits":0},{"Id":"edsgsl","Label":"SOLIS
-        - Sozialwissenschaftliche Literatur","Status":"0","Hits":0},{"Id":"edsoap","Label":"OAPEN
-        Library","Status":"0","Hits":0},{"Id":"edsocd","Label":"China\/Asia On Demand","Status":"0","Hits":0},{"Id":"edsble","Label":"British
-        Library EThOS","Status":"0","Hits":0},{"Id":"edswbo","Label":"World Book","Status":"0","Hits":0},{"Id":"edsbre","Label":"Bridgeman
+        - Sozialwissenschaftliche Literatur","Status":"0","Hits":0},{"Id":"edsocd","Label":"China\/Asia
+        On Demand","Status":"0","Hits":0},{"Id":"edsble","Label":"British Library
+        EThOS","Status":"0","Hits":0},{"Id":"edswbo","Label":"World Book","Status":"0","Hits":0},{"Id":"edsbre","Label":"Bridgeman
         Education","Status":"0","Hits":0},{"Id":"edshld","Label":"Digital Access to
         Scholarship at Harvard (DASH)","Status":"0","Hits":0},{"Id":"edsjsr","Label":"JSTOR
         Journals","Status":"0","Hits":0}]},"Data":{"RecordFormat":"EP Display"}}}'
-    http_version: 
-  recorded_at: Wed, 14 Sep 2016 17:11:00 GMT
+    http_version:
+  recorded_at: Thu, 27 Oct 2016 19:20:48 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
@@ -234,18 +234,18 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 2f8917d8-acff-4ea5-b1cf-fc26c0de687f
+      - 801b96b5-8e96-4e4b-bfd5-a0a35425d5c9
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 14 Sep 2016 17:11:00 GMT
+      - Thu, 27 Oct 2016 19:20:48 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"IsSuccessful":"y"}'
-    http_version: 
-  recorded_at: Wed, 14 Sep 2016 17:11:00 GMT
+    http_version:
+  recorded_at: Thu, 27 Oct 2016 19:20:48 GMT
 recorded_with: VCR 3.0.3

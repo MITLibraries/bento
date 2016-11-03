@@ -22,16 +22,40 @@
 </div>
 
 <div class="row">
-  <% if box_enabled?('articles') %>
-    <%= render partial: "placeholders", locals: { heading: 'Articles and Stuff', id: 'articles_content'} %>
+  <% if box_enabled?('books') %>
+    <%= render partial: "placeholders", locals: { heading: 'Books', id: 'books_content', box_width: 6} %>
   <% end %>
 
-  <% if box_enabled?('books') %>
-    <%= render partial: "placeholders", locals: { heading: 'Books and Stuff', id: 'books_content'} %>
+  <% if box_enabled?('articles') %>
+    <%= render partial: "placeholders", locals: { heading: 'Articles', id: 'articles_content', box_width: 6} %>
   <% end %>
 
   <% if box_enabled?('worldcat') %>
-    <%= render partial: "placeholders", locals: { heading: 'WorldCat', id: 'worldcat_content'} %>
+    <%= render partial: "placeholders", locals: { heading: 'WorldCat', id: 'worldcat_content', box_width: 6} %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    <h2>Databases</h2>
+    Coming soon...
+  </div>
+
+  <div class="col-sm-4">
+    <h2>Journals</h2>
+    Coming soon...
+  </div>
+
+  <div class="col-sm-4">
+    <h2>Other Resources</h2>
+    Coming soon...
+  </div>
+
+</div>
+
+<div class="row">
+  <% if box_enabled?('media') %>
+    <%= render partial: "placeholders", locals: { heading: 'Media and More', id: 'website_content'} %>
   <% end %>
 
   <% if box_enabled?('website') %>
