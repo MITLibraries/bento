@@ -2,28 +2,30 @@
   <%= render partial: "result", locals: {result: result} %>
 <% end %>
 
+<div class="results-more">
 <% if @results['total'] > 0 %>
   <% if params[:target] == 'google' %>
     <%= link_to(
-      "View all #{number_with_delimiter(@results['total'])} like this.",
+      "View all #{number_with_delimiter(@results['total'])} like this",
       "https://cse.google.com/cse?cx=#{ENV['GOOGLE_CUSTOM_SEARCH_ID']}&ie=UTF-8&q=#{params[:q]}&sa=Search#gsc.tab=0&gsc.q=#{params[:q]}",
       data: {count: @results['total']}) %>
   <% elsif params[:target] == 'articles' %>
     <%= link_to(
-      "View all #{number_with_delimiter(@results['total'])} like this.",
+      "View all #{number_with_delimiter(@results['total'])} like this",
       "#{ENV['EDS_NO_ALEPH_URI']}#{params[:q]}",
       data: {count: @results['total']}) %>
   <% elsif params[:target] == 'books' %>
     <%= link_to(
-      "View all #{number_with_delimiter(@results['total'])} like this.",
+      "View all #{number_with_delimiter(@results['total'])} like this",
       "#{ENV['EDS_ALEPH_URI']}#{params[:q]}",
       data: {count: @results['total']}) %>
   <% elsif params[:target] == 'worldcat' %>
     <%= link_to(
-      "View all #{number_with_delimiter(@results['total'])} like this.",
+      "View all #{number_with_delimiter(@results['total'])} like this",
       "http://mit.worldcat.org/search?qt=worldcat_org_all&&q=#{params[:q]}",
       data: {count: @results['total']}) %>
   <% end %>
 <% else %>
   No results found.
 <% end %>
+</div>

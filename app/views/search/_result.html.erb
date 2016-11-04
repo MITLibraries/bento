@@ -1,43 +1,66 @@
-<div class='bento-result'>
-  <%= result.type %>
-  <h3 class='bento-title'>
+<div class='wrap-result'>
+  
+  <% if result.type %>
+    <p class="result-type"><%= result.type %></p>
+  <% end %>
+
+  <% if result.thumbnail %>
+    <div class="result-image">
+      <%= image_tag(result.thumbnail) %>
+    </div>
+  <% end %>
+
+  <h3 class='result-title'>
     <%= link_to(result.title, result.url, class: 'bento-link') %>
   </h3>
-  <div class='bento-body'>
+  <div class='result-body'>
     <% if result.authors %>
-      <% result.truncated_authors.each do |author| %>
-        <%= link_to(author, "#") unless author == "et al" %>
-        <%= author if author == "et al" %>
-      <% end %>
-      <br />
+      <p class="result-authors">
+        <% result.truncated_authors.each do |author| %>
+        <span class="result-author">
+          <%= link_to(author, "#") unless author == "et al" %>
+          <%= author if author == "et al" %>
+        </span>
+        <% end %>
+      </p>
     <% end %>
 
     <% if result.blurb %>
-      <%= sanitize(result.blurb) %><br />
+      <p class="result-blurb">
+        <%= sanitize(result.blurb) %><br />
+      </p>
     <% end %>
 
     <% if result.in %>
-      In <%= link_to(result.in, "#") %> <%= result.citation %> (<%= result.year %>)<br />
+      <p class="result-pubinfo">
+        In <%= link_to(result.in, "#") %> <%= result.citation %> (<%= result.year %>)<br />
+      </p>
     <% end %>
 
     <% if result.subjects.present? %>
-      <ul>
-      <% result.subjects.each do |subject| %>
-        <li><%= link_to(subject, "#") %></li>
-      <% end %>
-      </ul>
+      <div class="result-subjectheadings">
+        <ul class="list-subjects">
+        <% result.subjects.each do |subject| %>
+          <li class="result-subjectheading"><%= link_to(subject, "#") %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
 
     <% if result.location.present? %>
-      <ul>
-      <% result.location.each do |location| %>
-        <li><%= location[0] %>: <%= location[1] %></li>
-      <% end %>
-      </ul>
+      <div class="result-local-locations">
+        <ul class="list-local-locations">
+        <% result.location.each do |location| %>
+          <li class="result-local-location"><%= location[0] %>: <%= location[1] %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
 
-    <%= link_to('Link link', result.url, class: 'btn btn-default') %>
-
-    <%= image_tag(result.thumbnail) if result.thumbnail.present? %>
+    <% if result.url %>
+      <div class="result-get">
+        <%= link_to('Get it', result.url, class: 'button button-secondary') %>
+      </div>
+    <% end %>
   </div>
 </div>
