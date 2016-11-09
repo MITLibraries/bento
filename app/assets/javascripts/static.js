@@ -15,5 +15,5 @@ function TrackLinks( element ) {
 
 function ReportSummary( category, count ) {
   count = ( typeof count !== 'undefined' ) ? count : 0;
-  $( '.bento-summary-list li[data-region="' + category + '"] .count' ).html( count );
+  $( '.results-summary .results-summary-item[data-region="' + category + '"] .count' ).html( count );
 }

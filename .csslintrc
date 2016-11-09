@@ -1,0 +1,5 @@
+// ignore some lint errors
+{
+    "qualified-headings": false,
+    "unique-headings": false
+}

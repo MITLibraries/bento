@@ -75,17 +75,19 @@ a:hover, a:active, a:focus {
   color: #0ea6ec;
   text-decoration: underline;
 }
-a:disabled, a.is-disabled {
+a:disabled, .is-disabled {
   display: none;
   color: #595959;
 }
-a:active, a.is-pressed, a.is-active {
+a:active, .is-pressed, .is-active {
   color: #0ea6ec;
 }
 
-* {
-  box-sizing: border-box;
+/* csslint ignore:start */
+* { 
+  box-sizing: border-box; 
 }
+/* csslint ignore:end */
 
 html, body {
   height: 100%;
@@ -463,6 +465,7 @@ hr {
 
 .button-secondary {
   transition: background-color .25s, border .25s;
+  border: 1px solid #ccc;
   border: 1px solid rgba(89, 89, 89, 0.3);
   border-radius: 3px;
   padding: 5px 10px;
@@ -621,6 +624,7 @@ hr {
   margin: 1rem 0;
 }
 
+/* csslint ignore:start */
 .wrap-outer-header-local.reasons {
   background: #f23074; /* Old browsers */
   background: -moz-linear-gradient(45deg, #f23074 0%, #d6d628 36%, #207cca 66%, #544b8c 100%); /* FF3.6-15 */
@@ -628,3 +632,4 @@ hr {
   background: linear-gradient(45deg, #f23074 0%,#d6d628 36%,#207cca 66%,#544b8c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f23074', endColorstr='#544b8c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+/* csslint ignore:end */

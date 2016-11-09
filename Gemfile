@@ -12,6 +12,7 @@ gem 'omniauth-mit-oauth2'
 gem 'omniauth-oauth2'
 gem 'puma'
 gem 'rollbar'
+gem 'sass-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'twitter-bootstrap-rails'
 gem 'uglifier', '>= 1.3.0'

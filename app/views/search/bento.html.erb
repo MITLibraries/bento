@@ -1,24 +1,23 @@
 <%= render partial: "form" %>
 
-<div class="row bento-summary">
-  <h3>Found</h3>
-  <ul class="bento-summary-list">
+<div class="results-summary">
+  <p><span class="title">Found: </span>
     <% if box_enabled?('articles') %>
-      <li data-region="articles"><span class="count"><i class="fa fa-spinner fa-spin"></i></span> Articles</li>
+      <span class="results-summary-item" data-region="articles">Articles <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span>
     <% end %>
 
     <% if box_enabled?('books') %>
-      <li data-region="books"><span class="count"><i class="fa fa-spinner fa-spin"></i></span> Local Books</li>
+      <span class="results-summary-item" data-region="books">Local Books <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span>
     <% end %>
 
     <% if box_enabled?('worldcat') %>
-      <li data-region="worldcat"><span class="count"><i class="fa fa-spinner fa-spin"></i></span> Worldwide Books</li>
+      <span  class="results-summary-item"data-region="worldcat">Worldwide Books <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span>
     <% end %>
 
     <% if box_enabled?('website') %>
-      <li data-region="google"><span class="count"><i class="fa fa-spinner fa-spin"></i></span> Webpages</li>
+      <span class="results-summary-item" data-region="google">Webpages <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span>
     <% end %>
-  </ul>
+    </p>
 </div>
 
 <div class="row">
@@ -36,17 +35,17 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-4">
+  <div class="wrap-results col-sm-4">
     <h2>Databases</h2>
     Coming soon...
   </div>
 
-  <div class="col-sm-4">
+  <div class="wrap-results col-sm-4">
     <h2>Journals</h2>
     Coming soon...
   </div>
 
-  <div class="col-sm-4">
+  <div class="wrap-results col-sm-4">
     <h2>Other Resources</h2>
     Coming soon...
   </div>
@@ -55,11 +54,11 @@
 
 <div class="row">
   <% if box_enabled?('media') %>
-    <%= render partial: "placeholders", locals: { heading: 'Media and More', id: 'website_content'} %>
+    <%= render partial: "placeholders", locals: { heading: 'Media and More', id: 'website_content', box_width: 12} %>
   <% end %>
 
   <% if box_enabled?('website') %>
-    <%= render partial: "placeholders", locals: { heading: 'Website and Guides', id: 'website_content'} %>
+    <%= render partial: "placeholders", locals: { heading: 'Website and Guides', id: 'website_content', box_width: 12} %>
   <% end %>
 </div>
 
