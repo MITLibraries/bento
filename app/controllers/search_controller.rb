@@ -16,6 +16,11 @@ class SearchController < ApplicationController
   private
 
   # Requests results from requested target
+  # NOTE: The cache keys used below use a combination of the api endpoint
+  # name, the search parameter, and today's date to allow us to cache calls
+  # for the current date without ever worrying about expiring caches.
+  # Instead, we'll rely on the cache itself to expire the oldest cached
+  # items when necessary.
   def search_results
     return unless valid_target?
     Rails.cache.fetch("#{params[:target]}_#{strip_q}_#{today}") do
@@ -38,11 +43,6 @@ class SearchController < ApplicationController
     Time.zone.today.strftime('%Y%m%d')
   end
 
-  # NOTE: The cache keys used below use a combination of the api endpoint
-  # name, the search parameter, and today's date to allow us to cache calls
-  # for the current date without ever worrying about expiring caches.
-  # Instead, we'll rely on the cache itself to expire the oldest cached
-  # items when necessary.
   def search_target
     if params[:target] == 'google'
       search_google

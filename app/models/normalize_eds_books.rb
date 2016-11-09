@@ -13,20 +13,22 @@ class NormalizeEdsBooks
     copy(holdings(record))&.map { |l| [l['Sublocation'], l['ShelfLocator']] }
   end
 
-  def holdings(record)
-    record['Holdings']&.map { |h| h['HoldingSimple'] }
-  end
-
-  def copy(holdings)
-    holdings&.map { |c| c['CopyInformationList'] }&.flatten
-  end
-
   def publisher(record)
   end
 
   def thumbnail(record)
     return unless record['ImageInfo']
     record['ImageInfo'].select { |i| i['Size'] == 'thumb' }&.first['Target']
+  end
+
+  private
+
+  def holdings(record)
+    record['Holdings']&.map { |h| h['HoldingSimple'] }
+  end
+
+  def copy(holdings)
+    holdings&.map { |c| c['CopyInformationList'] }&.flatten
   end
 
   def bibrecord(record)
