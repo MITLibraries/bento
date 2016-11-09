@@ -1,4 +1,4 @@
-<div class='wrap-result'>
+<div class="wrap-result">
   
   <% if result.type %>
     <p class="result-type"><%= result.type %></p>
@@ -6,14 +6,14 @@
 
   <% if result.thumbnail %>
     <div class="result-image">
-      <%= image_tag(result.thumbnail) %>
+      <%= image_tag(result.thumbnail, alt: "Cover for #{result.title}") %>
     </div>
   <% end %>
 
-  <h3 class='result-title'>
+  <h3 class="result-title">
     <%= link_to(result.title, result.url, class: 'bento-link') %>
   </h3>
-  <div class='result-body'>
+  <div class="result-body">
     <% if result.authors %>
       <p class="result-authors">
         <% result.truncated_authors.each do |author| %>

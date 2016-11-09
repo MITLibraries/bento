@@ -75,11 +75,11 @@ a:hover, a:active, a:focus {
   color: #0ea6ec;
   text-decoration: underline;
 }
-a:disabled, a.is-disabled {
+a:disabled, .is-disabled {
   display: none;
   color: #595959;
 }
-a:active, a.is-pressed, a.is-active {
+a:active, .is-pressed, .is-active {
   color: #0ea6ec;
 }
 
@@ -463,6 +463,7 @@ hr {
 
 .button-secondary {
   transition: background-color .25s, border .25s;
+  border: 1px solid #ccc;
   border: 1px solid rgba(89, 89, 89, 0.3);
   border-radius: 3px;
   padding: 5px 10px;
