@@ -70,7 +70,7 @@ class NormalizeEds
   def construct_open_url(record)
     'https://sfx.mit.edu/sfx_local?' +
       NormalizeEdsArticles.new(record).openurl(
-        record, year(record), authors(record)
+        record, year(record), authors(record).map(&:first)
       )
   end
 
@@ -87,15 +87,29 @@ class NormalizeEds
   end
 
   def authors(record)
-    contributors(record)&.map { |r| r.dig('PersonEntity', 'Name', 'NameFull') }
+    contributors(record)&.map do |author_node|
+      [author_name(author_node), author_link(author_node)]
+    end
+  end
+
+  def author_name(author_node)
+    author_node.dig('PersonEntity', 'Name', 'NameFull')
+  end
+
+  def author_link(author_node)
+    if @type == 'books'
+      ENV['EDS_ALEPH_URI'] + author_search_format(author_node)
+    else
+      ENV['EDS_NO_ALEPH_URI'] + author_search_format(author_node)
+    end
+  end
+
+  def author_search_format(author_node)
+    URI.encode_www_form_component("AU \"#{author_name(author_node)}\"")
   end
 
   def contributors(record)
     relationships(record)['HasContributorRelationships']
-  end
-
-  def bibrecord(record)
-    record.dig('RecordInfo', 'BibRecord')
   end
 
   def bibentity(record)
@@ -103,6 +117,6 @@ class NormalizeEds
   end
 
   def relationships(record)
-    bibrecord(record)['BibRelationships']
+    record.dig('RecordInfo', 'BibRecord', 'BibRelationships')
   end
 end

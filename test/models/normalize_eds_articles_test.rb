@@ -41,9 +41,16 @@ class NormalizeEdsArticlesTest < ActiveSupport::TestCase
   test 'normalized articles have expected authors' do
     assert_equal(
       'Moreira Ribeiro, Rodrigo',
-      popcorn_articles['results'].first.authors.first
+      popcorn_articles['results'][0].authors[0][0]
     )
     assert_equal(6, popcorn_articles['results'][0].authors.count)
+  end
+
+  test 'normalized articles have expected author links' do
+    assert_equal(
+      'http://libproxy.mit.edu/login?url=https%3A%2F%2Fsearch.ebscohost.com%2Flogin.aspx%3Fdirect%3Dtrue%26AuthType%3Dcookie%2Csso%2Cip%2Cuid%26type%3D0%26group%3Dedstest%26site%3Dedsnoaleph%26profile%3Dedsnoaleph%26bquery%3DAU+%22Moreira+Ribeiro%2C+Rodrigo%22',
+      popcorn_articles['results'][0].authors[0][1]
+    )
   end
 
   test 'normalized articles can handle no authors' do

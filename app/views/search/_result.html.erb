@@ -1,5 +1,5 @@
 <div class="wrap-result">
-  
+
   <% if result.type %>
     <p class="result-type"><%= result.type %></p>
   <% end %>
@@ -18,7 +18,7 @@
       <p class="result-authors">
         <% result.truncated_authors.each do |author| %>
         <span class="result-author">
-          <%= link_to(author, "#") unless author == "et al" %>
+          <%= link_to(author[0], author[1]) unless author == "et al" %>
           <%= author if author == "et al" %>
         </span>
         <% end %>
@@ -41,7 +41,9 @@
       <div class="result-subjectheadings">
         <ul class="list-subjects">
         <% result.subjects.each do |subject| %>
-          <li class="result-subjectheading"><%= link_to(subject, "#") %></li>
+          <li class="result-subjectheading">
+            <%= link_to(subject[0], subject[1]) %>
+          </li>
         <% end %>
         </ul>
       </div>
@@ -51,7 +53,9 @@
       <div class="result-local-locations">
         <ul class="list-local-locations">
         <% result.location.each do |location| %>
-          <li class="result-local-location"><%= location[0] %>: <%= location[1] %></li>
+          <li class="result-local-location">
+            <%= location[0] %>: <%= location[1] %>
+          </li>
         <% end %>
         </ul>
       </div>
