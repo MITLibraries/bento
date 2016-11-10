@@ -33,7 +33,7 @@
 
     <% if result.in %>
       <p class="result-pubinfo">
-        In <%= link_to(result.in, "#") %> <%= result.citation %> (<%= result.year %>)<br />
+        In <%= link_to(result.in[0], result.in[1]) %> <%= result.citation %> (<%= result.year %>)<br />
       </p>
     <% end %>
 
