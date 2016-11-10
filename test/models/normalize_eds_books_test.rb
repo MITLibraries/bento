@@ -24,7 +24,14 @@ class NormalizeEdsBooksTest < ActiveSupport::TestCase
   end
 
   test 'normalized books have expected authors' do
-    assert_equal(['Mulholland, Garry'], popcorn_books['results'].first.authors)
+    assert_equal('Mulholland, Garry', popcorn_books['results'][0].authors[0][0])
+  end
+
+  test 'normalized books have expected author links' do
+    assert_equal(
+      'http://libproxy.mit.edu/login?url=https%3A%2F%2Fsearch.ebscohost.com%2Flogin.aspx%3Fdirect%3Dtrue%26AuthType%3Dcookie%2Csso%2Cip%2Cuid%26type%3D0%26group%3Dedstest%26profile%3Dedsbarton%26bquery%3DAU+%22Mulholland%2C+Garry%22',
+      popcorn_books['results'][0].authors[0][1]
+    )
   end
 
   test 'normalized books have expected multiple authors' do
@@ -34,7 +41,7 @@ class NormalizeEdsBooksTest < ActiveSupport::TestCase
       query = NormalizeEds.new.to_result(raw_query, 'books')
       assert_equal(
         ['Vonnegut, Kurt', 'Wakefield, Dan'],
-        query['results'][0].authors
+        query['results'][0].authors.map { |a| a[0] }
       )
     end
   end
@@ -62,8 +69,15 @@ class NormalizeEdsBooksTest < ActiveSupport::TestCase
 
   test 'normalized books have expected subjects' do
     assert_equal(
-      ['Rock films -- History and criticism'],
-      popcorn_books['results'][0].subjects
+      'Rock films -- History and criticism',
+      popcorn_books['results'][0].subjects[0][0]
+    )
+  end
+
+  test 'normalized books have expected subject links' do
+    assert_equal(
+      'http://libproxy.mit.edu/login?url=https%3A%2F%2Fsearch.ebscohost.com%2Flogin.aspx%3Fdirect%3Dtrue%26AuthType%3Dcookie%2Csso%2Cip%2Cuid%26type%3D0%26group%3Dedstest%26profile%3Dedsbarton%26bquery%3DDE+%22Rock+films+--+History+and+criticism%22',
+      popcorn_books['results'][0].subjects[0][1]
     )
   end
 

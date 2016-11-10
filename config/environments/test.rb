@@ -12,6 +12,8 @@ Rails.application.configure do
   ENV['WORLDCAT_API_KEY'] = 'FAKE_WORLDCAT_KEY'
   ENV['ENABLED_BOXES'] = 'website,books,articles,worldcat'
   ENV['MAX_AUTHORS'] = '3'
+  ENV['EDS_ALEPH_URI'] = 'http://libproxy.mit.edu/login?url=https%3A%2F%2Fsearch.ebscohost.com%2Flogin.aspx%3Fdirect%3Dtrue%26AuthType%3Dcookie%2Csso%2Cip%2Cuid%26type%3D0%26group%3Dedstest%26profile%3Dedsbarton%26bquery%3D'
+  ENV['EDS_NO_ALEPH_URI'] = 'http://libproxy.mit.edu/login?url=https%3A%2F%2Fsearch.ebscohost.com%2Flogin.aspx%3Fdirect%3Dtrue%26AuthType%3Dcookie%2Csso%2Cip%2Cuid%26type%3D0%26group%3Dedstest%26site%3Dedsnoaleph%26profile%3Dedsnoaleph%26bquery%3D'
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
