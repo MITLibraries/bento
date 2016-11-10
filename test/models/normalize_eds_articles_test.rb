@@ -75,10 +75,18 @@ class NormalizeEdsArticlesTest < ActiveSupport::TestCase
   test 'normalized articles have expected in' do
     assert_equal(
       'Acta Scientiarum: Agronomy',
-      popcorn_articles['results'][0].in
+      popcorn_articles['results'][0].in[0]
     )
-    assert_equal('Journal of Cereal Science', popcorn_articles['results'][1].in)
-    assert_equal('Procedia Food Science', popcorn_articles['results'][2].in)
+    assert_equal('Journal of Cereal Science',
+                 popcorn_articles['results'][1].in[0])
+    assert_equal('Procedia Food Science', popcorn_articles['results'][2].in[0])
+  end
+
+  test 'normalized articles have expected in url' do
+    assert_equal(
+      'https://sfx.mit.edu/sfx_local?rft.jtitle=Acta+Scientiarum%3A+Agronomy&rfr_id=info:sid/MIT.BENTO',
+      popcorn_articles['results'][0].in[1]
+    )
   end
 
   test 'normalized articles do not have subjects' do
