@@ -94,7 +94,7 @@ http_interactions:
   recorded_at: Wed, 14 Sep 2016 17:13:13 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=R.%20F.%20Harrington%20Field%20computation%20by%20moment%20methods.%20Macmillan%201968&resultsperpage=3&searchmode=any&sort=relevance&view=detailed
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=R.%20F.%20Harrington%20Field%20computation%20by%20moment%20methods.%20Macmillan%201968&resultsperpage=3&searchmode=all&sort=relevance&view=detailed
     body:
       encoding: US-ASCII
       string: ''

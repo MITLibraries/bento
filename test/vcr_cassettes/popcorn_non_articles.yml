@@ -94,7 +94,7 @@ http_interactions:
   recorded_at: Thu, 27 Oct 2016 19:06:17 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=popcorn&resultsperpage=3&searchmode=any&sort=relevance&view=detailed
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=popcorn&resultsperpage=3&searchmode=all&sort=relevance&view=detailed
     body:
       encoding: US-ASCII
       string: ''

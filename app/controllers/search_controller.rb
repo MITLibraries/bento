@@ -35,7 +35,7 @@ class SearchController < ApplicationController
 
   # Array of search endpoints that are supported
   def valid_targets
-    %w(articles books google worldcat)
+    %w(articles books google whatnot)
   end
 
   # Formatted date used in creating cache keys
@@ -46,8 +46,6 @@ class SearchController < ApplicationController
   def search_target
     if params[:target] == 'google'
       search_google
-    elsif params[:target] == 'worldcat'
-      search_worldcat
     else
       search_eds
     end
@@ -63,6 +61,8 @@ class SearchController < ApplicationController
   def eds_profile
     if params[:target] == 'articles'
       ENV['EDS_NO_ALEPH_PROFILE']
+    elsif params[:target] == 'whatnot'
+      ENV['EDS_WHATNOT_PROFILE']
     else
       ENV['EDS_ALEPH_PROFILE']
     end
@@ -72,12 +72,6 @@ class SearchController < ApplicationController
   def search_google
     raw_results = SearchGoogle.new.search(strip_q)
     NormalizeGoogle.new.to_result(raw_results)
-  end
-
-  # Searches Google Custom Search
-  def search_worldcat
-    raw_results = SearchWorldcat.new.search(strip_q)
-    NormalizeWorldcat.new.to_result(raw_results)
   end
 
   # Strips trailing and leading white space in search term
