@@ -19,10 +19,10 @@
       "View all #{number_with_delimiter(@results['total'])} like this",
       "#{ENV['EDS_ALEPH_URI']}#{params[:q]}",
       data: {count: @results['total']}) %>
-  <% elsif params[:target] == 'worldcat' %>
+  <% elsif params[:target] == 'whatnot' %>
     <%= link_to(
       "View all #{number_with_delimiter(@results['total'])} like this",
-      "http://mit.worldcat.org/search?qt=worldcat_org_all&&q=#{params[:q]}",
+      "#{ENV['EDS_WHATNOT_URI']}#{params[:q]}",
       data: {count: @results['total']}) %>
   <% end %>
 <% else %>
