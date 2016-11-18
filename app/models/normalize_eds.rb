@@ -72,7 +72,7 @@ class NormalizeEds
   def construct_open_url(record)
     'https://sfx.mit.edu/sfx_local?' +
       NormalizeEdsArticles.new(record).openurl(
-        record, year(record), authors(record).map(&:first)
+        record, year(record), authors(record)&.map(&:first)
       )
   end
 
