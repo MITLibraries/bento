@@ -54,4 +54,13 @@ class NormalizeEdsTest < ActiveSupport::TestCase
       assert_nil(query['results'][0].year)
     end
   end
+
+  test 'can handle missing title' do
+    VCR.use_cassette('popcorn books',
+                     allow_playback_repeats: true) do
+      raw_query = SearchEds.new.search('popcorn', 'apibarton')
+      query = NormalizeEds.new.to_result(raw_query, 'books')
+      assert_equal('unknown title', query['results'][3].title)
+    end
+  end
 end

@@ -16,7 +16,7 @@ http_interactions:
       Host:
       - eds-api.ebscohost.com
       User-Agent:
-      - http.rb/2.0.3
+      - http.rb/2.1.0
   response:
     status:
       code: 200
@@ -30,25 +30,19 @@ http_interactions:
       - application/json; charset=utf-8
       Server:
       - Microsoft-IIS/7.5
-      X-Dynatrace:
-      - PT=6076380;PA=-1516597674;SP=EDSAPI;PS=-1981931378
-      - PT=6076380;PA=-1516597674;SP=EDSAPI;PS=-1981931378
-      Dynatrace:
-      - PT=6076380;PA=-1516597674;SP=EDSAPI;PS=-1981931378
-      - PT=6076380;PA=-1516597674;SP=EDSAPI;PS=-1981931378
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Mon, 07 Nov 2016 18:10:12 GMT
+      - Thu, 17 Nov 2016 21:21:12 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
-    http_version: 
-  recorded_at: Mon, 07 Nov 2016 18:10:13 GMT
+    http_version:
+  recorded_at: Thu, 17 Nov 2016 21:21:11 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apibarton
@@ -65,7 +59,7 @@ http_interactions:
       Host:
       - eds-api.ebscohost.com
       User-Agent:
-      - http.rb/2.0.3
+      - http.rb/2.1.0
   response:
     status:
       code: 200
@@ -74,7 +68,7 @@ http_interactions:
       Cache-Control:
       - private
       Content-Length:
-      - '100'
+      - '101'
       Content-Type:
       - application/json; charset=utf-8
       Server:
@@ -84,20 +78,20 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 95978555-e954-4a72-9f7b-9da1d9b8e6bb
+      - e898e243-8ad7-4593-a4b4-f86465ecf281
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Mon, 07 Nov 2016 18:10:13 GMT
+      - Thu, 17 Nov 2016 21:21:11 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"SessionToken":"FakeSessiontoken"}'
-    http_version: 
-  recorded_at: Mon, 07 Nov 2016 18:10:13 GMT
+    http_version:
+  recorded_at: Thu, 17 Nov 2016 21:21:11 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=popcorn&resultsperpage=3&searchmode=all&sort=relevance&view=detailed
@@ -116,7 +110,7 @@ http_interactions:
       Host:
       - eds-api.ebscohost.com
       User-Agent:
-      - http.rb/2.0.3
+      - http.rb/2.1.0
   response:
     status:
       code: 200
@@ -125,31 +119,44 @@ http_interactions:
       Cache-Control:
       - private
       Content-Length:
-      - '8412'
+      - '13504'
       Content-Type:
       - application/json; charset=utf-8
       Server:
       - Microsoft-IIS/7.5
+      X-Dynatrace:
+      - PT=179554361;PA=-829545830;SP=EDSAPI;PS=-1981931378
+      - PT=179554361;PA=-829545830;SP=EDSAPI;PS=-1981931378
+      Dynatrace:
+      - PT=179554361;PA=-829545830;SP=EDSAPI;PS=-1981931378
+      - PT=179554361;PA=-829545830;SP=EDSAPI;PS=-1981931378
       X-Sessiontoken:
       - FakeSessiontoken
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 6e786314-799d-4f16-9bcb-d705ddc6a902
+      - f2914f66-9691-4d7c-adef-990c47d6ff67
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Mon, 07 Nov 2016 18:10:13 GMT
+      - Thu, 17 Nov 2016 21:21:11 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcorn&expander=fulltext&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=detailed&resultsperpage=3&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcorn"},"RemoveAction":"removequery(1)"}],"ExpandersWithAction":[{"Id":"fulltext","RemoveAction":"removeexpander(fulltext)"}]}},"SearchResult":{"Statistics":{"TotalHits":78,"TotalSearchTime":181,"Databases":[{"Id":"ir00145a","Label":"MIT
-        DOME for Discovery","Status":"0","Hits":1},{"Id":"cat01763a","Label":"MIT
-        Course Reserves","Status":"0","Hits":0},{"Id":"cat01875a","Label":"MIT Test
-        Catalog","Status":"0","Hits":77}]},"Data":{"RecordFormat":"EP Display","Records":[{"ResultId":1,"Header":{"DbId":"cat01875a","DbLabel":"MIT
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcorn&expander=fulltext&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=detailed&resultsperpage=5&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcorn"},"RemoveAction":"removequery(1)"}],"ExpandersWithAction":[{"Id":"fulltext","RemoveAction":"removeexpander(fulltext)"}]}},"SearchResult":{"Statistics":{"TotalHits":208957,"TotalSearchTime":81,"Databases":[{"Id":"nlabk","Label":"Audiobook
+        Collection (EBSCOhost)","Status":"0","Hits":0},{"Id":"nlebk","Label":"eBook
+        Collection (EBSCOhost)","Status":"0","Hits":358},{"Id":"edscrc","Label":"Credo
+        Reference Collections","Status":"0","Hits":737},{"Id":"edsasp","Label":"Alexander
+        Street Press","Status":"0","Hits":612},{"Id":"ir00145a","Label":"MIT DOME
+        for Discovery","Status":"0","Hits":1},{"Id":"edsssb","Label":"Books24x7","Status":"0","Hits":0},{"Id":"edshst","Label":"Henry
+        Stewart Talks","Status":"0","Hits":0},{"Id":"cat01763a","Label":"MIT Course
+        Reserves","Status":"0","Hits":0},{"Id":"edsnmj","Label":"Naxos Music Library
+        Jazz","Status":"0","Hits":5},{"Id":"edsnol","Label":"Naxos Music Library","Status":"0","Hits":5},{"Id":"cat01875a","Label":"MIT
+        Test Catalog","Status":"0","Hits":77},{"Id":"edshtl","Label":"HathiTrust","Status":"0","Hits":207134},{"Id":"edsoro","Label":"Oxford
+        Reference","Status":"0","Hits":28}]},"Data":{"RecordFormat":"EP Display","Records":[{"ResultId":1,"Header":{"DbId":"cat01875a","DbLabel":"MIT
         Test Catalog","An":"mittest.001739356","RelevancyScore":"2633","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat01875a&AN=mittest.001739356","ImageInfo":[{"Size":"thumb","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=S&Value=9780752889351"},{"Size":"medium","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9780752889351"}],"CustomLinks":[{"Url":"https:\/\/walter.mit.edu\/item\/001739356?","Name":"MIT
         Test catalog2 (copy of cat00916a) (cat01875a)","Category":"libCatalog","Text":"View
         catalog record","MouseOverText":"Go to Barton catalog to find this at the
@@ -211,9 +218,40 @@ http_interactions:
         in motion pictures","Type":"general"}],"Titles":[{"TitleFull":"Popcorn Venus.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Rosen,
         Marjorie"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1974"}],"Identifiers":[{"Type":"isbn-print","Value":"0380001772"}],"Titles":[{"TitleFull":"Popcorn
         Venus \/ Marjorie Rosen.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Hayden
-        Library - Stacks","ShelfLocator":"PN1995.9.W6.R6 1974"}]}}]}]}}}'
-    http_version: 
-  recorded_at: Mon, 07 Nov 2016 18:10:13 GMT
+        Library - Stacks","ShelfLocator":"PN1995.9.W6.R6 1974"}]}}]},{"ResultId":4,"Header":{"DbId":"edshtl","DbLabel":"HathiTrust","An":"umn.31951d01197547d","RelevancyScore":"2056","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edshtl&AN=umn.31951d01197547d","FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn
+        handbook"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Federal+Crop+Insurance+Corporation%2E+Product+Development+Branch%22&quot;&gt;Federal
+        Crop Insurance Corporation. Product Development Branch&lt;\/searchLink&gt;"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Crop+insurance%22&quot;&gt;Crop
+        insurance&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Crop+insurance+United+States+Handbooks%2C+manuals%2C+etc%22&quot;&gt;Crop
+        insurance United States Handbooks, manuals, etc&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Crop+insurance+claims%22&quot;&gt;Crop
+        insurance claims&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Crop+insurance+claims+United+States+Handbooks%2C+manuals%2C+etc%22&quot;&gt;Crop
+        insurance claims United States Handbooks, manuals, etc&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Popcorn%22&quot;&gt;Popcorn&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Popcorn+Losses+United+States+Handbooks%2C+manuals%2C+etc%22&quot;&gt;Popcorn
+        Losses United States Handbooks, manuals, etc&lt;\/searchLink&gt;"},{"Name":"Identifiers","Label":"Original
+        Identifier","Group":"SrcInfo","Data":"sdr-umn002475380"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Crop
+        insurance","Type":"general"},{"SubjectFull":"Crop insurance United States
+        Handbooks, manuals, etc","Type":"general"},{"SubjectFull":"Crop insurance
+        claims","Type":"general"},{"SubjectFull":"Crop insurance claims United States
+        Handbooks, manuals, etc","Type":"general"},{"SubjectFull":"Popcorn","Type":"general"},{"SubjectFull":"Popcorn
+        Losses United States Handbooks, manuals, etc","Type":"general"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Federal
+        Crop Insurance Corporation. Product Development Branch"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1995"}],"Identifiers":[{"Type":"issn-locals","Value":"1"}],"Titles":[{"TitleFull":"Popcorn
+        handbook","Type":"main"}]}}]}}}},{"ResultId":5,"Header":{"DbId":"edshtl","DbLabel":"HathiTrust","An":"uiug.30112019286274","RelevancyScore":"2044","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edshtl&AN=uiug.30112019286274","FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Brunson%2C+Arthur+M%2E%22&quot;&gt;Brunson,
+        Arthur M.&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
+        term=&quot;%22Richardson%2C+Dewayne+L%2E%22&quot;&gt;Richardson, Dewayne L.&lt;\/searchLink&gt;"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Cookery+%28Popcorn%29%22&quot;&gt;Cookery
+        (Popcorn)&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Popcorn%22&quot;&gt;Popcorn&lt;\/searchLink&gt;"},{"Name":"Identifiers","Label":"Original
+        Identifier","Group":"SrcInfo","Data":"sdr-uiuc973245"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Cookery
+        (Popcorn)","Type":"general"},{"SubjectFull":"Popcorn","Type":"general"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Brunson,
+        Arthur M."}}},{"PersonEntity":{"Name":{"NameFull":"Richardson, Dewayne L."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1958"}],"Identifiers":[{"Type":"issn-locals","Value":"1"}],"Titles":[{"TitleFull":"Popcorn","Type":"main"}]}}]}}}}]}}}'
+    http_version:
+  recorded_at: Thu, 17 Nov 2016 21:21:12 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
@@ -232,7 +270,7 @@ http_interactions:
       Host:
       - eds-api.ebscohost.com
       User-Agent:
-      - http.rb/2.0.3
+      - http.rb/2.1.0
   response:
     status:
       code: 200
@@ -249,18 +287,18 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 70c0f068-37a0-4173-abbd-23b9d5dcd741
+      - d77de931-fe86-4579-9549-fb6a60fe271d
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Mon, 07 Nov 2016 18:10:13 GMT
+      - Thu, 17 Nov 2016 21:21:11 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: '{"IsSuccessful":"y"}'
-    http_version: 
-  recorded_at: Mon, 07 Nov 2016 18:10:13 GMT
+    http_version:
+  recorded_at: Thu, 17 Nov 2016 21:21:12 GMT
 recorded_with: VCR 3.0.3
