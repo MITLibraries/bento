@@ -47,8 +47,10 @@ class NormalizeEds
   end
 
   def title(record)
-    bibentity = record['RecordInfo']['BibRecord']['BibEntity']
-    bibentity['Titles'].first['TitleFull']
+    bib = record['RecordInfo']['BibRecord']['BibEntity']
+    bib['Titles'][0]['TitleFull']
+  rescue
+    'unknown title'
   end
 
   def year(record)

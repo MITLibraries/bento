@@ -14,6 +14,12 @@
     "EDS_NO_ALEPH_URI": {
       "required": true
     },
+    "EDS_WHATNOT_PROFILE": {
+      "required": true
+    },
+    "EDS_WHATNOT_URI": {
+      "required": true
+    },
     "EDS_PASSWORD": {
       "required": true
     },

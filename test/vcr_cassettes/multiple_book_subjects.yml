@@ -100,7 +100,7 @@ http_interactions:
   recorded_at: Mon, 07 Nov 2016 18:41:31 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=orange&resultsperpage=3&searchmode=any&sort=relevance&view=detailed
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=orange&resultsperpage=3&searchmode=all&sort=relevance&view=detailed
     body:
       encoding: US-ASCII
       string: ''
@@ -146,7 +146,7 @@ http_interactions:
       - close
     body:
       encoding: UTF-8
-      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,orange&expander=fulltext&sort=relevance&includefacets=n&searchmode=any&autosuggest=n&view=detailed&resultsperpage=3&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"orange"},"RemoveAction":"removequery(1)"}],"ExpandersWithAction":[{"Id":"fulltext","RemoveAction":"removeexpander(fulltext)"}]}},"SearchResult":{"Statistics":{"TotalHits":1859,"TotalSearchTime":66,"Databases":[{"Id":"ir00145a","Label":"MIT
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,orange&expander=fulltext&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=detailed&resultsperpage=3&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"orange"},"RemoveAction":"removequery(1)"}],"ExpandersWithAction":[{"Id":"fulltext","RemoveAction":"removeexpander(fulltext)"}]}},"SearchResult":{"Statistics":{"TotalHits":1859,"TotalSearchTime":66,"Databases":[{"Id":"ir00145a","Label":"MIT
         DOME for Discovery","Status":"0","Hits":63},{"Id":"cat01763a","Label":"MIT
         Course Reserves","Status":"0","Hits":3},{"Id":"cat01875a","Label":"MIT Test
         Catalog","Status":"0","Hits":1793}]},"Data":{"RecordFormat":"EP Display","Records":[{"ResultId":1,"Header":{"DbId":"cat01875a","DbLabel":"MIT
