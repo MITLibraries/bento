@@ -55,7 +55,7 @@ $brand-secondary-accent:        rgb(242, 108, 170);
 $success:                       $green;
 $warning:                       mix($yellow,$orange,50%);
 $error:                         #AC1D22;
-$informational:                 mix($gray-warm,$black,65%);
+$informational:                 mix($gray-warm,$black,55%);
 
 
 // ----------------------------
@@ -116,34 +116,77 @@ $z-depth-way-front:     1000;
 // #BENTO-SPECIFIC - BEGIN
 // ----------------------------
 
+.wrap-content {
+  padding-top: 1rem;
+}
+
+/* search bar */
+.b-search {
+  margin-bottom: .5rem;
+
+  .field-label {
+    display: block;
+    margin-bottom: .5rem;
+    font-size: $fs-small;
+    font-weight: $fw-normal;
+    color: $gray;
+  }
+
+  .b-search-input {
+    display: inline-block;
+    width: 80%;
+    border: 1px solid $gray-l2;
+    border-radius: 2px;
+    padding: 6px 12px;
+  }
+
+  .b-search-submit {
+    display: inline-block;
+    width: 18%;
+  }
+}
+
 /* search summary bar */
 .results-summary {
-  font-size: $fs-smallish;
-  color: $gray;
+  font-size: $fs-small;
+
+  .search-summary {
+    display: block;
+    margin-bottom: .3rem;
+    font-size: $fs-xsmall;
+    color: $gray;
+  }
+
+  .title {
+    display: inline-block;
+  }
+
+  .results-summary-item {
+    display: block;
+    margin: 0 1rem;
+
+    @media (min-width: $bp-screen-sm) {
+      display: inline-block;
+    }
+
+    .count {
+    }
+
+    .count:before {
+      content: '(';
+    }
+
+    .count:after {
+      content: ')';
+    }
+  }
 }
 
-.results-summary .title {
-  display: inline-block;
-}
 
-.results-summary .results-summary-item {
-  display: inline-block;
-  margin: 0 1rem;
-}
-
-.results-summary .results-summary-item .count {
-}
-
-.results-summary .results-summary-item .count:before {
-  content: '(';
-}
-
-.results-summary .results-summary-item .count:after {
-  content: ')';
-}
 
 /* big boxes */
 .wrap-results {
+  margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
@@ -153,7 +196,7 @@ $z-depth-way-front:     1000;
 
 /* generic result pattern */
 .wrap-result {
-  margin: 1.5rem 0;
+  margin-top: 1.5rem;
   border-top: 1px solid #ddd;
   padding: 2rem 0 1rem 0;
 

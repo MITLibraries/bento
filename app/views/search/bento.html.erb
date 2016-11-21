@@ -1,27 +1,29 @@
 <%= render partial: "form" %>
 
 <div class="results-summary">
-  <p><span class="title">Found: </span>
-    <span class="results-summary-item" data-region="articles">Articles <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span>
+  <p>
+    <span class="search-summary">Searched for "<%= params[:q] %>" everywhere</span>
+    <span class="title">Found: </span>
+    <a href="#box-articles_content"><span class="results-summary-item" data-region="articles">Articles <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
 
-    <span class="results-summary-item" data-region="books">Books and Media <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span>
+    <a href="#box-articles_content"><span class="results-summary-item" data-region="books">Books and Media <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
 
-    <span  class="results-summary-item"data-region="whatnot">Whatnot <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span>
+    <a href="#box-whatnot_content"><span  class="results-summary-item"data-region="whatnot">Whatnot <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
 
-    <span class="results-summary-item" data-region="google">Webpages <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span>
+    <a href="#box-website_content"><span class="results-summary-item" data-region="google">Webpages <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
   </p>
 </div>
 
-<div class="row">
-  <%= render partial: "placeholders", locals: { heading: 'Books and Media', id: 'books_content', box_width: 6} %>
+<div class="gridband layout-2c">
+  <%= render partial: "placeholders", locals: { heading: 'Books and Media', id: 'books_content'} %>
 
-  <%= render partial: "placeholders", locals: { heading: 'Articles', id: 'articles_content', box_width: 6} %>
+  <%= render partial: "placeholders", locals: { heading: 'Articles', id: 'articles_content'} %>
 </div>
 
-<div class="row">
-  <%= render partial: "placeholders", locals: { heading: 'Whatnot', id: 'whatnot_content', box_width: 6} %>
+<div class="gridband layout-2c">
+  <%= render partial: "placeholders", locals: { heading: 'Whatnot', id: 'whatnot_content'} %>
 
-  <%= render partial: "placeholders", locals: { heading: 'Website and Guides', id: 'website_content', box_width: 6} %>
+  <%= render partial: "placeholders", locals: { heading: 'Website and Guides', id: 'website_content'} %>
 </div>
 
 <%= render partial: "help" %>

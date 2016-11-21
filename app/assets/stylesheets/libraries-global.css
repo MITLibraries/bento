@@ -14,6 +14,7 @@ dl {
 
 img {
   max-width: 100%;
+  vertical-align: middle;
 }
 
 a {
@@ -84,8 +85,8 @@ a:active, .is-pressed, .is-active {
 }
 
 /* csslint ignore:start */
-* { 
-  box-sizing: border-box; 
+* {
+  box-sizing: border-box;
 }
 /* csslint ignore:end */
 
@@ -217,15 +218,70 @@ hr {
   clear: both;
 }
 
+.wrap-gridband,
 .wrap-header,
 .wrap-header-local,
 .wrap-breadcrumb,
 .wrap-content,
 .wrap-footer,
 .wrap-footer-institute {
-  max-width: 1024px;
+  max-width: 114rem;
   margin: 0 auto;
-  padding: 8px 4%;
+  padding: 10px 4%;
+}
+.wrap-gridband:after,
+.wrap-header:after,
+.wrap-header-local:after,
+.wrap-breadcrumb:after,
+.wrap-content:after,
+.wrap-footer:after,
+.wrap-footer-institute:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.gridband:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.gridband .grid-item {
+  width: auto;
+  float: none;
+}
+@media (min-width: 768px) {
+  .gridband.layout-2c .grid-item {
+    float: left;
+    width: 48%;
+    margin-right: 3%;
+  }
+  .gridband.layout-2c .grid-item:nth-child(2n+0) {
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 768px) {
+  .gridband.layout-3c .grid-item {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+  }
+  .gridband.layout-3c .grid-item:nth-child(3n+3) {
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 768px) {
+  .gridband.layout-4c .grid-item {
+    float: left;
+    width: 23%;
+    margin-right: 2%;
+  }
+  .gridband.layout-4c .grid-item:nth-child(4n+4) {
+    float: right;
+    margin-right: 0;
+  }
 }
 
 .wrap-header .header-slim .logo-mit-lib svg {
@@ -264,29 +320,43 @@ hr {
 }
 
 .wrap-content {
-  padding-top: 1.5rem;
+  padding-top: 3rem;
   padding-bottom: 2%;
 }
+.wrap-content .content-main {
+  padding-bottom: 3rem;
+}
 @media (min-width: 768px) {
-  .wrap-content.layout-3q1q {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
   .wrap-content.layout-3q1q .content-main {
+    float: left;
     width: 73%;
   }
   .wrap-content.layout-3q1q .content-sup {
+    float: right;
     width: 22%;
-    margin-top: 2.5rem;
     margin-left: 3%;
   }
 }
 @media (min-width: 768px) {
-  .wrap-content.layout-1q2q1q {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+  .wrap-content.layout-1q3q .content-sup {
+    float: left;
+    width: 22%;
+    margin-right: 3%;
+  }
+  .wrap-content.layout-1q3q .content-main {
+    float: right;
+    width: 73%;
+  }
+}
+@media (min-width: 768px) {
+  .wrap-content.layout-1q2q1q .content-sup-l {
+    float: left;
+  }
+  .wrap-content.layout-1q2q1q .content-main {
+    float: left;
+  }
+  .wrap-content.layout-1q2q1q .content-sup {
+    float: right;
   }
 }
 @media (min-width: 768px) {
@@ -294,6 +364,12 @@ hr {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+  }
+  .wrap-content.layout-1t2t .content-sup-l {
+    float: left;
+  }
+  .wrap-content.layout-1t2t .content-main {
+    float: right;
   }
 }
 
@@ -424,16 +500,19 @@ hr {
 .wrap-footer.footer-slim .wrap-sitemap {
   margin-left: 2%;
 }
-.wrap-footer.footer-slim .wrap-sitemap a {
-  display: inline-block;
+.wrap-footer.footer-slim .wrap-sitemap .item {
+  display: block;
   margin-right: 10px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .wrap-footer.footer-slim .footer-main {
     -webkit-align-items: baseline;
         -ms-flex-align: baseline;
                 -ms-grid-row-align: baseline;
             align-items: baseline;
+  }
+  .wrap-footer.footer-slim .wrap-sitemap .item {
+    display: inline-block;
   }
 }
 
@@ -478,11 +557,121 @@ hr {
   text-decoration: none;
 }
 
+form {
+  margin: 1.5rem 0;
+}
+form .field-wrap {
+  margin-bottom: 1rem;
+}
+form .field-label {
+  display: inline-block;
+  margin-bottom: .2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+form .field {
+  display: block;
+  margin-top: .2rem;
+  margin-bottom: .2rem;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background-image: none;
+}
+form .field:focus, form .field:active {
+  border-color: #338bc5;
+  box-shadow: 0 0 5px rgba(14, 166, 236, 0.8);
+}
+form .field-text {
+  min-width: 25rem;
+  padding: 6px 12px;
+  background-color: #fff;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+form .tip {
+  font-size: 1.4rem;
+  color: #756c61;
+  margin-bottom: 0;
+}
+form .field-error {
+  font-size: 1.4rem;
+  color: #AC1D22;
+}
+form .field-warning {
+  font-size: #faa933;
+  color: #AC1D22;
+}
+form .field-textarea {
+  display: block;
+  min-width: 25rem;
+}
+form .field-select {
+  display: block;
+  min-width: 25rem;
+  padding: 3px;
+}
+form .field-upload {
+  border: none;
+}
+form .fields-inline .field-label {
+  display: inline-block;
+  max-width: 30%;
+}
+form .fields-inline .field {
+  display: inline-block;
+  max-width: 65%;
+}
+form .fields-inline.field-radio {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+form .disabled {
+  color: #595959;
+  cursor: not-allowed;
+}
+
 .bit {
-  margin: 1.5rem 0 3rem 0;
+  margin: 0 0 3rem 0;
   border-top: 3px solid #ccc;
   padding-top: 1rem;
   font-size: 1.4rem;
+}
+
+.alert p {
+  margin-bottom: .2rem;
+}
+.alert.success {
+  color: #43926a;
+}
+.alert.warning {
+  color: #faa933;
+}
+.alert.error {
+  color: #AC1D22;
+}
+
+.alert-banner {
+  display: block;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+  padding: 1.6rem 2rem;
+  border-top: 3px solid rgba(51, 139, 197, 0.3);
+  background-color: rgba(51, 139, 197, 0.2);
+  color: #111;
+}
+.alert-banner.success {
+  border-top: 3px solid rgba(67, 146, 106, 0.3);
+  background-color: rgba(67, 146, 106, 0.2);
+  color: #234c37;
+}
+.alert-banner.warning {
+  border-top: 3px solid rgba(250, 169, 51, 0.3);
+  background-color: rgba(250, 169, 51, 0.2);
+  color: #5f3902;
+}
+.alert-banner.error {
+  border-top: 3px solid rgba(172, 29, 34, 0.3);
+  background-color: #f7d1d2;
+  color: #550e11;
 }
 
 #skip {
@@ -516,6 +705,7 @@ hr {
 .wrap-header .logo-mit-lib svg {
   width: auto;
   height: auto;
+  max-width: 100%;
 }
 .wrap-header .link-logo-mit .logo-mit {
   fill: #999;
@@ -529,6 +719,9 @@ hr {
   background-color: #dedede;
   color: #333;
 }
+.wrap-outer-header-local .wrap-header-local {
+  padding-top: 2rem;
+}
 .wrap-outer-header-local a {
   color: #333;
 }
@@ -538,6 +731,7 @@ hr {
 
 .wrap-outer-breadcrumb {
   background-color: #dedede;
+  color: #595959;
   font-size: 1.2rem;
 }
 
@@ -563,8 +757,9 @@ hr {
   fill: #f3f3f3;
 }
 .wrap-footer .logo-mit-lib svg {
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
 }
 .wrap-footer .wrap-usergroups {
   font-size: 1.4rem;
@@ -617,8 +812,8 @@ hr {
 }
 
 .wrap-content .title-page {
-  border-bottom: 1px solid #ccc;
   padding: .5rem 0 1rem 0;
+  font-weight: 600;
 }
 .wrap-content .wrap-filters {
   margin: 1rem 0;
