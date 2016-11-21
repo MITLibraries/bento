@@ -55,12 +55,21 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     end
   end
 
-  test 'can handle missing title' do
+  test 'can handle missing title titlefull with item title' do
     VCR.use_cassette('popcorn books',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcorn', 'apibarton')
       query = NormalizeEds.new.to_result(raw_query, 'books')
-      assert_equal('unknown title', query['results'][3].title)
+      assert_equal('Popcorn handbook', query['results'][3].title)
+    end
+  end
+
+  test 'can handle missing title titlefull and no item title' do
+    VCR.use_cassette('popcorn books',
+                     allow_playback_repeats: true) do
+      raw_query = SearchEds.new.search('popcorn', 'apibarton')
+      query = NormalizeEds.new.to_result(raw_query, 'books')
+      assert_equal('unknown title', query['results'][4].title)
     end
   end
 end

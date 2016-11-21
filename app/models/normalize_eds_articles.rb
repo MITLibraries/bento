@@ -1,70 +1,69 @@
 # Tranforms results from {SearchEds} into normalized {Result}s
-#
+# for metadata that is relevant for article type results
 class NormalizeEdsArticles
   def initialize(record)
     @record = record
   end
 
-  def openurl(record, year, authors)
+  def article_metadata(result)
+    result.citation = numbering
+    result.in = journal_title
+    result
+  end
+
+  def openurl(year, authors)
     # build a hash of params we care about then run to_query on it
     {
       'rft.au' => authors&.join(';'),
-      'rft_id' => "info:doi/#{doi(record)}",
-      'rft.jtitle' => journal_title(record)[0],
-      'rft.volume' => volume(record),
-      'rft.issue' => issue(record),
+      'rft_id' => "info:doi/#{doi}",
+      'rft.jtitle' => journal_title[0],
+      'rft.volume' => volume_issue('volume'),
+      'rft.issue' => volume_issue('issue'),
       'rft.year' => year,
       'rfr_id' => 'info:sid/MIT.BENTO'
     }.to_query
   end
 
-  def doi(record)
-    return unless bibrecord(record)['BibEntity']['Identifiers']
-    doi_selector = bibrecord(record)['BibEntity']['Identifiers'].select do |i|
+  def doi
+    return unless bibrecord['BibEntity']['Identifiers']
+    doi_selector = bibrecord['BibEntity']['Identifiers'].select do |i|
       i['Type'] == 'doi'
     end
     doi_selector&.first['Value']
   end
 
-  def journal_title(record)
-    return unless bibentity(record)['Titles']
-    [bibentity(record)['Titles'][0]['TitleFull'],
+  def journal_title
+    return unless bibentity['Titles']
+    [bibentity['Titles'][0]['TitleFull'],
      'https://sfx.mit.edu/sfx_local?' + 'rft.jtitle=' +
        URI.encode_www_form_component(
-         bibentity(record)['Titles'][0]['TitleFull']
+         bibentity['Titles'][0]['TitleFull']
        ) + '&rfr_id=info:sid/MIT.BENTO']
   end
 
-  def numbering(record)
-    numbers = bibentity(record)['Numbering']&.map do |x|
+  def numbering
+    numbers = bibentity['Numbering']&.map do |x|
       "#{x['Type']} #{x['Value']}"
     end
     numbers&.join(' ')
   end
 
-  def volume(record)
-    volume = bibentity(record)['Numbering']&.select do |i|
-      i['Type'] == 'volume'
+  def volume_issue(type)
+    volume_issue = bibentity['Numbering']&.select do |i|
+      i['Type'] == type
     end
-    volume.first['Value'] if volume.present?
+    volume_issue.first['Value'] if volume_issue.present?
   end
 
-  def issue(record)
-    issue = bibentity(record)['Numbering']&.select do |i|
-      i['Type'] == 'issue'
-    end
-    issue.first['Value'] if issue.present?
+  def bibrecord
+    @record.dig('RecordInfo', 'BibRecord')
   end
 
-  def bibrecord(record)
-    record.dig('RecordInfo', 'BibRecord')
+  def bibentity
+    relationships['IsPartOfRelationships'][0]['BibEntity']
   end
 
-  def bibentity(record)
-    relationships(record)['IsPartOfRelationships'][0]['BibEntity']
-  end
-
-  def relationships(record)
-    bibrecord(record)['BibRelationships']
+  def relationships
+    bibrecord['BibRelationships']
   end
 end
