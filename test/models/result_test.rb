@@ -51,6 +51,14 @@ class ResultTest < ActiveSupport::TestCase
     assert_equal(r.truncated_authors, ['a', 'b', 'c', 'et al'])
   end
 
+  test 'long subject lists truncated' do
+    r = Result.new('title', 'http://example.com')
+    r.subjects = %w(a b c d e)
+    assert r.valid?
+    assert_equal(r.subjects, %w(a b c d e))
+    assert_equal(r.truncated_subjects, %w(a b c))
+  end
+
   test 'can set citation' do
     r = Result.new('title', 'http://example.com')
     r.citation = 'Journal of Stuff, vol.12, no.1, pp.2-12'
