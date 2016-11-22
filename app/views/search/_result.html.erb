@@ -40,7 +40,7 @@
     <% if result.subjects.present? %>
       <div class="result-subjectheadings">
         <ul class="list-subjects">
-        <% result.subjects.each do |subject| %>
+        <% result.truncated_subjects.each do |subject| %>
           <li class="result-subjectheading">
             <%= link_to(subject[0], subject[1]) %>
           </li>

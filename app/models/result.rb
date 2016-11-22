@@ -18,4 +18,8 @@ class Result
     return authors if authors.length <= ENV['MAX_AUTHORS'].to_i
     authors[0...ENV['MAX_AUTHORS'].to_i] << 'et al'
   end
+
+  def truncated_subjects
+    subjects[0..2]
+  end
 end
