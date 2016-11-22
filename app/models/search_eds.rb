@@ -1,3 +1,15 @@
+# Searches EDS API and formats results into {Result} object
+#
+# == Required Environment Variables:
+# - EDS_USER_ID
+# - EDS_PASSWORD
+# - EDS_URL
+#
+# == Optional Environment Variables:
+# - RESULTS_PER_BOX
+#
+# == See Also
+# - http://edswiki.ebscohost.com/EDS_API_Documentation
 class SearchEds
   attr_reader :results
 

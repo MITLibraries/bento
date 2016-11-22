@@ -1,3 +1,4 @@
+# Common model to store Result metadata
 class Result
   include ActiveModel::Validations
   validates :title, presence: true
