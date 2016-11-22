@@ -10,6 +10,7 @@ class NormalizeEdsBooks
     result.publisher = publisher
     result.location = location
     result.subjects = subjects
+    result.get_it_url = @record['PLink']
     result
   end
 
