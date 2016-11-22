@@ -41,29 +41,11 @@ class NormalizeEdsCommon
   end
 
   def link
-    if @type == 'books'
-      @record['PLink']
-    elsif sfx_link&.select { |l| l.include?('sfx.mit') }.present?
-      URI.escape(sfx_link&.select { |l| l.include?('sfx.mit') }.first +
-      '&rfr_id=info:sid/MIT.BENTO')
-    else
-      construct_open_url
-    end
-  end
-
-  def construct_open_url
-    'https://sfx.mit.edu/sfx_local?' +
-      NormalizeEdsArticles.new(@record).openurl(
-        year, authors&.map(&:first)
-      )
+    @record['PLink']
   end
 
   def availability
     @record['FullText']['Text']['Availability']&.to_i
-  end
-
-  def sfx_link
-    @record['FullText']['CustomLinks']&.map { |l| l['Url'] }
   end
 
   def type

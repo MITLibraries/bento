@@ -8,7 +8,28 @@ class NormalizeEdsArticles
   def article_metadata(result)
     result.citation = numbering
     result.in = journal_title
+    result.get_it_url = link(result)
     result
+  end
+
+  def link(result)
+    if sfx_link&.select { |l| l.include?('sfx.mit') }.present?
+      URI.escape(sfx_link&.select { |l| l.include?('sfx.mit') }.first +
+      '&rfr_id=info:sid/MIT.BENTO')
+    else
+      construct_open_url(result)
+    end
+  end
+
+  def construct_open_url(result)
+    'https://sfx.mit.edu/sfx_local?' +
+      openurl(
+        result.year, result.authors&.map(&:first)
+      )
+  end
+
+  def sfx_link
+    @record['FullText']['CustomLinks']&.map { |l| l['Url'] }
   end
 
   def openurl(year, authors)
