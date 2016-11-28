@@ -11,6 +11,7 @@ class NormalizeEdsCommon
     result.year = year
     result.type = type
     result.online = availability
+    result.db_source = db_source
     result
   end
 
@@ -72,6 +73,10 @@ class NormalizeEdsCommon
 
   def author_search_format(author_node)
     URI.encode_www_form_component("AU \"#{author_name(author_node)}\"")
+  end
+
+  def db_source
+    [@record.dig('Header', 'DbLabel'), @record.dig('Header', 'DbId')]
   end
 
   def contributors
