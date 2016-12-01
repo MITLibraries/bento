@@ -72,4 +72,23 @@ class ResultTest < ActiveSupport::TestCase
     assert r.valid?
     assert_equal(r.online, true)
   end
+
+  def locations
+    [['Institute Archives - Noncirculating Collection 3', 'call number'],
+     ['Hayden Library - Stacks', 'call number'],
+     ['Library Storage Annex - Off Campus Collection', 'call number'],
+     ['Hayden Library - Science Oversize Materials', 'call number'],
+     ['Institute Archives - Microforms', 'call number'],
+     ['Hayden Library - Humanities Microforms', 'call number'],
+     ['Hayden Library - Browsery', 'call number'],
+     ['Lewis Music Library - Media', 'call number'],
+     ['Dewey Library - Microforms', 'call number'],
+     ['Hayden Library - Humanities Media', 'call number']]
+  end
+
+  test 'returns hayden location first' do
+    r = Result.new('title', 'http://example.com')
+    r.location = locations
+    assert_equal('Hayden Library - Stacks', r.prioritized_location[0][0])
+  end
 end
