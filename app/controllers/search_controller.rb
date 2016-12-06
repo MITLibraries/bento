@@ -53,18 +53,22 @@ class SearchController < ApplicationController
 
   # Seaches EDS
   def search_eds
-    raw_results = SearchEds.new.search(strip_q, eds_profile)
+    raw_results = SearchEds.new.search(strip_q, eds_profile, eds_facets)
     NormalizeEds.new.to_result(raw_results, params[:target])
   end
 
   # Determines appropriate EDS profile
   def eds_profile
+    ENV['EDS_WHATNOT_PROFILE']
+  end
+
+  def eds_facets
     if params[:target] == 'articles'
-      ENV['EDS_NO_ALEPH_PROFILE']
+      ENV['EDS_ARTICLE_FACETS']
+    elsif params[:target] == 'books'
+      ENV['EDS_BOOK_FACETS']
     elsif params[:target] == 'whatnot'
-      ENV['EDS_WHATNOT_PROFILE']
-    else
-      ENV['EDS_ALEPH_PROFILE']
+      ENV['EDS_WHATNOT_FACETS']
     end
   end
 

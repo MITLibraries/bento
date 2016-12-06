@@ -54,7 +54,7 @@ class NormalizeEdsArticles
   end
 
   def journal_title
-    return unless bibentity['Titles']
+    return [] unless bibentity['Titles']
     [bibentity['Titles'][0]['TitleFull'],
      'https://sfx.mit.edu/sfx_local?' + 'rft.jtitle=' +
        URI.encode_www_form_component(

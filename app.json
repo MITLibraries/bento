@@ -20,6 +20,15 @@
     "EDS_WHATNOT_URI": {
       "required": true
     },
+    "EDS_ARTICLE_FACETS": {
+      "required": true
+    },
+    "EDS_BOOK_FACETS": {
+      "required": true
+    },
+    "EDS_WHATNOT_FACETS": {
+      "required": true
+    },
     "EDS_PASSWORD": {
       "required": true
     },
