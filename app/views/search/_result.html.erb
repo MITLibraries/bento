@@ -49,28 +49,28 @@
       </div>
     <% end %>
 
-    <% if result.location.present? %>
-      <div class="result-local-locations">
-        <ul class="list-local-locations">
-        <% result.location.each do |location| %>
-          <li class="result-local-location">
-            <%= location[0] %>: <%= location[1] %>
-          </li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <% if result.db_source.present? %>
-      <p class="result-pubinfo">
-        Source DB: <%= result.db_source[0] %> (<%= result.db_source[1] %>)
-      </p>
-    <% end %>
-
-    <% if result.url %>
-      <div class="result-get">
-        <%= link_to('Get it', result.get_it_url, class: 'button button-secondary') %>
-      </div>
-    <% end %>
   </div>
+  <% if result.location.present? %>
+    <div class="result-local-locations">
+      <ul class="list-local-locations">
+      <% result.location.each do |location| %>
+        <li class="result-local-location">
+          <%= location[0] %>: <%= location[1] %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if result.db_source.present? %>
+    <p class="result-pubinfo">
+      Source DB: <%= result.db_source[0] %> (<%= result.db_source[1] %>)
+    </p>
+  <% end %>
+  
+  <% if result.url %>
+    <div class="result-get">
+      <%= link_to('Get it', result.get_it_url, class: 'button button-secondary') %>
+    </div>
+  <% end %>
 </div>

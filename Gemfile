@@ -7,14 +7,12 @@ gem 'google-api-client'
 gem 'http'
 gem 'http_logger'
 gem 'jquery-rails'
-gem 'less-rails'
 gem 'omniauth-mit-oauth2'
 gem 'omniauth-oauth2'
 gem 'puma'
 gem 'rollbar'
 gem 'sass-rails'
 gem 'therubyracer', platforms: :ruby
-gem 'twitter-bootstrap-rails'
 gem 'uglifier', '>= 1.3.0'
 
 group :production do

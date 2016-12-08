@@ -3,7 +3,7 @@
   <head>
     <%= render partial: "layouts/head" %>
   </head>
-  <body>
+  <body class="app-bento">
     <a id="skip" class="skip sr sr-focusable" href="#content-main">Skip to main content</a>
 
     <div class="wrap-page">
@@ -11,7 +11,7 @@
       <%= render partial: "layouts/site_header" %>
 
       <div class="wrap-outer-content layout-band">
-        <div class="wrap-content layout-4q">
+        <div class="wrap-content">
           <main id="content-main" class="content-main" role="main">
             <%= render partial: "layouts/flash" %>
             <%= yield %>
