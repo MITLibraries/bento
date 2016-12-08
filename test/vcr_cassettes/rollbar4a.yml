@@ -45,7 +45,7 @@ http_interactions:
   recorded_at: Wed, 14 Sep 2016 17:09:07 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apibarton
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apiwhatnot
     body:
       encoding: US-ASCII
       string: ''

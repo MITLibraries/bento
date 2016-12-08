@@ -4,7 +4,8 @@ class NormalizeEdsTest < ActiveSupport::TestCase
   test 'searches with no results do not error' do
     VCR.use_cassette('no results',
                      allow_playback_repeats: true) do
-      raw_query = SearchEds.new.search('popcornandorangejuice', 'apinoaleph')
+      raw_query = SearchEds.new.search('popcornandorangejuice',
+                                       'apiwhatnot', '')
       query = NormalizeEds.new.to_result(raw_query, 'articles')
       assert_equal(0, query['total'])
     end
@@ -16,7 +17,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('rollbar4') do
       searchterm = 'R. F. Harrington, Field computation by moment methods. '\
                    'Macmillan, 1968'
-      raw_query = SearchEds.new.search(searchterm, 'apinoaleph')
+      raw_query = SearchEds.new.search(searchterm, 'apiwhatnot', '')
       query = NormalizeEds.new.to_result(raw_query, 'articles')
       assert_equal(77_612_346, query['total'])
     end
@@ -28,7 +29,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     VCR.use_cassette('rollbar4a') do
       searchterm = 'R. F. Harrington, Field computation by moment methods. '\
                    'Macmillan, 1968'
-      raw_query = SearchEds.new.search(searchterm, 'apibarton')
+      raw_query = SearchEds.new.search(searchterm, 'apiwhatnot', '')
       query = NormalizeEds.new.to_result(raw_query, 'books')
       assert_equal(1_268_662, query['total'])
     end
@@ -48,7 +49,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
   test 'can handle missing years' do
     VCR.use_cassette('rollbar8') do
       searchterm = 'web of science'
-      raw_query = SearchEds.new.search(searchterm, 'apinoaleph')
+      raw_query = SearchEds.new.search(searchterm, 'apiwhatnot', '')
       query = NormalizeEds.new.to_result(raw_query, 'articles')
       assert_equal(37_667_909, query['total'])
       assert_nil(query['results'][0].year)
@@ -58,7 +59,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
   test 'can handle missing title titlefull with item title' do
     VCR.use_cassette('popcorn books',
                      allow_playback_repeats: true) do
-      raw_query = SearchEds.new.search('popcorn', 'apibarton')
+      raw_query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
       query = NormalizeEds.new.to_result(raw_query, 'books')
       assert_equal('Popcorn handbook', query['results'][3].title)
     end
@@ -67,7 +68,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
   test 'can handle missing title titlefull and no item title' do
     VCR.use_cassette('popcorn books',
                      allow_playback_repeats: true) do
-      raw_query = SearchEds.new.search('popcorn', 'apibarton')
+      raw_query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
       query = NormalizeEds.new.to_result(raw_query, 'books')
       assert_equal('unknown title', query['results'][4].title)
     end

@@ -21,10 +21,10 @@ class SearchEds
     @results = {}
   end
 
-  def search(term, profile)
+  def search(term, profile, facets)
     return 'invalid credentials' unless @auth_token
     @session_key = create_session(profile) if @auth_token
-    raw_results = search_filtered(term)
+    raw_results = search_filtered(term, facets)
     end_session
     raw_results
   end
@@ -37,18 +37,19 @@ class SearchEds
     URI.encode(term.strip.tr(' ', '+').delete(','))
   end
 
-  def search_url(term)
+  def search_url(term, facets)
     [EDS_URL, '/edsapi/rest/Search?query=', clean_term(term),
      '&searchmode=all', "&resultsperpage=#{RESULTS_PER_BOX}",
      '&pagenumber=1', '&sort=relevance', '&highlight=n', '&includefacets=n',
-     '&view=detailed', '&autosuggest=n', '&expander=fulltext'].join('')
+     '&view=detailed', '&autosuggest=n', '&expander=fulltext',
+     facets].join('')
   end
 
-  def search_filtered(term)
+  def search_filtered(term, facets)
     result = HTTP.headers(accept: 'application/json',
                           'x-authenticationToken': @auth_token,
                           'x-sessionToken': @session_key)
-                 .get(search_url(term).to_s).to_s
+                 .get(search_url(term, facets).to_s).to_s
     JSON.parse(result)
   end
 
