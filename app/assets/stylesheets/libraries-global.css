@@ -219,6 +219,7 @@ hr {
 }
 
 .wrap-gridband,
+.wrap-notice,
 .wrap-header,
 .wrap-header-local,
 .wrap-breadcrumb,
@@ -230,6 +231,7 @@ hr {
   padding: 10px 4%;
 }
 .wrap-gridband:after,
+.wrap-notice:after,
 .wrap-header:after,
 .wrap-header-local:after,
 .wrap-breadcrumb:after,
@@ -639,6 +641,9 @@ form .disabled {
 .alert p {
   margin-bottom: .2rem;
 }
+.alert.info {
+  color: #111;
+}
 .alert.success {
   color: #43926a;
 }
@@ -647,6 +652,25 @@ form .disabled {
 }
 .alert.error {
   color: #AC1D22;
+}
+
+/* global app style alerts and notices */
+.wrap-notices {
+  background-color: #f3f3f3;
+  color: #111;
+  font-size: 1.2rem;
+}
+.wrap-notices.info {
+  border-top: 2px solid #ccc;
+}
+.wrap-notices.success {
+  border-top: 2px solid #43926a;
+}
+.wrap-notices.warning {
+  border-top: 2px solid #faa933;
+}
+.wrap-notices.error {
+  border-top: 2px solid #AC1D22;
 }
 
 .alert-banner {
