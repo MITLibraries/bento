@@ -41,6 +41,9 @@
     "ENABLED_BOXES": {
       "required": true
     },
+    "GLOBAL_ALERT": {
+      "required": true
+    },
     "GOOGLE_API_KEY": {
       "required": true
     },
