@@ -1,0 +1,13 @@
+<% @results['results'].each do |result| %>
+  <%= render partial: "result", locals: {result: result} %>
+<% end %>
+
+<%= render partial: "view_all_link" %>
+
+<% if current_page?(:controller => 'search', :action => 'search') %>
+  <div class="results-pagination">
+    <% # EDS API Limits retrieving results past about 250 %>
+    <% max = [@results['total'], 250].min %>
+    <%= paginate(Kaminari.paginate_array(@results['results'], total_count: max).page(params[:page]).per(10)) %>
+  </div>
+<% end %>

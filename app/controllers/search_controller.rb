@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-  before_action :validate_q!, only: [:bento, :search]
+  before_action :validate_q!, only: [:bento, :search, :search_boxed]
 
   def index
   end
@@ -7,10 +7,18 @@ class SearchController < ApplicationController
   def bento
   end
 
-  def search
-    @results = search_results
-    return redirect_to search_url unless @results
+  def search_boxed
+    @results = search_results(1, ENV['RESULTS_PER_BOX'] || 5)
+    return redirect_to root_url unless @results
     render layout: false
+  end
+
+  def search
+    page = params[:page] || 1
+    per_page = params[:per_page] || 10
+    @results = search_results(page, per_page)
+    return redirect_to root_url unless @results
+    render 'search_boxed'
   end
 
   private
@@ -21,11 +29,15 @@ class SearchController < ApplicationController
   # for the current date without ever worrying about expiring caches.
   # Instead, we'll rely on the cache itself to expire the oldest cached
   # items when necessary.
-  def search_results
+  def search_results(page, per_page)
     return unless valid_target?
-    Rails.cache.fetch("#{params[:target]}_#{strip_q}_#{today}") do
-      search_target
+    Rails.cache.fetch(cache_key(page, per_page)) do
+      search_target(page, per_page)
     end
+  end
+
+  def cache_key(page, per_page)
+    "#{params[:target]}_#{strip_q}_#{page}_#{per_page}_#{today}"
   end
 
   # Boolean check of whether param passed in is a valid search endpoint
@@ -43,17 +55,19 @@ class SearchController < ApplicationController
     Time.zone.today.strftime('%Y%m%d')
   end
 
-  def search_target
+  def search_target(page, per_page)
     if params[:target] == 'google'
       search_google
     else
-      search_eds
+      search_eds(page, per_page)
     end
   end
 
   # Seaches EDS
-  def search_eds
-    raw_results = SearchEds.new.search(strip_q, ENV['EDS_PROFILE'], eds_facets)
+  def search_eds(page, per_page)
+    raw_results = SearchEds.new.search(
+      strip_q, ENV['EDS_PROFILE'], eds_facets, page, per_page
+    )
     NormalizeEds.new.to_result(raw_results, params[:target])
   end
 
@@ -80,6 +94,6 @@ class SearchController < ApplicationController
   def validate_q!
     return if params[:q].present? && strip_q.present?
     flash[:error] = 'A search term is required.'
-    redirect_to search_url
+    redirect_to root_url
   end
 end

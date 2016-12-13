@@ -94,7 +94,7 @@ http_interactions:
   recorded_at: Tue, 27 Sep 2016 19:01:19 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=web%20of%20science&resultsperpage=3&searchmode=all&sort=relevance&view=detailed
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=web%20of%20science&resultsperpage=5&searchmode=all&sort=relevance&view=detailed
     body:
       encoding: US-ASCII
       string: ''

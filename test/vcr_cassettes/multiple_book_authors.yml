@@ -41,7 +41,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 07 Nov 2016 18:15:21 GMT
 - request:
     method: get
@@ -90,11 +90,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"SessionToken":"FakeSessiontoken"}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 07 Nov 2016 18:15:21 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=vonnegut&resultsperpage=3&searchmode=all&sort=relevance&view=detailed
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=vonnegut&resultsperpage=5&searchmode=all&sort=relevance&view=detailed
     body:
       encoding: US-ASCII
       string: ''
@@ -211,7 +211,7 @@ http_interactions:
         Vonnegut Drawings \/ writings by Kurt Vonnegut ; introduction by Nanette Vonnegut
         ; essay by Peter Reed.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Rotch
         Library - Stacks","ShelfLocator":"NC139.V66 A4 2014"}]}}]}]}}}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 07 Nov 2016 18:15:22 GMT
 - request:
     method: get
@@ -260,6 +260,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"IsSuccessful":"y"}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 07 Nov 2016 18:15:22 GMT
 recorded_with: VCR 3.0.3
