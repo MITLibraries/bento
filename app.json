@@ -8,13 +8,7 @@
     "EDS_ALEPH_URI": {
       "required": true
     },
-    "EDS_NO_ALEPH_PROFILE": {
-      "required": true
-    },
-    "EDS_NO_ALEPH_URI": {
-      "required": true
-    },
-    "EDS_WHATNOT_PROFILE": {
+    "EDS_PROFILE": {
       "required": true
     },
     "EDS_WHATNOT_URI": {

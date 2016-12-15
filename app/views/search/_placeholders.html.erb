@@ -1,6 +1,7 @@
 <div id="box-<%= id %>" class="wrap-results grid-item">
   <h2 class="title"><%= heading %></h2>
-  <div id="<%= id %>" class="<%= id %> region" data-region="<%= id %>"> 
+  <p class="results-desc"><%= sanitize(description) %></a></p>
+  <div id="<%= id %>" class="<%= id %> region" data-region="<%= id %>">
     Loading results...
     <i class="fa fa-spinner fa-spin"></i>
   </div>
