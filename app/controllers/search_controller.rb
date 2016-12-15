@@ -35,7 +35,7 @@ class SearchController < ApplicationController
 
   # Array of search endpoints that are supported
   def valid_targets
-    %w(articles books google whatnot)
+    %w(articles books google)
   end
 
   # Formatted date used in creating cache keys
@@ -53,13 +53,8 @@ class SearchController < ApplicationController
 
   # Seaches EDS
   def search_eds
-    raw_results = SearchEds.new.search(strip_q, eds_profile, eds_facets)
+    raw_results = SearchEds.new.search(strip_q, ENV['EDS_PROFILE'], eds_facets)
     NormalizeEds.new.to_result(raw_results, params[:target])
-  end
-
-  # Determines appropriate EDS profile
-  def eds_profile
-    ENV['EDS_WHATNOT_PROFILE']
   end
 
   def eds_facets
@@ -67,8 +62,6 @@ class SearchController < ApplicationController
       ENV['EDS_ARTICLE_FACETS']
     elsif params[:target] == 'books'
       ENV['EDS_BOOK_FACETS']
-    elsif params[:target] == 'whatnot'
-      ENV['EDS_WHATNOT_FACETS']
     end
   end
 
