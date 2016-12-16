@@ -316,24 +316,14 @@ $z-depth-way-front:     1000;
 /* other bits */
 .wrap-help {
   .title {
-    font-size: $fs-large;
-    color: $gray-d1;
-  }
-
-  .title-sub {
-    margin-top: 2.5rem;
     font-size: $fs-base;
     font-weight: 600;
     color: $gray-d1;
   }
-
-  dt {
-    font-weight: 400;
-  }
-
-  dd {
+  
+  .list-tools {
+    @extend .list-unbulleted;
     font-size: $fs-small;
-    color: $gray;
   }
 }
 
@@ -348,24 +338,5 @@ $z-depth-way-front:     1000;
     font-size: $fs-large;
     color: $gray-d1;
     margin-bottom: .2em;
-  }
-}
-
-.inline-action {
-
-  @media (min-width: $bp-screen-md) {
-
-    .message {
-      display: inline-block;
-      vertical-align: middle;
-      width: 65%
-    }
-
-    .actions {
-      display: inline-block;
-      vertical-align: middle;
-      width: 34%;
-      text-align: right;
-    }
   }
 }
