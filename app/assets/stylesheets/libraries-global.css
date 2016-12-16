@@ -531,6 +531,7 @@ hr {
 
 .button-primary, .wrap-outer-header-local .action-auth {
   transition: background-color .25s, border .25s;
+  display: inline-block;
   border: 1px solid #338bc5;
   border-radius: 3px;
   padding: 5px 10px;
@@ -546,6 +547,7 @@ hr {
 
 .button-secondary {
   transition: background-color .25s, border .25s;
+  display: inline-block;
   border: 1px solid #ccc;
   border: 1px solid rgba(89, 89, 89, 0.3);
   border-radius: 3px;

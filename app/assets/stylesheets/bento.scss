@@ -188,6 +188,11 @@ $z-depth-way-front:     1000;
 .wrap-results {
   margin-top: 3rem;
   margin-bottom: 3rem;
+
+  .results-desc {
+    font-size: $fs-smallish;
+    color: $gray;
+  }
 }
 
 .results-more {
@@ -329,5 +334,38 @@ $z-depth-way-front:     1000;
   dd {
     font-size: $fs-small;
     color: $gray;
+  }
+}
+
+.wrap-chat {
+  border: 1px solid $gray-l3;
+  background-color: $white-t;
+  padding: 1.5rem 3rem 1rem 3rem;
+  font-size: $fs-smallish;
+  color: $gray;
+
+  .title {
+    font-size: $fs-large;
+    color: $gray-d1;
+    margin-bottom: .2em;
+  }
+}
+
+.inline-action {
+
+  @media (min-width: $bp-screen-md) {
+
+    .message {
+      display: inline-block;
+      vertical-align: middle;
+      width: 65%
+    }
+
+    .actions {
+      display: inline-block;
+      vertical-align: middle;
+      width: 34%;
+      text-align: right;
+    }
   }
 }
