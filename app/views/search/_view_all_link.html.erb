@@ -1,0 +1,19 @@
+<% if current_page?(:controller => 'search', :action => 'search_boxed') %>
+  <div class="results-more">
+  <% if @results['total'] > 0 %>
+    <% if params[:target] == 'google' %>
+      <%= link_to(
+        "View all #{number_with_delimiter(@results['total'])} website results",
+        "https://cse.google.com/cse?cx=#{ENV['GOOGLE_CUSTOM_SEARCH_ID']}&ie=UTF-8&q=#{params[:q]}&sa=Search#gsc.tab=0&gsc.q=#{params[:q]}",
+        data: {count: @results['total']}) %>
+    <% elsif %w(articles books whatnot).include?(params[:target]) %>
+      <%= link_to(
+        "View all #{number_with_delimiter(@results['total'])} results like this.",
+        search_path(q: params[:q], page: 1, target: params[:target]),
+        data: {count: @results['total']}) %>
+    <% end %>
+  <% else %>
+    No results found.
+  <% end %>
+  </div>
+<% end %>

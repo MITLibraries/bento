@@ -94,7 +94,7 @@ http_interactions:
   recorded_at: Mon, 07 Nov 2016 20:55:07 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=orange&resultsperpage=3&searchmode=all&sort=relevance&view=detailed
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=orange&resultsperpage=5&searchmode=all&sort=relevance&view=detailed
     body:
       encoding: US-ASCII
       string: ''

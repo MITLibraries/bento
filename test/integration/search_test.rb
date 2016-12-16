@@ -11,7 +11,7 @@ class SearchTest < ActionDispatch::IntegrationTest
   end
 
   test 'blank search term sends error' do
-    get '/search/search?q=%20'
+    get '/search/search_boxed?q=%20'
     follow_redirect!
     assert_response :success
     assert_select('.alert') do |value|
@@ -20,7 +20,7 @@ class SearchTest < ActionDispatch::IntegrationTest
   end
 
   test 'missing search term sends error' do
-    get '/search/search'
+    get '/search/search_boxed'
     follow_redirect!
     assert_response :success
     assert_select('.alert') do |value|
@@ -31,7 +31,7 @@ class SearchTest < ActionDispatch::IntegrationTest
   test 'article results are populated' do
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
-      get '/search/search?q=popcorn&target=articles'
+      get '/search/search_boxed?q=popcorn&target=articles'
       assert_response :success
       assert_select('a.bento-link') do |value|
         assert(value.text.include?('History of northern corn leaf'))
@@ -42,7 +42,7 @@ class SearchTest < ActionDispatch::IntegrationTest
   test 'book results are populated' do
     VCR.use_cassette('popcorn non articles',
                      allow_playback_repeats: true) do
-      get '/search/search?q=popcorn&target=books'
+      get '/search/search_boxed?q=popcorn&target=books'
       assert_response :success
       assert_select('a.bento-link') do |value|
         assert(value.text.include?('fifty years of rock'))
@@ -53,7 +53,7 @@ class SearchTest < ActionDispatch::IntegrationTest
   test 'google results are populated' do
     VCR.use_cassette('popcorn google',
                      allow_playback_repeats: true) do
-      get '/search/search?q=popcorn&target=google'
+      get '/search/search_boxed?q=popcorn&target=google'
       assert_response :success
       assert_select('a.bento-link') do |value|
         assert(value.text.include?('Family Weekend'))
@@ -62,8 +62,28 @@ class SearchTest < ActionDispatch::IntegrationTest
   end
 
   test 'invalid target' do
-    get '/search/search?q=popcorn&target=hackor'
+    get '/search/search_boxed?q=popcorn&target=hackor'
     follow_redirect!
     assert_response :success
+  end
+
+  test 'pagination' do
+    VCR.use_cassette('popcorn books paginated',
+                     allow_playback_repeats: true) do
+      get '/search?q=popcorn&target=books'
+      assert_response :success
+      assert_select('a.bento-link') do |value|
+        assert(value.text.include?('fifty years of rock'))
+      end
+      assert_select('span.page.current') do |value|
+        assert_equal(1, value.text.to_i)
+      end
+      assert_select('span.next a') do |value|
+        assert_equal(
+          '/search?page=2&q=popcorn&target=books',
+          value.first['href']
+        )
+      end
+    end
   end
 end

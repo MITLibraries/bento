@@ -1,4 +1,4 @@
-$('#<%= id %>').load("/search/search?q=<%= URI.encode_www_form_component(params[:q]) %>&target=<%= target %>", function() {
+$('#<%= id %>').load("/search/search_boxed?q=<%= URI.encode_www_form_component(params[:q]) %>&target=<%= target %>", function() {
   TrackLinks( $( this ).find( 'a' ) );
   ReportSummary( '<%= target %>', $( this ).find('[data-count]').data('count') );
 });

@@ -126,6 +126,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (2.0.2)
     jwt (1.5.6)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     libv8 (3.16.14.15)
     little-plugger (1.1.4)
     logging (2.1.0)
@@ -322,6 +325,7 @@ DEPENDENCIES
   http
   http_logger
   jquery-rails
+  kaminari
   memcachier
   minitest-rails
   minitest-rails-capybara

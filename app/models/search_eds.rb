@@ -14,17 +14,17 @@ class SearchEds
   attr_reader :results
 
   EDS_URL = ENV['EDS_URL'].freeze
-  RESULTS_PER_BOX = ENV['RESULTS_PER_BOX'] || 3
+  RESULTS_PER_BOX = ENV['RESULTS_PER_BOX'] || 5
 
   def initialize
     @auth_token = uid_auth
     @results = {}
   end
 
-  def search(term, profile, facets)
+  def search(term, profile, facets, page = 1, per_page = RESULTS_PER_BOX)
     return 'invalid credentials' unless @auth_token
     @session_key = create_session(profile) if @auth_token
-    raw_results = search_filtered(term, facets)
+    raw_results = search_filtered(term, facets, page, per_page)
     end_session
     raw_results
   end
@@ -37,19 +37,19 @@ class SearchEds
     URI.encode(term.strip.tr(' ', '+').delete(','))
   end
 
-  def search_url(term, facets)
+  def search_url(term, facets, page, per_page)
     [EDS_URL, '/edsapi/rest/Search?query=', clean_term(term),
-     '&searchmode=all', "&resultsperpage=#{RESULTS_PER_BOX}",
-     '&pagenumber=1', '&sort=relevance', '&highlight=n', '&includefacets=n',
-     '&view=detailed', '&autosuggest=n', '&expander=fulltext',
-     facets].join('')
+     '&searchmode=all', "&resultsperpage=#{per_page}",
+     "&pagenumber=#{page}", '&sort=relevance', '&highlight=n',
+     '&includefacets=n', '&view=detailed', '&autosuggest=n',
+     '&expander=fulltext', facets].join('')
   end
 
-  def search_filtered(term, facets)
+  def search_filtered(term, facets, page, per_page)
     result = HTTP.headers(accept: 'application/json',
                           'x-authenticationToken': @auth_token,
                           'x-sessionToken': @session_key)
-                 .get(search_url(term, facets).to_s).to_s
+                 .get(search_url(term, facets, page, per_page).to_s).to_s
     JSON.parse(result)
   end
 

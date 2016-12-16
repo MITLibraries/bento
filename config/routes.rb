@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   end
 
   root to: 'search#index'
-  get 'search', to: 'search#index'
+  get 'search/index', to: 'search#index'
   get 'search/bento', to: 'search#bento'
-  get 'search/search', to: 'search#search'
+  get 'search/search_boxed', to: 'search#search_boxed'
+  get 'search', to: 'search#search'
 
   get 'session/toggle_boxes', to: 'session#box_toggler'
 end

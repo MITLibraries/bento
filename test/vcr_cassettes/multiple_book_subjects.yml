@@ -47,7 +47,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 07 Nov 2016 18:41:31 GMT
 - request:
     method: get
@@ -96,11 +96,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"SessionToken":"FakeSessiontoken"}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 07 Nov 2016 18:41:31 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=orange&resultsperpage=3&searchmode=all&sort=relevance&view=detailed
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&highlight=n&includefacets=n&pagenumber=1&query=orange&resultsperpage=5&searchmode=all&sort=relevance&view=detailed
     body:
       encoding: US-ASCII
       string: ''
@@ -245,7 +245,7 @@ http_interactions:
         Committee on Government Reform, House of Representatives, One Hundred Sixth
         Congress, second session, March 15, 2000 [microform]","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Dewey
         Library - Microforms","ShelfLocator":"Y 4.G 74\/7:AG 3\/6 FICHE"}]}}]}]}}}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 07 Nov 2016 18:41:31 GMT
 - request:
     method: get
@@ -294,6 +294,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"IsSuccessful":"y"}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 07 Nov 2016 18:41:31 GMT
 recorded_with: VCR 3.0.3
