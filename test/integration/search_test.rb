@@ -61,17 +61,6 @@ class SearchTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'whatnot results are populated' do
-    VCR.use_cassette('popcorn whatnot',
-                     allow_playback_repeats: true) do
-      get '/search/search?q=popcorn&target=whatnot'
-      assert_response :success
-      assert_select('a.bento-link') do |value|
-        assert(value.text.include?('Sensory and nutritional evaluation'))
-      end
-    end
-  end
-
   test 'invalid target' do
     get '/search/search?q=popcorn&target=hackor'
     follow_redirect!

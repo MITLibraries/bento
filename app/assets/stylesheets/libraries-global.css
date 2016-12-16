@@ -45,21 +45,55 @@ a {
           align-items: center;
 }
 
-.bit ul {
+.list-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-indent: 0;
+}
+.list-inline li,
+.list-inline dt,
+.list-inline dd {
+  margin: 0;
+  padding: 0;
+}
+
+.list-unbulleted, .bit ul {
   list-style: none;
   padding-left: 0;
   text-indent: 0;
 }
 
-.wrap-footer .wrap-usergroups, .wrap-footer.footer-slim .sitemap-libraries-abbrev a, .wrap-outer-footer-institute .about-mit {
+.list-inline li,
+.list-inline dt,
+.list-inline dd {
+  display: inline-block;
+}
+
+.list-inline-pipe, .wrap-footer .wrap-usergroups, .wrap-footer.footer-slim .sitemap-libraries-abbrev a, .wrap-outer-footer-institute .about-mit {
+  padding-left: 0;
+}
+.list-inline-pipe li, .wrap-footer .wrap-usergroups li, .wrap-footer.footer-slim .sitemap-libraries-abbrev a li, .wrap-outer-footer-institute .about-mit li,
+.list-inline-pipe .item,
+.wrap-footer .wrap-usergroups .item,
+.wrap-footer.footer-slim .sitemap-libraries-abbrev a .item,
+.wrap-outer-footer-institute .about-mit .item {
   display: inline-block;
   padding-right: 1rem;
 }
-.wrap-footer .wrap-usergroups .item:after, .wrap-footer.footer-slim .sitemap-libraries-abbrev a .item:after, .wrap-outer-footer-institute .about-mit .item:after {
+.list-inline-pipe li:after, .wrap-footer .wrap-usergroups li:after, .wrap-footer.footer-slim .sitemap-libraries-abbrev a li:after, .wrap-outer-footer-institute .about-mit li:after,
+.list-inline-pipe .item:after,
+.wrap-footer .wrap-usergroups .item:after,
+.wrap-footer.footer-slim .sitemap-libraries-abbrev a .item:after,
+.wrap-outer-footer-institute .about-mit .item:after {
   content: ' | ';
   margin-left: 1rem;
 }
-.wrap-footer .wrap-usergroups .item:last-child:after, .wrap-footer.footer-slim .sitemap-libraries-abbrev a .item:last-child:after, .wrap-outer-footer-institute .about-mit .item:last-child:after {
+.list-inline-pipe li:last-child:after, .wrap-footer .wrap-usergroups li:last-child:after, .wrap-footer.footer-slim .sitemap-libraries-abbrev a li:last-child:after, .wrap-outer-footer-institute .about-mit li:last-child:after,
+.list-inline-pipe .item:last-child:after,
+.wrap-footer .wrap-usergroups .item:last-child:after,
+.wrap-footer.footer-slim .sitemap-libraries-abbrev a .item:last-child:after,
+.wrap-outer-footer-institute .about-mit .item:last-child:after {
   content: '';
 }
 
@@ -698,6 +732,20 @@ form .disabled {
   border-top: 3px solid rgba(172, 29, 34, 0.3);
   background-color: #f7d1d2;
   color: #550e11;
+}
+
+@media (min-width: 768px) {
+  .inline-action .message {
+    display: inline-block;
+    vertical-align: middle;
+    width: 65%;
+  }
+  .inline-action .actions {
+    display: inline-block;
+    vertical-align: middle;
+    width: 34%;
+    text-align: right;
+  }
 }
 
 #skip {

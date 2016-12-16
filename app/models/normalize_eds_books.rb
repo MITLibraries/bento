@@ -21,7 +21,7 @@ class NormalizeEdsBooks
   end
 
   def subject_link(subject)
-    ENV['EDS_ALEPH_URI'] + URI.encode_www_form_component("DE \"#{subject}\"")
+    ENV['EDS_PROFILE_URI'] + URI.encode_www_form_component("DE \"#{subject}\"")
   end
 
   def location

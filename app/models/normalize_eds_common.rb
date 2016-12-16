@@ -64,11 +64,7 @@ class NormalizeEdsCommon
   end
 
   def author_link(author_node)
-    if @type == 'books'
-      ENV['EDS_ALEPH_URI'] + author_search_format(author_node)
-    else
-      ENV['EDS_NO_ALEPH_URI'] + author_search_format(author_node)
-    end
+    ENV['EDS_PROFILE_URI'] + author_search_format(author_node)
   end
 
   def author_search_format(author_node)
