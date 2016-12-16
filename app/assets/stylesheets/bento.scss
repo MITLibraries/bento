@@ -116,6 +116,10 @@ $z-depth-way-front:     1000;
 // #BENTO-SPECIFIC - BEGIN
 // ----------------------------
 
+.wrap-outer-header-local {
+  display: none;
+}
+
 .wrap-content {
   padding-top: 1rem;
 }
