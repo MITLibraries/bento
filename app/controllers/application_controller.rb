@@ -7,10 +7,4 @@ class ApplicationController < ActionController::Base
   def new_session_path(_scope)
     root_path
   end
-
-  # Set which boxes are enabled
-  def enable_boxes
-    return if session[:boxes]
-    session[:boxes] = ENV['ENABLED_BOXES'].split(',')
-  end
 end
