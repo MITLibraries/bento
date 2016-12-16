@@ -2,31 +2,16 @@
   "name": "bento",
   "scripts": {},
   "env": {
-    "EDS_ALEPH_PROFILE": {
+    "EDS_PROFILE": {
       "required": true
     },
-    "EDS_ALEPH_URI": {
-      "required": true
-    },
-    "EDS_NO_ALEPH_PROFILE": {
-      "required": true
-    },
-    "EDS_NO_ALEPH_URI": {
-      "required": true
-    },
-    "EDS_WHATNOT_PROFILE": {
-      "required": true
-    },
-    "EDS_WHATNOT_URI": {
+    "EDS_PROFILE_URI": {
       "required": true
     },
     "EDS_ARTICLE_FACETS": {
       "required": true
     },
     "EDS_BOOK_FACETS": {
-      "required": true
-    },
-    "EDS_WHATNOT_FACETS": {
       "required": true
     },
     "EDS_PASSWORD": {
@@ -36,9 +21,6 @@
       "required": true
     },
     "EDS_USER_ID": {
-      "required": true
-    },
-    "ENABLED_BOXES": {
       "required": true
     },
     "GLOBAL_ALERT": {
@@ -72,12 +54,6 @@
       "required": true
     },
     "SECRET_KEY_BASE": {
-      "required": true
-    },
-    "WORLDCAT_URI": {
-      "required": true
-    },
-    "WORLDCAT_API_KEY": {
       "required": true
     }
   },
