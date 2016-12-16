@@ -692,21 +692,24 @@ form .disabled {
 
 /* global app style alerts and notices */
 .wrap-notices {
-  background-color: #f3f3f3;
-  color: #111;
+  background-color: #333;
+  color: #f3f3f3;
   font-size: 1.2rem;
 }
-.wrap-notices.info {
-  border-top: 2px solid #ccc;
+.wrap-notices a {
+  color: #83c8ff;
 }
 .wrap-notices.success {
-  border-top: 2px solid #43926a;
+  border-bottom: 2px solid #43926a;
+  background-color: #234c37;
 }
 .wrap-notices.warning {
-  border-top: 2px solid #faa933;
+  border-bottom: 2px solid #faa933;
+  background-color: #5f3902;
 }
 .wrap-notices.error {
-  border-top: 2px solid #AC1D22;
+  border-bottom: 2px solid #AC1D22;
+  background-color: #550e11;
 }
 
 .alert-banner {
