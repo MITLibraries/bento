@@ -1,11 +1,9 @@
 class SearchController < ApplicationController
   before_action :validate_q!, only: [:bento, :search, :search_boxed]
 
-  def index
-  end
+  def index; end
 
-  def bento
-  end
+  def bento; end
 
   def search_boxed
     @results = search_results(1, ENV['RESULTS_PER_BOX'] || 5)
