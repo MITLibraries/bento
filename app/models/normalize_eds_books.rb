@@ -28,8 +28,7 @@ class NormalizeEdsBooks
     copy(holdings)&.map { |l| [l['Sublocation'], l['ShelfLocator']] }
   end
 
-  def publisher
-  end
+  def publisher; end
 
   def thumbnail
     return unless @record['ImageInfo']

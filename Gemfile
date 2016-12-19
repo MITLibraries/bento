@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-gem 'rails', '5.0.0.1'
 gem 'devise'
 gem 'google-api-client'
 gem 'http'
@@ -11,6 +10,7 @@ gem 'kaminari'
 gem 'omniauth-mit-oauth2'
 gem 'omniauth-oauth2'
 gem 'puma'
+gem 'rails', '5.0.0.1'
 gem 'rollbar'
 gem 'sass-rails'
 gem 'therubyracer', platforms: :ruby
@@ -39,9 +39,9 @@ end
 
 group :test do
   gem 'coveralls', require: false
-  gem 'minitest-reporters'
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
+  gem 'minitest-reporters'
   gem 'vcr'
   gem 'webmock'
 end
