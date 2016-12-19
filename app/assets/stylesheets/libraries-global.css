@@ -675,6 +675,7 @@ form .disabled {
 }
 
 .alert p {
+  margin-top: .2rem;
   margin-bottom: .2rem;
 }
 .alert.info {
