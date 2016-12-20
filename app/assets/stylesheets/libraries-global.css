@@ -131,7 +131,7 @@ html, body {
 
 body {
   background-color: #595959;
-  color: #f3f3f3;
+  color: #fafafa;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.5;
@@ -570,12 +570,12 @@ hr {
   border-radius: 3px;
   padding: 5px 10px;
   background-color: #338bc5;
-  color: #f3f3f3;
+  color: #fafafa;
 }
 .button-primary:hover, .wrap-outer-header-local .action-auth:hover, .button-primary:focus, .wrap-outer-header-local .action-auth:focus {
   background-color: #0ea6ec;
   border-color: #0ea6ec;
-  color: #f3f3f3;
+  color: #fafafa;
   text-decoration: none;
 }
 
@@ -591,7 +591,7 @@ hr {
 .button-secondary:hover, .button-secondary:focus {
   background-color: #0ea6ec;
   border-color: #0ea6ec;
-  color: #f3f3f3;
+  color: #fafafa;
   text-decoration: none;
 }
 
@@ -694,7 +694,7 @@ form .disabled {
 /* global app style alerts and notices */
 .wrap-notices {
   background-color: #333;
-  color: #f3f3f3;
+  color: #fafafa;
   font-size: 1.2rem;
 }
 .wrap-notices a {
@@ -752,6 +752,12 @@ form .disabled {
   }
 }
 
+.well {
+  box-shadow: inset 0 0 15px rgba(89, 89, 89, 0.3);
+  padding: 2rem 2.5rem;
+  margin: 2rem 0;
+}
+
 #skip {
   position: absolute;
   overflow: hidden;
@@ -773,12 +779,12 @@ form .disabled {
 
 .wrap-outer-header {
   background-color: #111;
-  color: #f3f3f3;
+  color: #fafafa;
 }
 
 .wrap-header .logo-mit-lib {
   display: inline-block;
-  fill: #f3f3f3;
+  fill: #fafafa;
 }
 .wrap-header .logo-mit-lib svg {
   width: auto;
@@ -789,7 +795,7 @@ form .disabled {
   fill: #999;
 }
 .wrap-header .link-logo-mit .logo-mit .color {
-  fill: #f3f3f3;
+  fill: #fafafa;
 }
 
 .wrap-outer-header-local {
@@ -815,7 +821,7 @@ form .disabled {
 
 .wrap-outer-footer {
   background-color: #333;
-  color: #f3f3f3;
+  color: #fafafa;
   font-size: 1.2rem;
 }
 
@@ -832,7 +838,7 @@ form .disabled {
   font-weight: 300;
 }
 .wrap-footer .logo-mit-lib {
-  fill: #f3f3f3;
+  fill: #fafafa;
 }
 .wrap-footer .logo-mit-lib svg {
   width: auto;
@@ -871,14 +877,14 @@ form .disabled {
   color: #999;
 }
 .wrap-outer-footer-institute a {
-  color: #f3f3f3;
+  color: #fafafa;
 }
 .wrap-outer-footer-institute .link-logo-mit .logo-mit {
   display: inline-block;
   fill: #999;
 }
 .wrap-outer-footer-institute .link-logo-mit .logo-mit .color {
-  fill: #f3f3f3;
+  fill: #fafafa;
 }
 .wrap-outer-footer-institute .about-mit {
   color: #ccc;
