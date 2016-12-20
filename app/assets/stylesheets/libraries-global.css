@@ -579,7 +579,7 @@ hr {
   text-decoration: none;
 }
 
-.button-secondary {
+.button-secondary, .button-subtle, .pagination a {
   transition: background-color .25s, border .25s;
   display: inline-block;
   border: 1px solid #ccc;
@@ -588,11 +588,15 @@ hr {
   padding: 5px 10px;
   background-color: transparent;
 }
-.button-secondary:hover, .button-secondary:focus {
+.button-secondary:hover, .button-subtle:hover, .pagination a:hover, .button-secondary:focus, .button-subtle:focus, .pagination a:focus {
   background-color: #0ea6ec;
   border-color: #0ea6ec;
   color: #fafafa;
   text-decoration: none;
+}
+
+.button-subtle, .pagination a {
+  border: 0;
 }
 
 form {
@@ -756,6 +760,15 @@ form .disabled {
   box-shadow: inset 0 0 15px rgba(89, 89, 89, 0.3);
   padding: 2rem 2.5rem;
   margin: 2rem 0;
+}
+
+.pagination {
+  margin: 1rem;
+}
+.pagination .page {
+  display: inline-block;
+  min-width: 3rem;
+  text-align: center;
 }
 
 #skip {

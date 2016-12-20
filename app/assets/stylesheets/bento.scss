@@ -209,8 +209,8 @@ $z-depth-way-front:     1000;
 .wrap-result {
   transition: all .25s ease-in-out 0s;
   border-bottom: 1px solid $gray-l3;
-  border-right: 1px solid $white;
-  border-left: 1px solid $white;
+  border-right: 1px solid $gray-l4;
+  border-left: 1px solid $gray-l4;
   padding: 2rem 1rem 1rem 1rem;
 
   &:first-child {
