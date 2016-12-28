@@ -1,7 +1,7 @@
 <div class="wrap-result">
 
   <% if result.type %>
-    <p class="result-type"><%= result.type %></p>
+    <p class="result-type"><span class="sr">Type: </span><%= result.type %></p>
   <% end %>
 
   <% if result.thumbnail %>
@@ -11,11 +11,12 @@
   <% end %>
 
   <h3 class="result-title">
-    <%= link_to(result.title, result.url, class: 'bento-link') %>
+    <span class="sr">Title: </span><%= link_to(result.title, result.url, class: 'bento-link') %>
   </h3>
   <div class="result-body">
     <% if result.authors %>
       <p class="result-authors">
+        <span class="sr">Authors: </span>
         <% result.truncated_authors.each do |author| %>
         <span class="result-author">
           <%= link_to(author[0], author[1]) unless author == "et al" %>
@@ -33,12 +34,14 @@
 
     <% if result.in %>
       <p class="result-pubinfo">
+        <span class="sr">Published: </span>
         In <%= link_to(result.in[0], result.in[1]) %> <%= result.citation %> (<%= result.year %>)<br />
       </p>
     <% end %>
 
     <% if result.subjects.present? %>
       <div class="result-subjectheadings">
+        <span class="sr">Subjects: </span>
         <ul class="list-subjects">
         <% result.truncated_subjects.each do |subject| %>
           <li class="result-subjectheading">
@@ -48,10 +51,11 @@
         </ul>
       </div>
     <% end %>
-
   </div>
+
   <% if result.location.present? %>
     <div class="result-local-locations">
+      <p class="sr">Library locations: </p>
       <ul class="list-local-locations">
       <% result.location.each do |location| %>
         <li class="result-local-location">
