@@ -362,50 +362,79 @@ hr {
 .wrap-content .content-main {
   padding-bottom: 3rem;
 }
+
 @media (min-width: 768px) {
-  .wrap-content.layout-3q1q .content-main {
+  .layout-3q1q .content-main {
     float: left;
     width: 73%;
   }
-  .wrap-content.layout-3q1q .content-sup {
+  .layout-3q1q .content-sup {
     float: right;
     width: 22%;
     margin-left: 3%;
   }
 }
+
 @media (min-width: 768px) {
-  .wrap-content.layout-1q3q .content-sup {
+  .layout-1q3q .content-sup {
     float: left;
     width: 22%;
     margin-right: 3%;
   }
-  .wrap-content.layout-1q3q .content-main {
+  .layout-1q3q .content-main {
     float: right;
     width: 73%;
   }
 }
+
 @media (min-width: 768px) {
-  .wrap-content.layout-1q2q1q .content-sup-l {
+  .layout-1q2q1q .content-sup-l {
     float: left;
+    width: 22%;
+    margin-right: 3%;
   }
-  .wrap-content.layout-1q2q1q .content-main {
+  .layout-1q2q1q .content-main {
     float: left;
+    width: 48%;
+    margin-right: 3%;
   }
-  .wrap-content.layout-1q2q1q .content-sup {
+  .layout-1q2q1q .content-sup {
     float: right;
+    width: 22%;
   }
 }
+
 @media (min-width: 768px) {
-  .wrap-content.layout-1t2t {
+  .layout-1t2t {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
-  .wrap-content.layout-1t2t .content-sup-l {
+  .layout-1t2t .content-sup-l {
     float: left;
+    width: 33%;
+    margin-right: 3%;
   }
-  .wrap-content.layout-1t2t .content-main {
+  .layout-1t2t .content-main {
     float: right;
+    width: 63%;
+  }
+}
+
+@media (min-width: 768px) {
+  .layout-2t1t {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .layout-2t1t .content-main {
+    float: left;
+    width: 63%;
+    margin-right: 3%;
+  }
+  .layout-2t1t .content-sup {
+    float: right;
+    width: 33%;
   }
 }
 
@@ -579,7 +608,7 @@ hr {
   text-decoration: none;
 }
 
-.button-secondary {
+.button-secondary, .button-subtle, .pagination a {
   transition: background-color .25s, border .25s;
   display: inline-block;
   border: 1px solid #ccc;
@@ -588,11 +617,15 @@ hr {
   padding: 5px 10px;
   background-color: transparent;
 }
-.button-secondary:hover, .button-secondary:focus {
+.button-secondary:hover, .button-subtle:hover, .pagination a:hover, .button-secondary:focus, .button-subtle:focus, .pagination a:focus {
   background-color: #0ea6ec;
   border-color: #0ea6ec;
   color: #fafafa;
   text-decoration: none;
+}
+
+.button-subtle, .pagination a {
+  border: 0;
 }
 
 form {
@@ -756,6 +789,15 @@ form .disabled {
   box-shadow: inset 0 0 15px rgba(89, 89, 89, 0.3);
   padding: 2rem 2.5rem;
   margin: 2rem 0;
+}
+
+.pagination {
+  margin: 1rem;
+}
+.pagination .page {
+  display: inline-block;
+  min-width: 3rem;
+  text-align: center;
 }
 
 #skip {
