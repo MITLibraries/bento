@@ -18,10 +18,18 @@
   <div class="content-sup">
     <ul class="list-unbulleted">
       <li>
-        <%= link_to('Books and media', search_path(q: params[:q], target: 'books')) %>
+        <% if params[:target] == 'books' %>
+          Books and media
+        <% else %>
+          <%= link_to('Books and media', search_path(q: params[:q], target: 'books')) %>
+        <% end %>
       </li>
       <li>
-        <%= link_to('Articles and journal', search_path(q: params[:q], target: 'articles')) %>
+        <% if params[:target] == 'articles' %>
+          Articles and journal
+        <% else %>
+          <%= link_to('Articles and journal', search_path(q: params[:q], target: 'articles')) %>
+        <% end %>
       </li>
       <li>
         <%= link_to('Website and guides', "https://cse.google.com/cse?cx=#{ENV['GOOGLE_CUSTOM_SEARCH_ID']}&ie=UTF-8&q=#{params[:q]}&sa=Search#gsc.tab=0&gsc.q=#{params[:q]}") %>
