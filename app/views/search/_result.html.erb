@@ -1,9 +1,5 @@
 <div class="wrap-result">
 
-  <% if result.type %>
-    <p class="result-type"><span class="sr">Type: </span><%= result.type %></p>
-  <% end %>
-
   <% if result.thumbnail %>
     <div class="result-image">
       <%= image_tag(result.thumbnail, alt: "Cover for #{result.title}") %>
@@ -13,6 +9,10 @@
   <h3 class="result-title">
     <span class="sr">Title: </span><%= link_to(result.title, result.url, class: 'bento-link') %>
   </h3>
+  
+  <% if result.type %>
+    <p class="result-type"><span class="sr">Type: </span><%= result.type %></p>
+  <% end %>
   <div class="result-body">
     <% if result.authors %>
       <p class="result-authors">
@@ -74,7 +74,7 @@
   
   <% if result.url %>
     <div class="result-get">
-      <%= link_to('Get it', result.get_it_url, class: 'button button-secondary') %>
+      <%= link_to('Get it', result.get_it_url, class: 'button button-primary') %>
     </div>
   <% end %>
 </div>

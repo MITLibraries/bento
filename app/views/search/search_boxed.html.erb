@@ -1,59 +1,53 @@
 <% if current_page?(:controller => 'search', :action => 'search') %>
-  <div class="gridband layout-4q">
-    <div class="content-main">
-    More
+  <div class="gridband layout-4q title-area">
+    <h2 class="title title-page has-subline">More
       <% if params[:target] == 'books' %>
         books and media
       <% elsif params[:target] == 'articles' %>
         articles and journals
       <% end %>
 
-    for "<%= params[:q] %>"<br />
-    <%= link_to('Back to all results', search_bento_path(q: params[:q])) %> or <%= link_to('create a new search', root_path) %>
+      for 
+
+      <span class="search-string">"<%= params[:q] %>"</span>
+    </h2>
+    <p class="subline">
+      <%= link_to('Back to all results', search_bento_path(q: params[:q])) %> or <%= link_to('create a new search', root_path) %>
+    </p>
+
+  </div>
+
+  <div class="gridband layout-3q1q">
+    <div class="col3q">
+
+<% end %>
+
+    <% @results['results'].each do |result| %>
+      <%= render partial: "result", locals: {result: result} %>
+    <% end %>
+
+    <%= render partial: "view_all_link" %>
+
+    <% if current_page?(:controller => 'search', :action => 'search') %>
+      <div class="results-pagination">
+        <% # EDS API Limits retrieving results past about 250 %>
+        <% max = [@results['total'], 250].min %>
+        <%= paginate(Kaminari.paginate_array(@results['results'], total_count: max).page(params[:page]).per(10)) %>
+      </div>
+    <% end %>
+
+<% if current_page?(:controller => 'search', :action => 'search') %>
     </div>
-  </div>
-
-  <div class="gridband layout-1q3q">
-
-  <div class="content-sup">
-    <ul class="list-unbulleted">
-      <li>
-        <% if params[:target] == 'books' %>
-          Books and media
-        <% else %>
-          <%= link_to('Books and media', search_path(q: params[:q], target: 'books')) %>
-        <% end %>
-      </li>
-      <li>
-        <% if params[:target] == 'articles' %>
-          Articles and journal
-        <% else %>
-          <%= link_to('Articles and journal', search_path(q: params[:q], target: 'articles')) %>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to('Website and guides', "https://cse.google.com/cse?cx=#{ENV['GOOGLE_CUSTOM_SEARCH_ID']}&ie=UTF-8&q=#{params[:q]}&sa=Search#gsc.tab=0&gsc.q=#{params[:q]}") %>
-      </li>
-    </ul>
-  </div>
-<% end %>
-
-  <div class="content-main">
-<% @results['results'].each do |result| %>
-  <%= render partial: "result", locals: {result: result} %>
-<% end %>
-
-<%= render partial: "view_all_link" %>
-
-<% if current_page?(:controller => 'search', :action => 'search') %>
-  <div class="results-pagination">
-    <% # EDS API Limits retrieving results past about 250 %>
-    <% max = [@results['total'], 250].min %>
-    <%= paginate(Kaminari.paginate_array(@results['results'], total_count: max).page(params[:page]).per(10)) %>
-  </div>
-<% end %>
-  </div>
-
-<% if current_page?(:controller => 'search', :action => 'search') %>
+    <div class="col1q-r">
+    <div class="bit">
+      <h3>Supporting content</h3>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr: </p>
+      <ul>
+        <li class=""><a href="">Sed diam nonumy eirmod</a></li> 
+        <li class=""><a href="">Tempor invidunt ut labore</a></li> 
+        <li class=""><a href="">Dolore magna aliquyam</a></li>
+      </ul>
+    </div>
+    </div>
   </div>
 <% end %>
