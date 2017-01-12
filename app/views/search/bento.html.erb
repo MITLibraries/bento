@@ -5,8 +5,9 @@
     <span class="search-summary">Searched for "<%= params[:q] %>" everywhere</span>
     <span class="title">Found: </span>
 
-    <a href="#box-articles_content"><span class="results-summary-item" data-region="articles">Articles and journals <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
     <a href="#box-books_content"><span class="results-summary-item" data-region="books">Books and Media <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
+
+    <a href="#box-articles_content"><span class="results-summary-item" data-region="articles">Articles and journals <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
 
     <a href="#box-website_content"><span class="results-summary-item" data-region="google">Webpages and guides <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
   </p>
@@ -15,7 +16,7 @@
 <div class="gridband layout-2c">
   <%= render partial: "placeholders", locals: { heading: 'Books and Media', id: 'books_content', description: "Books, ebooks, audio books at MIT. <a href='https://mit.worldcat.org/search?qt=wc_org_mit&qt=affiliate&q=#{params[:q]}'>Expand to libraries around the world</a>" } %>
 
-  <%= render partial: "placeholders", locals: { heading: 'Articles', id: 'articles_content', description: 'Articles from a variety of periodical publications, including journals, magazines, and newspapers from MIT. <a href="http://libraries.mit.edu/search/">More search options</a>' } %>
+  <%= render partial: "placeholders", locals: { heading: 'Articles and journals', id: 'articles_content', description: 'Articles from a variety of periodical publications, including journals, magazines, and newspapers from MIT. <a href="http://libraries.mit.edu/search/">More search options</a>' } %>
 </div>
 
 <div class="gridband layout-2c">
