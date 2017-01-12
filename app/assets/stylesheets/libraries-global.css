@@ -861,6 +861,11 @@ form .disabled {
   font-size: 1.2rem;
 }
 
+.wrap-breadcrumb {
+  padding-top: 7px;
+  padding-bottom: 5px;
+}
+
 .wrap-outer-footer {
   background-color: #333;
   color: #fafafa;
