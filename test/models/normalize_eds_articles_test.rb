@@ -4,8 +4,9 @@ class NormalizeEdsArticlesTest < ActiveSupport::TestCase
   def popcorn_articles
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
-      raw_query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
-      NormalizeEds.new.to_result(raw_query, 'articles')
+      raw_query = SearchEds.new.search('popcorn', 'apiwhatnot',
+                                       ENV['EDS_ARTICLE_FACETS'])
+      NormalizeEds.new.to_result(raw_query, 'articles', 'popcorn')
     end
   end
 
@@ -64,7 +65,7 @@ class NormalizeEdsArticlesTest < ActiveSupport::TestCase
     VCR.use_cassette('no article authors',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('orange', 'apinoaleph', '')
-      query = NormalizeEds.new.to_result(raw_query, 'articles')
+      query = NormalizeEds.new.to_result(raw_query, 'articles', 'orange')
       assert_nil(query['results'][0].authors)
     end
   end
