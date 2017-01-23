@@ -5,7 +5,7 @@ class NormalizeEdsBooksTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn books',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
-      NormalizeEds.new.to_result(raw_query, 'books')
+      NormalizeEds.new.to_result(raw_query, 'books', 'popcorn books')
     end
   end
 
@@ -38,7 +38,7 @@ class NormalizeEdsBooksTest < ActiveSupport::TestCase
     VCR.use_cassette('multiple book authors',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('vonnegut', 'apibarton', '')
-      query = NormalizeEds.new.to_result(raw_query, 'books')
+      query = NormalizeEds.new.to_result(raw_query, 'books', 'vonnegut')
       assert_equal(
         ['Vonnegut, Kurt', 'Wakefield, Dan'],
         query['results'][0].authors.map { |a| a[0] }
@@ -50,7 +50,7 @@ class NormalizeEdsBooksTest < ActiveSupport::TestCase
     VCR.use_cassette('no book authors',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('orange', 'apibarton', '')
-      query = NormalizeEds.new.to_result(raw_query, 'books')
+      query = NormalizeEds.new.to_result(raw_query, 'books', 'orange')
       assert_nil(query['results'][0].authors)
     end
   end
@@ -89,7 +89,7 @@ class NormalizeEdsBooksTest < ActiveSupport::TestCase
     VCR.use_cassette('multiple book subjects',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('orange', 'apibarton', '')
-      query = NormalizeEds.new.to_result(raw_query, 'books')
+      query = NormalizeEds.new.to_result(raw_query, 'books', 'orange')
       assert_equal(4, query['results'][1].subjects.count)
     end
   end
@@ -109,7 +109,7 @@ class NormalizeEdsBooksTest < ActiveSupport::TestCase
     VCR.use_cassette('multiple book subjects',
                      allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('orange', 'apibarton', '')
-      query = NormalizeEds.new.to_result(raw_query, 'books')
+      query = NormalizeEds.new.to_result(raw_query, 'books', 'orange')
       assert_nil(query['results'][1].location)
     end
   end

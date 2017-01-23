@@ -4,7 +4,8 @@ class SearchEdsTest < ActiveSupport::TestCase
   test 'can search articles' do
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
-      query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
+      query = SearchEds.new.search('popcorn', 'apiwhatnot',
+                                   ENV['EDS_ARTICLE_FACETS'])
       assert_equal(Hash, query.class)
     end
   end
@@ -12,7 +13,8 @@ class SearchEdsTest < ActiveSupport::TestCase
   test 'can search books' do
     VCR.use_cassette('popcorn non articles',
                      allow_playback_repeats: true) do
-      query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
+      query = SearchEds.new.search('popcorn', 'apiwhatnot',
+                                   ENV['EDS_BOOK_FACETS'])
       assert_equal(Hash, query.class)
     end
   end

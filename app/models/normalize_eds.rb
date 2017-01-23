@@ -2,16 +2,47 @@
 #
 class NormalizeEds
   # Translate EDS results into local result model
-  def to_result(results, type)
+  def to_result(results, type, q)
     @type = type
     norm = {}
     norm['total'] = results['SearchResult']['Statistics']['TotalHits']
     norm['results'] = []
+    norm['view_more_url'] = view_more(q)
     extract_results(results, norm)
     norm
   end
 
   private
+
+  def view_more(q)
+    if ENV['LOCAL_RESULTS']
+      local_view_more(q)
+    else
+      eds_ui_view_more(q)
+    end
+  end
+
+  def local_view_more(q)
+    Rails.application.routes.url_helpers.search_path(q: q, target: @type)
+  end
+
+  def eds_ui_view_more(q)
+    "#{ENV['EDS_PROFILE_URI']}#{q}&facet=#{facets_list}"
+  end
+
+  def facets_list
+    facets.gsub('&facetfilter=1,', '').split(',').map do |x|
+      x.split(':').last.delete('+')
+    end.join(',')
+  end
+
+  def facets
+    if @type == 'books'
+      ENV['EDS_BOOK_FACETS']
+    else
+      ENV['EDS_ARTICLE_FACETS']
+    end
+  end
 
   def extract_results(results, norm)
     return unless results['SearchResult']['Data']['Records']
