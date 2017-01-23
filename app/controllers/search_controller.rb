@@ -66,7 +66,7 @@ class SearchController < ApplicationController
     raw_results = SearchEds.new.search(
       strip_q, ENV['EDS_PROFILE'], eds_facets, page, per_page
     )
-    NormalizeEds.new.to_result(raw_results, params[:target])
+    NormalizeEds.new.to_result(raw_results, params[:target], strip_q)
   end
 
   def eds_facets
@@ -80,7 +80,7 @@ class SearchController < ApplicationController
   # Searches Google Custom Search
   def search_google
     raw_results = SearchGoogle.new.search(strip_q)
-    NormalizeGoogle.new.to_result(raw_results)
+    NormalizeGoogle.new.to_result(raw_results, strip_q)
   end
 
   # Strips trailing and leading white space in search term
