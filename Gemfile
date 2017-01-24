@@ -10,7 +10,7 @@ gem 'kaminari'
 gem 'omniauth-mit-oauth2'
 gem 'omniauth-oauth2'
 gem 'puma'
-gem 'rails', '5.0.0.1'
+gem 'rails', '5.0.1'
 gem 'rollbar'
 gem 'sass-rails'
 gem 'therubyracer', platforms: :ruby
@@ -21,7 +21,6 @@ group :production do
   gem 'memcachier'
   gem 'newrelic_rpm'
   gem 'pg'
-  gem 'rails_12factor'
 end
 
 group :development, :test do
