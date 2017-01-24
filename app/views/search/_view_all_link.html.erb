@@ -2,9 +2,9 @@
   <div class="results-more">
   <% if @results['total'] > 0 %>
     <%= link_to(
-      "View all #{number_with_delimiter(@results['total'])} results like this.",
+      "View all #{number_with_delimiter(@results['total'])} results",
       @results['view_more_url'],
-      data: {count: @results['total']}) %>
+      data: {count: @results['total']}, class: 'button button-subtle') %>
   <% else %>
     No results found.
   <% end %>

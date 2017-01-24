@@ -101,7 +101,7 @@ a {
   display: none;
 }
 
-a, .wrap-content a, .wrap-footer a, .wrap-outer-footer-institute a {
+a, .wrap-footer a, .wrap-outer-footer-institute a {
   transition: color .25s ease-in-out 0s;
   color: #338bc5;
   text-decoration: none;
@@ -364,11 +364,11 @@ hr {
 }
 
 @media (min-width: 768px) {
-  .layout-3q1q .content-main {
+  .layout-3q1q .col3q {
     float: left;
     width: 73%;
   }
-  .layout-3q1q .content-sup {
+  .layout-3q1q .col1q-r {
     float: right;
     width: 22%;
     margin-left: 3%;
@@ -376,19 +376,19 @@ hr {
 }
 
 @media (min-width: 768px) {
-  .layout-1q3q .content-sup {
+  .layout-1q3q .col1q {
     float: left;
     width: 22%;
     margin-right: 3%;
   }
-  .layout-1q3q .content-main {
+  .layout-1q3q .col3q {
     float: right;
     width: 73%;
   }
 }
 
 @media (min-width: 768px) {
-  .layout-1q2q1q .content-sup-l {
+  .layout-1q2q1q .col1q {
     float: left;
     width: 22%;
     margin-right: 3%;
@@ -398,7 +398,7 @@ hr {
     width: 48%;
     margin-right: 3%;
   }
-  .layout-1q2q1q .content-sup {
+  .layout-1q2q1q .col1q-r {
     float: right;
     width: 22%;
   }
@@ -410,12 +410,12 @@ hr {
     display: -ms-flexbox;
     display: flex;
   }
-  .layout-1t2t .content-sup-l {
+  .layout-1t2t .col1t {
     float: left;
     width: 33%;
     margin-right: 3%;
   }
-  .layout-1t2t .content-main {
+  .layout-1t2t .col2t {
     float: right;
     width: 63%;
   }
@@ -427,12 +427,12 @@ hr {
     display: -ms-flexbox;
     display: flex;
   }
-  .layout-2t1t .content-main {
+  .layout-2t1t .col2t {
     float: left;
     width: 63%;
     margin-right: 3%;
   }
-  .layout-2t1t .content-sup {
+  .layout-2t1t .col1t {
     float: right;
     width: 33%;
   }

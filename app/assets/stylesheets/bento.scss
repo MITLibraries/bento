@@ -211,6 +211,7 @@ $z-depth-way-front:     1000;
 .results-more {
   margin-top: 1rem;
   font-size: $fs-smallish;
+  text-align: right;
 
   a {
     color: $magenta;    
@@ -238,7 +239,7 @@ $z-depth-way-front:     1000;
 
 
   .result-type {
-    margin-bottom: 0;
+    margin-bottom: .5em;
     font-size: $fs-xsmall; 
     color: $gray;
   }
@@ -348,6 +349,7 @@ $z-depth-way-front:     1000;
 /* other bits */
 .wrap-help {
   .title {
+    margin-bottom: .3em;
     font-size: $fs-base;
     font-weight: 600;
     color: $gray-d1;
@@ -376,3 +378,22 @@ $z-depth-way-front:     1000;
 .about-bento {
   margin: 4rem 0;
 }
+
+.title-area {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.title.has-subline {
+  margin-bottom: .1em;
+  padding-bottom: .1em;
+}
+
+.subline {
+  font-size: $fs-xsmall;
+}
+
+.nav .current {
+  font-weight: $fw-bold;
+}
+
