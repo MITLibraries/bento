@@ -1,4 +1,11 @@
-$('#<%= id %>').load("/search/search_boxed?q=<%= URI.encode_www_form_component(params[:q]) %>&target=<%= target %>", function() {
+$.ajax({
+  url: "/search/search_boxed?q=<%= URI.encode_www_form_component(params[:q]) %>&target=<%= target %>",
+  context: $('#<%= id %>')
+}).done(function( msg ) {
+  $('#<%= id %>').html( msg );
   TrackLinks( $( this ).find( 'a' ) );
   ReportSummary( '<%= target %>', $( this ).find('[data-count]').data('count') );
+}).fail(function( xhr, textStatus ) {
+  console.log(xhr);
+  $('#<%= id %>').html( 'Sorry, an error has occurred loading results at this time.' ).addClass('alert error');
 });
