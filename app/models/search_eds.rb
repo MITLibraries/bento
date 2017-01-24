@@ -46,9 +46,13 @@ class SearchEds
   end
 
   def search_filtered(term, facets, page, per_page)
+    Rails.logger.debug(
+      "EDS Search URL: #{search_url(term, facets, page, per_page)}"
+    )
     result = HTTP.headers(accept: 'application/json',
                           'x-authenticationToken': @auth_token,
                           'x-sessionToken': @session_key)
+                 .timeout(:global, write: 2, connect: 2, read: 2)
                  .get(search_url(term, facets, page, per_page).to_s).to_s
     JSON.parse(result)
   end
