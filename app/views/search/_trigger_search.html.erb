@@ -7,5 +7,5 @@ $.ajax({
   ReportSummary( '<%= target %>', $( this ).find('[data-count]').data('count') );
 }).fail(function( xhr, textStatus ) {
   console.log(xhr);
-  $('#<%= id %>').html( 'An error has occured loading results. Sorry.' ).addClass('alert error');
+  $('#<%= id %>').html( 'Sorry, an error has occurred loading results at this time.' ).addClass('alert error');
 });
