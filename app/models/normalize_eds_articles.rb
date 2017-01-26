@@ -9,6 +9,7 @@ class NormalizeEdsArticles
     result.citation = numbering
     result.in = journal_title
     result.get_it_url = link(result)
+    result.get_it_label = 'Get it'
     result
   end
 

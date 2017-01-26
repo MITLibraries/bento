@@ -11,6 +11,7 @@ class NormalizeEdsBooks
     result.location = location
     result.subjects = subjects
     result.get_it_url = @record['PLink']
+    result.get_it_label = 'Details and availability'
     result
   end
 
