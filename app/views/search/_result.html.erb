@@ -13,6 +13,9 @@
   <% if result.type %>
     <p class="result-type"><span class="sr">Type: </span><%= result.type %></p>
   <% end %>
+  <% if result.year.present? && params[:target] == 'books' %>
+    <p class="result-year">Published <%= result.year %></p>
+  <% end %>
   <div class="result-body">
     <% if result.authors %>
       <p class="result-authors">
