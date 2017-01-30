@@ -218,7 +218,7 @@ $z-depth-way-front:     1000;
   text-align: right;
 
   a {
-    color: $magenta;    
+    color: $magenta;
   }
 }
 
@@ -234,7 +234,7 @@ $z-depth-way-front:     1000;
     border-top: 1px solid $gray-l3;
   }
 
-  &:hover, 
+  &:hover,
   &:focus {
     border-right: 1px solid $gray-l3;
     border-left: 1px solid $gray-l3;
@@ -244,7 +244,7 @@ $z-depth-way-front:     1000;
 
   .result-type {
     margin-bottom: .5em;
-    font-size: $fs-xsmall; 
+    font-size: $fs-xsmall;
     color: $gray;
   }
 
@@ -288,7 +288,9 @@ $z-depth-way-front:     1000;
   }
 
   .result-year {
-     color: $gray;
+    margin-bottom: .5em;
+    font-size: $fs-xsmall;
+    color: $gray;
    }
 
   .list-subjects {
@@ -358,7 +360,7 @@ $z-depth-way-front:     1000;
     font-weight: 600;
     color: $gray-d1;
   }
-  
+
   .list-tools {
     @extend .list-unbulleted;
     font-size: $fs-small;
