@@ -17,6 +17,9 @@
     "EDS_PASSWORD": {
       "required": true
     },
+    "EDS_PLINK_APPEND": {
+      "required": true
+    },
     "EDS_URL": {
       "required": true
     },

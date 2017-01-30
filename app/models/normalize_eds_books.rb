@@ -10,9 +10,13 @@ class NormalizeEdsBooks
     result.publisher = publisher
     result.location = location
     result.subjects = subjects
-    result.get_it_url = @record['PLink']
+    result.get_it_url = getit_url
     result.get_it_label = 'Details and availability'
     result
+  end
+
+  def getit_url
+    "#{@record['PLink']}#{ENV['EDS_PLINK_APPEND']}"
   end
 
   def subjects
