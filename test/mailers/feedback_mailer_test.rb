@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class FeedbackMailerTest < ActionMailer::TestCase
-
   def test_feedback_email
     # Create the email and store it for further assertions
     email = FeedbackMailer.feedback_email('This is an important message!',
