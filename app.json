@@ -26,6 +26,9 @@
     "EDS_USER_ID": {
       "required": true
     },
+    "FEEDBACK_MAIL_TO": {
+      "required": true
+    },
     "GLOBAL_ALERT": {
       "required": true
     },
@@ -57,6 +60,18 @@
       "required": true
     },
     "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "SMTP_ADDRESS": {
+      "required": true
+    },
+    "SMTP_PASSWORD": {
+      "required": true
+    },
+    "SMTP_PORT": {
+      "required": true
+    },
+    "SMTP_USER": {
       "required": true
     }
   },

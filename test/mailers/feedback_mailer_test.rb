@@ -13,7 +13,7 @@ class FeedbackMailerTest < ActionMailer::TestCase
     end
 
     # Test the body of the sent email contains what we expect it to
-    assert_equal ['from@example.com'], email.from
+    assert_equal ['test@example.com'], email.from
     assert_equal ['test@example.com'], email.to
     assert_equal 'MIT Bento Feedback', email.subject
     assert_equal read_fixture('feedback_email').join, email.body.to_s
