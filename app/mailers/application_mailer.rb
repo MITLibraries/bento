@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: ENV['FEEDBACK_MAIL_TO']
   layout 'mailer'
 end
