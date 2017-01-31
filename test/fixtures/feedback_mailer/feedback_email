@@ -12,6 +12,8 @@
 
   <p>This is an important message!</p>
 
+  <p>Contact Email: yo@example.com</p>
+
   <p>Client IP: 0.0.0.0</p>
 
   <p>Originating page: http://example.com/stuff</p>
