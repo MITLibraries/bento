@@ -1,0 +1,14 @@
+<%= form_tag(feedback_path, class: 'form-horizontal b-feedback') do %>
+  <div class="form-group">
+
+    <%= hidden_field_tag 'previous_page', @_request.env['HTTP_REFERER'] %>
+
+    <%= label_tag 'contact_email', 'Optional Contact Email', class: 'field-label' %>
+    <%= email_field_tag 'contact_email', nil, class: 'field field-email', placeholder: 'include if you want a reply' %>
+
+    <%= label_tag 'feedback_message', 'Feedback', class: 'field-label' %>
+    <%= text_area_tag 'feedback_message', nil, class: 'field field-textarea', placeholder: 'Let us know what you think!' %>
+
+    <%= submit_tag "Submit Feedback", class: 'btn button-primary' %>
+  </div>
+<% end %>
