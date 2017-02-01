@@ -1,0 +1,22 @@
+<%= form_tag(feedback_path, class: 'form-horizontal bento-feedback') do %>
+    <%= hidden_field_tag 'previous_page', @_request.env['HTTP_REFERER'] %>
+
+    <div class="form-group">
+      <%= label_tag 'contact_email', 'Contact Email (optional)', class: 'field-label' %>
+      <%= email_field_tag 'contact_email', nil, class: 'field field-email bento-field-email', placeholder: 'include if you want a reply' %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag 'feedback_message', 'Feedback (required)', class: 'field-label' %>
+      <%= text_area_tag 'feedback_message', nil, class: 'field field-textarea bento-field-textarea', placeholder: 'Let us know what you think!', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= submit_tag "Submit Feedback", class: 'btn button-primary' %>
+    </div>
+  </div>
+<% end %>
+
+<script>
+  $(".bento-feedback").validate();
+</script>
