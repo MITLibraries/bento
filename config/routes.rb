@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   get 'search', to: 'search#search'
 
   get 'session/toggle_boxes', to: 'session#box_toggler'
+
+  get 'feedback', to: 'feedback#index', as: :feedback
+  post 'feedback', to: 'feedback#submit', as: :feedback_submit
 end
