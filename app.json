@@ -56,6 +56,12 @@
     "RAILS_SERVE_STATIC_FILES": {
       "required": true
     },
+    "RECAPTCHA_SITE_KEY": {
+      "required": true
+    },
+    "RECAPTCHA_SECRET_KEY": {
+      "required": true
+    },
     "ROLLBAR_ACCESS_TOKEN": {
       "required": true
     },
