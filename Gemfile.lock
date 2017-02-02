@@ -238,6 +238,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.2.1)
     rake (11.3.0)
+    recaptcha (4.0.1)
+      json
     ref (2.0.0)
     representable (2.3.0)
       uber (~> 0.0.7)
@@ -343,6 +345,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 5.0.1)
+  recaptcha
   rollbar
   rubocop
   sass-rails

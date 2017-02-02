@@ -12,6 +12,7 @@ gem 'omniauth-mit-oauth2'
 gem 'omniauth-oauth2'
 gem 'puma'
 gem 'rails', '5.0.1'
+gem 'recaptcha', require: 'recaptcha/rails'
 gem 'rollbar'
 gem 'sass-rails'
 gem 'therubyracer', platforms: :ruby

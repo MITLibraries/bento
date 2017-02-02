@@ -1,5 +1,6 @@
 class FeedbackController < ApplicationController
   before_action :validate_message!, only: [:submit]
+  before_action :recaptcha!, only: [:submit]
 
   def index; end
 
@@ -11,6 +12,11 @@ class FeedbackController < ApplicationController
   end
 
   private
+
+  def recaptcha!
+    return if verify_recaptcha
+    redirect_to feedback_url
+  end
 
   def validate_message!
     return if params[:feedback_message].present?
