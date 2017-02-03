@@ -150,6 +150,7 @@ GEM
       mime-types (>= 1.16, < 4)
     memcachier (0.0.2)
     memoist (0.15.0)
+    metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -175,6 +176,8 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
+    mocha (1.2.1)
+      metaclass (~> 0.0.1)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -338,6 +341,7 @@ DEPENDENCIES
   minitest-rails
   minitest-rails-capybara
   minitest-reporters
+  mocha
   newrelic_rpm
   omniauth-mit-oauth2
   omniauth-oauth2

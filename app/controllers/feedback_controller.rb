@@ -15,6 +15,7 @@ class FeedbackController < ApplicationController
 
   def recaptcha!
     return if verify_recaptcha
+    flash[:error] = 'Please confirm you are not a robot.'
     redirect_to feedback_url
   end
 

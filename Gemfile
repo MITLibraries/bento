@@ -43,6 +43,7 @@ group :test do
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
+  gem 'mocha'
   gem 'vcr'
   gem 'webmock'
 end
