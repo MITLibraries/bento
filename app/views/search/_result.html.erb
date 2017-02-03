@@ -9,13 +9,14 @@
   <h3 class="result-title">
     <span class="sr">Title: </span><%= link_to(result.title, result.url, class: 'bento-link') %>
   </h3>
-
-  <% if result.type %>
-    <p class="result-type"><span class="sr">Type: </span><%= result.type %></p>
-  <% end %>
-  <% if result.year.present? && params[:target] == 'books' %>
-    <p class="result-year">Published <%= result.year %></p>
-  <% end %>
+  <p>
+    <% if result.type %>
+      <span class="result-type"><span class="sr">Type: </span><%= result.type %></span>
+    <% end %>
+    <% if result.year.present? && params[:target] == 'books' %>
+      <span class="result-year">Published <%= result.year %></span>
+    <% end %>
+  </p>
   <div class="result-body">
     <% if result.authors %>
       <p class="result-authors">
