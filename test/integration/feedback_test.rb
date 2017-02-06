@@ -39,4 +39,19 @@ class FeedbackTest < ActionDispatch::IntegrationTest
       assert_select('p', 'Feedback Submitted')
     end
   end
+
+  test 'feedback with no recaptcha redirects to feedback_url' do
+    FeedbackController.any_instance.stubs(:verify_recaptcha).returns(false)
+    assert_difference('ActionMailer::Base.deliveries.size', 0) do
+      post feedback_submit_url, params: {
+        feedback_message: 'Popcorn is cool.',
+        contact_email: 'yo@example.com',
+        previous_page: 'http://example.com/hi'
+      }
+      follow_redirect!
+      assert_select('.alert') do |value|
+        assert(value.text.include?('Please confirm you are not a robot.'))
+      end
+    end
+  end
 end
