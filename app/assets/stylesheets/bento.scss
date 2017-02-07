@@ -413,6 +413,21 @@ $z-depth-way-front:     1000;
   font-weight: $fw-bold;
 }
 
+// specific view changes
+.view-more {
+  .wrap-result {
+    border-right: 1px solid $gray-l4;
+    border-left: 1px solid $gray-l4;
+
+    &:hover,
+    &:focus {
+      border-right: 1px solid $gray-l3;
+      border-left: 1px solid $gray-l3;
+      background-color: $white-t;
+    }
+  }
+}
+
 .wrap-result>.result-pubinfo {
   display: none;
 }
