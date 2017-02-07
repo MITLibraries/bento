@@ -129,6 +129,20 @@ $z-depth-way-front:     1000;
   padding-top: 1rem;
 }
 
+.nudge-feedback {
+  text-align: right;
+  font-size: $fs-small;
+  font-weight: $fw-bold;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $orange;
+  }
+}
+
 /* search bar */
 .b-search {
   margin-bottom: .5rem;
@@ -191,11 +205,9 @@ $z-depth-way-front:     1000;
   }
 }
 
-
-
 /* big boxes */
 .wrap-results {
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 3rem;
   background-color: $white-t;
   box-shadow: 0 0 3px 1px $smoke;
@@ -395,22 +407,24 @@ $z-depth-way-front:     1000;
   margin: 4rem 0;
 }
 
-.title-area {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
+// content area adjustments
+.wrap-content {
+  .title-area {
+    margin-bottom: 1rem;
+  }
 
-.title.has-subline {
-  margin-bottom: .1em;
-  padding-bottom: .1em;
-}
+  .title-page {
+    padding-top: 1.5rem;
+  }
 
-.subline {
-  font-size: $fs-xsmall;
-}
+  .title.has-subline {
+    margin-bottom: .1em;
+    padding-bottom: .1em;
+  }
 
-.nav .current {
-  font-weight: $fw-bold;
+  .subline {
+    font-size: $fs-xsmall;
+  }
 }
 
 // specific view changes

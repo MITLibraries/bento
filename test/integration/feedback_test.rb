@@ -7,7 +7,7 @@ class FeedbackTest < ActionDispatch::IntegrationTest
            params: { contact_email: 'yo@example.com',
                      feedback_message: 'Message this!' })
       assert_response(:success)
-      assert_select('p', 'Feedback Submitted')
+      assert_select('.title-page', 'Thanks for your feedback')
     end
 
     feedback_email = ActionMailer::Base.deliveries.last
@@ -36,7 +36,7 @@ class FeedbackTest < ActionDispatch::IntegrationTest
            params: { contact_email: '',
                      feedback_message: 'Message this!' })
       assert_response(:success)
-      assert_select('p', 'Feedback Submitted')
+      assert_select('.title-page', 'Thanks for your feedback')
     end
   end
 
