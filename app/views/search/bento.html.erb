@@ -13,6 +13,10 @@
   </p>
 </div>
 
+<div class="nudge-feedback">
+  <p>Was this search useful? <%= link_to('Send feedback', feedback_path) %>
+</div>
+
 <div class="gridband layout-2c">
   <%= render partial: "placeholders", locals: { heading: 'Books and media', id: 'books_content', description: "Books, ebooks, audio books, music, and videos at MIT. <a class='wc-link' href='https://mit.worldcat.org/search?qt=wc_org_mit&qt=affiliate&q=#{params[:q]}'>Expand to libraries around the world</a>" } %>
 
