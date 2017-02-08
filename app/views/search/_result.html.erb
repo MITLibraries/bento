@@ -58,15 +58,22 @@
   </div>
 
   <% if result.location.present? %>
-    <div class="result-local-locations">
+    <div id="stale_locations_<%= result.clean_an %>" class="result-local-locations">
       <p class="sr">Library locations: </p>
       <ul class="list-local-locations">
       <% result.location.each do |location| %>
         <li class="result-local-location">
-          <%= location[0] %>: <%= location[1] %>
+          <%= location[0] %>: <%= location[1] %> (not live)
         </li>
       <% end %>
       </ul>
+    </div>
+  <% end %>
+
+  <% if result.aleph_record? && params[:target] == 'books' %>
+    <div id="<%= result.clean_an %>" class='realtime_status result-local-locations' data-an="<%= result.clean_an %>">
+      Loading realtime status...
+      <i class="fa fa-spinner fa-spin"></i>
     </div>
   <% end %>
 
@@ -81,4 +88,5 @@
       <%= link_to(result.get_it_label, result.get_it_url, class: 'button button-primary') %>
     </div>
   <% end %>
+
 </div>

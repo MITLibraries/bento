@@ -15,6 +15,8 @@ Rails.application.configure do
   ENV['EDS_BOOK_FACETS'] = '&facetfilter=1,SourceType:Books,SourceType:eBooks,SourceType:Audiobooks,SourceType:Dissertations,SourceType:Music+Scores,SourceType:Audio,SourceType:Videos'
   ENV['EDS_ARTICLE_FACETS'] = '&facetfilter=1,SourceType:Academic+Journals,SourceType:Magazines,SourceType:Conference+Materials'
   ENV['FEEDBACK_MAIL_TO'] = 'test@example.com'
+  ENV['ALEPH_API_URI'] = 'https://fake_server.example.com/rest-dlf/'
+  ENV['ALEPH_KEY'] = 'FAKE_KEY'
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that

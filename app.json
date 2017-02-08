@@ -2,6 +2,12 @@
   "name": "bento",
   "scripts": {},
   "env": {
+    "ALEPH_API_URI": {
+      "required": true
+    },
+    "ALEPH_KEY": {
+      "required": true
+    },
     "EDS_PROFILE": {
       "required": true
     },

@@ -12,6 +12,7 @@ class NormalizeEdsCommon
     result.type = type
     result.online = availability
     result.db_source = db_source
+    result.an = @record.dig('Header', 'An')
     result
   end
 
