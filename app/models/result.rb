@@ -7,11 +7,15 @@ class Result
   attr_accessor :title, :year, :url, :type, :authors, :citation, :online,
                 :year, :type, :in, :publisher, :location, :blurb, :subjects,
                 :available_url, :thumbnail, :get_it_label, :get_it_url,
-                :db_source
+                :db_source, :an
 
   def initialize(title, url)
     @title = title
     @url = url
+  end
+
+  def clean_an
+    an.split('.').last.prepend('MIT01')
   end
 
   # View-type method for returning a truncated list of authors.
@@ -22,5 +26,13 @@ class Result
 
   def truncated_subjects
     subjects[0..2]
+  end
+
+  def aleph_record?
+    if an.present? && an.start_with?('mit.')
+      true
+    else
+      false
+    end
   end
 end

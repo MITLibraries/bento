@@ -18,6 +18,18 @@ VCR.configure do |config|
   config.cassette_library_dir = 'test/vcr_cassettes'
   config.hook_into :webmock
 
+  config.filter_sensitive_data('FAKE_KEY') do
+    (ENV['ALEPH_KEY']).to_s
+  end
+
+  config.filter_sensitive_data('https://fake_server.example.com/rest-dlf/') do
+    (ENV['ALEPH_API_URI']).to_s
+  end
+
+  config.filter_sensitive_data('http://fake_server.example.com/rest-dlf/') do
+    (ENV['ALEPH_API_URI']).to_s.gsub('https', 'http')
+  end
+
   config.filter_sensitive_data('FakeAuthenticationtoken') do |interaction|
     interaction.request.headers['X-Authenticationtoken']&.first
   end

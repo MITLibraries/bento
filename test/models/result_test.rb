@@ -72,4 +72,18 @@ class ResultTest < ActiveSupport::TestCase
     assert r.valid?
     assert_equal(r.online, true)
   end
+
+  test 'flags MIT Aleph records' do
+    r = Result.new('title', 'http://example.com')
+    assert_equal(false, r.aleph_record?)
+
+    r.an = 'mit.001739356'
+    assert_equal(true, r.aleph_record?)
+  end
+
+  test 'can reformat aleph accession number' do
+    r = Result.new('title', 'http://example.com')
+    r.an = 'mit.001739356'
+    assert_equal('MIT01001739356', r.clean_an)
+  end
 end

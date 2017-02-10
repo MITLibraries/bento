@@ -343,6 +343,7 @@ DEPENDENCIES
   minitest-reporters
   mocha
   newrelic_rpm
+  nokogiri
   omniauth-mit-oauth2
   omniauth-oauth2
   pg

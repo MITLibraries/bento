@@ -19,4 +19,6 @@ Rails.application.routes.draw do
 
   get 'feedback', to: 'feedback#index', as: :feedback
   post 'feedback', to: 'feedback#submit', as: :feedback_submit
+
+  get 'item_status', to: 'aleph#item_status'
 end
