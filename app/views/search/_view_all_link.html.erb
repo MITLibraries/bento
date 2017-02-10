@@ -4,7 +4,7 @@
     <%= link_to(
       "View all #{number_with_delimiter(@results['total'])} results",
       @results['view_more_url'],
-      data: {count: @results['total']}, class: 'button button-subtle') %>
+      data: {count: number_with_delimiter(@results['total'])}, class: 'button button-subtle') %>
   <% else %>
     No results found.
   <% end %>
