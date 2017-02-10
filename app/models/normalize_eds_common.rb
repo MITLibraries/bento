@@ -13,7 +13,12 @@ class NormalizeEdsCommon
     result.online = availability
     result.db_source = db_source
     result.an = @record.dig('Header', 'An')
+    result.custom_link = custom_link
     result
+  end
+
+  def custom_link
+    @record.dig('FullText', 'CustomLinks')
   end
 
   def title

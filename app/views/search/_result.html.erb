@@ -77,7 +77,7 @@
     </div>
   <% end %>
 
-  <% if result.db_source.present? %>
+  <% if result.db_source.present? && session[:debug] %>
     <p class="result-pubinfo">
       Source DB: <%= result.db_source[0] %> (<%= result.db_source[1] %>)
     </p>
@@ -89,4 +89,24 @@
     </div>
   <% end %>
 
+  <% if session[:debug] %>
+    <p class="result-debug">
+      EDS Supplied CustomLinks
+      <ul>
+        <% if result.custom_link %>
+          <% result.custom_link&.each do |cl| %>
+            <li><%= link_to(cl["Name"], cl["Url"], class: 'bento-link') %></li>
+          <% end %>
+        <% else %>
+          <li>None</li>
+        <% end %>
+      </ul>
+
+      EDS UI Detail Link (constructed)
+      <ul><li><%= link_to('EDS UI Detail Link', result.url, class: 'bento-link') %></li></ul>
+
+      GetIt Link (constructed sfx [non-book] or eds ui detail link [book])
+      <ul><li><%= link_to('Get It Link', result.get_it_url, class: 'bento-link') %></li></ul>
+    <p>
+  <% end %>
 </div>
