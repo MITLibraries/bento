@@ -38,7 +38,7 @@ class NormalizeEdsArticles
     {
       'rft.au' => authors&.join(';'),
       'rft_id' => "info:doi/#{doi}",
-      'rft.jtitle' => journal_title[0],
+      'rft.jtitle' => journal_title,
       'rft.volume' => volume_issue('volume'),
       'rft.issue' => volume_issue('issue'),
       'rft.year' => year,
@@ -55,12 +55,8 @@ class NormalizeEdsArticles
   end
 
   def journal_title
-    return [] unless bibentity['Titles']
-    [bibentity['Titles'][0]['TitleFull'],
-     'https://sfx.mit.edu/sfx_local?' + 'rft.jtitle=' +
-       URI.encode_www_form_component(
-         bibentity['Titles'][0]['TitleFull']
-       ) + '&rfr_id=info:sid/MIT.BENTO']
+    return unless bibentity['Titles']
+    bibentity['Titles'][0]['TitleFull']
   end
 
   def numbering
