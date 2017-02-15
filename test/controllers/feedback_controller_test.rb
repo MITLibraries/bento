@@ -11,6 +11,7 @@ class FeedbackControllerTest < ActionDispatch::IntegrationTest
       post feedback_submit_url, params: {
         feedback_message: 'Popcorn is cool.',
         contact_email: 'yo@example.com',
+        contact_name: 'Firsty Lastoson',
         previous_page: 'http://example.com/hi'
       }
     end
@@ -25,6 +26,8 @@ class FeedbackControllerTest < ActionDispatch::IntegrationTest
     assert_match(/Client IP: 127.0.0.1/,
                  feedback_email.body.to_s)
     assert_match(/Contact Email: yo@example.com/,
+                 feedback_email.body.to_s)
+    assert_match(/Contact Name: Firsty Lastoson/,
                  feedback_email.body.to_s)
     assert_match(%r{Originating page: http://example.com/hi},
                  feedback_email.body.to_s)

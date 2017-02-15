@@ -5,7 +5,8 @@ class FeedbackMailerTest < ActionMailer::TestCase
     # Create the email and store it for further assertions
     email = FeedbackMailer.feedback_email('This is an important message!',
                                           '0.0.0.0', 'http://example.com/stuff',
-                                          'yo@example.com', 'Netscape 4.0')
+                                          'yo@example.com', 'Firsty Lastoson',
+                                          'Netscape 4.0')
 
     # Send the email, then test that it got queued
     assert_emails 1 do
