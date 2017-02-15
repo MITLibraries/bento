@@ -5,12 +5,17 @@
 
   <div class="field-wrap">
     <%= label_tag 'feedback_message', 'What did you think of the new search?', class: 'field-label' %>
-    <%= text_area_tag 'feedback_message', nil, class: 'field field-textarea bento-field-textarea', placeholder: 'Good? Bad? Let us know how it worked for you', required: true %>
+    <%= text_area_tag 'feedback_message', nil, class: 'field field-textarea bento-field-textarea', required: true %>
+  </div>
+
+  <div class="field-wrap">
+    <%= label_tag 'contact_name', 'Your name (optional)', class: 'field-label' %>
+    <%= text_field_tag 'contact_name', nil, class: 'field field-text bento-field-text' %>
   </div>
 
   <div class="field-wrap">
     <%= label_tag 'contact_email', 'Contact Email (optional)', class: 'field-label' %>
-    <%= email_field_tag 'contact_email', nil, class: 'field field-email bento-field-email', placeholder: 'Enter your email address if you would like a response' %>
+    <%= email_field_tag 'contact_email', nil, class: 'field field-email bento-field-email' %>
   </div>
 
   <div class="field-wrap">
