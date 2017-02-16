@@ -7,7 +7,7 @@
   <% end %>
 
   <h3 class="result-title">
-    <span class="sr">Title: </span><%= link_to(result.title, result.url, class: 'bento-link') %>
+    <span class="sr">Title: </span><%= link_to(result.title, result.url, class: 'bento-link', data: {type: "Title"} ) %>
   </h3>
   <p>
     <% if result.type %>
@@ -23,7 +23,7 @@
         <span class="sr">Authors: </span>
         <% result.truncated_authors.each do |author| %>
         <span class="result-author">
-          <%= link_to(author[0], author[1]) unless author == "et al" %>
+          <%= link_to(author[0], author[1], data: {type: "Author"} ) unless author == "et al" %>
           <%= author if author == "et al" %>
         </span>
         <% end %>
@@ -49,7 +49,7 @@
         <ul class="list-subjects">
         <% result.truncated_subjects.each do |subject| %>
           <li class="result-subjectheading">
-            <%= link_to(subject[0], subject[1]) %>
+            <%= link_to(subject[0], subject[1], data: {type: "Subject"} ) %>
           </li>
         <% end %>
         </ul>
@@ -85,7 +85,7 @@
 
   <% if result.get_it_url.present? %>
     <div class="result-get">
-      <%= link_to(result.get_it_label, result.get_it_url, class: 'button button-primary') %>
+      <%= link_to(result.get_it_label, result.get_it_url, class: 'button button-primary', data: {type: "Get"}) %>
     </div>
   <% end %>
 

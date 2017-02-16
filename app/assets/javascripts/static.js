@@ -3,12 +3,20 @@
 
 function TrackLinks( element ) {
   $( element ).click( function( e ) {
+    // If the element is contained within an element with a "region" class and a valid data attribute, use that.
+    // If not, use the placeholder "Link".
+    action = $( this ).parents( '.region' ).data( 'region' ) ? $( this ).parents( '.region' ).data( 'region' ) : 'Link';
+
+    // If the element has a data attribute for "type", use that. if not, use the text of the element.
+    label = e.currentTarget.dataset.type ? e.currentTarget.dataset.type : e.currentTarget.text.trim();
+
     fields = {
       hitType: 'event',
       eventCategory: 'Bento',
-      eventAction: $( this ).parents( '.region' ).data( 'region' ),
-      eventLabel: e.target.text
+      eventAction: action,
+      eventLabel: label
     };
+
     ga( 'send', fields );
   });
 }
