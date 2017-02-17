@@ -339,6 +339,10 @@ $z-depth-way-front:     1000;
     text-align: right;
     font-size: 1.4rem;
   }
+
+  .realtime_status {
+    font-size: $fs-xsmall;
+  }
 }
 
 /* specific format overrides */
