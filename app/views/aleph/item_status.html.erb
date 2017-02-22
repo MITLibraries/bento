@@ -2,7 +2,7 @@
 <ul class="list-local-locations">
 <% @status.each do |s| %>
   <li class="result-local-location">
-    <%= s[:library] %> <%= s[:collection] %>: <%= s[:call_number] %> (<%= s[:status] %>)
+    <%= s[:library] %> <%= s[:collection] %>: <%= s[:call_number] %>
   </li>
 <% end %>
 </ul>
