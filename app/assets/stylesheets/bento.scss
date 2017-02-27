@@ -231,10 +231,10 @@ $z-depth-way-front:     1000;
 .results-more {
   margin-top: 1rem;
   font-size: $fs-smallish;
-  text-align: right;
 
   a {
-    color: $magenta;
+    display: block;
+    text-align: center;
   }
 }
 
