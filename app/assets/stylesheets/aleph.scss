@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .fa-check {
-  color: green;
+  color: $success
 }
 
 .fa-times {
- color: red;
+ color: $error
 }
