@@ -22,8 +22,32 @@ class AlephItem
   def process_item(item)
     { library: item.xpath('z30/z30-sub-library').text,
       collection: item.xpath('z30/z30-collection').text,
-      status: item.xpath('status').text,
-      call_number: item.xpath('z30/z30-call-no').text }
+      status: status(item),
+      call_number: item.xpath('z30/z30-call-no').text,
+      available?: available?(item),
+      label: label(item) }
+  end
+
+  def status(item)
+    item.xpath('status').text
+  end
+
+  def available_statii
+    ['In Library', 'New Books Display', 'MIT Reads', 'Received',
+     'LSA Use Only', 'On Display', 'Room Use Only', 'See Note Above',
+     'Archives Reading Room Use Only']
+  end
+
+  def available?(item)
+    available_statii.include?(status(item))
+  end
+
+  def label(item)
+    if available?(item)
+      'Available'
+    else
+      'Not available at MIT'
+    end
   end
 
   def status_url(id)
