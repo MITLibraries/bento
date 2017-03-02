@@ -1,6 +1,15 @@
 require 'test_helper'
 
 class ResultTest < ActiveSupport::TestCase
+  def record_with_all_url_possibilities
+    r = Result.new('title', 'http://example.org')
+    r.marc_856 = 'http://example.org/this_is_a_marc856_link'
+    r.custom_link = [{ 'Url' => 'http://sfx.mit.edu/example' },
+                     { 'Url' => 'http://example.org/irrelevant_custom_link' }]
+    r.openurl = 'http://example.org/constructed_open_url'
+    r
+  end
+
   test 'valid with all required elements' do
     r = Result.new('title', 'http://example.com')
     assert r.valid?
@@ -85,5 +94,46 @@ class ResultTest < ActiveSupport::TestCase
     r = Result.new('title', 'http://example.com')
     r.an = 'mit.001739356'
     assert_equal('MIT01001739356', r.clean_an)
+  end
+
+  test 'getit_url with marc_856' do
+    r = record_with_all_url_possibilities
+    assert_equal(r.marc_856, r.getit_url)
+  end
+
+  test 'getit_url with sfx custom_link' do
+    r = record_with_all_url_possibilities
+    r.marc_856 = nil
+    assert_equal('http://sfx.mit.edu/example', r.getit_url)
+  end
+
+  test 'getit_url with library custom_link' do
+    r = record_with_all_url_possibilities
+    r.marc_856 = nil
+    r.custom_link = [{ 'Url' => 'http://library.mit.edu/F/example' }]
+    assert_equal('http://library.mit.edu/F/example', r.getit_url)
+  end
+
+  test 'getit_url with non sfx non library custom_link' do
+    r = record_with_all_url_possibilities
+    r.marc_856 = nil
+    r.openurl = nil
+    r.custom_link = [{ 'Url' => 'http://example.org/irrelevant_custom_link' }]
+    assert_equal('http://example.org', r.getit_url)
+  end
+
+  test 'getit_url with openurl' do
+    r = record_with_all_url_possibilities
+    r.marc_856 = nil
+    r.custom_link = nil
+    assert_equal('http://example.org/constructed_open_url', r.getit_url)
+  end
+
+  test 'getit_url with only url' do
+    r = record_with_all_url_possibilities
+    r.marc_856 = nil
+    r.custom_link = nil
+    r.openurl = nil
+    assert_equal('http://example.org', r.getit_url)
   end
 end

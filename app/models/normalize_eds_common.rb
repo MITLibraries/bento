@@ -14,6 +14,7 @@ class NormalizeEdsCommon
     result.db_source = db_source
     result.an = @record.dig('Header', 'An')
     result.custom_link = custom_link
+    result.marc_856 = marc_856
     result
   end
 
@@ -21,8 +22,18 @@ class NormalizeEdsCommon
     @record.dig('FullText', 'CustomLinks')
   end
 
+  def marc_856
+    return unless extract_by_name('URL')
+    double_split(extract_by_name('URL'), 'linkTerm=', 'linkWindow=')
+  end
+
+  # This extracts the url from the string format eds supplies
+  def double_split(string, leadterm, endterm)
+    string.split(leadterm).last.split(endterm).first.gsub('&quot;', '').strip
+  end
+
   def title
-    title = title_item if title_item
+    title = extract_by_name('Title') if extract_by_name('Title')
     title = title_full.first if title_full
     title = 'unknown title' unless title
     title
@@ -32,8 +43,8 @@ class NormalizeEdsCommon
     titles.try(:map) { |x| x['TitleFull'] }
   end
 
-  def title_item
-    @record['Items'].try(:select) { |x| x['Name'] == 'Title' }.map do |x|
+  def extract_by_name(name)
+    @record['Items'].try(:select) { |x| x['Name'] == name }.map do |x|
       x['Data']
     end.first
   end

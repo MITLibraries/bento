@@ -31,14 +31,7 @@ class NormalizeEdsArticlesTest < ActiveSupport::TestCase
   test 'normalized articles have expected url eds provided sfx link' do
     assert_equal(
       'https://sfx.mit.edu/sfx_local?rfr_id=info%3Asid%2FMIT.BENTO&rft.au=Moreira+Ribeiro%2C+Rodrigo%3Bdo+Amaral+J%C3%BAnior%2C+Ant%C3%B4nio+Teixeira%3BFerreira+Pena%2C+Guilherme%3BVivas%2C+Marcelo%3BNascimento+Kurosawa%2C+Railan%3BAzeredo+Gon%C3%A7alves%2C+Leandro+Sim%C3%B5es&rft.issue=4&rft.jtitle=Acta+Scientiarum%3A+Agronomy&rft.volume=38&rft.year=2016&rft_id=info%3Adoi%2F10.4025%2Factasciagron.v38i4.30573',
-      popcorn_articles['results'][0].get_it_url
-    )
-  end
-
-  test 'normalized articles have generated sfx link when not in eds' do
-    assert_equal(
-      'https://sfx.mit.edu/sfx_local?genre=article&isbn=&issn=07335210&title=Journal%20of%20Cereal%20Science&volume=69&issue=&date=20160501&atitle=Sensory%20and%20nutritional%20evaluation%20of%20popcorn%20kernels%20with%20yellow,%20white%20and%20red%20pericarps%20expanded%20in%20different%20ways&aulast=Paraginski,%20Ricardo%20Tadeu&spage=383&sid=EBSCO:ScienceDirect&pid=%3Cauthors%3EParaginski,%20Ricardo%20Tadeu%3C/authors%3E%3Cui%3ES0733521016300753%3C/ui%3E%3Cdate%3E20160501%3C/date%3E%3Cdb%3EScienceDirect%3C/db%3E&rfr_id=info:sid/MIT.BENTO',
-      popcorn_articles['results'][1].get_it_url
+      popcorn_articles['results'][0].getit_url
     )
   end
 
