@@ -7,10 +7,13 @@
         articles and journals
       <% end %>
 
-      for 
+      for
 
       <span class="search-string">"<%= params[:q] %>"</span>
     </h2>
+    <p class="subline">
+        <%= page_entries_info @pageable_results, entry_name: 'result' %>, sorted by relevance
+    </p>
     <p class="subline">
       <%= link_to('Back to all results', search_bento_path(q: params[:q])) %> or <%= link_to('create a new search', root_path) %>
     </p>
@@ -30,9 +33,7 @@
 
     <% if current_page?(:controller => 'search', :action => 'search') %>
       <div class="results-pagination">
-        <% # EDS API Limits retrieving results past about 250 %>
-        <% max = [@results['total'], 250].min %>
-        <%= paginate(Kaminari.paginate_array(@results['results'], total_count: max).page(params[:page]).per(10)) %>
+        <%= paginate(@pageable_results) %>
       </div>
     <% end %>
 
@@ -43,8 +44,8 @@
       <h3>Other options</h3>
       <p>If you're not finding what you need, you can try one of these: </p>
       <ul>
-        <li class=""><a href="https://libraries.mit.edu/bartonplus">Search in BartonPlus</a></li> 
-        <li class=""><a href="https://libraries.mit.edu/worldcat">Search in WorldCat</a></li> 
+        <li class=""><a href="https://libraries.mit.edu/bartonplus">Search in BartonPlus</a></li>
+        <li class=""><a href="https://libraries.mit.edu/worldcat">Search in WorldCat</a></li>
         <li class=""><a href="https://libraries.mit.edi/ask">Ask a Librarian</a></li>
       </ul>
     </div>
