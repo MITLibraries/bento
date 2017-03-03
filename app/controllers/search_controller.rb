@@ -15,6 +15,7 @@ class SearchController < ApplicationController
     page = params[:page] || 1
     per_page = params[:per_page] || ENV['PER_PAGE'] || 20
     @results = search_results(page, per_page)
+    @pageable_results = paginate_results(page, per_page)
     return redirect_to root_url unless @results
     render 'search_boxed'
   end
@@ -93,5 +94,15 @@ class SearchController < ApplicationController
     return if params[:q].present? && strip_q.present?
     flash[:error] = 'A search term is required.'
     redirect_to root_url
+  end
+
+  # Turns search results into a format that can be used by the paginator.
+  def paginate_results(page, per_page)
+    # EDS API Limits retrieving results past about 250
+    max = [@results['total'], 250].min
+    Kaminari.paginate_array(
+      @results['results'],
+      total_count: max
+    ).page(page).per(per_page)
   end
 end
