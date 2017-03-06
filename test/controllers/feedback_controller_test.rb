@@ -19,8 +19,6 @@ class FeedbackControllerTest < ActionDispatch::IntegrationTest
 
     assert_equal('MIT Bento Feedback', feedback_email.subject)
     assert_equal('test@example.com', feedback_email.to[0])
-    assert_match(/The following feedback was submitted/,
-                 feedback_email.body.to_s)
     assert_match(/Popcorn is cool./,
                  feedback_email.body.to_s)
     assert_match(/Client IP: 127.0.0.1/,
