@@ -27,8 +27,9 @@ class NormalizeEdsArticles
       'rft_id' => "info:doi/#{doi}",
       'rft.jtitle' => journal_title,
       'rft.volume' => volume_issue('volume'),
-      'rft.issue' => volume_issue('issue'),
-      'rft.year' => year,
+      'rft.issue' => volume_issue('issue'), 'rft.year' => year,
+      'rft.eissn' => identifier('issn-electronic'),
+      'rft.issn' => identifier('issn-print'),
       'rfr_id' => 'info:sid/MIT.BENTO'
     }.to_query
   end
@@ -44,6 +45,18 @@ class NormalizeEdsArticles
   def journal_title
     return unless bibentity['Titles']
     bibentity['Titles'][0]['TitleFull']
+  end
+
+  def identifier(type)
+    return unless identifiers
+    identifiers.map { |id| id[type] }.first
+  end
+
+  def identifiers
+    return unless bibentity['Identifiers']
+    bibentity['Identifiers'].map do |x|
+      { x['Type'] => x['Value'] }
+    end
   end
 
   def numbering
