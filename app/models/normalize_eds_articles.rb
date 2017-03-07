@@ -8,18 +8,9 @@ class NormalizeEdsArticles
   def article_metadata(result)
     result.citation = numbering
     result.in = journal_title
-    result.get_it_url = link(result)
     result.get_it_label = 'Get it'
+    result.openurl = construct_open_url(result)
     result
-  end
-
-  def link(result)
-    if sfx_link&.select { |l| l.include?('sfx.mit') }.present?
-      URI.escape(sfx_link&.select { |l| l.include?('sfx.mit') }.first +
-      '&rfr_id=info:sid/MIT.BENTO')
-    else
-      construct_open_url(result)
-    end
   end
 
   def construct_open_url(result)
@@ -29,10 +20,6 @@ class NormalizeEdsArticles
       )
   end
 
-  def sfx_link
-    @record['FullText']['CustomLinks']&.map { |l| l['Url'] }
-  end
-
   def openurl(year, authors)
     # build a hash of params we care about then run to_query on it
     {
@@ -40,8 +27,9 @@ class NormalizeEdsArticles
       'rft_id' => "info:doi/#{doi}",
       'rft.jtitle' => journal_title,
       'rft.volume' => volume_issue('volume'),
-      'rft.issue' => volume_issue('issue'),
-      'rft.year' => year,
+      'rft.issue' => volume_issue('issue'), 'rft.year' => year,
+      'rft.eissn' => identifier('issn-electronic'),
+      'rft.issn' => identifier('issn-print'),
       'rfr_id' => 'info:sid/MIT.BENTO'
     }.to_query
   end
@@ -57,6 +45,18 @@ class NormalizeEdsArticles
   def journal_title
     return unless bibentity['Titles']
     bibentity['Titles'][0]['TitleFull']
+  end
+
+  def identifier(type)
+    return unless identifiers
+    identifiers.map { |id| id[type] }.first
+  end
+
+  def identifiers
+    return unless bibentity['Identifiers']
+    bibentity['Identifiers'].map do |x|
+      { x['Type'] => x['Value'] }
+    end
   end
 
   def numbering

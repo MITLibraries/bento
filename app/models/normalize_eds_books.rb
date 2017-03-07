@@ -10,8 +10,7 @@ class NormalizeEdsBooks
     result.publisher = publisher
     result.location = location
     result.subjects = subjects
-    result.get_it_url = result.url
-    result.get_it_label = 'Details and availability'
+    result.get_it_label = 'Get it'
     result
   end
 
