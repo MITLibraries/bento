@@ -17,9 +17,9 @@ class Result
 
   # Prioritizes the best link to use for the "get it" button in the UI
   def getit_url
-    if marc_856
+    if marc_856 && relevant_marc_856?
       best_link(marc_856, 'marc_856')
-    elsif custom_link && custom_link_picker.present?
+    elsif custom_link && relevant_custom_link?
       best_link(custom_link_picker, 'custom_link')
     elsif openurl
       best_link(openurl, 'openurl')
@@ -33,10 +33,19 @@ class Result
     link
   end
 
+  # ensure we care about the included marc_856 link
+  def relevant_marc_856?
+    relevant_links.map { |x| marc_856.include?(x) }.any?
+  end
+
+  def relevant_links
+    ['library.mit.edu', 'sfx.mit.edu', 'owens.mit.edu']
+  end
+
   # Check custom link for specific parameters to allow for prioritization
-  def relevant_custom_link?(check)
+  def relevant_custom_link?
     custom_link.map do |link|
-      link['Url'].include?(check)
+      relevant_links.map { |x| link['Url'].include?(x) }.any?
     end.include?(true)
   end
 
@@ -45,16 +54,10 @@ class Result
   # while useful on campus, would not be useful off campus without adding
   # additional features to bento that are currently out of scope.
   def custom_link_picker
-    clink = if relevant_custom_link?('sfx.mit.edu')
-              custom_link.select do |link|
-                link['Url'].include?('sfx.mit.edu')
-              end
-            elsif relevant_custom_link?('library.mit.edu')
-              custom_link.select do |link|
-                link['Url'].include?('library.mit.edu')
-              end
-            end
-    clink.first['Url'] if clink
+    c_link = custom_link.map do |link|
+      relevant_links.map { |x| link if link['Url'].include?(x) }
+    end
+    c_link.flatten.compact.first['Url'] if c_link
   end
 
   # Reformat the Accession Number to match the format used in Aleph
