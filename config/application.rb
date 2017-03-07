@@ -11,5 +11,11 @@ module MitBento
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    # Compress text-like assets when serving them. This is mostly just needed
+    # because we deploy to Heroku and not behind an app server where you'd
+    # normally do this.
+    config.middleware.use Rack::Deflater, include: Rack::Mime::MIME_TYPES
+      .select { |_k, v| v =~ /text|json|javascript/ }.values.uniq
   end
 end
