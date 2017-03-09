@@ -62,7 +62,11 @@ class Result
 
   # Reformat the Accession Number to match the format used in Aleph
   def clean_an
-    an.split('.').last.prepend('MIT01')
+    if aleph_record?
+      an.split('.').last.prepend('MIT01')
+    elsif aleph_cr_record?
+      an.split('.').last.prepend('MIT30')
+    end
   end
 
   # View-type method for returning a truncated list of authors.
@@ -73,6 +77,14 @@ class Result
 
   def truncated_subjects
     subjects[0..2]
+  end
+
+  def aleph_cr_record?
+    if an.present? && an.start_with?('mitcr.')
+      true
+    else
+      false
+    end
   end
 
   def aleph_record?

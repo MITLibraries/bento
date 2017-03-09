@@ -77,6 +77,13 @@
     </div>
   <% end %>
 
+  <% if result.aleph_cr_record? && params[:target] == 'books' %>
+    <div id="<%= result.clean_an %>" class='realtime_status result-local-locations' data-an="<%= result.clean_an %>">
+      Loading realtime status...
+      <i class="fa fa-spinner fa-spin"></i>
+    </div>
+  <% end %>
+
   <% if result.db_source.present? && session[:debug] %>
     <p class="result-pubinfo">
       Source DB: <%= result.db_source[0] %> (<%= result.db_source[1] %>)

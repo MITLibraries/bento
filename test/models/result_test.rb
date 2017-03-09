@@ -90,10 +90,24 @@ class ResultTest < ActiveSupport::TestCase
     assert_equal(true, r.aleph_record?)
   end
 
+  test 'flags MIT Course Reserve records' do
+    r = Result.new('title', 'http://example.com')
+    assert_equal(false, r.aleph_record?)
+
+    r.an = 'mitcr.001739356'
+    assert_equal(true, r.aleph_cr_record?)
+  end
+
   test 'can reformat aleph accession number' do
     r = Result.new('title', 'http://example.com')
     r.an = 'mit.001739356'
     assert_equal('MIT01001739356', r.clean_an)
+  end
+
+  test 'can reformat aleph Course Reserve accession number' do
+    r = Result.new('title', 'http://example.com')
+    r.an = 'mitcr.001739356'
+    assert_equal('MIT30001739356', r.clean_an)
   end
 
   test 'getit_url with marc_856' do
