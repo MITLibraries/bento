@@ -59,7 +59,7 @@ class NormalizeEdsCommon
   end
 
   def link
-    "#{@record['PLink']}#{ENV['EDS_PLINK_APPEND']}"
+    "#{@record['PLink'].gsub('&authtype=sso', '')}#{ENV['EDS_PLINK_APPEND']}"
   end
 
   def availability
