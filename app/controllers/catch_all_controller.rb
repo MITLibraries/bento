@@ -4,5 +4,6 @@ class CatchAllController < ApplicationController
   end
 
   def broken_intentionally
+    break_stuff 
   end
 end
