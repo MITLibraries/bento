@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   get 'item_status', to: 'aleph#item_status'
   get 'debug', to: 'application#debug'
 
+  get '/broken', to: 'catch_all#broken_intentionally'
   get '*path', to: 'catch_all#catch_all'
 end
