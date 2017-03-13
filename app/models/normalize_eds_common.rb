@@ -44,6 +44,7 @@ class NormalizeEdsCommon
   end
 
   def extract_by_name(name)
+    return unless @record['Items'].try(:select) { |x| x['Name'] == name }
     @record['Items'].try(:select) { |x| x['Name'] == name }.map do |x|
       x['Data']
     end.first
