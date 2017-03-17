@@ -607,6 +607,14 @@ hr {
   color: #fafafa;
   text-decoration: none;
 }
+.button-primary.green, .wrap-outer-header-local .green.action-auth {
+  border: 1px solid #3b815d;
+  background-color: #43926a;
+}
+.button-primary.green:hover, .wrap-outer-header-local .green.action-auth:hover, .button-primary.green:focus, .wrap-outer-header-local .green.action-auth:focus {
+  background-color: #2ea76a;
+  border-color: #43926a;
+}
 
 .button-secondary, .button-subtle, .pagination a {
   transition: background-color .25s, border .25s;
@@ -622,6 +630,15 @@ hr {
   border-color: #0ea6ec;
   color: #fafafa;
   text-decoration: none;
+}
+.button-secondary.green, .green.button-subtle, .pagination a.green {
+  border: 1px solid #43926a;
+  color: #43926a;
+}
+.button-secondary.green:hover, .green.button-subtle:hover, .pagination a.green:hover, .button-secondary.green:focus, .green.button-subtle:focus, .pagination a.green:focus {
+  background-color: #2ea76a;
+  border-color: #43926a;
+  color: #fafafa;
 }
 
 .button-subtle, .pagination a {
@@ -730,20 +747,17 @@ form .disabled {
   color: #fafafa;
   font-size: 1.2rem;
 }
-.wrap-notices a {
+.wrap-notices .link {
   color: #83c8ff;
 }
 .wrap-notices.success {
-  border-bottom: 2px solid #43926a;
-  background-color: #234c37;
+  border-bottom: 4px solid #43926a;
 }
 .wrap-notices.warning {
-  border-bottom: 2px solid #faa933;
-  background-color: #5f3902;
+  border-bottom: 4px solid #faa933;
 }
 .wrap-notices.error {
-  border-bottom: 2px solid #AC1D22;
-  background-color: #550e11;
+  border-bottom: 4px solid #AC1D22;
 }
 
 .alert-banner {
@@ -786,7 +800,7 @@ form .disabled {
 }
 
 .well {
-  box-shadow: inset 0 0 15px rgba(89, 89, 89, 0.3);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   padding: 2rem 2.5rem;
   margin: 2rem 0;
 }
