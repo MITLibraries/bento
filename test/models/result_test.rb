@@ -4,8 +4,10 @@ class ResultTest < ActiveSupport::TestCase
   def record_with_all_url_possibilities
     r = Result.new('title', 'http://example.org')
     r.marc_856 = 'http://sfx.mit.edu/marc856_example'
-    r.custom_link = [{ 'Url' => 'http://sfx.mit.edu/example' },
-                     { 'Url' => 'http://example.org/irrelevant_custom_link' }]
+    r.fulltext_links = [
+      { 'Url' => 'http://sfx.mit.edu/example' },
+      { 'Url' => 'http://example.org/irrelevant_custom_link' }
+    ]
     r.openurl = 'http://example.org/constructed_open_url'
     r
   end
@@ -124,14 +126,14 @@ class ResultTest < ActiveSupport::TestCase
   test 'getit_url with library custom_link' do
     r = record_with_all_url_possibilities
     r.marc_856 = nil
-    r.custom_link = [{ 'Url' => 'http://library.mit.edu/F/example' }]
+    r.fulltext_links = [{ 'Url' => 'http://library.mit.edu/F/example' }]
     assert_equal('http://library.mit.edu/F/example', r.getit_url)
   end
 
   test 'getit_url with owens custom_link' do
     r = record_with_all_url_possibilities
     r.marc_856 = nil
-    r.custom_link = [{ 'Url' => 'http://owens.mit.edu/stuff' }]
+    r.fulltext_links = [{ 'Url' => 'http://owens.mit.edu/stuff' }]
     assert_equal('http://owens.mit.edu/stuff', r.getit_url)
   end
 
@@ -139,23 +141,16 @@ class ResultTest < ActiveSupport::TestCase
     r = record_with_all_url_possibilities
     r.marc_856 = nil
     r.openurl = nil
-    r.custom_link = [{ 'Url' => 'http://example.org/irrelevant_custom_link' }]
-    assert_equal('http://example.org', r.getit_url)
-  end
-
-  test 'getit_url with openurl' do
-    r = record_with_all_url_possibilities
-    r.marc_856 = nil
-    r.custom_link = nil
-    assert_equal('http://example.org/constructed_open_url', r.getit_url)
+    r.fulltext_links = [{ 'Url' => 'http://example.org/irrelevant_customlink' }]
+    assert_nil(r.getit_url)
   end
 
   test 'getit_url with only url' do
     r = record_with_all_url_possibilities
     r.marc_856 = nil
-    r.custom_link = nil
+    r.fulltext_links = nil
     r.openurl = nil
-    assert_equal('http://example.org', r.getit_url)
+    assert_nil(r.getit_url)
   end
 
   test 'getit_url with library.mit.edu url' do
@@ -167,8 +162,8 @@ class ResultTest < ActiveSupport::TestCase
   test 'getit_url with irrelevant marc_856 url' do
     r = record_with_all_url_possibilities
     r.marc_856 = 'http://example.org/this_is_a_marc856_link'
-    r.custom_link = nil
+    r.fulltext_links = nil
     r.openurl = nil
-    assert_equal('http://example.org', r.getit_url)
+    assert_nil(r.getit_url)
   end
 end

@@ -7,8 +7,8 @@ class Result
   attr_accessor :title, :year, :url, :type, :authors, :citation, :online,
                 :year, :type, :in, :publisher, :location, :blurb, :subjects,
                 :available_url, :thumbnail, :get_it_label,
-                :db_source, :an, :custom_link, :marc_856, :openurl,
-                :winner
+                :db_source, :an, :fulltext_links, :marc_856, :openurl,
+                :winner, :record_links
 
   def initialize(title, url)
     @title = title
@@ -19,12 +19,8 @@ class Result
   def getit_url
     if marc_856 && relevant_marc_856?
       best_link(marc_856, 'marc_856')
-    elsif custom_link && relevant_custom_link?
-      best_link(custom_link_picker, 'custom_link')
-    elsif openurl
-      best_link(openurl, 'openurl')
-    else
-      best_link(url, 'url')
+    elsif fulltext_links && relevant_fulltext_links?
+      best_link(fulltext_links_picker, 'eds fulltext')
     end
   end
 
@@ -42,9 +38,9 @@ class Result
     ['library.mit.edu', 'sfx.mit.edu', 'owens.mit.edu']
   end
 
-  # Check custom link for specific parameters to allow for prioritization
-  def relevant_custom_link?
-    custom_link.map do |link|
+  # Check fulltext_links for specific parameters to allow for prioritization
+  def relevant_fulltext_links?
+    fulltext_links.map do |link|
       relevant_links.map { |x| link['Url'].include?(x) }.any?
     end.include?(true)
   end
@@ -53,11 +49,11 @@ class Result
   # may be to less useful things (like t.o.c.) or direct to publishers, which
   # while useful on campus, would not be useful off campus without adding
   # additional features to bento that are currently out of scope.
-  def custom_link_picker
-    c_link = custom_link.map do |link|
-      relevant_links.map { |x| link if link['Url'].include?(x) }
+  def fulltext_links_picker
+    link = fulltext_links.map do |l|
+      relevant_links.map { |x| l if l['Url'].include?(x) }
     end
-    c_link.flatten.compact.first['Url'] if c_link
+    link.flatten.compact.first['Url'] if link
   end
 
   # Reformat the Accession Number to match the format used in Aleph
