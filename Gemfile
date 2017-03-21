@@ -17,13 +17,13 @@ gem 'rails', '5.0.2'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'rollbar'
 gem 'sass-rails'
+gem 'skylight'
 gem 'therubyracer', platforms: :ruby
 gem 'uglifier'
 
 group :production do
   gem 'dalli'
   gem 'memcachier'
-  gem 'newrelic_rpm'
   gem 'pg'
 end
 
