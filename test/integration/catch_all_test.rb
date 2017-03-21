@@ -5,4 +5,9 @@ class CatchAllTest < ActionDispatch::IntegrationTest
     get '/blargh'
     assert_response :not_found
   end
+
+  test 'handle 404s for images' do
+    get '/apple-touch-icon.png'
+    assert_response :not_found
+  end
 end
