@@ -28,13 +28,6 @@ class NormalizeEdsArticlesTest < ActiveSupport::TestCase
     )
   end
 
-  test 'normalized articles have expected url eds provided sfx link' do
-    assert_equal(
-      'https://sfx.mit.edu/sfx_local?rfr_id=info%3Asid%2FMIT.BENTO&rft.au=Moreira+Ribeiro%2C+Rodrigo%3Bdo+Amaral+J%C3%BAnior%2C+Ant%C3%B4nio+Teixeira%3BFerreira+Pena%2C+Guilherme%3BVivas%2C+Marcelo%3BNascimento+Kurosawa%2C+Railan%3BAzeredo+Gon%C3%A7alves%2C+Leandro+Sim%C3%B5es&rft.eissn=&rft.issn=16799275&rft.issue=4&rft.jtitle=Acta+Scientiarum%3A+Agronomy&rft.volume=38&rft.year=2016&rft_id=info%3Adoi%2F10.4025%2Factasciagron.v38i4.30573',
-      popcorn_articles['results'][0].getit_url
-    )
-  end
-
   test 'normalized articles have expected type' do
     assert_equal('Academic Journal', popcorn_articles['results'][0].type)
   end

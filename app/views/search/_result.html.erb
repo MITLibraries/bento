@@ -91,48 +91,14 @@
   <% end %>
 
   <div class="result-get">
-    <%= link_to(result.get_it_label, result.getit_url, class: 'button button-primary', data: {type: "Get"}) %>
+    <% if result.getit_url.present? %>
+      <%= link_to("Online", result.getit_url, class: 'button button-primary green', data: {type: "Get"}) %>
+    <% end %>
+
+    <%= link_to("Details and requests", result.url, class: 'button button-secondary', data: {type: "Detail"}) %>
   </div>
 
   <% if session[:debug] %>
-    <p class="result-debug">
-
-      <ul>
-        <li>EDS Supplied CustomLinks</li>
-          <ul>
-          <% if result.custom_link %>
-            <% result.custom_link&.each do |cl| %>
-              <li><%= link_to(cl["Name"], cl["Url"], class: 'bento-link') %></li>
-            <% end %>
-          <% else %>
-            <li>None</li>
-          <% end %>
-          </ul>
-      </ul>
-
-      <ul><li><%= link_to('EDS UI Detail Link', result.url, class: 'bento-link') %></li></ul>
-
-      <ul>
-        <% if result.openurl %>
-        <li>
-          <%= link_to('SFX Constructed from metadata', result.openurl, class: 'bento-link') %>
-        </li>
-        <% else %>
-          <li>No SFX Constructed from metadata available</li>
-        <% end %>
-      </ul>
-
-      <ul>
-        <% if result.marc_856 %>
-        <li>
-          <%= link_to("MARC 856", result.marc_856, class: 'bento-link') %>
-        </li>
-        <% else %>
-          <li>No MARC 856</li>
-        <% end %>
-      </ul>
-
-      <ul><li>Winner: <%= result.winner %></li></ul>
-    <p>
+    <%= render partial: "debug", locals: { result: result } %>
   <% end %>
 </div>
