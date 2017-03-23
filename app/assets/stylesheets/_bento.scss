@@ -1,0 +1,119 @@
+/* Bento-specific styles */
+
+// ----------------------------------------
+// #GENERAL PAGE LAYOUT AND SIMPLE ELEMENTS
+// ----------------------------------------
+
+.wrap-notices .title {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.wrap-outer-header-local {
+  display: none;
+}
+
+.wrap-content {
+  padding-top: 1rem;
+}
+
+.nudge-feedback {
+  text-align: right;
+  font-size: $fs-small;
+  font-weight: $fw-bold;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $orange;
+  }
+}
+
+/* big boxes */
+.wrap-results {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  background-color: $white-t;
+  box-shadow: 0 0 3px 1px $smoke;
+  padding: 15px;
+  border-top: 3px solid $green;
+
+  .title {
+    margin-bottom: .1em;
+  }
+
+  .results-desc {
+    font-size: $fs-smallish;
+    color: $gray;
+  }
+
+  .wc-link {
+    display: block;
+  }
+}
+
+.results-more {
+  margin-top: 1rem;
+  font-size: $fs-smallish;
+
+  a {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* other bits */
+.wrap-help {
+  .title {
+    margin-bottom: .3em;
+    font-size: $fs-base;
+    font-weight: 600;
+    color: $gray-d1;
+  }
+
+  .list-tools {
+    @extend .list-unbulleted;
+    font-size: $fs-small;
+  }
+}
+
+.wrap-chat {
+  border: 1px solid $gray-l3;
+  background-color: $white-t;
+  padding: 1.5rem 3rem 1rem 3rem;
+  font-size: $fs-smallish;
+  color: $gray;
+
+  .title {
+    font-size: $fs-large;
+    color: $gray-d1;
+    margin-bottom: .2em;
+  }
+}
+
+.about-bento {
+  margin: 4rem 0;
+}
+
+// content area adjustments
+.wrap-content {
+  .title-area {
+    margin-bottom: 1rem;
+  }
+
+  .title-page {
+    padding-top: 1.5rem;
+  }
+
+  .title.has-subline {
+    margin-bottom: .1em;
+    padding-bottom: .1em;
+  }
+
+  .subline {
+    font-size: $fs-xsmall;
+  }
+}
+

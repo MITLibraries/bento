@@ -92,10 +92,10 @@
 
   <div class="result-get">
     <% if result.getit_url.present? %>
-      <%= link_to("Online", result.getit_url, class: 'button button-primary green', data: {type: "Get"}) %>
+      <%= link_to("Online", result.getit_url, class: 'online button button-primary green', data: {type: "Get"}) %>
     <% end %>
 
-    <%= link_to("Details and requests", result.url, class: 'button button-secondary', data: {type: "Detail"}) %>
+    <%= link_to("Details and requests", result.url, class: 'details button button-secondary', data: {type: "Detail"}) %>
   </div>
 
   <% if session[:debug] %>

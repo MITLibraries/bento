@@ -1,0 +1,163 @@
+// --------------------
+// #ITEM RESULTS
+// --------------------
+
+/* generic result pattern */
+.wrap-result {
+  transition: all .25s ease-in-out 0s;
+  border-bottom: 1px solid $gray-l3;
+  border-right: 1px solid $white-t;
+  border-left: 1px solid $white-t;
+  padding: 2rem 1rem 2rem 1rem;
+
+  &:first-child {
+    border-top: 1px solid $gray-l3;
+  }
+
+  &:hover,
+  &:focus {
+    border-right: 1px solid $gray-l3;
+    border-left: 1px solid $gray-l3;
+    background-color: $gray-l4;
+  }
+
+
+  .result-type {
+    margin-bottom: .5em;
+    font-size: $fs-xsmall;
+    color: $gray;
+  }
+
+  .result-image {
+    float: right;
+    max-width: 150px;
+    margin-left: 3%;
+    border: 1px solid #ccc;
+  }
+
+  .result-title {
+    margin-bottom: .2em;
+
+    a {
+
+      &:hover,
+      &:focus {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  .result-author:after {
+    content: ';';
+    color: $gray-l1;
+  }
+
+  .result-author:last-child:after {
+    content: '';
+  }
+
+  .result-blurb {
+     font-size: $fs-xsmall;
+     color: $gray;
+   }
+
+  .result-pubinfo {
+    font-size: $fs-xsmall;
+    color: $gray;
+  }
+
+  .result-year {
+    margin-bottom: .5em;
+    font-size: $fs-xsmall;
+    color: $gray;
+
+    &:before {
+      content: " | ";
+      color: $gray-l2;
+    }
+   }
+
+  .list-subjects {
+    @extend .list-unbulleted;
+  }
+
+  .result-subjectheading {
+    margin: 0;
+    font-size: $fs-xsmall;
+  }
+
+
+  .list-local-locations {
+    @extend .list-unbulleted;
+    margin-bottom: 0;
+  }
+
+  .result-local-location {
+    color: $gray;
+    font-size: $fs-smallish;
+  }
+
+  .result-get {
+    clear: both;
+    padding-top: 5px;
+    text-align: right;
+    font-size: 1.4rem;
+
+    .online {
+    	float: left;
+    }
+  }
+
+  .realtime_status {
+    font-size: $fs-xsmall;
+  }
+}
+
+
+/* specific format overrides */
+.articles_content {
+
+  .wrap-result {
+
+    .result-title {
+      font-size: $fs-large;
+    }
+
+    .result-authors {
+      font-size: $fs-smallish;
+    }
+  }
+}
+
+.website_content {
+  .wrap-result {
+    padding: 1rem .5rem .5rem .5rem;
+
+    .result-title {
+      font-size: $fs-large;
+    }
+
+    .result-authors {
+      font-size: $fs-smallish;
+    }
+
+    .result-get {
+      display: none;
+    }
+  }
+}
+
+// specific view changes
+.view-more {
+  .wrap-result {
+    border-right: 1px solid $gray-l4;
+    border-left: 1px solid $gray-l4;
+
+    &:hover,
+    &:focus {
+      border-right: 1px solid $gray-l3;
+      border-left: 1px solid $gray-l3;
+      background-color: $white-t;
+    }
+  }
+}
