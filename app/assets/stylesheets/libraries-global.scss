@@ -657,6 +657,9 @@ form .field-label {
   font-size: 1.4rem;
   font-weight: 600;
 }
+form .field-label.error {
+  color: #AC1D22;
+}
 form .field {
   display: block;
   margin-top: .2rem;
@@ -669,6 +672,9 @@ form .field:focus, form .field:active {
   border-color: #338bc5;
   box-shadow: 0 0 5px rgba(14, 166, 236, 0.8);
 }
+form .field.error {
+  border-color: #AC1D22;
+}
 form .field-text {
   min-width: 25rem;
   padding: 6px 12px;
@@ -680,12 +686,7 @@ form .tip {
   color: #756c61;
   margin-bottom: 0;
 }
-form .field-error {
-  font-size: 1.4rem;
-  color: #AC1D22;
-}
-form .field-warning {
-  font-size: #faa933;
+form .tip.error {
   color: #AC1D22;
 }
 form .field-textarea {
@@ -965,7 +966,7 @@ form .disabled {
 }
 
 /* csslint ignore:start */
-.wrap-outer-header-local.reasons {
+.wrap-outer-header.reasons {
   background: #f23074; /* Old browsers */
   background: -moz-linear-gradient(45deg, #f23074 0%, #d6d628 36%, #207cca 66%, #544b8c 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(45deg, #f23074 0%,#d6d628 36%,#207cca 66%,#544b8c 100%); /* Chrome10-25,Safari5.1-6 */

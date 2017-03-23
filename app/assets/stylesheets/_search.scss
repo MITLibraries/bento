@@ -1,0 +1,65 @@
+// ------------------------
+// #SEARCH BITS
+// ------------------------
+
+/* search bar */
+.b-search {
+  margin-bottom: .5rem;
+
+  .field-label {
+    display: block;
+    margin-bottom: .5rem;
+    font-size: $fs-small;
+    font-weight: $fw-normal;
+    color: $gray;
+  }
+
+  .b-search-input {
+    display: inline-block;
+    width: 80%;
+    border: 1px solid $gray-l2;
+    border-radius: 2px;
+    padding: 6px 12px;
+  }
+
+  .b-search-submit {
+    display: inline-block;
+    width: 18%;
+  }
+}
+
+/* search results summary bar */
+.results-summary {
+  font-size: $fs-small;
+
+  .search-summary {
+    display: block;
+    margin-bottom: .3rem;
+    font-size: $fs-xsmall;
+    color: $gray;
+  }
+
+  .title {
+    display: inline-block;
+  }
+
+  .results-summary-item {
+    display: block;
+    margin: 0 1rem;
+
+    @media (min-width: $bp-screen-sm) {
+      display: inline-block;
+    }
+
+    .count {
+    }
+
+    .count:before {
+      content: '(';
+    }
+
+    .count:after {
+      content: ')';
+    }
+  }
+}
