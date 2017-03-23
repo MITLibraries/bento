@@ -6,7 +6,8 @@ class SearchController < ApplicationController
   def bento; end
 
   def search_boxed
-    @results = search_results(1, ENV['RESULTS_PER_BOX'] || 5)
+    @per_box = ENV['RESULTS_PER_BOX'] || 5
+    @results = search_results(1, @per_box)
     return redirect_to root_url unless @results
     render layout: false
   end
