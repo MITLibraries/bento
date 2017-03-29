@@ -84,7 +84,7 @@
     </div>
   <% end %>
 
-  <% if result.db_source.present? && session[:debug] %>
+  <% if result.db_source.present? && Flipflop.enabled?(:debug) %>
     <p class="result-pubinfo">
       Source DB: <%= result.db_source[0] %> (<%= result.db_source[1] %>)
     </p>
@@ -98,7 +98,7 @@
     <%= link_to("Details and requests", result.url, class: 'details button button-secondary', data: {type: "Detail"}) %>
   </div>
 
-  <% if session[:debug] %>
+  <% if Flipflop.enabled?(:debug) %>
     <%= render partial: "debug", locals: { result: result } %>
   <% end %>
 </div>
