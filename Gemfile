@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 gem 'devise'
+gem 'flipflop'
 gem 'google-api-client'
 gem 'http'
 gem 'http_logger'
