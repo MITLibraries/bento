@@ -91,7 +91,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
       query = NormalizeEds.new.to_result(raw_query, 'books', 'popcorn')
       assert_equal(
         '/search?q=popcorn&target=books',
-        query['view_more_url']
+        query['local_view_more']
       )
     end
   end
@@ -103,7 +103,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
       query = NormalizeEds.new.to_result(raw_query, 'books', 'popcorn')
       assert_equal(
         'http://libproxy.mit.edu/login?url=https%3A%2F%2Fsearch.ebscohost.com%2Flogin.aspx%3Fdirect%3Dtrue%26AuthType%3Dcookie%2Csso%2Cip%2Cuid%26type%3D0%26group%3Dedstest%26site%3Dedswhatnot%26profile%3Dedswhatnot%26bquery%3Dpopcorn&facet=Books,eBooks,Audiobooks,Dissertations,MusicScores,Audio,Videos',
-        query['view_more_url']
+        query['eds_ui_view_more']
       )
     end
   end

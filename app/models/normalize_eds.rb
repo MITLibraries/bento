@@ -7,20 +7,13 @@ class NormalizeEds
     norm = {}
     norm['total'] = results['SearchResult']['Statistics']['TotalHits']
     norm['results'] = []
-    norm['view_more_url'] = view_more(q)
+    norm['eds_ui_view_more'] = eds_ui_view_more(q)
+    norm['local_view_more'] = local_view_more(q)
     extract_results(results, norm)
     norm
   end
 
   private
-
-  def view_more(q)
-    if ENV['LOCAL_RESULTS']
-      local_view_more(q)
-    else
-      eds_ui_view_more(q)
-    end
-  end
 
   def local_view_more(q)
     Rails.application.routes.url_helpers.search_path(q: q, target: @type)

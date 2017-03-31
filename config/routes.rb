@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   post 'feedback', to: 'feedback#submit', as: :feedback_submit
 
   get 'item_status', to: 'aleph#item_status'
-  get 'debug', to: 'application#debug'
+  get 'toggle', to: 'feature#toggle'
 
   get '*path', to: 'catch_all#catch_all'
 end

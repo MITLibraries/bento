@@ -6,4 +6,8 @@ Flipflop.configure do
   feature :debug,
     default: false,
     description: 'Debug mode'
+
+  feature :local_browse,
+    default: false,
+    description: 'Enables local browsing of paginated results'
 end

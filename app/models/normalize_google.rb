@@ -7,7 +7,7 @@ class NormalizeGoogle
     norm['total'] = results.queries['request'][0]
                            .total_results.to_i
     norm['results'] = []
-    norm['view_more_url'] = view_more(q)
+    norm['eds_ui_view_more'] = view_more(q)
     extract_results(results, norm)
     norm
   end
