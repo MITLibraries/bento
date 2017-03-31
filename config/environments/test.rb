@@ -1,8 +1,4 @@
 Rails.application.configure do
-  # Replace with a lambda or method name defined in ApplicationController
-  # to implement access control for the Flipflop dashboard.
-  config.flipflop.dashboard_access_filter = nil
-
   # Settings specified here will take precedence over those in config/application.rb.
 
   ENV['EDS_URL'] = 'https://eds-api.ebscohost.com'
@@ -22,6 +18,7 @@ Rails.application.configure do
   ENV['ALEPH_API_URI'] = 'https://fake_server.example.com/rest-dlf/'
   ENV['ALEPH_KEY'] = 'FAKE_KEY'
   ENV['PER_PAGE'] = '10'
+  ENV['FLIPFLOP_KEY'] = 'yoyo'  
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that

@@ -35,6 +35,9 @@
     "FEEDBACK_MAIL_TO": {
       "required": true
     },
+    "FLIPFLOP_KEY": {
+      "required": true
+    },
     "GLOBAL_ALERT": {
       "required": true
     },
