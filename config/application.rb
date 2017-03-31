@@ -10,7 +10,7 @@ module MitBento
   class Application < Rails::Application
     # Replace with a lambda or method name defined in ApplicationController
     # to implement access control for the Flipflop dashboard.
-    config.flipflop.dashboard_access_filter = -> { head :forbidden }
+    config.flipflop.dashboard_access_filter = :flipflop_access_control
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
