@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.4.1'
 
 gem 'devise'
 gem 'flipflop'
@@ -47,6 +47,7 @@ group :test do
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
   gem 'mocha'
+  gem 'simplecov', require: false
   gem 'vcr'
   gem 'webmock'
 end
