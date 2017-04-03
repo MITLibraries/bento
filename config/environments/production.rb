@@ -26,7 +26,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Force Expires Header to the maximum value
-  config.static_cache_control = 'public, max-age=30758400'
+  config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=30758400' }
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
