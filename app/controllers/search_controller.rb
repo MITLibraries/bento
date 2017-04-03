@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-  before_action :validate_q!, only: [:bento, :search, :search_boxed]
+  before_action :validate_q!, only: %i[bento search search_boxed]
 
   def index; end
 
@@ -47,7 +47,7 @@ class SearchController < ApplicationController
 
   # Array of search endpoints that are supported
   def valid_targets
-    %w(articles books google)
+    %w[articles books google]
   end
 
   # Formatted date used in creating cache keys
