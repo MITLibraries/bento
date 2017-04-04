@@ -66,8 +66,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
   end
 
   test 'can handle missing title titlefull with item title' do
-    VCR.use_cassette('popcorn books',
-                     allow_playback_repeats: true) do
+    VCR.use_cassette('popcorn books', allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
       query = NormalizeEds.new.to_result(raw_query, 'books', 'popcorn')
       assert_equal('Popcorn handbook', query['results'][3].title)
@@ -75,8 +74,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
   end
 
   test 'can handle missing title titlefull and no item title' do
-    VCR.use_cassette('popcorn books',
-                     allow_playback_repeats: true) do
+    VCR.use_cassette('popcorn books', allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
       query = NormalizeEds.new.to_result(raw_query, 'books', 'popcorn')
       assert_equal('unknown title', query['results'][4].title)
@@ -85,8 +83,7 @@ class NormalizeEdsTest < ActiveSupport::TestCase
 
   test 'can generate a local pagination link' do
     ENV['LOCAL_RESULTS'] = 'true'
-    VCR.use_cassette('popcorn books',
-                     allow_playback_repeats: true) do
+    VCR.use_cassette('popcorn books', allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
       query = NormalizeEds.new.to_result(raw_query, 'books', 'popcorn')
       assert_equal(
@@ -97,14 +94,25 @@ class NormalizeEdsTest < ActiveSupport::TestCase
   end
 
   test 'can generate an EDS UI paginaltion link' do
-    VCR.use_cassette('popcorn books',
-                     allow_playback_repeats: true) do
+    VCR.use_cassette('popcorn books', allow_playback_repeats: true) do
       raw_query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
       query = NormalizeEds.new.to_result(raw_query, 'books', 'popcorn')
       assert_equal(
         'http://libproxy.mit.edu/login?url=https%3A%2F%2Fsearch.ebscohost.com%2Flogin.aspx%3Fdirect%3Dtrue%26AuthType%3Dcookie%2Csso%2Cip%2Cuid%26type%3D0%26group%3Dedstest%26site%3Dedswhatnot%26profile%3Dedswhatnot%26bquery%3Dpopcorn&facet=Books,eBooks,Audiobooks,Dissertations,MusicScores,Audio,Videos',
         query['eds_ui_view_more']
       )
+    end
+  end
+
+  test 'handle missing no dates and no IsPartOfRelationships' do
+    VCR.use_cassette('turn of the screw', allow_playback_repeats: true) do
+      raw_query = SearchEds.new.search(
+        'turn of the screw', 'apiwhatnot', ENV['EDS_BOOK_FACETS'], 4, 1
+      )
+      query = NormalizeEds.new.to_result(
+        raw_query, 'books', 'turn of the screw'
+      )
+      assert_nil(query['results'].first.year)
     end
   end
 end

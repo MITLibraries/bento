@@ -60,7 +60,7 @@ class NormalizeEdsCommon
   end
 
   def year
-    return unless bibentity['Dates']
+    return unless bibentity && bibentity['Dates']
     bibentity['Dates'][0]['Y']
   end
 
@@ -103,6 +103,7 @@ class NormalizeEdsCommon
   end
 
   def bibentity
+    return unless relationships['IsPartOfRelationships']
     relationships['IsPartOfRelationships'][0]['BibEntity']
   end
 
