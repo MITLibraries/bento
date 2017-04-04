@@ -18,7 +18,7 @@ Rails.application.configure do
   ENV['ALEPH_API_URI'] = 'https://fake_server.example.com/rest-dlf/'
   ENV['ALEPH_KEY'] = 'FAKE_KEY'
   ENV['PER_PAGE'] = '10'
-  ENV['FLIPFLOP_KEY'] = 'yoyo'  
+  ENV['FLIPFLOP_KEY'] = 'yoyo'
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
