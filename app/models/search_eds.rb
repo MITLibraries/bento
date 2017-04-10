@@ -49,9 +49,26 @@ class SearchEds
     result = HTTP.headers(accept: 'application/json',
                           'x-authenticationToken': @auth_token,
                           'x-sessionToken': @session_key)
-                 .timeout(:global, write: 2, connect: 2, read: 2)
+                 .timeout(:global, write: http_timeout,
+                                   connect: http_timeout,
+                                   read: http_timeout)
                  .get(search_url(term, facets, page, per_page).to_s).to_s
     JSON.parse(result)
+  end
+
+  # The timeout value is multiplied by 3 in http.rb so we divide by 3
+  # here to end up with the timeout value we actually want.
+  # This is because we are using a global (per request) timeout. It
+  # is possible to instead separate out each phase of the request for
+  # distinct timeouts if we find that is better.
+  # https://github.com/httprb/http/wiki/Timeouts
+  def http_timeout
+    t = if ENV['EDS_TIMEOUT'].present?
+          ENV['EDS_TIMEOUT'].to_f
+        else
+          6
+        end
+    (t / 3)
   end
 
   def uid_auth
