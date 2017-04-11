@@ -35,7 +35,7 @@ class Result
   end
 
   def relevant_links
-    ['library.mit.edu', 'sfx.mit.edu', 'owens.mit.edu']
+    ['libproxy.mit.edu', 'library.mit.edu', 'sfx.mit.edu', 'owens.mit.edu']
   end
 
   # Check fulltext_links for specific parameters to allow for prioritization
@@ -53,7 +53,19 @@ class Result
     link = fulltext_links.map do |l|
       relevant_links.map { |x| l if l['Url'].include?(x) }
     end
-    link.flatten.compact.first['Url'] if link
+    fulltext_link_sorter(link).first if link
+  end
+
+  # prioritizes proxied links
+  def fulltext_link_sorter(link)
+    urls = link.flatten.compact.map { |x| x['Url'] }
+    urls.sort do |x|
+      if x.include?(relevant_links[0])
+        -1
+      else
+        1
+      end
+    end
   end
 
   # Reformat the Accession Number to match the format used in Aleph
