@@ -166,4 +166,23 @@ class ResultTest < ActiveSupport::TestCase
     r.openurl = nil
     assert_nil(r.getit_url)
   end
+
+  test 'getit_url with sfx and proxied sd links uses sd' do
+    r = record_with_all_url_possibilities
+    r.marc_856 = nil
+    r.fulltext_links = [
+      { 'Url' => 'http://sfx.mit.edu/example' },
+      { 'Url' => 'http://libproxy.mit.edu/somestuff' }
+    ]
+    r.openurl = nil
+    assert_equal('http://libproxy.mit.edu/somestuff', r.getit_url)
+
+    r.fulltext_links = [
+      { 'Url' => 'http://sfx.mit.edu/example' },
+      { 'Url' => 'http://example.com/example' },
+      { 'Url' => 'http://libproxy.mit.edu/somestuff' },
+      { 'Url' => 'http://sfx.mit.edu/example' }
+    ]
+    assert_equal('http://libproxy.mit.edu/somestuff', r.getit_url)
+  end
 end
