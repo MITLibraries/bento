@@ -1,0 +1,15 @@
+digraph G {
+  "Search Term" -> "EDS API Articles Search"
+  "EDS API Articles Search" -> "Articles Results"
+  "Articles Results" -> "Results Page"
+
+  "Search Term" -> "EDS API Books Search"
+  "EDS API Books Search" -> "Books Results"
+  "Books Results" -> "Realtime Availability Check"
+  "Realtime Availability Check" -> "Books Results"
+  "Books Results" -> "Results Page"
+
+  "Search Term" -> "Google Custom Search API"
+  "Google Custom Search API" -> "Site Results"
+  "Site Results" -> "Results Page"
+}
