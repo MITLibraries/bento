@@ -33,7 +33,7 @@ class AlephItem
   end
 
   def available_statii
-    ['In Library', 'New Books Display', 'MIT Reads', 'Received',
+    ['In Library', 'New Books Displ', 'MIT Reads', 'Received',
      'LSA Use Only', 'On Display', 'Room Use Only', 'See Note Above',
      'Archives Reading Room Use Only']
   end
