@@ -1,4 +1,9 @@
 <div class="wrap-result">
+  <% if Flipflop.enabled?(:local_browse) %>
+    <% search_prefix = '/search/bento?q=' %>
+  <% else %>
+    <% search_prefix = ENV['EDS_PROFILE_URI'] %>
+  <% end %>
 
   <% if result.thumbnail %>
     <div class="result-image">
@@ -23,7 +28,7 @@
         <span class="sr">Authors: </span>
         <% result.truncated_authors.each do |author| %>
         <span class="result-author">
-          <%= link_to(author[0], author[1], data: {type: "Author"} ) unless author == "et al" %>
+          <%= link_to(author[0], search_prefix + author[1], data: {type: "Author"} ) unless author == "et al" %>
           <%= author if author == "et al" %>
         </span>
         <% end %>
@@ -49,7 +54,7 @@
         <ul class="list-subjects">
         <% result.truncated_subjects.each do |subject| %>
           <li class="result-subjectheading">
-            <%= link_to(subject[0], subject[1], data: {type: "Subject"} ) %>
+            <%= link_to(subject[0], search_prefix + subject[1], data: {type: "Subject"} ) %>
           </li>
         <% end %>
         </ul>
