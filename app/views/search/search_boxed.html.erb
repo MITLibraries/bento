@@ -2,8 +2,10 @@
   <div class="gridband layout-4q title-area">
     <h2 class="title title-page has-subline">More
       <% if params[:target] == 'books' %>
+        <% id = 'books_content' %>
         books and media
       <% elsif params[:target] == 'articles' %>
+        <% id = 'articles_content' %>
         articles and journals
       <% end %>
 
@@ -25,9 +27,11 @@
 
 <% end %>
 
-    <% @results['results'].each do |result| %>
-      <%= render partial: "result", locals: {result: result} %>
-    <% end %>
+    <div id="<%= id %>" class="<%= id %>">
+      <% @results['results'].each do |result| %>
+        <%= render partial: "result", locals: {result: result} %>
+      <% end %>
+    </div>
 
     <%= render partial: "view_all_link" %>
 
@@ -51,4 +55,9 @@
     </div>
     </div>
   </div>
+
+  <script>
+    RealtimeStatus( '#<%= id %>' );
+    TrackLinks( $( '#<%= id %>' ).find( 'a' ) );
+  </script>
 <% end %>
