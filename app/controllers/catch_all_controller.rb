@@ -5,4 +5,8 @@ class CatchAllController < ApplicationController
       format.all { head 404 }
     end
   end
+
+  def broken_intentionally
+    break_stuff
+  end
 end
