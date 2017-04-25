@@ -1,3 +1,5 @@
+// dot docs/charts/bento_overview.dot -Tpng > docs/charts/bento_overview.png
+
 digraph G {
   "Search Term" -> "EDS API Articles Search"
   "EDS API Articles Search" -> "Articles Results"
@@ -5,8 +7,8 @@ digraph G {
 
   "Search Term" -> "EDS API Books Search"
   "EDS API Books Search" -> "Books Results"
-  "Books Results" -> "Realtime Availability Check"
-  "Realtime Availability Check" -> "Books Results"
+  "Books Results" -> "Aleph API Realtime Availability Check"
+  "Aleph API Realtime Availability Check" -> "Books Results"
   "Books Results" -> "Results Page"
 
   "Search Term" -> "Google Custom Search API"
