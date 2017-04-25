@@ -111,3 +111,9 @@ $z-depth-way-front:     1000;
   padding-left: 0;
   text-indent: 0;
 }
+
+.clear {
+  content: '';
+  display: table;
+  clear: both;
+}
