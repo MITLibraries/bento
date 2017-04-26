@@ -69,12 +69,16 @@
 }
 
 /* other bits */
-.wrap-help {
+.wrap-notincluded {
+  @extend .well;
+  font-size: 1.4rem;
+
   .title {
-    margin-bottom: .3em;
-    font-size: $fs-base;
-    font-weight: 600;
-    color: $gray-d1;
+    @extend .hd-2;
+  }
+
+  .title-sub {
+    @extend .hd-4;
   }
 
   .list-tools {
