@@ -34,15 +34,12 @@ a {
 }
 
 .wrap-bar {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
 }
 
 .list-inline {
@@ -406,7 +403,6 @@ hr {
 
 @media (min-width: 768px) {
   .layout-1t2t {
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
@@ -423,7 +419,6 @@ hr {
 
 @media (min-width: 768px) {
   .layout-2t1t {
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
@@ -475,12 +470,10 @@ hr {
 }
 @media (min-width: 768px) {
   .wrap-footer .wrap-sitemap {
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+        flex-direction: row;
   }
   .wrap-footer .wrap-sitemap .col {
     margin-right: 3%;
@@ -492,36 +485,30 @@ hr {
     display: block;
   }
   .wrap-footer .identity {
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
     margin: 4% 0 0 0;
   }
   .wrap-footer .wrap-logo-lib,
   .wrap-footer .wrap-usergroups,
   .wrap-footer .wrap-social {
-    -webkit-align-self: flex-end;
-        -ms-flex-item-align: end;
-            align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     margin-top: 0;
     margin-bottom: 0;
   }
   .wrap-footer .wrap-logo-lib {
-    -webkit-order: 1;
-        -ms-flex-order: 1;
-            order: 1;
+    -ms-flex-order: 1;
+        order: 1;
     margin-right: 4%;
   }
   .wrap-footer .wrap-usergroups {
-    -webkit-order: 3;
-        -ms-flex-order: 3;
-            order: 3;
+    -ms-flex-order: 3;
+        order: 3;
     width: 100%;
     margin: 1rem 4% 0 0;
     border-top: none;
@@ -531,23 +518,20 @@ hr {
     margin-bottom: 0;
   }
   .wrap-footer .wrap-social {
-    -webkit-order: 2;
-        -ms-flex-order: 2;
-            order: 2;
+    -ms-flex-order: 2;
+        order: 2;
     margin-left: 4%;
   }
 }
 @media (min-width: 1024px) {
   .wrap-footer .wrap-usergroups {
-    -webkit-order: 2;
-        -ms-flex-order: 2;
-            order: 2;
+    -ms-flex-order: 2;
+        order: 2;
     width: auto;
   }
   .wrap-footer .wrap-social {
-    -webkit-order: 3;
-        -ms-flex-order: 3;
-            order: 3;
+    -ms-flex-order: 3;
+        order: 3;
   }
 }
 
@@ -555,12 +539,10 @@ hr {
   padding: 1.5rem 4%;
 }
 .wrap-footer.footer-slim .footer-main {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 .wrap-footer.footer-slim .wrap-sitemap {
   margin-left: 2%;
@@ -571,10 +553,8 @@ hr {
 }
 @media (min-width: 768px) {
   .wrap-footer.footer-slim .footer-main {
-    -webkit-align-items: baseline;
-        -ms-flex-align: baseline;
-                -ms-grid-row-align: baseline;
-            align-items: baseline;
+    -ms-flex-align: baseline;
+        align-items: baseline;
   }
   .wrap-footer.footer-slim .wrap-sitemap .item {
     display: inline-block;
@@ -718,6 +698,20 @@ form .disabled {
   cursor: not-allowed;
 }
 
+fieldset {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  padding: 2rem;
+}
+
+legend {
+  padding: 0 1rem;
+  font-size: 1.4rem;
+  color: #595959;
+  text-transform: uppercase;
+}
+
 .bit {
   margin: 0 0 3rem 0;
   border-top: 3px solid #ccc;
@@ -801,9 +795,10 @@ form .disabled {
 }
 
 .well {
+  margin: 2rem 0;
+  background-color: rgba(89, 89, 89, 0.1);
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   padding: 2rem 2.5rem;
-  margin: 2rem 0;
 }
 
 .pagination {
