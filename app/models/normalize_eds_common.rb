@@ -78,16 +78,12 @@ class NormalizeEdsCommon
 
   def authors
     contributors&.map do |author_node|
-      [author_name(author_node), author_link(author_node)]
+      [author_name(author_node), author_search_format(author_node)]
     end
   end
 
   def author_name(author_node)
     author_node.dig('PersonEntity', 'Name', 'NameFull')
-  end
-
-  def author_link(author_node)
-    ENV['EDS_PROFILE_URI'] + author_search_format(author_node)
   end
 
   def author_search_format(author_node)

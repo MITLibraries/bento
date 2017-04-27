@@ -16,12 +16,16 @@ class NormalizeEdsBooks
 
   def subjects
     bibrecord['BibEntity']['Subjects']&.map do |s|
-      [s['SubjectFull'], subject_link(s['SubjectFull'])]
+      [subject_name(s), subject_link(s)]
     end
   end
 
+  def subject_name(subject)
+    subject['SubjectFull']
+  end
+
   def subject_link(subject)
-    ENV['EDS_PROFILE_URI'] + URI.encode_www_form_component("DE \"#{subject}\"")
+    URI.encode_www_form_component("SU \"#{subject_name(subject)}\"")
   end
 
   def location
