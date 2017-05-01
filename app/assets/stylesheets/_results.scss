@@ -47,6 +47,12 @@
     }
   }
 
+  .result-uniform-title {
+    margin-bottom: .5em;
+    font-size: $fs-xsmall;
+    color: $gray;
+  }
+
   .result-author:after {
     content: ';';
     color: $gray-l1;

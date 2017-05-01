@@ -13,10 +13,16 @@ class NormalizeEdsCommon
     result.online = availability
     result.db_source = db_source
     result.an = @record.dig('Header', 'An')
+    links(result)
+    result.uniform_title = uniform_title
+    result
+  end
+
+  # consolidate various link related construction here
+  def links(result)
     result.fulltext_links = fulltext_links
     result.record_links = record_links
     result.marc_856 = marc_856
-    result
   end
 
   def fulltext_links
@@ -57,6 +63,12 @@ class NormalizeEdsCommon
 
   def titles
     @record['RecordInfo']['BibRecord']['BibEntity']['Titles']
+  end
+
+  def uniform_title
+    return unless extract_by_name('TitleAlt')
+    return if extract_by_name('TitleAlt').include?('searchLink fieldCode')
+    Nokogiri::HTML.fragment(extract_by_name('TitleAlt')).to_s
   end
 
   def year

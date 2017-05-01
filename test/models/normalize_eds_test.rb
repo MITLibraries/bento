@@ -81,6 +81,36 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     end
   end
 
+  test 'uniform_title' do
+    VCR.use_cassette('popcorn books', allow_playback_repeats: true) do
+      raw_query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
+      query = NormalizeEds.new.to_result(raw_query, 'books', 'popcorn')
+      assert_equal(
+        'Decoding representations of motherhood in American popular cinema'\
+        ', 1979-1989.',
+        query['results'][1].uniform_title
+      )
+    end
+  end
+
+  test 'can handle missing uniform_title' do
+    VCR.use_cassette('popcorn books', allow_playback_repeats: true) do
+      raw_query = SearchEds.new.search('popcorn', 'apiwhatnot', '')
+      query = NormalizeEds.new.to_result(raw_query, 'books', 'popcorn')
+      assert_nil(query['results'][0].uniform_title)
+    end
+  end
+
+  test 'does not use searchlink code titles for uniform_title' do
+    VCR.use_cassette('ultimate hitchhiker', allow_playback_repeats: true) do
+      raw_query = SearchEds.new.search('ultimate hitchhiker', 'apiwhatnot', '')
+      query = NormalizeEds.new.to_result(
+        raw_query, 'books', 'ultimate hitchhiker'
+      )
+      assert_nil(query['results'][0].uniform_title)
+    end
+  end
+
   test 'can generate a local pagination link' do
     ENV['LOCAL_RESULTS'] = 'true'
     VCR.use_cassette('popcorn books', allow_playback_repeats: true) do
