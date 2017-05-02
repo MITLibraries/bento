@@ -8,7 +8,7 @@ class Result
                 :year, :type, :in, :publisher, :location, :blurb, :subjects,
                 :available_url, :thumbnail, :get_it_label,
                 :db_source, :an, :fulltext_links, :marc_856, :openurl,
-                :winner, :record_links
+                :winner, :record_links, :uniform_title
 
   def initialize(title, url)
     @title = title
