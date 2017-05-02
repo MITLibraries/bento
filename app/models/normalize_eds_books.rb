@@ -15,6 +15,7 @@ class NormalizeEdsBooks
   end
 
   def subjects
+    return unless bibrecord.dig('BibEntity', 'Subjects')
     bibrecord['BibEntity']['Subjects']&.map do |s|
       [subject_name(s), subject_link(s)]
     end

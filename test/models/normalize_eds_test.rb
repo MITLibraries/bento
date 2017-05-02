@@ -145,4 +145,17 @@ class NormalizeEdsTest < ActiveSupport::TestCase
       assert_nil(query['results'].first.year)
     end
   end
+
+  test 'handle missing bibentity bits' do
+    VCR.use_cassette('historico', allow_playback_repeats: true) do
+      raw_query = SearchEds.new.search(
+        'histórico da helmintosporiose', 'apiwhatnot',
+        ENV['EDS_BOOK_FACETS'], 1, 5
+      )
+      query = NormalizeEds.new.to_result(
+        raw_query, 'books', 'histórico da helmintosporiose'
+      )
+      assert(query['results'][0].valid?)
+    end
+  end
 end

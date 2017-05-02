@@ -47,7 +47,7 @@ class NormalizeEdsCommon
     title = extract_by_name('Title') if extract_by_name('Title')
     title = title_full.first if title_full
     title = 'unknown title' unless title
-    title
+    Nokogiri::HTML.fragment(title).to_s
   end
 
   def title_full
@@ -62,7 +62,7 @@ class NormalizeEdsCommon
   end
 
   def titles
-    @record['RecordInfo']['BibRecord']['BibEntity']['Titles']
+    @record.dig('RecordInfo', 'BibRecord', 'BibEntity', 'Titles')
   end
 
   def uniform_title

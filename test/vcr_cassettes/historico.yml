@@ -1,0 +1,330 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/UIDAuth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD"}'
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.2.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 02 May 2017 14:36:35 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '128'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+    http_version:
+  recorded_at: Tue, 02 May 2017 14:36:38 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apiwhatnot
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.2.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 02 May 2017 14:36:34 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - f1791665-95a2-41d6-a19a-43e50f6b5ae0
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-432645191"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '104'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+    http_version:
+  recorded_at: Tue, 02 May 2017 14:36:38 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&facetfilter=1,SourceType:Books,SourceType:eBooks,SourceType:Audiobooks,SourceType:Dissertations,SourceType:Music%20Scores,SourceType:Audio,SourceType:Videos&highlight=n&includefacets=n&pagenumber=1&query=hist%C3%B3rico%20da%20helmintosporiose&resultsperpage=5&searchmode=all&sort=relevance&view=detailed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.2.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 02 May 2017 14:36:37 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - c1de00b8-052f-438f-95f7-1ff29049796d
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-432645191"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '19164'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,hist%c3%b3rico+da+helmintosporiose&facetfilter=1,SourceType:Books,SourceType:eBooks,SourceType:Audiobooks,SourceType:Dissertations,SourceType:Music+Scores,SourceType:Audio,SourceType:Videos&expander=fulltext&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=detailed&resultsperpage=5&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"histórico
+        da helmintosporiose"},"RemoveAction":"removequery(1)"}],"FacetFiltersWithAction":[{"FilterId":1,"FacetValuesWithAction":[{"FacetValue":{"Id":"SourceType","Value":"Books"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Books)"},{"FacetValue":{"Id":"SourceType","Value":"eBooks"},"RemoveAction":"removefacetfiltervalue(1,SourceType:eBooks)"},{"FacetValue":{"Id":"SourceType","Value":"Audiobooks"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Audiobooks)"},{"FacetValue":{"Id":"SourceType","Value":"Dissertations"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Dissertations)"},{"FacetValue":{"Id":"SourceType","Value":"Music
+        Scores"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Music Scores)"},{"FacetValue":{"Id":"SourceType","Value":"Audio"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Audio)"},{"FacetValue":{"Id":"SourceType","Value":"Videos"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Videos)"}],"RemoveAction":"removefacetfilter(1)"}],"ExpandersWithAction":[{"Id":"fulltext","RemoveAction":"removeexpander(fulltext)"}]}},"SearchResult":{"Statistics":{"TotalHits":90,"TotalSearchTime":1854,"Databases":[{"Id":"eric","Label":"ERIC","Status":"0","Hits":0},{"Id":"rih","Label":"RILM
+        Abstracts of Music Literature (1967 to Present only)","Status":"0","Hits":0},{"Id":"agr","Label":"Agricola","Status":"0","Hits":0},{"Id":"lah","Label":"CAB
+        Abstracts","Status":"0","Hits":0},{"Id":"egh","Label":"Environment Index","Status":"0","Hits":0},{"Id":"inh","Label":"Inspec","Status":"0","Hits":0},{"Id":"ecn","Label":"EconLit","Status":"0","Hits":0},{"Id":"ufh","Label":"Communication
+        & Mass Media Complete","Status":"0","Hits":0},{"Id":"qth","Label":"LGBT Life
+        with Full Text","Status":"0","Hits":0},{"Id":"fyh","Label":"Women''s Studies
+        International","Status":"0","Hits":0},{"Id":"fmh","Label":"Gender Studies
+        Database","Status":"0","Hits":0},{"Id":"ibh","Label":"International Bibliography
+        of Theatre & Dance with Full Text","Status":"0","Hits":0},{"Id":"bth","Label":"Business
+        Source Complete","Status":"0","Hits":0},{"Id":"lxh","Label":"Library, Information
+        Science & Technology Abstracts","Status":"0","Hits":0},{"Id":"mah","Label":"Music
+        Index","Status":"0","Hits":0},{"Id":"a9h","Label":"","Status":"0","Hits":0},{"Id":"ich","Label":"Index
+        Islamicus","Status":"0","Hits":0},{"Id":"ahl","Label":"America: History &
+        Life","Status":"0","Hits":0},{"Id":"hia","Label":"Historical Abstracts","Status":"0","Hits":0},{"Id":"poh","Label":"Political
+        Science Complete","Status":"0","Hits":0},{"Id":"phl","Label":"Philosopher''s
+        Index","Status":"0","Hits":0},{"Id":"8gh","Label":"GreenFILE","Status":"0","Hits":0},{"Id":"edswah","Label":"Arts
+        & Humanities Citation Index","Status":"0","Hits":0},{"Id":"edswsc","Label":"Science
+        Citation Index","Status":"0","Hits":0},{"Id":"edswss","Label":"Social Sciences
+        Citation Index","Status":"0","Hits":0},{"Id":"edselp","Label":"ScienceDirect","Status":"0","Hits":0},{"Id":"edsoso","Label":"Oxford
+        Scholarship Online","Status":"0","Hits":0},{"Id":"hma","Label":"Humanities
+        Abstracts (H.W. Wilson)","Status":"0","Hits":0},{"Id":"nlabk","Label":"Audiobook
+        Collection (EBSCOhost)","Status":"0","Hits":0},{"Id":"nlebk","Label":"eBook
+        Collection (EBSCOhost)","Status":"0","Hits":0},{"Id":"rga","Label":"Readers''
+        Guide Abstracts (H.W. Wilson)","Status":"0","Hits":0},{"Id":"edscrc","Label":"Credo
+        Reference","Status":"0","Hits":0},{"Id":"pix","Label":"Play Index (H.W. Wilson)","Status":"0","Hits":0},{"Id":"cat00916a","Label":"MIT
+        Barton Catalog","Status":"0","Hits":0},{"Id":"edsasp","Label":"Alexander Street
+        Press","Status":"0","Hits":0},{"Id":"edo","Label":"","Status":"0","Hits":0},{"Id":"edb","Label":"","Status":"0","Hits":0},{"Id":"edsoao","Label":"Grove
+        Art Online","Status":"0","Hits":0},{"Id":"edsoad","Label":"American National
+        Biography Online","Status":"0","Hits":0},{"Id":"edsodb","Label":"Oxford Dictionary
+        of National Biography","Status":"0","Hits":0},{"Id":"edsoro","Label":"Oxford
+        Reference","Status":"0","Hits":0},{"Id":"edsomo","Label":"Grove Music Online","Status":"0","Hits":0},{"Id":"edsebo","Label":"Britannica
+        Online","Status":"0","Hits":0},{"Id":"ant","Label":"Anthropology Plus","Status":"0","Hits":0},{"Id":"edsssb","Label":"Books24x7","Status":"0","Hits":0},{"Id":"eue","Label":"Education
+        Source","Status":"0","Hits":0},{"Id":"hus","Label":"Humanities Source","Status":"0","Hits":0},{"Id":"aci","Label":"Applied
+        Science & Technology Source","Status":"0","Hits":0},{"Id":"cat01763a","Label":"MIT
+        Course Reserves","Status":"0","Hits":0},{"Id":"asu","Label":"Art & Architecture
+        Source","Status":"0","Hits":0},{"Id":"edsnmj","Label":"Naxos Music Library
+        Jazz","Status":"0","Hits":0},{"Id":"edsnol","Label":"Naxos Music Library","Status":"0","Hits":0},{"Id":"htm","Label":"History
+        of Science, Technology & Medicine","Status":"0","Hits":0},{"Id":"ers","Label":"Research
+        Starters","Status":"0","Hits":0},{"Id":"edshtl","Label":"HathiTrust","Status":"0","Hits":90},{"Id":"edsecd","Label":"Energy
+        Citations Database","Status":"0","Hits":0},{"Id":"edsvec","Label":"CQ Press
+        Voting & Elections Collection","Status":"0","Hits":0},{"Id":"edscoc","Label":"CQ
+        Press Congress Collection","Status":"0","Hits":0},{"Id":"edsspo","Label":"SpringerProtocols","Status":"0","Hits":0},{"Id":"edssmt","Label":"SpringerMaterials","Status":"0","Hits":0},{"Id":"edsoec","Label":"OECD
+        iLibrary","Status":"0","Hits":0},{"Id":"edsstc","Label":"SciTech Connect","Status":"0","Hits":0},{"Id":"edswbe","Label":"World
+        Bank eLibrary","Status":"0","Hits":0},{"Id":"msn","Label":"MathSciNet via
+        EBSCOhost","Status":"0","Hits":0},{"Id":"edseee","Label":"IEEE Xplore Digital
+        Library","Status":"0","Hits":0},{"Id":"edskan","Label":"Kanopy","Status":"0","Hits":0},{"Id":"bvh","Label":"Avery
+        Index to Architectural Periodicals","Status":"0","Hits":0},{"Id":"fjh","Label":"The
+        New Republic Archive","Status":"0","Hits":0},{"Id":"nih","Label":"The Nation
+        Archive","Status":"0","Hits":0},{"Id":"hev","Label":"European Views of the
+        Americas: 1493 to 1750","Status":"0","Hits":0},{"Id":"apn","Label":"Alternative
+        Press Index","Status":"0","Hits":0},{"Id":"edspdh","Label":"PsycARTICLES","Status":"0","Hits":0},{"Id":"edsarx","Label":"arXiv","Status":"0","Hits":0},{"Id":"hsr","Label":"Humanities
+        & Social Sciences Index Retrospective: 1907-1984 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"air","Label":"Art
+        Index Retrospective (H.W. Wilson)","Status":"0","Hits":0},{"Id":"rgr","Label":"Readers''
+        Guide Retrospective: 1890-1982 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"bpr","Label":"Business
+        Periodicals Index Retrospective: 1913-1982 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"mdc","Label":"MEDLINE
+        Complete","Status":"0","Hits":0},{"Id":"edslex","Label":"LexisNexis Academic:
+        Law Reviews","Status":"0","Hits":0},{"Id":"edsjst","Label":"J-STAGE","Status":"0","Hits":0},{"Id":"edsdoj","Label":"Directory
+        of Open Access Journals","Status":"0","Hits":0},{"Id":"edsper","Label":"Persée","Status":"0","Hits":0},{"Id":"edshol","Label":"HeinOnline","Status":"0","Hits":0},{"Id":"edsmbo","Label":"Marquis
+        Biographies Online","Status":"0","Hits":0},{"Id":"edshst","Label":"Henry Stewart
+        Talks","Status":"0","Hits":0},{"Id":"edsjsr","Label":"JSTOR Journals","Status":"0","Hits":0},{"Id":"edscao","Label":"CQ
+        Almanac Online Edition","Status":"0","Hits":0},{"Id":"edsmmd","Label":"ASM
+        Medical Materials Database","Status":"0","Hits":0},{"Id":"edsonp","Label":"OnePetro","Status":"0","Hits":0}]},"Data":{"RecordFormat":"EP
+        Display","Records":[{"ResultId":1,"Header":{"DbId":"edshtl","DbLabel":"HathiTrust","An":"uc1.b3672677","RelevancyScore":"1167","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&scope=site&db=edshtl&AN=uc1.b3672677&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"http:\/\/hdl.handle.net\/2027\/uc1.b3672677?","Name":"EDS
+        - HathiTrust","Category":"fullText","Text":"View record in HathiTrust"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Bragantia,
+        boletim tecnico do instituto agronomico do estado"},{"Name":"NumberControlLC","Label":"LCCN","Group":"SrcInfo","Data":"48031513"},{"Name":"Identifiers","Label":"Original
+        Identifier","Group":"SrcInfo","Data":"sdr-nrlf.b170199538"}],"RecordInfo":{"BibRecord":{"BibRelationships":{"IsPartOfRelationships":[{"BibEntity":{"Identifiers":[{"Type":"issn-locals","Value":"9"}],"Titles":[{"TitleFull":"Bragantia,
+        boletim tecnico do instituto agronomico do estado","Type":"main"}]}}]}}}},{"ResultId":2,"Header":{"DbId":"edshtl","DbLabel":"HathiTrust","An":"inu.30000116413224","RelevancyScore":"1067","PubType":"Academic
+        Journal","PubTypeId":"academicJournal"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&scope=site&db=edshtl&AN=inu.30000116413224&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=article&atitle=&title=&issn=5&isbn=&volume=&issue=&date=&aulast=&spage=&pages=&sid=EBSCO:HathiTrust:inu.30000116413224","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Livro
+        anual da agricultura"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Brazil%2E+Minist&#233;rio+da+Agricultura%2E%22&quot;&gt;Brazil.
+        Minist&#233;rio da Agricultura.&lt;\/searchLink&gt;"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Agricultural+innovations%22&quot;&gt;Agricultural
+        innovations&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Agricultural+innovations+Brazil+Periodicals%22&quot;&gt;Agricultural
+        innovations Brazil Periodicals&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Agriculture%22&quot;&gt;Agriculture&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Agriculture+Brazil+Periodicals%22&quot;&gt;Agriculture
+        Brazil Periodicals&lt;\/searchLink&gt;"},{"Name":"NumberControlLC","Label":"LCCN","Group":"SrcInfo","Data":"2007238975"},{"Name":"Identifiers","Label":"Original
+        Identifier","Group":"SrcInfo","Data":"sdr-inu7186099"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"Portuguese"}],"Subjects":[{"SubjectFull":"Agricultural
+        innovations","Type":"general"},{"SubjectFull":"Agricultural innovations Brazil
+        Periodicals","Type":"general"},{"SubjectFull":"Agriculture","Type":"general"},{"SubjectFull":"Agriculture
+        Brazil Periodicals","Type":"general"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Brazil.
+        Ministério da Agricultura."}}}],"IsPartOfRelationships":[{"BibEntity":{"Identifiers":[{"Type":"issn-locals","Value":"5"}],"Titles":[{"TitleFull":"Livro
+        anual da agricultura","Type":"main"}]}}]}}}},{"ResultId":3,"Header":{"DbId":"edshtl","DbLabel":"HathiTrust","An":"uc1.b3490894","RelevancyScore":"1064","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&scope=site&db=edshtl&AN=uc1.b3490894&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=book&atitle=&title=Dicion%C3%A1rio%20da%20l%C3%ADngua%20portuguesa&isbn=&volume=&issue=&date=19580101&aulast=&spage=&pages=&sid=EBSCO:HathiTrust:uc1.b3490894","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Dicion&#225;rio
+        da l&#237;ngua portuguesa"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Machado%2C+Jos&#233;+Pedro%2C%22&quot;&gt;Machado,
+        Jos&#233; Pedro,&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
+        term=&quot;%22Sociedade+da+L&#237;ngua+Portuguesa%2E%22&quot;&gt;Sociedade
+        da L&#237;ngua Portuguesa.&lt;\/searchLink&gt;"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Portuguese+language%22&quot;&gt;Portuguese
+        language&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Portuguese+language+Dictionaries%22&quot;&gt;Portuguese language
+        Dictionaries&lt;\/searchLink&gt;"},{"Name":"Identifiers","Label":"Original
+        Identifier","Group":"SrcInfo","Data":"sdr-miu001721846"},{"Name":"Identifiers","Label":"Original
+        Identifier","Group":"SrcInfo","Data":"sdr-nrlfGLAD67144722-B"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"Portuguese"}],"Subjects":[{"SubjectFull":"Portuguese
+        language","Type":"general"},{"SubjectFull":"Portuguese language Dictionaries","Type":"general"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Machado,
+        José Pedro,"}}},{"PersonEntity":{"Name":{"NameFull":"Sociedade da Língua Portuguesa."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1958"}],"Identifiers":[{"Type":"issn-locals","Value":"2"}],"Titles":[{"TitleFull":"Dicionário
+        da língua portuguesa","Type":"main"}]}}]}}}},{"ResultId":4,"Header":{"DbId":"edshtl","DbLabel":"HathiTrust","An":"mdp.39015028326802","RelevancyScore":"1056","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&scope=site&db=edshtl&AN=mdp.39015028326802&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=book&atitle=&title=Dicion%C3%A1rio%20da%20l%C3%ADngua%20portuguesa&isbn=&volume=&issue=&date=19490101&aulast=&spage=&pages=&sid=EBSCO:HathiTrust:mdp.39015028326802","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Dicion&#225;rio
+        da l&#237;ngua portuguesa"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Figueiredo%2C+C&#226;ndido+de%22&quot;&gt;Figueiredo,
+        C&#226;ndido de&lt;\/searchLink&gt;"},{"Name":"Subject","Label":"Subject Terms","Group":"Su","Data":"&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Portuguese+language%22&quot;&gt;Portuguese
+        language&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Portuguese+language+Dictionaries%22&quot;&gt;Portuguese language
+        Dictionaries&lt;\/searchLink&gt;"},{"Name":"Identifiers","Label":"Original
+        Identifier","Group":"SrcInfo","Data":"sdr-miu000872484"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"Portuguese"}],"Subjects":[{"SubjectFull":"Portuguese
+        language","Type":"general"},{"SubjectFull":"Portuguese language Dictionaries","Type":"general"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Figueiredo,
+        Cândido de"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1949"}],"Identifiers":[{"Type":"issn-locals","Value":"2"}],"Titles":[{"TitleFull":"Dicionário
+        da língua portuguesa","Type":"main"}]}}]}}}},{"ResultId":5,"Header":{"DbId":"edshtl","DbLabel":"HathiTrust","An":"inu.30000039141399","RelevancyScore":"1048","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&scope=site&db=edshtl&AN=inu.30000039141399&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=book&atitle=&title=Grande%20diciona%CC%81rio%20da%20li%CC%81ngua%20portuguesa&isbn=9789726260349&volume=&issue=&date=19910101&aulast=&spage=&pages=&sid=EBSCO:HathiTrust:inu.30000039141399","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Grande
+        dicionário da língua portuguesa"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Machado%2C+José+Pedro%22&quot;&gt;Machado,
+        José Pedro&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
+        term=&quot;%22Sociedade+de+Língua+Portuguesa+%28Portugal%29%22&quot;&gt;Sociedade
+        de Língua Portuguesa (Portugal)&lt;\/searchLink&gt;"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Portuguese+language%22&quot;&gt;Portuguese
+        language&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Portuguese+language+Dictionaries%22&quot;&gt;Portuguese language
+        Dictionaries&lt;\/searchLink&gt;"},{"Name":"Identifiers","Label":"Original
+        Identifier","Group":"SrcInfo","Data":"sdr-inu438230"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"Portuguese"}],"Subjects":[{"SubjectFull":"Portuguese
+        language","Type":"general"},{"SubjectFull":"Portuguese language Dictionaries","Type":"general"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Machado,
+        José Pedro"}}},{"PersonEntity":{"Name":{"NameFull":"Sociedade de Língua
+        Portuguesa (Portugal)"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1991"}],"Identifiers":[{"Type":"isbn-print","Value":"9789726260349"},{"Type":"isbn-print","Value":"9726260345"},{"Type":"isbn-print","Value":"9789726260332"},{"Type":"isbn-print","Value":"9726260337"},{"Type":"isbn-print","Value":"9789726260325"},{"Type":"isbn-print","Value":"9726260329"},{"Type":"isbn-print","Value":"9789726260318"},{"Type":"isbn-print","Value":"9726260310"},{"Type":"isbn-print","Value":"9789726260301"},{"Type":"isbn-print","Value":"9726260302"},{"Type":"isbn-print","Value":"9789726260295"},{"Type":"isbn-print","Value":"9726260299"},{"Type":"isbn-print","Value":"9789726260356"},{"Type":"isbn-print","Value":"9726260353"},{"Type":"isbn-print","Value":"9726260345"},{"Type":"isbn-print","Value":"9726260337"},{"Type":"isbn-print","Value":"9726260329"},{"Type":"isbn-print","Value":"9726260310"},{"Type":"isbn-print","Value":"9726260302"},{"Type":"isbn-print","Value":"9726260299"},{"Type":"isbn-print","Value":"9726260353"},{"Type":"issn-locals","Value":"2"}],"Titles":[{"TitleFull":"Grande
+        dicionário da língua portuguesa","Type":"main"}]}}]}}}}]}}}'
+    http_version:
+  recorded_at: Tue, 02 May 2017 14:36:40 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.2.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - b0607fd7-c86d-4e48-81cb-bb9306648a0d
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 28 Oct 2016 13:54:14 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"IsSuccessful":"y"}'
+    http_version:
+  recorded_at: Tue, 02 May 2017 14:36:40 GMT
+recorded_with: VCR 3.0.3
