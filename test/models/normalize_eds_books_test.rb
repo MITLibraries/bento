@@ -63,10 +63,6 @@ class NormalizeEdsBooksTest < ActiveSupport::TestCase
     assert_equal('Book', popcorn_books['results'][0].type)
   end
 
-  test 'normalized books have expected availability' do
-    skip('need to determine logic to how this will work without misleading')
-  end
-
   test 'normalized books have expected external subjects' do
     assert_equal(
       'Rock films -- History and criticism',
@@ -112,10 +108,6 @@ class NormalizeEdsBooksTest < ActiveSupport::TestCase
       query = NormalizeEds.new.to_result(raw_query, 'books', 'orange')
       assert_nil(query['results'][1].location)
     end
-  end
-
-  test 'normalized books have expected publisher' do
-    skip('eds data does not provide this data')
   end
 
   test 'normalized books have expected thumbnail' do
