@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.4.1'
 
-gem 'devise'
+gem 'devise', git: 'https://github.com/plataformatec/devise.git',
+              branch: 'master'
 gem 'flipflop'
 gem 'google-api-client'
 gem 'http'
@@ -14,7 +15,7 @@ gem 'nokogiri'
 gem 'omniauth-mit-oauth2'
 gem 'omniauth-oauth2'
 gem 'puma'
-gem 'rails', '5.0.2'
+gem 'rails', '5.1.0'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'rollbar'
 gem 'sass-rails'
