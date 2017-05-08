@@ -70,6 +70,17 @@ class ResultTest < ActiveSupport::TestCase
     assert_equal(r.truncated_subjects, %w[a b c])
   end
 
+  test 'long title trucated' do
+    r = Result.new('title ' * 100, 'http://example.com')
+    assert(r.title.length > 150)
+    assert(r.truncated_title.length <= 150)
+  end
+
+  test 'long title not trucated mid word' do
+    r = Result.new('title ' * 100, 'http://example.com')
+    assert_equal('title...', r.truncated_title.split(' ').last)
+  end
+
   test 'can set citation' do
     r = Result.new('title', 'http://example.com')
     r.citation = 'Journal of Stuff, vol.12, no.1, pp.2-12'
