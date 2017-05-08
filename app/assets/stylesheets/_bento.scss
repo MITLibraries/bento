@@ -65,6 +65,16 @@
 }
 
 /* other bits */
+.wrap-notincluded {
+  @extend .well;
+  margin: 2rem;
+  font-size: 1.4rem;
+
+  .title {
+    font-size: 1.6rem;
+  }
+}
+
 .wrap-help {
   .title {
     margin-bottom: .3em;
