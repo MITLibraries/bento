@@ -62,6 +62,10 @@
     display: block;
     text-align: center;
   }
+
+  .hidden {
+    @extend .is-hidden;
+  }
 }
 
 /* other bits */
