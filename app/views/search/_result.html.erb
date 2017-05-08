@@ -12,7 +12,7 @@
   <% end %>
 
   <h3 class="result-title">
-    <span class="sr">Title: </span><%= link_to(result.title, result.url, class: 'bento-link', data: {type: "Title"} ) %>
+    <span class="sr">Title: </span><%= link_to(result.truncated_title, result.url, class: 'bento-link', data: {type: "Title"} ) %>
   </h3>
   <div class="result-uniform-title">
     <% if result.uniform_title %>

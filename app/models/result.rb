@@ -10,6 +10,8 @@ class Result
                 :db_source, :an, :fulltext_links, :marc_856, :openurl,
                 :winner, :record_links, :uniform_title
 
+  MAX_TITLE_LENGTH = ENV['MAX_TITLE_LENGTH'] || 150
+
   def initialize(title, url)
     @title = title
     @url = url
@@ -85,6 +87,10 @@ class Result
 
   def truncated_subjects
     subjects[0..2]
+  end
+
+  def truncated_title
+    title.truncate(MAX_TITLE_LENGTH, separator: ' ')
   end
 
   def aleph_cr_record?
