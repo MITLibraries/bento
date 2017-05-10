@@ -56,10 +56,6 @@ class NormalizeEdsArticlesTest < ActiveSupport::TestCase
     end
   end
 
-  test 'normalized articles have expected availability' do
-    skip('need to determine logic to how this will work without misleading')
-  end
-
   test 'normalized articles have expected citation' do
     assert_equal('volume 38 issue 4', popcorn_articles['results'][0].citation)
     assert_equal('volume 69', popcorn_articles['results'][1].citation)
