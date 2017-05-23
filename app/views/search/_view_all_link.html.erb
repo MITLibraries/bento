@@ -9,7 +9,7 @@
     <%= link_to(
       "View all #{number_with_delimiter(@results['total'])} results",
       view_more_url,
-      data: {count: number_with_delimiter(@results['total']), type: 'view all results'}, class: "button button-secondary #{ 'hidden' if @results['total'] <= @per_box }") %>
+      data: {count: number_with_delimiter(@results['total']), type: 'view all results'}, class: "button button-primary #{ 'hidden' if @results['total'] <= @per_box }") %>
   <% else %>
     No results found.
   <% end %>
