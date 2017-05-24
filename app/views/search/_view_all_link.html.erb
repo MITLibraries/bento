@@ -7,7 +7,7 @@
       <% view_more_url = @results['eds_ui_view_more'] %>
     <% end %>
     <%= link_to(
-      "View all #{number_with_delimiter(@results['total'])} results",
+      "View more #{view_more_text} results",
       view_more_url,
       data: {count: number_with_delimiter(@results['total']), type: 'view all results'}, class: "button button-primary #{ 'hidden' if @results['total'] <= @per_box }") %>
   <% else %>
