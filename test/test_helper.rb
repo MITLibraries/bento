@@ -11,7 +11,12 @@ require 'rails/test_help'
 require 'minitest/rails/capybara'
 require 'minitest/reporters'
 require 'mocha/mini_test'
-Minitest::Reporters.use!
+
+if ENV['SPEC_REPORTER'] == 'true'
+  Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
+else
+  Minitest::Reporters.use!
+end
 
 VCR.configure do |config|
   config.ignore_localhost = true
