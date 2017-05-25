@@ -2,4 +2,6 @@ language: ruby
 rvm:
   - 2.4.1
 sudo: false
+env:
+  - SPEC_REPORTER=true
 script: bin/rails test
