@@ -6,6 +6,7 @@ class FeedbackMailer < ApplicationMailer
     @ua = ua
     @contact_email = contact_email
     @contact_name = contact_name
-    mail(to: ENV['FEEDBACK_MAIL_TO'], subject: 'MIT Bento Feedback')
+    mail(to: ENV['FEEDBACK_MAIL_TO'],
+         subject: 'Search feedback - MIT Libraries')
   end
 end
