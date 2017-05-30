@@ -17,7 +17,8 @@ class FeedbackControllerTest < ActionDispatch::IntegrationTest
     end
     feedback_email = ActionMailer::Base.deliveries.last
 
-    assert_equal('MIT Bento Feedback', feedback_email.subject)
+    assert_equal('Search feedback - MIT Libraries',
+                 feedback_email.subject)
     assert_equal('test@example.com', feedback_email.to[0])
     assert_match(/Popcorn is cool./,
                  feedback_email.body.to_s)
