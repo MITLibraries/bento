@@ -12,7 +12,7 @@ class FeedbackTest < ActionDispatch::IntegrationTest
 
     feedback_email = ActionMailer::Base.deliveries.last
 
-    assert_equal('MIT Bento Feedback',
+    assert_equal('Search feedback - MIT Libraries',
                  feedback_email.subject)
     assert_match(/yo@example.com/, feedback_email.body.to_s)
     assert_match(/Message this!/, feedback_email.body.to_s)
