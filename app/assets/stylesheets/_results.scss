@@ -109,7 +109,11 @@
     text-align: right;
     font-size: 1.4rem;
 
-    .online {
+    &:after {
+      @extend .clear;
+    }
+
+    .details {
     	float: left;
     }
   }
