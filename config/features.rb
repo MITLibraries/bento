@@ -10,4 +10,8 @@ Flipflop.configure do
   feature :local_browse,
     default: false,
     description: 'Enables local browsing of paginated results'
+
+  feature :check_online,
+    default: false,
+    description: 'Enables button for EDS supplied non-subscribed SFX links'
 end

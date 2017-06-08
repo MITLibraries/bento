@@ -8,7 +8,7 @@ class Result
                 :year, :type, :in, :publisher, :location, :blurb, :subjects,
                 :available_url, :thumbnail, :get_it_label,
                 :db_source, :an, :fulltext_links, :marc_856, :openurl,
-                :winner, :record_links, :uniform_title
+                :winner, :record_links, :uniform_title, :check_sfx_url
 
   MAX_TITLE_LENGTH = ENV['MAX_TITLE_LENGTH'] || 150
 
@@ -22,8 +22,13 @@ class Result
     if marc_856 && relevant_marc_856?
       best_link(marc_856, 'marc_856')
     elsif fulltext_links && relevant_fulltext_links?
-      best_link(fulltext_links_picker, 'eds fulltext')
+      best_link(fulltext_links_picker(true), 'eds fulltext')
     end
+  end
+
+  # URL to use for check_sfx button in the UI
+  def check_sfx_url
+    fulltext_links_picker(false) if fulltext_links && relevant_fulltext_links?
   end
 
   def best_link(link, winner)
@@ -36,6 +41,7 @@ class Result
     relevant_links.map { |x| marc_856.include?(x) }.any?
   end
 
+  # domains we consider relevant when evaluating links
   def relevant_links
     ['libproxy.mit.edu', 'library.mit.edu', 'sfx.mit.edu', 'owens.mit.edu']
   end
@@ -47,15 +53,31 @@ class Result
     end.include?(true)
   end
 
+  # Exclude any links that include SFX link (not subscribed resources)
+  # as a link['Name']
+  def remove_not_subscribed_sfx_links(links)
+    links.map do |l|
+      l unless l['Name'].present? && l['Name'].include?('not subscribed')
+    end
+  end
+
   # Only use links going through sfx or library as other direct links
   # may be to less useful things (like t.o.c.) or direct to publishers, which
   # while useful on campus, would not be useful off campus without adding
   # additional features to bento that are currently out of scope.
-  def fulltext_links_picker
+  # `subscribed` is a boolean to signal whether to only include sfx links that
+  # are highly likely to go directly to full text (i.e. we know we subscribe
+  # to them or not)
+  def fulltext_links_picker(subscribed)
     link = fulltext_links.map do |l|
-      relevant_links.map { |x| l if l['Url'].include?(x) }
+      relevant_links.map { |x| l if l['Url'].include?(x) }.compact
     end
-    fulltext_link_sorter(link).first if link
+    links = if subscribed
+              remove_not_subscribed_sfx_links(link.flatten)
+            else
+              link.flatten
+            end
+    fulltext_link_sorter(links).first if links
   end
 
   # prioritizes proxied links

@@ -105,6 +105,12 @@
       <%= link_to("View online", result.getit_url, class: 'online button button-primary green', data: {type: "Get"}) %>
     <% end %>
 
+    <% if Flipflop.enabled?(:check_online) %>
+      <% if result.getit_url.blank? && result.check_sfx_url.present? %>
+        <%= link_to("Check for online access", result.check_sfx_url, class: 'online button-secondary', data: {type: "Check"}) %>
+      <% end %>
+    <% end %>
+
     <%= link_to("Details and requests", result.url, class: 'details button button-secondary', data: {type: "Detail"}) %>
   </div>
 
