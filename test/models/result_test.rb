@@ -196,4 +196,39 @@ class ResultTest < ActiveSupport::TestCase
     ]
     assert_equal('http://libproxy.mit.edu/somestuff', r.getit_url)
   end
+
+  test 'getit_url with only non-subscribed sfx link' do
+    r = record_with_all_url_possibilities
+    r.marc_856 = nil
+    r.fulltext_links = [
+      { 'Url' => 'http://sfx.mit.edu/example',
+        'Name' => 'SFX link (not subscribed resources)' }
+    ]
+    r.openurl = nil
+    assert_nil(r.getit_url)
+  end
+
+  test 'getit_url with subscribed and non-subscribed sfx links' do
+    r = record_with_all_url_possibilities
+    r.marc_856 = nil
+    r.fulltext_links = [
+      { 'Url' => 'http://sfx.mit.edu/example',
+        'Name' => 'SFX link (not subscribed resources)' },
+      { 'Url' => 'http://sfx.mit.edu/hi_mom' }
+    ]
+    r.openurl = nil
+    assert_equal('http://sfx.mit.edu/hi_mom', r.getit_url)
+  end
+
+  test 'check_sfx_url with non-subscribed link' do
+    r = record_with_all_url_possibilities
+    r.marc_856 = nil
+    r.fulltext_links = [
+      { 'Url' => 'http://sfx.mit.edu/example',
+        'Name' => 'SFX link (not subscribed resources)' }
+    ]
+    r.openurl = nil
+    assert_nil(r.getit_url)
+    assert_equal('http://sfx.mit.edu/example', r.check_sfx_url)
+  end
 end
