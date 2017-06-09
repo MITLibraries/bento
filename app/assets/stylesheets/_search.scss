@@ -15,6 +15,7 @@
   }
 
   .b-search-input {
+    -webkit-appearance: none;
     display: inline-block;
     width: 80%;
     border: 1px solid $gray-l2;
