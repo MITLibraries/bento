@@ -107,10 +107,12 @@ class NormalizeEdsCommon
   end
 
   def contributors
+    return unless relationships
     relationships['HasContributorRelationships']
   end
 
   def bibentity
+    return unless relationships
     return unless relationships['IsPartOfRelationships']
     relationships['IsPartOfRelationships'][0]['BibEntity']
   end
