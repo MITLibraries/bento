@@ -37,7 +37,7 @@ class SearchController < ApplicationController
   end
 
   def cache_key(page, per_page)
-    "#{params[:target]}_#{strip_q}_#{page}_#{per_page}_#{today}"
+    "#{params[:target]}_#{strip_truncate_q}_#{page}_#{per_page}_#{today}"
   end
 
   # Boolean check of whether param passed in is a valid search endpoint
@@ -66,9 +66,9 @@ class SearchController < ApplicationController
   # Seaches EDS
   def search_eds(page, per_page)
     raw_results = SearchEds.new.search(
-      strip_q, ENV['EDS_PROFILE'], eds_facets, page, per_page
+      strip_truncate_q, ENV['EDS_PROFILE'], eds_facets, page, per_page
     )
-    NormalizeEds.new.to_result(raw_results, params[:target], strip_q)
+    NormalizeEds.new.to_result(raw_results, params[:target], strip_truncate_q)
   end
 
   def eds_facets
@@ -81,18 +81,20 @@ class SearchController < ApplicationController
 
   # Searches Google Custom Search
   def search_google
-    raw_results = SearchGoogle.new.search(strip_q)
-    NormalizeGoogle.new.to_result(raw_results, strip_q)
+    raw_results = SearchGoogle.new.search(strip_truncate_q)
+    NormalizeGoogle.new.to_result(raw_results, strip_truncate_q)
   end
 
   # Strips trailing and leading white space in search term
+  # Truncates long searches at whole words to prevent bugs with long terms.
   # Individual search engine models do additional cleaning as appropriate.
-  def strip_q
-    params[:q].strip
+  def strip_truncate_q
+    params[:q].strip.truncate((ENV['MAX_QUERY_LENGTH'] || 1500).to_i,
+                              separator: ' ')
   end
 
   def validate_q!
-    return if params[:q].present? && strip_q.present?
+    return if params[:q].present? && strip_truncate_q.present?
     flash[:error] = 'A search term is required.'
     redirect_to root_url
   end
