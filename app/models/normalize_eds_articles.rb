@@ -43,7 +43,7 @@ class NormalizeEdsArticles
   end
 
   def journal_title
-    return unless bibentity['Titles']
+    return unless bibentity && bibentity['Titles']
     bibentity['Titles'][0]['TitleFull']
   end
 
@@ -53,13 +53,14 @@ class NormalizeEdsArticles
   end
 
   def identifiers
-    return unless bibentity['Identifiers']
+    return unless bibentity && bibentity['Identifiers']
     bibentity['Identifiers'].map do |x|
       { x['Type'] => x['Value'] }
     end
   end
 
   def numbering
+    return unless bibentity
     numbers = bibentity['Numbering']&.map do |x|
       "#{x['Type']} #{x['Value']}"
     end
@@ -67,6 +68,7 @@ class NormalizeEdsArticles
   end
 
   def volume_issue(type)
+    return unless bibentity
     volume_issue = bibentity['Numbering']&.select do |i|
       i['Type'] == type
     end
@@ -78,6 +80,7 @@ class NormalizeEdsArticles
   end
 
   def bibentity
+    return unless relationships['IsPartOfRelationships']
     relationships['IsPartOfRelationships'][0]['BibEntity']
   end
 
