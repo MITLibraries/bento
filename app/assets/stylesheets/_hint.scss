@@ -1,0 +1,26 @@
+
+.hint-box {
+  position: relative;
+  margin: 1.5% 0;
+  padding: 1.5%;
+  background-color: $wisp;
+
+  .type {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: $gray;
+    font-size: $fs-xsmall;
+  }
+
+  .title {
+    margin-bottom: .2em;
+    font-size: $fs-small;
+    font-weight: $fw-bold;
+  }
+
+  .desc {
+    margin-bottom: 0;
+    font-size: $fs-small;
+  }
+}
