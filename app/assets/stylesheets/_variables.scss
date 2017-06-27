@@ -31,9 +31,10 @@ $gray-l3:                       #dedede;
 $gray-l4:                       #f3f3f3;
 $gray-warm:                     #c6b6a3;
 $transparent:                   rgba(0, 0, 0, 0);
-$shadow:                        rgba($black-t, .5);
 $glare:                         rgba($white-t, .3);
+$shadow:                        rgba($black-t, .5);
 $smoke:                         rgba($gray, .3);
+$wisp:                          rgba($gray, .1);
 
 // moth colors - named
 $magenta:                       #9c3273;
@@ -48,6 +49,7 @@ $blue-muted:                    #21759B;
 // colors - brand
 $brand-primary:                 $blue;
 $brand-primary-accent:          rgb(14, 166, 236);
+$brand-primary2:                #83c8ff; // accessible on dark 
 $brand-secondary:               $gray-d1;
 $brand-secondary-accent:        rgb(242, 108, 170);
 
