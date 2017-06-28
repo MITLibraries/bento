@@ -10,11 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101010101) do
+ActiveRecord::Schema.define(version: 20170626140311) do
+
+  create_table "hints", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer "hint_id"
+    t.string "match"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hint_id"], name: "index_matches_on_hint_id"
+  end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",      null: false
-    t.string   "uid",        null: false
+    t.string "email", null: false
+    t.string "uid", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["uid"], name: "index_users_on_uid", unique: true

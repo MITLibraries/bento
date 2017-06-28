@@ -17,6 +17,8 @@
   <p>Was this search useful? <%= link_to('Send feedback', feedback_path) %>
 </div>
 
+<div id="hint"></div>
+
 <div class="gridband layout-2c">
   <%= render partial: "placeholders", locals: { heading: 'Books and media', id: 'books_content', description: "Books, ebooks, audio books, music, and videos at MIT. <a class='wc-link' href='https://mit.worldcat.org/search?qt=wc_org_mit&qt=affiliate&q=#{params[:q]}'>Expand search to libraries around the world</a>" } %>
 
@@ -37,4 +39,7 @@
   <%= render partial: "trigger_search", locals: { target: 'books', id: 'books_content'} %>
 
   <%= render partial: "trigger_search", locals: { target: 'google', id: 'website_content'} %>
+
+  <%= render partial: "trigger_hint" %>
+
 </script>
