@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one:
+  title: 'hint value'
+  url: 'http://example.com/get/stuff'
+
+unido:
+  title: 'UNIDO Statistics Data Portal'
+  url: 'http://libraries.mit.edu/get/unido-data'

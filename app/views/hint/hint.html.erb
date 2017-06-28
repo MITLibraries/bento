@@ -1,0 +1,9 @@
+<% if @hint %>
+  <div class="wrap-hint-box">
+    <div class="hint-box">
+      <p class="type">Popular result</p>
+      <h3 class="title"><%= @hint.title %></h3>
+      <p class="desc"><%= link_to(@hint.url, @hint.url, data: {type: "Hint"} ) %></p>
+    </div>
+  </div>
+<% end %>
