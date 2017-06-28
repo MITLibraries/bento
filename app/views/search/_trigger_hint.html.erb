@@ -1,0 +1,9 @@
+$.ajax({
+  url: "/hint?q=<%= URI.encode_www_form_component(params[:q]) %>"
+}).done(function( msg ) {
+  console.log(msg);
+  $('#hint').html( msg );
+  TrackLinks( $('#hint').find( 'a' ) );
+}).fail(function( xhr, textStatus ) {
+  console.log(xhr);
+});
