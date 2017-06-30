@@ -14,4 +14,8 @@ Flipflop.configure do
   feature :check_online,
     default: false,
     description: 'Enables button for EDS supplied non-subscribed SFX links'
+
+  feature :hints,
+    default: false,
+    description: 'Enables best bet search hint placards'
 end
