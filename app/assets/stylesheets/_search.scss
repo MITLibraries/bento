@@ -50,6 +50,11 @@
 
     @media (min-width: $bp-screen-sm) {
       display: inline-block;
+      color: $gray;
+
+      &:hover {
+        color: $brand-primary;
+      }
     }
 
     .count {
