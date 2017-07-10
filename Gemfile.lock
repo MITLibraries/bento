@@ -308,6 +308,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
+    stringex (2.7.1)
     term-ansicolor (1.6.0)
       tins (~> 1.0)
     therubyracer (0.12.3)
@@ -382,6 +383,7 @@ DEPENDENCIES
   simplecov
   skylight
   sqlite3
+  stringex
   therubyracer
   uglifier
   vcr
@@ -392,4 +394,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.14.6
+   1.15.1

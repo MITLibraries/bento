@@ -12,9 +12,14 @@ one:
 unido:
   title: 'UNIDO Statistics Data Portal'
   url: 'http://libraries.mit.edu/get/unido-data'
-  fingerprint: 'INDSTAT'
+  fingerprint: 'indstat'
 
 unido2:
   title: 'UNIDO Statistics Data Portal'
   url: 'http://libraries.mit.edu/get/unido-data'
-  fingerprint: 'IDSB'
+  fingerprint: 'idsb'
+
+webofscience:
+  title: 'Web of Science'
+  url: 'http://libraries.mit.edu/some/url/or/other'
+  fingerprint: 'of science web'

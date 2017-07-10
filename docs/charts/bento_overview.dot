@@ -1,6 +1,12 @@
 // dot docs/charts/bento_overview.dot -Tpng > docs/charts/bento_overview.png
+// requires installation of GraphViz (brew install graphviz, or
+// http://www.graphviz.org/Download..php if that doesn't work)
 
 digraph G {
+  "Search Term" -> "Hints app"
+  "Hints app" -> "Hints Results"
+  "Hints Results" -> "Results Page"
+
   "Search Term" -> "EDS API Articles Search"
   "EDS API Articles Search" -> "Articles Results"
   "Articles Results" -> "Results Page"
