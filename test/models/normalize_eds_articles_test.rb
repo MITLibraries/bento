@@ -56,6 +56,17 @@ class NormalizeEdsArticlesTest < ActiveSupport::TestCase
     end
   end
 
+  test 'normalized articles can handle no bibrecord bibentity' do
+    VCR.use_cassette('no bibrecord bibentity articles',
+                     allow_playback_repeats: true) do
+      raw_query = SearchEds.new.search('Al Rahmaniyah Mosque', 'apiwhatnot',
+                                       ENV['EDS_ARTICLE_FACETS'])
+      query = NormalizeEds.new.to_result(raw_query, 'articles',
+                                         'Al Rahmaniyah Mosque')
+      assert_equal(57, query['total'])
+    end
+  end
+
   test 'normalized articles have expected citation' do
     assert_equal('volume 38 issue 4', popcorn_articles['results'][0].citation)
     assert_equal('volume 69', popcorn_articles['results'][1].citation)
