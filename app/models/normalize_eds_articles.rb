@@ -35,6 +35,7 @@ class NormalizeEdsArticles
   end
 
   def doi
+    return unless bibrecord['BibEntity']
     return unless bibrecord['BibEntity']['Identifiers']
     doi_selector = bibrecord['BibEntity']['Identifiers'].select do |i|
       i['Type'] == 'doi'
