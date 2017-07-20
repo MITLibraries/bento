@@ -1,0 +1,322 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/UIDAuth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD"}'
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.2.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 20 Jul 2017 18:37:20 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '128'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+    http_version:
+  recorded_at: Thu, 20 Jul 2017 18:37:20 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apiwhatnot
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.2.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 20 Jul 2017 18:37:20 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - d252699a-508c-49f3-a2a3-9043b27ccf7f
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '1521223163'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '101'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+    http_version:
+  recorded_at: Thu, 20 Jul 2017 18:37:20 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&facetfilter=1,SourceType:Academic%20Journals,SourceType:Magazines,SourceType:Conference%20Materials&highlight=n&includefacets=n&pagenumber=1&query=National%20Cyclopaedia%20of%20American%20Biography&resultsperpage=5&searchmode=all&sort=relevance&view=detailed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.2.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 20 Jul 2017 18:37:20 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 7c4a836e-166f-47e1-a36e-4d120eae5160
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '1521223163'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '16319'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,National+Cyclopaedia+of+American+Biography&facetfilter=1,SourceType:Academic+Journals,SourceType:Magazines,SourceType:Conference+Materials&expander=fulltext&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&view=detailed&resultsperpage=5&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"National
+        Cyclopaedia of American Biography"},"RemoveAction":"removequery(1)"}],"FacetFiltersWithAction":[{"FilterId":1,"FacetValuesWithAction":[{"FacetValue":{"Id":"SourceType","Value":"Academic
+        Journals"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Academic Journals)"},{"FacetValue":{"Id":"SourceType","Value":"Magazines"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Magazines)"},{"FacetValue":{"Id":"SourceType","Value":"Conference
+        Materials"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Conference
+        Materials)"}],"RemoveAction":"removefacetfilter(1)"}],"ExpandersWithAction":[{"Id":"fulltext","RemoveAction":"removeexpander(fulltext)"}]}},"SearchResult":{"Statistics":{"TotalHits":59094,"TotalSearchTime":417,"Databases":[{"Id":"fah","Label":"Film
+        & Television Literature Index","Status":"0","Hits":0},{"Id":"edswbe","Label":"World
+        Bank eLibrary","Status":"0","Hits":0},{"Id":"eric","Label":"ERIC","Status":"0","Hits":0},{"Id":"rih","Label":"RILM
+        Abstracts of Music Literature (1967 to Present only)","Status":"0","Hits":0},{"Id":"agr","Label":"Agricola","Status":"0","Hits":3},{"Id":"lah","Label":"CAB
+        Abstracts","Status":"0","Hits":0},{"Id":"egh","Label":"Environment Index","Status":"0","Hits":0},{"Id":"inh","Label":"Inspec","Status":"0","Hits":0},{"Id":"ecn","Label":"EconLit","Status":"0","Hits":0},{"Id":"bvh","Label":"Avery
+        Index to Architectural Periodicals","Status":"0","Hits":0},{"Id":"ufh","Label":"Communication
+        & Mass Media Complete","Status":"0","Hits":15},{"Id":"fjh","Label":"The New
+        Republic Archive","Status":"0","Hits":0},{"Id":"qth","Label":"LGBT Life with
+        Full Text","Status":"0","Hits":1},{"Id":"fyh","Label":"Women''s Studies International","Status":"0","Hits":0},{"Id":"fmh","Label":"Gender
+        Studies Database","Status":"0","Hits":0},{"Id":"ibh","Label":"International
+        Bibliography of Theatre & Dance with Full Text","Status":"0","Hits":1},{"Id":"bth","Label":"Business
+        Source Complete","Status":"0","Hits":20},{"Id":"lxh","Label":"Library, Information
+        Science & Technology Abstracts","Status":"0","Hits":0},{"Id":"nih","Label":"The
+        Nation Archive","Status":"0","Hits":24},{"Id":"mah","Label":"Music Index","Status":"0","Hits":0},{"Id":"a9h","Label":"Academic
+        Search Complete","Status":"0","Hits":137},{"Id":"ich","Label":"Index Islamicus","Status":"0","Hits":0},{"Id":"ahl","Label":"America:
+        History & Life","Status":"0","Hits":2},{"Id":"hia","Label":"Historical Abstracts","Status":"0","Hits":3},{"Id":"poh","Label":"Political
+        Science Complete","Status":"0","Hits":12},{"Id":"phl","Label":"Philosopher''s
+        Index","Status":"0","Hits":0},{"Id":"8gh","Label":"GreenFILE","Status":"0","Hits":0},{"Id":"edswss","Label":"Social
+        Sciences Citation Index","Status":"0","Hits":0},{"Id":"edswsc","Label":"Science
+        Citation Index","Status":"0","Hits":0},{"Id":"apn","Label":"Alternative Press
+        Index","Status":"0","Hits":0},{"Id":"edspdh","Label":"PsycARTICLES","Status":"0","Hits":2},{"Id":"edswah","Label":"Arts
+        & Humanities Citation Index","Status":"0","Hits":0},{"Id":"edselp","Label":"ScienceDirect","Status":"0","Hits":28},{"Id":"hma","Label":"Humanities
+        Abstracts (H.W. Wilson)","Status":"0","Hits":0},{"Id":"hsr","Label":"Humanities
+        & Social Sciences Index Retrospective: 1907-1984 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"air","Label":"Art
+        Index Retrospective (H.W. Wilson)","Status":"0","Hits":0},{"Id":"rga","Label":"Readers''
+        Guide Abstracts (H.W. Wilson)","Status":"0","Hits":0},{"Id":"rgr","Label":"Readers''
+        Guide Retrospective: 1890-1982 (H.W. Wilson)","Status":"0","Hits":1},{"Id":"bpr","Label":"Business
+        Periodicals Index Retrospective: 1913-1982 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"mdc","Label":"MEDLINE
+        Complete","Status":"0","Hits":11},{"Id":"edslex","Label":"LexisNexis Academic:
+        Law Reviews","Status":"0","Hits":59},{"Id":"cat00916a","Label":"MIT Barton
+        Catalog","Status":"0","Hits":2},{"Id":"edsasp","Label":"Alexander Street Press","Status":"0","Hits":0},{"Id":"edo","Label":"Supplemental
+        Index","Status":"0","Hits":0},{"Id":"edb","Label":"Complementary Index","Status":"0","Hits":425},{"Id":"edsjst","Label":"J-STAGE","Status":"0","Hits":1},{"Id":"edsjsr","Label":"JSTOR
+        Journals","Status":"0","Hits":0},{"Id":"edsdoj","Label":"Directory of Open
+        Access Journals","Status":"0","Hits":0},{"Id":"edsper","Label":"Persée","Status":"0","Hits":0},{"Id":"ant","Label":"Anthropology
+        Plus","Status":"0","Hits":0},{"Id":"edshol","Label":"HeinOnline","Status":"0","Hits":3},{"Id":"eue","Label":"Education
+        Source","Status":"0","Hits":26},{"Id":"hus","Label":"Humanities Source","Status":"0","Hits":114},{"Id":"aci","Label":"Applied
+        Science & Technology Source","Status":"0","Hits":0},{"Id":"cat01763a","Label":"MIT
+        Course Reserves","Status":"0","Hits":0},{"Id":"htm","Label":"History of Science,
+        Technology & Medicine","Status":"0","Hits":0},{"Id":"edshtl","Label":"HathiTrust","Status":"0","Hits":58166},{"Id":"edsecd","Label":"Energy
+        Citations Database","Status":"0","Hits":0},{"Id":"asu","Label":"Art & Architecture
+        Source","Status":"0","Hits":38},{"Id":"edsvec","Label":"CQ Press Voting &
+        Elections Collection","Status":"0","Hits":0},{"Id":"edscoc","Label":"CQ Press
+        Congress Collection","Status":"0","Hits":0},{"Id":"edsonp","Label":"OnePetro","Status":"0","Hits":0},{"Id":"edseee","Label":"IEEE
+        Xplore Digital Library","Status":"0","Hits":0},{"Id":"msn","Label":"MathSciNet
+        via EBSCOhost","Status":"0","Hits":0},{"Id":"edsoec","Label":"OECD iLibrary","Status":"0","Hits":0},{"Id":"edsstc","Label":"SciTech
+        Connect","Status":"0","Hits":0},{"Id":"edsrsa","Label":"ReferenceUSA - U.S.
+        Businesses","Status":"0","Hits":0},{"Id":"edsinv","Label":"IN VIVO","Status":"0","Hits":0},{"Id":"hev","Label":"European
+        Views of the Americas: 1493 to 1750","Status":"0","Hits":0},{"Id":"edsoso","Label":"Oxford
+        Scholarship Online","Status":"0","Hits":0},{"Id":"edsarx","Label":"arXiv","Status":"0","Hits":0},{"Id":"nlabk","Label":"Audiobook
+        Collection (EBSCOhost)","Status":"0","Hits":0},{"Id":"nlebk","Label":"eBook
+        Collection (EBSCOhost)","Status":"0","Hits":0},{"Id":"pix","Label":"Play Index
+        (H.W. Wilson)","Status":"0","Hits":0},{"Id":"edsoao","Label":"Grove Art Online","Status":"0","Hits":0},{"Id":"edsoad","Label":"American
+        National Biography Online","Status":"0","Hits":0},{"Id":"edsomo","Label":"Grove
+        Music Online","Status":"0","Hits":0},{"Id":"edsebo","Label":"Britannica Online","Status":"0","Hits":0},{"Id":"edsssb","Label":"Books24x7","Status":"0","Hits":0},{"Id":"edsmbo","Label":"Marquis
+        Biographies Online","Status":"0","Hits":0},{"Id":"edshst","Label":"Henry Stewart
+        Talks","Status":"0","Hits":0},{"Id":"edsodb","Label":"Oxford Dictionary of
+        National Biography","Status":"0","Hits":0},{"Id":"edscrc","Label":"Credo Reference","Status":"0","Hits":0},{"Id":"edsoro","Label":"Oxford
+        Reference","Status":"0","Hits":0},{"Id":"edsnmj","Label":"Naxos Music Library
+        Jazz","Status":"0","Hits":0},{"Id":"edsnol","Label":"Naxos Music Library","Status":"0","Hits":0},{"Id":"ers","Label":"Research
+        Starters","Status":"0","Hits":0},{"Id":"edsspo","Label":"SpringerProtocols","Status":"0","Hits":0},{"Id":"edssmt","Label":"SpringerMaterials","Status":"0","Hits":0},{"Id":"edskan","Label":"Kanopy","Status":"0","Hits":0},{"Id":"edscao","Label":"CQ
+        Almanac Online Edition","Status":"0","Hits":0},{"Id":"edsmmd","Label":"ASM
+        Medical Materials Database","Status":"0","Hits":0}]},"Data":{"RecordFormat":"EP
+        Display","Records":[{"ResultId":1,"Header":{"DbId":"cat00916a","DbLabel":"MIT
+        Barton Catalog","An":"mit.000630725","RelevancyScore":"1884","PubType":"Periodical","PubTypeId":"serialPeriodical"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&scope=site&db=cat00916a&AN=mit.000630725&authtype=sso&custid=s8978330","CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/000630725?","Name":"MIT
+        Barton Catalog Full Record (cat00916a)","Category":"libCatalog","Text":"View
+        catalog record","MouseOverText":"Go to Barton catalog to find this at the
+        MIT Libraries"},{"Url":"https:\/\/mit.worldcat.org\/search?q=no%3A02510562","Name":"WorldCat
+        customlink","Category":"ill","Text":"Get it in the library","MouseOverText":"Get
+        items from MIT & non-MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"The
+        National cyclopaedia of American biography. Current volume."},{"Name":"TypePub","Label":"Publication
+        Type","Group":"TypPub","Data":"Periodical"},{"Name":"SubjectGeographic","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22United+States+--+Biography+--+Dictionaries%22&quot;&gt;United
+        States -- Biography -- Dictionaries&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22United+States+--+Biography+--+Periodicals%22&quot;&gt;United
+        States -- Biography -- Periodicals&lt;\/searchLink&gt;"},{"Name":"TitleAlt","Label":"Other
+        Titles","Group":"TiAlt","Data":"National cyclopedia of American biography."}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"United
+        States -- Biography -- Dictionaries","Type":"general"},{"SubjectFull":"United
+        States -- Biography -- Periodicals","Type":"general"}],"Titles":[{"TitleFull":"The
+        National cyclopaedia of American biography.","Type":"main"}]},"BibRelationships":{"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1930"}],"Titles":[{"TitleFull":"The
+        National cyclopaedia of American biography. Current volume.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Library
+        Storage Annex - Off Campus Collection","ShelfLocator":"E176.N271"}]}}]},{"ResultId":2,"Header":{"DbId":"cat00916a","DbLabel":"MIT
+        Barton Catalog","An":"mit.000293848","RelevancyScore":"1882","PubType":"Periodical","PubTypeId":"serialPeriodical"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&scope=site&db=cat00916a&AN=mit.000293848&authtype=sso&custid=s8978330","CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/000293848?","Name":"MIT
+        Barton Catalog Full Record (cat00916a)","Category":"libCatalog","Text":"View
+        catalog record","MouseOverText":"Go to Barton catalog to find this at the
+        MIT Libraries"},{"Url":"https:\/\/mit.worldcat.org\/search?q=no%3A01759175","Name":"WorldCat
+        customlink","Category":"ill","Text":"Get it in the library","MouseOverText":"Get
+        items from MIT & non-MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"The
+        National cyclopaedia of American biography."},{"Name":"TypePub","Label":"Publication
+        Type","Group":"TypPub","Data":"Periodical"},{"Name":"SubjectGeographic","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22United+States+--+Biography%22&quot;&gt;United
+        States -- Biography&lt;\/searchLink&gt;"},{"Name":"TitleAlt","Label":"Other
+        Titles","Group":"TiAlt","Data":"National cyclopedia of American biography."}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"United
+        States -- Biography","Type":"general"}],"Titles":[{"TitleFull":"The National
+        cyclopaedia of American biography.","Type":"main"}]},"BibRelationships":{"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1898"}],"Titles":[{"TitleFull":"The
+        National cyclopaedia of American biography.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Library
+        Storage Annex - Off Campus Collection","ShelfLocator":"E176.N271"}]}}]},{"ResultId":3,"Header":{"DbId":"agr","DbLabel":"Agricola","An":"CAT78702376","RelevancyScore":"1637","PubType":"Academic
+        Journal","PubTypeId":"academicJournal"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&scope=site&db=agr&AN=CAT78702376&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?&atitle=The%20National%20cyclopaedia%20of%20American%20biography.&title=The%20National%20cyclopaedia%20of%20American%20biography.&isbn=&volume=&issue=&date=18980101&aulast=&spage=&pages=&sid=EBSCO:Agricola:CAT78702376","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"The
+        National cyclopaedia of American biography."},{"Name":"Publisher","Label":"Publisher","Group":"PublrInfo","Data":"New
+        York, James T. White"},{"Name":"TypePub","Label":"Publication Type","Group":"TypPub","Data":"Journal
+        Article"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Code":"eng","Text":"English"}],"Subjects":[{"SubjectFull":"United
+        States-Biography","Type":"general"}],"Titles":[{"TitleFull":"The National
+        cyclopaedia of American biography.","Type":"main"}]},"BibRelationships":{"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Text":"18980101","Type":"published","Y":"1898"}]}}]}}}},{"ResultId":4,"Header":{"DbId":"agr","DbLabel":"Agricola","An":"CAT78702374","RelevancyScore":"1635","PubType":"Academic
+        Journal","PubTypeId":"academicJournal"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&scope=site&db=agr&AN=CAT78702374&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?&atitle=The%20National%20cyclopaedia%20of%20American%20biography.%20Current%20volume.&title=The%20National%20cyclopaedia%20of%20American%20biography.%20Current%20volume.&isbn=&volume=&issue=&date=19260101&aulast=&spage=&pages=&sid=EBSCO:Agricola:CAT78702374","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"The
+        National cyclopaedia of American biography. Current volume."},{"Name":"Publisher","Label":"Publisher","Group":"PublrInfo","Data":"New
+        York, J. T. White"},{"Name":"TypePub","Label":"Publication Type","Group":"TypPub","Data":"Journal
+        Article"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Code":"eng","Text":"English"}],"Subjects":[{"SubjectFull":"United
+        States-Biography","Type":"general"}],"Titles":[{"TitleFull":"The National
+        cyclopaedia of American biography. Current volume.","Type":"main"}]},"BibRelationships":{"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Text":"19260101","Type":"published","Y":"1926"}]}}]}}}},{"ResultId":5,"Header":{"DbId":"agr","DbLabel":"Agricola","An":"CAT78702373","RelevancyScore":"1634","PubType":"Academic
+        Journal","PubTypeId":"academicJournal"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&scope=site&db=agr&AN=CAT78702373&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?&atitle=The%20National%20cyclopaedia%20of%20American%20biography%20index.&title=The%20National%20cyclopaedia%20of%20American%20biography%20index.&isbn=&volume=&issue=&date=&aulast=&spage=&pages=&sid=EBSCO:Agricola:CAT78702373","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"The
+        National cyclopaedia of American biography index."},{"Name":"Publisher","Label":"Publisher","Group":"PublrInfo","Data":"New
+        York, James T. White and Company"},{"Name":"TypePub","Label":"Publication
+        Type","Group":"TypPub","Data":"Journal Article"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Code":"eng","Text":"English"}],"Subjects":[{"SubjectFull":"United
+        States-Biography","Type":"general"}],"Titles":[{"TitleFull":"The National
+        cyclopaedia of American biography index.","Type":"main"}]}}}}]}}}'
+    http_version:
+  recorded_at: Thu, 20 Jul 2017 18:37:21 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - ba8774d4-efb3-49d2-a840-d503d012b342
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Mon, 07 Nov 2016 20:55:07 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"IsSuccessful":"y"}'
+    http_version:
+  recorded_at: Thu, 20 Jul 2017 18:37:21 GMT
+recorded_with: VCR 3.0.3
