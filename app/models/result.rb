@@ -82,6 +82,8 @@ class Result
   end
 
   # prioritizes proxied links
+  # this is really hack and only moves a specified match to the top and does
+  # not allow for an actual custom sorted prioritization of links
   def fulltext_link_sorter(link)
     urls = link.flatten.compact.map { |x| x['Url'] }
     urls.sort do |x|

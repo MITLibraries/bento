@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: hints
+#
+#  id          :integer          not null, primary key
+#  title       :string           not null
+#  url         :string           not null
+#  fingerprint :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 require 'test_helper'
 
 class HintTest < ActiveSupport::TestCase
@@ -66,7 +78,7 @@ class HintTest < ActiveSupport::TestCase
     assert_equal(Hint.fingerprint('Introdüction to C++'),
                  Hint.fingerprint('Introduction to C++'))
 
-    assert_equal(Hint.fingerprint(' Introduction to C++' ),
+    assert_equal(Hint.fingerprint(' Introduction to C++'),
                  Hint.fingerprint('Introduction to C++'))
 
     assert_equal(Hint.fingerprint('C++: an introduction'),

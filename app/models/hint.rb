@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: hints
+#
+#  id          :integer          not null, primary key
+#  title       :string           not null
+#  url         :string           not null
+#  fingerprint :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 require 'stringex/core_ext'
 
 class Hint < ApplicationRecord
