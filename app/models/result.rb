@@ -43,7 +43,8 @@ class Result
 
   # domains we consider relevant when evaluating links
   def relevant_links
-    ['libproxy.mit.edu', 'library.mit.edu', 'sfx.mit.edu', 'owens.mit.edu']
+    ['libproxy.mit.edu', 'library.mit.edu', 'sfx.mit.edu', 'owens.mit.edu',
+     'libraries.mit.edu']
   end
 
   # Check fulltext_links for specific parameters to allow for prioritization

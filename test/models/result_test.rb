@@ -170,6 +170,12 @@ class ResultTest < ActiveSupport::TestCase
     assert_equal('http://library.mit.edu/F/this_is_a_marc856_link', r.getit_url)
   end
 
+  test 'getit_url with libraries.mit.edu url' do
+    r = record_with_all_url_possibilities
+    r.marc_856 = 'http://libraries.mit.edu/get/stuff'
+    assert_equal('http://libraries.mit.edu/get/stuff', r.getit_url)
+  end
+
   test 'getit_url with irrelevant marc_856 url' do
     r = record_with_all_url_possibilities
     r.marc_856 = 'http://example.org/this_is_a_marc856_link'
