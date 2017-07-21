@@ -31,7 +31,7 @@ class SearchController < ApplicationController
   # items when necessary.
   def search_results(page, per_page)
     return unless valid_target?
-    Rails.cache.fetch(cache_key(page, per_page)) do
+    Rails.cache.fetch(cache_key(page, per_page), expires_in: 1.day) do
       search_target(page, per_page)
     end
   end
