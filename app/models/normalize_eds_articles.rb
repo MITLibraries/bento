@@ -35,6 +35,7 @@ class NormalizeEdsArticles
   end
 
   def doi
+    return unless bibrecord
     return unless bibrecord['BibEntity']
     return unless bibrecord['BibEntity']['Identifiers']
     doi_selector = bibrecord['BibEntity']['Identifiers'].select do |i|
@@ -81,11 +82,12 @@ class NormalizeEdsArticles
   end
 
   def bibentity
-    return unless relationships['IsPartOfRelationships']
+    return unless relationships && relationships['IsPartOfRelationships']
     relationships['IsPartOfRelationships'][0]['BibEntity']
   end
 
   def relationships
+    return unless bibrecord
     bibrecord['BibRelationships']
   end
 end

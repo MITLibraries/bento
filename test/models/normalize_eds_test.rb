@@ -158,4 +158,18 @@ class NormalizeEdsTest < ActiveSupport::TestCase
       assert(query['results'][0].valid?)
     end
   end
+
+  test 'handle missing bibentity relationships' do
+    VCR.use_cassette('National Cyclopaedia of American Biography',
+                     allow_playback_repeats: true) do
+      raw_query = SearchEds.new.search(
+        'National Cyclopaedia of American Biography', 'apiwhatnot',
+        ENV['EDS_ARTICLE_FACETS'], 1, 5
+      )
+      query = NormalizeEds.new.to_result(
+        raw_query, 'articles', 'National Cyclopaedia of American Biography'
+      )
+      assert(query['results'][0].valid?)
+    end
+  end
 end
