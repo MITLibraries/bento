@@ -5,6 +5,9 @@
     "ALEPH_API_URI": {
       "required": true
     },
+    "ALEPH_HINT_SOURCE": {
+      "required": true
+    },
     "ALEPH_KEY": {
       "required": true
     },

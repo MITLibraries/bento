@@ -45,6 +45,7 @@ Search API. Appropriate credentials for both are required (see below).
 
 ## Optional Environment Variables
 
+- `ALEPH_HINT_SOURCE`: HTTP GET accessible marcxml source for Hints
 - `EDS_TIMEOUT`: value to override the 6 second default for EDS timeout
 - `FLIPFLOP_KEY`: set this to enable access to the flipflop dashboard
 - `LOG_LIKE_PROD`: uses prod-like logging in development if set
