@@ -1,4 +1,4 @@
-namespace :loadhints do
+namespace :reloadhints do
   desc 'Drop and Reload Hints from Aleph Source'
   task aleph: :environment do
     Rails.logger.info('Reloading Aleph Hints')
