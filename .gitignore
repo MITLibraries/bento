@@ -20,3 +20,5 @@ coverage
 
 .byebug_history
 .DS_Store
+doc/
+.yardoc/

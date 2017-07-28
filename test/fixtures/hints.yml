@@ -8,6 +8,7 @@
 #  fingerprint :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  source      :string           not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
@@ -20,18 +21,22 @@ one:
   title: 'hint value'
   url: 'http://example.com/get/stuff'
   fingerprint: 'popcorn'
+  source: 'manual'
 
 unido:
   title: 'UNIDO Statistics Data Portal'
   url: 'http://libraries.mit.edu/get/unido-data'
   fingerprint: 'indstat'
+  source: 'manual'
 
 unido2:
   title: 'UNIDO Statistics Data Portal'
   url: 'http://libraries.mit.edu/get/unido-data'
   fingerprint: 'idsb'
+  source: 'manual'
 
 webofscience:
   title: 'Web of Science'
   url: 'http://libraries.mit.edu/some/url/or/other'
   fingerprint: 'of science web'
+  source: 'manual'

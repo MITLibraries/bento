@@ -8,6 +8,7 @@
 #  fingerprint :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  source      :string           not null
 #
 
 require 'test_helper'
@@ -180,5 +181,29 @@ class HintTest < ActiveSupport::TestCase
 
     match = Hint.match('scíënçe!, WEB OF ')
     assert_equal(hints(:webofscience), match)
+  end
+
+  test 'duplicates via create for a single source result in db error' do
+    Hint.create(title: 't', url: 'u', fingerprint: 'fp', source: 'source1')
+    assert_raise ActiveRecord::RecordNotUnique do
+      Hint.create(title: 't', url: 'u2', fingerprint: 'fp', source: 'source1')
+    end
+  end
+
+  test 'duplicates via upsert for a single source result in an update' do
+    initial_count = Hint.count
+    Hint.upsert(title: 't', url: 'u', fingerprint: 'fp', source: 'source1')
+    assert_equal(Hint.count, initial_count + 1)
+    assert_equal(Hint.match('fp').url, 'u')
+    Hint.upsert(title: 't', url: 'u2', fingerprint: 'fp', source: 'source1')
+    assert_equal(Hint.count, initial_count + 1)
+    assert_equal(Hint.match('fp').url, 'u2')
+  end
+
+  test 'duplicates fingerprints for different sources are allowed' do
+    initial_count = Hint.count
+    Hint.create(title: 't', url: 'u', fingerprint: 'fp', source: 'source1')
+    Hint.create(title: 't', url: 'u', fingerprint: 'fp', source: 'source2')
+    assert_equal(Hint.count, initial_count + 2)
   end
 end

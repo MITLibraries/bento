@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623172641) do
+ActiveRecord::Schema.define(version: 20170727185125) do
 
   create_table "hints", force: :cascade do |t|
     t.string "title", null: false
@@ -18,7 +18,10 @@ ActiveRecord::Schema.define(version: 20170623172641) do
     t.string "fingerprint", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "source", null: false
+    t.index ["fingerprint", "source"], name: "index_hints_on_fingerprint_and_source", unique: true
     t.index ["fingerprint"], name: "index_hints_on_fingerprint"
+    t.index ["source"], name: "index_hints_on_source"
   end
 
   create_table "users", force: :cascade do |t|
