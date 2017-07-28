@@ -8,14 +8,36 @@
 #  fingerprint :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  source      :string           not null
 #
 
 require 'stringex/core_ext'
 
 class Hint < ApplicationRecord
+  validates :title, presence: true
+  validates :url, presence: true
+  validates :fingerprint, presence: true
+  validates :source, presence: true
+  validates :fingerprint, uniqueness: { scope: :source }
+
   def self.match(searchterm)
     searchprint = fingerprint(searchterm)
     Hint.find_by(fingerprint: searchprint)
+  end
+
+  # Updates a record if it exists, creates one if it does not
+  # @note an exception is thrown if validations fail to allow a loader to
+  #       rollback and sanity check data
+  # @return [Hint]
+  def self.upsert(title:, url:, fingerprint:, source:)
+    hint = Hint.find_by(fingerprint: fingerprint, source: source)
+    if hint
+      hint.update(title: title, url: url)
+      hint.reload
+    else
+      Hint.create!(title: title, url: url, fingerprint: fingerprint,
+                   source: source)
+    end
   end
 
   # This implements the OpenRefine fingerprinting algorithm. See

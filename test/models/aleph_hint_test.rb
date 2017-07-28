@@ -12,11 +12,34 @@ class AlephHintTest < ActiveSupport::TestCase
     VCR.use_cassette('aleph hint', allow_playback_repeats: true) do
       assert_equal(4, Hint.count)
       AlephHint.new.process_records
-      assert_equal(15, Hint.count)
+      assert_equal(14, Hint.count)
       assert_equal('http://libraries.mit.edu/get/ericfull',
                    Hint.match('esubscribe').url)
       assert_equal('http://libraries.mit.edu/get/encislam',
                    Hint.match('Encyclopedia of Islam').url)
+    end
+  end
+
+  test 'reload hints removes existing source hints but leaves other sources' do
+    VCR.use_cassette('aleph hint', allow_playback_repeats: true) do
+      Hint.upsert(title: 't', url: 'url', fingerprint: 'fp', source: 'aleph')
+      assert_equal(1, Hint.where(source: 'aleph').count)
+      assert_equal(4, Hint.where(source: 'manual').count)
+      assert_equal('url', Hint.match('fp').url)
+      AlephHint.new.reload
+      assert_equal(10, Hint.where(source: 'aleph').count)
+      assert_equal(4, Hint.where(source: 'manual').count)
+      assert_nil(Hint.match('fp'))
+    end
+  end
+
+  test 'reload hints rollsback on errors' do
+    VCR.use_cassette('aleph hint loader error', allow_playback_repeats: true) do
+      assert_equal(4, Hint.count)
+      assert_raise ActiveRecord::RecordInvalid do
+        AlephHint.new.reload
+      end
+      assert_equal(4, Hint.count)
     end
   end
 
@@ -30,7 +53,7 @@ class AlephHintTest < ActiveSupport::TestCase
 
   test 'loader throws exception when encountering a record without a get url' do
     VCR.use_cassette('aleph hint loader error', allow_playback_repeats: true) do
-      assert_raise ActiveRecord::NotNullViolation do
+      assert_raise ActiveRecord::RecordInvalid do
         AlephHint.new.process_records
       end
     end

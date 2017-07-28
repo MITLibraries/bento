@@ -4,6 +4,7 @@ require 'open-uri'
 class AlephHint
   def initialize
     @marcxml = marcxml
+    @source = 'aleph'
   end
 
   # Load aleph hint source as XML
@@ -16,6 +17,15 @@ class AlephHint
     @marcxml.xpath('//xmlns:record')
   end
 
+  # Deletes all Hints for the aleph source and reloads from the external source
+  # @note rollback if any errors occur
+  def reload
+    ActiveRecord::Base.transaction do
+      Hint.where(source: @source).delete_all
+      process_records
+    end
+  end
+
   # Loops over records and calls out to hint creation logic
   def process_records
     records.each do |record|
@@ -24,23 +34,18 @@ class AlephHint
   end
 
   # Creates Hints for each record for each title and alt title
-  # NOTE: at this time there is no detection of duplicates as that logic
-  # may better reside in the Hint object itself to handle duplicates that may
-  # originate from different loaders.
+  # @note duplicates are handled in the [Hint] model and are last one in wins
   def record_to_hints(record)
-    Hint.create(title: title(record), url: best_url(record),
-                fingerprint: Hint.fingerprint(title(record)))
-
-    fingerprint_alt_titles(246, record)
-
-    fingerprint_alt_titles(740, record)
+    fingerprint_titles(245, record)
+    fingerprint_titles(246, record)
+    fingerprint_titles(740, record)
   end
 
-  # Creates a Hint for each alternate title
-  def fingerprint_alt_titles(field, record)
+  # Creates a Hint for each title
+  def fingerprint_titles(field, record)
     alt_titles(field, record).each do |alt_title|
-      Hint.create(title: title(record), url: best_url(record),
-                  fingerprint: Hint.fingerprint(alt_title))
+      Hint.upsert(title: title(record), url: best_url(record),
+                  fingerprint: Hint.fingerprint(alt_title), source: @source)
     end
   end
 
@@ -61,7 +66,7 @@ class AlephHint
     )
   end
 
-  # For some reason, we sometimes use the standard 866$u for URLs but other
+  # For some reason, we sometimes use the standard 856$u for URLs but other
   # times use 956$u.
   def url(record)
     urls = []
@@ -71,7 +76,7 @@ class AlephHint
   end
 
   # Select the first Get URL from the array of urls
-  # NOTE: the datasource was created by selecting records that contained
+  # @note the datasource was created by selecting records that contained
   # this url pattern so we make the assumption here that at least one url
   # should indeed match. Failure to maintain that contract will result in
   # an exception error during the loading of records.

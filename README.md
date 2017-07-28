@@ -16,6 +16,15 @@ Search API. Appropriate credentials for both are required (see below).
 ## Bento System Overview
 ![alt text](docs/charts/bento_overview.png "Bento system overview chart")
 
+## Loading Hints
+
+Tasks exist to reload hints from supported sources.
+Example to reload Aleph hints in a development environment:
+```
+heroku local:run bin/rails reloadhints:aleph
+```
+_note_: `reloadhints:aleph` requires ENV `ALEPH_HINT_SOURCE`
+
 ## Required Environment Variables
 
 - `ALEPH_API_URI`: endpoint URI for Aleph Realtime Availability checks
