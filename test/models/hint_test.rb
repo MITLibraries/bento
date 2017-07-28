@@ -184,9 +184,9 @@ class HintTest < ActiveSupport::TestCase
   end
 
   test 'duplicates via create for a single source result in db error' do
-    Hint.create(title: 't', url: 'u', fingerprint: 'fp', source: 'source1')
-    assert_raise ActiveRecord::RecordNotUnique do
-      Hint.create(title: 't', url: 'u2', fingerprint: 'fp', source: 'source1')
+    Hint.create!(title: 't', url: 'u', fingerprint: 'fp', source: 'source1')
+    assert_raise ActiveRecord::RecordInvalid do
+      Hint.create!(title: 't', url: 'u2', fingerprint: 'fp', source: 'source1')
     end
   end
 
@@ -202,8 +202,8 @@ class HintTest < ActiveSupport::TestCase
 
   test 'duplicates fingerprints for different sources are allowed' do
     initial_count = Hint.count
-    Hint.create(title: 't', url: 'u', fingerprint: 'fp', source: 'source1')
-    Hint.create(title: 't', url: 'u', fingerprint: 'fp', source: 'source2')
+    Hint.create!(title: 't', url: 'u', fingerprint: 'fp', source: 'source1')
+    Hint.create!(title: 't', url: 'u', fingerprint: 'fp', source: 'source2')
     assert_equal(Hint.count, initial_count + 2)
   end
 end

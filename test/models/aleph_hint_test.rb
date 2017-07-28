@@ -30,7 +30,7 @@ class AlephHintTest < ActiveSupport::TestCase
 
   test 'loader throws exception when encountering a record without a get url' do
     VCR.use_cassette('aleph hint loader error', allow_playback_repeats: true) do
-      assert_raise ActiveRecord::NotNullViolation do
+      assert_raise ActiveRecord::RecordInvalid do
         AlephHint.new.process_records
       end
     end
