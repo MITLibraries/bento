@@ -17,6 +17,15 @@ class AlephHint
     @marcxml.xpath('//xmlns:record')
   end
 
+  # Deletes all Hints for the aleph source and reloads from the external source
+  # @note rollback if any errors occur
+  def reload
+    ActiveRecord::Base.transaction do
+      Hint.where(source: @source).delete_all
+      process_records
+    end
+  end
+
   # Loops over records and calls out to hint creation logic
   def process_records
     records.each do |record|
