@@ -1,0 +1,252 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.dropbox.com/s/47o8j5e0wzxahjs/unshared.csv?dl=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 31 Jul 2017 20:13:17 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Content-Security-Policy:
+      - sandbox
+      Location:
+      - "/sso?cont=https%3A%2F%2Fwww.dropbox.com%2Fs%2F47o8j5e0wzxahjs%2Funshared.csv%3Fdl%3D1&from_shmodel=True"
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-js_csrf=WkHlRgbDIrLe2NCYb6Z2z02w; expires=Thu, 30 Jul 2020 20:13:17
+        GMT; Path=/; secure
+      - bang=QUFEb3NnY1BNOGxjVmZpTDdFVHhmOGFKMkJ2UDVxZVRiODBQajBSbWZLUzhZUQ%3D%3D;
+        Domain=dropbox.com; expires=Mon, 31 Jul 2017 20:29:57 GMT; httponly; Path=/;
+        secure
+      - flash=UGxlYXNlIHNpZ24gaW4gd2l0aCB5b3VyIHdvcmsgY3JlZGVudGlhbHMgdG8gdmlldyB0aGlzIGxpbmsu;
+        Domain=dropbox.com; expires=Mon, 31 Jul 2017 20:29:57 GMT; httponly; Path=/;
+        secure
+      - gvc=Mjc0ODQ4NjQ1MjM5MjY5OTkxMTIxMTg3MDM4OTI5MzkzNTA2NTU4; expires=Sat, 30
+        Jul 2022 20:13:17 GMT; httponly; Path=/; secure
+      - locale=en; Domain=dropbox.com; expires=Sat, 30 Jul 2022 20:13:17 GMT; Path=/;
+        secure
+      - puc=; expires=Mon, 31 Jul 2017 20:13:17 GMT; httponly; Path=/; secure
+      - t=WkHlRgbDIrLe2NCYb6Z2z02w; Domain=dropbox.com; expires=Thu, 30 Jul 2020 20:13:17
+        GMT; httponly; Path=/; secure
+      X-Content-Type-Options:
+      - nosniff
+      X-Dropbox-Request-Id:
+      - af54dce4dc78554614f2c67f90915236
+      X-Frame-Options:
+      - DENY
+      X-Robots-Tag:
+      - noindex, nofollow, noimageindex
+      X-Xss-Protection:
+      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 31 Jul 2017 20:03:42 GMT
+- request:
+    method: get
+    uri: https://www.dropbox.com/sso?cont=https://www.dropbox.com/s/47o8j5e0wzxahjs/unshared.csv?dl=1&from_shmodel=True
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 31 Jul 2017 20:13:17 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache
+      Content-Security-Policy:
+      - 'script-src ''unsafe-eval'' https://www.dropbox.com/static/compiled/js/ https://www.dropbox.com/static/javascript/
+        https://www.dropbox.com/static/api/ https://cfl.dropboxstatic.com/static/compiled/js/
+        https://www.dropboxstatic.com/static/compiled/js/ https://cfl.dropboxstatic.com/static/previews/
+        https://www.dropboxstatic.com/static/previews/ https://cfl.dropboxstatic.com/static/javascript/
+        https://www.dropboxstatic.com/static/javascript/ https://cfl.dropboxstatic.com/static/api/
+        https://www.dropboxstatic.com/static/api/ https://www.google.com/recaptcha/api/
+        ''unsafe-inline'' ''nonce-vKUyPKmkbzh2qt7896FB'' ; default-src ''none'' ;
+        worker-src https://www.dropbox.com/static/serviceworker/ blob: ; style-src
+        https://* ''unsafe-inline'' ''unsafe-eval'' ; connect-src https://* ws://127.0.0.1:*/ws
+        ; child-src https://www.dropbox.com/static/serviceworker/ blob: ; base-uri
+        ''self'' api-stream.dropbox.com showbox-tr.dropbox.com ; img-src https://*
+        data: blob: ; frame-src https://* carousel://* dbapi-6://* dbapi-7://* dbapi-8://*
+        itms-apps://* itms-appss://* ; object-src https://cfl.dropboxstatic.com/static/
+        https://www.dropboxstatic.com/static/ ''self'' https://flash.dropboxstatic.com
+        https://swf.dropboxstatic.com https://dbxlocal.dropboxstatic.com ; media-src
+        https://* blob: ; font-src https://* data:'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-js_csrf=0TPMOGdn8mkIisEvmC4O3Qo4; expires=Thu, 30 Jul 2020 20:13:17
+        GMT; Path=/; secure
+      - bang=; Domain=dropbox.com; expires=Mon, 31 Jul 2017 20:13:17 GMT; httponly;
+        Path=/; secure
+      - flash=; Domain=dropbox.com; expires=Mon, 31 Jul 2017 20:13:17 GMT; httponly;
+        Path=/; secure
+      - gvc=MzI4MTQxNjE0NDIwNTk3NTk5NDQ0MzYyMDc1MzcxNTg2MzI1OTUz; expires=Sat, 30
+        Jul 2022 20:13:17 GMT; httponly; Path=/; secure
+      - locale=en; Domain=dropbox.com; expires=Sat, 30 Jul 2022 20:13:17 GMT; Path=/;
+        secure
+      - puc=; expires=Mon, 31 Jul 2017 20:13:17 GMT; httponly; Path=/; secure
+      - t=0TPMOGdn8mkIisEvmC4O3Qo4; Domain=dropbox.com; expires=Thu, 30 Jul 2020 20:13:17
+        GMT; httponly; Path=/; secure
+      X-Content-Type-Options:
+      - nosniff
+      X-Dropbox-Request-Id:
+      - cb9d6aa3319241f485b31f8c41a51d68
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Server-Response-Time:
+      - '52'
+      X-Xss-Protection:
+      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |-
+        <!DOCTYPE html><html lang="en" xmlns:fb="http://ogp.me/ns/fb#" xml:lang="en" class="media-desktop" xmlns="http://www.w3.org/1999/xhtml"><head><script nonce="vKUyPKmkbzh2qt7896FB">
+        window._goch_ = {};
+        window.addEventListener('click', function(event) {
+            'use strict';
+            for (var elm = event.target; elm; elm = elm.parentElement) {
+                if (elm.id &&
+                    window._goch_.hasOwnProperty(elm.id) &&
+                    window._goch_[elm.id].call(elm, event) === FakeAuthenticationtoken) {
+                    event.preventDefault();
+                }
+            }
+        }, true);
+        window._csp_external_script_nonce = "qA8eApsvHcErM468wxiN"</script><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" /><link href="https://www.dropbox.com/sso" rel="canonical" /><link href="https://cfl.dropboxstatic.com/static/images/favicon-vflk5FiAC.ico" rel="shortcut icon" /><link href="https://cfl.dropboxstatic.com/static/css/main-vflt7LvSc.css" type="text/css" rel="stylesheet" /><!--[if IE]><link href="https://cfl.dropboxstatic.com/static/css/main_old_ie-vfljTFv03.css" type="text/css" rel="stylesheet" /><![endif]--><link href="https://cfl.dropboxstatic.com/static/images/dropbox_webclip_60-vflN_uQqB.png" rel="apple-touch-icon" /><link href="https://cfl.dropboxstatic.com/static/images/dropbox_webclip_76-vflVDzAci.png" rel="apple-touch-icon" sizes="76x76" /><link href="https://cfl.dropboxstatic.com/static/images/dropbox_webclip_120-vflppIksR.png" rel="apple-touch-icon" sizes="120x120" /><link href="https://cfl.dropboxstatic.com/static/images/dropbox_webclip_152-vflnR85Xl.png" rel="apple-touch-icon" sizes="152x152" /><script type="text/javascript" nonce="vKUyPKmkbzh2qt7896FB">window.ST=+new Date();</script><meta content="text/html; charset=UTF-8" http-equiv="content-type" /><meta content="Dropbox is a free service that lets you bring your photos, docs, and videos anywhere and share them easily. Never email yourself a file again!" name="description" /><meta content="online storage, free storage, file sharing, share files, awesome, cloud storage, online backup, cross platform, sync, sharing, mac, windows, os x, linux, backup, collaboration, file versioning, file revisions, remote access, undelete" name="keywords" /><meta content="https://www.dropbox.com/sso?cont=https%3A%2F%2Fwww.dropbox.com%2Fs%2F47o8j5e0wzxahjs%2Funshared.csv%3Fdl%3D1&amp;from_shmodel=True" property="og:url" /><meta content="Dropbox" property="og:site_name" /><meta content="website" property="og:type" /><meta content="Dropbox is a free service that lets you bring your photos, docs, and videos anywhere and share them easily. Never email yourself a file again!" property="og:description" /><meta content="Dropbox - Single sign-on" property="og:title" /><meta content="210019893730" property="fb:app_id" /><meta content="https://cfl.dropboxstatic.com/static/images/brand/glyph@2x-vflJ1vxbq.png" property="og:image" /><meta content="summary" name="twitter:card" /><meta content="@Dropbox" name="twitter:site" /><meta content="https://www.dropbox.com/sso?cont=https%3A%2F%2Fwww.dropbox.com%2Fs%2F47o8j5e0wzxahjs%2Funshared.csv%3Fdl%3D1&amp;from_shmodel=True" name="twitter:url" /><meta content="Dropbox - Single sign-on" name="twitter:title" /><meta content="Dropbox is a free service that lets you bring your photos, docs, and videos anywhere and share them easily. Never email yourself a file again!" name="twitter:description" /><meta content="https://cfl.dropboxstatic.com/static/images/brand/twitter-card-glyph@2x-vflVqhKLO.png" name="twitter:image" /><meta content="TnuSyOnBMNmtugbpL1ZvW2PbSF9LKvoTzrvOGS9h-b0" name="google-site-verification" /><meta content="EZKIczQcM1-DVUMz8heu1dIhNtxNbLqbaA9-HbOnCQ4" name="google-site-verification" /><meta content="tz8iotmk-pkhui406y41y5bfmfxdwmaa4a-yc0hm6r0fga7s6j0j27qmgqkmc7oovihzghbzhbdjk-uiyrz438nxsjdbj3fggwgl8oq2nf4ko8gi7j4z7t78kegbidl4" name="norton-safeweb-site-verification" /><meta content="https://cfl.dropboxstatic.com/static/images/win8_web_tile-vfl8eyKFU.png" name="msapplication-TileImage" /><meta content="#ffffff" name="msapplication-TileColor" /><title>Dropbox - Single sign-on</title><style type="text/css">.hny-vurc { display: none; }</style> <link href="https://cfl.dropboxstatic.com/static/css/components/react_locale_selector-vfl5ofn7A.css" type="text/css" crossorigin="anonymous" rel="stylesheet" /><link href="https://cfl.dropboxstatic.com/static/css/dropbox/2015/layout-vflvc3veE.css" type="text/css" crossorigin="anonymous" rel="stylesheet" /><link href="https://cfl.dropboxstatic.com/static/css/dropbox/2015/pages/index-vflXjCQI4.css" type="text/css" crossorigin="anonymous" rel="stylesheet" /><link href="https://cfl.dropboxstatic.com/static/css/login_or_register-vflTH-z_u.css" type="text/css" crossorigin="anonymous" rel="stylesheet" /><link href="https://cfl.dropboxstatic.com/static/css/sprites/web_sprites-vflv2MHAO.css" type="text/css" crossorigin="anonymous" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,600,700&amp;subset=latin,latin-ext" type="text/css" rel="stylesheet" /><script type="text/javascript" nonce="vKUyPKmkbzh2qt7896FB">
+                    (function(){"use strict";var e,n=window,r=function(){e=[],n.addRequireLoadCallback=function(n){return e.push(n)},n.configureRequire=function(){var e=arguments;n.addRequireLoadCallback(function(){return n.configureRequire.apply(null,e)})},n.define=function(){var e=arguments;n.addRequireLoadCallback(function(){return n.define.apply(null,e)})}};r(),n._insertRequireShim=r,n.InitRequireJs=function(r){n.requireContexts={},requirejs.onError=function(){},n.performance&&null!=n.performance.now&&(requirejs.onResourceLoad=function(e,r,u){var i=n.performance.now(),o=n.requireContexts[e.id];o&&o.require(["modules/clean/web_module_timing"],function(e){e.add_module(r,i,o.module_callback_times[r.id])})}),n.configureRequire=r,n.addRequireLoadCallback=function(e){return e()},e.forEach(function(e){return e()})}})();
+
+
+                    window.GlobalConstants = {"CSP_SCRIPT_NONCE": "vKUyPKmkbzh2qt7896FB"};
+                    </script><script async="async" type="text/javascript" src="https://cfl.dropboxstatic.com/static/compiled/js/alameda_bundle/alameda_bundle.min-vflIn0b5A.js" nonce="qA8eApsvHcErM468wxiN"></script> <script type="text/javascript" nonce="vKUyPKmkbzh2qt7896FB">
+                    var same_hostname = FakeAuthenticationtoken;
+                    try {
+                        same_hostname = (top.location.hostname === self.location.hostname);
+                    } catch (error) {}
+
+                    if (self != top && !same_hostname) {
+                        top.location.replace(self.location.href);
+                        setTimeout(function() {
+                            window.DB_FRAME_BUST = true;
+                            document.body.innerHTML = (
+                                "<img src='https://cfl.dropboxstatic.com/static/images/logo-vflL7Ces6.png' onClick='top.location.href=window.location.href' />");
+                        }, 1);
+                    }
+                </script></head><body class="en   " dir="ltr"> <div style="display: none;" id="modal-behind"></div><div style="display: none;" id="modal"><div id="modal-box"><a aria-label="Close" href="#" id="modal-x"><script nonce="vKUyPKmkbzh2qt7896FB">window._goch_["modal-x"] = function(event){INLINE_JS.Modal.hide(null, FakeAuthenticationtoken, true); Event.stop(event); return FakeAuthenticationtoken;;}</script></a><h2 id="modal-title"></h2><div id="modal-content"></div></div></div><div style="display: none;" id="modal-overlay"></div><div style="display:none" id="grave-yard"></div><div style="display:none" id="trash-can"></div><script type="text/template" id="tutorial_nav_bubble_tmpl" nonce="vKUyPKmkbzh2qt7896FB"><div class="tutorial-bubble-content"><a class="tutorial-bubble-x-link"><img src="/static/images/x-small-active.png" class="tutorial-bubble-x-img" /></a><h1 class="tutorial-bubble-title"><%= TEMPLATE_DATA.title %></h1><p class="tutorial-bubble-body"><%= TEMPLATE_DATA.body %></p><a class="tutorial-bubble-button <%= TEMPLATE_DATA.button_class %>"><%= TEMPLATE_DATA.button_text %></a></div></script><div id="floaters"></div><div style="display: none;" class="external-drop-indicator top"></div><div style="display: none;" class="external-drop-indicator right"></div><div style="display: none;" class="external-drop-indicator bottom"></div><div style="display: none;" class="external-drop-indicator left"></div><div id="page-header" class="page-header-border"><div id="inner-page-header"><span class="home-icon-container"><div id="home-icon"><a href="/"><img data-js-component-id="component7652712423572063361" width="36" alt="Dropbox" src="https://cfl.dropboxstatic.com/static/images/icons/blue_dropbox_glyph-vflOJKOUw.png" /></a></div></span></div></div><div id="outer-frame"> <div id="page-content"><div tabindex="-1" id="main-skip" class="main-skip-destination"></div><div id="login-and-register-container"><div id="login-container"><div class="splash"><img data-js-component-id="component7652712423572063362" src="https://cfl.dropboxstatic.com/static/images/empty_states/sign-in-vflchypbO.png" alt="" data-hi-res="https://cfl.dropboxstatic.com/static/images/empty_states/sign-in@2x-vflrzNc7o.png" /></div><form action="/sso" novalidate="novalidate" method="post"><input type="hidden" name="t" value="" id="pyxl7652712423572063363" /><script type="text/javascript" nonce="vKUyPKmkbzh2qt7896FB">
+                    (function() {
+                        // The regex parses the value in the JS CSRF cookie
+                        var csrf_token = document.cookie.match('(^|; )'+"__Host-js_csrf"+'=([^;]*)')[2];
+                        var csrf_token_hidden_input = document.getElementById("pyxl7652712423572063363");
+                        csrf_token_hidden_input.value = csrf_token;
+                    })();
+                </script><div style="margin-top: 30px" class="title-text">Single sign-on</div><div id="login-partial"><div id="email-field" class="sick-input"><input name="login_email" type="email" autofocus="True" placeholder="Email" id="login_email" tabindex="1" /><input type="hidden" name="from_client" value="False" /><input type="hidden" name="from_shmodel" value="True" /></div></div><div id="login-footer" class="clearfix"><input style="float: right;" name="login_submit_dummy" value="Sign in" class="freshbutton-blue" type="submit" id="login_submit" tabindex="4" /></div><input type="hidden" name="cont" value="https://www.dropbox.com/s/47o8j5e0wzxahjs/unshared.csv?dl=1" /></form></div></div></div><div id="page-prefooter"></div><footer><div id="page-full-footer"><div id="footer-top-margin"></div><div id="footer-border"></div><div class="footer-col"><ul><li class="header">Dropbox</li><li><a href="https://www.dropbox.com/install">Install</a></li><li><a href="https://www.dropbox.com/mobile">Mobile</a></li><li><a href="https://www.dropbox.com/pricing">Pricing</a></li><li><a href="https://www.dropbox.com/business">Business</a></li><li><a href="https://www.dropbox.com/enterprise">Enterprise</a></li><li><a href="https://www.dropbox.com/tour">Tour</a></li></ul></div><div class="footer-col"><ul><li class="header">About us</li><li><a href="http://blog.dropbox.com/">Dropbox Blog</a></li><li><a href="https://www.dropbox.com/about">About</a></li><li><a href="https://www.dropbox.com/branding">Branding</a></li><li><a href="https://www.dropbox.com/news">News</a></li><li><a href="https://www.dropbox.com/jobs">Jobs</a></li></ul></div><div class="footer-col"><ul><li class="header">Support</li><li><a href="https://www.dropbox.com/help">Help Center</a></li><li><a href="https://www.dropbox.com/contact">Contact us</a></li><li><a href="https://www.dropbox.com/dmca">Copyright</a></li><li><a href="https://www.dropbox.com/terms/cookies">Cookies</a></li><li><a href="https://www.dropbox.com/privacy">Privacy & Terms</a></li></ul></div><div class="footer-col"><ul><li class="header">Community</li><li><a href="https://www.dropbox.com/referrals">Referrals</a></li><li><a href="https://www.dropboxforum.com">Forum</a></li><li><a href="https://twitter.com/dropbox" target="_blank" rel="noreferrer">Twitter</a></li><li><a href="https://facebook.com/Dropbox" target="_blank" rel="noreferrer">Facebook</a></li><li><a href="https://www.dropbox.com/developers">Developers</a></li></ul></div><div class="react-locale-selector-wrapper"><div id="component7652712423572063364"><div class="react-stub"></div></div></div><div class="clear"></div></div></footer><noscript><p class="center">The Dropbox website requires JavaScript.</p></noscript></div><div style="position: absolute; top: 0; left: 0; font-family: Courier" id="ieconsole"></div><div style="position:absolute; top:-10000px;width:0px; height:0px; left: 0;" id="FB_HiddenContainer"></div>  <script type="text/javascript" nonce="vKUyPKmkbzh2qt7896FB">define("modules/constants/undo_strings", [], function() {
+                    return {"UNDO": "Undo"};
+                });
+                define("modules/constants/page_load", [], function() {
+                    return {"USER_LOCALE": "en", "PUBLIC_MODE_OVERRIDE": null, "COUNTRY_OVERRIDE": null, "METASERVER_MDB_TAGS": ["meta-www"], "CSP_SCRIPT_NONCE": "vKUyPKmkbzh2qt7896FB", "PAGE_LOAD_TIME": 1501531997, "REPO_REV": "56e54cf7afe83a8a11c4c740923118f493350699"};
+                });
+                define("modules/constants/ajax_strings", [], function() {
+                    return {"PROBLEM_COMPLETING_REQUEST": "There was a problem completing this request.", "STILL_WORKING": "Still working..."};
+                });
+                define("modules/constants/locales", [], function() {
+                    return {"LIST_OF_LOCALES_WITHOUT_INTERNAL": [{"localeName": "Bahasa Indonesia", "decorator": "", "localeCode": "id"}, {"localeName": "Bahasa Malaysia", "decorator": "", "localeCode": "ms"}, {"localeName": "Dansk", "decorator": "", "localeCode": "da_DK"}, {"localeName": "Deutsch", "decorator": "", "localeCode": "de"}, {"localeName": "English (United Kingdom)", "decorator": "", "localeCode": "en_GB"}, {"localeName": "English (United States)", "decorator": "", "localeCode": "en"}, {"localeName": "Espa\u00f1ol (Espa\u00f1a)", "decorator": "", "localeCode": "es_ES"}, {"localeName": "Espa\u00f1ol (Latinoam\u00e9rica)", "decorator": "", "localeCode": "es"}, {"localeName": "Fran\u00e7ais", "decorator": "", "localeCode": "fr"}, {"localeName": "Italiano", "decorator": "", "localeCode": "it"}, {"localeName": "Nederlands", "decorator": "", "localeCode": "nl_NL"}, {"localeName": "Norsk (bokm\u00e5l)", "decorator": "", "localeCode": "nb_NO"}, {"localeName": "Polski", "decorator": "", "localeCode": "pl"}, {"localeName": "Portugu\u00eas (Brasil)", "decorator": "", "localeCode": "pt_BR"}, {"localeName": "P\u0443\u0441\u0441\u043a\u0438\u0439", "decorator": "", "localeCode": "ru"}, {"localeName": "Svenska", "decorator": "", "localeCode": "sv_SE"}, {"localeName": "\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430", "decorator": "Beta", "localeCode": "uk_UA"}, {"localeName": "\u0e44\u0e17\u0e22", "decorator": "", "localeCode": "th_TH"}, {"localeName": "\u4e2d\u6587\uff08\u7b80\u4f53\uff09", "decorator": "", "localeCode": "zh_CN"}, {"localeName": "\u4e2d\u6587\uff08\u7e41\u9ad4\uff09", "decorator": "", "localeCode": "zh_TW"}, {"localeName": "\u65e5\u672c\u8a9e", "decorator": "", "localeCode": "ja"}, {"localeName": "\ud55c\uad6d\uc5b4", "decorator": "", "localeCode": "ko"}], "LIST_OF_LOCALES_WITH_INTERNAL": [{"localeName": "Bahasa Indonesia", "decorator": "", "localeCode": "id"}, {"localeName": "Bahasa Malaysia", "decorator": "", "localeCode": "ms"}, {"localeName": "Dansk", "decorator": "", "localeCode": "da_DK"}, {"localeName": "Deutsch", "decorator": "", "localeCode": "de"}, {"localeName": "English (United Kingdom)", "decorator": "", "localeCode": "en_GB"}, {"localeName": "English (United States)", "decorator": "", "localeCode": "en"}, {"localeName": "Espa\u00f1ol (Espa\u00f1a)", "decorator": "", "localeCode": "es_ES"}, {"localeName": "Espa\u00f1ol (Latinoam\u00e9rica)", "decorator": "", "localeCode": "es"}, {"localeName": "Fran\u00e7ais", "decorator": "", "localeCode": "fr"}, {"localeName": "Italiano", "decorator": "", "localeCode": "it"}, {"localeName": "Nederlands", "decorator": "", "localeCode": "nl_NL"}, {"localeName": "Norsk (bokm\u00e5l)", "decorator": "", "localeCode": "nb_NO"}, {"localeName": "Polski", "decorator": "", "localeCode": "pl"}, {"localeName": "Portugu\u00eas (Brasil)", "decorator": "", "localeCode": "pt_BR"}, {"localeName": "P\u0443\u0441\u0441\u043a\u0438\u0439", "decorator": "", "localeCode": "ru"}, {"localeName": "Svenska", "decorator": "", "localeCode": "sv_SE"}, {"localeName": "\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430", "decorator": "Beta", "localeCode": "uk_UA"}, {"localeName": "\u0e44\u0e17\u0e22", "decorator": "", "localeCode": "th_TH"}, {"localeName": "\u4e2d\u6587\uff08\u7b80\u4f53\uff09", "decorator": "", "localeCode": "zh_CN"}, {"localeName": "\u4e2d\u6587\uff08\u7e41\u9ad4\uff09", "decorator": "", "localeCode": "zh_TW"}, {"localeName": "\u65e5\u672c\u8a9e", "decorator": "", "localeCode": "ja"}, {"localeName": "\ud55c\uad6d\uc5b4", "decorator": "", "localeCode": "ko"}]};
+                });
+                define("modules/constants/debug", [], function() {
+                    return {"CPROFILE_PARAMETER": "", "STORMCROW_PANEL": 0, "CPROFILE_ENABLED": 0};
+                });
+                define("modules/constants/viewer", [], function() {
+                    return {"root_ns_id": 0, "prompt_ha_hiding": true, "PERSONAL_ROLE_STRING": "Personal", "LOCALE": "US", "_viewer_properties": {"is_reseller_session": FakeAuthenticationtoken, "is_team_assume_user_session": FakeAuthenticationtoken, "is_assume_user_session": FakeAuthenticationtoken, "can_moderate_comments": FakeAuthenticationtoken, "_user_data": []}, "DEFAULT_ROOT_NAME": "Dropbox"};
+                });
+                define("modules/constants/env", [], function() {
+                    return {"PROF_SHARING_WEBSERVER": "collections.dropbox.com", "LIVE_TRANSCODE_SERVER": "showbox-tr.dropbox.com", "STATIC_CONTENT_HOST": "cfl.dropboxstatic.com", "BATCH_THUMB_ENDPOINTS": ["//photos-1.dropbox.com/btjb", "//photos-2.dropbox.com/btjb", "//photos-3.dropbox.com/btjb", "//photos-4.dropbox.com/btjb", "//photos-5.dropbox.com/btjb", "//photos-6.dropbox.com/btjb"], "NOTES_WEBSERVER": "paper.dropbox.com", "REDIRECT_SAFE_ORIGINS": ["www.dropbox.com", "dropbox.com", "api.dropboxapi.com", "api.dropbox.com", "linux.dropbox.com", "photos.dropbox.com", "carousel.dropbox.com", "client-web.dropbox.com", "www.dropbox.com", "paper.dropbox.com", "notes.dropbox.com", "test.composer.dropbox.com", "collections.dropbox.com"]};
+                });
+                define("modules/constants/request", [], function() {
+                        var o = {"REQUEST_START_TIME": 1501531997750, "LOGGED_OUT_X_DROPBOX_UID": -1, "REQUEST_ID": "cb9d6aa3319241f485b31f8c41a51d68", "REQUEST_TRACING_ENABLED": FakeAuthenticationtoken, "IS_HTTP2": FakeAuthenticationtoken};
+                        /* global: ensemble is global for maestro pages */
+                        if (window.ensemble && window.ensemble.getRequestId) {
+                            o.REQUEST_ID = ensemble.getRequestId();
+                        }
+                        return o;
+                    });
+                    define("modules/constants/webtiming", [], function() {
+                    return {"LOG_JS_MODULE_TIMING": FakeAuthenticationtoken, "LOG_REACT_PERF_TIMING": true, "LOG_REACT_CMP_LOAD_TIMING": FakeAuthenticationtoken, "LOG_BROWSER_PERFORMANCE_INFO": true, "LOG_TIMING_DELAY": FakeAuthenticationtoken};
+                });
+                </script><script type="text/javascript" nonce="vKUyPKmkbzh2qt7896FB">
+                        /* global: configureRequire comes from the
+                           fake_require_snippet (ui/page/script_tags.py) */
+                        configureRequire({"waitSeconds": 30, "map": {"external/jquery_security_patch_bundle": {"jquery": "jquery", "__real_jquery": "jquery"}, "*": {"external/react-dnd-scrollzone": "external/react-dnd-scrollzone-3.0.0", "external/reselect": "Reselect", "external/react-dnd": "external/react-dnd-2.1.4", "external/tslib": "tslib", "langpack": "json_loader!compiled/js/langpack/en.json", "external/immutable": "external/immutable-3", "external/redux-thunk": "external/redux-thunk-2.1.0", "external/react-dom/server": "external/react-dom/server-15.5.4-prod", "external/sjcl": "external/sjcl-1.0.3", "__real_jquery": "jquery", "external/videojs/video": "external/videojs/video-5.10.7", "external/history": "external/history-3.3.0", "external/react": "external/react-15.5.4-prod", "external/react-redux": "external/react-redux-3.1.0", "external/react-router": "external/react-router-2.0.0", "external/moment": "moment", "external/react-dom/test-utils": "external/react-dom/test-utils-shim", "external/react-dom": "external/react-dom-15.5.4-prod", "external/reflux": "external/reflux-0.3.0", "__real_external/tracekit": "TraceKit", "react": "external/react-15.5.4-prod", "TraceKit": "modules/shims/tracekit", "external/tracekit": "modules/shims/tracekit", "jquery": "external/jquery_security_patch_bundle", "external/jquery": "external/jquery_security_patch_bundle", "external/underscore": "underscore", "react-dom": "external/react-dom-15.5.4-prod", "external/typeahead.jquery": "typeahead.jquery", "external/classnames": "classnames", "external/react-dnd-html5-backend": "external/react-dnd-html5-backend-2.1.2", "external/bloodhound": "bloodhound", "external/redux": "external/redux-3.6.0-prod", "redux": "external/redux-3.6.0-prod"}, "modules/shims/tracekit": {"external/tracekit": "TraceKit", "__real_external/tracekit": "TraceKit"}}, "shim": {}, "bundles": {"pkg-xhr-client": ["modules/core/xhr", "modules/core/cookies"], "pkg-embedded_app": ["modules/clean/loggers/cache_logger", "modules/clean/web_module_timing", "modules/clean/loggers/pagelet_perf", "modules/clean/react_perf_logger", "modules/clean/web_timing_logger"], "pkg-coreui": ["modules/core/controller_registry", "modules/clean/init_react", "modules/clean/react/button", "modules/clean/react/css", "modules/clean/react/sprite"], "pkg-i18n": ["modules/core/i18n"], "pkg-coreui-with-i18n": ["modules/clean/react/modal"], "pkg-react-15.5.4-prod": ["external/react-dom-15.5.4-prod", "external/react-15.5.4-prod"], "pkg-misc": ["modules/clean/cookie_check"], "pkg-lasso-footer": ["modules/clean/react/locale_selector"], "pkg-core": ["modules/clean/undo", "modules/clean/stormcrow/stormcrow_panel_actions", "modules/clean/storage", "modules/clean/devtools/perf_hub_action_types", "modules/clean/event_load", "modules/core/accessible_announce", "modules/clean/js_environment", "modules/clean/stormcrow/stormcrow_panel_action_types", "modules/core/dom", "modules/clean/user", "modules/clean/keycode", "modules/clean/js_client_stopwatch", "modules/clean/devtools/perf_hub_actions", "modules/clean/css", "modules/clean/viewer", "modules/clean/job_progress", "modules/clean/flux/dispatcher", "modules/clean/analytics", "modules/core/browser", "modules/clean/ajax", "modules/clean/react_logger", "modules/core/notify", "modules/clean/js_basic_stopwatch", "modules/core/uri", "modules/core/html", "modules/clean/static_urls"], "pkg-exception-reporting": ["modules/core/exception_tag_registry", "modules/shims/tracekit", "modules/pagelet_config", "TraceKit", "modules/core/exception"], "pkg-external": ["classnames", "tslib", "underscore", "external/hoist-non-react-statics"], "pkg-legacy-ab": ["modules/clean/hi_res", "modules/clean/legacy_ui_button", "modules/clean/ux_analytics"]}, "baseUrl": "https://cfl.dropboxstatic.com/static/", "paths": {"external/flux": "compiled/js/external/flux.min-vfl1cbEhF", "external/sha1": "compiled/js/external/sha1.min-vflnBGgMP", "pkg-xhr-client": "compiled/js/packaged/pkg-xhr-client.min-vflrP3egN", "pkg-embedded_app": "compiled/js/packaged/pkg-embedded_app.min-vflzaoas0", "langpack/en": "compiled/js/langpack/en.js?17378", "pkg-coreui": "compiled/js/packaged/pkg-coreui.min-vflZnrPKA", "pkg-i18n": "compiled/js/packaged/pkg-i18n.min-vflRSih2V", "external/jquery_security_patch_bundle": "compiled/js/external/jquery_security_patch_bundle.min-vflZgbyZQ", "pkg-coreui-with-i18n": "compiled/js/packaged/pkg-coreui-with-i18n.min-vflVOaUU9", "compiled/js/langpack/en.json": "compiled/js/langpack/en.json?17378", "pkg-react-15.5.4-prod": "compiled/js/packaged/pkg-react-15.5.4-prod.min-vfldfc2Jm", "pkg-misc": "compiled/js/packaged/pkg-misc.min-vfl9136Zh", "pkg-lasso-footer": "compiled/js/packaged/pkg-lasso-footer.min-vfl8RvG2d", "pkg-external": "compiled/js/packaged/pkg-external.min-vfl0H3VlI", "pkg-core": "compiled/js/packaged/pkg-core.min-vfl3iBlzM", "pkg-exception-reporting": "compiled/js/packaged/pkg-exception-reporting.min-vflOiJrc6", "external/purify": "compiled/js/external/purify.min-vflPgMw7P", "pkg-legacy-ab": "compiled/js/packaged/pkg-legacy-ab.min-vflSi4zBZ"}}, {"reusingContext": FakeAuthenticationtoken, "reusingJquery": FakeAuthenticationtoken, "deferJsTimeout": null, "requireFallbackBaseUrl": "https://www.dropboxstatic.com/static/", "deferJs": FakeAuthenticationtoken}, [[[["external/react"], (function(React){
+        window.React = React;;
+        })],[["modules/clean/cookie_check", "external/sha1", "modules/core/i18n", "langpack"], (function(mod){
+        var init = mod.initialize_module; if (init != null){init();};
+        })],[["modules/clean/hi_res", "modules/core/controller_registry", "jquery", "modules/core/exception_tag_registry", "modules/core/exception", "modules/pagelet_config", "modules/constants/page_load", "external/tslib", "__real_external/tracekit", "TraceKit", "modules/core/xhr", "modules/core/cookies"], (function(modules__clean__hi_res,modules__core__controller_registry){
+        (function (modules__clean__hi_res, ControllerRegistry) { ControllerRegistry.register_controller("component7652712423572063362", modules__clean__hi_res, []); })(modules__clean__hi_res, modules__core__controller_registry);
+        (function (modules__clean__hi_res, ControllerRegistry) { ControllerRegistry.register_controller("component7652712423572063361", modules__clean__hi_res, []); })(modules__clean__hi_res, modules__core__controller_registry);
+        })],[["modules/clean/legacy_ui_button"], (function(initUIButtons){
+
+                    initUIButtons();
+                    ;
+        })],[["modules/clean/react/locale_selector", "modules/clean/init_react", "modules/clean/react/sprite", "modules/clean/react/modal", "modules/clean/js_environment", "modules/constants/locales", "modules/clean/react/css", "modules/clean/react/button", "react-dom", "external/classnames", "modules/clean/react_logger", "external/hoist-non-react-statics"], (function(mod,InitReact){
+        InitReact.mountComponent(mod, {"module_name": "modules/clean/react/locale_selector", "install_hot_reloading_attrs": FakeAuthenticationtoken, "props": {"controller": "LocaleSelector", "module": "modules/clean/react/locale_selector"}, "elem_id": "component7652712423572063364", "component_name": "LocaleSelector"});
+        })],[["modules/clean/ux_analytics", "modules/clean/analytics", "modules/constants/viewer", "modules/clean/user", "modules/clean/viewer"], (function(uxanalytics,analytics){
+        new uxanalytics.UXAnalytics("cb9d6aa3319241f485b31f8c41a51d68", "", analytics.UXAnalyticsLogger, {});;
+        })],[["modules/clean/web_timing_logger", "modules/clean/undo", "modules/clean/loggers/cache_logger", "modules/clean/stormcrow/stormcrow_panel_actions", "modules/clean/storage", "modules/clean/job_progress", "modules/clean/devtools/perf_hub_action_types", "modules/clean/devtools/perf_hub_actions", "modules/core/accessible_announce", "modules/constants/request", "modules/core/dom", "modules/constants/undo_strings", "modules/core/notify", "modules/clean/keycode", "modules/core/uri", "modules/clean/js_client_stopwatch", "modules/clean/loggers/pagelet_perf", "modules/clean/event_load", "modules/clean/css", "modules/clean/stormcrow/stormcrow_panel_action_types", "external/purify", "modules/clean/react_perf_logger", "modules/constants/debug", "react", "modules/constants/env", "external/flux", "external/underscore", "modules/core/browser", "modules/constants/ajax_strings", "modules/clean/ajax", "modules/clean/web_module_timing", "modules/clean/flux/dispatcher", "modules/clean/js_basic_stopwatch", "modules/core/html", "modules/clean/static_urls", "modules/constants/webtiming"], (function(mod){
+        mod.initialize_module({"ttv_at_dom_interactive": FakeAuthenticationtoken, "subtypes": null, "is_pagelet": FakeAuthenticationtoken, "source_type": "web", "tti_at_dom_interactive": FakeAuthenticationtoken, "log_time_to_interactive": FakeAuthenticationtoken, "is_dws": FakeAuthenticationtoken, "log_time_to_view": FakeAuthenticationtoken, "is_pre_load_js": FakeAuthenticationtoken});
+        })]]]);
+                        </script><img src="https://dropbox.com/hstsping" alt="" style="display:none;" /><script type="text/javascript" nonce="vKUyPKmkbzh2qt7896FB">
+                document.addEventListener('DOMContentLoaded', function () {
+                        var metaTag = document.createElement('meta');
+                            metaTag.setAttribute('http-equiv', 'Content-Security-Policy');
+                            metaTag.setAttribute('content', "script-src https: 'unsafe-eval' https://cfl.dropboxstatic.com/static/compiled/js/ https://www.dropboxstatic.com/static/compiled/js/ https://cfl.dropboxstatic.com/static/javascript/ https://www.dropboxstatic.com/static/javascript/; worker-src blob:");
+                            document.head.appendChild(metaTag);
+                });</script><div id="accessible-announce" class="ax-visually-hidden" aria-live="assertive"></div></body></html>
+    http_version: 
+  recorded_at: Mon, 31 Jul 2017 20:03:42 GMT
+recorded_with: VCR 3.0.3
