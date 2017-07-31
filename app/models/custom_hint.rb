@@ -8,32 +8,56 @@
 #     to take a specific action that indicates readiness before we ingest.
 #
 require 'csv'
+require 'uri'
 require 'open-uri'
 class CustomHint
-  def initialize
+  def initialize(url)
+    @url = url
     @csv = csv
     @source = 'custom'
   end
 
+  # If a dropbox URL ends in ?dl=1, it downloads the file; if it ends in ?dl=0,
+  # it renders the file as HTML. We want to make sure we download the file, but
+  # the copy-link version gives the render-page option by default, so let's
+  # recover gracefully in that case.
+  def canonicalize_url
+    as_uri = URI(@url)           # Will raise exception for non-URL strings
+    if as_uri.query == 'dl=0'
+      as_uri.query = 'dl=1'
+    end
+    @url = as_uri.to_s
+  end
+
+  def validate_url
+    as_uri = URI(@url)
+    raise "Invalid URL - not a Dropbox download URL" unless [
+      @url =~ URI::regexp,                # It is a valid URL
+      as_uri.host == 'www.dropbox.com',   # ...from Dropbox
+      as_uri.query == 'dl=1'              # ...which triggers a file download
+    ].all?
+  end
+
   # Load csv hint source.
-  # The ?dl=1 is important here; if you set ?dl=0 it will GET the HTML version
-  # rendered on dropbox.com, whereas ?dl=1 just downloads the file.
-  # todo THIS IS NOT THE PRODUCTION URL - it's a testing URL while we decide
-  # on production.
   def csv
-    open('https://www.dropbox.com/s/jfktzf4yzi1yhg4/bento_loader_test.csv?dl=1') {|f| f.read }
+    open(@url) {|f| f.read }
   end
 
   # Make sure the csv has the headers we expect. (More headers are fine - we'll
   # just ignore them - but it has to have these.)
-  def is_valid?
+  # This will raise an exception in the first line if the file can't be parsed
+  # as CSV. We further validate that the CSV has the headers we'll need.
+  def validate_csv
     mycsv = CSV.new(@csv, :headers => true).read
-    %w{Title URL Fingerprint}.all? { |title| mycsv.headers.include? title }
+    raise "Invalid CSV - wrong headers" unless \
+      %w{Title URL Fingerprint}.all? { |title| mycsv.headers.include? title }
   end
 
   # Loop over records and create hints.
   def process_records
-    return unless is_valid?
+    canonicalize_url
+    validate_url
+    validate_csv
     CSV.parse(@csv, :headers => true) do |record|
       Hint.upsert(title: record['Title'], url: record['URL'],
                   fingerprint: record['Fingerprint'], source: @source)
