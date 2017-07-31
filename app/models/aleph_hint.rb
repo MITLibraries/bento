@@ -36,9 +36,28 @@ class AlephHint
   # Creates Hints for each record for each title and alt title
   # @note duplicates are handled in the [Hint] model and are last one in wins
   def record_to_hints(record)
-    fingerprint_titles(245, record)
-    fingerprint_titles(246, record)
-    fingerprint_titles(740, record)
+    title_like_fields.each do |field|
+      fingerprint_titles(field[0], record)
+    end
+  end
+
+  # MARC fields that contain title-like entries we will use to create
+  # fingerprints
+  # @see https://www.loc.gov/marc/bibliographic/bd20x24x.html
+  # @see https://www.loc.gov/marc/bibliographic/bd70x75x.html
+  def title_like_fields
+    [
+      [210, 'Abbreviated Title'],
+      [222, 'Key Title'],
+      [240, 'Uniform Title'],
+      [242, 'Translation of Title by Cataloging Agency'],
+      [243, 'Collective Uniform Title'],
+      [245, 'Title Statement'],
+      [246, 'Varying Form of Title'],
+      [247, 'Former Title'],
+      [730, 'Added Entry - Uniform Title'],
+      [740, 'Added Entry - Uncontrolled Related/Analytical Title']
+    ]
   end
 
   # Creates a Hint for each title
@@ -54,7 +73,7 @@ class AlephHint
     extract_marc_value(245, 'a', record).text
   end
 
-  # Extracts array of alternate titles from supplied tag (246 and 740)
+  # Extracts array of titles from supplied tag
   def alt_titles(tag, record)
     extract_marc_value(tag, 'a', record).map(&:text)
   end

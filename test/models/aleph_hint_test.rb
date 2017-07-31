@@ -12,7 +12,7 @@ class AlephHintTest < ActiveSupport::TestCase
     VCR.use_cassette('aleph hint', allow_playback_repeats: true) do
       assert_equal(4, Hint.count)
       AlephHint.new.process_records
-      assert_equal(14, Hint.count)
+      assert_equal(15, Hint.count)
       assert_equal('http://libraries.mit.edu/get/ericfull',
                    Hint.match('esubscribe').url)
       assert_equal('http://libraries.mit.edu/get/encislam',
@@ -27,7 +27,7 @@ class AlephHintTest < ActiveSupport::TestCase
       assert_equal(4, Hint.where(source: 'manual').count)
       assert_equal('url', Hint.match('fp').url)
       AlephHint.new.reload
-      assert_equal(10, Hint.where(source: 'aleph').count)
+      assert_equal(11, Hint.where(source: 'aleph').count)
       assert_equal(4, Hint.where(source: 'manual').count)
       assert_nil(Hint.match('fp'))
     end
