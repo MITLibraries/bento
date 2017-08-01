@@ -30,6 +30,8 @@ To reload custom hints in a development environment:
 heroku local:run bin/rails reloadhints:custom[https://www.dropbox.com/blah/blah]
 ```
 
+Depending on your shell, you may need single-quotes around the URL.
+
 This expects to find a world-readable CSV file at the Dropbox location. Instructions for generating that file are in the Google sheet where we gather
 custom hint metadata.
 
