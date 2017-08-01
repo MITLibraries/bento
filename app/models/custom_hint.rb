@@ -30,7 +30,7 @@ class CustomHint
     as_uri = URI(@url)
 
     raise 'Invalid URL - not a Dropbox download URL' unless [
-      @url =~ URI.regexp,                # It is a valid URL
+      @url =~ URI.regexp,                 # It is a valid URL
       as_uri.host == 'www.dropbox.com',   # ...from Dropbox
       as_uri.query == 'dl=1'              # ...which triggers a file download
     ].all?
@@ -58,7 +58,7 @@ class CustomHint
   def validate_csv
     mycsv = CSV.new(@csv, headers: true).read
     raise 'Invalid CSV - wrong headers' unless \
-      %w{Title URL Fingerprint}.all? { |header| mycsv.headers.include? header }
+      %w(Title URL Fingerprint).all? { |header| mycsv.headers.include? header }
   end
 
   # Loop over records and create hints. Make sure to filter out blank data -
