@@ -29,8 +29,8 @@ class CustomHint
   def validate_url
     as_uri = URI(@url)
 
-    raise "Invalid URL - not a Dropbox download URL" unless [
-      @url =~ URI::regexp,                # It is a valid URL
+    raise 'Invalid URL - not a Dropbox download URL' unless [
+      @url =~ URI.regexp,                # It is a valid URL
       as_uri.host == 'www.dropbox.com',   # ...from Dropbox
       as_uri.query == 'dl=1'              # ...which triggers a file download
     ].all?
@@ -42,15 +42,13 @@ class CustomHint
   # recover gracefully in that case.
   def canonicalize_url
     as_uri = URI(@url)
-    if as_uri.query == 'dl=0'
-      as_uri.query = 'dl=1'
-    end
+    as_uri.query = 'dl=1' if as_uri.query == 'dl=0'
     @url = as_uri.to_s
   end
 
   # Load csv hint source.
   def csv
-    open(@url, 'rb') {|f| f.read }
+    open(@url, 'rb', &:read)
   end
 
   # Make sure the csv has the headers we expect. (More headers are fine - we'll
@@ -58,8 +56,8 @@ class CustomHint
   # This will raise an exception in the first line if the file can't be parsed
   # as CSV. We further validate that the CSV has the headers we'll need.
   def validate_csv
-    mycsv = CSV.new(@csv, :headers => true).read
-    raise "Invalid CSV - wrong headers" unless \
+    mycsv = CSV.new(@csv, headers: true).read
+    raise 'Invalid CSV - wrong headers' unless \
       %w{Title URL Fingerprint}.all? { |header| mycsv.headers.include? header }
   end
 
@@ -68,8 +66,8 @@ class CustomHint
   # is not an obvious result.
   def process_records
     validate_csv
-    CSV.parse(@csv, :headers => true) do |record|
-      if %w{Title URL Fingerprint}.none? { |header| record[header].nil? }
+    CSV.parse(@csv, headers: true) do |record|
+      if %w(Title URL Fingerprint).none? { |header| record[header].nil? }
         Hint.upsert(title: record['Title'], url: record['URL'],
                     fingerprint: record['Fingerprint'], source: @source)
       end

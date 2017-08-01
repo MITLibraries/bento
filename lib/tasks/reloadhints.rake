@@ -14,7 +14,7 @@ namespace :reloadhints do
   end
 
   desc 'Drop and reload hints from CSV file'
-  task :custom, [:url] => :environment do |task, args|
+  task :custom, [:url] => :environment do |_task, args|
     Rails.logger.info('Reloading custom CSV hints')
     Rails.logger.info(
       "Pre-load custom CSV Hint Count: #{Hint.where(source: 'custom').count}"
