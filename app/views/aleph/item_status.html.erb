@@ -9,6 +9,7 @@
     <% end %>
     <span class="sr"><%= s[:label] %></span>
     <%= s[:library] %> <%= s[:collection] %>: <%= s[:call_number] %>
+    <% if s[:description].present? %> <%= s[:description] %> <% end %>
   </li>
 <% end %>
 </ul>
