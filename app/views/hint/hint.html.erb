@@ -1,9 +1,14 @@
 <% if @hint %>
   <div class="wrap-hint-box">
     <div class="hint-box">
-      <p class="type">Popular result</p>
-      <h3 class="title"><%= @hint.title %></h3>
-      <p class="desc"><%= link_to(@hint.url, @hint.url, data: {type: "Hint"} ) %></p>
+      <p class="type"><%= display_type %></p>
+      <h3 class="title"><%= hint_link(@hint.title) %></h3>
+
+      <% if @hint.url.include?('libraries.mit.edu/get') %>
+        <p class="desc">
+          <%= hint_link(@hint.url) %>
+        </p>
+      <% end %>
     </div>
   </div>
 <% end %>
