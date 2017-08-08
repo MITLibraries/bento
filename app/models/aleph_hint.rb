@@ -63,8 +63,37 @@ class AlephHint
   # Creates a Hint for each title
   def fingerprint_titles(field, record)
     alt_titles(field, record).each do |alt_title|
+      # next if skip_urls(best_url(record))
+      next if skip_fingerprints(Hint.fingerprint(alt_title))
+      # Rails.logger.info('-----_____-----_____-----')
+      # Rails.logger.info("Title #{title(record)}")
+      # Rails.logger.info("URLs #{url(record)}")
+      # Rails.logger.info("Fingerprint #{Hint.fingerprint(alt_title)}")
       Hint.upsert(title: title(record), url: best_url(record),
                   fingerprint: Hint.fingerprint(alt_title), source: @source)
+    end
+  end
+
+  # skip common word fingerprints
+  def skip_fingerprints(fingerprint)
+    if %w[geography almanac protocols works synthesis update choice papers
+          history music communication philosophy api bulletin archives ideas
+          archaeology bookshelf congressional transport art physics power
+          insurance proceedings].include?(fingerprint)
+      true
+    else
+      false
+    end
+  end
+
+  # Skip known problematic URLs
+  def skip_urls(url)
+    if ['/get/ecco', '/get/eiu', '/get/spie', '/get/mwr', '/get/wsmi',
+        '/get/elib', '/get/crcnet', '/get/astmstand', '/get/wrds',
+        '/get/glrc'].any? { |bad_url| url.include?(bad_url) }
+      true
+    else
+      false
     end
   end
 
