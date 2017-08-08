@@ -16,7 +16,19 @@ class AlephItem
     xml_status(id).xpath('//items').children.each do |item|
       items << process_item(item)
     end
-    items
+    custom_sort(items)
+  end
+
+  # Sorts by `library` and numbers contained within the `description`.
+  # We need to sort on multiple fields to ensure items from multiple libraries
+  # are sorted within the library and not as a whole. Naive sorting of strings
+  # will cause an order such as v.1 v.10 v.2. This sorts by the numbers in the
+  # description to provde a human expected sort order.
+  def custom_sort(items)
+    items.sort do |a, b|
+      [a[:library], a[:description][/\d+/].to_i] <=>
+        [b[:library], b[:description][/\d+/].to_i]
+    end
   end
 
   def process_item(item)
@@ -25,7 +37,8 @@ class AlephItem
       status: status(item),
       call_number: item.xpath('z30/z30-call-no').text,
       available?: available?(item),
-      label: label(item) }
+      label: label(item),
+      description: item.xpath('z30/z30-description').text }
   end
 
   def status(item)
