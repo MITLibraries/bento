@@ -1,0 +1,252 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.dropbox.com/s/3dgxge8b14ht0c3/custom%20hint%20for%20test%20suite.csv?dl=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Aug 2017 16:07:27 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Content-Security-Policy:
+      - sandbox
+      Location:
+      - https://dl.dropboxusercontent.com/content_link/EFru2fD1QzMhzqN0DG5wVj9fvDw4TKitsYyZDdgQ1qayLurdMuSXL7BkYJyH9Sfe/file?dl=1
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-js_csrf=fbs2dbE1Ls3ILdGAaHHv24JB; expires=Fri, 07 Aug 2020 16:07:26
+        GMT; Path=/; secure
+      - bang=; Domain=dropbox.com; expires=Tue, 08 Aug 2017 16:07:26 GMT; httponly;
+        Path=/; secure
+      - flash=; Domain=dropbox.com; expires=Tue, 08 Aug 2017 16:07:26 GMT; httponly;
+        Path=/; secure
+      - gvc=MjI2MjU2NjQxNDQ2NDE2NTUwNDk5NjA0MTI3MjMzNzk3NzUyNjAw; expires=Sun, 07
+        Aug 2022 16:07:26 GMT; httponly; Path=/; secure
+      - locale=en; Domain=dropbox.com; expires=Sun, 07 Aug 2022 16:07:26 GMT; Path=/;
+        secure
+      - puc=; expires=Tue, 08 Aug 2017 16:07:26 GMT; httponly; Path=/; secure
+      - t=fbs2dbE1Ls3ILdGAaHHv24JB; Domain=dropbox.com; expires=Fri, 07 Aug 2020 16:07:26
+        GMT; httponly; Path=/; secure
+      X-Content-Type-Options:
+      - nosniff
+      X-Dropbox-Request-Id:
+      - c413a18feb94095a4dd4ecb339762945
+      X-Frame-Options:
+      - DENY
+      X-Robots-Tag:
+      - noindex, nofollow, noimageindex
+      X-Xss-Protection:
+      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 08 Aug 2017 16:07:27 GMT
+- request:
+    method: get
+    uri: https://dl.dropboxusercontent.com/content_link/EFru2fD1QzMhzqN0DG5wVj9fvDw4TKitsYyZDdgQ1qayLurdMuSXL7BkYJyH9Sfe/file?dl=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Aug 2017 16:07:27 GMT
+      Content-Type:
+      - text/csv; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Referrer-Policy:
+      - no-referrer
+      X-Robots-Tag:
+      - noindex, nofollow, noimageindex
+      Content-Disposition:
+      - attachment; filename="custom hint for test suite.csv"; filename*=UTF-8''custom%20hint%20for%20test%20suite.csv
+      Set-Cookie:
+      - uc_session=YUrIZXmvwMnFucGgys6I4tzKE3ujAJMh4bRoER30vBmuIFqnyzieXFZhVa37CxQ3;
+        Domain=dropboxusercontent.com; httponly; Path=/; secure
+      Content-Security-Policy:
+      - referrer no-referrer
+      X-Dropbox-Request-Id:
+      - a91ce64886295793df1595c6ae510c06
+      Pragma:
+      - public
+      Cache-Control:
+      - max-age=60
+      X-Content-Security-Policy:
+      - referrer no-referrer
+      X-Webkit-Csp:
+      - referrer no-referrer
+      X-Server-Response-Time:
+      - '383'
+    body:
+      encoding: UTF-8
+      string: "Instructions,Example search,URL,Title,Fingerprint,# of searches,\"Notes,
+        questions, etc.\"\r\n\"Instructions for exporting the file are on the next
+        sheet. These are instructions for filling in this sheet.\n\nPlease fill in
+        these two columns (but don't change their names):\n\nThe_URL_ is the URL we
+        think users actually want to find when they perform a search (e.g. direct
+        link to web of science page). \n\nThe _Title_ is the text you would expect
+        a link to contain. (In most cases, this will be the example search with better
+        capitalization. But in some cases it might be better to, e.g., spell out an
+        acronym.)\n\nPlease do not edit the following three columns:\n\nThe _fingerprint_
+        column is here for technical reasons and can be ignored. It can be used to
+        cluster together variant forms of the same search (e.g. different punctuation
+        and capitalization).\n\nThe _example search_ is a real search performed by
+        a real user.\n\nThe _# of searches_ is the number of times anyone searched
+        for a term with this fingerprint during the time window of recordkeeping (roughly
+        the last 4 years).\n\n\nIt's okay to add additional columns if that's useful
+        for your workflow.\",web of science,https://libraries.mit.edu/get/webofsci,Web
+        of Science,of science web,15271,\r\n,pubmed,https://libraries.mit.edu/get/pubmed,PubMed,pubmed,4507,\r\n,nature,https://library.mit.edu/item/000294170,Nature
+        (journal),nature,3599,\r\n,science,https://library.mit.edu/item/000294958,Science
+        (journal),science,3305,\r\n,jstor,https://libraries.mit.edu/get/jstor,JSTOR,jstor,3121,\r\n,scopus,https://libraries.mit.edu/get/scopus,Scopus,scopus,2616,\r\n,mfa
+        pass,https://library.mit.edu/item/001959626,MFA (Museum of Fine Arts) pass
+        ,mfa pass,1613,\r\n,factiva,https://libraries.mit.edu/get/factiva,Factiva,factiva,1426,\r\n,New
+        York Times,https://library.mit.edu/item/000294247,The New York Times,new times
+        york,1194,\r\n,scifinder,https://libraries.mit.edu/get/scifinder,SciFinder,scifinder,1136,\r\n,proquest,https://libraries.mit.edu/get/proquest-all,ProQuest,proquest,1037,\r\n,cell,https://library.mit.edu/item/000295906,Cell
+        (journal),cell,953,\r\n,harvard business review,https://library.mit.edu/item/000293144,Harvard
+        Business Review,business harvard review,941,\r\n,wall street journal,https://library.mit.edu/item/000295644,Wall
+        Street Journal,journal street wall,877,\r\n,onesource,https://libraries.mit.edu/get/onesource,OneSource,onesource,846,\r\n,web
+        of knowledge,https://libraries.mit.edu/get/webofsci,Web of Science,knowledge
+        of web,828,\r\n,ieee,https://libraries.mit.edu/get/ieee,IEEE Xplore,ieee,823,\r\n,scientific
+        american,https://library.mit.edu/item/000294973,Scientific American,american
+        scientific,807,\r\n,sae,https://libraries.mit.edu/get/sae,SAE (Society of
+        Automotive Engineers) Mobilus,sae,774,\r\n,oed,https://libraries.mit.edu/get/oed,Oxford
+        English Dictionary (OED),oed,734,\r\n,boston globe,https://library.mit.edu/item/000289981,The
+        Boston Globe,boston globe,677,\r\n,science direct,https://libraries.mit.edu/get/sciencedirect,ScienceDirect,direct
+        science,671,\r\n,ieee xplore,https://libraries.mit.edu/get/ieee,IEEE Xplore,ieee
+        xplore,669,\r\n,compendex,https://libraries.mit.edu/get/compendex,Compendex,compendex,665,\r\n,springer,https://libraries.mit.edu/get/springer/,SpringerLink,springer,643,\r\n,thesis,https://libguides.mit.edu/diss,Dissertations/Theses
+        Guide,thesis,633,\r\n,lexis nexis,https://libraries.mit.edu/get/lexis-nexis,LexisNexis
+        Academic,lexis nexis,614,\r\n,physical review letters,https://library.mit.edu/item/000294520,Physical
+        Review Letters,letters physical review,594,\r\n,thomson one,https://libraries.mit.edu/get/thomsonone,Thomson
+        One,one thomson,562,\r\n,gartner,https://libraries.mit.edu/get/gartner,Gartner,gartner,549,\r\n,advanced
+        materials,https://library.mit.edu/item/000661860,Advanced Materials (journal),advanced
+        materials,534,\r\n,ASTM,https://libraries.mit.edu/get/astmstand,ASTM Standards,astm,516,\r\n,ieee
+        explore,https://libraries.mit.edu/get/ieee,IEEE Xplore,explore ieee,515,\r\n,carbon,https://library.mit.edu/item/000291119,Carbon
+        (journal),carbon,505,\r\n,inspec,https://libraries.mit.edu/get/inspec,Inspec,inspec,489,\r\n,sciencedirect,https://libraries.mit.edu/get/sciencedirect,ScienceDirect,sciencedirect,488,\r\n,pnas,https://library.mit.edu/item/000294109,PNAS
+        (Proceedings of the National Academy of Sciences),pnas,476,\r\n,nature communications,https://library.mit.edu/item/001994387,Nature
+        Communications (journal),communications nature,469,\r\n,nature biotechnology,https://library.mit.edu/item/000764013,Nature
+        Biotechnology (journal),biotechnology nature,446,\r\n,mfa,https://library.mit.edu/item/001959626,MFA
+        (Museum of Fine Arts) pass ,mfa,436,\r\n,lexisnexis,https://libraries.mit.edu/get/lexis-nexis,LexisNexis
+        Academic,lexisnexis,435,\r\n,Hours,https://libraries.mit.edu/hours,Hours,hours
+        library,432,\r\n,hoovers,https://libraries.mit.edu/get/mergentonline,Hoovers:
+        replaced by Mergent Online,hoovers,431,\r\n,EBSCO,https://libraries.mit.edu/get/ebsco-all,EBSCO,ebsco,422,\r\n,business
+        source complete,https://libraries.mit.edu/get/bussource,Business Source Complete,business
+        complete source,413,\r\n,naxos,https://libraries.mit.edu/get/naxos,Naxos Music
+        Library,naxos,413,\r\n,springerlink,https://libraries.mit.edu/get/springer/,SpringerLink,springerlink,400,\r\n,management
+        science,https://library.mit.edu/item/000293821,Management Science,management
+        science,389,\r\n,wrds,https://libraries.mit.edu/get/wrds,WRDS,wrds,388,\r\n,web
+        of sci,https://libraries.mit.edu/get/webofsci,Web of Science,of sci web,385,\r\n,JACS,https://library.mit.edu/item/000291489,JACS
+        (Journal of the American Chemical Society),jacs,383,\r\n,nature materials,https://library.mit.edu/item/001133819,Nature
+        Materials (journal),materials nature,381,\r\n,acs nano,https://library.mit.edu/item/001420602,ACS
+        (American Chemical Society) Nano,acs nano,373,\r\n,worldcat,https://mit.worldcat.org,MIT's
+        WorldCat,worldcat,372,\r\n,dissertations,https://libguides.mit.edu/diss,Dissertations/Theses
+        Guide,dissertations,366,\r\n,The Economist,https://library.mit.edu/item/000283182,The
+        Economist,economist,366,\r\n,oxford english dictionary,https://libraries.mit.edu/get/oed,Oxford
+        English Dictionary (OED),dictionary english oxford,361,\r\n,journal of fluid
+        mechanics,https://library.mit.edu/item/000293577,Journal of Fluid Mechanics,fluid
+        journal mechanics of,357,\r\n,american economic review,https://library.mit.edu/item/000296989,American
+        Economic Review,american economic review,347,\r\n,Journal of the american
+        chemical society,https://library.mit.edu/item/000291489,JACS (Journal of the
+        American Chemical Society),american chemical journal of society the,328,\r\n,xplore,https://libraries.mit.edu/get/ieee,IEEE
+        Xplore,xplore,327,\r\n,science citation index,https://libraries.mit.edu/get/scie,Science
+        Citation Index Expanded,citation index science,326,\r\n,AIAA,https://libraries.mit.edu/get/aiaa,AIAA
+        Technical Papers,aiaa,314,\r\n,hours,https://libraries.mit.edu/hours/,MIT
+        Libraries Hours,hours,309,\r\n,The economist,https://library.mit.edu/item/000283182,The
+        Economist,economist the,305,\r\n,lexis,https://libraries.mit.edu/get/lexis-nexis,LexisNexis
+        Academic,lexis,305,\r\n,applied physics letters,https://library.mit.edu/item/000291031,Applied
+        Physics Letters,applied letters physics,281,\r\n,langmuir,https://library.mit.edu/item/000336885,Langmuir
+        : the ACS journal of surfaces and colloids,langmuir,281,\r\n,mergent,https://libraries.mit.edu/get/mergentonline,Mergent
+        Online,mergent,275,\r\n,financial times,https://library.mit.edu/item/000295942,The
+        Financial Times,financial times,270,\r\n,Physical Review B,https://library.mit.edu/item/000864198,Physical
+        Review B: Condensed Matter and Materials Physics,b physical review,269,\r\n,econlit,https://libraries.mit.edu/get/econlit,Econlit,econlit,267,\r\n,Science
+        Translational Medicine,https://library.mit.edu/item/001699919,Science Translational
+        Medicine,medicine science translational,265,\r\n,thomson,https://libraries.mit.edu/get/thomsonone,Thomson
+        One,thomson,263,\r\n,Business source,https://libraries.mit.edu/get/bussource,Business
+        Source Complete,business source,259,\r\n,nano letters,https://library.mit.edu/item/000966067,Nano
+        Letters,letters nano,259,\r\n,nature neuroscience,https://library.mit.edu/item/000849749,Nature
+        Neuroscience,nature neuroscience,259,\r\n,spie,https://libraries.mit.edu/get/spie,SPIE
+        Digital Library,spie,258,\r\n,journal of applied physics,https://library.mit.edu/item/000293499,Journal
+        of Applied Physics,applied journal of physics,251,\r\n,computer,https://library.mit.edu/item/000289732,Computer
+        (journal),computer,249,\r\n,new yorker,https://library.mit.edu/item/000294254,The
+        New Yorker,new yorker,248,\r\n,gis,https://libguides.mit.edu/gis/,GIS (Geographic
+        Information Systems),gis,244,\r\n,operations research,https://library.mit.edu/item/000659118,Operations
+        Research (journal),operations research,244,\r\n,journal of geophysical research,https://library.mit.edu/item/000280945,Journal
+        of Geophysical Research,geophysical journal of research,241,\r\n,foreign affairs,https://library.mit.edu/item/000293006,Foreign
+        Affairs,affairs foreign,240,\r\n,new england journal of medicine,https://library.mit.edu/item/000294202,The
+        New England Journal of Medicine,england journal medicine new of,240,\r\n,advanced
+        functional materials,https://library.mit.edu/item/001036193,Advanced Functional
+        Materials,advanced functional materials,235,\r\n,chronicle of higher education,https://library.mit.edu/item/000289532,The
+        Chronicle of Higher Education,chronicle education higher of,235,\r\n,avery,https://libraries.mit.edu/get/avery,Avery
+        Index to Architectural Periodicals,avery,232,\r\n,dissertation,https://libguides.mit.edu/diss,Dissertations/Theses
+        Guide,dissertation,230,\r\n,social explorer,https://libraries.mit.edu/get/explorer,Social
+        Explorer,explorer social,230,\r\n,IBIS,https://libraries.mit.edu/get/ibisworld,IBISWorld,ibis,229,\r\n,Journal
+        of Chemical Physics,https://library.mit.edu/item/000293537,The Journal of
+        Chemical Physics,chemical journal of physics,228,\r\n,mathscinet,https://libraries.mit.edu/get/mathscinet,MathSciNet,mathscinet,226,\r\n,matlab,https://libguides.mit.edu/c.php?g=176427&p=1160279,Statistical
+        software: MATLAB,matlab,226,\r\n,Quarterly journal of economics,https://library.mit.edu/item/000294716,The
+        Quarterly Journal of Economics,economics journal of quarterly,223,\r\n,asme,https://libguides.mit.edu/asme,Guide
+        to Finding ASME Papers and Publications,asme,219,\r\n,Lancet,https://library.mit.edu/item/000289394,The
+        Lancet,lancet,219,\r\n,venturexpert,https://libraries.mit.edu/get/thomsonone,VentureXpert
+        ,venturexpert,216,\r\n,ibisworld,https://libraries.mit.edu/get/ibisworld,IBISWorld,ibisworld,212,\r\n,jama,https://library.mit.edu/item/000297056,JAMA
+        (Journal of the American Medical Association),jama,212,\r\n,rsc advances,https://library.mit.edu/item/002095659,RSC
+        (Royal Society of Chemistry) Advances,advances rsc,211,\r\n,technology review,https://library.mit.edu/item/000851152,Technology
+        Review,review technology,210,\r\n,optics letters,https://library.mit.edu/item/000294994,Optics
+        Letters,letters optics,209,\r\n,Soft matter,https://library.mit.edu/item/001356895,Soft
+        Matter (journal),matter soft,208,\r\n,new york review of books,https://library.mit.edu/item/000283264,The
+        New York Review of Books,books new of review york,206,\r\n,nature nanotechnology,https://library.mit.edu/item/001397824,Nature
+        Nanotechnology,nanotechnology nature,205,\r\n,,,,,,\r\nNEW!,CNKI,https://libraries.mit.edu/get/chinajournals,\"\nChina
+        Academic Journals (CNKI)\",,,\r\n,,https://libraries.mit.edu/get/fakeurl,No
+        search here,,,\r\n,reference usa,https://libraries.mit.edu/get/ref-usa,ReferenceUSA,,,\r\n,landscan,https://libraries.mit.edu/get/landscan,Landscan
+        Global Population Data,,,\r\n,press reader,https://libraries.mit.edu/get/pressreader,PressReader,,,\r\n,indstat,https://libraries.mit.edu/get/unido-data,\"UNIDO
+        Statistics Data Portal (IDSB, INDSTAT4, INDSTAT2)\",,,\r\n,pub med,https://libraries.mit.edu/get/pubmed,PubMed,,,\r\n,museum
+        of fine arts,https://library.mit.edu/item/001959626,MFA (Museum of Fine Arts)
+        pass,,,\r\n,one source,https://libraries.mit.edu/get/onesource,OneSource,,,\r\n,investext,https://libraries.mit.edu/get/thomsonone,Thomson
+        One (formerly known as Investext),,,\r\n,lexus,https://libraries.mit.edu/get/lexis-nexis,LexisNexis
+        Academic,,,\r\n,lexus nexus,https://libraries.mit.edu/get/lexis-nexis,LexisNexis
+        Academic,,,\r\n,ieee books,https://libraries.mit.edu/get/ieee,IEEE Xplore,,,\r\n,ieeexplore,https://libraries.mit.edu/get/ieee,IEEE
+        Xplore,,,\r\n,engineering village,https://libraries.mit.edu/get/compendex,\"Engineering
+        Village (Compendex, Inspec, etc.)\",,,\r\n,,,,,TOTAL,\r\n,,,,,76971,"
+    http_version: 
+  recorded_at: Tue, 08 Aug 2017 16:07:27 GMT
+recorded_with: VCR 3.0.3

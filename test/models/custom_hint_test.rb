@@ -103,4 +103,25 @@ class CustomHintTest < ActiveSupport::TestCase
       assert_equal(4, Hint.where(source: 'manual').count)
     end
   end
+
+  test 'adds fingerprint if not present' do
+    VCR.use_cassette('custom hint blank fingerprints', allow_playback_repeats: true) do
+      url = 'https://www.dropbox.com/s/3dgxge8b14ht0c3/custom%20hint%20for%20test%20suite.csv?dl=0'
+      CustomHint.new(url).process_records
+      assert_equal('https://libraries.mit.edu/get/chinajournals',
+                   Hint.match('cnki').url)
+    end
+  end
+
+  test 'skips rows with neither fingerprint nor search' do
+    VCR.use_cassette('custom hint blank fingerprints', allow_playback_repeats: true) do
+      url = 'https://www.dropbox.com/s/3dgxge8b14ht0c3/custom%20hint%20for%20test%20suite.csv?dl=0'
+      assert_equal(4, Hint.count)
+      CustomHint.new(url).process_records
+      assert_nil(Hint.find_by(title: 'No search here'))
+      # Make sure it did create all the other hints, though, and not just skip
+      # out on the ones after the skipped row.
+      assert_equal(125, Hint.count)
+    end
+  end
 end
