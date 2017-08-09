@@ -71,7 +71,7 @@ class CustomHintTest < ActiveSupport::TestCase
     VCR.use_cassette('custom hint', allow_playback_repeats: true) do
       assert_equal(4, Hint.count)
       CustomHint.new(@url).process_records
-      assert_equal(128, Hint.count)
+      assert_equal(126, Hint.count)
       assert_equal('http://libraries.mit.edu/get/ieee',
                    Hint.match('ieee xplore').url)
     end
@@ -88,7 +88,7 @@ class CustomHintTest < ActiveSupport::TestCase
                    Hint.match('snoxboops').url)
 
       CustomHint.new(@url).reload
-      assert_equal(124, Hint.where(source: 'custom').count)
+      assert_equal(122, Hint.where(source: 'custom').count)
       assert_nil(Hint.match('snoxboops'))
     end
   end
@@ -99,7 +99,7 @@ class CustomHintTest < ActiveSupport::TestCase
       assert_equal(4, Hint.where(source: 'manual').count)
 
       CustomHint.new(@url).reload
-      assert_equal(124, Hint.where(source: 'custom').count)
+      assert_equal(122, Hint.where(source: 'custom').count)
       assert_equal(4, Hint.where(source: 'manual').count)
     end
   end
@@ -121,7 +121,7 @@ class CustomHintTest < ActiveSupport::TestCase
       assert_nil(Hint.find_by(title: 'No search here'))
       # Make sure it did create all the other hints, though, and not just skip
       # out on the ones after the skipped row.
-      assert_equal(125, Hint.count)
+      assert_equal(123, Hint.count)
     end
   end
 end
