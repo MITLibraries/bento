@@ -20,10 +20,6 @@ class Hint < ApplicationRecord
   validates :source, presence: true
   validates :fingerprint, uniqueness: { scope: :source }
 
-  # ~~TODO~~ testing:
-  # hints are matched in order of priority
-  # if env is unset, sources defaults to custom
-  # hints in db but not in HINT_SOURCES are not returned
   def self.match(searchterm)
     searchprint = fingerprint(searchterm)
     hints = Hint.where(fingerprint: searchprint)
@@ -96,6 +92,6 @@ class Hint < ApplicationRecord
     if ENV['HINT_SOURCES'].nil?
       return ['custom']
     end
-    ENV['HINT_SOURCES']
+    ENV['HINT_SOURCES'].split(',')
   end
 end
