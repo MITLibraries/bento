@@ -47,14 +47,15 @@ class AlephHint
   # @see https://www.loc.gov/marc/bibliographic/bd70x75x.html
   def title_like_fields
     [
+      [130, 'Uniform Title'],
       [210, 'Abbreviated Title'],
-      [222, 'Key Title'],
+      # [222, 'Key Title'],
       [240, 'Uniform Title'],
-      [242, 'Translation of Title by Cataloging Agency'],
-      [243, 'Collective Uniform Title'],
+      # [242, 'Translation of Title by Cataloging Agency'],
+      # [243, 'Collective Uniform Title'],
       [245, 'Title Statement'],
       [246, 'Varying Form of Title'],
-      [247, 'Former Title'],
+      # [247, 'Former Title'], # probably old records
       [730, 'Added Entry - Uniform Title'],
       [740, 'Added Entry - Uncontrolled Related/Analytical Title']
     ]
