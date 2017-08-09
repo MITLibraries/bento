@@ -20,9 +20,16 @@ class Hint < ApplicationRecord
   validates :source, presence: true
   validates :fingerprint, uniqueness: { scope: :source }
 
+  # ~~TODO~~ testing:
+  # hints are matched in order of priority
+  # if env is unset, sources defaults to custom
+  # hints in db but not in HINT_SOURCES are not returned
   def self.match(searchterm)
     searchprint = fingerprint(searchterm)
-    Hint.find_by(fingerprint: searchprint)
+    hints = Hint.where(fingerprint: searchprint)
+    # Order matching hints by source; throw away nils; return first remaining
+    # Hint. If there are none, this will return nil.
+    sources.map { |source| hints.find_by(source: source) }.compact[0]
   end
 
   # Updates a record if it exists, creates one if it does not
@@ -82,5 +89,13 @@ class Hint < ApplicationRecord
     searchterm.gsub!(/\p{P}|\p{S}/, '')
     searchterm.gsub!(/GROSSHACKCPLUSPLUS/, 'c++')
     searchterm.gsub!(/GROSSHACKCSHARP/, 'c#')
+  end
+
+  def self.sources
+    # Set a default value.
+    if ENV['HINT_SOURCES'].nil?
+      return ['custom']
+    end
+    ENV['HINT_SOURCES']
   end
 end

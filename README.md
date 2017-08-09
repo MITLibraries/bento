@@ -72,3 +72,5 @@ custom hint metadata.
 - `RESULTS_PER_BOX`: defaults to 3
 - `GLOBAL_ALERT`: html message to display as a global header
 - `GOOGLE_ANALYTICS`: Google Analytics property ID
+- `HINT_SOURCES`: List of hint source names, in descending order of priority. (If unset, will default to `['custom']`).
+  - Hints will only be displayed to the user if they are in `HINT_SOURCES`.
