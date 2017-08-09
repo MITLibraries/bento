@@ -55,7 +55,8 @@ class CustomHint
   def validate_csv
     mycsv = CSV.new(@csv, headers: true).read
     raise 'Invalid CSV - wrong headers' unless \
-      %w(Title URL Fingerprint).all? { |header| mycsv.headers.include? header }
+      %w(Title URL Example\ search).all? \
+        { |header| mycsv.headers.include? header }
   end
 
   # Loop over records and create hints. Make sure to filter out blank data -
@@ -64,7 +65,8 @@ class CustomHint
   def process_records
     validate_csv
     CSV.parse(@csv, headers: true) do |record|
-      if %w(Title URL Fingerprint).none? { |header| record[header].nil? }
+      if %w(Title URL Example\ search).all? { |header| record[header].present? }
+        record['Fingerprint'] = Hint.fingerprint(record['Example search'])
         Hint.upsert(title: record['Title'], url: record['URL'],
                     fingerprint: record['Fingerprint'], source: @source)
       end
