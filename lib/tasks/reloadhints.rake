@@ -19,7 +19,7 @@ namespace :reloadhints do
     Rails.logger.info(
       "Pre-load custom CSV Hint Count: #{Hint.where(source: 'custom').count}"
     )
-    Rails.logger.info('Hint source URL: #{args.url}')
+    Rails.logger.info("Hint source URL: #{args.url}")
 
     CustomHint.new(args.url).reload
 
