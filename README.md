@@ -67,8 +67,10 @@ custom hint metadata.
 - `ALEPH_HINT_SOURCE`: HTTP GET accessible marcxml source for Hints
 - `EDS_TIMEOUT`: value to override the 6 second default for EDS timeout
 - `FLIPFLOP_KEY`: set this to enable access to the flipflop dashboard
+- `GLOBAL_ALERT`: html message to display as a global header
+- `GOOGLE_ANALYTICS`: Google Analytics property ID
+- `HINT_SOURCES`: Comma-separated Hint source names, in descending order of priority. (If unset, will default to `custom`).
+  - Hints will only be displayed to the user if they are in `HINT_SOURCES`.
 - `LOG_LIKE_PROD`: uses prod-like logging in development if set
 - `LOG_LEVEL`: set log level for development, default is `:debug`
 - `RESULTS_PER_BOX`: defaults to 3
-- `GLOBAL_ALERT`: html message to display as a global header
-- `GOOGLE_ANALYTICS`: Google Analytics property ID

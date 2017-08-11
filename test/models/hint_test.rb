@@ -14,6 +14,15 @@
 require 'test_helper'
 
 class HintTest < ActiveSupport::TestCase
+
+  setup do
+    @cached_env_hint_sources = ENV['HINT_SOURCES']
+  end
+
+  teardown do
+    ENV['HINT_SOURCES'] = @cached_env_hint_sources
+  end
+
   test 'simple exact match' do
     searchterm = 'popcorn'
     match = Hint.match(searchterm)
@@ -23,6 +32,39 @@ class HintTest < ActiveSupport::TestCase
   test 'simple non match' do
     searchterm = 'grapes'
     match = Hint.match(searchterm)
+    assert_nil(match)
+  end
+
+  test 'match respects source priority' do
+    ENV['HINT_SOURCES'] = 'custom,aleph'
+
+    match = Hint.match('of science web')
+    assert_equal('custom', match.source)
+
+    hints(:webofscience).destroy
+    match = Hint.match('of science web')
+    assert_equal('aleph', match.source)
+  end
+
+  test 'Hint has default sources if env not set' do
+    ENV.delete('HINT_SOURCES')
+
+    assert_equal(['custom'], Hint.sources)
+  end
+
+  test 'Hint matches custom if env not set' do
+    ENV.delete('HINT_SOURCES')
+
+    match = Hint.match('of science web')
+    assert_equal('custom', match.source)
+  end
+
+  test 'hint not matched if source not in env' do
+    ENV['HINT_SOURCES'] = 'custom'
+
+    # There is a hint in the fixture with this fingerprint, but only one, and
+    # its source is aleph, so it should not be matched.
+    match = Hint.match('pubmed')
     assert_nil(match)
   end
 
@@ -159,23 +201,24 @@ class HintTest < ActiveSupport::TestCase
   end
 
   test 'duplicates via create for a single source result in db error' do
-    Hint.create!(title: 't', url: 'u', fingerprint: 'fp', source: 'source1')
+    Hint.create!(title: 't', url: 'u', fingerprint: 'fp', source: 'custom')
     assert_raise ActiveRecord::RecordInvalid do
-      Hint.create!(title: 't', url: 'u2', fingerprint: 'fp', source: 'source1')
+      Hint.create!(title: 't', url: 'u2', fingerprint: 'fp', source: 'custom')
     end
   end
 
   test 'duplicates via upsert for a single source result in an update' do
     initial_count = Hint.count
-    Hint.upsert(title: 't', url: 'u', fingerprint: 'fp', source: 'source1')
+    Hint.upsert(title: 't', url: 'u', fingerprint: 'fp', source: 'custom')
     assert_equal(Hint.count, initial_count + 1)
     assert_equal(Hint.match('fp').url, 'u')
-    Hint.upsert(title: 't', url: 'u2', fingerprint: 'fp', source: 'source1')
+    Hint.upsert(title: 't', url: 'u2', fingerprint: 'fp', source: 'custom')
     assert_equal(Hint.count, initial_count + 1)
     assert_equal(Hint.match('fp').url, 'u2')
   end
 
   test 'duplicates fingerprints for different sources are allowed' do
+    ENV['HINT_SOURCES'] = 'source1,source2'
     initial_count = Hint.count
     Hint.create!(title: 't', url: 'u', fingerprint: 'fp', source: 'source1')
     Hint.create!(title: 't', url: 'u', fingerprint: 'fp', source: 'source2')

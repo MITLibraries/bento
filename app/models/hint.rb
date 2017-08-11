@@ -22,7 +22,10 @@ class Hint < ApplicationRecord
 
   def self.match(searchterm)
     searchprint = fingerprint(searchterm)
-    Hint.find_by(fingerprint: searchprint)
+    hints = Hint.where(fingerprint: searchprint)
+    # Order matching hints by source; throw away nils; return first remaining
+    # Hint. If there are none, this will return nil.
+    sources.map { |source| hints.find_by(source: source) }.compact.first
   end
 
   # Updates a record if it exists, creates one if it does not
@@ -82,5 +85,10 @@ class Hint < ApplicationRecord
     searchterm.gsub!(/\p{P}|\p{S}/, '')
     searchterm.gsub!(/GROSSHACKCPLUSPLUS/, 'c++')
     searchterm.gsub!(/GROSSHACKCSHARP/, 'c#')
+  end
+
+  def self.sources
+    # Set a default value.
+    ENV['HINT_SOURCES'].nil? ? ['custom'] : ENV['HINT_SOURCES'].split(',')
   end
 end
