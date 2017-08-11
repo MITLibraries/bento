@@ -25,7 +25,7 @@ class Hint < ApplicationRecord
     hints = Hint.where(fingerprint: searchprint)
     # Order matching hints by source; throw away nils; return first remaining
     # Hint. If there are none, this will return nil.
-    sources.map { |source| hints.find_by(source: source) }.compact[0]
+    sources.map { |source| hints.find_by(source: source) }.compact.first
   end
 
   # Updates a record if it exists, creates one if it does not
@@ -89,9 +89,6 @@ class Hint < ApplicationRecord
 
   def self.sources
     # Set a default value.
-    if ENV['HINT_SOURCES'].nil?
-      return ['custom']
-    end
-    ENV['HINT_SOURCES'].split(',')
+    ENV['HINT_SOURCES'].nil? ? ['custom'] : ENV['HINT_SOURCES'].split(',')
   end
 end
