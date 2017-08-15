@@ -16,6 +16,6 @@ Flipflop.configure do
     description: 'Enables button for EDS supplied non-subscribed SFX links'
 
   feature :hints,
-    default: false,
+    default: true,
     description: 'Enables best bet search hint placards'
 end
