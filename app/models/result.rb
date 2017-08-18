@@ -4,11 +4,11 @@ class Result
   validates :title, presence: true
   validates :url, presence: true
 
-  attr_accessor :title, :year, :url, :type, :authors, :citation, :online,
-                :year, :type, :in, :publisher, :location, :blurb, :subjects,
-                :available_url, :thumbnail, :get_it_label,
-                :db_source, :an, :fulltext_links, :marc_856, :openurl,
-                :winner, :record_links, :uniform_title, :check_sfx_url
+  attr_accessor :an, :authors, :available_url, :blurb, :check_sfx_url,
+                :citation, :db_source, :fulltext_links, :get_it_label, :in,
+                :location, :marc_856, :online, :openurl, :publisher,
+                :record_links, :subjects, :thumbnail, :title, :type,
+                :uniform_title, :url, :winner, :year
 
   MAX_TITLE_LENGTH = ENV['MAX_TITLE_LENGTH'] || 150
 
