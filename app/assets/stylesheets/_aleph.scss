@@ -3,9 +3,11 @@
 // ------------------------------
 
 .fa-check {
-  color: $success
+  color: $success;
 }
 
 .fa-times {
- color: $error
+  margin-left: .2rem;
+  margin-right: .1rem;
+ color: $error;
 }
