@@ -25,5 +25,7 @@ Rails.application.routes.draw do
   get 'hint', to: 'hint#hint'
   get 'toggle', to: 'feature#toggle'
 
+  get 'record/(:id)', to: 'record#record', as: :record
+
   get '*path', to: 'catch_all#catch_all'
 end
