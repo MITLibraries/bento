@@ -1,4 +1,7 @@
 <%= render partial: "search/form" %>
+<% if @previous.present? %>
+  <%= link_to('Back to search results', "/search/bento?q=#{@previous}") %>
+<% end %>
 
 <div class="gridband layout-3q1q">
   <div class="col3q">
