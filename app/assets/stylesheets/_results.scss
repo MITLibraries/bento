@@ -96,9 +96,11 @@
   .list-local-locations {
     @extend .list-unbulleted;
     margin-bottom: 0;
+    margin-left: 2rem;
   }
 
   .result-local-location {
+    text-indent: -1rem;
     color: $gray;
     font-size: $fs-smallish;
   }
