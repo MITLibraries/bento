@@ -35,7 +35,11 @@
 
   }(window,document,'script','https://www.google-analytics.com/analytics.js','ga'));
 
-  ga('create', '<%= ENV['GOOGLE_ANALYTICS'] %>', 'auto');
+  ga('create', '<%= ENV['GOOGLE_ANALYTICS'] %>', 'auto', {allowLinker: true});
+  <% if (ENV['GOOGLE_ANALYTICS_LINKED_DOMAINS']) %>
+  ga('require', 'linker');
+  ga('linker:autoLink', <%= raw ENV['GOOGLE_ANALYTICS_LINKED_DOMAINS'].split(',') %>);
+  <% end %>
   ga('send', 'pageview');
 
   // Interaction tracking
