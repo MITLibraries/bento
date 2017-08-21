@@ -25,7 +25,13 @@ Rails.application.routes.draw do
   get 'hint', to: 'hint#hint'
   get 'toggle', to: 'feature#toggle'
 
-  get 'record/(:id)', to: 'record#record', as: :record
+  get 'record/(:db_source)/(:an)', to: 'record#record',
+                                   as: :record,
+                                   # Normal URL routing disallows periods in
+                                   # parameters, but our accession numbers
+                                   # actually include periods and we need them
+                                   # to perform lookups.
+                                   :constraints  => { :an => /[0-z\.]+/ }
 
   get '*path', to: 'catch_all#catch_all'
 end
