@@ -69,6 +69,7 @@ custom hint metadata.
 - `FLIPFLOP_KEY`: set this to enable access to the flipflop dashboard
 - `GLOBAL_ALERT`: html message to display as a global header
 - `GOOGLE_ANALYTICS`: Google Analytics property ID
+- `GOOGLE_ANALYTICS_LINKED_DOMAINS`: List of related domains, if your implementation uses cross-domain linking. Use syntax: `foo.com,bar.com`
 - `HINT_SOURCES`: Comma-separated Hint source names, in descending order of priority. (If unset, will default to `custom`).
   - Hints will only be displayed to the user if they are in `HINT_SOURCES`.
 - `LOG_LIKE_PROD`: uses prod-like logging in development if set
