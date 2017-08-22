@@ -17,11 +17,16 @@ class SearchEds
   RESULTS_PER_BOX = ENV['RESULTS_PER_BOX'] || 5
 
   def initialize
+    @attempts = 0
     @auth_token = uid_auth
     @results = {}
   end
 
+  # Run a search, including creating and destroying EDS sessions.
   def search(term, profile, facets, page = 1, per_page = RESULTS_PER_BOX)
+    # store passed parameters so we can retry later if we need to.
+    @query = { term: term, profile: profile, facets: facets,
+               page: page, per_page: per_page }
     return 'invalid credentials' unless @auth_token
     @session_key = create_session(profile) if @auth_token
     raw_results = search_filtered(term, facets, page, per_page)
@@ -53,7 +58,42 @@ class SearchEds
                                    connect: http_timeout,
                                    read: http_timeout)
                  .get(search_url(term, facets, page, per_page).to_s).to_s
+    detect_and_recover_from_bad_eds_session(result)
     JSON.parse(result)
+  end
+
+  # Detect bad EDS session tokens and try again if we detect them.
+  # However, we don't want to infinite loop so we have to keep track of
+  # multiple consecutive failures and if we see them throw an exception.
+  def detect_and_recover_from_bad_eds_session(result)
+    prevent_multiple_retries
+    return unless eds_session_invalid?(result)
+    Rails.logger.debug('EDS API Session Token Invalid')
+    retry_query
+  end
+
+  # Check the returned JSON for specific error state.
+  def eds_session_invalid?(result)
+    json = JSON.parse(result)
+    json.dig('ErrorDescription').present? &&
+      json.dig('ErrorDescription') == 'Session Token Invalid'
+  end
+
+  # Attempt to do another search. A new session token is generated as part of
+  # the `search` method.
+  def retry_query
+    Rails.logger.debug('Retrying EDS Search')
+    @attempts += 1
+    search(@query[:term], @query[:profile], @query[:facets],
+           @query[:page], @query[:per_page])
+  end
+
+  # Throw an exception if we have tried twice to do a search and both times
+  # we had invalid session tokens. Users will receive a "try again later"
+  # message and our Exception catcher will alert developers.
+  def prevent_multiple_retries
+    return unless @attempts > 1
+    raise 'Multiple Consecutive Session Token Invalid Responses from EDS'
   end
 
   # The timeout value is multiplied by 3 in http.rb so we divide by 3

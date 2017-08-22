@@ -16,8 +16,8 @@ class SearchController < ApplicationController
     page = params[:page] || 1
     per_page = params[:per_page] || ENV['PER_PAGE'] || 20
     @results = search_results(page, per_page)
-    @pageable_results = paginate_results(page, per_page)
     return redirect_to root_url unless @results
+    @pageable_results = paginate_results(page, per_page)
     render 'search_boxed'
   end
 
