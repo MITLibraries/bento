@@ -1,6 +1,6 @@
 <%= render partial: "search/form" %>
 <% if @previous.present? %>
-  <%= link_to('Back to search results', "/search/bento?q=#{@previous}") %>
+  <%= link_to('Back to search results', search_bento_path(q: @previous)) %>
 <% end %>
 
 <div class="gridband layout-3q1q">
@@ -21,7 +21,7 @@
     <% if @record.eds_publication_type == 'Periodical' %>
       Periodical | Published <%= @record.eds_publication_year %>
     <% elsif @record.eds_publication_type == 'Academic Journal' %>
-      In <%= link_to(@record.eds_source_title, search_prefix + "JN+\"#{@record.eds_source_title}\"", data: {type: "Author"} ) %>
+      In <%= link_to(@record.eds_source_title, search_prefix + "JN+\"#{@record.eds_source_title}\"", data: {type: "Journal"} ) %>
       volume <%= @record.eds_volume %>
       issue <%= @record.eds_issue %>
       (<%= @record.eds_publication_year %>)
