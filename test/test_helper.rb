@@ -73,6 +73,9 @@ VCR.configure do |config|
   config.filter_sensitive_data('"Password":"FAKE_EDS_PASSWORD"') do
     "\"Password\":\"#{ENV['EDS_PASSWORD']}\""
   end
+  config.filter_sensitive_data('apiwhatnot') do
+    (ENV['EDS_PROFILE']).to_s
+  end
   config.filter_sensitive_data('FAKE_GOOGLE_API_KEY') do
     (ENV['GOOGLE_API_KEY']).to_s
   end

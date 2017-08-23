@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=y&profile=apiwhatnot
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - ''
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 23 Aug 2017 18:34:07 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 23b0fef2-89b2-4621-9f4d-f772e0aaa207
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '887119082'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '102'
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"292530e3-f76b-4752-a2cf-29665797ca5c.sE0AM\/cOuaXfoIfUj7HIQ1y\/lkeYb4g75ZRLl5uD8Oc="}'
+    http_version: 
+  recorded_at: Wed, 23 Aug 2017 18:34:06 GMT
+recorded_with: VCR 3.0.3
