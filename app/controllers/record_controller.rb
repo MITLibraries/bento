@@ -1,4 +1,6 @@
 class RecordController < ApplicationController
+  rescue_from EBSCO::EDS::BadRequest, with: Proc.new{ raise ActionController::RoutingError.new('Record not found') }
+
   def record
     record_source = params[:db_source]
     record_an = params[:an]
