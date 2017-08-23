@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=y&profile=apiwhatnot
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=y&profile=FAKE_EDS_PROFILE
     body:
       encoding: US-ASCII
       string: ''
@@ -33,7 +33,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 23 Aug 2017 18:34:07 GMT
+      - Wed, 23 Aug 2017 18:51:41 GMT
       Server:
       - Microsoft-IIS/8.5
       X-Aspnet-Version:
@@ -41,18 +41,18 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 23b0fef2-89b2-4621-9f4d-f772e0aaa207
+      - f44bd877-7f2b-4f81-a392-ddd9c4560541
       X-Powered-By:
       - ASP.NET
       X-Sessionno:
-      - '887119082'
+      - '1476893260'
       X-Sessiontoken:
       - FakeSessiontoken
       Content-Length:
-      - '102'
+      - '100'
     body:
       encoding: UTF-8
-      string: '{"SessionToken":"292530e3-f76b-4752-a2cf-29665797ca5c.sE0AM\/cOuaXfoIfUj7HIQ1y\/lkeYb4g75ZRLl5uD8Oc="}'
+      string: '{"SessionToken":"FakeSessiontoken"}'
     http_version: 
-  recorded_at: Wed, 23 Aug 2017 18:34:06 GMT
+  recorded_at: Wed, 23 Aug 2017 18:51:40 GMT
 recorded_with: VCR 3.0.3

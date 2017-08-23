@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=y&profile=apiwhatnot
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=y&profile=FAKE_EDS_PROFILE
     body:
       encoding: US-ASCII
       string: ''
@@ -33,7 +33,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 23 Aug 2017 18:34:08 GMT
+      - Wed, 23 Aug 2017 18:51:43 GMT
       Server:
       - Microsoft-IIS/8.5
       X-Aspnet-Version:
@@ -41,20 +41,20 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 9e13ef75-6683-42f6-b8ee-371c6f9cde2b
+      - 776a4a64-0b91-40ff-b6d4-5714ae746ad4
       X-Powered-By:
       - ASP.NET
       X-Sessionno:
-      - '472403253'
+      - '1398954277'
       X-Sessiontoken:
       - FakeSessiontoken
       Content-Length:
-      - '100'
+      - '102'
     body:
       encoding: UTF-8
-      string: '{"SessionToken":"FakeSessiontoken"}'
+      string: '{"SessionToken":"7b9c0fae-10b1-455f-93a5-1b034ac44930.xS\/B3EBaszYLHVemWvb\/i7Z96t1kuO7jK1xC33AOBG8="}'
     http_version: 
-  recorded_at: Wed, 23 Aug 2017 18:34:08 GMT
+  recorded_at: Wed, 23 Aug 2017 18:51:43 GMT
 - request:
     method: post
     uri: https://eds-api.ebscohost.com/edsapi/rest/Retrieve?cache_id=a3dca1859b36b70a044093ec663fe8f3
@@ -88,7 +88,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 23 Aug 2017 18:34:09 GMT
+      - Wed, 23 Aug 2017 18:51:42 GMT
       Server:
       - Microsoft-IIS/8.5
       X-Aspnet-Version:
@@ -96,11 +96,11 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 8b76b4a1-bd8f-4e57-bbc9-72ed164c6e73
+      - 7f783264-2d80-417e-ac58-7faa73bc51e4
       X-Powered-By:
       - ASP.NET
       X-Sessionno:
-      - '472403253'
+      - '1398954277'
       X-Sessiontoken:
       - FakeSessiontoken
       Content-Length:
@@ -108,7 +108,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"DetailedErrorDescription":"DbId dog00916a not available for profile
-        apiwhatnot.","ErrorDescription":"DbId Not In Profile","ErrorNumber":"135"}'
+        FAKE_EDS_PROFILE.","ErrorDescription":"DbId Not In Profile","ErrorNumber":"135"}'
     http_version: 
-  recorded_at: Wed, 23 Aug 2017 18:34:09 GMT
+  recorded_at: Wed, 23 Aug 2017 18:51:43 GMT
 recorded_with: VCR 3.0.3
