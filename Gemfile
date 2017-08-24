@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 gem 'devise'
+gem 'ebsco-eds'
 gem 'flipflop'
 gem 'google-api-client'
 gem 'http'

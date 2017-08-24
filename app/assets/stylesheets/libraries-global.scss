@@ -1,4 +1,4 @@
-/* last updated 7/26/2017 - commit bdb1608 */
+/* last updated 8/22/2017 - commit e3c1524 */
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -800,6 +800,12 @@ form .error .hint {
 .form-horizontal .form-action {
   display: inline-block;
   width: 18%;
+}
+
+.box-content {
+  border: 1px solid #dedede;
+  background-color: #fff;
+  padding: 3%;
 }
 
 .bit {
