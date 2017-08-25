@@ -15,3 +15,16 @@ function RealtimeStatus( id ) {
     });
   });
 }
+
+function RealtimeItem( an ) {
+  console.log( an );
+
+  $.ajax({
+    url: "/full_item_status?id=" + an
+  }).done(function( msg ) {
+    $("#full-avail").html( msg );
+  }).fail(function( xhr, textStatus ) {
+    console.log(xhr);
+  });
+
+}

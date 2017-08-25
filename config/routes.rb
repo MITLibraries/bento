@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   post 'feedback', to: 'feedback#submit', as: :feedback_submit
 
   get 'item_status', to: 'aleph#item_status'
+  get 'full_item_status', to: 'aleph#full_item_status'
+
   get 'hint', to: 'hint#hint'
   get 'toggle', to: 'feature#toggle'
 

@@ -5,45 +5,34 @@
 
 <div class="gridband layout-3q1q">
   <div class="col3q box-content region" data-region="Full record">
-    <%# ~~~~~~~~~~~~~~~~~~~~~~~~ Basic info section ~~~~~~~~~~~~~~~~~~~~~~~~ %>
 
-    <% if Flipflop.enabled?(:local_browse) %>
-      <% search_prefix = '/search/bento?q=' %>
-    <% else %>
-      <% search_prefix = ENV['EDS_PROFILE_URI'] %>
-    <% end %>
-
-    <% if @record.eds_cover_thumb_url.present? %>
-      <img src='<%= @record.eds_cover_thumb_url %>' />
-    <% end %>
-
-    <h1><%= @record.title %></h1>
-    <% if @record.eds_publication_type == 'Periodical' %>
-      Periodical | Published <%= @record.eds_publication_year %>
-    <% elsif @record.eds_publication_type == 'Academic Journal' %>
-      In <%= link_to(@record.eds_source_title, search_prefix + "JN+\"#{@record.eds_source_title}\"", data: {type: "Journal"} ) %>
-      volume <%= @record.eds_volume %>
-      issue <%= @record.eds_issue %>
-      (<%= @record.eds_publication_year %>)
-    <%# Includes Books; is catchall for other types not specified in wireframes %>
-    <% else %>
-      <%= @record.eds_publication_type %> | Published <%= @record.eds_publication_year %>
-    <% end %>
+    <div class="discovery-full-record-basic-info">
+      <%= render partial: "basic_info" %>
+    </div>
 
     <br />
-    <%# If there are no authors (as with periodicals) this section will be
-        blank, corresponding to the wireframe. %>
-    <% @record.eds_authors.each do |author| %>
-      <% if author == "et al" %>
-        <%= author %>
+
+    <% if local_record? %>
+      <div id="full-avail" class="discovery-full-record-availability-info">
+        <%= render partial: "availability" %>
+      </div>
+
+      <br />
+
+      <% if local_book? %>
+        <script>RealtimeItem( "<%= clean_an %>" );</script>
       <% else %>
-        <%= link_to(author, search_prefix + "AU+\"#{author}\"", data: {type: "Author"} ) unless author == "et al" %><% if author != @record.eds_authors.last %>; <% end %>
+        Call for realtime holdings instead of items.
       <% end %>
+
     <% end %>
 
-    <%# ~~~~~~~~~~~~~~~~~~~ Other sections to be written ~~~~~~~~~~~~~~~~~~~ %>
+    <div class="discovery-full-record-basic-info">
+      <%= render partial: "extended_info" %>
+    </div>
+
   </div>
   <div class="col1q-r">
-    <%# Sidebar will go here. %>
+    <%= render partial: "sidebar" %>
   </div>
 </div>
