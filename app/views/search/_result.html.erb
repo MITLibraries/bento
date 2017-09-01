@@ -12,7 +12,7 @@
   <% end %>
 
   <h3 class="result-title">
-    <span class="sr">Title: </span><%= link_to(result.truncated_title.html_safe, result.url, class: 'bento-link', data: {type: "Title"} ) %>
+    <span class="sr">Title: </span><%= link_to(result.truncated_title.html_safe, full_record_link(result), class: 'bento-link', data: {type: "Title"} ) %>
   </h3>
   <div class="result-uniform-title">
     <% if result.uniform_title %>
@@ -111,7 +111,7 @@
       <% end %>
     <% end %>
 
-    <%= link_to("Details and requests", result.url, class: 'details button button-secondary', data: {type: "Detail"}) %>
+    <%= link_to("Details and requests", full_record_link(result), class: 'details button button-secondary', data: {type: "Detail"}) %>
   </div>
 
   <% if Flipflop.enabled?(:debug) %>
