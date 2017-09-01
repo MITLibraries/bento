@@ -19,6 +19,8 @@
           <main id="content-main" class="content-main" role="main">
             <%= render partial: "layouts/flash" %>
 
+            <h2>Hi Matt!</h2>
+
             <%= yield %>
 
             <% unless current_page?(:controller => 'feedback', :action => 'index') %>
