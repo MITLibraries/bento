@@ -15,3 +15,15 @@ function RealtimeStatus( id ) {
     });
   });
 }
+
+function RealtimeItem( an ) {
+  $.ajax({
+    url: "/full_item_status?id=" + an
+  }).done(function( msg ) {
+    $("#full-avail").html( msg );
+  }).fail(function( xhr, textStatus ) {
+    console.log('realtime item error');
+    console.log(xhr);
+    $("#full-avail").html( 'Sorry, an error has occurred loading realtime availability information.' ).addClass('alert error');
+  });
+}

@@ -14,7 +14,6 @@
 require 'test_helper'
 
 class HintTest < ActiveSupport::TestCase
-
   setup do
     @cached_env_hint_sources = ENV['HINT_SOURCES']
   end

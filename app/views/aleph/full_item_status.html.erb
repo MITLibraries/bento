@@ -1,0 +1,50 @@
+<p class="sr">Library locations: </p>
+<ul class="list-local-locations">
+<% @status.each do |s| %>
+  <li class="result-local-location">
+    <%= s[:library] %> <%= s[:collection] %>: <%= s[:call_number] %>
+    <% if s[:description].present? %> <%= s[:description] %> <% end %>
+    <span class="sr"><%= s[:label] %></span>
+
+    <br />
+
+    <% if s[:available?] %>
+      <i class="fa fa-check" aria-hidden="true"></i>
+
+      <% if archives?(s[:library]) %>
+
+        <a class="btn button-secondary" href="https://libraries.mit.edu/archives/">Contact Us</a>
+
+        <%= map_link(s[:library]) %>
+
+      <% elsif reserve?(s[:collection]) %>
+
+        <a class="btn button-secondary" href="">Place Hold</a>
+
+        <%= map_link(s[:library]) %>
+
+      <% elsif media?(s[:call_number]) %>
+
+        <a class="btn button-secondary" href="">Place Hold</a>
+
+        <%= map_link(s[:library]) %>
+
+      <% else %>
+
+        <a class="btn button-secondary" href="">Place Hold</a>
+
+        <a class="btn button-secondary" href="">Request Scan</a>
+
+        <%= map_link(s[:library]) %>
+
+      <% end %>
+
+    <% else %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+      Not available at MIT
+      <a class="btn button-secondary" href="">Get it with ILL (3-4 days)</a>
+    <% end %>
+
+  </li>
+<% end %>
+</ul>
