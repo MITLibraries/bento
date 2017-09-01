@@ -68,7 +68,7 @@ class SearchEds
   def detect_and_recover_from_bad_eds_session(result)
     prevent_multiple_retries
     return unless eds_session_invalid?(result)
-    Rails.logger.debug('EDS API Session Token Invalid')
+    Rails.logger.warn('EDS API Session Token Invalid')
     retry_query
   end
 
@@ -82,7 +82,7 @@ class SearchEds
   # Attempt to do another search. A new session token is generated as part of
   # the `search` method.
   def retry_query
-    Rails.logger.debug('Retrying EDS Search')
+    Rails.logger.info('Retrying EDS Search')
     @attempts += 1
     search(@query[:term], @query[:profile], @query[:facets],
            @query[:page], @query[:per_page])
