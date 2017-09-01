@@ -18,4 +18,8 @@ Flipflop.configure do
   feature :hints,
     default: true,
     description: 'Enables best bet search hint placards'
+
+  feature :local_full_record,
+    default: true,
+    description: 'Enables local full record instead of sending to EDS UI'
 end

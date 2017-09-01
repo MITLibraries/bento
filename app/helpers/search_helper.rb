@@ -19,6 +19,14 @@ module SearchHelper
     mit_ips.include?(request.remote_ip)
   end
 
+  def full_record_link(result)
+    if Flipflop.enabled?(:local_full_record) && params[:target] != 'google'
+      record_path(result.db_source.last, result.an)
+    else
+      result.url
+    end
+  end
+
   private
 
   # Source: http://kb.mit.edu/confluence/x/F4DCAg
