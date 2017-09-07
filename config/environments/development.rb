@@ -10,6 +10,9 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports.
+  # If you are writing custom error handling and you want to test it, set this
+  # to false instead. This will allow you to see the error page that users
+  # would normally see instead of the debug page.
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
