@@ -23,3 +23,6 @@ coverage
 .DS_Store
 doc/
 .yardoc/
+
+# Ignore personal notes
+todo.md

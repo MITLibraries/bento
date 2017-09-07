@@ -10,29 +10,17 @@
       <%= render partial: "basic_info" %>
     </div>
 
-    <br />
-
-    <%= render partial: 'links' %>
-
-    <% if local_record? %>
-      <div id="full-avail" class="discovery-full-record-availability-info">
-        <%= render partial: "availability" %>
-      </div>
-
-      <br />
-
-      <% if non_serial? %>
-        <script>RealtimeItem( "<%= clean_an %>" );</script>
-      <% else %>
-        Call for realtime holdings instead of items. (coming soon!)
-      <% end %>
-    <% end %>
-
     <div class="discovery-full-record-basic-info">
-      <%= render partial: "extended_info" %>
+      <%= render partial: "availability" %>
     </div>
 
+    <div class="discovery-full-record-basic-info">
+      <%= render partial: "more_information" %>
+    </div>
+
+    <%# 'Show even more information' section will go here. %>
   </div>
+
   <div class="col1q-r">
     <%= render partial: "sidebar" %>
   </div>
