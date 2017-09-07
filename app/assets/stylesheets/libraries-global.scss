@@ -1,4 +1,4 @@
-/* last updated 8/22/2017 - commit e3c1524 */
+/* last updated 9/7/2017 - commit 435b8e6 */
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -47,6 +47,14 @@ input[type=radio] {
       justify-content: space-between;
   -ms-flex-align: center;
       align-items: center;
+}
+
+.js .expand-collapse-control .button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .list-inline {
@@ -105,20 +113,20 @@ input[type=radio] {
   display: none;
 }
 
-a, .wrap-footer a, .wrap-outer-footer-institute a {
+.js .expand-collapse-control .button, a, .wrap-footer a, .wrap-outer-footer-institute a {
   transition: color .25s ease-in-out 0s;
   color: #338bc5;
   text-decoration: none;
 }
-a:hover, a:active, a:focus {
+.js .expand-collapse-control .button:hover, a:hover, .js .expand-collapse-control .button:active, a:active, .js .expand-collapse-control .button:focus, a:focus {
   color: #0ea6ec;
   text-decoration: underline;
 }
-a:disabled, .is-disabled {
+.js .expand-collapse-control .button:disabled, a:disabled, .js .expand-collapse-control .is-disabled.button, .is-disabled {
   display: none;
   color: #595959;
 }
-a:active, .is-pressed, .is-active {
+.js .expand-collapse-control .button:active, a:active, .js .expand-collapse-control .is-pressed.button, .is-pressed, .js .expand-collapse-control .is-active.button, .is-active {
   color: #0ea6ec;
 }
 
@@ -592,6 +600,8 @@ hr {
 }
 .wrap-content .title-page {
   margin-bottom: 1rem;
+  padding: .5rem 0 1rem 0;
+  font-weight: 600;
 }
 
 .button-primary, .wrap-outer-header-local .action-auth {
@@ -1053,14 +1063,17 @@ form .error .hint {
 .wrap-outer-footer-institute a {
   color: #fafafa;
 }
-.wrap-outer-footer-institute .link-logo-mit .logo-mit {
+.wrap-outer-footer-institute .link-logo-mit {
   display: inline-block;
+}
+.wrap-outer-footer-institute .link-logo-mit .logo-mit {
   fill: #999;
 }
 .wrap-outer-footer-institute .link-logo-mit .logo-mit .color {
   fill: #fafafa;
 }
 .wrap-outer-footer-institute .about-mit {
+  display: inline-block;
   color: #ccc;
   text-transform: uppercase;
 }
@@ -1073,10 +1086,24 @@ abbr.required {
   text-decoration: none;
 }
 
-.wrap-content .title-page {
-  padding: .5rem 0 1rem 0;
-  font-weight: 600;
+.no-js .expand-collapse-control {
+  display: none;
 }
-.wrap-content .wrap-filters {
-  margin: 1rem 0;
+
+.js .expand-collapse-wrap {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  transition: height 200ms;
+}
+.js .expand-collapse-control {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 4rem .5rem .5rem .5rem;
+  background: #fff;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #f3f3f3 50%);
 }
