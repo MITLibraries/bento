@@ -14,7 +14,8 @@ class RecordControllerTest < ActionController::TestCase
   end
 
   test 'should handle invalid parameters' do
-    VCR.use_cassette('record: no such database', allow_playback_repeats: true) do
+    VCR.use_cassette('record: no such database',
+                     allow_playback_repeats: true) do
       assert_raises ActionController::RoutingError do
         get :record, params: { db_source: 'dog00916a', an: 'mit.001492509' }
       end
