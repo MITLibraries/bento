@@ -17,4 +17,17 @@ class HintControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_includes(@response.body, 'UNIDO Statistics Data Portal')
   end
+
+  test 'ga tracking' do
+    cached_ga_key = ENV['GOOGLE_ANALYTICS']
+    ENV['GOOGLE_ANALYTICS'] = 'UA-FAKE-KEY'
+
+    # the test
+    VCR.use_cassette('ga hint tracking', allow_playback_repeats: true) do
+      get '/hint?q=INDSTAT'
+      assert_response :success
+    end
+
+    ENV['GOOGLE_ANALYTICS'] = cached_ga_key
+  end
 end
