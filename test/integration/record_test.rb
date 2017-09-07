@@ -61,5 +61,19 @@ class RecordTest < ActionDispatch::IntegrationTest
         assert(value.text.include?('Economic analysis for business decisions'))
       end
     end
+
+  test 'view online button is shown' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_select 'a.button-primary', text: 'View online'
+    end
+  end
+
+  test 'check for online copy link shown when fulltext URL is SFX' do
+    VCR.use_cassette('record: journal', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.000292123' }
+      assert_response :success
+      assert_select 'a', text: 'Check for online copy'
+    end
   end
 end
