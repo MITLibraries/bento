@@ -35,5 +35,7 @@ Rails.application.routes.draw do
                                    # to perform lookups.
                                    :constraints  => { :an => /[0-z\.]+/ }
 
-  get '*path', to: 'catch_all#catch_all'
+  match "/404", to: 'errors#not_found', :via => :all
+  match "/418", to: 'errors#i_am_a_teapot', :via => :all
+  get '*path', to: 'errors#not_found'
 end
