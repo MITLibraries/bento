@@ -22,4 +22,8 @@ Flipflop.configure do
   feature :local_full_record,
     default: ENV['LOCAL_FULL_RECORD'],
     description: 'Enables local full record instead of sending to EDS UI'
+
+  feature :hint_tracker,
+    default: ENV['HINT_TRACKER'],
+    description: 'Sends hint display to GA'
 end
