@@ -1,15 +1,21 @@
 <p class="sr">Library locations: </p>
-<ul class="list-local-locations">
-<% @status.each do |s| %>
-  <li class="result-local-location">
-    <% if s[:available?] %>
-      <i class="fa fa-check" aria-hidden="true"></i>
-    <% else %>
-      <i class="fa fa-times" aria-hidden="true"></i>
+<div class="expand-collapse-wrap is-collapsed">
+  <p class="expand-collapse-control"><button class="button">See more</button></p>
+  <div class="expand-container">
+    <ul class="list-local-locations">
+    <% @status.each do |s| %>
+      <li class="result-local-location">
+        <% if s[:available?] %>
+          <i class="fa fa-check" aria-hidden="true"></i>
+        <% else %>
+          <i class="fa fa-times" aria-hidden="true"></i>
+        <% end %>
+        <span class="sr"><%= s[:label] %></span>
+        <%= s[:library] %> <%= s[:collection] %>: <%= s[:call_number] %>
+        <% if s[:description].present? %> <%= s[:description] %> <% end %>
+      </li>
     <% end %>
-    <span class="sr"><%= s[:label] %></span>
-    <%= s[:library] %> <%= s[:collection] %>: <%= s[:call_number] %>
-    <% if s[:description].present? %> <%= s[:description] %> <% end %>
-  </li>
-<% end %>
-</ul>
+    </ul>
+  </div>
+</div>
+<script>Toggler();</script>
