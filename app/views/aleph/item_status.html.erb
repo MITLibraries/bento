@@ -1,7 +1,11 @@
 <p class="sr">Library locations: </p>
+
+<% if @status.count > 5 %>
 <div class="expand-collapse-wrap is-collapsed">
   <p class="expand-collapse-control"><button class="button">See more</button></p>
   <div class="expand-container">
+<% end %>
+
     <ul class="list-local-locations">
     <% @status.each do |s| %>
       <li class="result-local-location">
@@ -16,6 +20,9 @@
       </li>
     <% end %>
     </ul>
+    
+<% if @status.count > 5 %>
   </div>
 </div>
 <script>Toggler();</script>
+<% end %>
