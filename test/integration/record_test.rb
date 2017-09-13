@@ -52,4 +52,14 @@ class RecordTest < ActionDispatch::IntegrationTest
       assert response.body.exclude? 'Back to search results'
     end
   end
+
+  test 'course reserve material is viewable' do
+    VCR.use_cassette('record: course reserve', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat01763a', an: 'mitcr.000105015' }
+      assert_response :success
+      assert_select('h2') do |value|
+        assert(value.text.include?('Economic analysis for business decisions'))
+      end
+    end
+  end
 end
