@@ -95,4 +95,29 @@ class SearchTest < ActionDispatch::IntegrationTest
       assert_match(/Consecutive Session Token/, error.message)
     end
   end
+
+  test 'local full_record_link when enabled' do
+    VCR.use_cassette('popcorn articles',
+                     allow_playback_repeats: true) do
+      get '/toggle?feature=local_full_record' # enable feature
+      get '/search/search_boxed?q=popcorn&target=articles'
+      assert_response :success
+      assert_select('a.bento-link') do |value|
+        assert(value.text.include?('History of northern corn leaf'))
+        assert(value.xpath('./@href').text.exclude?('http://search.ebscohost.com/login.aspx'))
+      end
+    end
+  end
+
+  test 'remote full_record_link when local not enabled' do
+    VCR.use_cassette('popcorn articles',
+                     allow_playback_repeats: true) do
+      get '/search/search_boxed?q=popcorn&target=articles'
+      assert_response :success
+      assert_select('a.bento-link') do |value|
+        assert(value.text.include?('History of northern corn leaf'))
+        assert(value.xpath('./@href').text.include?('http://search.ebscohost.com/login.aspx'))
+      end
+    end
+  end
 end
