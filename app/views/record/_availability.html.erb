@@ -1,6 +1,6 @@
 <h3 class="subtitle3">Availability</h2>
 <% if @record.fulltext_link.present? %>
-  <% if @use_sfx %>
+  <% if check_online? %>
     <a href="<%= @record.fulltext_link[:url] %>">Check for online copy</a>
   <% else %>
     <a href="<%= @record.fulltext_link[:url] %>" class="btn button-primary">View online</a>

@@ -22,19 +22,25 @@ module RecordHelper
   def local_record_source_url
     if aleph_record?
       'https://library.mit.edu/item/' \
-        "#{@record.eds_accession_number.split('.').last}"
+        "#{an_numeric_component}"
     elsif aleph_cr_record?
       'https://library.mit.edu/res/' \
-        "#{@record.eds_accession_number.split('.').last}"
+        "#{an_numeric_component}"
     end
+  end
+
+  # Get the numeric portion of the accession number (without the collection
+  # label).
+  def an_numeric_component
+    @record.eds_accession_number.split('.').last
   end
 
   # Reformat the Accession Number to match the format used in Aleph
   def clean_an
     if aleph_record?
-      @record.eds_accession_number.split('.').last.prepend('MIT01')
+      an_numeric_component.prepend('MIT01')
     elsif aleph_cr_record?
-      @record.eds_accession_number.split('.').last.prepend('MIT30')
+      an_numeric_component.prepend('MIT30')
     end
   end
 
@@ -56,5 +62,19 @@ module RecordHelper
     else
       false
     end
+  end
+
+  # If the top EDS fulltext link is an SFX link that does NOT go directly to a
+  # fulltext resource, we want to present an unstyled link to check for
+  # fulltext online. Otherwise, we want an attention-getting 'view online'
+  # button.
+  def check_online?
+    url = @record.fulltext_link[:url]
+    # SFX URLs observed in the wild: owens.mit.edu/sfx_local,
+    # sfx.mit.edu/sfx_local, library.mit.edu/?func=service-sfx
+    url.present? && (
+      url.match?('mit.edu/sfx') || url.match?('func=service-sfx')) && (
+        @record.fulltext_link[:label] == 'Check SFX for availability'
+      )
   end
 end
