@@ -21,6 +21,7 @@ gem 'recaptcha', require: 'recaptcha/rails'
 gem 'rollbar'
 gem 'sass-rails'
 gem 'skylight'
+gem 'staccato'
 gem 'stringex'
 gem 'therubyracer', platforms: :ruby
 gem 'uglifier'
