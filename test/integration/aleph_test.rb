@@ -5,7 +5,7 @@ class AlephTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record status barker', allow_playback_repeats: true) do
       get full_item_status_path, params: { id: 'MIT01001251550' }
       assert_response :success
-      assert_select('.fa-map-marker') do |value|
+      assert_select('.map-link') do |value|
         assert(value.first[:href].include?('libraries.mit.edu/barker/'))
       end
     end
@@ -15,7 +15,7 @@ class AlephTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record status dewey', allow_playback_repeats: true) do
       get full_item_status_path, params: { id: 'MIT01002519066' }
       assert_response :success
-      assert_select('.fa-map-marker') do |value|
+      assert_select('.map-link') do |value|
         assert(value.first[:href].include?('libraries.mit.edu/dewey/'))
       end
     end
@@ -25,7 +25,7 @@ class AlephTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record status hayden', allow_playback_repeats: true) do
       get full_item_status_path, params: { id: 'MIT01001739356' }
       assert_response :success
-      assert_select('.fa-map-marker') do |value|
+      assert_select('.map-link') do |value|
         assert(value.first[:href].include?('libraries.mit.edu/hayden/'))
       end
     end
@@ -35,7 +35,7 @@ class AlephTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record status archives', allow_playback_repeats: true) do
       get full_item_status_path, params: { id: 'MIT01001975671' }
       assert_response :success
-      assert_select('.fa-map-marker') do |value|
+      assert_select('.map-link') do |value|
         assert(value.last[:href].include?('libraries.mit.edu/archives/'))
       end
     end
@@ -45,7 +45,7 @@ class AlephTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record status music', allow_playback_repeats: true) do
       get full_item_status_path, params: { id: 'MIT01001528789' }
       assert_response :success
-      assert_select('.fa-map-marker') do |value|
+      assert_select('.map-link') do |value|
         assert(value.first[:href].include?('libraries.mit.edu/music/'))
       end
     end
@@ -55,7 +55,7 @@ class AlephTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record status rotch', allow_playback_repeats: true) do
       get full_item_status_path, params: { id: 'MIT01002403936' }
       assert_response :success
-      assert_select('.fa-map-marker') do |value|
+      assert_select('.map-link') do |value|
         assert(value.first[:href].include?('libraries.mit.edu/rotch/'))
       end
     end
@@ -65,7 +65,7 @@ class AlephTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record status reserve', allow_playback_repeats: true) do
       get full_item_status_path, params: { id: 'MIT30000105498' }
       assert_response :success
-      assert_select('.fa-map-marker') do |value|
+      assert_select('.map-link') do |value|
         assert(value.first[:href].include?('libraries.mit.edu/rotch/'))
       end
     end

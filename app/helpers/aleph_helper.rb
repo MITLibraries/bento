@@ -17,23 +17,17 @@ module AlephHelper
   # generates a link to an map for each library on campus
   def map_link(library)
     if library == 'Barker Library'
-      map_link_to('https://libraries.mit.edu/barker/')
+      'https://libraries.mit.edu/barker/'
     elsif library == 'Dewey Library'
-      map_link_to('https://libraries.mit.edu/dewey/')
+      'https://libraries.mit.edu/dewey/'
     elsif library == 'Hayden Library'
-      map_link_to('https://libraries.mit.edu/hayden/')
+      'https://libraries.mit.edu/hayden/'
     elsif library == 'Institute Archives'
-      map_link_to('https://libraries.mit.edu/archives/')
+      'https://libraries.mit.edu/archives/'
     elsif library == 'Lewis Music Library'
-      map_link_to('https://libraries.mit.edu/music/')
+      'https://libraries.mit.edu/music/'
     elsif library == 'Rotch Library'
-      map_link_to('https://libraries.mit.edu/rotch/')
+      'https://libraries.mit.edu/rotch/'
     end
-  end
-
-  private
-
-  def map_link_to(url)
-    link_to('', url, class: 'fa fa-map-marker', aria: { hidden: true })
   end
 end
