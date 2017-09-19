@@ -72,8 +72,8 @@ class RecordTest < ActionDispatch::IntegrationTest
   end
 
   test 'check for online copy link shown when SFX URL is not fulltext' do
-    VCR.use_cassette('record: journal', allow_playback_repeats: true) do
-      get record_url, params: { db_source: 'cat00916a', an: 'mit.000292123' }
+    VCR.use_cassette('record: not fulltext', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'edselp', an: 'S002965541630392X' }
       assert_response :success
       assert_select 'a.button-primary', text: 'View online', count: 0
       assert_select 'a', text: 'Check for online copy'
