@@ -73,8 +73,42 @@ module RecordHelper
     # SFX URLs observed in the wild: owens.mit.edu/sfx_local,
     # sfx.mit.edu/sfx_local, library.mit.edu/?func=service-sfx
     url.present? && (
-      url.match?('mit.edu/sfx') || url.match?('func=service-sfx')) && (
         @record.fulltext_link[:label] == 'Check SFX for availability'
-      )
+    )
+  end
+
+  # The value in @record.eds_languages is sometimes a string and sometimes an
+  # array. We're going to make it always be an array, so we can handle it in
+  # the same way in the template regardless, and also use its arrayness to
+  # pluralize "language" properly.
+  def clean_language
+    if @record.eds_languages.is_a? String
+      @record.eds_languages.gsub(/\s+/, '').split(',')
+    else
+      @record.eds_languages
+    end
+  end
+
+  def clean_affiliations
+    return if @record.eds_author_affiliations.blank?
+    affs = Nokogiri::HTML.fragment(CGI.unescapeHTML(@record.eds_author_affiliations))
+    affs.search('relatesto').each(&:remove)
+    nodes = affs.children.map(&:text).map(&:strip)
+    nodes.reject!(&:empty?)
+    nodes.reject! { |c| c == '&lt;br /&gt;' }
+    nodes
+  end
+
+  def clean_other_titles
+    return if @record.eds_other_titles.blank?
+    titles = Nokogiri::HTML.fragment(CGI.unescapeHTML(@record.eds_other_titles))
+    titles.search('searchlink').map(&:text).map(&:strip)
+  end
+
+  def path_to_previous
+    # Don't use q as the parameter here - that will cause the search form to
+    # notice the parameter and prefill the search, which is behavior we *don't*
+    # want.
+    params[:previous]
   end
 end

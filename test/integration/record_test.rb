@@ -82,10 +82,156 @@ class RecordTest < ActionDispatch::IntegrationTest
 
   test 'check for view online button shown when SFX URL is fulltext' do
     VCR.use_cassette('record: sfx fulltext', allow_playback_repeats: true) do
-      get record_url, params: { db_source: 'mdc', an: '28632713' }
+      get record_url, params: { db_source: 'lxh', an: '102229662' }
       assert_response :success
       assert_select 'a.button-primary', text: 'View online'
       assert_select 'a', text: 'Check for online copy', count: 0
+    end
+  end
+
+  # ~~~~~~~~~~~~~~~~~~~ tests of 'more information' section ~~~~~~~~~~~~~~~~~~~
+  # For the following tests, note that not all information is available for all
+  # sources.
+  test 'document type is shown' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_response :success
+      assert @response.body.include? 'Document type: Academic Journal'
+    end
+  end
+
+  test 'source is shown' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_response :success
+      assert @response.body.include? 'Source: Biosensors (2079-6374)'
+    end
+  end
+
+  test 'authors are shown' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_response :success
+      assert @response.body.include? 'Khosravi, Farhad'
+      assert @response.body.include? 'Loeian, Seyed Masoud'
+      assert @response.body.include? 'Panchapakesan, Balaji'
+    end
+  end
+
+  test 'author affiliations are shown' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_response :success
+      assert @response.body.include? 'Small Systems Laboratory, Department of Mechanical Engineering, Worcester Polytechnic Institute, Worcester, MA 01532, USA'
+    end
+  end
+
+  test 'publication info is shown' do
+    VCR.use_cassette('record: book', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
+      assert_response :success
+      assert @response.body.include? 'Publication info: Edinburgh ; New York : Canongate ; [Berkeley, Calif.?] : Distributed by Publishers Group West, c2007.'
+    end
+  end
+
+  test 'issn is shown' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_response :success
+      assert @response.body.include? 'ISSN: 20796374'
+    end
+  end
+
+  test 'isbn is shown' do
+    VCR.use_cassette('record: book', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
+      assert_response :success
+      assert @response.body.include? 'ISBN: 9781841958811'
+    end
+  end
+
+  test 'doi is shown' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_response :success
+      assert @response.body.include? 'DOI: 10.3390/bios7020017'
+    end
+  end
+
+  test 'language is shown' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_response :success
+      assert @response.body.gsub(/\s+/, " ").include? 'Language: English'
+    end
+  end
+
+  test 'physical description is shown' do
+    VCR.use_cassette('record: book', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
+      assert_response :success
+      assert @response.body.include? 'Physical description: xv, 224 p. : map ; 21 cm.'
+    end
+  end
+
+  test 'database is shown' do
+    VCR.use_cassette('record: book', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
+      assert_response :success
+      assert @response.body.include? 'Database: MIT Barton Catalog'
+    end
+  end
+
+  test 'subjects are shown' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_response :success
+      assert @response.body.include? 'Carbon nanotubes'
+      assert @response.body.include? 'Biosensors'
+      assert @response.body.include? 'Molecular recognition'
+    end
+  end
+
+  test 'keywords are shown' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_response :success
+      assert @response.body.include? 'Carbon Nanotube Biosensors'
+      assert @response.body.include? 'Field Effect Transistors'
+      assert @response.body.include? 'IL6'
+    end
+  end
+
+  test 'abstract is shown' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_response :success
+      assert @response.body.include? 'This study demonstrates the rapid and label-free detection of Interleukin-6'
+    end
+  end
+
+  test 'notes are shown' do
+    VCR.use_cassette('record: book', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
+      assert_response :success
+      assert @response.body.include? 'Originally published as: Jungle capitalists.'
+    end
+  end
+
+  test 'other titles are shown' do
+    VCR.use_cassette('record: book', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
+      assert_response :success
+      assert @response.body.include? 'Other titles'
+    end
+  end
+
+  test 'should be able to display rainbows' do
+    get '/toggle/?feature=pride'
+    VCR.use_cassette('record: rainbows', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'qth', an: '17660728' }
+      assert_response :success
+      assert_select 'div.reasons'
     end
   end
 end

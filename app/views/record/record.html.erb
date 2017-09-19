@@ -1,5 +1,5 @@
 <%= render partial: "search/form" %>
-<% if @previous.present? %>
+<% if path_to_previous.present? %>
   <%= link_to('Back to search results', search_bento_path(q: @previous)) %>
 <% end %>
 
@@ -15,7 +15,7 @@
     </div>
 
     <div class="discovery-full-record-basic-info">
-      <%= render partial: "more_information" %>
+      <%= render partial: "extended_info" %>
     </div>
 
     <%# 'Show even more information' section will go here. %>

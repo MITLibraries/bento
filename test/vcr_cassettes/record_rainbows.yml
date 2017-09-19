@@ -33,7 +33,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 20 Sep 2017 18:02:29 GMT
+      - Fri, 22 Sep 2017 16:22:00 GMT
       Server:
       - Microsoft-IIS/8.5
       X-Aspnet-Version:
@@ -46,7 +46,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
     http_version: 
-  recorded_at: Wed, 20 Sep 2017 18:02:28 GMT
+  recorded_at: Fri, 22 Sep 2017 16:07:48 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=n&profile=FAKE_EDS_PROFILE
@@ -80,7 +80,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 20 Sep 2017 18:02:29 GMT
+      - Fri, 22 Sep 2017 16:22:00 GMT
       Server:
       - Microsoft-IIS/8.5
       X-Aspnet-Version:
@@ -88,20 +88,20 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - 34cd0221-53f7-4fff-b58c-ef85fa2a11d5
+      - d2b2b982-c354-4646-9b27-35520311f744
       X-Powered-By:
       - ASP.NET
       X-Sessionno:
-      - '856068910'
+      - "-746598171"
       X-Sessiontoken:
       - FakeSessiontoken
       Content-Length:
-      - '101'
+      - '100'
     body:
       encoding: UTF-8
-      string: '{"SessionToken":"ab36405d-1eec-4265-a2d0-bcf9efb17f6f.xvYgOzyKEsR8eR62HZh\/EsIeysYnGqhfYg1DA7p4HHo="}'
+      string: '{"SessionToken":"FakeSessiontoken"}'
     http_version: 
-  recorded_at: Wed, 20 Sep 2017 18:02:29 GMT
+  recorded_at: Fri, 22 Sep 2017 16:07:49 GMT
 - request:
     method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/Info
@@ -135,7 +135,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 20 Sep 2017 18:02:29 GMT
+      - Fri, 22 Sep 2017 16:22:01 GMT
       Server:
       - Microsoft-IIS/8.5
       X-Aspnet-Version:
@@ -143,11 +143,11 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - fedd1fd3-3abe-409d-b8eb-0e900d559b27
+      - eebac749-6528-462e-842d-4c39d0c9f20c
       X-Powered-By:
       - ASP.NET
       X-Sessionno:
-      - '856068910'
+      - "-746598171"
       X-Sessiontoken:
       - FakeSessiontoken
       Content-Length:
@@ -238,13 +238,13 @@ http_interactions:
         Starters","DefaultOn":"n","AddAction":"includerelatedcontent(rs)"}],"AvailableDidYouMeanOptions":[{"Id":"AutoSuggest","Label":"Did
         You Mean","DefaultOn":"y"},{"Id":"AutoCorrect","Label":"Auto Correct","DefaultOn":"n"}]},"ViewResultSettings":{"ResultsPerPage":"20","ResultListView":"brief"},"ApplicationSettings":{"SessionTimeout":"480"},"ApiSettings":{"MaxRecordJumpAhead":"250"}}'
     http_version: 
-  recorded_at: Wed, 20 Sep 2017 18:02:29 GMT
+  recorded_at: Fri, 22 Sep 2017 16:07:49 GMT
 - request:
     method: post
     uri: https://eds-api.ebscohost.com/edsapi/rest/Retrieve
     body:
       encoding: UTF-8
-      string: '{"DbId":"lxh","An":"102229662","HighlightTerms":null,"EbookPreferredFormat":"ebook-pdf"}'
+      string: '{"DbId":"qth","An":"17660728","HighlightTerms":null,"EbookPreferredFormat":"ebook-pdf"}'
     headers:
       Content-Type:
       - application/json;charset=UTF-8
@@ -272,7 +272,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 20 Sep 2017 18:02:29 GMT
+      - Fri, 22 Sep 2017 16:22:01 GMT
       Server:
       - Microsoft-IIS/8.5
       X-Aspnet-Version:
@@ -280,59 +280,60 @@ http_interactions:
       X-Authenticationtoken:
       - FakeAuthenticationtoken
       X-Msg-Correlid:
-      - a803a9f3-2398-4e3e-8507-4fc517e16dcc
+      - 520b98e3-9cdc-4ba0-a488-41f4e04d8194
       X-Powered-By:
       - ASP.NET
       X-Sessionno:
-      - '856068910'
+      - "-746598171"
       X-Sessiontoken:
       - FakeSessiontoken
       Content-Length:
-      - '2182'
+      - '2095'
     body:
       encoding: UTF-8
-      string: '{"Record":{"ResultId":1,"Header":{"DbId":"lxh","DbLabel":"Library,
-        Information Science & Technology Abstracts","An":"102229662","PubType":"Academic
-        Journal","PubTypeId":"academicJournal"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=lxh&AN=102229662&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"http:\/\/owens.mit.edu\/sfx_local?genre=article&isbn=&issn=19405758&title=Code4Lib
-        Journal&volume=&issue=28&date=20150415&atitle=Feminism%20and%20the%20Future%20of%20Library%20Discovery.&aulast=Sadler,
-        Bess&spage=1&sid=EBSCO:Library%2C%20Information%20Science%20%26%20Technology%20Abstracts&pid=<authors>Sadler,
-        Bess<\/authors><ui>102229662<\/ui><date>20150415<\/date><db>Library%2C%20Information%20Science%20%26%20Technology%20Abstracts<\/db>","Name":"SFX
-        link filtered to collection fthi1 (For su)","Category":"fullText","Text":"","Icon":"http:\/\/libraries.mit.edu\/img\/sfx\/sfx-mit.gif"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Feminism
-        and the Future of Library Discovery."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
-        fieldCode=&quot;AR&quot; term=&quot;%22Sadler%2C+Bess%22&quot;&gt;Sadler,
-        Bess&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
-        term=&quot;%22Bourg%2C+Chris%22&quot;&gt;Bourg, Chris&lt;\/searchLink&gt;&lt;relatesTo&gt;1&lt;\/relatesTo&gt;"},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"&lt;searchLink
-        fieldCode=&quot;JN&quot; term=&quot;%22Code4Lib+Journal%22&quot;&gt;Code4Lib
-        Journal&lt;\/searchLink&gt;. 2015, Issue 28, p1-1. 1p."},{"Name":"TypeDocument","Label":"Document
-        Type","Group":"TypDoc","Data":"Article"},{"Name":"Subject","Label":"Subject
-        Terms","Group":"Su","Data":"*&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Libraries%22&quot;&gt;Libraries&lt;\/searchLink&gt;&lt;br
-        \/&gt;*&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Librarians%22&quot;&gt;Librarians&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Feminism%22&quot;&gt;Feminism&lt;\/searchLink&gt;&lt;br
-        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Women&#39;s+rights%22&quot;&gt;Women&#39;s
-        rights&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
-        term=&quot;%22Feminist+psychology%22&quot;&gt;Feminist psychology&lt;\/searchLink&gt;"},{"Name":"Abstract","Label":"Abstract","Group":"Ab","Data":"This
-        paper discusses the various ways in which the practices of libraries and librarians
-        influence the diversity (or lack thereof) of scholarship and information access.
-        We examine some of the cultural biases inherent in both library classification
-        systems and newer forms of information access like Google search algorithms,
-        and propose ways of recognizing bias and applying feminist principles in the
-        design of information services for scholars, particularly as libraries re-invent
-        themselves to grapple with digital collections. [ABSTRACT FROM AUTHOR]"},{"Name":"AbstractSuppliedCopyright","Label":"","Group":"","Data":"&lt;i&gt;Copyright
-        of Code4Lib Journal is the property of Code4Lib Journal and its content may
-        not be copied or emailed to multiple sites or posted to a listserv without
-        the copyright holder&#39;s express written permission. However, users may
-        print, download, or email articles for individual use. This abstract may be
-        abridged. No warranty is given about the accuracy of the copy. Users should
-        refer to the original published version of the material for the full abstract.&lt;\/i&gt;
-        (Copyright applies to all Abstracts.)"},{"Name":"AffiliationAuthor","Label":"Author
-        Affiliations","Group":"AuInfo","Data":"&lt;relatesTo&gt;1&lt;\/relatesTo&gt;Director
-        of Libraries at Massachusetts Institute of Technology (MIT)"},{"Name":"FullTextWordCount","Label":"Full
-        Text Word Count","Group":"FTInfo","Data":"3214"},{"Name":"ISSN","Label":"ISSN","Group":"ISSN","Data":"1940-5758"},{"Name":"AN","Label":"Accession
-        Number","Group":"ID","Data":"102229662"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Code":"eng","Text":"English"}],"PhysicalDescription":{"Pagination":{"PageCount":"1","StartPage":"1"}},"Subjects":[{"SubjectFull":"Libraries","Type":"general"},{"SubjectFull":"Librarians","Type":"general"},{"SubjectFull":"Feminism","Type":"general"},{"SubjectFull":"Women''s
-        rights","Type":"general"},{"SubjectFull":"Feminist psychology","Type":"general"}],"Titles":[{"TitleFull":"Feminism
-        and the Future of Library Discovery.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Sadler,
-        Bess"}}},{"PersonEntity":{"Name":{"NameFull":"Bourg, Chris"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"15","M":"04","Text":"2015","Type":"published","Y":"2015"}],"Identifiers":[{"Type":"issn-print","Value":"19405758"}],"Numbering":[{"Type":"issue","Value":"28"}],"Titles":[{"TitleFull":"Code4Lib
-        Journal","Type":"main"}]}}]}}}}}'
+      string: '{"Record":{"ResultId":1,"Header":{"DbId":"qth","DbLabel":"LGBT Life
+        with Full Text","An":"17660728","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=qth&AN=17660728&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=book&atitle=&title=The%20Organizational%20Shaping%20of%20Collective%20Identity%3A%20The%20Case%20of%20Lesbian%20and%20Gay%20Film%20Festivals%20in%20New%20York.&isbn=9780814718759&volume=&issue=&date=19970101&aulast=Gamson,
+        Joshua&spage=526&pages=526-543&sid=EBSCO:LGBT%20Life%20with%20Full%20Text:17660728","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"The
+        Organizational Shaping of Collective Identity: The Case of Lesbian and Gay
+        Film Festivals in New York."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Gamson%2C+Joshua%22&quot;&gt;Gamson,
+        Joshua&lt;\/searchLink&gt;&lt;relatesTo&gt;1&lt;\/relatesTo&gt;&lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Duberman%2C+Martin%22&quot;&gt;Duberman,
+        Martin&lt;\/searchLink&gt;&lt;relatesTo&gt;2,3&lt;\/relatesTo&gt;"},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"&lt;searchLink
+        fieldCode=&quot;JN&quot; term=&quot;%22Queer+World%3A+The+Center+for+Lesbian+%26+Gay+Studies+Reader%22&quot;&gt;Queer
+        World: The Center for Lesbian &amp; Gay Studies Reader&lt;\/searchLink&gt;.
+        1997, p526-543. 18p."},{"Name":"TypeDocument","Label":"Document Type","Group":"TypDoc","Data":"Article"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"*&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Adaptability+%28Psychology%29%22&quot;&gt;Adaptability
+        (Psychology)&lt;\/searchLink&gt;&lt;br \/&gt;*&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Gay+%26+lesbian+film+festivals%22&quot;&gt;Gay &amp; lesbian
+        film festivals&lt;\/searchLink&gt;&lt;br \/&gt;*&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22LGBT+film+festivals%22&quot;&gt;LGBT film festivals&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Organization%22&quot;&gt;Organization&lt;\/searchLink&gt;"},{"Name":"SubjectGeographic","Label":"Geographic
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22New+York+%28State%29%22&quot;&gt;New
+        York (State)&lt;\/searchLink&gt;"},{"Name":"Abstract","Label":"Abstract","Group":"Ab","Data":"This
+        article analyzes the organizational adaptations to the external environment
+        using the case of lesbian and gay film festivals in New York as basis. The
+        shifting opportunities provided by the discovery of gay film as an artistic
+        and commercial genre, most prominently, have made pursuits of higher cultural
+        capital and demonstrations of consumer group status smart survival strategies.
+        But these are not incidental inward moves. Success in the organizational field
+        appears to favor identity formulations that are less explicitly oppositional
+        and it is tempting to assert that this trajectory is a generalizable one."},{"Name":"AffiliationAuthor","Label":"Author
+        Affiliations","Group":"AuInfo","Data":"&lt;relatesTo&gt;1&lt;\/relatesTo&gt;Assistant
+        professor of sociology, Yale University&lt;br \/&gt;&lt;relatesTo&gt;2&lt;\/relatesTo&gt;Distinguished
+        Professor of History, Lehman College and the Graduate Center of the City University
+        of New York&lt;br \/&gt;&lt;relatesTo&gt;3&lt;\/relatesTo&gt;Founder, Center
+        for Lesbian and Gay Studies (CLAGS)"},{"Name":"ISBN","Label":"ISBN","Group":"ISBN","Data":"9780814718759"},{"Name":"AN","Label":"Accession
+        Number","Group":"ID","Data":"17660728"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Code":"eng","Text":"English"}],"PhysicalDescription":{"Pagination":{"PageCount":"18","StartPage":"526"}},"Subjects":[{"SubjectFull":"Adaptability
+        (Psychology)","Type":"general"},{"SubjectFull":"Gay & lesbian film festivals","Type":"general"},{"SubjectFull":"LGBT
+        film festivals","Type":"general"},{"SubjectFull":"Organization","Type":"general"},{"SubjectFull":"New
+        York (State)","Type":"general"}],"Titles":[{"TitleFull":"The Organizational
+        Shaping of Collective Identity: The Case of Lesbian and Gay Film Festivals
+        in New York.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Gamson,
+        Joshua"}}},{"PersonEntity":{"Name":{"NameFull":"Duberman, Martin"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Text":"1997","Type":"published","Y":"1997"}],"Identifiers":[{"Type":"isbn-print","Value":"9780814718759"}],"Titles":[{"TitleFull":"Queer
+        World: The Center for Lesbian & Gay Studies Reader","Type":"main"}]}}]}}}}}'
     http_version: 
-  recorded_at: Wed, 20 Sep 2017 18:02:29 GMT
+  recorded_at: Fri, 22 Sep 2017 16:07:49 GMT
 recorded_with: VCR 3.0.3

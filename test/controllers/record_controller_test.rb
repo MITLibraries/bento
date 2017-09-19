@@ -21,4 +21,13 @@ class RecordControllerTest < ActionController::TestCase
       end
     end
   end
+
+  test 'clean_keywords' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get :record, params: { db_source: 'aci', an: '123877356' }
+
+      assert_equal(['Carbon Nanotube Biosensors', 'Field Effect Transistors', 'IL6'],
+                    @controller.instance_variable_get(:@keywords))
+    end
+  end
 end

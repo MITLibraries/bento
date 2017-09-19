@@ -26,4 +26,8 @@ Flipflop.configure do
   feature :hint_tracker,
     default: ENV['HINT_TRACKER'],
     description: 'Sends hint display to GA'
+
+  feature :pride,
+    default: ENV['PRIDE'],
+    description: 'Enables rainbows for records with LGBT subjects/keywords'
 end
