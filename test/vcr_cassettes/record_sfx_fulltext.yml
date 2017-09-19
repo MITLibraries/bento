@@ -1,0 +1,522 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/uidauth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD","InterfaceId":"edsapi_ruby_gem"}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - ''
+      X-Authenticationtoken:
+      - ''
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 15 Sep 2017 20:14:01 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '128'
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+    http_version: 
+  recorded_at: Fri, 15 Sep 2017 20:13:41 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=n&profile=FAKE_EDS_PROFILE
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - ''
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 15 Sep 2017 20:14:01 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 557b7865-6eec-4a30-ae0f-9d6b6c35f019
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '668434917'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '101'
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"a9fcf67f-e1f7-43e1-a603-42d28887f972.YXwlNaIDfmsH11cGLn9guOn1n\/B0zk2jZ1CsIrRwlZU="}'
+    http_version: 
+  recorded_at: Fri, 15 Sep 2017 20:13:41 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Info
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 15 Sep 2017 20:14:00 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 734dd93f-3f9f-4e6b-b3eb-9add917b6d0f
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '668434917'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '3632'
+    body:
+      encoding: UTF-8
+      string: '{"AvailableSearchCriteria":{"AvailableSorts":[{"Id":"date","Label":"Date
+        Newest","AddAction":"setsort(date)"},{"Id":"date2","Label":"Date Oldest","AddAction":"setsort(date2)"},{"Id":"relevance","Label":"Relevance","AddAction":"setsort(relevance)"}],"AvailableSearchFields":[{"FieldCode":"TX","Label":"All
+        Text"},{"FieldCode":"AU","Label":"Author"},{"FieldCode":"TI","Label":"Title"},{"FieldCode":"SU","Label":"Subject
+        Terms"},{"FieldCode":"SO","Label":"Source"},{"FieldCode":"AB","Label":"Abstract"},{"FieldCode":"IS","Label":"ISSN"},{"FieldCode":"IB","Label":"ISBN"}],"AvailableExpanders":[{"Id":"relatedsubjects","Label":"Apply
+        equivalent subjects","AddAction":"addexpander(relatedsubjects)","DefaultOn":"n"},{"Id":"thesaurus","Label":"Apply
+        related words","AddAction":"addexpander(thesaurus)","DefaultOn":"n"},{"Id":"fulltext","Label":"Also
+        search within the full text of the articles","AddAction":"addexpander(fulltext)","DefaultOn":"y"}],"AvailableLimiters":[{"Id":"FT","Label":"Full
+        Text","Type":"select","AddAction":"addlimiter(FT:value)","DefaultOn":"n","Order":"1"},{"Id":"FR","Label":"References
+        Available","Type":"select","AddAction":"addlimiter(FR:value)","DefaultOn":"n","Order":"2"},{"Id":"TI","Label":"Reviewed
+        Book Title","Type":"text","AddAction":"addlimiter(TI:value)","DefaultOn":"n","Order":"3"},{"Id":"RV","Label":"Peer
+        Reviewed","Type":"select","AddAction":"addlimiter(RV:value)","DefaultOn":"n","Order":"4"},{"Id":"AU","Label":"Author","Type":"text","AddAction":"addlimiter(AU:value)","DefaultOn":"n","Order":"5"},{"Id":"SO","Label":"Journal
+        Name","Type":"text","AddAction":"addlimiter(SO:value)","DefaultOn":"n","Order":"6"},{"Id":"DT1","Label":"Date
+        Published","Type":"ymrange","AddAction":"addlimiter(DT1:value)","DefaultOn":"n","Order":"7"},{"Id":"LB","Label":"Location","Type":"multiselectvalue","LimiterValues":[{"Value":"MIT
+        Barton Catalog","AddAction":"addlimiter(LB:MIT Barton Catalog)","LimiterValues":[{"Value":"Barker
+        Library","AddAction":"addlimiter(LB:MIT Barton Catalog-Barker Library)"},{"Value":"Dewey
+        Library","AddAction":"addlimiter(LB:MIT Barton Catalog-Dewey Library)"},{"Value":"Hayden
+        Library - Humanities","AddAction":"addlimiter(LB:MIT Barton Catalog-Hayden
+        Library - Humanities)"},{"Value":"Hayden Library - Science","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Hayden Library - Science)"},{"Value":"Hayden Reserves","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Hayden Reserves)"},{"Value":"Institute Archives","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Institute Archives)"},{"Value":"Internet Resource","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Internet Resource)"},{"Value":"Lewis Music Library","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Lewis Music Library)"},{"Value":"Library Storage Annex","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Library Storage Annex)"},{"Value":"Physics Dept. Reading Room","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Physics Dept. Reading Room)"},{"Value":"Rotch Library","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Rotch Library)"},{"Value":"Rotch Visual Collections","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Rotch Visual Collections)"}]},{"Value":"MIT Course Reserves","AddAction":"addlimiter(LB:MIT
+        Course Reserves)","LimiterValues":[{"Value":"Barker Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Barker Library)"},{"Value":"Dewey Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Dewey Library)"},{"Value":"Hayden Library - Humanities","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Hayden Library - Humanities)"},{"Value":"Hayden Library -
+        Science","AddAction":"addlimiter(LB:MIT Course Reserves-Hayden Library - Science)"},{"Value":"Hayden
+        Reserves","AddAction":"addlimiter(LB:MIT Course Reserves-Hayden Reserves)"},{"Value":"Institute
+        Archives","AddAction":"addlimiter(LB:MIT Course Reserves-Institute Archives)"},{"Value":"Internet
+        Resource","AddAction":"addlimiter(LB:MIT Course Reserves-Internet Resource)"},{"Value":"Lewis
+        Music Library","AddAction":"addlimiter(LB:MIT Course Reserves-Lewis Music
+        Library)"},{"Value":"Library Storage Annex","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Library Storage Annex)"},{"Value":"Physics Dept. Reading Room","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Physics Dept. Reading Room)"},{"Value":"Rotch Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Rotch Library)"},{"Value":"Rotch Visual Collections","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Rotch Visual Collections)"}]}],"DefaultOn":"n","Order":"8"},{"Id":"FT1","Label":"Available
+        in Library Collection","Type":"select","AddAction":"addlimiter(FT1:value)","DefaultOn":"n","Order":"9"},{"Id":"LA99","Label":"Language","Type":"multiselectvalue","LimiterValues":[{"Value":"Catalan","AddAction":"addlimiter(LA99:Catalan)"},{"Value":"Chinese","AddAction":"addlimiter(LA99:Chinese)"},{"Value":"Croatian","AddAction":"addlimiter(LA99:Croatian)"},{"Value":"Dutch\/Flemish","AddAction":"addlimiter(LA99:Dutch\/Flemish)"},{"Value":"English","AddAction":"addlimiter(LA99:English)"},{"Value":"French","AddAction":"addlimiter(LA99:French)"},{"Value":"German","AddAction":"addlimiter(LA99:German)"},{"Value":"Italian","AddAction":"addlimiter(LA99:Italian)"},{"Value":"Lithuanian","AddAction":"addlimiter(LA99:Lithuanian)"},{"Value":"Portuguese","AddAction":"addlimiter(LA99:Portuguese)"},{"Value":"Romanian","AddAction":"addlimiter(LA99:Romanian)"},{"Value":"Russian","AddAction":"addlimiter(LA99:Russian)"},{"Value":"Spanish","AddAction":"addlimiter(LA99:Spanish)"},{"Value":"Turkish","AddAction":"addlimiter(LA99:Turkish)"},{"Value":"Bosnian","AddAction":"addlimiter(LA99:Bosnian)"},{"Value":"Czech","AddAction":"addlimiter(LA99:Czech)"},{"Value":"Finnish","AddAction":"addlimiter(LA99:Finnish)"},{"Value":"Hungarian","AddAction":"addlimiter(LA99:Hungarian)"},{"Value":"Latvian","AddAction":"addlimiter(LA99:Latvian)"},{"Value":"Norwegian","AddAction":"addlimiter(LA99:Norwegian)"},{"Value":"Polish","AddAction":"addlimiter(LA99:Polish)"},{"Value":"Slovak","AddAction":"addlimiter(LA99:Slovak)"},{"Value":"Slovenian","AddAction":"addlimiter(LA99:Slovenian)"},{"Value":"Serbian","AddAction":"addlimiter(LA99:Serbian)"},{"Value":"Ukrainian","AddAction":"addlimiter(LA99:Ukrainian)"},{"Value":"Afrikaans","AddAction":"addlimiter(LA99:Afrikaans)"},{"Value":"Japanese","AddAction":"addlimiter(LA99:Japanese)"},{"Value":"Persian","AddAction":"addlimiter(LA99:Persian)"},{"Value":"Swahili","AddAction":"addlimiter(LA99:Swahili)"},{"Value":"Swedish","AddAction":"addlimiter(LA99:Swedish)"},{"Value":"Arabic","AddAction":"addlimiter(LA99:Arabic)"},{"Value":"Azerbaijani","AddAction":"addlimiter(LA99:Azerbaijani)"},{"Value":"Basque","AddAction":"addlimiter(LA99:Basque)"},{"Value":"Bulgarian","AddAction":"addlimiter(LA99:Bulgarian)"},{"Value":"Danish","AddAction":"addlimiter(LA99:Danish)"},{"Value":"Greek","AddAction":"addlimiter(LA99:Greek)"},{"Value":"Hebrew","AddAction":"addlimiter(LA99:Hebrew)"},{"Value":"Hindi","AddAction":"addlimiter(LA99:Hindi)"},{"Value":"Icelandic","AddAction":"addlimiter(LA99:Icelandic)"},{"Value":"Indonesian","AddAction":"addlimiter(LA99:Indonesian)"},{"Value":"Korean","AddAction":"addlimiter(LA99:Korean)"},{"Value":"Latin","AddAction":"addlimiter(LA99:Latin)"},{"Value":"Malay","AddAction":"addlimiter(LA99:Malay)"},{"Value":"Serbo-Croatian","AddAction":"addlimiter(LA99:Serbo-Croatian)"},{"Value":"Urdu","AddAction":"addlimiter(LA99:Urdu)"},{"Value":"Dutch","AddAction":"addlimiter(LA99:Dutch)"},{"Value":"Welsh","AddAction":"addlimiter(LA99:Welsh)"},{"Value":"Albanian","AddAction":"addlimiter(LA99:Albanian)"},{"Value":"Armenian","AddAction":"addlimiter(LA99:Armenian)"},{"Value":"Georgian","AddAction":"addlimiter(LA99:Georgian)"},{"Value":"Macedonian","AddAction":"addlimiter(LA99:Macedonian)"},{"Value":"Thai","AddAction":"addlimiter(LA99:Thai)"},{"Value":"Greek,
+        Modern","AddAction":"addlimiter(LA99:Greek\\, Modern)"},{"Value":"Abkhazian","AddAction":"addlimiter(LA99:Abkhazian)"},{"Value":"Belarusian","AddAction":"addlimiter(LA99:Belarusian)"},{"Value":"Catalan;
+        Valencian","AddAction":"addlimiter(LA99:Catalan; Valencian)"},{"Value":"Spanish;
+        Castilian","AddAction":"addlimiter(LA99:Spanish; Castilian)"},{"Value":"Dutch;
+        Flemish","AddAction":"addlimiter(LA99:Dutch; Flemish)"},{"Value":"Galician","AddAction":"addlimiter(LA99:Galician)"},{"Value":"Romanian;
+        Moldavian; Moldovan","AddAction":"addlimiter(LA99:Romanian; Moldavian; Moldovan)"},{"Value":"Sotho,
+        Southern","AddAction":"addlimiter(LA99:Sotho\\, Southern)"},{"Value":"Venda","AddAction":"addlimiter(LA99:Venda)"},{"Value":"Xhosa","AddAction":"addlimiter(LA99:Xhosa)"},{"Value":"Zulu","AddAction":"addlimiter(LA99:Zulu)"},{"Value":"Aragonese","AddAction":"addlimiter(LA99:Aragonese)"},{"Value":"Breton","AddAction":"addlimiter(LA99:Breton)"},{"Value":"Greek,
+        Ancient","AddAction":"addlimiter(LA99:Greek\\, Ancient)"},{"Value":"Occitan","AddAction":"addlimiter(LA99:Occitan)"},{"Value":"Ukranian","AddAction":"addlimiter(LA99:Ukranian)"},{"Value":"Estonian","AddAction":"addlimiter(LA99:Estonian)"},{"Value":"Irish","AddAction":"addlimiter(LA99:Irish)"},{"Value":"Modern
+        Greek","AddAction":"addlimiter(LA99:Modern Greek)"},{"Value":"Tagalog","AddAction":"addlimiter(LA99:Tagalog)"},{"Value":"Amharic","AddAction":"addlimiter(LA99:Amharic)"},{"Value":"Mapudungun;
+        Mapuche","AddAction":"addlimiter(LA99:Mapudungun; Mapuche)"},{"Value":"Asturian;
+        Bable; Leonese; Asturleonese","AddAction":"addlimiter(LA99:Asturian; Bable;
+        Leonese; Asturleonese)"},{"Value":"Australian languages","AddAction":"addlimiter(LA99:Australian
+        languages)"},{"Value":"Bengali","AddAction":"addlimiter(LA99:Bengali)"},{"Value":"Burmese","AddAction":"addlimiter(LA99:Burmese)"},{"Value":"Central
+        American Indian languages","AddAction":"addlimiter(LA99:Central American Indian
+        languages)"},{"Value":"Chechen","AddAction":"addlimiter(LA99:Chechen)"},{"Value":"Coptic","AddAction":"addlimiter(LA99:Coptic)"},{"Value":"English,
+        Middle (1100-1500)","AddAction":"addlimiter(LA99:English\\, Middle \\(1100-1500\\))"},{"Value":"Esperanto","AddAction":"addlimiter(LA99:Esperanto)"},{"Value":"Faroese","AddAction":"addlimiter(LA99:Faroese)"},{"Value":"Fijian","AddAction":"addlimiter(LA99:Fijian)"},{"Value":"Germanic
+        languages","AddAction":"addlimiter(LA99:Germanic languages)"},{"Value":"Geez","AddAction":"addlimiter(LA99:Geez)"},{"Value":"Greek,
+        Ancient (to 1453)","AddAction":"addlimiter(LA99:Greek\\, Ancient \\(to 1453\\))"},{"Value":"Greek,
+        Modern (1453-)","AddAction":"addlimiter(LA99:Greek\\, Modern \\(1453-\\))"},{"Value":"Haitian;
+        Haitian Creole","AddAction":"addlimiter(LA99:Haitian; Haitian Creole)"},{"Value":"Ido","AddAction":"addlimiter(LA99:Ido)"},{"Value":"Interlingua
+        (International Auxiliary Language Association)","AddAction":"addlimiter(LA99:Interlingua
+        \\(International Auxiliary Language Association\\))"},{"Value":"Javanese","AddAction":"addlimiter(LA99:Javanese)"},{"Value":"Judeo-Arabic","AddAction":"addlimiter(LA99:Judeo-Arabic)"},{"Value":"Kannada","AddAction":"addlimiter(LA99:Kannada)"},{"Value":"Luxembourgish;
+        Letzeburgesch","AddAction":"addlimiter(LA99:Luxembourgish; Letzeburgesch)"},{"Value":"Malayalam","AddAction":"addlimiter(LA99:Malayalam)"},{"Value":"Austronesian
+        languages","AddAction":"addlimiter(LA99:Austronesian languages)"},{"Value":"Maltese","AddAction":"addlimiter(LA99:Maltese)"},{"Value":"Mongolian","AddAction":"addlimiter(LA99:Mongolian)"},{"Value":"Nahuatl
+        languages","AddAction":"addlimiter(LA99:Nahuatl languages)"},{"Value":"Neapolitan","AddAction":"addlimiter(LA99:Neapolitan)"},{"Value":"Bokmål,
+        Norwegian; Norwegian Bokmål","AddAction":"addlimiter(LA99:Bokmål\\, Norwegian;
+        Norwegian Bokmål)"},{"Value":"Norse, Old","AddAction":"addlimiter(LA99:Norse\\,
+        Old)"},{"Value":"Occitan (post 1500)","AddAction":"addlimiter(LA99:Occitan
+        \\(post 1500\\))"},{"Value":"Ojibwa","AddAction":"addlimiter(LA99:Ojibwa)"},{"Value":"Philippine
+        languages","AddAction":"addlimiter(LA99:Philippine languages)"},{"Value":"Romany","AddAction":"addlimiter(LA99:Romany)"},{"Value":"Samaritan
+        Aramaic","AddAction":"addlimiter(LA99:Samaritan Aramaic)"},{"Value":"Sanskrit","AddAction":"addlimiter(LA99:Sanskrit)"},{"Value":"Sinhala;
+        Sinhalese","AddAction":"addlimiter(LA99:Sinhala; Sinhalese)"},{"Value":"Sundanese","AddAction":"addlimiter(LA99:Sundanese)"},{"Value":"Sumerian","AddAction":"addlimiter(LA99:Sumerian)"},{"Value":"Classical
+        Syriac","AddAction":"addlimiter(LA99:Classical Syriac)"},{"Value":"Tibetan","AddAction":"addlimiter(LA99:Tibetan)"},{"Value":"Ugaritic","AddAction":"addlimiter(LA99:Ugaritic)"},{"Value":"Vietnamese","AddAction":"addlimiter(LA99:Vietnamese)"},{"Value":"Yiddish","AddAction":"addlimiter(LA99:Yiddish)"},{"Value":"Zapotec","AddAction":"addlimiter(LA99:Zapotec)"},{"Value":"Aromanian","AddAction":"addlimiter(LA99:Aromanian)"},{"Value":"Aymara","AddAction":"addlimiter(LA99:Aymara)"},{"Value":"Bambara","AddAction":"addlimiter(LA99:Bambara)"},{"Value":"Filipino","AddAction":"addlimiter(LA99:Filipino)"},{"Value":"Flemish","AddAction":"addlimiter(LA99:Flemish)"},{"Value":"Gaelic","AddAction":"addlimiter(LA99:Gaelic)"},{"Value":"Gujarati","AddAction":"addlimiter(LA99:Gujarati)"},{"Value":"Hausa","AddAction":"addlimiter(LA99:Hausa)"},{"Value":"Hawaiian","AddAction":"addlimiter(LA99:Hawaiian)"},{"Value":"Hmong","AddAction":"addlimiter(LA99:Hmong)"},{"Value":"Igbo","AddAction":"addlimiter(LA99:Igbo)"},{"Value":"javanese","AddAction":"addlimiter(LA99:javanese)"},{"Value":"Kashmiri","AddAction":"addlimiter(LA99:Kashmiri)"},{"Value":"Kurdish","AddAction":"addlimiter(LA99:Kurdish)"},{"Value":"Lao","AddAction":"addlimiter(LA99:Lao)"},{"Value":"Lingala","AddAction":"addlimiter(LA99:Lingala)"},{"Value":"Malagasy","AddAction":"addlimiter(LA99:Malagasy)"},{"Value":"Marathi","AddAction":"addlimiter(LA99:Marathi)"},{"Value":"Mende","AddAction":"addlimiter(LA99:Mende)"},{"Value":"Moldovan","AddAction":"addlimiter(LA99:Moldovan)"},{"Value":"Nepali","AddAction":"addlimiter(LA99:Nepali)"},{"Value":"Oriya","AddAction":"addlimiter(LA99:Oriya)"},{"Value":"Oromo","AddAction":"addlimiter(LA99:Oromo)"},{"Value":"Pashto","AddAction":"addlimiter(LA99:Pashto)"},{"Value":"Pidgin
+        english","AddAction":"addlimiter(LA99:Pidgin english)"},{"Value":"Punjabi","AddAction":"addlimiter(LA99:Punjabi)"},{"Value":"Quechua","AddAction":"addlimiter(LA99:Quechua)"},{"Value":"Samoan","AddAction":"addlimiter(LA99:Samoan)"},{"Value":"Sango","AddAction":"addlimiter(LA99:Sango)"},{"Value":"Shona","AddAction":"addlimiter(LA99:Shona)"},{"Value":"Sinhala","AddAction":"addlimiter(LA99:Sinhala)"},{"Value":"Sotho","AddAction":"addlimiter(LA99:Sotho)"},{"Value":"Swati(swazi)","AddAction":"addlimiter(LA99:Swati\\(swazi\\))"},{"Value":"Swiss
+        german","AddAction":"addlimiter(LA99:Swiss german)"},{"Value":"Tamashek","AddAction":"addlimiter(LA99:Tamashek)"},{"Value":"Tamil","AddAction":"addlimiter(LA99:Tamil)"},{"Value":"Tatar","AddAction":"addlimiter(LA99:Tatar)"},{"Value":"Tetum","AddAction":"addlimiter(LA99:Tetum)"},{"Value":"Turkmen","AddAction":"addlimiter(LA99:Turkmen)"},{"Value":"Wolof","AddAction":"addlimiter(LA99:Wolof)"},{"Value":"Yoruba","AddAction":"addlimiter(LA99:Yoruba)"},{"Value":"Aymara","AddAction":"addlimiter(LA99:Aymara)"},{"Value":"FRENCH","AddAction":"addlimiter(LA99:FRENCH)"},{"Value":"PORTUGUESE","AddAction":"addlimiter(LA99:PORTUGUESE)"},{"Value":"RUSSIAN","AddAction":"addlimiter(LA99:RUSSIAN)"},{"Value":"SPANISH","AddAction":"addlimiter(LA99:SPANISH)"},{"Value":"GERMAN","AddAction":"addlimiter(LA99:GERMAN)"},{"Value":"ENGLISH","AddAction":"addlimiter(LA99:ENGLISH)"},{"Value":"CHINESE","AddAction":"addlimiter(LA99:CHINESE)"},{"Value":"Belorussian","AddAction":"addlimiter(LA99:Belorussian)"},{"Value":"Kazakh","AddAction":"addlimiter(LA99:Kazakh)"},{"Value":"Malayan","AddAction":"addlimiter(LA99:Malayan)"},{"Value":"Moldavian","AddAction":"addlimiter(LA99:Moldavian)"},{"Value":"Uzbek","AddAction":"addlimiter(LA99:Uzbek)"}],"DefaultOn":"n","Order":"10"},{"Id":"FC","Label":"Catalog
+        Only","Type":"select","AddAction":"addlimiter(FC:value)","DefaultOn":"n","Order":"11"}],"AvailableSearchModes":[{"Mode":"bool","Label":"Boolean\/Phrase","DefaultOn":"n","AddAction":"setsearchmode(bool)"},{"Mode":"all","Label":"Find
+        all my search terms","DefaultOn":"y","AddAction":"setsearchmode(all)"},{"Mode":"any","Label":"Find
+        any of my search terms","DefaultOn":"n","AddAction":"setsearchmode(any)"},{"Mode":"smart","Label":"SmartText
+        Searching","DefaultOn":"n","AddAction":"setsearchmode(smart)"}],"AvailableRelatedContent":[{"Type":"emp","Label":"Exact
+        Match Publication","DefaultOn":"y","AddAction":"includerelatedcontent(emp)"},{"Type":"rs","Label":"Research
+        Starters","DefaultOn":"n","AddAction":"includerelatedcontent(rs)"}],"AvailableDidYouMeanOptions":[{"Id":"AutoSuggest","Label":"Did
+        You Mean","DefaultOn":"y"},{"Id":"AutoCorrect","Label":"Auto Correct","DefaultOn":"n"}]},"ViewResultSettings":{"ResultsPerPage":"20","ResultListView":"brief"},"ApplicationSettings":{"SessionTimeout":"480"},"ApiSettings":{"MaxRecordJumpAhead":"250"}}'
+    http_version: 
+  recorded_at: Fri, 15 Sep 2017 20:13:41 GMT
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Retrieve
+    body:
+      encoding: UTF-8
+      string: '{"DbId":"mdc","An":"28632713","HighlightTerms":null,"EbookPreferredFormat":"ebook-pdf"}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 15 Sep 2017 20:14:02 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 83d2b46a-3229-4506-b580-9b837f8008a7
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '668434917'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '5594'
+    body:
+      encoding: UTF-8
+      string: '{"Record":{"ResultId":1,"Header":{"DbId":"mdc","DbLabel":"MEDLINE Complete","An":"28632713","PubType":"Academic
+        Journal","PubTypeId":"academicJournal"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=mdc&AN=28632713&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"http:\/\/owens.mit.edu\/sfx_local?genre=article&isbn=&issn=15292916&title=Nature
+        Immunology&volume=18&issue=7&date=20170620&atitle=Systems%20immunology%3A%20just%20getting%20started.&aulast=Davis
+        MM&spage=725&sid=EBSCO:MEDLINE%20Complete&pid=<authors>Davis MM<\/authors><ui>28632713<\/ui><date>20170620<\/date><db>MEDLINE%20Complete<\/db>","Name":"SFX
+        link filtered to collection fthi1 (For su)","Category":"fullText","Text":"","Icon":"http:\/\/libraries.mit.edu\/img\/sfx\/sfx-mit.gif"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Systems
+        immunology: just getting started."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AU&quot; term=&quot;%22Davis+MM%22&quot;&gt;Davis MM&lt;\/searchLink&gt;;
+        Howard Hughes Medical Institute, Stanford University School of Medicine, Stanford,
+        California, USA.; Institute for Immunity, Transplantation and Infection, Stanford
+        University School of Medicine, Stanford, California, USA.&lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;AU&quot; term=&quot;%22Tato+CM%22&quot;&gt;Tato CM&lt;\/searchLink&gt;;
+        Institute for Immunity, Transplantation and Infection, Stanford University
+        School of Medicine, Stanford, California, USA.&lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;AU&quot; term=&quot;%22Furman+D%22&quot;&gt;Furman D&lt;\/searchLink&gt;;
+        Institute for Immunity, Transplantation and Infection, Stanford University
+        School of Medicine, Stanford, California, USA.; Institute for Immunogenetics,
+        Jose de San Martin Clinical Hospital, National Scientific and Technical Research
+        Council, Buenos Aires, Argentina."},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"&lt;searchLink
+        fieldCode=&quot;JN&quot; term=&quot;%22Nature+immunology+[Nat+Immunol]+NLMUID%3A+100941354%22&quot;&gt;Nature
+        Immunology&lt;\/searchLink&gt; [Nat Immunol] 2017 Jun 20; Vol. 18 (7), pp.
+        725-732."},{"Name":"TypePub","Label":"Publication Type","Group":"TypPub","Data":"Journal
+        Article; Review"},{"Name":"Language","Label":"Language","Group":"Lang","Data":"English"},{"Name":"TitleSource","Label":"Journal
+        Info","Group":"Src","Data":"&lt;i&gt;Publisher: &lt;\/i&gt;&lt;searchLink
+        fieldCode=&quot;PB&quot; term=&quot;%22Nature+America+Inc%22&quot;&gt;Nature
+        America Inc &lt;\/searchLink&gt;&lt;i&gt;Country of Publication: &lt;\/i&gt;United
+        States &lt;i&gt;NLM ID: &lt;\/i&gt;100941354 &lt;i&gt;Publication Model: &lt;\/i&gt;Print
+        &lt;i&gt;Cited Medium: &lt;\/i&gt;Internet &lt;i&gt;ISSN: &lt;\/i&gt;1529-2916
+        (Electronic) &lt;i&gt;Linking ISSN: &lt;\/i&gt;&lt;searchLink fieldCode=&quot;IS&quot;
+        term=&quot;%2215292908%22&quot;&gt;15292908 &lt;\/searchLink&gt;&lt;i&gt;NLM
+        ISO Abbreviation: &lt;\/i&gt;Nat. Immunol. &lt;i&gt;Subsets: &lt;\/i&gt;MEDLINE"},{"Name":"PublisherInfo","Label":"Imprint
+        Name(s)","Group":"PubInfo","Data":"&lt;i&gt;Original Publication&lt;\/i&gt;:
+        New York, NY : Nature America Inc. c2000-"},{"Name":"SubjectMESH","Label":"MeSH
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Allergy+and+Immunology%22&quot;&gt;Allergy
+        and Immunology*&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;MM&quot;
+        term=&quot;%22Immune+System%22&quot;&gt;Immune System&lt;\/searchLink&gt;\/&lt;searchLink
+        fieldCode=&quot;MM&quot; term=&quot;%22Immune+System+immunology%22&quot;&gt;*immunology&lt;\/searchLink&gt;
+        &lt;br \/&gt;&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Immunologic+Techniques%22&quot;&gt;Immunologic
+        Techniques&lt;\/searchLink&gt;\/&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Immunologic+Techniques+methods%22&quot;&gt;*methods&lt;\/searchLink&gt;
+        &lt;br \/&gt;&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Systems+Biology%22&quot;&gt;Systems
+        Biology&lt;\/searchLink&gt;\/&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Systems+Biology+methods%22&quot;&gt;*methods&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;MH&quot; term=&quot;%22Humans%22&quot;&gt;Humans&lt;\/searchLink&gt;
+        ; &lt;searchLink fieldCode=&quot;MH&quot; term=&quot;%22Signal+Transduction%22&quot;&gt;Signal
+        Transduction&lt;\/searchLink&gt;\/&lt;searchLink fieldCode=&quot;MH&quot;
+        term=&quot;%22Signal+Transduction+immunology%22&quot;&gt;immunology&lt;\/searchLink&gt;
+        ; &lt;searchLink fieldCode=&quot;MH&quot; term=&quot;%22Vaccines%22&quot;&gt;Vaccines&lt;\/searchLink&gt;\/&lt;searchLink
+        fieldCode=&quot;MH&quot; term=&quot;%22Vaccines+immunology%22&quot;&gt;immunology&lt;\/searchLink&gt;"},{"Name":"Abstract","Label":"Abstract","Group":"Ab","Data":"Systems-biology
+        approaches in immunology take various forms, but here we review strategies
+        for measuring a broad swath of immunological functions as a means of discovering
+        previously unknown relationships and phenomena and as a powerful way of understanding
+        the immune system as a whole. This approach has rejuvenated the field of vaccine
+        development and has fostered hope that new ways will be found to combat infectious
+        diseases that have proven refractory to classical approaches. Systems immunology
+        also presents an important new strategy for understanding human immunity directly,
+        taking advantage of the many ways the immune system of humans can be manipulated."},{"Name":"Comment","Label":"Comments","Group":"Commnt","Data":"Cites:
+        Lancet. 2016 Jun 4;387(10035):2312-22. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227017310%22&quot;&gt;27017310)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Science. 2004 Oct 22;306(5696):640-3. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2215499008%22&quot;&gt;15499008)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Bioinformatics. 2017 Apr 1;33(7):951-955. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2228073756%22&quot;&gt;28073756)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Proc Natl Acad Sci U S A. 2014 Jan 14;111(2):869-74. (PMID: &lt;searchLink
+        fieldCode=&quot;PM&quot; term=&quot;%2224367114%22&quot;&gt;24367114)&lt;\/searchLink&gt;&lt;br
+        \/&gt;Cites: Anesthesiology. 2015 Dec;123(6):1241-55. (PMID: &lt;searchLink
+        fieldCode=&quot;PM&quot; term=&quot;%2226655308%22&quot;&gt;26655308)&lt;\/searchLink&gt;&lt;br
+        \/&gt;Cites: Eur J Immunol. 2014 Sep;44(9):2802-10. (PMID: &lt;searchLink
+        fieldCode=&quot;PM&quot; term=&quot;%2225042008%22&quot;&gt;25042008)&lt;\/searchLink&gt;&lt;br
+        \/&gt;Cites: J Immunol. 2017 Mar 15;198(6):2479-2488. (PMID: &lt;searchLink
+        fieldCode=&quot;PM&quot; term=&quot;%2228179497%22&quot;&gt;28179497)&lt;\/searchLink&gt;&lt;br
+        \/&gt;Cites: Immunity. 2008 Jul 18;29(1):150-64. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2218631455%22&quot;&gt;18631455)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Methods. 2017 Mar;14 (3):297-301. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2228099430%22&quot;&gt;28099430)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Immunity. 2012 Jan 27;36(1):142-52. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2222265676%22&quot;&gt;22265676)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Lancet Respir Med. 2016 Mar;4(3):213-24. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2226907218%22&quot;&gt;26907218)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Immunol. 2011 Jul 10;12(8):786-95. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2221743478%22&quot;&gt;21743478)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Vaccine. 2015 Sep 29;33(40):5271-81. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2226232539%22&quot;&gt;26232539)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Cell. 2015 Jan 15;160(1-2):37-47. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225594173%22&quot;&gt;25594173)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Sci Transl Med. 2016 Apr 13;8(334):334ps9. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227075624%22&quot;&gt;27075624)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Science. 2009 May 8;324(5928):807-10. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2219423829%22&quot;&gt;19423829)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Cell. 2016 Dec 15;167(7):1883-1896.e15. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227984734%22&quot;&gt;27984734)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Immunity. 2008 Dec 19;29(6):835-8. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2219100694%22&quot;&gt;19100694)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Rev Rheumatol. 2015 Mar;11(3):171-82. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225536486%22&quot;&gt;25536486)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Immunol. 2014 Feb;15(2):195-204. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2224336226%22&quot;&gt;24336226)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Proc Natl Acad Sci U S A. 2013 Aug 6;110(32):13073-8. (PMID: &lt;searchLink
+        fieldCode=&quot;PM&quot; term=&quot;%2223878218%22&quot;&gt;23878218)&lt;\/searchLink&gt;&lt;br
+        \/&gt;Cites: Nat Biotechnol. 2012 Jul 10;30(7):639-47. (PMID: &lt;searchLink
+        fieldCode=&quot;PM&quot; term=&quot;%2222781693%22&quot;&gt;22781693)&lt;\/searchLink&gt;&lt;br
+        \/&gt;Cites: Immunity. 2013 Nov 14;39(5):846-57. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2224120362%22&quot;&gt;24120362)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Mol Syst Biol. 2013 Apr 16;9:659. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2223591775%22&quot;&gt;23591775)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Biotechnol. 2011 Oct 02;29(10):886-91. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2221964415%22&quot;&gt;21964415)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Rev Immunol. 2009 Oct;9(10 ):741-7. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2219763148%22&quot;&gt;19763148)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Rev Mol Cell Biol. 2014 Feb;15(2):95-107. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2224434884%22&quot;&gt;24434884)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Infect Dis. 2003 Jun 15;187 Suppl 2:S340-5. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2212792849%22&quot;&gt;12792849)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Methods. 2011 Dec 28;9(1):8-9; author reply 9. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2222205510%22&quot;&gt;22205510)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Expert Rev Vaccines. 2015 Mar;14(3):461-71. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225278153%22&quot;&gt;25278153)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Sci Transl Med. 2009 Dec 23;1(12):12ra23. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2220161664%22&quot;&gt;20161664)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        PLoS One. 2013 May 29;8(5):e64555. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2223734205%22&quot;&gt;23734205)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        PLoS One. 2016 Aug 16;11(8):e0160970. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227529750%22&quot;&gt;27529750)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Biotechnol. 2013 Jul;31(7):623-9. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2223748502%22&quot;&gt;23748502)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Science. 2014 Jan 17;343 (6168):313-7. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2224310610%22&quot;&gt;24310610)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Sci Transl Med. 2013 Oct 23;5(208):208ra145. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2224154599%22&quot;&gt;24154599)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Methods. 2010 Apr;7(4):287-9. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2220208531%22&quot;&gt;20208531)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Trends Immunol. 2009 Jul;30(7):306-12. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2219540809%22&quot;&gt;19540809)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Biotechnol. 2014 Jul;32(7):684-92. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2224952902%22&quot;&gt;24952902)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Cell. 2016 Apr 21;165(3):551-65. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227040498%22&quot;&gt;27040498)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Med. 2017 Feb;23 (2):174-184. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2228092664%22&quot;&gt;28092664)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nature. 2002 Oct 24;419(6909):845-9. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2212397360%22&quot;&gt;12397360)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Cell. 2017 Jan 26;168(3):487-502.e15. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2228111070%22&quot;&gt;28111070)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Vaccine. 2006 Feb 20;24(8):1159-69. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2216213065%22&quot;&gt;16213065)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Genome Res. 2011 May;21(5):790-7. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2221349924%22&quot;&gt;21349924)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Immunity. 2013 Apr 18;38(4):831-44. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2223601689%22&quot;&gt;23601689)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Curr Opin Immunol. 2013 Oct;25(5):571-8. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2224148234%22&quot;&gt;24148234)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Cell Sci. 1999 Dec;112 ( Pt 24):4705-13. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2210574718%22&quot;&gt;10574718)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Sci Transl Med. 2014 Sep 24;6(255 ):255ra131. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225253674%22&quot;&gt;25253674)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Immunol. 2014 Feb;15(2):118-27. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2224448569%22&quot;&gt;24448569)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Cell Host Microbe. 2014 Jul 9;16(1):105-14. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2224981332%22&quot;&gt;24981332)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Proc Natl Acad Sci U S A. 2017 Feb 28;114(9):2425-2430. (PMID: &lt;searchLink
+        fieldCode=&quot;PM&quot; term=&quot;%2228193898%22&quot;&gt;28193898)&lt;\/searchLink&gt;&lt;br
+        \/&gt;Cites: Nat Immunol. 2009 Jan;10(1):116-25. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2219029902%22&quot;&gt;19029902)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Proc Natl Acad Sci U S A. 2014 Sep 9;111(36):13139-44. (PMID: &lt;searchLink
+        fieldCode=&quot;PM&quot; term=&quot;%2225157137%22&quot;&gt;25157137)&lt;\/searchLink&gt;&lt;br
+        \/&gt;Cites: Curr Opin Immunol. 2014 Oct;30:17-23. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2224886697%22&quot;&gt;24886697)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Science. 2011 May 6;332(6030):687-96. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2221551058%22&quot;&gt;21551058)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Proc Natl Acad Sci U S A. 2015 Dec 22;112(51):E7128-37. (PMID: &lt;searchLink
+        fieldCode=&quot;PM&quot; term=&quot;%2226621750%22&quot;&gt;26621750)&lt;\/searchLink&gt;&lt;br
+        \/&gt;Cites: Immunity. 2015 May 19;42(5):929-41. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225992863%22&quot;&gt;25992863)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Genes Immun. 2016 Dec;17 (7):371-379. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227534615%22&quot;&gt;27534615)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Immunity. 2014 Sep 18;41(3):478-92. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225220212%22&quot;&gt;25220212)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Immunol Methods. 2014 Dec 15;415:1-5. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225450003%22&quot;&gt;25450003)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Methods Mol Biol. 2016;1441:13-26. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227177653%22&quot;&gt;27177653)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Vaccine. 2016 Jul 25;34(34):3993-4002. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227317456%22&quot;&gt;27317456)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Clin Oncol. 2013 Nov 10;31(32):e439-42. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2224043743%22&quot;&gt;24043743)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Genet. 2003 Jun;34(2):166-76. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2212740579%22&quot;&gt;12740579)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Methods. 2016 Apr;13(4):329-32. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2226950746%22&quot;&gt;26950746)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Immunity. 2015 Dec 15;43(6):1199-211. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2226682989%22&quot;&gt;26682989)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nature. 2014 Nov 27;515(7528):577-81. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225428507%22&quot;&gt;25428507)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Cell Syst. 2016 Oct 26;3(4):374-384.e4. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227746093%22&quot;&gt;27746093)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Proc Natl Acad Sci U S A. 2015 Dec 22;112(51):E7118-27. (PMID: &lt;searchLink
+        fieldCode=&quot;PM&quot; term=&quot;%2226621739%22&quot;&gt;26621739)&lt;\/searchLink&gt;&lt;br
+        \/&gt;Cites: J Immunol. 2015 May 1;194(9):4073-80. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225888703%22&quot;&gt;25888703)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Immunity. 2017 Jan 17;46(1):148-161. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227986455%22&quot;&gt;27986455)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Sci Rep. 2016 Sep 06;6:32976. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227596246%22&quot;&gt;27596246)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Genome Med. 2010 Dec 29;2(12):93. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2221211069%22&quot;&gt;21211069)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        N Engl J Med. 2014 Dec 4;371(23 ):2189-99. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225409260%22&quot;&gt;25409260)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Cell. 2016 Dec 15;167(7):1853-1866.e17. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2227984732%22&quot;&gt;27984732)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Exp Med. 2008 Dec 22;205(13):3119-31. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2219047440%22&quot;&gt;19047440)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Brief Bioinform. 2017 Jan 10;:null. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2228077404%22&quot;&gt;28077404)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nat Methods. 2015 May;12(5):453-7. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225822800%22&quot;&gt;25822800)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Science. 2015 Jan 23;347(6220):400-6. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225477212%22&quot;&gt;25477212)&lt;\/searchLink&gt;"},{"Name":"NumberCAS","Label":"Substance
+        Nomenclature","Group":"ID","Data":"0 (Vaccines)"},{"Name":"DateEntry","Label":"Entry
+        Date(s)","Group":"Date","Data":"&lt;i&gt;Date Created: &lt;\/i&gt;20170620
+        &lt;i&gt;Date Completed: &lt;\/i&gt;20170828 &lt;i&gt;Latest Revision: &lt;\/i&gt;20170828"},{"Name":"DateUpdate","Label":"Update
+        Code","Group":"Date","Data":"20170829"},{"Name":"DOI","Label":"DOI","Group":"ID","Data":"10.1038\/ni.3768"},{"Name":"AN","Label":"PMID","Group":"ID","Data":"28632713"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Identifiers":[{"Type":"doi","Value":"10.1038\/ni.3768"}],"Languages":[{"Code":"eng","Text":"English"}],"PhysicalDescription":{"Pagination":{"StartPage":"725"}},"Subjects":[{"SubjectFull":"Humans","Type":"general"},{"SubjectFull":"Signal
+        Transduction immunology","Type":"general"},{"SubjectFull":"Vaccines immunology","Type":"general"},{"SubjectFull":"Allergy
+        and Immunology","Type":"general"},{"SubjectFull":"Immune System immunology","Type":"general"},{"SubjectFull":"Immunologic
+        Techniques methods","Type":"general"},{"SubjectFull":"Systems Biology methods","Type":"general"}],"Titles":[{"TitleFull":"Systems
+        immunology: just getting started.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Davis
+        MM"}}},{"PersonEntity":{"Name":{"NameFull":"Tato CM"}}},{"PersonEntity":{"Name":{"NameFull":"Furman
+        D"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"20","M":"06","Text":"2017
+        Jun 20","Type":"published","Y":"2017"}],"Identifiers":[{"Type":"issn-electronic","Value":"1529-2916"}],"Numbering":[{"Type":"volume","Value":"18"},{"Type":"issue","Value":"7"}],"Titles":[{"TitleFull":"Nature
+        Immunology","Type":"main"}]}}]}}}}}'
+    http_version: 
+  recorded_at: Fri, 15 Sep 2017 20:13:42 GMT
+recorded_with: VCR 3.0.3

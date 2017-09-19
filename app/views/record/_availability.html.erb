@@ -1,2 +1,19 @@
-<h3 class="subtitle3">Availability</h3>
-<%= @record.eds_publication_type %>
+<h3 class="subtitle3">Availability</h2>
+<% if @record.fulltext_link.present? %>
+  <% if check_online? %>
+    <a href="<%= @record.fulltext_link[:url] %>">Check for online copy</a>
+  <% else %>
+    <a href="<%= @record.fulltext_link[:url] %>" class="btn button-primary">View online</a>
+  <% end %>
+<% end %>
+
+<%# This div id is used by the javascript - don't move or change it.) %>
+<div id="full-avail" class="discovery-full-record-availability-info">
+  <% if local_record? %>
+    <% if non_serial? %>
+      <script>RealtimeItem( "<%= clean_an %>" );</script>
+    <% else %>
+      Call for realtime holdings instead of items. (coming soon!)
+    <% end %>
+  <% end %>
+</div>
