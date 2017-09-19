@@ -16,6 +16,8 @@
 <!-- Size should be 32 x 32 pixels -->
 <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+
 <%= javascript_include_tag "application" %>
 <% if (ENV['GOOGLE_ANALYTICS']) %>
 <script type="text/javascript">
