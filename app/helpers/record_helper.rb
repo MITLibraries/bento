@@ -3,21 +3,6 @@ module RecordHelper
     aleph_record? || aleph_cr_record?
   end
 
-  # determines if an item is serial-ish or monograph-ish to help us determine
-  # if we should use holdings records or item records for realtime status
-  def non_serial?
-    if book_like.include?(@record.eds_publication_type)
-      true
-    else
-      false
-    end
-  end
-
-  # Publication types that we want to treat like books
-  def book_like
-    ['Book', 'Audio', 'Video Recording']
-  end
-
   # Link to local source record
   def local_record_source_url
     if aleph_record?

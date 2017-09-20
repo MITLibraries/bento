@@ -89,6 +89,21 @@ class RecordTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'summary holdings are shown when available' do
+    VCR.use_cassette('record: journal', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.000292123' }
+      assert_select 'div#full-holdings'
+      assert @response.body.include? 'v.1 (1946)- v.115:p.1315-2560 (2010)'
+    end
+  end
+
+  test 'summary holdings are not shown when not available' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_select('div#full-holdings', false)
+    end
+  end
+
   # ~~~~~~~~~~~~~~~~~~~ tests of 'more information' section ~~~~~~~~~~~~~~~~~~~
   # For the following tests, note that not all information is available for all
   # sources.

@@ -1,4 +1,4 @@
-<h3 class="subtitle3">Availability</h2>
+<h2 class="subtitle2">Availability</h2>
 <% if @record.fulltext_link.present? %>
   <% if check_online? %>
     <a href="<%= @record.fulltext_link[:url] %>">Check for online copy</a>
@@ -7,13 +7,22 @@
   <% end %>
 <% end %>
 
+<%# using try instead of .present? due to how edsapi dynamically adds this
+    element. It's either there or a no method error. %>
+<% if @record.try(:eds_extras_TOC) %>
+  <div id="full-holdings" class="discovery-full-record-holdings-info">
+    <h3 class="subtitle3">Holdings</h3>
+    <%# todo: this will need updating once Ebsco resolves a data mapping
+        problem described here
+        https://mitlibraries.atlassian.net/browse/DI-547 %>
+    <%= @record.eds_extras_TOC %>
+  </div>
+<% end %>
+
 <%# This div id is used by the javascript - don't move or change it.) %>
 <div id="full-avail" class="discovery-full-record-availability-info">
   <% if local_record? %>
-    <% if non_serial? %>
-      <script>RealtimeItem( "<%= clean_an %>" );</script>
-    <% else %>
-      Call for realtime holdings instead of items. (coming soon!)
-    <% end %>
+    Loading availability information <i class="fa fa-spinner fa-spin"></i>
+    <script>RealtimeItem( "<%= clean_an %>" );</script>
   <% end %>
 </div>
