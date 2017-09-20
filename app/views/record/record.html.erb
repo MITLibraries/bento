@@ -6,6 +6,12 @@
 <div class="gridband layout-3q1q">
   <div class="col3q box-content region" data-region="Full record">
 
+    <% if guest? %>
+      <div class="alert alert-banner warning">
+        <a href="<%= login_url %>">Sign in for full access</a>
+      </div>
+    <% end %>
+
     <div class="discovery-full-record-basic-info">
       <%= render partial: "basic_info" %>
     </div>

@@ -16,6 +16,10 @@ Search API. Appropriate credentials for both are required (see below).
 ## Bento System Overview
 ![alt text](docs/charts/bento_overview.png "Bento system overview chart")
 
+## Authentication Flow and Guest Mode Details
+
+https://mitlibraries.atlassian.net/wiki/x/CoAeAw
+
 ## Loading Hints
 
 Tasks exist to reload hints from supported sources.

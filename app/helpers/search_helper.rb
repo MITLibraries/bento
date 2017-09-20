@@ -11,7 +11,11 @@ module SearchHelper
 
   # Current request IP is outside our campus range
   def guest?
-    !member?
+    if !Rails.env.production? && params[:guest].present?
+      params[:guest] == 'true'
+    else
+      !member?
+    end
   end
 
   # Current request IP is included in our campus range

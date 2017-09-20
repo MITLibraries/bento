@@ -107,4 +107,9 @@ module RecordHelper
   def safe_output(input)
     sanitize Nokogiri::HTML.fragment(CGI.unescapeHTML(input)).to_s
   end
+
+  # User is a guest and the link is restricted
+  def guest_and_restricted_link?
+    guest? && @record.fulltext_link[:url] == 'detail'
+  end
 end

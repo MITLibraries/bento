@@ -45,11 +45,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 22 Sep 2017 16:07:48 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=n&profile=FAKE_EDS_PROFILE
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=y&profile=FAKE_EDS_PROFILE
     body:
       encoding: US-ASCII
       string: ''
@@ -100,7 +100,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"SessionToken":"FakeSessiontoken"}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 22 Sep 2017 16:07:49 GMT
 - request:
     method: get
@@ -237,7 +237,7 @@ http_interactions:
         Match Publication","DefaultOn":"y","AddAction":"includerelatedcontent(emp)"},{"Type":"rs","Label":"Research
         Starters","DefaultOn":"n","AddAction":"includerelatedcontent(rs)"}],"AvailableDidYouMeanOptions":[{"Id":"AutoSuggest","Label":"Did
         You Mean","DefaultOn":"y"},{"Id":"AutoCorrect","Label":"Auto Correct","DefaultOn":"n"}]},"ViewResultSettings":{"ResultsPerPage":"20","ResultListView":"brief"},"ApplicationSettings":{"SessionTimeout":"480"},"ApiSettings":{"MaxRecordJumpAhead":"250"}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 22 Sep 2017 16:07:49 GMT
 - request:
     method: post
@@ -334,6 +334,6 @@ http_interactions:
         in New York.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Gamson,
         Joshua"}}},{"PersonEntity":{"Name":{"NameFull":"Duberman, Martin"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Text":"1997","Type":"published","Y":"1997"}],"Identifiers":[{"Type":"isbn-print","Value":"9780814718759"}],"Titles":[{"TitleFull":"Queer
         World: The Center for Lesbian & Gay Studies Reader","Type":"main"}]}}]}}}}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 22 Sep 2017 16:07:49 GMT
 recorded_with: VCR 3.0.3
