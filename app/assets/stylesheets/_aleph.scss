@@ -9,7 +9,15 @@
 .fa-times {
   margin-left: .2rem;
   margin-right: .1rem;
- color: $error;
+  color: $error;
+}
+
+.js .expand-collapse-control {
+  background: linear-gradient(to bottom, $transparent-w 0%, $white-t 50%);
+}
+
+.js .wrap-result:hover .expand-collapse-control {
+  background: linear-gradient(to bottom, $transparent-w 0%, $gray-l4 50%);
 }
 
 .discovery-full-record-availability-info {
