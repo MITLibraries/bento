@@ -1,0 +1,145 @@
+<% if Flipflop.enabled?(:local_browse) %>
+  <% search_prefix = '/search/bento?q=' %>
+<% else %>
+  <% search_prefix = ENV['EDS_PROFILE_URI'] %>
+<% end %>
+
+<h3 class="subtitle3">More information</h3>
+
+<ul>
+  <% if @record.eds_publication_type.present? %>
+    <li>
+      Document type: <%= @record.eds_publication_type %>
+    </li>
+  <% end %>
+
+  <% if @record.eds_source_title.present? %>
+    <li>
+      Source: <%= @record.eds_source_title %>
+    </li>
+  <% end %>
+
+  <% if @record.eds_authors.present? %>
+    <li>
+      <ul>
+        <% @record.eds_authors.each do |author| %>
+          <li>
+            <%= author %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+
+  <% if clean_affiliations.present? %>
+    <li>
+      <ul>
+        <% clean_affiliations.each do |aff| %>
+          <li>
+            <%= aff %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+
+  <% if @record.eds_publication_info.present? %>
+    <li>
+      Publication info: <%= @record.eds_publication_info %>
+    </li>
+  <% end %>
+
+  <% if @record.eds_isbn_print.present? %>
+    <li>
+      ISBN: <%= @record.eds_isbn_print %>
+    </li>
+  <% end %>
+
+  <% if @record.eds_isbn_electronic.present? %>
+    <li>
+      ISBN: <%= @record.eds_isbn_electronic %>
+    </li>
+  <% end %>
+
+  <% if @record.eds_issn_print.present? %>
+    <li>
+      ISSN: <%= @record.eds_issn_print %>
+    </li>
+  <% end %>
+
+  <% if @record.eds_document_doi.present? %>
+    <li>
+      DOI: <%= @record.eds_document_doi %>
+    </li>
+  <% end %>
+
+  <% if clean_language.present? %>
+    <li>
+      <%= "Language".pluralize(clean_language.count) %>:
+      <%= clean_language.join(',') %>
+    </li>
+  <% end %>
+
+  <% if @record.eds_physical_description.present? %>
+    <li>
+      Physical description: <%= @record.eds_physical_description %>
+    </li>
+  <% end %>
+
+  <% if @record.eds_database_name.present? %>
+    <li>
+      Database: <%= @record.eds_database_name %>
+    </li>
+  <% end %>
+
+  <%# The wireframes also included edition (for books) and serial publication
+      dates and frequency (for serials), but this info isn't exposed by the
+      EBSCO gem, so we're leaving it out. If this makes it hard for users to
+      evaluate documents, we may have to look harder for that information. %>
+</ul>
+
+<% if @subjects.present? %>
+  <h3 class="subtitle3">Subjects</h3>
+  <ul>
+    <% @subjects.each do |subject| %>
+      <li>
+        <%= link_to(subject, search_prefix + subject, data: {type: "Subject"} ) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @keywords.present? %>
+<h4>Author supplied Keywords:</h4>
+<ul>
+  <% @keywords.each do |keyword| %>
+    <li>
+      <%= link_to(keyword, search_prefix + keyword, data: {type: "Subject"} ) %>
+    </li>
+  <% end %>
+</ul>
+<% end %>
+
+<% if @record.eds_abstract.present? %>
+  <h4>Abstract/summary</h4>
+  <%= sanitize raw @record.eds_abstract %>
+<% end %>
+
+<% if @record.eds_notes.present? %>
+  <h4>Notes</h4>
+  <%# Turns out notes in the wild can include HTML markup, which is encoded and
+      rendered as strings, such as a user-visible "<br />". Let's not do that.
+      Instead, let's strip potentially dangerous tags but render the rest. %>
+  <%= sanitize raw @record.eds_notes %>
+<% end %>
+
+<% if clean_other_titles.present? %>
+  <h4>Other titles</h4>
+  <ul>
+    <% clean_other_titles.each do |title| %>
+      <li>
+        <%= title %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
