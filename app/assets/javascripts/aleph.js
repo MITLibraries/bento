@@ -13,11 +13,11 @@ function Toggler(){
     if(tw.hasClass('is-expanded')) {
       tw.removeClass('is-expanded');
       tw.height(100);
-      tb.html('See more');
+      tb.html('Show more');
     } else {
       tw.addClass('is-expanded');
       tw.height(te.outerHeight(true));
-      tb.html('See less');
+      tb.html('Show less');
     }
 
   });

@@ -1,4 +1,4 @@
-/* last updated 9/7/2017 - commit 435b8e6 */
+/* last updated 9/25/2017 - commit cec9593 */
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -1096,6 +1096,9 @@ abbr.required {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   transition: height 200ms;
+}
+.js .expand-container {
+  margin-bottom: 4rem;
 }
 .js .expand-collapse-control {
   position: absolute;

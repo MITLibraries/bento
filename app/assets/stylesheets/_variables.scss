@@ -30,7 +30,8 @@ $gray-l2:                       #ccc;
 $gray-l3:                       #dedede;
 $gray-l4:                       #f3f3f3;
 $gray-warm:                     #c6b6a3;
-$transparent:                   rgba(0, 0, 0, 0);
+$transparent:                   rgba(0, 0, 0, 0); // transparent black
+$transparent-w:                 rgba(255,255,255,0); // transparent white
 $glare:                         rgba($white-t, .3);
 $shadow:                        rgba($black-t, .5);
 $smoke:                         rgba($gray, .3);
