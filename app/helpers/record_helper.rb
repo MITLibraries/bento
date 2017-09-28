@@ -76,7 +76,9 @@ module RecordHelper
 
   def clean_affiliations
     return if @record.eds_author_affiliations.blank?
-    affs = Nokogiri::HTML.fragment(CGI.unescapeHTML(@record.eds_author_affiliations))
+    affs = Nokogiri::HTML.fragment(
+      CGI.unescapeHTML(@record.eds_author_affiliations)
+    )
     affs.search('relatesto').each(&:remove)
     nodes = affs.children.map(&:text).map(&:strip)
     nodes.reject!(&:empty?)
@@ -95,5 +97,14 @@ module RecordHelper
     # notice the parameter and prefill the search, which is behavior we *don't*
     # want.
     params[:previous]
+  end
+
+  # Turns out metadata in the wild can include HTML markup, which is encoded and
+  # rendered as strings, such as a user-visible "<br />". Let's not do that.
+  # Instead, let's strip potentially dangerous tags but render the rest.
+  # Nokogiri is being used because it is :rainbow: at handling poorly formed
+  # HTML, which appears to be the norm.
+  def safe_output(input)
+    sanitize Nokogiri::HTML.fragment(CGI.unescapeHTML(input)).to_s
   end
 end

@@ -45,7 +45,7 @@
 
   <% if @record.eds_publication_info.present? %>
     <li>
-      Publication info: <%= @record.eds_publication_info %>
+      Publication info: <%= safe_output(@record.eds_publication_info) %>
     </li>
   <% end %>
 
@@ -82,7 +82,7 @@
 
   <% if @record.eds_physical_description.present? %>
     <li>
-      Physical description: <%= @record.eds_physical_description %>
+      Physical description: <%= safe_output(@record.eds_physical_description) %>
     </li>
   <% end %>
 
@@ -122,15 +122,12 @@
 
 <% if @record.eds_abstract.present? %>
   <h4>Abstract/summary</h4>
-  <%= sanitize raw @record.eds_abstract %>
+  <%= safe_output(@record.eds_abstract) %>
 <% end %>
 
 <% if @record.eds_notes.present? %>
   <h4>Notes</h4>
-  <%# Turns out notes in the wild can include HTML markup, which is encoded and
-      rendered as strings, such as a user-visible "<br />". Let's not do that.
-      Instead, let's strip potentially dangerous tags but render the rest. %>
-  <%= sanitize raw @record.eds_notes %>
+  <%= safe_output(@record.eds_notes) %>
 <% end %>
 
 <% if clean_other_titles.present? %>
