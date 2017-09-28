@@ -32,8 +32,10 @@ Rails.application.routes.draw do
                                    # Normal URL routing disallows periods in
                                    # parameters, but our accession numbers
                                    # actually include periods and we need them
-                                   # to perform lookups.
-                                   :constraints  => { :an => /[0-z\.]+/ }
+                                   # to perform lookups. This constraint should
+                                   # allow for all legal URL characters, except
+                                   # those which are reserved.
+                                   :constraints  => { :an => /[0-z\.\-\_~\(\)]+/ }
 
   match "/404", to: 'errors#not_found', :via => :all
   match "/418", to: 'errors#i_am_a_teapot', :via => :all

@@ -28,5 +28,9 @@ module MitBento
     # Allows for custom 404 page and other custom exception handling. Defaults
     # to regular handling if custom handling is not present.
     config.exceptions_app = self.routes
+
+    config.action_dispatch.rescue_responses.merge!(
+      'RecordController::NoSuchRecordError' => :not_found
+    )
   end
 end

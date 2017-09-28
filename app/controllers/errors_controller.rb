@@ -26,4 +26,15 @@ class ErrorsController < ApplicationController
   #   * create a controller which raises the desired exception
   #   * visit the route for that controller
   #   * (You may have to restart the server for the changes to take effect.)
+  #
+  # If you would like to define custom errors, and then bind them to native
+  # error handlers, so that Rails middleware will catch them and display 404
+  # or whatever:
+  #   * define your error
+  #   * in config/application.rb, add something like:
+  #       config.action_dispatch.rescue_responses.merge!(
+  #         'RecordController::NoSuchRecordError' => :not_found
+  #       )
+  # Again, see the Rails exception_wrapper.rb file for available error handler
+  # functions.
 end
