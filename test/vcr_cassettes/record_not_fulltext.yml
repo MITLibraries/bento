@@ -45,11 +45,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
-    http_version: 
+    http_version:
   recorded_at: Wed, 20 Sep 2017 18:11:22 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=n&profile=FAKE_EDS_PROFILE
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=y&profile=FAKE_EDS_PROFILE
     body:
       encoding: US-ASCII
       string: ''
@@ -100,7 +100,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"SessionToken":"FakeSessiontoken"}'
-    http_version: 
+    http_version:
   recorded_at: Wed, 20 Sep 2017 18:11:22 GMT
 - request:
     method: get
@@ -237,7 +237,7 @@ http_interactions:
         Match Publication","DefaultOn":"y","AddAction":"includerelatedcontent(emp)"},{"Type":"rs","Label":"Research
         Starters","DefaultOn":"n","AddAction":"includerelatedcontent(rs)"}],"AvailableDidYouMeanOptions":[{"Id":"AutoSuggest","Label":"Did
         You Mean","DefaultOn":"y"},{"Id":"AutoCorrect","Label":"Auto Correct","DefaultOn":"n"}]},"ViewResultSettings":{"ResultsPerPage":"20","ResultListView":"brief"},"ApplicationSettings":{"SessionTimeout":"480"},"ApiSettings":{"MaxRecordJumpAhead":"250"}}'
-    http_version: 
+    http_version:
   recorded_at: Wed, 20 Sep 2017 18:11:22 GMT
 - request:
     method: post
@@ -319,6 +319,6 @@ http_interactions:
         Kimberly R."}}},{"PersonEntity":{"Name":{"NameFull":"Peterson, Shenita R."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"05","M":"03","Text":"Nov
         2016","Type":"published","Y":"2017"}],"Identifiers":[{"Type":"issn-electronic","Value":"00296554"}],"Titles":[{"TitleFull":"Nursing
         Outlook","Type":"main"}]}}]}}}}}'
-    http_version: 
+    http_version:
   recorded_at: Wed, 20 Sep 2017 18:11:23 GMT
 recorded_with: VCR 3.0.3

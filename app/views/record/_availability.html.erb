@@ -2,6 +2,8 @@
 <% if @record.fulltext_link.present? %>
   <% if check_online? %>
     <a href="<%= @record.fulltext_link[:url] %>">Check for online copy</a>
+  <% elsif guest_and_restricted_link? %>
+    <a href="<%= login_url %>">Sign in for full text link</a>
   <% else %>
     <a href="<%= @record.fulltext_link[:url] %>" class="btn button-primary">View online</a>
   <% end %>

@@ -56,6 +56,9 @@
     "MAX_AUTHORS": {
       "required": true
     },
+    "PROXY_PREFIX": {
+      "required": true
+    },
     "RACK_ENV": {
       "required": true
     },

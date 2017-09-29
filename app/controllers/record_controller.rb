@@ -30,7 +30,7 @@ class RecordController < ApplicationController
     session = EBSCO::EDS::Session.new(user: ENV['EDS_USER_ID'],
                                       pass: ENV['EDS_PASSWORD'],
                                       profile: ENV['EDS_PROFILE'],
-                                      guest: false, # this will be dynamic soon
+                                      guest: helpers.guest?,
                                       org: 'mit',
                                       use_cache: false)
     @record = session.retrieve(dbid: @record_source, an: @record_an)

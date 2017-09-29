@@ -45,11 +45,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 24 Aug 2017 13:07:43 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=n&profile=FAKE_EDS_PROFILE
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=y&profile=FAKE_EDS_PROFILE
     body:
       encoding: US-ASCII
       string: ''
@@ -100,7 +100,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"SessionToken":"FakeSessiontoken"}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 24 Aug 2017 13:07:43 GMT
 - request:
     method: get
@@ -237,7 +237,7 @@ http_interactions:
         Match Publication","DefaultOn":"y","AddAction":"includerelatedcontent(emp)"},{"Type":"rs","Label":"Research
         Starters","DefaultOn":"n","AddAction":"includerelatedcontent(rs)"}],"AvailableDidYouMeanOptions":[{"Id":"AutoSuggest","Label":"Did
         You Mean","DefaultOn":"y"},{"Id":"AutoCorrect","Label":"Auto Correct","DefaultOn":"n"}]},"ViewResultSettings":{"ResultsPerPage":"20","ResultListView":"brief"},"ApplicationSettings":{"SessionTimeout":"480"},"ApiSettings":{"MaxRecordJumpAhead":"250"}}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 24 Aug 2017 13:07:43 GMT
 - request:
     method: post
@@ -351,6 +351,6 @@ http_interactions:
         Peter"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"2007"}],"Identifiers":[{"Type":"isbn-print","Value":"9781841958811"},{"Type":"isbn-print","Value":"1841958816"}],"Titles":[{"TitleFull":"Bananas
         : how the United Fruit Company shaped the world \/ Peter Chapman.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Hayden
         Library - Stacks","ShelfLocator":"HD9259.B3.U523 2007b"}]}}]}}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 24 Aug 2017 13:07:44 GMT
 recorded_with: VCR 3.0.3

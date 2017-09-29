@@ -49,7 +49,7 @@ http_interactions:
   recorded_at: Wed, 13 Sep 2017 16:38:16 GMT
 - request:
     method: get
-    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=n&profile=FAKE_EDS_PROFILE
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=y&profile=FAKE_EDS_PROFILE
     body:
       encoding: US-ASCII
       string: ''
