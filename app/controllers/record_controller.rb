@@ -1,7 +1,9 @@
 class RecordController < ApplicationController
   rescue_from EBSCO::EDS::BadRequest, with: proc {
-    raise ActionController::RoutingError, 'Record not found'
+    raise RecordController::NoSuchRecordError, 'Record not found'
   }
+
+  class NoSuchRecordError < StandardError; end
 
   include Rainbows
 
