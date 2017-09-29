@@ -15,7 +15,7 @@
     <%# todo: this will need updating once Ebsco resolves a data mapping
         problem described here
         https://mitlibraries.atlassian.net/browse/DI-547 %>
-    <%= @record.eds_extras_TOC %>
+    <%= safe_output(@record.eds_extras_TOC) %>
   </div>
 <% end %>
 
