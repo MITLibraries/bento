@@ -1,12 +1,19 @@
 <h2 class="subtitle2">Availability</h2>
 <% if @record.fulltext_link.present? %>
-  <% if check_online? %>
-    <a href="<%= @record.fulltext_link[:url] %>">Check for online copy</a>
-  <% elsif guest_and_restricted_link? %>
-    <a href="<%= login_url %>">Sign in for full text link</a>
-  <% else %>
-    <a href="<%= @record.fulltext_link[:url] %>" class="btn button-primary">View online</a>
-  <% end %>
+  <div class="link-fulltext">
+    <% if check_online? %>
+      <a class="button button-secondary" href="<%= @record.fulltext_link[:url] %>">Check for online copy</a>
+    <% elsif guest_and_restricted_link? %>
+      <div class="inline-action well signin-fulltext">
+        <p class="message">Full text available</p>
+        <div class="actions">
+          <a class="button button-secondary" href="<%= login_url %>">Sign in for access</a>
+        </div>
+      </div>
+    <% else %>
+      <a class="button button-primary green" href="<%= @record.fulltext_link[:url] %>" class="btn button-primary">View online</a>
+    <% end %>
+  </div>
 <% end %>
 
 <%# using try instead of .present? due to how edsapi dynamically adds this

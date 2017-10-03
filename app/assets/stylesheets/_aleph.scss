@@ -61,3 +61,20 @@
   }
 
 }
+
+.full-record {
+
+  .link-fulltext {
+    margin: .5rem 0 1.5rem 0;
+  }
+
+  .signin-fulltext {
+    margin: .5rem 0;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+
+    .message {
+      margin-bottom: 0;
+    }
+  }
+}

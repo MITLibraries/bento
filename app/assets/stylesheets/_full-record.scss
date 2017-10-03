@@ -1,0 +1,13 @@
+
+// full record
+.full-record {
+
+  .signin-guest {
+    @extend .alert;
+    @extend .alert-banner;
+    @extend .inline-action;
+    @extend .alert-banner;
+    margin: -3.1rem -3.1rem 2rem -3.1rem;
+  }
+
+}
