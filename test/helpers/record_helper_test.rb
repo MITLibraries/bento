@@ -59,4 +59,14 @@ DOC
                   controller.clean_other_titles)
 
   end
+
+  test 'link with a domain in relavent links' do
+    link = { url: 'https://libraries.mit.edu/F/stuff' }
+    assert(relevant_fulltext_link?(link))
+  end
+
+  test 'link without a domain in relevant links' do
+    link = { url: 'https://loc.gov/toc/because/whynot' }
+    refute(relevant_fulltext_link?(link))
+  end
 end

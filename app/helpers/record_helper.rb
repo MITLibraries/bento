@@ -62,6 +62,17 @@ module RecordHelper
     )
   end
 
+  # domains we consider relevant when evaluating links
+  def relevant_links
+    ['libproxy.mit.edu', 'library.mit.edu', 'sfx.mit.edu', 'owens.mit.edu',
+     'libraries.mit.edu', 'content.ebscohost.com']
+  end
+
+  # Check fulltext_link to confirm it has a domain from relevant_links
+  def relevant_fulltext_link?(link)
+    relevant_links.map { |x| link[:url].include?(x) }.any?
+  end
+
   # The value in @record.eds_languages is sometimes a string and sometimes an
   # array. We're going to make it always be an array, so we can handle it in
   # the same way in the template regardless, and also use its arrayness to
