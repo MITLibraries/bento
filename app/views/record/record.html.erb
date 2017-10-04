@@ -6,7 +6,7 @@
 <div class="gridband layout-3q1q">
   <div class="col3q box-content region full-record" data-region="Full record">
 
-    <% if guest? %>
+    <% if guest? && @record.eds_access_level.to_i < 3 %>
       <div class="alert info signin-guest">
         <p class="message">You are browsing as a guest. Sign in for full access.</p>
         <div class="actions"><a class="button button-primary" href="<%= login_url %>">Sign in</a></div>

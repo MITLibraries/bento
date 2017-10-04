@@ -249,4 +249,32 @@ class RecordTest < ActionDispatch::IntegrationTest
       assert_select 'div.reasons'
     end
   end
+
+  test 'login is not shown when record AccessLevel > 2' do
+    VCR.use_cassette('record: no access restriction',
+                     allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
+      assert_response :success
+      refute @response.body.include? 'Sign in for full access'
+    end
+  end
+
+  test 'login is shown when record AccessLevel < 3' do
+    VCR.use_cassette('record: access restriction',
+                     allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'lah', an: '20123379364' }
+      assert_response :success
+      assert @response.body.include? 'Sign in for full access'
+    end
+  end
+
+  test 'login is shown for pdflink on non-restricted records' do
+    VCR.use_cassette('record: pdflink unrestricted record',
+                     allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'mdc', an: '25750248' }
+      assert_response :success
+      refute @response.body.include? 'Sign in for full access'
+      assert @response.body.include? 'Sign in for access'
+    end
+  end
 end
