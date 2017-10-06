@@ -10,7 +10,7 @@
           <a class="button button-secondary" href="<%= login_url %>">Sign in for access</a>
         </div>
       </div>
-    <% else %>
+    <% elsif relevant_fulltext_link?(@record.fulltext_link) %>
       <a class="button button-primary green" href="<%= @record.fulltext_link[:url] %>" class="btn button-primary">View online</a>
     <% end %>
   </div>
