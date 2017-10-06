@@ -84,42 +84,40 @@ class AlephItem
   end
 end
 
-=begin
-A note about refactoring:
-
-The AlephItem class should actually be two classes:
-  * AlephResponse
-    * Processes XML from the Aleph API
-    * May represent one or more actual library objects
-    * Has a function which returns an array of AlephObjects in lieu of the
-      current `items` function
-  * AlephObject
-    * Is instantiated by AlephResponse with data extracted from XML
-    * Represents exactly one library object
-    * Contains all the methods that currently take `item` as an argument -
-      those actually want to be methods of an AlephItem class and in many cases
-      want to be setting or using instance variables (e.g. `@title`)
-
-Originally this class was only needed for AlephResponse-type things; it grew
-a lot of AlephObject-type things to support the needs of the full record view.
-
-We discussed refactoring it at this time but chose not to because:
-1) We believe we are nearing the end of our need to consume data from Aleph,
-   so the awkward developer UI will not slow us down as much as the refactor
-   would;
-2) We may be moving to a new ILS in the near-ish term, which would render a
-   refactor moot.
-
-If we find ourselves needing to do substantial new work with this class after
-the close of DI-513, we may wish to reconsider the decision not to refactor.
-
-If we do refactor it will have implications for the following:
-* AlephItem tests
-  * Will need to be renamed and separated out into AlephResponse and
-    AlephObject tests
-* AlephHelper
-  * Some of its responsibiilities may more properly be methods on AlephObject
-* views/aleph/full_item_status.html.erb
-  * This file expects items to be key/value hashes; it will need to expect
-    instead to get AlephObjects and access their instance variables or methods
-=end
+# A note about refactoring:
+#
+# The AlephItem class should actually be two classes:
+#   * AlephResponse
+#     * Processes XML from the Aleph API
+#     * May represent one or more actual library objects
+#     * Has a function which returns an array of AlephObjects in lieu of the
+#       current `items` function
+#   * AlephObject
+#     * Is instantiated by AlephResponse with data extracted from XML
+#     * Represents exactly one library object
+#     * Contains all the methods that currently take `item` as an argument -
+#       those actually want to be methods of an AlephItem class and in many
+#       cases want to be setting or using instance variables (e.g. `@title`)
+#
+# Originally this class was only needed for AlephResponse-type things; it grew
+# a lot of AlephObject-type things to support the needs of the full record view.
+#
+# We discussed refactoring it at this time but chose not to because:
+# 1) We believe we are nearing the end of our need to consume data from Aleph,
+#    so the awkward developer UI will not slow us down as much as the refactor
+#    would;
+# 2) We may be moving to a new ILS in the near-ish term, which would render a
+#    refactor moot.
+#
+# If we find ourselves needing to do substantial new work with this class after
+# the close of DI-513, we may wish to reconsider the decision not to refactor.
+#
+# If we do refactor it will have implications for the following:
+# * AlephItem tests
+#   * Will need to be renamed and separated out into AlephResponse and
+#     AlephObject tests
+# * AlephHelper
+#   * Some of its responsibiilities may more properly be methods on AlephObject
+# * views/aleph/full_item_status.html.erb
+#   * This file expects items to be key/value hashes; it will need to expect
+#     instead to get AlephObjects and access their instance variables or methods

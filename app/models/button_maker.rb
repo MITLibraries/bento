@@ -19,7 +19,7 @@ class ButtonMaker
   def initialize(item, oclc)
     @item = item
     @oclc = oclc
-    @options = ['call', 'contact', 'hold', 'ill', 'recall', 'scan', 'special_ill']
+    @options = %w(call contact hold ill recall scan special_ill)
 
     # Properties of items. This must go *after* setting @item and @oclc, but
     # *before* setting @requestable.
@@ -174,24 +174,29 @@ class ButtonMaker
     }
     return unless path_options.key?(@library)
     path = path_options[@library]
-    "<a class='btn button-secondary button-small' href='https://libraries.mit.edu/#{path}/'>Call Us</a>"
+    "<a class='btn button-secondary button-small' " \
+      "href='https://libraries.mit.edu/#{path}/'>Call Us</a>"
   end
 
   def make_button_for_contact
-    "<a class='btn button-secondary button-small' href='https://libraries.mit.edu/archives/'>Contact Us</a>"
+    "<a class='btn button-secondary button-small' " \
+      "href='https://libraries.mit.edu/archives/'>Contact Us</a>"
   end
 
   def make_button_for_hold
-    "<a class='btn button-secondary button-small' href='#{url_for_hold}'>Place Hold</a>"
+    "<a class='btn button-secondary button-small' " \
+      "href='#{url_for_hold}'>Place Hold</a>"
   end
 
   def make_button_for_ill
-    "<a class='btn button-secondary button-small' href='#{url_for_ill}'>Get it with ILL (3-4 days)</a>"
+    "<a class='btn button-secondary button-small' "\
+      "href='#{url_for_ill}'>Get it with ILL (3-4 days)</a>"
   end
 
   def make_button_for_recall
     # Yes, the hold URL and the recall URL are the same.
-    "<a class='btn button-subtle button-small' href='#{url_for_hold}'>Recall (7+ days)</a>"
+    "<a class='btn button-subtle button-small' " \
+      "href='#{url_for_hold}'>Recall (7+ days)</a>"
   end
 
   def make_button_for_scan
@@ -199,7 +204,8 @@ class ButtonMaker
   end
 
   def make_button_for_special_ill
-    "<a class='btn button-secondary button-small' href='#{url_for_special_ill}'>Get it with ILL (3-4 days)</a>"
+    "<a class='btn button-secondary button-small' "\
+      "href='#{url_for_special_ill}'>Get it with ILL (3-4 days)</a>"
   end
 
   # ~~~~~~~~ Functions which create URLs for availability action buttons ~~~~~~~
@@ -226,10 +232,10 @@ class ButtonMaker
     encoded_call_no = ERB::Util.url_encode(@call_number)
 
     [
-      "#{sfx_host}",
+      sfx_host.to_s,
       "?sid=ALEPH:#{analytics}",
       "&amp;call_number=#{encoded_call_no}",
-      "&amp;genre=journal",
+      '&amp;genre=journal',
       "&amp;barcode=#{@barcode}",
       "&amp;title=#{encoded_title}",
       "&amp;location=#{encoded_location}"
@@ -245,7 +251,8 @@ class ButtonMaker
   def url_for_special_ill
     # @identifier may be an ISBN or the ISSN, but either one works in the BD
     # ISBN parameter.
-    "https://library.mit.edu/shib/bd.cgi?url_ver=Z39.88-2004&amp;rft.isbn=#{@identifier}"
+    'https://library.mit.edu/shib/bd.cgi?url_ver=Z39.88-2004' \
+      "&amp;rft.isbn=#{@identifier}"
   end
 
   # ~~~~~~~~ Utility functions needed to determine PDF scan eligibility ~~~~~~~~
@@ -300,8 +307,8 @@ class ButtonMaker
     [
       # Items with these status codes may be requested from any library,
       # except the Annex.
-      ['01', '03', '04', '05', '06', '07', '08', '09', '11', '12', '19', '20',
-       '21'].include?(@z30status_code) && @library != 'Library Storage Annex',
+      %w(01 03 04 05 06 07 08 09 11 12 19 20 21).include?(@z30status_code) &&
+        @library != 'Library Storage Annex',
 
       # Items with status code 23 may be requested from only some libraries.
       @z30status_code == '23' && ['Barker Library',
@@ -311,8 +318,8 @@ class ButtonMaker
                                   'Library Storage Annex'].include?(@library),
 
       # The Annex is special.
-      @library == 'Library Storage Annex' && ['13', '14', '15', '56',
-                                              '57'].include?(@z30status_code)
+      %w(13 14 15 56 57).include?(@z30status_code) &&
+        @library == 'Library Storage Annex'
     ].any?
   end
 
