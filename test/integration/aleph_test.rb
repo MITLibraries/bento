@@ -70,4 +70,31 @@ class AlephTest < ActionDispatch::IntegrationTest
       end
     end
   end
+
+  test 'place hold link displayed' do
+    VCR.use_cassette('realtime aleph') do
+      get full_item_status_path, params: { id: 'MIT01001739356' }
+      assert_select 'a', text: 'Place Hold' do |value|
+        parsed_url = URI.parse(value.first[:href])
+        assert_equal parsed_url.host, 'library.mit.edu'
+        assert_equal parsed_url.path, '/F'
+
+        # You have to use hashrockets, because otherwise it converts the strings
+        # into symbols, which then don't match the keys of the array that
+        # CGI.parse spits out.
+        expected_params = {
+          'adm_doc_number' => ['001739356'],
+          'doc_library' => ['MIT50'],
+          'func' => ['item-hold-request'],
+          'item_sequence' => ['000010']
+        }
+        params = CGI.parse(parsed_url.query)
+
+        # We can't just check that the querystring equals an expected
+        # querystring, because hashes don't guarantee order, so the to_query
+        # part of item_request_url may not return in any particular order.
+        assert_equal expected_params, params
+      end
+    end
+  end
 end

@@ -1,6 +1,13 @@
 require 'test_helper'
 
 class AlephItemTest < ActiveSupport::TestCase
+  setup do
+    @AlephTester = AlephItem.new
+    VCR.use_cassette('realtime aleph volume') do
+      @item = @AlephTester.xml_status('MIT01001019412').xpath('//items').children.first
+    end
+  end
+
   test 'status_url' do
     assert_equal(
       AlephItem.new.status_url('MIT01001739356'),
@@ -11,8 +18,7 @@ class AlephItemTest < ActiveSupport::TestCase
 
   test 'can return realtime status for an aleph id' do
     VCR.use_cassette('realtime aleph') do
-      status = AlephItem.new.items('MIT01001739356')
-      assert_equal('In Library', status[0][:status])
+      status = AlephItem.new.items('MIT01001739356', '123456789')
       assert_equal('Hayden Library', status[0][:library])
       assert_equal('Stacks', status[0][:collection])
       assert_equal('PN1995.9.M86 M855 2010', status[0][:call_number])
@@ -24,8 +30,7 @@ class AlephItemTest < ActiveSupport::TestCase
 
   test 'can identify non available items' do
     VCR.use_cassette('realtime aleph unavailable') do
-      status = AlephItem.new.items('MIT01002511337')
-      assert_equal('03/02/2017 11:59 PM', status[5][:status])
+      status = AlephItem.new.items('MIT01002511337', '123456789')
       assert_equal('Rotch Library', status[5][:library])
       assert_equal('Service Desk', status[5][:collection])
       assert_equal('QA27.5.L44 2016a', status[5][:call_number])
@@ -37,8 +42,7 @@ class AlephItemTest < ActiveSupport::TestCase
 
   test 'adds volume when available' do
     VCR.use_cassette('realtime aleph volume') do
-      status = AlephItem.new.items('MIT01001019412')
-      assert_equal('In Library', status[0][:status])
+      status = AlephItem.new.items('MIT01001019412', '123456789')
       assert_equal('Hayden Library', status[0][:library])
       assert_equal('Stacks', status[0][:collection])
       assert_equal('PS3515.U274 2001', status[0][:call_number])
@@ -50,7 +54,7 @@ class AlephItemTest < ActiveSupport::TestCase
 
   test 'orders volumes in ascending order' do
     VCR.use_cassette('realtime aleph volume') do
-      status = AlephItem.new.items('MIT01001019412')
+      status = AlephItem.new.items('MIT01001019412', '123456789')
       assert_equal('v.1', status[0][:description])
       assert_equal('v.16', status[15][:description])
     end
@@ -60,7 +64,7 @@ class AlephItemTest < ActiveSupport::TestCase
   test 'items with multiple volumes in multiple libraries' do
     # Art of Computer Programming, Knuth MIT01000239342
     VCR.use_cassette('multiple libraries multiple volumes') do
-      status = AlephItem.new.items('MIT01000239342')
+      status = AlephItem.new.items('MIT01000239342', '123456789')
       assert_equal(['Barker Library', 'Barker Library', 'Barker Library',
                     'Barker Library', 'Barker Library', 'Barker Library',
                     'Barker Library', 'Barker Library', 'Barker Library',
@@ -75,11 +79,27 @@ class AlephItemTest < ActiveSupport::TestCase
   # string logic
   test 'volumes with multiple digits sort by integer' do
     VCR.use_cassette('volumes with multiple digits') do
-      status = AlephItem.new.items('MIT01000009192')
+      status = AlephItem.new.items('MIT01000009192', '123456789')
       assert_equal(['v.1', 'v.2', 'v.3', 'v.4', 'v.5', 'v.6', 'v.7', 'v.8',
                     'v.9', 'v.10', 'v.11', 'v.12', 'v.13', 'v.14', 'v.16',
                     'v.17', 'v.18', 'v.19', 'v.20', 'v.21', 'v.22', 'v.24'],
                    status.map { |x| x[:description] })
     end
+  end
+
+  test 'description' do
+    assert_equal('v.16', @AlephTester.description(@item))
+  end
+
+  test 'label' do
+    assert_equal('Available', @AlephTester.label(@item))
+  end
+
+  test 'library' do
+    assert_equal('Hayden Library', @AlephTester.library(@item))
+  end
+
+  test 'status' do
+    assert_equal('In Library', @AlephTester.status(@item))
   end
 end

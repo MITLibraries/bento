@@ -1,0 +1,356 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/uidauth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD","InterfaceId":"edsapi_ruby_gem"}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - ''
+      X-Authenticationtoken:
+      - ''
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 04 Oct 2017 18:41:40 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '128'
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+    http_version: 
+  recorded_at: Wed, 04 Oct 2017 18:41:40 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=y&profile=FAKE_EDS_PROFILE
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - ''
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 04 Oct 2017 18:41:41 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 8501777a-715a-43c0-b609-4e40248ebc3b
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '995267985'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '100'
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+    http_version: 
+  recorded_at: Wed, 04 Oct 2017 18:41:41 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Info
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 04 Oct 2017 18:41:40 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - c3425bbc-57fe-46df-8242-a6d154b57f0b
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '995267985'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '3642'
+    body:
+      encoding: UTF-8
+      string: '{"AvailableSearchCriteria":{"AvailableSorts":[{"Id":"date","Label":"Date
+        Newest","AddAction":"setsort(date)"},{"Id":"date2","Label":"Date Oldest","AddAction":"setsort(date2)"},{"Id":"relevance","Label":"Relevance","AddAction":"setsort(relevance)"}],"AvailableSearchFields":[{"FieldCode":"TX","Label":"All
+        Text"},{"FieldCode":"AU","Label":"Author"},{"FieldCode":"TI","Label":"Title"},{"FieldCode":"SU","Label":"Subject
+        Terms"},{"FieldCode":"SO","Label":"Source"},{"FieldCode":"AB","Label":"Abstract"},{"FieldCode":"IS","Label":"ISSN"},{"FieldCode":"IB","Label":"ISBN"}],"AvailableExpanders":[{"Id":"relatedsubjects","Label":"Apply
+        equivalent subjects","AddAction":"addexpander(relatedsubjects)","DefaultOn":"n"},{"Id":"thesaurus","Label":"Apply
+        related words","AddAction":"addexpander(thesaurus)","DefaultOn":"n"},{"Id":"fulltext","Label":"Also
+        search within the full text of the articles","AddAction":"addexpander(fulltext)","DefaultOn":"y"}],"AvailableLimiters":[{"Id":"FT","Label":"Full
+        Text","Type":"select","AddAction":"addlimiter(FT:value)","DefaultOn":"n","Order":"1"},{"Id":"FR","Label":"References
+        Available","Type":"select","AddAction":"addlimiter(FR:value)","DefaultOn":"n","Order":"2"},{"Id":"TI","Label":"Reviewed
+        Book Title","Type":"text","AddAction":"addlimiter(TI:value)","DefaultOn":"n","Order":"3"},{"Id":"RV","Label":"Peer
+        Reviewed","Type":"select","AddAction":"addlimiter(RV:value)","DefaultOn":"n","Order":"4"},{"Id":"AU","Label":"Author","Type":"text","AddAction":"addlimiter(AU:value)","DefaultOn":"n","Order":"5"},{"Id":"SO","Label":"Journal
+        Name","Type":"text","AddAction":"addlimiter(SO:value)","DefaultOn":"n","Order":"6"},{"Id":"DT1","Label":"Date
+        Published","Type":"ymrange","AddAction":"addlimiter(DT1:value)","DefaultOn":"n","Order":"7"},{"Id":"LB","Label":"Location","Type":"multiselectvalue","LimiterValues":[{"Value":"MIT
+        Barton Catalog","AddAction":"addlimiter(LB:MIT Barton Catalog)","LimiterValues":[{"Value":"Barker
+        Library","AddAction":"addlimiter(LB:MIT Barton Catalog-Barker Library)"},{"Value":"Dewey
+        Library","AddAction":"addlimiter(LB:MIT Barton Catalog-Dewey Library)"},{"Value":"Hayden
+        Library - Humanities","AddAction":"addlimiter(LB:MIT Barton Catalog-Hayden
+        Library - Humanities)"},{"Value":"Hayden Library - Science","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Hayden Library - Science)"},{"Value":"Hayden Reserves","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Hayden Reserves)"},{"Value":"Institute Archives","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Institute Archives)"},{"Value":"Internet Resource","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Internet Resource)"},{"Value":"Lewis Music Library","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Lewis Music Library)"},{"Value":"Library Storage Annex","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Library Storage Annex)"},{"Value":"Physics Dept. Reading Room","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Physics Dept. Reading Room)"},{"Value":"Rotch Library","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Rotch Library)"},{"Value":"Rotch Visual Collections","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Rotch Visual Collections)"}]},{"Value":"MIT Course Reserves","AddAction":"addlimiter(LB:MIT
+        Course Reserves)","LimiterValues":[{"Value":"Barker Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Barker Library)"},{"Value":"Dewey Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Dewey Library)"},{"Value":"Hayden Library - Humanities","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Hayden Library - Humanities)"},{"Value":"Hayden Library -
+        Science","AddAction":"addlimiter(LB:MIT Course Reserves-Hayden Library - Science)"},{"Value":"Hayden
+        Reserves","AddAction":"addlimiter(LB:MIT Course Reserves-Hayden Reserves)"},{"Value":"Institute
+        Archives","AddAction":"addlimiter(LB:MIT Course Reserves-Institute Archives)"},{"Value":"Internet
+        Resource","AddAction":"addlimiter(LB:MIT Course Reserves-Internet Resource)"},{"Value":"Lewis
+        Music Library","AddAction":"addlimiter(LB:MIT Course Reserves-Lewis Music
+        Library)"},{"Value":"Library Storage Annex","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Library Storage Annex)"},{"Value":"Physics Dept. Reading Room","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Physics Dept. Reading Room)"},{"Value":"Rotch Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Rotch Library)"},{"Value":"Rotch Visual Collections","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Rotch Visual Collections)"}]}],"DefaultOn":"n","Order":"8"},{"Id":"FT1","Label":"Available
+        in Library Collection","Type":"select","AddAction":"addlimiter(FT1:value)","DefaultOn":"n","Order":"9"},{"Id":"LA99","Label":"Language","Type":"multiselectvalue","LimiterValues":[{"Value":"Catalan","AddAction":"addlimiter(LA99:Catalan)"},{"Value":"Chinese","AddAction":"addlimiter(LA99:Chinese)"},{"Value":"Croatian","AddAction":"addlimiter(LA99:Croatian)"},{"Value":"Dutch\/Flemish","AddAction":"addlimiter(LA99:Dutch\/Flemish)"},{"Value":"English","AddAction":"addlimiter(LA99:English)"},{"Value":"French","AddAction":"addlimiter(LA99:French)"},{"Value":"German","AddAction":"addlimiter(LA99:German)"},{"Value":"Italian","AddAction":"addlimiter(LA99:Italian)"},{"Value":"Lithuanian","AddAction":"addlimiter(LA99:Lithuanian)"},{"Value":"Portuguese","AddAction":"addlimiter(LA99:Portuguese)"},{"Value":"Romanian","AddAction":"addlimiter(LA99:Romanian)"},{"Value":"Russian","AddAction":"addlimiter(LA99:Russian)"},{"Value":"Spanish","AddAction":"addlimiter(LA99:Spanish)"},{"Value":"Turkish","AddAction":"addlimiter(LA99:Turkish)"},{"Value":"Japanese","AddAction":"addlimiter(LA99:Japanese)"},{"Value":"Afrikaans","AddAction":"addlimiter(LA99:Afrikaans)"},{"Value":"Albanian","AddAction":"addlimiter(LA99:Albanian)"},{"Value":"Amharic","AddAction":"addlimiter(LA99:Amharic)"},{"Value":"Arabic","AddAction":"addlimiter(LA99:Arabic)"},{"Value":"Armenian","AddAction":"addlimiter(LA99:Armenian)"},{"Value":"Aromanian","AddAction":"addlimiter(LA99:Aromanian)"},{"Value":"Aymara","AddAction":"addlimiter(LA99:Aymara)"},{"Value":"Bambara","AddAction":"addlimiter(LA99:Bambara)"},{"Value":"Bengali","AddAction":"addlimiter(LA99:Bengali)"},{"Value":"Bosnian","AddAction":"addlimiter(LA99:Bosnian)"},{"Value":"Bulgarian","AddAction":"addlimiter(LA99:Bulgarian)"},{"Value":"Czech","AddAction":"addlimiter(LA99:Czech)"},{"Value":"Danish","AddAction":"addlimiter(LA99:Danish)"},{"Value":"Dutch","AddAction":"addlimiter(LA99:Dutch)"},{"Value":"Filipino","AddAction":"addlimiter(LA99:Filipino)"},{"Value":"Finnish","AddAction":"addlimiter(LA99:Finnish)"},{"Value":"Flemish","AddAction":"addlimiter(LA99:Flemish)"},{"Value":"Gaelic","AddAction":"addlimiter(LA99:Gaelic)"},{"Value":"Greek","AddAction":"addlimiter(LA99:Greek)"},{"Value":"Gujarati","AddAction":"addlimiter(LA99:Gujarati)"},{"Value":"Hausa","AddAction":"addlimiter(LA99:Hausa)"},{"Value":"Hawaiian","AddAction":"addlimiter(LA99:Hawaiian)"},{"Value":"Hebrew","AddAction":"addlimiter(LA99:Hebrew)"},{"Value":"Hindi","AddAction":"addlimiter(LA99:Hindi)"},{"Value":"Hmong","AddAction":"addlimiter(LA99:Hmong)"},{"Value":"Hungarian","AddAction":"addlimiter(LA99:Hungarian)"},{"Value":"Igbo","AddAction":"addlimiter(LA99:Igbo)"},{"Value":"Indonesian","AddAction":"addlimiter(LA99:Indonesian)"},{"Value":"javanese","AddAction":"addlimiter(LA99:javanese)"},{"Value":"Kashmiri","AddAction":"addlimiter(LA99:Kashmiri)"},{"Value":"Korean","AddAction":"addlimiter(LA99:Korean)"},{"Value":"Kurdish","AddAction":"addlimiter(LA99:Kurdish)"},{"Value":"Lao","AddAction":"addlimiter(LA99:Lao)"},{"Value":"Latin","AddAction":"addlimiter(LA99:Latin)"},{"Value":"Latvian","AddAction":"addlimiter(LA99:Latvian)"},{"Value":"Lingala","AddAction":"addlimiter(LA99:Lingala)"},{"Value":"Macedonian","AddAction":"addlimiter(LA99:Macedonian)"},{"Value":"Malagasy","AddAction":"addlimiter(LA99:Malagasy)"},{"Value":"Marathi","AddAction":"addlimiter(LA99:Marathi)"},{"Value":"Mende","AddAction":"addlimiter(LA99:Mende)"},{"Value":"Moldovan","AddAction":"addlimiter(LA99:Moldovan)"},{"Value":"Mongolian","AddAction":"addlimiter(LA99:Mongolian)"},{"Value":"Nepali","AddAction":"addlimiter(LA99:Nepali)"},{"Value":"Norwegian","AddAction":"addlimiter(LA99:Norwegian)"},{"Value":"Oriya","AddAction":"addlimiter(LA99:Oriya)"},{"Value":"Oromo","AddAction":"addlimiter(LA99:Oromo)"},{"Value":"Pashto","AddAction":"addlimiter(LA99:Pashto)"},{"Value":"Persian","AddAction":"addlimiter(LA99:Persian)"},{"Value":"Pidgin
+        english","AddAction":"addlimiter(LA99:Pidgin english)"},{"Value":"Polish","AddAction":"addlimiter(LA99:Polish)"},{"Value":"Punjabi","AddAction":"addlimiter(LA99:Punjabi)"},{"Value":"Quechua","AddAction":"addlimiter(LA99:Quechua)"},{"Value":"Romany","AddAction":"addlimiter(LA99:Romany)"},{"Value":"Samoan","AddAction":"addlimiter(LA99:Samoan)"},{"Value":"Sango","AddAction":"addlimiter(LA99:Sango)"},{"Value":"Sanskrit","AddAction":"addlimiter(LA99:Sanskrit)"},{"Value":"Serbian","AddAction":"addlimiter(LA99:Serbian)"},{"Value":"Shona","AddAction":"addlimiter(LA99:Shona)"},{"Value":"Sinhala","AddAction":"addlimiter(LA99:Sinhala)"},{"Value":"Slovak","AddAction":"addlimiter(LA99:Slovak)"},{"Value":"Slovenian","AddAction":"addlimiter(LA99:Slovenian)"},{"Value":"Sotho","AddAction":"addlimiter(LA99:Sotho)"},{"Value":"Swahili","AddAction":"addlimiter(LA99:Swahili)"},{"Value":"Swati(swazi)","AddAction":"addlimiter(LA99:Swati\\(swazi\\))"},{"Value":"Swedish","AddAction":"addlimiter(LA99:Swedish)"},{"Value":"Swiss
+        german","AddAction":"addlimiter(LA99:Swiss german)"},{"Value":"Tagalog","AddAction":"addlimiter(LA99:Tagalog)"},{"Value":"Tamashek","AddAction":"addlimiter(LA99:Tamashek)"},{"Value":"Tamil","AddAction":"addlimiter(LA99:Tamil)"},{"Value":"Tatar","AddAction":"addlimiter(LA99:Tatar)"},{"Value":"Tetum","AddAction":"addlimiter(LA99:Tetum)"},{"Value":"Thai","AddAction":"addlimiter(LA99:Thai)"},{"Value":"Tibetan","AddAction":"addlimiter(LA99:Tibetan)"},{"Value":"Turkmen","AddAction":"addlimiter(LA99:Turkmen)"},{"Value":"Urdu","AddAction":"addlimiter(LA99:Urdu)"},{"Value":"Vietnamese","AddAction":"addlimiter(LA99:Vietnamese)"},{"Value":"Wolof","AddAction":"addlimiter(LA99:Wolof)"},{"Value":"Xhosa","AddAction":"addlimiter(LA99:Xhosa)"},{"Value":"Yoruba","AddAction":"addlimiter(LA99:Yoruba)"},{"Value":"Zulu","AddAction":"addlimiter(LA99:Zulu)"},{"Value":"Aymara","AddAction":"addlimiter(LA99:Aymara)"},{"Value":"Abkhazian","AddAction":"addlimiter(LA99:Abkhazian)"},{"Value":"Mapudungun;
+        Mapuche","AddAction":"addlimiter(LA99:Mapudungun; Mapuche)"},{"Value":"Asturian;
+        Bable; Leonese; Asturleonese","AddAction":"addlimiter(LA99:Asturian; Bable;
+        Leonese; Asturleonese)"},{"Value":"Australian languages","AddAction":"addlimiter(LA99:Australian
+        languages)"},{"Value":"Basque","AddAction":"addlimiter(LA99:Basque)"},{"Value":"Breton","AddAction":"addlimiter(LA99:Breton)"},{"Value":"Burmese","AddAction":"addlimiter(LA99:Burmese)"},{"Value":"Central
+        American Indian languages","AddAction":"addlimiter(LA99:Central American Indian
+        languages)"},{"Value":"Catalan; Valencian","AddAction":"addlimiter(LA99:Catalan;
+        Valencian)"},{"Value":"Chechen","AddAction":"addlimiter(LA99:Chechen)"},{"Value":"Coptic","AddAction":"addlimiter(LA99:Coptic)"},{"Value":"Dutch;
+        Flemish","AddAction":"addlimiter(LA99:Dutch; Flemish)"},{"Value":"English,
+        Middle (1100-1500)","AddAction":"addlimiter(LA99:English\\, Middle \\(1100-1500\\))"},{"Value":"Esperanto","AddAction":"addlimiter(LA99:Esperanto)"},{"Value":"Estonian","AddAction":"addlimiter(LA99:Estonian)"},{"Value":"Faroese","AddAction":"addlimiter(LA99:Faroese)"},{"Value":"Fijian","AddAction":"addlimiter(LA99:Fijian)"},{"Value":"Germanic
+        languages","AddAction":"addlimiter(LA99:Germanic languages)"},{"Value":"Geez","AddAction":"addlimiter(LA99:Geez)"},{"Value":"Irish","AddAction":"addlimiter(LA99:Irish)"},{"Value":"Galician","AddAction":"addlimiter(LA99:Galician)"},{"Value":"Greek,
+        Ancient (to 1453)","AddAction":"addlimiter(LA99:Greek\\, Ancient \\(to 1453\\))"},{"Value":"Greek,
+        Modern (1453-)","AddAction":"addlimiter(LA99:Greek\\, Modern \\(1453-\\))"},{"Value":"Haitian;
+        Haitian Creole","AddAction":"addlimiter(LA99:Haitian; Haitian Creole)"},{"Value":"Icelandic","AddAction":"addlimiter(LA99:Icelandic)"},{"Value":"Ido","AddAction":"addlimiter(LA99:Ido)"},{"Value":"Interlingua
+        (International Auxiliary Language Association)","AddAction":"addlimiter(LA99:Interlingua
+        \\(International Auxiliary Language Association\\))"},{"Value":"Javanese","AddAction":"addlimiter(LA99:Javanese)"},{"Value":"Judeo-Arabic","AddAction":"addlimiter(LA99:Judeo-Arabic)"},{"Value":"Kannada","AddAction":"addlimiter(LA99:Kannada)"},{"Value":"Luxembourgish;
+        Letzeburgesch","AddAction":"addlimiter(LA99:Luxembourgish; Letzeburgesch)"},{"Value":"Malayalam","AddAction":"addlimiter(LA99:Malayalam)"},{"Value":"Austronesian
+        languages","AddAction":"addlimiter(LA99:Austronesian languages)"},{"Value":"Malay","AddAction":"addlimiter(LA99:Malay)"},{"Value":"Maltese","AddAction":"addlimiter(LA99:Maltese)"},{"Value":"Nahuatl
+        languages","AddAction":"addlimiter(LA99:Nahuatl languages)"},{"Value":"Neapolitan","AddAction":"addlimiter(LA99:Neapolitan)"},{"Value":"Bokmål,
+        Norwegian; Norwegian Bokmål","AddAction":"addlimiter(LA99:Bokmål\\, Norwegian;
+        Norwegian Bokmål)"},{"Value":"Norse, Old","AddAction":"addlimiter(LA99:Norse\\,
+        Old)"},{"Value":"Occitan (post 1500)","AddAction":"addlimiter(LA99:Occitan
+        \\(post 1500\\))"},{"Value":"Ojibwa","AddAction":"addlimiter(LA99:Ojibwa)"},{"Value":"Philippine
+        languages","AddAction":"addlimiter(LA99:Philippine languages)"},{"Value":"Romanian;
+        Moldavian; Moldovan","AddAction":"addlimiter(LA99:Romanian; Moldavian; Moldovan)"},{"Value":"Samaritan
+        Aramaic","AddAction":"addlimiter(LA99:Samaritan Aramaic)"},{"Value":"Sinhala;
+        Sinhalese","AddAction":"addlimiter(LA99:Sinhala; Sinhalese)"},{"Value":"Spanish;
+        Castilian","AddAction":"addlimiter(LA99:Spanish; Castilian)"},{"Value":"Sundanese","AddAction":"addlimiter(LA99:Sundanese)"},{"Value":"Sumerian","AddAction":"addlimiter(LA99:Sumerian)"},{"Value":"Classical
+        Syriac","AddAction":"addlimiter(LA99:Classical Syriac)"},{"Value":"Ugaritic","AddAction":"addlimiter(LA99:Ugaritic)"},{"Value":"Welsh","AddAction":"addlimiter(LA99:Welsh)"},{"Value":"Yiddish","AddAction":"addlimiter(LA99:Yiddish)"},{"Value":"Zapotec","AddAction":"addlimiter(LA99:Zapotec)"},{"Value":"Belarusian","AddAction":"addlimiter(LA99:Belarusian)"},{"Value":"Georgian","AddAction":"addlimiter(LA99:Georgian)"},{"Value":"Modern
+        Greek","AddAction":"addlimiter(LA99:Modern Greek)"},{"Value":"Ukranian","AddAction":"addlimiter(LA99:Ukranian)"},{"Value":"Ukrainian","AddAction":"addlimiter(LA99:Ukrainian)"},{"Value":"Azerbaijani","AddAction":"addlimiter(LA99:Azerbaijani)"},{"Value":"Serbo-Croatian","AddAction":"addlimiter(LA99:Serbo-Croatian)"},{"Value":"Greek,
+        Modern","AddAction":"addlimiter(LA99:Greek\\, Modern)"},{"Value":"Sotho, Southern","AddAction":"addlimiter(LA99:Sotho\\,
+        Southern)"},{"Value":"Venda","AddAction":"addlimiter(LA99:Venda)"},{"Value":"Aragonese","AddAction":"addlimiter(LA99:Aragonese)"},{"Value":"Greek,
+        Ancient","AddAction":"addlimiter(LA99:Greek\\, Ancient)"},{"Value":"Occitan","AddAction":"addlimiter(LA99:Occitan)"},{"Value":"FRENCH","AddAction":"addlimiter(LA99:FRENCH)"},{"Value":"PORTUGUESE","AddAction":"addlimiter(LA99:PORTUGUESE)"},{"Value":"RUSSIAN","AddAction":"addlimiter(LA99:RUSSIAN)"},{"Value":"SPANISH","AddAction":"addlimiter(LA99:SPANISH)"},{"Value":"GERMAN","AddAction":"addlimiter(LA99:GERMAN)"},{"Value":"ENGLISH","AddAction":"addlimiter(LA99:ENGLISH)"},{"Value":"CHINESE","AddAction":"addlimiter(LA99:CHINESE)"},{"Value":"Belorussian","AddAction":"addlimiter(LA99:Belorussian)"},{"Value":"Kazakh","AddAction":"addlimiter(LA99:Kazakh)"},{"Value":"Malayan","AddAction":"addlimiter(LA99:Malayan)"},{"Value":"Moldavian","AddAction":"addlimiter(LA99:Moldavian)"},{"Value":"Uzbek","AddAction":"addlimiter(LA99:Uzbek)"}],"DefaultOn":"n","Order":"10"},{"Id":"FC","Label":"Catalog
+        Only","Type":"select","AddAction":"addlimiter(FC:value)","DefaultOn":"n","Order":"11"}],"AvailableSearchModes":[{"Mode":"bool","Label":"Boolean\/Phrase","DefaultOn":"n","AddAction":"setsearchmode(bool)"},{"Mode":"all","Label":"Find
+        all my search terms","DefaultOn":"y","AddAction":"setsearchmode(all)"},{"Mode":"any","Label":"Find
+        any of my search terms","DefaultOn":"n","AddAction":"setsearchmode(any)"},{"Mode":"smart","Label":"SmartText
+        Searching","DefaultOn":"n","AddAction":"setsearchmode(smart)"}],"AvailableRelatedContent":[{"Type":"emp","Label":"Exact
+        Match Publication","DefaultOn":"y","AddAction":"includerelatedcontent(emp)"},{"Type":"rs","Label":"Research
+        Starters","DefaultOn":"n","AddAction":"includerelatedcontent(rs)"}],"AvailableDidYouMeanOptions":[{"Id":"AutoSuggest","Label":"Did
+        You Mean","DefaultOn":"y"},{"Id":"AutoCorrect","Label":"Auto Correct","DefaultOn":"n"}]},"ViewResultSettings":{"ResultsPerPage":"20","ResultListView":"brief"},"ApplicationSettings":{"SessionTimeout":"480"},"ApiSettings":{"MaxRecordJumpAhead":"250"}}'
+    http_version: 
+  recorded_at: Wed, 04 Oct 2017 18:41:41 GMT
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Retrieve
+    body:
+      encoding: UTF-8
+      string: '{"DbId":"cat00916a","An":"mit.001492509","HighlightTerms":null,"EbookPreferredFormat":"ebook-pdf"}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 04 Oct 2017 18:41:41 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 4ff65049-06b9-4407-8446-89ac046a652c
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '995267985'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '2833'
+    body:
+      encoding: UTF-8
+      string: '{"Record":{"ResultId":1,"Header":{"DbId":"cat00916a","DbLabel":"MIT
+        Barton Catalog","An":"mit.001492509","RelevancyScore":"1045","AccessLevel":"3","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001492509&authtype=sso&custid=s8978330","ImageInfo":[{"Size":"thumb","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=S&Value=9781841958811"},{"Size":"medium","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9781841958811"}],"CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/001492509?","Name":"MIT
+        Barton Catalog Full Record (cat00916a)","Category":"libCatalog","Text":"View
+        catalog record","MouseOverText":"Go to Barton catalog to find this at the
+        MIT Libraries"},{"Url":"https:\/\/mit.worldcat.org\/search?q=no%3A166367812","Name":"WorldCat
+        customlink","Category":"ill","Text":"Get it in the library","MouseOverText":"Get
+        items from MIT & non-MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Bananas
+        : how the United Fruit Company shaped the world \/ Peter Chapman."},{"Name":"Language","Label":"Language","Group":"Lang","Data":"English"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Chapman%2C+Peter%22&quot;&gt;Chapman,
+        Peter&lt;\/searchLink&gt;, 1948-"},{"Name":"PubInfo","Label":"Publication
+        Information","Group":"PubInfo","Data":"Edinburgh ; New York : Canongate ;
+        [Berkeley, Calif.?] : Distributed by Publishers Group West, c2007."},{"Name":"EditionInfo","Label":"Edition","Group":"PubInfo","Data":"1st
+        American ed."},{"Name":"DatePub","Label":"Publication Date","Group":"Date","Data":"2007"},{"Name":"PhysDesc","Label":"Physical
+        Description","Group":"PhysDesc","Data":"xv, 224 p. : map ; 21 cm."},{"Name":"TypePub","Label":"Publication
+        Type","Group":"TypPub","Data":"Book"},{"Name":"TypeDocument","Label":"Document
+        Type","Group":"TypDoc","Data":"Bibliographies; Non-fiction"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Banana+trade+--+Central+America+--+History%22&quot;&gt;Banana
+        trade -- Central America -- History&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Bananas+--+Social+aspects%22&quot;&gt;Bananas
+        -- Social aspects&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22International+business+enterprises+--+Corrupt+practices%22&quot;&gt;International
+        business enterprises -- Corrupt practices&lt;\/searchLink&gt;"},{"Name":"SubjectGeographic","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Central+America+--+History+--+1951-1979%22&quot;&gt;Central
+        America -- History -- 1951-1979&lt;\/searchLink&gt;"},{"Name":"SubjectCompany","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22United+Fruit+Company+--+History%22&quot;&gt;United
+        Fruit Company -- History&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22United+Fruit+Company+--+Corrupt+practices%22&quot;&gt;United
+        Fruit Company -- Corrupt practices&lt;\/searchLink&gt;"},{"Name":"Abstract","Label":"Abstract","Group":"Ab","Data":"Summary:
+        In this exploration of corporate maneuvering and subterfuge, journalist Chapman
+        shows how the importer United Fruit set the precedent for the institutionalized
+        power and influence of today&#39;s multinational companies. This infamous
+        company was arguably the most controversial global corporation ever--from
+        the jungles of Costa Rica to the dramatic suicide of its CEO, who leapt from
+        an office on the 44th floor of the Pan Am building in New York City. From
+        the marketing of the banana as the first fast food, to the company&#39;s involvement
+        in an invasion of Honduras, the Bay of Pigs crisis, and a bloody coup in Guatemala,
+        Chapman weaves a tale of big business, political deceit, and outright violence
+        to show how one company wreaked havoc in the &quot;banana republics&quot;
+        of Central America, and how terrifyingly similar the age of United Fruit is
+        to our age of rapid globalization.--From publisher description."},{"Name":"TOC","Label":"Content
+        Notes","Group":"TOC","Data":"1. From the Memory of Men -- 2. Lament for a
+        Dying Fruit -- 3. Roots of Empire -- 4. Monopoly -- 5. The Banana Man -- 6.
+        Taming the Enclave -- 7. Banana Republics -- 8. On the Inside -- 9. Coup --
+        10. &#39;Betrayal&#39; -- 11. Decline and Fall -- 12. Old and Dark Forces
+        -- Epilogue: United Fruit World."},{"Name":"Note","Label":"Notes","Group":"Note","Data":"Originally
+        published as: Jungle capitalists.&lt;br \/&gt;Map on lining papers.&lt;br
+        \/&gt;Includes bibliographical references (p. 211-215) and index."},{"Name":"TitleAlt","Label":"Other
+        Titles","Group":"TiAlt","Data":"&lt;searchLink fieldCode=&quot;TI&quot; term=&quot;%22Jungle+capitalists%22&quot;&gt;Jungle
+        capitalists&lt;\/searchLink&gt;"},{"Name":"ISBN","Label":"ISBN","Group":"ISBN","Data":"9781841958811
+        :&lt;br \/&gt;1841958816 :"},{"Name":"NumberOther","Label":"OCLC","Group":"ID","Data":"166367812"},{"Name":"AN","Label":"Accession
+        Number","Group":"ID","Data":"mit.001492509"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"United
+        Fruit Company -- History","Type":"general"},{"SubjectFull":"United Fruit Company
+        -- Corrupt practices","Type":"general"},{"SubjectFull":"Banana trade -- Central
+        America -- History","Type":"general"},{"SubjectFull":"Bananas -- Social aspects","Type":"general"},{"SubjectFull":"International
+        business enterprises -- Corrupt practices","Type":"general"},{"SubjectFull":"Central
+        America -- History -- 1951-1979","Type":"general"}],"Titles":[{"TitleFull":"Bananas
+        : how the United Fruit Company shaped the world.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Chapman,
+        Peter"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"2007"}],"Identifiers":[{"Type":"isbn-print","Value":"9781841958811"},{"Type":"isbn-print","Value":"1841958816"}],"Titles":[{"TitleFull":"Bananas
+        : how the United Fruit Company shaped the world \/ Peter Chapman.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Hayden
+        Library - Stacks","ShelfLocator":"HD9259.B3.U523 2007b"}]}}]}}'
+    http_version: 
+  recorded_at: Wed, 04 Oct 2017 18:41:41 GMT
+recorded_with: VCR 3.0.3
