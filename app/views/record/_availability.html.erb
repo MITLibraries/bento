@@ -32,6 +32,8 @@
 <div id="full-avail" class="discovery-full-record-availability-info">
   <% if local_record? %>
     Loading availability information <i class="fa fa-spinner fa-spin"></i>
-    <script>RealtimeItem( "<%= clean_an %>" );</script>
+    <script>
+      RealtimeItem( "<%= clean_an %>", "<%= @record.eds_document_oclc %>" );
+    </script>
   <% end %>
 </div>
