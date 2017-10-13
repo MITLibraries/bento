@@ -64,9 +64,17 @@ class RecordTest < ActionDispatch::IntegrationTest
   end
 
   test 'view online button is shown' do
+    VCR.use_cassette('record: view online', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'ibh', an: '124089570' }
+      assert_select 'a.button-primary', text: 'View online'
+      assert_select 'a', text: 'Check for online copy', count: 0
+    end
+  end
+
+  test 'sign in for access button is shown' do
     VCR.use_cassette('record: article', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'aci', an: '123877356' }
-      assert_select 'a.button-primary', text: 'View online'
+      assert_select 'a.button-secondary', text: 'Sign in for access'
       assert_select 'a', text: 'Check for online copy', count: 0
     end
   end
