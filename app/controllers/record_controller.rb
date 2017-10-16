@@ -35,9 +35,10 @@ class RecordController < ApplicationController
   end
 
   def restricted!
+    return unless helpers.guest?
     flash[:error] = 'Restricted access. Please use our feedback form for ' \
                     'assistance.'
-    return redirect_to root_url if helpers.guest?
+    redirect_to root_url
   end
 
   def valid_url?
