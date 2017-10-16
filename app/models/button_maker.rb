@@ -19,7 +19,7 @@ class ButtonMaker
   def initialize(item, oclc)
     @item = item
     @oclc = oclc
-    @options = %w(call contact hold ill recall scan special_ill)
+    @options = %w(call contact hold recall ill scan special_ill)
 
     # Properties of items. This must go *after* setting @item and @oclc, but
     # *before* setting @requestable.
@@ -190,7 +190,7 @@ class ButtonMaker
 
   def make_button_for_ill
     "<a class='btn button-secondary button-small' "\
-      "href='#{url_for_ill}'>Get it with ILL (3-4 days)</a>"
+      "href='#{url_for_ill}'>Get non-MIT copy (3-4 days)</a>"
   end
 
   def make_button_for_recall
@@ -200,7 +200,8 @@ class ButtonMaker
   end
 
   def make_button_for_scan
-    "<a class='btn button-secondary' href='#{url_for_scan}'>Request Scan</a>"
+    "<a class='btn button-secondary button-small' " \
+      " href='#{url_for_scan}'>Request Scan</a>"
   end
 
   def make_button_for_special_ill

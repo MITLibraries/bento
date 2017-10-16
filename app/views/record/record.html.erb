@@ -3,7 +3,7 @@
   <%= link_to('Back to search results', search_bento_path(q: @previous)) %>
 <% end %>
 
-<div class="gridband layout-3q1q">
+<div class="gridband layout-3q1q wrap-full-record">
   <div class="col3q box-content region full-record" data-region="Full record">
 
     <%# eds_access_level 3+ have no guest level restrictions to require login %>
@@ -18,11 +18,11 @@
       <%= render partial: "basic_info" %>
     </div>
 
-    <div class="discovery-full-record-basic-info">
+    <div class="discovery-full-record-availability">
       <%= render partial: "availability" %>
     </div>
 
-    <div class="discovery-full-record-basic-info">
+    <div class="discovery-full-record-more-info">
       <%= render partial: "extended_info" %>
     </div>
 

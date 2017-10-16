@@ -4,91 +4,93 @@
   <% search_prefix = ENV['EDS_PROFILE_URI'] %>
 <% end %>
 
-<h3 class="subtitle3">More information</h3>
-
-<ul>
+<h3 class="section-title">More information</h3>
+<ul class="list-moreinfo">
   <% if @record.eds_publication_type.present? %>
     <li>
-      Document type: <%= @record.eds_publication_type %>
-    </li>
+      <span class="label">Document type:</span> 
+      <%= @record.eds_publication_type %>
+    </li> 
   <% end %>
 
   <% if @record.eds_source_title.present? %>
     <li>
-      Source: <%= @record.eds_source_title %>
-    </li>
+      <span class="label">Source:</span> 
+      <%= @record.eds_source_title %>
+    </li> 
   <% end %>
 
   <% if @record.eds_authors.present? %>
     <li>
-      <ul>
-        <% @record.eds_authors.each do |author| %>
-          <li>
-            <%= author %>
-          </li>
-        <% end %>
-      </ul>
-    </li>
+      <span class="label">Authors:</span> 
+      <% @record.eds_authors.each do |author| %>
+        <span class="record-author"><%= author %></span>
+      <% end %>
+    </li> 
   <% end %>
 
   <% if clean_affiliations.present? %>
     <li>
-      <ul>
-        <% clean_affiliations.each do |aff| %>
-          <li>
-            <%= aff %>
-          </li>
-        <% end %>
-      </ul>
-    </li>
+      <span class="label">Affiliations:</span> 
+      <% clean_affiliations.each do |aff| %>
+        <%= aff %>; 
+      <% end %>
+    </li> 
   <% end %>
 
   <% if @record.eds_publication_info.present? %>
     <li>
-      Publication info: <%= safe_output(@record.eds_publication_info) %>
-    </li>
+      <span class="label">Publication info:</span> 
+      <%= safe_output(@record.eds_publication_info) %>
+    </li> 
   <% end %>
 
   <% if @record.eds_isbn_print.present? %>
     <li>
-      ISBN: <%= @record.eds_isbn_print %>
-    </li>
+      <span class="label">ISBN:</span> 
+      <%= @record.eds_isbn_print %>
+    </li> 
   <% end %>
 
   <% if @record.eds_isbn_electronic.present? %>
     <li>
-      ISBN: <%= @record.eds_isbn_electronic %>
-    </li>
+      <span class="label">ISBN:</span>
+      <%= @record.eds_isbn_electronic %>
+    </li> 
   <% end %>
 
   <% if @record.eds_issn_print.present? %>
     <li>
-      ISSN: <%= @record.eds_issn_print %>
-    </li>
+      <span class="label">ISSN:</span> 
+      <%= @record.eds_issn_print %>
+    </li> 
   <% end %>
 
   <% if @record.eds_document_doi.present? %>
     <li>
-      DOI: <%= @record.eds_document_doi %>
-    </li>
+      <span class="label">DOI:</span>
+      <%= @record.eds_document_doi %>
+    </li> 
   <% end %>
 
   <% if clean_language.present? %>
     <li>
-      <%= "Language".pluralize(clean_language.count) %>:
+      <span class="label"><%= "Language".pluralize(clean_language.count) %>:</span> 
       <%= clean_language.join(',') %>
-    </li>
+    </li> 
   <% end %>
 
   <% if @record.eds_physical_description.present? %>
     <li>
-      Physical description: <%= safe_output(@record.eds_physical_description) %>
-    </li>
+      <span class="label">Physical description:</span>
+      <%= safe_output(@record.eds_physical_description) %>
+    </li> 
   <% end %>
 
   <% if @record.eds_database_name.present? %>
     <li>
-      Database: <%= @record.eds_database_name %>
+      <span class="label">Database:</span>
+      <%= @record.eds_database_name %>
     </li>
   <% end %>
 
@@ -99,8 +101,8 @@
 </ul>
 
 <% if @subjects.present? %>
-  <h3 class="subtitle3">Subjects</h3>
-  <ul>
+  <h3 class="section-title">Subjects</h3>
+  <ul class="list-subjects">
     <% @subjects.each do |subject| %>
       <li>
         <%= link_to(subject, search_prefix + subject, data: {type: "Subject"} ) %>
@@ -110,29 +112,33 @@
 <% end %>
 
 <% if @keywords.present? %>
-<h4>Author supplied Keywords:</h4>
-<ul>
-  <% @keywords.each do |keyword| %>
-    <li>
-      <%= link_to(keyword, search_prefix + keyword, data: {type: "Subject"} ) %>
-    </li>
-  <% end %>
-</ul>
+  <h3 class="section-title">Author supplied Keywords:</h3>
+  <ul class="list-keywords">
+    <% @keywords.each do |keyword| %>
+      <li>
+        <%= link_to(keyword, search_prefix + keyword, data: {type: "Subject"} ) %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
 
 <% if @record.eds_abstract.present? %>
-  <h4>Abstract/summary</h4>
-  <%= safe_output(@record.eds_abstract) %>
+  <h3 class="section-title">Abstract/summary</h3>
+  <div class="section-content">
+    <%= safe_output(@record.eds_abstract) %>
+  </div>
 <% end %>
 
 <% if @record.eds_notes.present? %>
-  <h4>Notes</h4>
-  <%= safe_output(@record.eds_notes) %>
+  <h3 class="section-title">Notes</h4>
+  <div class="section-content">
+    <%= safe_output(@record.eds_notes) %>
+  </div>
 <% end %>
 
 <% if clean_other_titles.present? %>
-  <h4>Other titles</h4>
-  <ul>
+  <h3 class="section-title">Other titles</h3>
+  <ul class="list-alttitles">
     <% clean_other_titles.each do |title| %>
       <li>
         <%= title %>

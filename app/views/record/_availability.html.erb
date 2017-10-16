@@ -1,4 +1,4 @@
-<h2 class="subtitle2">Availability</h2>
+<h3 class="section-title">Availability</h3>
 <% if @record.fulltext_link.present? %>
   <div class="link-fulltext">
 
@@ -35,7 +35,7 @@
     <%# todo: this will need updating once Ebsco resolves a data mapping
         problem described here
         https://mitlibraries.atlassian.net/browse/DI-547 %>
-    <%= safe_output(@record.eds_extras_TOC) %>
+    <div class="holdings"><%= safe_output(@record.eds_extras_TOC) %></div>
   </div>
 <% end %>
 
