@@ -161,7 +161,8 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: article', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'aci', an: '123877356' }
       assert_response :success
-      assert @response.body.include? 'ISSN: 20796374'
+      assert @response.body.include? 'ISSN:'
+      assert @response.body.include? '20796374'
     end
   end
 
@@ -169,7 +170,8 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: book', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
       assert_response :success
-      assert @response.body.include? 'ISBN: 9781841958811'
+      assert @response.body.include? 'ISBN:'
+      assert @response.body.include? '9781841958811'
     end
   end
 
