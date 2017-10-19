@@ -119,7 +119,7 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: article', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'aci', an: '123877356' }
       assert_response :success
-      assert @response.body.include? 'Document type: Academic Journal'
+      assert @response.body.include? '<span class="label">Document type:</span> Academic Journal'
     end
   end
 
@@ -127,7 +127,7 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: article', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'aci', an: '123877356' }
       assert_response :success
-      assert @response.body.include? 'Source: Biosensors (2079-6374)'
+      assert @response.body.include? '<span class="label">Source:</span> Biosensors (2079-6374)'
     end
   end
 
@@ -153,7 +153,7 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: book', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
       assert_response :success
-      assert @response.body.include? 'Publication info: Edinburgh ; New York : Canongate ; [Berkeley, Calif.?] : Distributed by Publishers Group West, c2007.'
+      assert @response.body.include? '<span class="label">Publication info:</span> Edinburgh ; New York : Canongate ; [Berkeley, Calif.?] : Distributed by Publishers Group West, c2007.'
     end
   end
 
@@ -161,8 +161,12 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: article', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'aci', an: '123877356' }
       assert_response :success
+<<<<<<< ours
       assert @response.body.include? 'ISSN:'
       assert @response.body.include? '20796374'
+=======
+      assert @response.body.include? '<span class="label">ISSN:</span> 20796374'
+>>>>>>> theirs
     end
   end
 
@@ -170,8 +174,12 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: book', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
       assert_response :success
+<<<<<<< ours
       assert @response.body.include? 'ISBN:'
       assert @response.body.include? '9781841958811'
+=======
+      assert @response.body.include? '<span class="label">ISBN:</span> 9781841958811'
+>>>>>>> theirs
     end
   end
 
@@ -179,7 +187,7 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: article', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'aci', an: '123877356' }
       assert_response :success
-      assert @response.body.include? 'DOI: 10.3390/bios7020017'
+      assert @response.body.include? '<span class="label">DOI:</span> 10.3390/bios7020017'
     end
   end
 
@@ -187,7 +195,7 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: article', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'aci', an: '123877356' }
       assert_response :success
-      assert @response.body.gsub(/\s+/, " ").include? 'Language: English'
+      assert @response.body.gsub(/\s+/, " ").include? '<span class="label">Language:</span> English'
     end
   end
 
@@ -195,7 +203,7 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: book', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
       assert_response :success
-      assert @response.body.include? 'Physical description: xv, 224 p. : map ; 21 cm.'
+      assert @response.body.include? '<span class="label">Physical description:</span> xv, 224 p. : map ; 21 cm.'
     end
   end
 
@@ -203,7 +211,7 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: book', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
       assert_response :success
-      assert @response.body.include? 'Database: MIT Barton Catalog'
+      assert @response.body.include? '<span class="label">Database:</span> MIT Barton Catalog'
     end
   end
 
