@@ -30,8 +30,8 @@
   </span>
 <%# Includes Books; is catchall for other types not specified in wireframes %>
 <% else %>
-  <span class="record-type"><span class="sr">Type: </span> 
-    <%= @record.eds_publication_type %> 
+  <span class="record-type"><span class="sr">Type: </span>
+    <%= @record.eds_publication_type %>
   </span>
   <span class="record-year">
     Published <%= @record.eds_publication_year %>
@@ -47,7 +47,7 @@
       <% if author == "et al" %>
         <%= author %>
       <% else %>
-        <%= link_to(author, search_prefix + "AU+\"#{author}\"", data: {type: "Author"} ) unless author == "et al" %><% if author != @record.eds_authors.last %><% end %>
+        <%= link_to(author, search_prefix + "AU+\"#{author}\"", data: {type: "Author"} ) %><% if author != @record.eds_authors.last %>;<% end %>
       <% end %>
     </span>
     <% end %>
