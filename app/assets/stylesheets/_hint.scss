@@ -2,13 +2,13 @@
 .hint-box {
   position: relative;
   margin: 1.5% 0;
+  box-shadow: 0px 1px 3px $shadow;
+  border-top: 3px solid $blue-bright;
   padding: 1.5%;
-  background-color: $wisp;
+  background-color: rgba($blue, .2);
 
   .type {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    margin-bottom: .5rem;
     color: $gray;
     font-size: $fs-xsmall;
   }
@@ -23,5 +23,9 @@
   .desc {
     margin-bottom: 0;
     font-size: $fs-small;
+  }
+
+  a {
+    color: darken($blue-muted, 10%);
   }
 }
