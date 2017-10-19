@@ -19,6 +19,7 @@ class ButtonMaker
   def initialize(item, oclc)
     @item = item
     @oclc = oclc
+    # The order of this list controls the order in which buttons will display.
     @options = %w(call contact hold recall ill scan special_ill)
 
     # Properties of items. This must go *after* setting @item and @oclc, but
