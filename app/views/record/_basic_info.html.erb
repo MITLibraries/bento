@@ -38,16 +38,18 @@
   </span>
 <% end %>
 </p>
-<%# If there are no authors (as with periodicals) this section will be
-    blank, corresponding to the wireframe. %>
-<p class="record-authors">
-  <span class="sr">Authors: </span>
+
+<% if @record.eds_authors.present? %>
+  <p class="record-authors">
+    <span class="sr"><%= "Author".pluralize(@record.eds_authors.count) %>: </span>
     <% @record.eds_authors.each do |author| %>
-    <span class="record-author">
-      <% if author == "et al" %>
-        <%= author %>
-      <% else %>
-        <%= link_to(author, search_prefix + "AU+\"#{author}\"", data: {type: "Author"} ) %><% if author != @record.eds_authors.last %>;<% end %>
-      <% end %>
-    </span>
+      <span class="record-author">
+        <% if author == "et al" %>
+          <%= author %>
+        <% else %>
+          <%= link_to(author, search_prefix + "AU+\"#{author}\"", data: {type: "Author"} ) %><% if author != @record.eds_authors.last %>;<% end %>
+        <% end %>
+      </span>
     <% end %>
+  </p>
+<% end %>

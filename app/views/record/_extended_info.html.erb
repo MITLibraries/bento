@@ -9,37 +9,37 @@
   <% if @record.eds_publication_type.present? %>
     <li>
       <span class="label">Document type:</span> <%= @record.eds_publication_type %>
-    </li> 
+    </li>
   <% end %>
 
   <% if @record.eds_source_title.present? %>
     <li>
       <span class="label">Source:</span> <%= @record.eds_source_title %>
-    </li> 
+    </li>
   <% end %>
 
   <% if @record.eds_authors.present? %>
     <li>
-      <span class="label">Authors:</span> 
+      <span class="label"><%= "Author".pluralize(@record.eds_authors.count) %>:</span>
       <% @record.eds_authors.each do |author| %>
         <span class="record-author"><%= author %></span>
       <% end %>
-    </li> 
+    </li>
   <% end %>
 
   <% if clean_affiliations.present? %>
     <li>
-      <span class="label">Affiliations:</span> 
+      <span class="label"><%= "Affiliation".pluralize(clean_affiliations.count) %>:</span>
       <% clean_affiliations.each do |aff| %>
-        <%= aff %>; 
+        <%= aff %><% if aff != clean_affiliations.last %>;<% end %>
       <% end %>
-    </li> 
+    </li>
   <% end %>
 
   <% if @record.eds_publication_info.present? %>
     <li>
       <span class="label">Publication info:</span> <%= safe_output(@record.eds_publication_info) %>
-    </li> 
+    </li>
   <% end %>
 
   <% if @record.eds_isbns.present? %>
@@ -55,8 +55,12 @@
       <%= @record.eds_isbn_print %>
 =======
       <span class="label">ISBN:</span> <%= @record.eds_isbn_print %>
+<<<<<<< ours
 >>>>>>> theirs
     </li> 
+>>>>>>> theirs
+=======
+    </li>
 >>>>>>> theirs
   <% end %>
 
@@ -73,33 +77,41 @@
       <%= @record.eds_isbn_electronic %>
 =======
       <span class="label">ISBN:</span> <%= @record.eds_isbn_electronic %>
+<<<<<<< ours
 >>>>>>> theirs
     </li> 
+=======
+    </li>
+>>>>>>> theirs
   <% end %>
 
   <% if @record.eds_issn_print.present? %>
     <li>
       <span class="label">ISSN:</span> <%= @record.eds_issn_print %>
+<<<<<<< ours
     </li> 
+>>>>>>> theirs
+=======
+    </li>
 >>>>>>> theirs
   <% end %>
 
   <% if @record.eds_document_doi.present? %>
     <li>
       <span class="label">DOI:</span> <%= @record.eds_document_doi %>
-    </li> 
+    </li>
   <% end %>
 
   <% if clean_language.present? %>
     <li>
       <span class="label"><%= "Language".pluralize(clean_language.count) %>:</span> <%= clean_language.join(',') %>
-    </li> 
+    </li>
   <% end %>
 
   <% if @record.eds_physical_description.present? %>
     <li>
       <span class="label">Physical description:</span> <%= safe_output(@record.eds_physical_description) %>
-    </li> 
+    </li>
   <% end %>
 
   <% if @record.eds_database_name.present? %>
@@ -115,7 +127,7 @@
 </ul>
 
 <% if @subjects.present? %>
-  <h3 class="section-title">Subjects</h3>
+  <h3 class="section-title"><%= "Subject".pluralize(@subjects.count) %>:</h3>
   <ul class="list-subjects">
     <% @subjects.each do |subject| %>
       <li>
@@ -126,7 +138,7 @@
 <% end %>
 
 <% if @keywords.present? %>
-  <h3 class="section-title">Author supplied Keywords:</h3>
+  <h3 class="section-title">Author supplied <%= "Keyword".pluralize(@keywords.count) %>:</h3>
   <ul class="list-keywords">
     <% @keywords.each do |keyword| %>
       <li>
@@ -151,7 +163,7 @@
 <% end %>
 
 <% if clean_other_titles.present? %>
-  <h3 class="section-title">Other titles</h3>
+  <h3 class="section-title">Other <%= "title".pluralize(clean_other_titles.count) %></h3>
   <ul class="list-alttitles">
     <% clean_other_titles.each do |title| %>
       <li>
