@@ -119,8 +119,13 @@ module RecordHelper
     sanitize Nokogiri::HTML.fragment(CGI.unescapeHTML(input)).to_s
   end
 
+  # link is a direct expiring pdflink
+  def restricted_link?
+    @record.fulltext_link[:expires] == true
+  end
+
   # User is a guest and the link is restricted
   def guest_and_restricted_link?
-    guest? && @record.fulltext_link[:url] == 'detail'
+    guest? && restricted_link?
   end
 end

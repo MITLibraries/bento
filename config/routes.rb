@@ -37,6 +37,11 @@ Rails.application.routes.draw do
                                    # those which are reserved.
                                    :constraints  => { :an => /[0-z\.\-\_~\(\)]+/ }
 
+  get 'record/direct_link/(:db_source)/(:an)',
+                                   to: 'record#direct_link',
+                                   as: :record_direct_link,
+                                   :constraints  => { :an => /[0-z\.\-\_~\(\)]+/ }
+
   match "/404", to: 'errors#not_found', :via => :all
   match "/418", to: 'errors#i_am_a_teapot', :via => :all
   get '*path', to: 'errors#not_found'

@@ -1,0 +1,470 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/uidauth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD","InterfaceId":"edsapi_ruby_gem"}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - ''
+      X-Authenticationtoken:
+      - ''
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 13 Oct 2017 17:29:51 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '128'
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+    http_version:
+  recorded_at: Fri, 13 Oct 2017 17:29:52 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=n&profile=FAKE_EDS_PROFILE
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - ''
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 13 Oct 2017 17:29:52 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - a7b3ab39-4624-48bb-a7f3-d021597ab117
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-545954739"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '100'
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+    http_version:
+  recorded_at: Fri, 13 Oct 2017 17:29:52 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Info
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 13 Oct 2017 17:29:52 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - d060f018-2305-4ca9-a97c-8747dbb724d1
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-545954739"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '3642'
+    body:
+      encoding: UTF-8
+      string: '{"AvailableSearchCriteria":{"AvailableSorts":[{"Id":"date","Label":"Date
+        Newest","AddAction":"setsort(date)"},{"Id":"date2","Label":"Date Oldest","AddAction":"setsort(date2)"},{"Id":"relevance","Label":"Relevance","AddAction":"setsort(relevance)"}],"AvailableSearchFields":[{"FieldCode":"TX","Label":"All
+        Text"},{"FieldCode":"AU","Label":"Author"},{"FieldCode":"TI","Label":"Title"},{"FieldCode":"SU","Label":"Subject
+        Terms"},{"FieldCode":"SO","Label":"Source"},{"FieldCode":"AB","Label":"Abstract"},{"FieldCode":"IS","Label":"ISSN"},{"FieldCode":"IB","Label":"ISBN"}],"AvailableExpanders":[{"Id":"relatedsubjects","Label":"Apply
+        equivalent subjects","AddAction":"addexpander(relatedsubjects)","DefaultOn":"n"},{"Id":"thesaurus","Label":"Apply
+        related words","AddAction":"addexpander(thesaurus)","DefaultOn":"n"},{"Id":"fulltext","Label":"Also
+        search within the full text of the articles","AddAction":"addexpander(fulltext)","DefaultOn":"y"}],"AvailableLimiters":[{"Id":"FT","Label":"Full
+        Text","Type":"select","AddAction":"addlimiter(FT:value)","DefaultOn":"n","Order":"1"},{"Id":"FR","Label":"References
+        Available","Type":"select","AddAction":"addlimiter(FR:value)","DefaultOn":"n","Order":"2"},{"Id":"TI","Label":"Reviewed
+        Book Title","Type":"text","AddAction":"addlimiter(TI:value)","DefaultOn":"n","Order":"3"},{"Id":"RV","Label":"Peer
+        Reviewed","Type":"select","AddAction":"addlimiter(RV:value)","DefaultOn":"n","Order":"4"},{"Id":"AU","Label":"Author","Type":"text","AddAction":"addlimiter(AU:value)","DefaultOn":"n","Order":"5"},{"Id":"SO","Label":"Journal
+        Name","Type":"text","AddAction":"addlimiter(SO:value)","DefaultOn":"n","Order":"6"},{"Id":"DT1","Label":"Date
+        Published","Type":"ymrange","AddAction":"addlimiter(DT1:value)","DefaultOn":"n","Order":"7"},{"Id":"LB","Label":"Location","Type":"multiselectvalue","LimiterValues":[{"Value":"MIT
+        Barton Catalog","AddAction":"addlimiter(LB:MIT Barton Catalog)","LimiterValues":[{"Value":"Barker
+        Library","AddAction":"addlimiter(LB:MIT Barton Catalog-Barker Library)"},{"Value":"Dewey
+        Library","AddAction":"addlimiter(LB:MIT Barton Catalog-Dewey Library)"},{"Value":"Hayden
+        Library - Humanities","AddAction":"addlimiter(LB:MIT Barton Catalog-Hayden
+        Library - Humanities)"},{"Value":"Hayden Library - Science","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Hayden Library - Science)"},{"Value":"Hayden Reserves","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Hayden Reserves)"},{"Value":"Institute Archives","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Institute Archives)"},{"Value":"Internet Resource","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Internet Resource)"},{"Value":"Lewis Music Library","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Lewis Music Library)"},{"Value":"Library Storage Annex","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Library Storage Annex)"},{"Value":"Physics Dept. Reading Room","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Physics Dept. Reading Room)"},{"Value":"Rotch Library","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Rotch Library)"},{"Value":"Rotch Visual Collections","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Rotch Visual Collections)"}]},{"Value":"MIT Course Reserves","AddAction":"addlimiter(LB:MIT
+        Course Reserves)","LimiterValues":[{"Value":"Barker Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Barker Library)"},{"Value":"Dewey Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Dewey Library)"},{"Value":"Hayden Library - Humanities","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Hayden Library - Humanities)"},{"Value":"Hayden Library -
+        Science","AddAction":"addlimiter(LB:MIT Course Reserves-Hayden Library - Science)"},{"Value":"Hayden
+        Reserves","AddAction":"addlimiter(LB:MIT Course Reserves-Hayden Reserves)"},{"Value":"Institute
+        Archives","AddAction":"addlimiter(LB:MIT Course Reserves-Institute Archives)"},{"Value":"Internet
+        Resource","AddAction":"addlimiter(LB:MIT Course Reserves-Internet Resource)"},{"Value":"Lewis
+        Music Library","AddAction":"addlimiter(LB:MIT Course Reserves-Lewis Music
+        Library)"},{"Value":"Library Storage Annex","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Library Storage Annex)"},{"Value":"Physics Dept. Reading Room","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Physics Dept. Reading Room)"},{"Value":"Rotch Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Rotch Library)"},{"Value":"Rotch Visual Collections","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Rotch Visual Collections)"}]}],"DefaultOn":"n","Order":"8"},{"Id":"FT1","Label":"Available
+        in Library Collection","Type":"select","AddAction":"addlimiter(FT1:value)","DefaultOn":"n","Order":"9"},{"Id":"LA99","Label":"Language","Type":"multiselectvalue","LimiterValues":[{"Value":"Catalan","AddAction":"addlimiter(LA99:Catalan)"},{"Value":"Chinese","AddAction":"addlimiter(LA99:Chinese)"},{"Value":"Croatian","AddAction":"addlimiter(LA99:Croatian)"},{"Value":"Dutch\/Flemish","AddAction":"addlimiter(LA99:Dutch\/Flemish)"},{"Value":"English","AddAction":"addlimiter(LA99:English)"},{"Value":"French","AddAction":"addlimiter(LA99:French)"},{"Value":"German","AddAction":"addlimiter(LA99:German)"},{"Value":"Italian","AddAction":"addlimiter(LA99:Italian)"},{"Value":"Lithuanian","AddAction":"addlimiter(LA99:Lithuanian)"},{"Value":"Portuguese","AddAction":"addlimiter(LA99:Portuguese)"},{"Value":"Romanian","AddAction":"addlimiter(LA99:Romanian)"},{"Value":"Russian","AddAction":"addlimiter(LA99:Russian)"},{"Value":"Spanish","AddAction":"addlimiter(LA99:Spanish)"},{"Value":"Turkish","AddAction":"addlimiter(LA99:Turkish)"},{"Value":"Japanese","AddAction":"addlimiter(LA99:Japanese)"},{"Value":"Afrikaans","AddAction":"addlimiter(LA99:Afrikaans)"},{"Value":"Albanian","AddAction":"addlimiter(LA99:Albanian)"},{"Value":"Amharic","AddAction":"addlimiter(LA99:Amharic)"},{"Value":"Arabic","AddAction":"addlimiter(LA99:Arabic)"},{"Value":"Armenian","AddAction":"addlimiter(LA99:Armenian)"},{"Value":"Aromanian","AddAction":"addlimiter(LA99:Aromanian)"},{"Value":"Aymara","AddAction":"addlimiter(LA99:Aymara)"},{"Value":"Bambara","AddAction":"addlimiter(LA99:Bambara)"},{"Value":"Bengali","AddAction":"addlimiter(LA99:Bengali)"},{"Value":"Bosnian","AddAction":"addlimiter(LA99:Bosnian)"},{"Value":"Bulgarian","AddAction":"addlimiter(LA99:Bulgarian)"},{"Value":"Czech","AddAction":"addlimiter(LA99:Czech)"},{"Value":"Danish","AddAction":"addlimiter(LA99:Danish)"},{"Value":"Dutch","AddAction":"addlimiter(LA99:Dutch)"},{"Value":"Filipino","AddAction":"addlimiter(LA99:Filipino)"},{"Value":"Finnish","AddAction":"addlimiter(LA99:Finnish)"},{"Value":"Flemish","AddAction":"addlimiter(LA99:Flemish)"},{"Value":"Gaelic","AddAction":"addlimiter(LA99:Gaelic)"},{"Value":"Greek","AddAction":"addlimiter(LA99:Greek)"},{"Value":"Gujarati","AddAction":"addlimiter(LA99:Gujarati)"},{"Value":"Hausa","AddAction":"addlimiter(LA99:Hausa)"},{"Value":"Hawaiian","AddAction":"addlimiter(LA99:Hawaiian)"},{"Value":"Hebrew","AddAction":"addlimiter(LA99:Hebrew)"},{"Value":"Hindi","AddAction":"addlimiter(LA99:Hindi)"},{"Value":"Hmong","AddAction":"addlimiter(LA99:Hmong)"},{"Value":"Hungarian","AddAction":"addlimiter(LA99:Hungarian)"},{"Value":"Igbo","AddAction":"addlimiter(LA99:Igbo)"},{"Value":"Indonesian","AddAction":"addlimiter(LA99:Indonesian)"},{"Value":"javanese","AddAction":"addlimiter(LA99:javanese)"},{"Value":"Kashmiri","AddAction":"addlimiter(LA99:Kashmiri)"},{"Value":"Korean","AddAction":"addlimiter(LA99:Korean)"},{"Value":"Kurdish","AddAction":"addlimiter(LA99:Kurdish)"},{"Value":"Lao","AddAction":"addlimiter(LA99:Lao)"},{"Value":"Latin","AddAction":"addlimiter(LA99:Latin)"},{"Value":"Latvian","AddAction":"addlimiter(LA99:Latvian)"},{"Value":"Lingala","AddAction":"addlimiter(LA99:Lingala)"},{"Value":"Macedonian","AddAction":"addlimiter(LA99:Macedonian)"},{"Value":"Malagasy","AddAction":"addlimiter(LA99:Malagasy)"},{"Value":"Marathi","AddAction":"addlimiter(LA99:Marathi)"},{"Value":"Mende","AddAction":"addlimiter(LA99:Mende)"},{"Value":"Moldovan","AddAction":"addlimiter(LA99:Moldovan)"},{"Value":"Mongolian","AddAction":"addlimiter(LA99:Mongolian)"},{"Value":"Nepali","AddAction":"addlimiter(LA99:Nepali)"},{"Value":"Norwegian","AddAction":"addlimiter(LA99:Norwegian)"},{"Value":"Oriya","AddAction":"addlimiter(LA99:Oriya)"},{"Value":"Oromo","AddAction":"addlimiter(LA99:Oromo)"},{"Value":"Pashto","AddAction":"addlimiter(LA99:Pashto)"},{"Value":"Persian","AddAction":"addlimiter(LA99:Persian)"},{"Value":"Pidgin
+        english","AddAction":"addlimiter(LA99:Pidgin english)"},{"Value":"Polish","AddAction":"addlimiter(LA99:Polish)"},{"Value":"Punjabi","AddAction":"addlimiter(LA99:Punjabi)"},{"Value":"Quechua","AddAction":"addlimiter(LA99:Quechua)"},{"Value":"Romany","AddAction":"addlimiter(LA99:Romany)"},{"Value":"Samoan","AddAction":"addlimiter(LA99:Samoan)"},{"Value":"Sango","AddAction":"addlimiter(LA99:Sango)"},{"Value":"Sanskrit","AddAction":"addlimiter(LA99:Sanskrit)"},{"Value":"Serbian","AddAction":"addlimiter(LA99:Serbian)"},{"Value":"Shona","AddAction":"addlimiter(LA99:Shona)"},{"Value":"Sinhala","AddAction":"addlimiter(LA99:Sinhala)"},{"Value":"Slovak","AddAction":"addlimiter(LA99:Slovak)"},{"Value":"Slovenian","AddAction":"addlimiter(LA99:Slovenian)"},{"Value":"Sotho","AddAction":"addlimiter(LA99:Sotho)"},{"Value":"Swahili","AddAction":"addlimiter(LA99:Swahili)"},{"Value":"Swati(swazi)","AddAction":"addlimiter(LA99:Swati\\(swazi\\))"},{"Value":"Swedish","AddAction":"addlimiter(LA99:Swedish)"},{"Value":"Swiss
+        german","AddAction":"addlimiter(LA99:Swiss german)"},{"Value":"Tagalog","AddAction":"addlimiter(LA99:Tagalog)"},{"Value":"Tamashek","AddAction":"addlimiter(LA99:Tamashek)"},{"Value":"Tamil","AddAction":"addlimiter(LA99:Tamil)"},{"Value":"Tatar","AddAction":"addlimiter(LA99:Tatar)"},{"Value":"Tetum","AddAction":"addlimiter(LA99:Tetum)"},{"Value":"Thai","AddAction":"addlimiter(LA99:Thai)"},{"Value":"Tibetan","AddAction":"addlimiter(LA99:Tibetan)"},{"Value":"Turkmen","AddAction":"addlimiter(LA99:Turkmen)"},{"Value":"Urdu","AddAction":"addlimiter(LA99:Urdu)"},{"Value":"Vietnamese","AddAction":"addlimiter(LA99:Vietnamese)"},{"Value":"Wolof","AddAction":"addlimiter(LA99:Wolof)"},{"Value":"Xhosa","AddAction":"addlimiter(LA99:Xhosa)"},{"Value":"Yoruba","AddAction":"addlimiter(LA99:Yoruba)"},{"Value":"Zulu","AddAction":"addlimiter(LA99:Zulu)"},{"Value":"Aymara","AddAction":"addlimiter(LA99:Aymara)"},{"Value":"Abkhazian","AddAction":"addlimiter(LA99:Abkhazian)"},{"Value":"Mapudungun;
+        Mapuche","AddAction":"addlimiter(LA99:Mapudungun; Mapuche)"},{"Value":"Asturian;
+        Bable; Leonese; Asturleonese","AddAction":"addlimiter(LA99:Asturian; Bable;
+        Leonese; Asturleonese)"},{"Value":"Australian languages","AddAction":"addlimiter(LA99:Australian
+        languages)"},{"Value":"Basque","AddAction":"addlimiter(LA99:Basque)"},{"Value":"Breton","AddAction":"addlimiter(LA99:Breton)"},{"Value":"Burmese","AddAction":"addlimiter(LA99:Burmese)"},{"Value":"Central
+        American Indian languages","AddAction":"addlimiter(LA99:Central American Indian
+        languages)"},{"Value":"Catalan; Valencian","AddAction":"addlimiter(LA99:Catalan;
+        Valencian)"},{"Value":"Chechen","AddAction":"addlimiter(LA99:Chechen)"},{"Value":"Coptic","AddAction":"addlimiter(LA99:Coptic)"},{"Value":"Dutch;
+        Flemish","AddAction":"addlimiter(LA99:Dutch; Flemish)"},{"Value":"English,
+        Middle (1100-1500)","AddAction":"addlimiter(LA99:English\\, Middle \\(1100-1500\\))"},{"Value":"Esperanto","AddAction":"addlimiter(LA99:Esperanto)"},{"Value":"Estonian","AddAction":"addlimiter(LA99:Estonian)"},{"Value":"Faroese","AddAction":"addlimiter(LA99:Faroese)"},{"Value":"Fijian","AddAction":"addlimiter(LA99:Fijian)"},{"Value":"Germanic
+        languages","AddAction":"addlimiter(LA99:Germanic languages)"},{"Value":"Geez","AddAction":"addlimiter(LA99:Geez)"},{"Value":"Irish","AddAction":"addlimiter(LA99:Irish)"},{"Value":"Galician","AddAction":"addlimiter(LA99:Galician)"},{"Value":"Greek,
+        Ancient (to 1453)","AddAction":"addlimiter(LA99:Greek\\, Ancient \\(to 1453\\))"},{"Value":"Greek,
+        Modern (1453-)","AddAction":"addlimiter(LA99:Greek\\, Modern \\(1453-\\))"},{"Value":"Haitian;
+        Haitian Creole","AddAction":"addlimiter(LA99:Haitian; Haitian Creole)"},{"Value":"Icelandic","AddAction":"addlimiter(LA99:Icelandic)"},{"Value":"Ido","AddAction":"addlimiter(LA99:Ido)"},{"Value":"Interlingua
+        (International Auxiliary Language Association)","AddAction":"addlimiter(LA99:Interlingua
+        \\(International Auxiliary Language Association\\))"},{"Value":"Javanese","AddAction":"addlimiter(LA99:Javanese)"},{"Value":"Judeo-Arabic","AddAction":"addlimiter(LA99:Judeo-Arabic)"},{"Value":"Kannada","AddAction":"addlimiter(LA99:Kannada)"},{"Value":"Luxembourgish;
+        Letzeburgesch","AddAction":"addlimiter(LA99:Luxembourgish; Letzeburgesch)"},{"Value":"Malayalam","AddAction":"addlimiter(LA99:Malayalam)"},{"Value":"Austronesian
+        languages","AddAction":"addlimiter(LA99:Austronesian languages)"},{"Value":"Malay","AddAction":"addlimiter(LA99:Malay)"},{"Value":"Maltese","AddAction":"addlimiter(LA99:Maltese)"},{"Value":"Nahuatl
+        languages","AddAction":"addlimiter(LA99:Nahuatl languages)"},{"Value":"Neapolitan","AddAction":"addlimiter(LA99:Neapolitan)"},{"Value":"Bokmål,
+        Norwegian; Norwegian Bokmål","AddAction":"addlimiter(LA99:Bokmål\\, Norwegian;
+        Norwegian Bokmål)"},{"Value":"Norse, Old","AddAction":"addlimiter(LA99:Norse\\,
+        Old)"},{"Value":"Occitan (post 1500)","AddAction":"addlimiter(LA99:Occitan
+        \\(post 1500\\))"},{"Value":"Ojibwa","AddAction":"addlimiter(LA99:Ojibwa)"},{"Value":"Philippine
+        languages","AddAction":"addlimiter(LA99:Philippine languages)"},{"Value":"Romanian;
+        Moldavian; Moldovan","AddAction":"addlimiter(LA99:Romanian; Moldavian; Moldovan)"},{"Value":"Samaritan
+        Aramaic","AddAction":"addlimiter(LA99:Samaritan Aramaic)"},{"Value":"Sinhala;
+        Sinhalese","AddAction":"addlimiter(LA99:Sinhala; Sinhalese)"},{"Value":"Spanish;
+        Castilian","AddAction":"addlimiter(LA99:Spanish; Castilian)"},{"Value":"Sundanese","AddAction":"addlimiter(LA99:Sundanese)"},{"Value":"Sumerian","AddAction":"addlimiter(LA99:Sumerian)"},{"Value":"Classical
+        Syriac","AddAction":"addlimiter(LA99:Classical Syriac)"},{"Value":"Ugaritic","AddAction":"addlimiter(LA99:Ugaritic)"},{"Value":"Welsh","AddAction":"addlimiter(LA99:Welsh)"},{"Value":"Yiddish","AddAction":"addlimiter(LA99:Yiddish)"},{"Value":"Zapotec","AddAction":"addlimiter(LA99:Zapotec)"},{"Value":"Georgian","AddAction":"addlimiter(LA99:Georgian)"},{"Value":"Ukranian","AddAction":"addlimiter(LA99:Ukranian)"},{"Value":"Belarusian","AddAction":"addlimiter(LA99:Belarusian)"},{"Value":"Modern
+        Greek","AddAction":"addlimiter(LA99:Modern Greek)"},{"Value":"Ukrainian","AddAction":"addlimiter(LA99:Ukrainian)"},{"Value":"Azerbaijani","AddAction":"addlimiter(LA99:Azerbaijani)"},{"Value":"Serbo-Croatian","AddAction":"addlimiter(LA99:Serbo-Croatian)"},{"Value":"Greek,
+        Modern","AddAction":"addlimiter(LA99:Greek\\, Modern)"},{"Value":"Sotho, Southern","AddAction":"addlimiter(LA99:Sotho\\,
+        Southern)"},{"Value":"Venda","AddAction":"addlimiter(LA99:Venda)"},{"Value":"Aragonese","AddAction":"addlimiter(LA99:Aragonese)"},{"Value":"Greek,
+        Ancient","AddAction":"addlimiter(LA99:Greek\\, Ancient)"},{"Value":"Occitan","AddAction":"addlimiter(LA99:Occitan)"},{"Value":"FRENCH","AddAction":"addlimiter(LA99:FRENCH)"},{"Value":"PORTUGUESE","AddAction":"addlimiter(LA99:PORTUGUESE)"},{"Value":"RUSSIAN","AddAction":"addlimiter(LA99:RUSSIAN)"},{"Value":"SPANISH","AddAction":"addlimiter(LA99:SPANISH)"},{"Value":"GERMAN","AddAction":"addlimiter(LA99:GERMAN)"},{"Value":"ENGLISH","AddAction":"addlimiter(LA99:ENGLISH)"},{"Value":"CHINESE","AddAction":"addlimiter(LA99:CHINESE)"},{"Value":"Belorussian","AddAction":"addlimiter(LA99:Belorussian)"},{"Value":"Kazakh","AddAction":"addlimiter(LA99:Kazakh)"},{"Value":"Malayan","AddAction":"addlimiter(LA99:Malayan)"},{"Value":"Moldavian","AddAction":"addlimiter(LA99:Moldavian)"},{"Value":"Uzbek","AddAction":"addlimiter(LA99:Uzbek)"}],"DefaultOn":"n","Order":"10"},{"Id":"FC","Label":"Catalog
+        Only","Type":"select","AddAction":"addlimiter(FC:value)","DefaultOn":"n","Order":"11"}],"AvailableSearchModes":[{"Mode":"bool","Label":"Boolean\/Phrase","DefaultOn":"n","AddAction":"setsearchmode(bool)"},{"Mode":"all","Label":"Find
+        all my search terms","DefaultOn":"y","AddAction":"setsearchmode(all)"},{"Mode":"any","Label":"Find
+        any of my search terms","DefaultOn":"n","AddAction":"setsearchmode(any)"},{"Mode":"smart","Label":"SmartText
+        Searching","DefaultOn":"n","AddAction":"setsearchmode(smart)"}],"AvailableRelatedContent":[{"Type":"emp","Label":"Exact
+        Match Publication","DefaultOn":"y","AddAction":"includerelatedcontent(emp)"},{"Type":"rs","Label":"Research
+        Starters","DefaultOn":"n","AddAction":"includerelatedcontent(rs)"}],"AvailableDidYouMeanOptions":[{"Id":"AutoSuggest","Label":"Did
+        You Mean","DefaultOn":"y"},{"Id":"AutoCorrect","Label":"Auto Correct","DefaultOn":"n"}]},"ViewResultSettings":{"ResultsPerPage":"20","ResultListView":"brief"},"ApplicationSettings":{"SessionTimeout":"480"},"ApiSettings":{"MaxRecordJumpAhead":"250"}}'
+    http_version:
+  recorded_at: Fri, 13 Oct 2017 17:29:52 GMT
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Retrieve
+    body:
+      encoding: UTF-8
+      string: '{"DbId":"mdc","An":"25750248","HighlightTerms":null,"EbookPreferredFormat":"ebook-pdf"}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 13 Oct 2017 17:29:52 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 28d70594-3c98-4bb2-a7ad-74e93039cc2d
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-545954739"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '4991'
+    body:
+      encoding: UTF-8
+      string: '{"Record":{"ResultId":1,"Header":{"DbId":"mdc","DbLabel":"MEDLINE Complete","An":"25750248","PubType":"Academic
+        Journal","PubTypeId":"academicJournal"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=mdc&AN=25750248&authtype=sso&custid=s8978330","FullText":{"Links":[{"Type":"pdflink","Url":"http:\/\/example.com/redirectomundo"}],"Text":{"Availability":"0"},"CustomLinks":[{"Url":"http:\/\/owens.mit.edu\/sfx_local?genre=article&isbn=&issn=17451701&title=Schizophrenia
+        Bulletin&volume=41&issue=4&date=20150701&atitle=The%20%22Right%20Stuff%22%20Revisited%3A%20What%20Have%20We%20Learned%20About%20the%20Determinants%20of%20Daily%20Functioning%20in%20Schizophrenia%3F&aulast=Green
+        MF&spage=781&sid=EBSCO:MEDLINE%20Complete&pid=<authors>Green MF<\/authors><ui>25750248<\/ui><date>20150701<\/date><db>MEDLINE%20Complete<\/db>","Name":"SFX
+        link filtered to collection fthi1 (For su)","Category":"fullText","Text":"","Icon":"http:\/\/libraries.mit.edu\/img\/sfx\/sfx-mit.gif"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"The
+        &quot;Right Stuff&quot; Revisited: What Have We Learned About the Determinants
+        of Daily Functioning in Schizophrenia?"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AU&quot; term=&quot;%22Green+MF%22&quot;&gt;Green MF&lt;\/searchLink&gt;;
+        Desert Pacific Mental Illness Research, Education, and Clinical Center, Department
+        of Veterans Affairs, Los Angels, CA; Department of Psychiatry and Biobehavioral
+        Sciences, Semel Institute for Neuroscience and Human Behavior, UCLA, Los Angels,
+        CA mgreen@ucla.edu.&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AU&quot; term=&quot;%22Llerena+K%22&quot;&gt;Llerena
+        K&lt;\/searchLink&gt;; Desert Pacific Mental Illness Research, Education,
+        and Clinical Center, Department of Veterans Affairs, Los Angels, CA; Department
+        of Psychiatry and Biobehavioral Sciences, Semel Institute for Neuroscience
+        and Human Behavior, UCLA, Los Angels, CA.&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AU&quot;
+        term=&quot;%22Kern+RS%22&quot;&gt;Kern RS&lt;\/searchLink&gt;; Desert Pacific
+        Mental Illness Research, Education, and Clinical Center, Department of Veterans
+        Affairs, Los Angels, CA; Department of Psychiatry and Biobehavioral Sciences,
+        Semel Institute for Neuroscience and Human Behavior, UCLA, Los Angels, CA."},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"&lt;searchLink
+        fieldCode=&quot;JN&quot; term=&quot;%22Schizophrenia+bulletin+[Schizophr+Bull]+NLMUID%3A+0236760%22&quot;&gt;Schizophrenia
+        Bulletin&lt;\/searchLink&gt; [Schizophr Bull] 2015 Jul; Vol. 41 (4), pp. 781-5.
+        &lt;i&gt;Date of Electronic Publication: &lt;\/i&gt;2015 Mar 07."},{"Name":"TypePub","Label":"Publication
+        Type","Group":"TypPub","Data":"Journal Article; Research Support, Non-U.S.
+        Gov&#39;t"},{"Name":"Language","Label":"Language","Group":"Lang","Data":"English"},{"Name":"TitleSource","Label":"Journal
+        Info","Group":"Src","Data":"&lt;i&gt;Publisher: &lt;\/i&gt;&lt;searchLink
+        fieldCode=&quot;PB&quot; term=&quot;%22Oxford+University+Press%22&quot;&gt;Oxford
+        University Press &lt;\/searchLink&gt;&lt;i&gt;Country of Publication: &lt;\/i&gt;United
+        States &lt;i&gt;NLM ID: &lt;\/i&gt;0236760 &lt;i&gt;Publication Model: &lt;\/i&gt;Print-Electronic
+        &lt;i&gt;Cited Medium: &lt;\/i&gt;Internet &lt;i&gt;ISSN: &lt;\/i&gt;1745-1701
+        (Electronic) &lt;i&gt;Linking ISSN: &lt;\/i&gt;&lt;searchLink fieldCode=&quot;IS&quot;
+        term=&quot;%2205867614%22&quot;&gt;05867614 &lt;\/searchLink&gt;&lt;i&gt;NLM
+        ISO Abbreviation: &lt;\/i&gt;Schizophr Bull &lt;i&gt;Subsets: &lt;\/i&gt;MEDLINE"},{"Name":"PublisherInfo","Label":"Imprint
+        Name(s)","Group":"PubInfo","Data":"&lt;i&gt;Publication&lt;\/i&gt;: 2005-
+        : Cary, NC : Oxford University Press&lt;br \/&gt;&lt;i&gt;Original Publication&lt;\/i&gt;:
+        [Chevy Chase, Md., For sale by the Supt. of Docs., U. S. Govt. Print. Off.
+        Washington]"},{"Name":"SubjectMESH","Label":"MeSH Terms","Group":"Su","Data":"&lt;searchLink
+        fieldCode=&quot;MM&quot; term=&quot;%22Cognition+Disorders%22&quot;&gt;Cognition
+        Disorders*&lt;\/searchLink&gt;\/&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Cognition+Disorders+physiopathology%22&quot;&gt;physiopathology&lt;\/searchLink&gt;
+        &lt;br \/&gt;&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Cognition+Disorders%22&quot;&gt;Cognition
+        Disorders*&lt;\/searchLink&gt;\/&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Cognition+Disorders+rehabilitation%22&quot;&gt;rehabilitation&lt;\/searchLink&gt;
+        &lt;br \/&gt;&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Outcome+Assessment+%28Health+Care%29%22&quot;&gt;Outcome
+        Assessment (Health Care)*&lt;\/searchLink&gt; &lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;MM&quot; term=&quot;%22Schizophrenia%22&quot;&gt;Schizophrenia*&lt;\/searchLink&gt;\/&lt;searchLink
+        fieldCode=&quot;MM&quot; term=&quot;%22Schizophrenia+physiopathology%22&quot;&gt;physiopathology&lt;\/searchLink&gt;
+        &lt;br \/&gt;&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Schizophrenia%22&quot;&gt;Schizophrenia*&lt;\/searchLink&gt;\/&lt;searchLink
+        fieldCode=&quot;MM&quot; term=&quot;%22Schizophrenia+rehabilitation%22&quot;&gt;rehabilitation&lt;\/searchLink&gt;
+        &lt;br \/&gt;&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Schizophrenic+Psychology%22&quot;&gt;Schizophrenic
+        Psychology*&lt;\/searchLink&gt; &lt;br \/&gt;&lt;searchLink fieldCode=&quot;MM&quot;
+        term=&quot;%22Social+Perception%22&quot;&gt;Social Perception*&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;MM&quot; term=&quot;%22Activities+of+Daily+Living%22&quot;&gt;Activities
+        of Daily Living&lt;\/searchLink&gt;\/&lt;searchLink fieldCode=&quot;MM&quot;
+        term=&quot;%22Activities+of+Daily+Living+psychology%22&quot;&gt;*psychology&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;MH&quot; term=&quot;%22Humans%22&quot;&gt;Humans&lt;\/searchLink&gt;
+        ; &lt;searchLink fieldCode=&quot;MH&quot; term=&quot;%22Meta-Analysis+as+Topic%22&quot;&gt;Meta-Analysis
+        as Topic&lt;\/searchLink&gt;"},{"Name":"Abstract","Label":"Abstract","Group":"Ab","Data":"It
+        has been about 15 years since we published our article asking whether we are
+        measuring the &quot;Right Stuff&quot; as we search for predictors and determinants
+        of functional outcome in schizophrenia. At that time, we raised the question
+        as to whether the neurocognitive assessments used to study outcome in schizophrenia
+        were too narrow to capture the wide variability in factors that determine
+        daily functioning. While the study of the determinants of functioning in schizophrenia
+        has grown and matured, we are struck by 3 aspects of the article that evolved
+        in different directions. First, the selection of outcome domains in the Right
+        Stuff meta-analysis reflects a focus at that time on predictors of psychiatric
+        rehabilitation. Second, expansion beyond traditional neurocognitive domains
+        occurred in one suggested area (social cognition), but not another (learning
+        potential). Third, the field has responded assertively to the recommendation
+        to evaluate more informed and informative theoretical models.&lt;br \/&gt;
+        (&#169; The Author 2015. Published by Oxford University Press on behalf of
+        the Maryland Psychiatric Research Center. All rights reserved. For permissions,
+        please email: journals.permissions@oup.com.)"},{"Name":"Comment","Label":"Comments","Group":"Commnt","Data":"Cites:
+        Am J Psychiatry. 2008 Feb;165(2):221-8. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2218172017%22&quot;&gt;18172017)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Int Neuropsychol Soc. 2010 Jul;16(4):613-20. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2220374673%22&quot;&gt;20374673)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Neurosci Biobehav Rev. 2011 Jan;35(3):573-88. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2220620163%22&quot;&gt;20620163)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Psychiatry Res. 2011 Jan 30;185(1-2):293-5. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2220546927%22&quot;&gt;20546927)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Psychol Med. 2011 Mar;41(3):487-97. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2220482936%22&quot;&gt;20482936)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Am J Psychiatry. 2011 Apr;168(4):400-7. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2221285142%22&quot;&gt;21285142)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Psychiatry Res. 2011 Aug 30;189(1):43-8. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2221704387%22&quot;&gt;21704387)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Res. 2010 Feb;116(2-3):280-8. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2219747800%22&quot;&gt;19747800)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2000;26(1):119-36. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2210755673%22&quot;&gt;10755673)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Int Neuropsychol Soc. 2000 Sep;6(6):649-58. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2211011511%22&quot;&gt;11011511)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2001;27(4):687-95. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2211824494%22&quot;&gt;11824494)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Psychopathology. 2002 Sep-Oct;35(5):280-8. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2212457019%22&quot;&gt;12457019)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Psychiatry Res. 1992 Sep;43(3):223-30. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%221359595%22&quot;&gt;1359595)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Abnorm Psychol. 1994 May;103(2):371-8. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%228040506%22&quot;&gt;8040506)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Psychiatr Res. 1994 May-Jun;28(3):289-301. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%227932288%22&quot;&gt;7932288)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Consult Clin Psychol. 1997 Jun;65(3):464-75. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%229170770%22&quot;&gt;9170770)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 1999;25(2):309-19. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2210416733%22&quot;&gt;10416733)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Res. 2004 Dec 15;72(1):53-67. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2215531407%22&quot;&gt;15531407)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2005 Jan;31(1):5-19. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2215888422%22&quot;&gt;15888422)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2005 Jan;31(1):67-72. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2215888426%22&quot;&gt;15888426)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2004;30(4):703-11. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2215954185%22&quot;&gt;15954185)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Nerv Ment Dis. 2005 Sep;193(9):602-8. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2216131943%22&quot;&gt;16131943)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2005 Oct;31(4):942-53. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2216120830%22&quot;&gt;16120830)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Res. 2005 Dec 15;80(2-3):213-25. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2216137859%22&quot;&gt;16137859)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Res. 2006 Jan 31;81(2-3):167-71. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2216243489%22&quot;&gt;16243489)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Am J Psychiatry. 2006 Mar;163(3):418-25. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2216513862%22&quot;&gt;16513862)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2006 Apr;32(2):259-73. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2216221997%22&quot;&gt;16221997)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Neuropsychopharmacology. 2006 Sep;31(9):2033-46. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2216641947%22&quot;&gt;16641947)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Psychiatry Res. 2006 Aug 30;143(2-3):159-66. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2216860881%22&quot;&gt;16860881)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2006 Oct;32 Suppl 1:S44-63. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2216916889%22&quot;&gt;16916889)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Annu Rev Clin Psychol. 2005;1:577-606. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2217716100%22&quot;&gt;17716100)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2011 Sep;37 Suppl 2:S41-54. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2221860046%22&quot;&gt;21860046)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2011 Sep;37 Suppl 2:S55-62. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2221860048%22&quot;&gt;21860048)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Nord J Psychiatry. 2009;63(5):405-11. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2219365785%22&quot;&gt;19365785)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Res. 2013 Oct;150(1):51-7. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2223998953%22&quot;&gt;23998953)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Psychiatry Res. 2013 Oct 30;209(3):375-80. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2223816518%22&quot;&gt;23816518)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        J Int Neuropsychol Soc. 2008 Mar;14(2):279-88. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2218282325%22&quot;&gt;18282325)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Biol Psychiatry. 2008 Mar 1;63(5):505-11. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2217662256%22&quot;&gt;17662256)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Disabil Rehabil. 2015;37(10):846-53. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2225109501%22&quot;&gt;25109501)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2008 Nov;34(6):1211-20. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2218184635%22&quot;&gt;18184635)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Res. 2009 Feb;107(2-3):267-74. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2219006657%22&quot;&gt;19006657)&lt;\/searchLink&gt;&lt;br \/&gt;Cites:
+        Schizophr Bull. 2009 Jul;35(4):798-806. (PMID: &lt;searchLink fieldCode=&quot;PM&quot;
+        term=&quot;%2218308717%22&quot;&gt;18308717)&lt;\/searchLink&gt;"},{"Name":"SubjectMinor","Label":"Contributed
+        Indexing","Group":"","Data":"&lt;i&gt;Keywords: &lt;\/i&gt;functional outcome;
+        learning potential; neurocognition; schizophrenia; social cognition"},{"Name":"DateEntry","Label":"Entry
+        Date(s)","Group":"Date","Data":"&lt;i&gt;Date Created: &lt;\/i&gt;20150616
+        &lt;i&gt;Date Completed: &lt;\/i&gt;20160329 &lt;i&gt;Latest Revision: &lt;\/i&gt;20160701"},{"Name":"DateUpdate","Label":"Update
+        Code","Group":"Date","Data":"20161213"},{"Name":"PubmedCentralID","Label":"PubMed
+        Central ID","Group":"ID","Data":"PMC4466185"},{"Name":"DOI","Label":"DOI","Group":"ID","Data":"10.1093\/schbul\/sbv018"},{"Name":"AN","Label":"PMID","Group":"ID","Data":"25750248"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Identifiers":[{"Type":"doi","Value":"10.1093\/schbul\/sbv018"}],"Languages":[{"Code":"eng","Text":"English"}],"PhysicalDescription":{"Pagination":{"StartPage":"781"}},"Subjects":[{"SubjectFull":"Humans","Type":"general"},{"SubjectFull":"Meta-Analysis
+        as Topic","Type":"general"},{"SubjectFull":"Activities of Daily Living psychology","Type":"general"},{"SubjectFull":"Cognition
+        Disorders physiopathology","Type":"general"},{"SubjectFull":"Cognition Disorders
+        rehabilitation","Type":"general"},{"SubjectFull":"Outcome Assessment (Health
+        Care)","Type":"general"},{"SubjectFull":"Schizophrenia physiopathology","Type":"general"},{"SubjectFull":"Schizophrenia
+        rehabilitation","Type":"general"},{"SubjectFull":"Schizophrenic Psychology","Type":"general"},{"SubjectFull":"Social
+        Perception","Type":"general"}],"Titles":[{"TitleFull":"The \"Right Stuff\"
+        Revisited: What Have We Learned About the Determinants of Daily Functioning
+        in Schizophrenia?","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Green
+        MF"}}},{"PersonEntity":{"Name":{"NameFull":"Llerena K"}}},{"PersonEntity":{"Name":{"NameFull":"Kern
+        RS"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"07","Text":"2015
+        Jul","Type":"published","Y":"2015"}],"Identifiers":[{"Type":"issn-electronic","Value":"1745-1701"}],"Numbering":[{"Type":"volume","Value":"41"},{"Type":"issue","Value":"4"}],"Titles":[{"TitleFull":"Schizophrenia
+        Bulletin","Type":"main"}]}}]}}}}}'
+    http_version:
+  recorded_at: Fri, 13 Oct 2017 17:29:52 GMT
+recorded_with: VCR 3.0.3

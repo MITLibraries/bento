@@ -1,4 +1,7 @@
 class RecordController < ApplicationController
+  before_action :restricted!, only: [:direct_link]
+  before_action :valid_url!
+
   rescue_from EBSCO::EDS::BadRequest, with: proc {
     raise RecordController::NoSuchRecordError, 'Record not found'
   }
@@ -8,8 +11,6 @@ class RecordController < ApplicationController
   include Rainbows
 
   def record
-    return redirect_to root_url unless valid_url?
-
     fetch_eds_record
     @keywords = extract_eds_text(@record.eds_author_supplied_keywords)
     @subjects = extract_eds_text(@record.eds_subjects)
@@ -20,6 +21,24 @@ class RecordController < ApplicationController
     @previous = params[:previous]
     rainbowify? if Flipflop.enabled?(:pride)
     render 'record'
+  end
+
+  def direct_link
+    fetch_eds_record
+    redirect_to @record.fulltext_link[:url]
+  end
+
+  private
+
+  def valid_url!
+    return redirect_to root_url unless valid_url?
+  end
+
+  def restricted!
+    return unless helpers.guest?
+    flash[:error] = 'Restricted access. Please use our feedback form for ' \
+                    'assistance.'
+    redirect_to root_url
   end
 
   def valid_url?
