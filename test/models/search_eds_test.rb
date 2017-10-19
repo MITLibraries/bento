@@ -67,4 +67,15 @@ class SearchEdsTest < ActiveSupport::TestCase
     end
     assert_match(/Consecutive Session Token/, error.message)
   end
+
+  test 'general eds error handling' do
+    error = assert_raise RuntimeError do
+      VCR.use_cassette('eds general error', allow_playback_repeats: true) do
+        SearchEds.new.search(
+          'popcorn', 'apiwhatnot', ENV['EDS_ARTICLE_FACETS'], 1, 5
+        )
+      end
+    end
+    assert_match(/EDS Error Detected/, error.message)
+  end
 end

@@ -1,0 +1,187 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/UIDAuth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD"}'
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.2.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 18 Oct 2017 20:31:27 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '128'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+    http_version:
+  recorded_at: Wed, 18 Oct 2017 20:31:27 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=FAKE_EDS_PROFILE
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.2.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 18 Oct 2017 20:31:27 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - af22ac26-d8ae-4e8f-bc19-1a48e07e103e
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-964477784"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '101'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+    http_version:
+  recorded_at: Wed, 18 Oct 2017 20:31:27 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&facetfilter=1,SourceType:Academic%20Journals,SourceType:Magazines,SourceType:Conference%20Materials&highlight=n&includefacets=n&pagenumber=1&query=popcorn&resultsperpage=5&searchmode=all&sort=relevance&view=detailed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.2.2
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 18 Oct 2017 20:31:27 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '98'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"DetailedErrorDescription":"","ErrorDescription":"Unknown error encountered","ErrorNumber":"106"}'
+    http_version:
+  recorded_at: Wed, 18 Oct 2017 20:31:27 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.2.2
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 18 Oct 2017 20:31:27 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '98'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"DetailedErrorDescription":"","ErrorDescription":"Unknown error encountered","ErrorNumber":"106"}'
+    http_version:
+  recorded_at: Wed, 18 Oct 2017 20:31:28 GMT
+recorded_with: VCR 3.0.3

@@ -58,25 +58,39 @@ class SearchEds
                                    connect: http_timeout,
                                    read: http_timeout)
                  .get(search_url(term, facets, page, per_page).to_s).to_s
-    detect_and_recover_from_bad_eds_session(result)
-    JSON.parse(result)
+    json_result = JSON.parse(result)
+    detect_eds_errors(json_result)
+    json_result
+  end
+
+  def detect_eds_errors(json_result)
+    detect_and_recover_from_bad_eds_session(json_result)
+    detect_general_eds_failure(json_result)
   end
 
   # Detect bad EDS session tokens and try again if we detect them.
   # However, we don't want to infinite loop so we have to keep track of
   # multiple consecutive failures and if we see them throw an exception.
-  def detect_and_recover_from_bad_eds_session(result)
+  def detect_and_recover_from_bad_eds_session(json_result)
     prevent_multiple_retries
-    return unless eds_session_invalid?(result)
+    return unless eds_session_invalid?(json_result)
     Rails.logger.warn('EDS API Session Token Invalid')
     retry_query
   end
 
+  # Detect general EDS errors. Bad sessions still get special treatment in a
+  # seprate method to allow us to try to recover. Detecting bad sessions must
+  # be done prior to this method or this one will grab the bad sessions and not
+  # retry.
+  def detect_general_eds_failure(json_result)
+    return if json_result.dig('ErrorDescription').blank?
+    raise "EDS Error Detected: #{json_result.dig('ErrorDescription')}"
+  end
+
   # Check the returned JSON for specific error state.
-  def eds_session_invalid?(result)
-    json = JSON.parse(result)
-    json.dig('ErrorDescription').present? &&
-      json.dig('ErrorDescription') == 'Session Token Invalid'
+  def eds_session_invalid?(json_result)
+    json_result.dig('ErrorDescription').present? &&
+      json_result.dig('ErrorDescription') == 'Session Token Invalid'
   end
 
   # Attempt to do another search. A new session token is generated as part of
