@@ -1,12 +1,14 @@
-<h4>Sidebar</h4>
+<div class="bit">
+  <h3 class="title">Sidebar</h4>
 
-<ul>
-  <li>Advanced Search</li>
-  <li>Save to...</li>
+  <ul>
+    <li>Advanced Search</li>
+    <li>Save to...</li>
 
-  <% if local_record? %>
-    <%= link_to('Source Record', local_record_source_url) %>
-  <% else %>
-    Link to EDS UI Full record
-  <% end %>
-</ul>
+    <% if local_record? %>
+      <%= link_to('Source Record', local_record_source_url) %>
+    <% else %>
+      Link to EDS UI Full record
+    <% end %>
+  </ul>
+</div>

@@ -5,29 +5,51 @@
 <% end %>
 
 <% if @record.eds_cover_thumb_url.present? %>
-  <img src='<%= @record.eds_cover_thumb_url %>' />
+<div class="record-image">
+  <%= image_tag(@record.eds_cover_thumb_url, alt: "Cover for #{@record.title}") %>
+</div>
 <% end %>
 
-<h2><%= @record.title %></h2>
+<h2 class="record-title">
+  <span class="sr">Title: </span>
+  <%= @record.title %>
+</h2>
+<p>
 <% if @record.eds_publication_type == 'Periodical' %>
-  Periodical | Published <%= @record.eds_publication_year %>
+  <span class="record-type">
+    <span class="sr">Type: </span> Periodical </span>
+    <span class="record-year">
+      Published <%= @record.eds_publication_year %>
+    </span>
 <% elsif @record.eds_publication_type == 'Academic Journal' %>
-  In <%= link_to(@record.eds_source_title, search_prefix + "JN+\"#{@record.eds_source_title}\"", data: {type: "Journal"} ) %>
-  volume <%= @record.eds_volume %>
-  issue <%= @record.eds_issue %>
-  (<%= @record.eds_publication_year %>)
+  <span class="record-type">
+    In <%= link_to(@record.eds_source_title, search_prefix + "JN+\"#{@record.eds_source_title}\"", data: {type: "Journal"} ) %>
+    volume <%= @record.eds_volume %>
+    issue <%= @record.eds_issue %>
+    (<%= @record.eds_publication_year %>)
+  </span>
 <%# Includes Books; is catchall for other types not specified in wireframes %>
 <% else %>
-  <%= @record.eds_publication_type %> | Published <%= @record.eds_publication_year %>
+  <span class="record-type"><span class="sr">Type: </span>
+    <%= @record.eds_publication_type %>
+  </span>
+  <span class="record-year">
+    Published <%= @record.eds_publication_year %>
+  </span>
 <% end %>
+</p>
 
-<br />
-<%# If there are no authors (as with periodicals) this section will be
-    blank, corresponding to the wireframe. %>
-<% @record.eds_authors.each do |author| %>
-  <% if author == "et al" %>
-    <%= author %>
-  <% else %>
-    <%= link_to(author, search_prefix + "AU+\"#{author}\"", data: {type: "Author"} ) unless author == "et al" %><% if author != @record.eds_authors.last %>; <% end %>
-  <% end %>
+<% if @record.eds_authors.present? %>
+  <p class="record-authors">
+    <span class="sr"><%= "Author".pluralize(@record.eds_authors.count) %>: </span>
+    <% @record.eds_authors.each do |author| %>
+      <span class="record-author">
+        <% if author == "et al" %>
+          <%= author %>
+        <% else %>
+          <%= link_to(author, search_prefix + "AU+\"#{author}\"", data: {type: "Author"} ) %><% if author != @record.eds_authors.last %>;<% end %>
+        <% end %>
+      </span>
+    <% end %>
+  </p>
 <% end %>

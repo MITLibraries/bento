@@ -22,10 +22,10 @@ $black-t:                       #000; // true black
 $white:                         #fafafa;
 $white-warm:                    #ede8e2;
 $white-t:                       #fff; // true white
-$gray:                          #595959;
+$gray:                          #595959; // accessible on #f3f3f3
 $gray-d1:                       #333;
 $gray-d2:                       #222;
-$gray-l1:                       #999;
+$gray-l1:                       #767676; // accessible on #fff
 $gray-l2:                       #ccc;
 $gray-l3:                       #dedede;
 $gray-l4:                       #f3f3f3;
@@ -113,4 +113,12 @@ $z-depth-way-front:     1000;
   list-style: none;
   padding-left: 0;
   text-indent: 0;
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
 }
