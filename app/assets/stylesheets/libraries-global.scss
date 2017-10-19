@@ -1,4 +1,4 @@
-/* last updated 9/25/2017 - commit cec9593 */
+/* last updated 10/19/2017 - commit 0132779 */
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -122,19 +122,17 @@ input[type=radio] {
   color: #0ea6ec;
   text-decoration: underline;
 }
-.js .expand-collapse-control .button:disabled, a:disabled, .js .expand-collapse-control .is-disabled.button, .is-disabled {
+.js .expand-collapse-control .button:disabled, a:disabled, .js .expand-collapse-control .is-disabled.button, a.is-disabled {
   display: none;
   color: #595959;
 }
-.js .expand-collapse-control .button:active, a:active, .js .expand-collapse-control .is-pressed.button, .is-pressed, .js .expand-collapse-control .is-active.button, .is-active {
+.js .expand-collapse-control .button:active, a:active, .js .expand-collapse-control .is-pressed.button, a.is-pressed, .js .expand-collapse-control .is-active.button, a.is-active {
   color: #0ea6ec;
 }
 
-/* csslint ignore:start */
 * {
   box-sizing: border-box;
 }
-/* csslint ignore:end */
 
 html, body {
   height: 100%;
@@ -172,7 +170,7 @@ dd {
 hr {
   margin: 2rem 0;
   border: none;
-  border-top: 1px solid #999;
+  border-top: 1px solid #767676;
 }
 
 .wrap-outer-header.reasons {
@@ -244,14 +242,14 @@ hr {
   margin-bottom: .5em;
   font-size: 1.4rem;
   text-transform: uppercase;
-  color: #999;
+  color: #767676;
 }
 
 .hd-subtitle3, .wrap-content .subtitle3 {
   margin-bottom: .5em;
   font-size: 1.2rem;
   text-transform: uppercase;
-  color: #999;
+  color: #767676;
 }
 
 .copy-lead, .panel .panel-heading {
@@ -270,7 +268,7 @@ hr {
 .copy-micro {
   font-size: 1rem;
   font-weight: 400;
-  color: #999;
+  color: #595959;
 }
 
 .layout-band:after {
@@ -971,7 +969,7 @@ form .error .hint {
   max-width: 100%;
 }
 .wrap-header .link-logo-mit .logo-mit {
-  fill: #999;
+  fill: #767676;
 }
 .wrap-header .link-logo-mit .logo-mit .color {
   fill: #fafafa;
@@ -1058,7 +1056,7 @@ form .error .hint {
 .wrap-outer-footer-institute {
   background-color: #595959;
   font-size: 1rem;
-  color: #999;
+  color: #767676;
 }
 .wrap-outer-footer-institute a {
   color: #fafafa;
@@ -1067,7 +1065,7 @@ form .error .hint {
   display: inline-block;
 }
 .wrap-outer-footer-institute .link-logo-mit .logo-mit {
-  fill: #999;
+  fill: #767676;
 }
 .wrap-outer-footer-institute .link-logo-mit .logo-mit .color {
   fill: #fafafa;
