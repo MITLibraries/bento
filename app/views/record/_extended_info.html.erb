@@ -44,56 +44,18 @@
 
   <% if @record.eds_isbns.present? %>
     <li>
-<<<<<<< ours
-<<<<<<< ours
-      ISBN: <% @record.eds_isbns.each do |isbn| %>
-        <span class="isbn"><%= isbn %></span>
+      <span class="label">ISBN:</span> <% @record.eds_isbns.each do |isbn| %>
+        <span class="isbn"><%= isbn %></span><% if isbn != @record.eds_isbns.last %>,<% end %>
       <% end %>
     </li>
-=======
-      <span class="label">ISBN:</span> 
-      <%= @record.eds_isbn_print %>
-=======
-      <span class="label">ISBN:</span> <%= @record.eds_isbn_print %>
-<<<<<<< ours
->>>>>>> theirs
-    </li> 
->>>>>>> theirs
-=======
-    </li>
->>>>>>> theirs
   <% end %>
 
   <% if @record.eds_issns.present? %>
     <li>
-<<<<<<< ours
-<<<<<<< ours
-      ISSN: <% @record.eds_issns.each do |issn| %>
-        <span class="isbn"><%= issn %></span>
+      <span class="label">ISSN:</span> <% @record.eds_issns.each do |issn| %>
+        <span class="isbn"><%= issn %></span><% if issn != @record.eds_issns.last %>,<% end %>
       <% end %>
     </li>
-=======
-      <span class="label">ISBN:</span>
-      <%= @record.eds_isbn_electronic %>
-=======
-      <span class="label">ISBN:</span> <%= @record.eds_isbn_electronic %>
-<<<<<<< ours
->>>>>>> theirs
-    </li> 
-=======
-    </li>
->>>>>>> theirs
-  <% end %>
-
-  <% if @record.eds_issn_print.present? %>
-    <li>
-      <span class="label">ISSN:</span> <%= @record.eds_issn_print %>
-<<<<<<< ours
-    </li> 
->>>>>>> theirs
-=======
-    </li>
->>>>>>> theirs
   <% end %>
 
   <% if @record.eds_document_doi.present? %>

@@ -161,12 +161,8 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: article', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'aci', an: '123877356' }
       assert_response :success
-<<<<<<< ours
-      assert @response.body.include? 'ISSN:'
-      assert @response.body.include? '20796374'
-=======
-      assert @response.body.include? '<span class="label">ISSN:</span> 20796374'
->>>>>>> theirs
+      assert @response.body.include? '<span class="label">ISSN:</span>'
+      assert @response.body.include? '<span class="isbn">20796374</span>'
     end
   end
 
@@ -174,12 +170,8 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: book', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
       assert_response :success
-<<<<<<< ours
-      assert @response.body.include? 'ISBN:'
-      assert @response.body.include? '9781841958811'
-=======
-      assert @response.body.include? '<span class="label">ISBN:</span> 9781841958811'
->>>>>>> theirs
+      assert @response.body.include? '<span class="label">ISBN:</span>'
+      assert @response.body.include? '<span class="isbn">9781841958811</span>'
     end
   end
 
@@ -255,7 +247,7 @@ class RecordTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: book', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
       assert_response :success
-      assert @response.body.include? 'Other titles'
+      assert @response.body.include? 'Other title'
     end
   end
 
