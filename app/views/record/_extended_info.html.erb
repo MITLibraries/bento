@@ -49,21 +49,19 @@
     </li>
   <% end %>
 
-  <% if @record.eds_isbn_print.present? %>
+  <% if @record.eds_isbns.present? %>
     <li>
-      ISBN: <%= @record.eds_isbn_print %>
+      ISBN: <% @record.eds_isbns.each do |isbn| %>
+        <span class="isbn"><%= isbn %></span>
+      <% end %>
     </li>
   <% end %>
 
-  <% if @record.eds_isbn_electronic.present? %>
+  <% if @record.eds_issns.present? %>
     <li>
-      ISBN: <%= @record.eds_isbn_electronic %>
-    </li>
-  <% end %>
-
-  <% if @record.eds_issn_print.present? %>
-    <li>
-      ISSN: <%= @record.eds_issn_print %>
+      ISSN: <% @record.eds_issns.each do |issn| %>
+        <span class="isbn"><%= issn %></span>
+      <% end %>
     </li>
   <% end %>
 
