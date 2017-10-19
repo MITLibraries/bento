@@ -8,15 +8,13 @@
 <ul class="list-moreinfo">
   <% if @record.eds_publication_type.present? %>
     <li>
-      <span class="label">Document type:</span> 
-      <%= @record.eds_publication_type %>
+      <span class="label">Document type:</span> <%= @record.eds_publication_type %>
     </li> 
   <% end %>
 
   <% if @record.eds_source_title.present? %>
     <li>
-      <span class="label">Source:</span> 
-      <%= @record.eds_source_title %>
+      <span class="label">Source:</span> <%= @record.eds_source_title %>
     </li> 
   <% end %>
 
@@ -40,57 +38,49 @@
 
   <% if @record.eds_publication_info.present? %>
     <li>
-      <span class="label">Publication info:</span> 
-      <%= safe_output(@record.eds_publication_info) %>
+      <span class="label">Publication info:</span> <%= safe_output(@record.eds_publication_info) %>
     </li> 
   <% end %>
 
   <% if @record.eds_isbn_print.present? %>
     <li>
-      <span class="label">ISBN:</span> 
-      <%= @record.eds_isbn_print %>
+      <span class="label">ISBN:</span> <%= @record.eds_isbn_print %>
     </li> 
   <% end %>
 
   <% if @record.eds_isbn_electronic.present? %>
     <li>
-      <span class="label">ISBN:</span>
-      <%= @record.eds_isbn_electronic %>
+      <span class="label">ISBN:</span> <%= @record.eds_isbn_electronic %>
     </li> 
   <% end %>
 
   <% if @record.eds_issn_print.present? %>
     <li>
-      <span class="label">ISSN:</span> 
-      <%= @record.eds_issn_print %>
+      <span class="label">ISSN:</span> <%= @record.eds_issn_print %>
     </li> 
   <% end %>
 
   <% if @record.eds_document_doi.present? %>
     <li>
-      <span class="label">DOI:</span>
-      <%= @record.eds_document_doi %>
+      <span class="label">DOI:</span> <%= @record.eds_document_doi %>
     </li> 
   <% end %>
 
   <% if clean_language.present? %>
     <li>
-      <span class="label"><%= "Language".pluralize(clean_language.count) %>:</span> 
-      <%= clean_language.join(',') %>
+      <span class="label"><%= "Language".pluralize(clean_language.count) %>:</span> <%= clean_language.join(',') %>
     </li> 
   <% end %>
 
   <% if @record.eds_physical_description.present? %>
     <li>
-      <span class="label">Physical description:</span>
-      <%= safe_output(@record.eds_physical_description) %>
+      <span class="label">Physical description:</span> <%= safe_output(@record.eds_physical_description) %>
     </li> 
   <% end %>
 
   <% if @record.eds_database_name.present? %>
     <li>
-      <span class="label">Database:</span>
-      <%= @record.eds_database_name %>
+      <span class="label">Database:</span> <%= @record.eds_database_name %>
     </li>
   <% end %>
 
