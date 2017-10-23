@@ -20,7 +20,7 @@ class ButtonMaker
     @item = item
     @oclc = oclc
     # The order of this list controls the order in which buttons will display.
-    @options = %w(call contact hold recall ill scan special_ill)
+    @options = %w(contact hold recall ill scan special_ill)
 
     # Properties of items. This must go *after* setting @item and @oclc, but
     # *before* setting @requestable.
@@ -63,20 +63,9 @@ class ButtonMaker
     @library == 'Institute Archives'
   end
 
-  def eligible_for_call?
-    @on_reserve
-  end
-
   def eligible_for_hold?
     return false if @on_reserve || @library == 'Physics Dept. Reading Room'
-    [
-      # You can request things that are in the library and have reasonable
-      # loan policies.
-      @status == 'In Library' && @requestable,
-      # You can also request things that are in the library and are currently
-      # part of special displays.
-      ['MIT Reads', 'New Books Displ', 'On Display'].include?(@status)
-    ].any?
+    should_you_get_it_here?
   end
 
   # Can you request that this item be ordered via ILL?
@@ -87,7 +76,8 @@ class ButtonMaker
   # for a while. Those statuses are deliberately excluded from the `none?`
   # status checker.
   # Items eligible this way may ultimately be ordered via either BorrowDirect
-  # or ILLiad.
+  # or ILLiad. We prefer that patrons use BorrowDirect; WorldCat will send them
+  # there preferentially if it is an option.
   def eligible_for_ill?
     badz30 = [
       '1 Day Loan',
@@ -108,7 +98,7 @@ class ButtonMaker
     # If it has a disqualifying status, you can't ILL it. If it doesn't, you're
     # good to go.
     [
-      eligible_for_hold?,
+      should_you_get_it_here?,
       @status == 'Received',
       badz30.include?(@z30status)
     ].none?
@@ -118,7 +108,16 @@ class ButtonMaker
     return false if @on_reserve || @library == 'Physics Dept. Reading Room'
     # It's not enough to say `@status != 'In Library'`, because the item might
     # have a status of 'On Order' or 'Missing', and those are not recallable.
-    @status.start_with?('Due') && @requestable
+    # We have to actually enumerate recallable statuses. Note that we aren't
+    # sure what all of these mean or if we even still use them, but this is how
+    # Aleph is configured, so we're matching it.
+    recallable = ['Recalled', 'On Hold', 'Requested', 'Expected at $1',
+                  'Reshelving', 'Long Overdue', 'Claimed Returned']
+    [
+      @status.start_with?('Due'),
+      @status.start_with?('In Transit'),
+      recallable.include?(@status)
+    ].any? && @requestable
   end
 
   # We do not allow patrons to request electronic scans of all materials.
@@ -137,12 +136,17 @@ class ButtonMaker
     ].all?
   end
 
-  # Some items are eligible for ILL (albeit only through BorrowDirect) even
-  # though they are also available in the library.
-  # Unfortunately we don't know if these items are actually *available* in BD.
+  # Some items are eligible for BorrowDirect even though they are not eligible
+  # for ILL. These are items that are in the library (which is why we do not
+  # ILL them) but whose loan terms are too short for some patrons' needs.
+  # Unfortunately we don't know if these items are actually *available* in BD;
+  # we will send them to BD to check. If they're not available there, BD will
+  # send them to ILL and MIT circ staff will end up cancelling the result.
+  # This is mildly annoying but it is the pre-bento status quo, as users
+  # already find BD on their own.
   def eligible_for_special_ill?
     return false if eligible_for_ill? # We don't want to display both buttons.
-    goodz30 = [
+    [
       'Room Use Only',
       '4 Hour Reserves',
       '2 Hour Loan',
@@ -150,8 +154,7 @@ class ButtonMaker
       'Spring 2 Hours',
       'IAP 2 Hours',
       'Summer 2 Hours'
-    ]
-    @status == 'In Library' && goodz30.include?(@z30status)
+    ].include?(@z30status)
   end
 
   # ~~~~~~~~ Functions which return HTML for availability action buttons ~~~~~~~
@@ -161,23 +164,6 @@ class ButtonMaker
   # require Aleph data which is not known to EBSCO.
   # These URLs will present authentication challenges for non-logged-in users,
   # which will redirect appropriately upon success.
-
-  def make_button_for_call
-    # Mapping from @library to URL path.
-    path_options = {
-      'Barker Library' => 'barker',
-      'Dewey Library' => 'dewey',
-      'Institute Archives' => 'archives',
-      'Hayden Library' => 'hayden',
-      'Lewis Music Library' => 'music',
-      'Library Storage Annex' => 'lsa',
-      'Rotch Library' => 'rotch'
-    }
-    return unless path_options.key?(@library)
-    path = path_options[@library]
-    "<a class='btn button-secondary button-small' " \
-      "href='https://libraries.mit.edu/#{path}/'>Call Us</a>"
-  end
 
   def make_button_for_contact
     "<a class='btn button-secondary button-small' " \
@@ -323,6 +309,16 @@ class ButtonMaker
       %w(13 14 15 56 57).include?(@z30status_code) &&
         @library == 'Library Storage Annex'
     ].any?
+  end
+
+  # We won't generally ILL items that fit these criteria - we want them to be
+  # placed on hold if possible.
+  def should_you_get_it_here?
+    # You can request things that are in the library and have reasonable
+    # loan policies.
+    [
+      'In Library', 'MIT Reads', 'New Books Displ', 'On Display'
+    ].include?(@status) && @requestable
   end
 
   def sfx_host

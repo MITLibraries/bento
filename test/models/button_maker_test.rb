@@ -17,7 +17,6 @@ class ButtonMakerTest < ActiveSupport::TestCase
     refute @ButtonMaker.all_buttons.include? @ButtonMaker.make_button_for_ill
     refute @ButtonMaker.all_buttons.include? @ButtonMaker.make_button_for_recall
     refute @ButtonMaker.all_buttons.include? @ButtonMaker.make_button_for_special_ill
-    refute @ButtonMaker.all_buttons.include? @ButtonMaker.make_button_for_call
   end
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Test item properties ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,26 +119,17 @@ class ButtonMakerTest < ActiveSupport::TestCase
     refute maker.eligible_for_contact?
   end
 
-  test 'eligible for call' do
-    maker = ButtonMaker.new(@item, @oclc)
-    maker.instance_variable_set(:@on_reserve, true)
-    assert maker.eligible_for_call?
-
-    maker.instance_variable_set(:@on_reserve, false)
-    refute maker.eligible_for_call?
-  end
-
   test 'eligible for hold' do
     maker = ButtonMaker.new(@item, @oclc)
     maker.instance_variable_set(:@status, 'In Library')
     maker.instance_variable_set(:@requestable, true)
     assert maker.eligible_for_hold?
 
-    maker.instance_variable_set(:@requestable, false)
-    refute maker.eligible_for_hold?
-
     maker.instance_variable_set(:@status, 'MIT Reads')
     assert maker.eligible_for_hold?
+
+    maker.instance_variable_set(:@requestable, false)
+    refute maker.eligible_for_hold?
 
     maker.instance_variable_set(:@on_reserve, true)
     refute maker.eligible_for_hold?
