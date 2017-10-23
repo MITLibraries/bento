@@ -1,14 +1,15 @@
 <div class="bit">
-  <h3 class="title">Sidebar</h4>
+  <h3 class="title">Tools and related</h4>
 
   <ul>
-    <li>Advanced Search</li>
-    <li>Save to...</li>
+    <li>Export to Mendeley</li>
+    <li>Export to Zotero</li>
+    <li>Permalink</li>
 
     <% if local_record? %>
       <%= link_to('Source Record', local_record_source_url) %>
     <% else %>
-      Link to EDS UI Full record
+      View in BartonPlus
     <% end %>
   </ul>
 </div>

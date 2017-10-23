@@ -47,7 +47,7 @@
         <% if author == "et al" %>
           <%= author %>
         <% else %>
-          <%= link_to(author, search_prefix + "AU+\"#{author}\"", data: {type: "Author"} ) %><% if author != @record.eds_authors.last %>;<% end %>
+          <%= link_to(author, search_prefix + "AU+\"#{author}\"", data: {type: "Author"} ) %> <%# semicolons between authors added by css %>
         <% end %>
       </span>
     <% end %>
