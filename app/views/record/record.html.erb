@@ -33,3 +33,12 @@
     <%= render partial: "sidebar" %>
   </div>
 </div>
+
+<% content_for(:head) do %>
+  <meta name="DC.title" content="<%= @record.title %>" />
+  <meta name="DC.type" content="<%= @record.eds_publication_type %>" />
+  <meta name="DC.date" content="<%= @record.eds_publication_year %>" />
+  <% @record.eds_authors.each do |author| %>
+    <meta name="DC.creator" content="<%= author %>" />
+  <% end %>
+<% end %>
