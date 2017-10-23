@@ -143,6 +143,10 @@ class ButtonMakerTest < ActiveSupport::TestCase
 
     maker.instance_variable_set(:@on_reserve, true)
     refute maker.eligible_for_hold?
+
+    maker.instance_variable_set(:@on_reserve, false)
+    maker.instance_variable_set(:@library, 'Physics Dept. Reading Room')
+    refute maker.eligible_for_hold?
   end
 
   test 'eligible for ill' do
@@ -153,6 +157,7 @@ class ButtonMakerTest < ActiveSupport::TestCase
     maker.instance_variable_set(:@requestable, true)
     refute maker.eligible_for_ill?
 
+    maker.instance_variable_set(:@library, 'Hayden Library')
     maker.instance_variable_set(:@status, 'Received')
     refute maker.eligible_for_ill?
 
@@ -168,6 +173,10 @@ class ButtonMakerTest < ActiveSupport::TestCase
     assert maker.eligible_for_recall?
 
     maker.instance_variable_set(:@on_reserve, true)
+    refute maker.eligible_for_recall?
+
+    maker.instance_variable_set(:@on_reserve, false)
+    maker.instance_variable_set(:@library, 'Physics Dept. Reading Room')
     refute maker.eligible_for_recall?
   end
 

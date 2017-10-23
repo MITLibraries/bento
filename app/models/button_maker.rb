@@ -68,7 +68,7 @@ class ButtonMaker
   end
 
   def eligible_for_hold?
-    return false if @on_reserve
+    return false if @on_reserve || @library == 'Physics Dept. Reading Room'
     [
       # You can request things that are in the library and have reasonable
       # loan policies.
@@ -115,7 +115,7 @@ class ButtonMaker
   end
 
   def eligible_for_recall?
-    return false if @on_reserve
+    return false if @on_reserve || @library == 'Physics Dept. Reading Room'
     # It's not enough to say `@status != 'In Library'`, because the item might
     # have a status of 'On Order' or 'Missing', and those are not recallable.
     @status.start_with?('Due') && @requestable
@@ -305,7 +305,7 @@ class ButtonMaker
 
   # Items with these process & item statuses may be put on hold/recalled.
   def requestable?
-    return false if @on_reserve
+    return false if @on_reserve || @library == 'Physics Dept. Reading Room'
     [
       # Items with these status codes may be requested from any library,
       # except the Annex.
