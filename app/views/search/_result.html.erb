@@ -7,7 +7,7 @@
 
   <% if result.thumbnail %>
     <div class="result-image">
-      <%= image_tag(result.thumbnail, alt: "Cover for #{result.title}") %>
+      <%= force_https_image_tag(result.thumbnail, alt: "Cover for #{result.title}") %>
     </div>
   <% end %>
 
