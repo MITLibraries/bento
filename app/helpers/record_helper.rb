@@ -128,4 +128,21 @@ module RecordHelper
   def guest_and_restricted_link?
     guest? && restricted_link?
   end
+
+  # force http images to use https. If remote server cannot handle https a
+  # broken image is expected. The `alt` keyword argument is required for
+  # accessibility reasons and is a keyword argument instead of positional to
+  # match the syntax of `image_tag` which this wraps.
+  def force_https_image_tag(url, alt:)
+    image_tag(force_https(url), alt: alt)
+  end
+
+  # force scheme of a url to https if it is currently http. if it is not http
+  # just return the input with no changes
+  def force_https(url)
+    uri = URI(url)
+    return url unless uri.scheme == 'http'
+    uri.scheme = 'https'
+    uri.to_s
+  end
 end

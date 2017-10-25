@@ -6,7 +6,7 @@
 
 <% if @record.eds_cover_thumb_url.present? %>
 <div class="record-image">
-  <%= image_tag(@record.eds_cover_thumb_url, alt: "Cover for #{@record.title}") %>
+  <%= force_https_image_tag(@record.eds_cover_thumb_url, alt: "Cover for #{@record.title}") %>
 </div>
 <% end %>
 
