@@ -16,7 +16,7 @@
   </h3>
   <div class="result-uniform-title">
     <% if result.uniform_title %>
-      <span class="sr">Alternate Title: </span><%= result.uniform_title.html_safe %>
+      <span class="sr">Alternate Title: </span><%= safe_output(result.uniform_title) %>
     <% end %>
   </div>
   <p>
@@ -42,7 +42,7 @@
 
     <% if result.blurb %>
       <p class="result-blurb">
-        <%= sanitize(result.blurb) %><br />
+        <%= safe_output(result.blurb) %><br />
       </p>
     <% end %>
 
