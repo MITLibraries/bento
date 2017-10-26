@@ -1,7 +1,6 @@
 class RecordController < ApplicationController
   before_action :restricted!, only: [:direct_link]
   before_action :valid_url!
-
   rescue_from EBSCO::EDS::BadRequest, with: proc {
     raise RecordController::NoSuchRecordError, 'Record not found'
   }
@@ -10,6 +9,8 @@ class RecordController < ApplicationController
 
   include Rainbows
 
+  # See https://github.com/ebsco/edsapi-ruby/ . The page which gives all the
+  # affordances of the record object is lib/ebsco/eds/record.rb.
   def record
     fetch_eds_record
     @keywords = extract_eds_text(@record.eds_author_supplied_keywords)

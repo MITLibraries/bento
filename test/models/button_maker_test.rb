@@ -32,6 +32,7 @@ class ButtonMakerTest < ActiveSupport::TestCase
     assert_equal('Stacks', @ButtonMaker.instance_variable_get(:@collection))
   end
 
+  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Test item properties ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   test 'doc_number' do
     assert_equal('001019412', @ButtonMaker.instance_variable_get(:@doc_number))
   end
@@ -96,13 +97,18 @@ class ButtonMakerTest < ActiveSupport::TestCase
       refute @ButtonMaker.eligible_for_scan?
     end
 
+    @ButtonMaker.stub :unscannable_standard?, true do
+      refute @ButtonMaker.eligible_for_scan?
+    end
     # If all subconditions are true, it is eligible.
     @ButtonMaker.stub :call_number_valid_for_scan?, true do
       @ButtonMaker.stub :z30status_valid_for_scan?, true do
         @ButtonMaker.stub :collection_valid_for_scan?, true do
           @ButtonMaker.stub :status_valid_for_scan?, true do
             @ButtonMaker.stub :library_valid_for_scan?, true do
-              assert @ButtonMaker.eligible_for_scan?
+              @ButtonMaker.stub :unscannable_standard?, false do
+                assert @ButtonMaker.eligible_for_scan?
+              end
             end
           end
         end
