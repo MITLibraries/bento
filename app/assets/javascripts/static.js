@@ -17,7 +17,10 @@ function TrackLinks( element ) {
       eventLabel: label
     };
 
-    ga( 'send', fields );
+    if ('function' === typeof(ga)) {
+      ga( 'send', fields );
+    }
+
   });
 }
 
