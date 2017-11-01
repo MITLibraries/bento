@@ -1,0 +1,57 @@
+// ----------------------------------------
+// #Bento-specific print styles
+// ----------------------------------------
+/* print styles */
+@media print {
+  
+  // reset things
+  * { background: transparent !important; color: black !important; fill: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  pre, blockquote { border: 3px solid $gray-l2; page-break-inside: avoid; }
+
+
+  // general print cleanup 
+  .wrap-notices,
+  .wrap-outer-header-local,
+  .wrap-breadcrumb,
+  .content-main .b-search,
+  .content-main .sidebar,
+  .about-bento,
+  .wrap-footer, 
+  .wrap-footer-institute .link-logo-mit {
+    display: none;
+  }
+
+  .wrap-content, 
+  .wrap-content .content-main, 
+  .wrap-footer-institute {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .content-main .box-content {
+    border: none;
+    padding: 0;
+  }
+
+  .wrap-outer-footer-institute .license {
+    margin-top: 0;
+  }
+
+  // full record
+  .wrap-content .wrap-full-record li {
+    margin-bottom: 3pt;
+    line-height: 1.3;
+  }
+
+  .full-record .expand-collapse-control {
+    background: white !important;
+    padding: 0;
+  }
+
+  .full-record .expand-collapse-wrap, 
+  .full-record .expand-container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+}
