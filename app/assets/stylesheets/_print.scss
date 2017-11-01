@@ -22,13 +22,17 @@
   }
 
   .wrap-content, 
-  .wrap-content .content-main, 
-  .wrap-footer-institute {
+  .wrap-content .content-main {
     padding-top: 0;
     padding-bottom: 0;
   }
 
+  .wrap-footer-institute {
+    padding-top: 10pt;
+  }
+
   .content-main .box-content {
+    width: auto;
     border: none;
     padding: 0;
   }
@@ -37,21 +41,28 @@
     margin-top: 0;
   }
 
+  .content-main .expand-collapse-control {
+    background: white !important;
+    padding: 0;
+  }
+
+  .content-main .expand-collapse-wrap, 
+  .content-main .expand-container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  // search results 
+  .content-main .gridband .grid-item {
+    float: none; 
+    width: auto;
+  }
+
   // full record
   .wrap-content .wrap-full-record li {
     margin-bottom: 3pt;
     line-height: 1.3;
   }
 
-  .full-record .expand-collapse-control {
-    background: white !important;
-    padding: 0;
-  }
-
-  .full-record .expand-collapse-wrap, 
-  .full-record .expand-container {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
 
 }
