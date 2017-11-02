@@ -16,6 +16,8 @@
 # circ logic - too hard to tell whether they'd all been dealt with, except by
 # pulling it all into a special-purpose, encapsulated place.
 class ButtonMaker
+  include Standards
+
   def initialize(item, oclc)
     @item = item
     @oclc = oclc
@@ -130,9 +132,8 @@ class ButtonMaker
       z30status_valid_for_scan?,
       collection_valid_for_scan?,
       status_valid_for_scan?,
-      library_valid_for_scan?
-      # We should also exclude the subject header 'Standards, Engineering',
-      # but we don't have subject headers in the Aleph data, so we aren't.
+      library_valid_for_scan?,
+      !unscannable_standard?
     ].all?
   end
 
@@ -285,6 +286,13 @@ class ButtonMaker
   def library_valid_for_scan?
     ['Physics Dept. Reading Room', 'Rotch Visual Collections',
      'Institute Archives'].exclude? @library
+  end
+
+  # We don't scan certain engineering standards. See
+  # https://wikis.mit.edu/confluence/x/5igEBw for a link to the relevant
+  # spreadsheet.
+  def unscannable_standard?
+    Standards::BARTON.include?(@doc_number)
   end
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Misc utilities ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

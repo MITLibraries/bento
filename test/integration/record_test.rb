@@ -112,6 +112,13 @@ class RecordTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'scan button not shown for engineering standards' do
+    VCR.use_cassette('record: engineering standard', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.001480933' }
+      assert @response.body.exclude? 'Request Scan'
+    end
+  end
+
   # ~~~~~~~~~~~~~~~~~~~ tests of 'more information' section ~~~~~~~~~~~~~~~~~~~
   # For the following tests, note that not all information is available for all
   # sources.
