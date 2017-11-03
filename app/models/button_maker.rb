@@ -173,7 +173,7 @@ class ButtonMaker
 
   def make_button_for_hold
     "<a class='btn button-secondary button-small' " \
-      "href='#{url_for_hold}'>Place Hold</a>"
+      "href='#{url_for_hold}'>Place hold (1-2 days)</a>"
   end
 
   def make_button_for_ill
@@ -189,7 +189,7 @@ class ButtonMaker
 
   def make_button_for_scan
     "<a class='btn button-secondary button-small' " \
-      " href='#{url_for_scan}'>Request Scan</a>"
+      " href='#{url_for_scan}'>Request scan (2-3 days)</a>"
   end
 
   def make_button_for_special_ill
