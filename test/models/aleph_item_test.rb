@@ -35,7 +35,7 @@ class AlephItemTest < ActiveSupport::TestCase
       assert_equal('Service Desk', status[5][:collection])
       assert_equal('QA27.5.L44 2016a', status[5][:call_number])
       assert_equal(false, status[5][:available?])
-      assert_equal('Not available at MIT', status[5][:label])
+      assert_equal('Checked out', status[5][:label])
       assert_equal('', status[5][:description])
     end
   end

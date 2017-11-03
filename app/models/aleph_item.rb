@@ -62,7 +62,7 @@ class AlephItem
     if available?(item)
       'Available'
     else
-      'Not available at MIT'
+      'Checked out'
     end
   end
 
