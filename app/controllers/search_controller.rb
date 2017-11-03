@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+  include Skylight::Helpers
   before_action :validate_q!, only: %i[bento search search_boxed]
 
   def index; end
@@ -62,6 +63,7 @@ class SearchController < ApplicationController
       search_eds(page, per_page)
     end
   end
+  instrument_method :search_target
 
   # Seaches EDS
   def search_eds(page, per_page)
