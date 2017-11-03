@@ -11,6 +11,7 @@
 # - https://developers.google.com/custom-search/json-api/v1/overview
 # - https://github.com/google/google-api-ruby-client
 class SearchGoogle
+  include Skylight::Helpers
   attr_reader :results
   require 'google/apis/customsearch_v1'
 
@@ -32,4 +33,5 @@ class SearchGoogle
       num: ENV['RESULTS_PER_BOX'] || 3
     )
   end
+  instrument_method :search
 end

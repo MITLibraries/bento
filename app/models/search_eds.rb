@@ -11,6 +11,7 @@
 # == See Also
 # - http://edswiki.ebscohost.com/EDS_API_Documentation
 class SearchEds
+  include Skylight::Helpers
   attr_reader :results
 
   EDS_URL = ENV['EDS_URL'].freeze
@@ -62,6 +63,7 @@ class SearchEds
     detect_eds_errors(json_result)
     json_result
   end
+  instrument_method :search_filtered
 
   def detect_eds_errors(json_result)
     detect_and_recover_from_bad_eds_session(json_result)
