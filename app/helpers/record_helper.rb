@@ -14,6 +14,11 @@ module RecordHelper
     end
   end
 
+  # Link to record in EDS.
+  def eds_link
+    "#{@record.eds_plink.gsub('&authtype=sso', '')}#{ENV['EDS_PLINK_APPEND']}"
+  end
+
   # Get the numeric portion of the accession number (without the collection
   # label).
   def an_numeric_component

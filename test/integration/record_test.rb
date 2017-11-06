@@ -294,4 +294,24 @@ class RecordTest < ActionDispatch::IntegrationTest
       assert @response.body.include? 'Sign in for access'
     end
   end
+
+  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sidebar ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  test 'marc link is shown' do
+    VCR.use_cassette('record: book', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
+      assert_response :success
+      assert_select "a[href=?]", "https://library.mit.edu/item/001492509",
+        {text: 'Source record'}
+    end
+  end
+
+  test 'eds link is shown' do
+    VCR.use_cassette('record: book', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
+      assert_response :success
+      assert_select "a",
+        {href: /search.ebscohost.com*db=cat00916a*AN=mit.001492509/,
+         text: 'View in BartonPlus'}
+    end
+  end
 end
