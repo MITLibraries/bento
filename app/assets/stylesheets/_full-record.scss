@@ -91,6 +91,9 @@
   .list-keywords {
     @extend .list-unbulleted;
   }
+}
 
-
+.sidebar .askus .btn {
+  display: block;
+  text-align: center;
 }

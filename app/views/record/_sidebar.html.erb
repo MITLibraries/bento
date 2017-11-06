@@ -1,15 +1,17 @@
 <div class="bit">
-  <h3 class="title">Tools and related</h4>
+  <h3 class="title">Related</h3>
 
   <ul>
-    <li>Export to Mendeley</li>
-    <li>Export to Zotero</li>
-    <li>Permalink</li>
-
     <% if local_record? %>
       <%= link_to('Source Record', local_record_source_url) %>
     <% else %>
       View in BartonPlus
     <% end %>
   </ul>
+</div>
+
+<div class="bit askus">
+  <h3 class="title">Ask Us</h3>
+  <p>Not finding what you're looking for?  We're here to help with anything from quick questions to in-depth research.</p>
+  <a class="btn button-secondary" href="https://libraries.mit.edu/ask/">Ask Us</a>
 </div>
