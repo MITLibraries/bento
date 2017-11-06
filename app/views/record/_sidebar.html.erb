@@ -3,10 +3,13 @@
 
   <ul>
     <% if local_record? %>
-      <%= link_to('Source Record', local_record_source_url) %>
-    <% else %>
-      View in BartonPlus
+      <li>
+        <%= link_to('Source record', local_record_source_url) %>
+      </li>
     <% end %>
+    <li>
+      <%= link_to('View in BartonPlus', eds_link) %>
+    </li>
   </ul>
 </div>
 
