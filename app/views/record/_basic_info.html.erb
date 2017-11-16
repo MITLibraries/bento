@@ -12,30 +12,48 @@
 
 <h2 class="record-title">
   <span class="sr">Title: </span>
-  <%= @record.title %>
+  <% if @record.title.present? %>
+    <%= @record.title %>
+  <% else %>
+    No title provided for this item.
+  <% end %>
 </h2>
 <p>
 <% if @record.eds_publication_type == 'Periodical' %>
   <span class="record-type">
     <span class="sr">Type: </span> Periodical </span>
+    <% if @record.eds_publication_year.present? %>
+      <span class="record-year">
+        Published <%= @record.eds_publication_year %>
+      </span>
+    <% end %>
+<% elsif @record.eds_publication_type == 'Academic Journal' %>
+  <% if @record.eds_source_title.present? %>
+    <span class="record-type">
+      In <%= link_to(@record.eds_source_title, search_prefix + "JN+\"#{@record.eds_source_title}\"", data: {type: "Journal"} ) %>
+      <% if @record.eds_volume.present? %>
+        volume <%= @record.eds_volume %>
+      <% end %>
+      <% if @record.eds_issue.present? %>
+        issue <%= @record.eds_issue %>
+      <% end %>
+      <% if @record.eds_publication_year.present? %>
+        (<%= @record.eds_publication_year %>)
+      <% end %>
+    </span>
+  <% end %>
+<%# Includes Books; is catchall for other types not specified in wireframes %>
+<% else %>
+  <% if @record.eds_publication_type.present? %>
+    <span class="record-type"><span class="sr">Type: </span>
+      <%= @record.eds_publication_type %>
+    </span>
+  <% end %>
+  <% if @record.eds_publication_year.present? %>
     <span class="record-year">
       Published <%= @record.eds_publication_year %>
     </span>
-<% elsif @record.eds_publication_type == 'Academic Journal' %>
-  <span class="record-type">
-    In <%= link_to(@record.eds_source_title, search_prefix + "JN+\"#{@record.eds_source_title}\"", data: {type: "Journal"} ) %>
-    volume <%= @record.eds_volume %>
-    issue <%= @record.eds_issue %>
-    (<%= @record.eds_publication_year %>)
-  </span>
-<%# Includes Books; is catchall for other types not specified in wireframes %>
-<% else %>
-  <span class="record-type"><span class="sr">Type: </span>
-    <%= @record.eds_publication_type %>
-  </span>
-  <span class="record-year">
-    Published <%= @record.eds_publication_year %>
-  </span>
+  <% end %>
 <% end %>
 </p>
 
