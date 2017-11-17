@@ -16,9 +16,9 @@ function RealtimeStatus( id ) {
   });
 }
 
-function RealtimeItem( an , oclc ) {
+function RealtimeItem( an , oclc, scan ) {
   $.ajax({
-    url: "/full_item_status?id=" + an + '&oclc=' + oclc
+    url: "/full_item_status?id=" + an + '&oclc=' + oclc + '&scan=' + scan
   }).done(function( msg ) {
     $("#full-avail").html( msg );
   }).fail(function( xhr, textStatus ) {

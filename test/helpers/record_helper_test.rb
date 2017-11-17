@@ -82,4 +82,39 @@ DOC
   test 'force_https with no scheme returns input unchanged' do
     assert_equal('example.com/yo', force_https('example.com/yo'))
   end
+
+  test 'detects subjects we should not scan' do
+    @subjects = ['Materials -- Standards -- United States -- Periodicals']
+    assert_equal(false, scan?)
+  end
+
+  test 'detects subjects we should not scan when included with those we do' do
+    @subjects = ['yo',
+                 'Materials -- Standards -- United States -- Periodicals',
+                 'Another -- non-excluded -- subject']
+    assert_equal(false, scan?)
+  end
+
+  test 'does not exclude subjects we do scan' do
+    @subjects = ['yo']
+    assert_equal(true, scan?)
+  end
+
+  test 'handles nil subjects when checking for scan exclusion' do
+    @subjects = nil
+    assert_equal(true, scan?)
+  end
+
+  test 'weird stuff in subjects' do
+    @subjects = 'not an array'
+    assert_equal(true, scan?)
+  end
+
+  test 'no excluded subjects defined' do
+    stored_env = ENV['SCAN_EXCLUSIONS']
+    ENV.delete('SCAN_EXCLUSIONS')
+    @subjects = ['yo']
+    assert_equal(true, scan?)
+    ENV['SCAN_EXCLUSIONS'] = stored_env
+  end
 end
