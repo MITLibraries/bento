@@ -102,4 +102,13 @@ class AlephItemTest < ActiveSupport::TestCase
   test 'status' do
     assert_equal('In Library', @AlephTester.status(@item))
   end
+
+  test 'does not create bogus item for partial tag' do
+    VCR.use_cassette('aleph: egregiously many items',
+      allow_playback_repeats: true) do
+
+      status = AlephItem.new.items('MIT01000296523', '02187052')
+      assert_equal status.count, 990
+    end
+  end
 end

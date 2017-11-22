@@ -15,7 +15,12 @@ class AlephItem
   # ex: https://walter.mit.edu/rest-dlf/record/MIT01000293592/items?view=full&key=SECRETKEY
   def items(id, oclc)
     items = []
-    xml_status(id).xpath('//items').children.each do |item|
+    # This used to say .xpath('//items').children.each. However, the Aleph API
+    # returns at most 990 items; if there are more, there is a <partial>
+    # element also included in <items>. Our attempts to parse useful data out
+    # of <partial> will fail, leading to a bogus item in the availability
+    # section of the view which is checked out but has no metadata.
+    xml_status(id).xpath('//items/item').each do |item|
       items << process_item(item, oclc)
     end
     custom_sort(items)

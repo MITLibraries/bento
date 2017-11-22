@@ -119,6 +119,15 @@ class RecordTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'bogus item not shown when record items exceed 990' do
+    VCR.use_cassette('record: egregiously many items', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.000296523' }
+      assert_select 'span.library', text: '', count: 0
+      assert_select 'span.collection', text: ':', count: 0
+      assert_select 'span.callno', text: '', count: 0
+    end
+  end
+
   # ~~~~~~~~~~~~~~~~~~~ tests of 'more information' section ~~~~~~~~~~~~~~~~~~~
   # For the following tests, note that not all information is available for all
   # sources.
