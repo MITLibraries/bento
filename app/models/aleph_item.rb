@@ -10,10 +10,13 @@
 # not acceptable for this application's cloud based deployment intent.
 # - The class is in need of a refactor which we are intentionally not doing at
 # this time; see bottom of file for details.
+# - We pass in `oclc` and `scan` not because we love it, but because it saves
+# us from making two API calls to Aleph instead of one. This is a case of
+# efficiency winning out over a preferred application design.
 require 'open-uri'
 class AlephItem
   # ex: https://walter.mit.edu/rest-dlf/record/MIT01000293592/items?view=full&key=SECRETKEY
-  def items(id, oclc)
+  def items(id, oclc, scan)
     items = []
     # This used to say .xpath('//items').children.each. However, the Aleph API
     # returns at most 990 items; if there are more, there is a <partial>
@@ -21,7 +24,7 @@ class AlephItem
     # of <partial> will fail, leading to a bogus item in the availability
     # section of the view which is checked out but has no metadata.
     xml_status(id).xpath('//items/item').each do |item|
-      items << process_item(item, oclc)
+      items << process_item(item, oclc, scan)
     end
     custom_sort(items)
   end
@@ -38,14 +41,14 @@ class AlephItem
     end
   end
 
-  def process_item(item, oclc)
+  def process_item(item, oclc, scan)
     { library: library(item),
       collection: item.xpath('z30/z30-collection').text,
       call_number: item.xpath('z30/z30-call-no').text,
       available?: available?(item),
       label: label(item),
       description: description(item),
-      buttons: ButtonMaker.new(item, oclc).all_buttons }
+      buttons: ButtonMaker.new(item, oclc, scan).all_buttons }
   end
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~ Properties of Aleph items ~~~~~~~~~~~~~~~~~~~~~~~~

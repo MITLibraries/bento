@@ -76,6 +76,9 @@
     "ROLLBAR_ACCESS_TOKEN": {
       "required": true
     },
+    "SCAN_EXCLUSIONS": {
+      "required": true
+    },
     "SECRET_KEY_BASE": {
       "required": true
     },

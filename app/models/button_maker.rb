@@ -16,11 +16,10 @@
 # circ logic - too hard to tell whether they'd all been dealt with, except by
 # pulling it all into a special-purpose, encapsulated place.
 class ButtonMaker
-  include Standards
-
-  def initialize(item, oclc)
+  def initialize(item, oclc, scan)
     @item = item
     @oclc = oclc
+    @scan = scan
     # The order of this list controls the order in which buttons will display.
     @options = %w(contact hold recall ill scan special_ill)
 
@@ -292,7 +291,7 @@ class ButtonMaker
   # https://wikis.mit.edu/confluence/x/5igEBw for a link to the relevant
   # spreadsheet.
   def unscannable_standard?
-    Standards::BARTON.include?(@doc_number)
+    @scan == 'false'
   end
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Misc utilities ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -6,7 +6,8 @@ class ButtonMakerTest < ActiveSupport::TestCase
       @item = AlephItem.new.xml_status('MIT01001019412').xpath('//items').children.first
     end
     @oclc = '123456789'
-    @ButtonMaker = ButtonMaker.new(@item, @oclc)
+    @scan = 'true'
+    @ButtonMaker = ButtonMaker.new(@item, @oclc, @scan)
   end
 
   test 'all buttons' do
@@ -54,7 +55,8 @@ class ButtonMakerTest < ActiveSupport::TestCase
   end
 
   test 'oclc_number messy data' do
-    messy_button = ButtonMaker.new(@item, '123456789&lt;br/&gt;947074821')
+    messy_button = ButtonMaker.new(@item, '123456789&lt;br/&gt;947074821',
+                                   @scan)
     assert_equal('123456789', messy_button.instance_variable_get(:@oclc_number))
   end
 
@@ -117,7 +119,7 @@ class ButtonMakerTest < ActiveSupport::TestCase
   end
 
   test 'eligible for contact' do
-    maker = ButtonMaker.new(@item, @oclc)
+    maker = ButtonMaker.new(@item, @oclc, @scan)
     maker.instance_variable_set(:@library, 'Institute Archives')
     assert maker.eligible_for_contact?
 
@@ -126,7 +128,7 @@ class ButtonMakerTest < ActiveSupport::TestCase
   end
 
   test 'eligible for hold' do
-    maker = ButtonMaker.new(@item, @oclc)
+    maker = ButtonMaker.new(@item, @oclc, @scan)
     maker.instance_variable_set(:@status, 'In Library')
     maker.instance_variable_set(:@requestable, true)
     assert maker.eligible_for_hold?
@@ -146,7 +148,7 @@ class ButtonMakerTest < ActiveSupport::TestCase
   end
 
   test 'eligible for ill' do
-    maker = ButtonMaker.new(@item, @oclc)
+    maker = ButtonMaker.new(@item, @oclc, @scan)
 
     # Eligible for hold -> ineligible for ILL.
     maker.instance_variable_set(:@status, 'In Library')
@@ -163,7 +165,7 @@ class ButtonMakerTest < ActiveSupport::TestCase
   end
 
   test 'eligible for recall' do
-    maker = ButtonMaker.new(@item, @oclc)
+    maker = ButtonMaker.new(@item, @oclc, @scan)
     maker.instance_variable_set(:@requestable, true)
     maker.instance_variable_set(:@status, 'Due sometime')
     assert maker.eligible_for_recall?
@@ -177,14 +179,14 @@ class ButtonMakerTest < ActiveSupport::TestCase
   end
 
   test 'eligible for recall edge case' do
-    maker = ButtonMaker.new(@item, @oclc)
+    maker = ButtonMaker.new(@item, @oclc, @scan)
     maker.instance_variable_set(:@requestable, true)
     maker.instance_variable_set(:@status, 'Missing')
     refute maker.eligible_for_recall?
   end
 
   test 'eligible for special ill' do
-    maker = ButtonMaker.new(@item, @oclc)
+    maker = ButtonMaker.new(@item, @oclc, @scan)
     maker.instance_variable_set(:@status, 'In Library')
     maker.instance_variable_set(:@z30status, 'Room Use Only')
     assert maker.eligible_for_special_ill?

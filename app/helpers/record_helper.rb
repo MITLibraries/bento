@@ -150,4 +150,20 @@ module RecordHelper
     uri.scheme = 'https'
     uri.to_s
   end
+
+  # Determine scan exclusions based on cataloged subject headings
+  def scan?
+    return true if @subjects.blank?
+    return true if ENV['SCAN_EXCLUSIONS'].blank?
+    scannable_subject_heading?
+  end
+
+  # If any subject in the record matches any excluded subject it is unscannable
+  def scannable_subject_heading?
+    excluded_subjects.map { |exclude| @subjects.include?(exclude) }.none?
+  end
+
+  def excluded_subjects
+    ENV['SCAN_EXCLUSIONS'].split(';')
+  end
 end

@@ -44,7 +44,7 @@
   <% if local_record? %>
     Loading availability information <i class="fa fa-spinner fa-spin"></i>
     <script>
-      RealtimeItem( "<%= clean_an %>", "<%= @record.eds_document_oclc %>" );
+      RealtimeItem( "<%= clean_an %>", "<%= @record.eds_document_oclc %>", "<%= scan? %>" );
     </script>
   <% end %>
 </div>
