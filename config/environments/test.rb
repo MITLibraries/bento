@@ -20,6 +20,7 @@ Rails.application.configure do
   ENV['PER_PAGE'] = '10'
   ENV['FLIPFLOP_KEY'] = 'yoyo'
   ENV['ALEPH_HINT_SOURCE'] = 'https://fake.example.com/s/fake/getserial_mini.xml?dl=1'
+  ENV['FULL_RECORD_TOGGLE_BUTTON'] = 'true'
 
   ENV['SCAN_EXCLUSIONS']='Materials -- Standards -- United States -- Periodicals;Materials -- Standards -- United States -- Periodicals;Standards, Engineering;Standards, Engineering -- Periodicals'
 
