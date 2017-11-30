@@ -169,9 +169,9 @@ module RecordHelper
 
   def full_record_toggle_link
     link_text = if Flipflop.local_full_record?
-                  'Disable beta record display.'
+                  'Turn off beta item detail view'
                 else
-                  'Preview beta record display.'
+                  'Try our new beta item detail view'
                 end
     link_to(link_text, full_record_toggle_path)
   end

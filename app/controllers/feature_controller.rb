@@ -10,7 +10,7 @@ class FeatureController < ApplicationController
 
   def full_record_toggle
     session[:local_full_record] = session[:local_full_record].!
-    flash[:info] = "In app full record displays are now #{full_record_message}."
+    flash[:info] = "The beta item detail view is now #{full_record_message}."
     redirect_back(fallback_location: root_path)
   end
 
@@ -18,9 +18,9 @@ class FeatureController < ApplicationController
 
   def full_record_message
     if Flipflop.local_full_record?
-      'enabled'
+      'on'
     else
-      'disabled'
+      'off'
     end
   end
 
