@@ -26,4 +26,10 @@ Flipflop.configure do
   feature :pride,
     default: ENV['PRIDE'],
     description: 'Enables rainbows for records with LGBT subjects/keywords'
+
+  feature :full_record_toggle_button,
+    default: ENV['FULL_RECORD_TOGGLE_BUTTON'],
+    description: 'Enables a UI element to toggle full record. local_full_record,
+                  still controls the actual full record display. This just
+                  enables an affordance to toggle between states.'
 end

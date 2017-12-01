@@ -41,6 +41,9 @@
     "FLIPFLOP_KEY": {
       "required": true
     },
+    "FULL_RECORD_TOGGLE_BUTTON": {
+      "required": true
+    },
     "GLOBAL_ALERT": {
       "required": true
     },

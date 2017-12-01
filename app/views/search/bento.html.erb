@@ -13,8 +13,14 @@
   </p>
 </div>
 
+<% if Flipflop.full_record_toggle_button? %>
+  <div class="nudge-fullrecord-toggle">
+    <p><%= full_record_toggle_link %></p>
+  </div>
+<% end %>
+
 <div class="nudge-feedback">
-  <p>Was this search useful? <%= link_to('Send feedback', feedback_path) %>
+  <p>Was this search useful? <%= link_to('Send feedback', feedback_path) %></p>
 </div>
 
 <div id="hint"></div>

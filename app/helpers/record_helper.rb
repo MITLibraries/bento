@@ -166,4 +166,13 @@ module RecordHelper
   def excluded_subjects
     ENV['SCAN_EXCLUSIONS'].split(';')
   end
+
+  def full_record_toggle_link
+    link_text = if Flipflop.local_full_record?
+                  'Turn off beta item detail view'
+                else
+                  'Try our new beta item detail view'
+                end
+    link_to(link_text, full_record_toggle_path)
+  end
 end

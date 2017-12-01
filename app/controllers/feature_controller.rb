@@ -1,5 +1,5 @@
 class FeatureController < ApplicationController
-  before_action :validate_feature!
+  before_action :validate_feature!, only: :toggle
 
   # Toggles boolean for session based feature flags
   def toggle
@@ -8,7 +8,21 @@ class FeatureController < ApplicationController
     redirect_to root_path
   end
 
+  def full_record_toggle
+    session[:local_full_record] = session[:local_full_record].!
+    flash[:info] = "The beta item detail view is now #{full_record_message}."
+    redirect_back(fallback_location: root_path)
+  end
+
   private
+
+  def full_record_message
+    if Flipflop.local_full_record?
+      'on'
+    else
+      'off'
+    end
+  end
 
   # message to display on successful toggle of a feature
   def success_message

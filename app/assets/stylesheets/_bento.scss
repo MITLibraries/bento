@@ -37,6 +37,15 @@
   }
 }
 
+.nudge-fullrecord-toggle {
+  font-size: $fs-small;
+  font-weight: $fw-bold;
+  
+  a {
+    color: $orange;
+  }
+}
+
 /* big boxes */
 .wrap-results {
   margin-top: 2rem;
@@ -130,4 +139,3 @@
     font-size: $fs-xsmall;
   }
 }
-
