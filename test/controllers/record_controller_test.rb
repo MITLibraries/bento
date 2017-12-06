@@ -62,4 +62,25 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_includes(@response.body, 'Restricted access.')
   end
+
+  test 'cache_path for guests' do
+    VCR.use_cassette('record: bananas', allow_playback_repeats: true) do
+      get record_url('cat00916a', 'mit.001492509')
+      assert_equal(@controller.send(:cache_path),
+                   'http://www.example.com/record/cat00916a/mit.001492509?guest=true&source=cat00916a')
+      assert_response :success
+    end
+  end
+
+  test 'cache_path for non-guests' do
+    VCR.use_cassette('record: bananas nonguest',
+                     allow_playback_repeats: true) do
+      ActionDispatch::Request.any_instance.stubs(:remote_ip)
+                             .returns('18.42.101.101')
+      get record_url('cat00916a', 'mit.001492509')
+      assert_equal(@controller.send(:cache_path),
+                   'http://www.example.com/record/cat00916a/mit.001492509?guest=false&source=cat00916a')
+      assert_response :success
+    end
+  end
 end

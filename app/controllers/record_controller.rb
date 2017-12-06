@@ -7,6 +7,8 @@ class RecordController < ApplicationController
 
   class NoSuchRecordError < StandardError; end
 
+  caches_action :record, expires_in: 1.day, cache_path: :cache_path
+
   include Rainbows
 
   # See https://github.com/ebsco/edsapi-ruby/ . The page which gives all the
@@ -24,9 +26,24 @@ class RecordController < ApplicationController
     render 'record'
   end
 
+  # this method should never be cached because we need a fresh expiring URL
   def direct_link
     fetch_eds_record
     redirect_to @record.fulltext_link[:url]
+  end
+
+  protected
+
+  # This is effectively a cache key based on the parameters we care about.
+  # record cache is guest dependent because it stores rendered HTML, and some
+  # of that rendered HTML is different for guests.
+  def cache_path
+    url_for(
+      guest: helpers.guest?,
+      action: action_name,
+      an: @record_an,
+      source: @record_source
+    )
   end
 
   private
