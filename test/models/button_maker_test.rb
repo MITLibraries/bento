@@ -76,6 +76,7 @@ class ButtonMakerTest < ActiveSupport::TestCase
   test 'z30status_code' do
     assert_equal('01', @ButtonMaker.instance_variable_get(:@z30status_code))
   end
+
   # ~~~~~~~~~~~~~~~~~ Test eligibility determination functions ~~~~~~~~~~~~~~~~~
   test 'eligible for scan' do
     # If any subcondition is false, it is ineligible.
@@ -190,6 +191,81 @@ class ButtonMakerTest < ActiveSupport::TestCase
     maker.instance_variable_set(:@status, 'In Library')
     maker.instance_variable_set(:@z30status, 'Room Use Only')
     assert maker.eligible_for_special_ill?
+  end
+
+  test 'hold ineligibility by reason of z30 status code' do
+    maker = ButtonMaker.new(@item, @oclc, @scan)
+
+    # Check our assumption that the default ButtonMaker can be held/recalled.
+    assert maker.eligible_for_hold?
+
+    # Now test z30 status codes that should yield ineligibility.
+    maker.instance_variable_set(:@z30status_code, '04')
+    # We need to reset @requestable as it was set on object initialization, but
+    # the change to the z30 status will alter its expected value.
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_hold?
+
+    maker.instance_variable_set(:@z30status_code, '06')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_hold?
+
+    maker.instance_variable_set(:@z30status_code, '07')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_hold?
+
+    maker.instance_variable_set(:@z30status_code, '08')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_hold?
+
+    maker.instance_variable_set(:@z30status_code, '09')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_hold?
+
+    maker.instance_variable_set(:@z30status_code, '11')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_hold?
+
+    maker.instance_variable_set(:@z30status_code, '20')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_hold?
+  end
+
+  test 'recall ineligibility by reason of z30 status code' do
+    maker = ButtonMaker.new(@item, @oclc, @scan)
+    maker.instance_variable_set(:@status, 'Due sometime')
+
+    # Check our assumption that the default ButtonMaker can be held/recalled.
+    assert maker.eligible_for_recall?
+
+    # Now test z30 status codes that should yield ineligibility.
+    maker.instance_variable_set(:@z30status_code, '04')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_recall?
+
+    maker.instance_variable_set(:@z30status_code, '06')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_recall?
+
+    maker.instance_variable_set(:@z30status_code, '07')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_recall?
+
+    maker.instance_variable_set(:@z30status_code, '08')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_recall?
+
+    maker.instance_variable_set(:@z30status_code, '09')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_recall?
+
+    maker.instance_variable_set(:@z30status_code, '11')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_recall?
+
+    maker.instance_variable_set(:@z30status_code, '20')
+    maker.instance_variable_set(:@requestable, maker.requestable?)
+    refute maker.eligible_for_recall?
   end
 
   # ~~~~~~~~~~~~~~~~~ Test URLs for availability action buttons ~~~~~~~~~~~~~~~~
