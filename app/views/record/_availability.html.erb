@@ -1,6 +1,15 @@
 <h3 class="section-title">Availability</h3>
 <% if @record.fulltext_link.present? %>
   <div class="link-fulltext">
+    <%# We used to have logic here that decided which HTML to display. However,
+        there are at least 5 different availability situations, requiring 4
+        different HTML chunks, which got to be too heavy for a view. So the
+        complicated logic for picking which HTML to display is now in the
+        helper. The output of that logic is the name of the partial to use;
+        it also sets any instance variables that may be required to render
+        said partial. This leads to the somewhat odd situation of having a
+        variable name rather than a string in this render: call, because we
+        don't know which HTML chunk we want to render until runtime. %>
     <%= render partial: availability_action %>
   </div>
 <% end %>
