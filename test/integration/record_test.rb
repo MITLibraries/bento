@@ -128,6 +128,13 @@ class RecordTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'multiple item types can be shown' do
+    VCR.use_cassette('record: multiple item types', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.002379994' }
+      assert_select 'span.record-type', text: /Book; eBook/
+    end
+  end
+
   # ~~~~~~~~~~~~~~~~~~~ tests of 'more information' section ~~~~~~~~~~~~~~~~~~~
   # For the following tests, note that not all information is available for all
   # sources.
