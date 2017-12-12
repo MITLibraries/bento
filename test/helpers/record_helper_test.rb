@@ -60,7 +60,7 @@ DOC
 
   end
 
-  test 'link with a domain in relavent links' do
+  test 'link with a domain in relevant links' do
     link = { url: 'https://libraries.mit.edu/F/stuff' }
     assert(relevant_fulltext_link?(link))
   end

@@ -210,24 +210,13 @@ class ButtonMaker
   end
 
   def url_for_scan
-    analytics = 'BENTO'
-    encoded_title = ERB::Util.url_encode(ERB::Util.url_encode(@title))
-
-    # The call number is important! In Barton we use different URL parameters
-    # for request items, but this ends up with scan requests for Technique
-    # (the yearbook) being routed to a Polish land use journal. Call number
-    # fixes this bug and does not seem to introduce new ones.
-    encoded_call_no = ERB::Util.url_encode(@call_number)
-
-    [
-      sfx_host.to_s,
-      "?sid=ALEPH:#{analytics}",
-      "&amp;call_number=#{encoded_call_no}",
-      '&amp;genre=journal',
-      "&amp;barcode=#{@barcode}",
-      "&amp;title=#{encoded_title}",
-      "&amp;location=#{encoded_location}"
-    ].join('')
+    SFXHandler.new(
+      barcode: @barcode,
+      call_number: @call_number,
+      collection: @collection,
+      library: @library,
+      title: @title
+    ).url_for_scan
   end
 
   def url_for_ill
@@ -326,23 +315,6 @@ class ButtonMaker
     [
       'In Library', 'MIT Reads', 'New Books Displ', 'On Display'
     ].include?(@status) && @requestable
-  end
-
-  def sfx_host
-    if Rails.env.production?
-      'https://sfx.mit.edu/sfx_local'
-    else
-      'https://sfx.mit.edu/sfx_test'
-    end
-  end
-
-  def encoded_location
-    location = if @collection == 'Off Campus Collection'
-                 'OCC'
-               else
-                 @library
-               end
-    ERB::Util.url_encode(ERB::Util.url_encode(location))
   end
 
   def clean_oclc
