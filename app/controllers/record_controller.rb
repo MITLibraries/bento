@@ -7,6 +7,11 @@ class RecordController < ApplicationController
 
   class NoSuchRecordError < StandardError; end
 
+  # We are using ActionCaching due to EDS not providing an readily cacheable
+  # object to use with low level caching like we do with our bento results.
+  # They provide a cache option but it is hardcoded to use a file system cache.
+  # I have asked for that to be revisited upstream. Fragment Caching is an
+  # option but in initial exploration this honestly seems easier.
   caches_action :record, expires_in: 1.day, cache_path: :cache_path
 
   include Rainbows

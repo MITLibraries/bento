@@ -1,4 +1,7 @@
 class AlephController < ApplicationController
+  # We are using ActionCaching here because we also use it in EDS full records.
+  # This would work fine with low level caching, but ActiveCache is so clean
+  # and once we are using it someplace else we may as well use it here.
   caches_action :full_item_status, expires_in: 15.minutes,
                                    cache_path: :cache_path
   caches_action :item_status, expires_in: 15.minutes, cache_path: :cache_path
