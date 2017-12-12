@@ -45,6 +45,8 @@ class ButtonMaker
     @z30status = @item.xpath('z30/z30-item-status').text
     # Yes, this excludes `z30/` on purpose.
     @z30status_code = @item.xpath('z30-item-status-code').text
+    @year = @item.xpath('z13/z13-year').text
+    @volume = @item.xpath('z30/z30-description').text
   end
 
   def all_buttons
@@ -211,22 +213,25 @@ class ButtonMaker
 
   def url_for_scan
     analytics = 'BENTO'
-    encoded_title = ERB::Util.url_encode(ERB::Util.url_encode(@title))
+    encoded_title = URI.encode_www_form_component(@title)
 
     # The call number is important! In Barton we use different URL parameters
     # for request items, but this ends up with scan requests for Technique
     # (the yearbook) being routed to a Polish land use journal. Call number
     # fixes this bug and does not seem to introduce new ones.
-    encoded_call_no = ERB::Util.url_encode(@call_number)
+    encoded_call_no = URI.encode_www_form_component(@call_number)
 
     [
       sfx_host.to_s,
       "?sid=ALEPH:#{analytics}",
       "&amp;call_number=#{encoded_call_no}",
       '&amp;genre=journal',
+      "&amp;pid=Docnumber=#{@doc_number},Ip=library.mit.edu,Port=9909",
       "&amp;barcode=#{@barcode}",
       "&amp;title=#{encoded_title}",
-      "&amp;location=#{encoded_location}"
+      "&amp;location=#{encoded_location}",
+      "&amp;rft.date=#{@year}",
+      "&amp;rft.volume=#{@volume}"
     ].join('')
   end
 

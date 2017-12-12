@@ -195,14 +195,16 @@ class ButtonMakerTest < ActiveSupport::TestCase
   # ~~~~~~~~~~~~~~~~~ Test URLs for availability action buttons ~~~~~~~~~~~~~~~~
   test 'pdf scan URL in test env' do
     @ButtonMaker.stub :eligible_for_scan?, true do
-      url =  [
+      url = [
         'https://sfx.mit.edu/sfx_test',
         '?sid=ALEPH:BENTO',
-        "&amp;call_number=PS3515.U274%202001",
+        '&amp;call_number=PS3515.U274+2001',
         '&amp;genre=journal',
+        '&amp;pid=Docnumber=001019412,Ip=library.mit.edu,Port=9909',
         '&amp;barcode=39080023421933',
-        '&amp;title=The%2520collected%2520works%2520of%2520Langston%2520Hughes%2520%252F%2520edited%2520with%2520an%2520introduction%2520by%2520Arnold%2520Rampersad.',
-        '&amp;location=Hayden%2520Library'
+        '&amp;title=The+collected+works+of+Langston+Hughes+%2F+edited+with+an+introduction+by+Arnold+Rampersad.',
+        '&amp;location=Hayden%2520Library',
+        '&amp;rft.date=2001&amp;rft.volume=v.16'
       ].join('')
       assert_equal(url, @ButtonMaker.url_for_scan)
     end
@@ -211,14 +213,16 @@ class ButtonMakerTest < ActiveSupport::TestCase
   test 'pdf scan URL in production env' do
     Rails.stub :env, ActiveSupport::StringInquirer.new('production') do
       @ButtonMaker.stub :eligible_for_scan?, true do
-        url =  [
+        url = [
           'https://sfx.mit.edu/sfx_local',
           '?sid=ALEPH:BENTO',
-          "&amp;call_number=PS3515.U274%202001",
+          '&amp;call_number=PS3515.U274+2001',
           '&amp;genre=journal',
+          '&amp;pid=Docnumber=001019412,Ip=library.mit.edu,Port=9909',
           '&amp;barcode=39080023421933',
-          '&amp;title=The%2520collected%2520works%2520of%2520Langston%2520Hughes%2520%252F%2520edited%2520with%2520an%2520introduction%2520by%2520Arnold%2520Rampersad.',
-          '&amp;location=Hayden%2520Library'
+          '&amp;title=The+collected+works+of+Langston+Hughes+%2F+edited+with+an+introduction+by+Arnold+Rampersad.',
+          '&amp;location=Hayden%2520Library',
+          '&amp;rft.date=2001&amp;rft.volume=v.16'
         ].join('')
         assert_equal(url, @ButtonMaker.url_for_scan)
       end
