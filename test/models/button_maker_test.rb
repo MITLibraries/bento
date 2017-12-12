@@ -275,10 +275,10 @@ class ButtonMakerTest < ActiveSupport::TestCase
         'https://sfx.mit.edu/sfx_test',
         '?sid=ALEPH:BENTO',
         "&amp;call_number=PS3515.U274%202001",
-        '&amp;genre=journal',
         '&amp;barcode=39080023421933',
         '&amp;title=The%2520collected%2520works%2520of%2520Langston%2520Hughes%2520%252F%2520edited%2520with%2520an%2520introduction%2520by%2520Arnold%2520Rampersad.',
-        '&amp;location=Hayden%2520Library'
+        '&amp;location=Hayden%2520Library',
+        '&amp;genre=journal'
       ].join('')
       assert_equal(url, @ButtonMaker.url_for_scan)
     end
@@ -291,10 +291,10 @@ class ButtonMakerTest < ActiveSupport::TestCase
           'https://sfx.mit.edu/sfx_local',
           '?sid=ALEPH:BENTO',
           "&amp;call_number=PS3515.U274%202001",
-          '&amp;genre=journal',
           '&amp;barcode=39080023421933',
           '&amp;title=The%2520collected%2520works%2520of%2520Langston%2520Hughes%2520%252F%2520edited%2520with%2520an%2520introduction%2520by%2520Arnold%2520Rampersad.',
-          '&amp;location=Hayden%2520Library'
+          '&amp;location=Hayden%2520Library',
+          '&amp;genre=journal'
         ].join('')
         assert_equal(url, @ButtonMaker.url_for_scan)
       end

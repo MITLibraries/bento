@@ -97,6 +97,15 @@ class RecordTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'emergency backup SFX link shown when we do not know what to do' do
+    VCR.use_cassette('record: omgwtfbbq', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'edsasp', an: 'edsasp.ASP2223378.CLMU' }
+      assert_response :success
+      assert_select 'a.button-primary', text: 'View online', count: 0
+      assert_select 'a', text: 'Check for online copy'
+    end
+  end
+
   test 'summary holdings are shown when available' do
     VCR.use_cassette('record: journal', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'cat00916a', an: 'mit.000292123' }

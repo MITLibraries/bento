@@ -1,29 +1,7 @@
 <h3 class="section-title">Availability</h3>
 <% if @record.fulltext_link.present? %>
   <div class="link-fulltext">
-
-    <%# SFX links that we don't know for sure if we own; auth happens at SFX %>
-    <% if check_online? %>
-      <a class="button button-secondary" href="<%= @record.fulltext_link[:url] %>">Check for online copy</a>
-
-    <%# Links is expiring / restricted so we can only show to affiliates %>
-    <% elsif guest_and_restricted_link? %>
-      <div class="inline-action well signin-fulltext">
-        <p class="message">Full text available</p>
-        <div class="actions">
-          <a class="button button-secondary" href="<%= login_url %>">Sign in for access</a>
-        </div>
-      </div>
-
-    <%# Restricted expiring link, but current user is allowed to access it.
-        We'll get a fresh version of the link and redirect them to it %>
-    <% elsif restricted_link? %>
-      <%= link_to('View online', record_direct_link_path(params[:db_source], params[:an]), class: 'button button-primary green') %>
-
-    <%# Non restricted full text link (usually authenticated through SFX) %>
-    <% elsif relevant_fulltext_link?(@record.fulltext_link) %>
-      <a class="button button-primary green" href="<%= @record.fulltext_link[:url] %>" class="btn button-primary">View online</a>
-    <% end %>
+    <%= render partial: availability_action %>
   </div>
 <% end %>
 
