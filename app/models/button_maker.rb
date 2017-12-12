@@ -302,7 +302,7 @@ class ButtonMaker
     [
       # Items with these status codes may be requested from any library,
       # except the Annex.
-      %w(01 03 04 05 06 07 08 09 11 12 19 20 21).include?(@z30status_code) &&
+      %w(01 03 05 12 19 21).include?(@z30status_code) &&
         @library != 'Library Storage Annex',
 
       # Items with status code 23 may be requested from only some libraries.
