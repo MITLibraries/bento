@@ -36,43 +36,42 @@ class SFXHandler
   private
 
   def url_constructor(scan: false)
-    if scan
-      analytics = 'BENTO'
-    else
-      # Things with analytics=BENTO are automatically routed through scan &
-      # deliver by SFX. That's great if we want to scan, but not great if we
-      # don't. Since this URL is used as a fallback - when all other options
-      # have failed - we have no idea what we're dealing with and it could be
-      # an object unsuitable for scan (e.g. audiotape, large-format map,
-      # entire book).
-      analytics = 'BENTO_FALLBACK'
-    end
-
-    # The call number is important! In Barton we use different URL parameters
-    # for request items, but this ends up with scan requests for Technique
-    # (the yearbook) being routed to a Polish land use journal. Call number
-    # fixes this bug and does not seem to introduce new ones.
-    encoded_call_no = URI.encode_www_form_component(@call_number)
-
     url_parts = [
       sfx_host.to_s,
-      "?sid=ALEPH:#{analytics}",
+      "?sid=ALEPH:#{analytics(scan)}",
       "&amp;call_number=#{encoded_call_no}",
       "&amp;barcode=#{@barcode}",
-      "&amp;title=#{URI.encode_www_form_component(@title)}",
+      "&amp;title=#{encoded_title}",
       "&amp;location=#{encoded_location}",
       "&amp;rft.date=#{@year}",
       "&amp;rft.volume=#{@volume}"
     ]
 
-    if @doc_number
-      url_parts.push(
-        "&amp;pid=DocNumber=#{@doc_number},Ip=library.mit.edu,Port=9909"
-      )
-    end
-
+    url_parts.push(pid) if @doc_number
     url_parts.push('&amp;genre=journal') if scan
     url_parts.join('')
+  end
+
+  # Things with analytics=BENTO are automatically routed through scan &
+  # deliver by SFX. That's great if we want to scan, but not great if we
+  # don't. Since this URL is used as a fallback - when all other options
+  # have failed - we have no idea what we're dealing with and it could be
+  # an object unsuitable for scan (e.g. audiotape, large-format map,
+  # entire book).
+  def analytics(scan)
+    if scan
+      'BENTO'
+    else
+      'BENTO_FALLBACK'
+    end
+  end
+
+  # The call number is important! In Barton we use different URL parameters
+  # for request items, but this ends up with scan requests for Technique
+  # (the yearbook) being routed to a Polish land use journal. Call number
+  # fixes this bug and does not seem to introduce new ones.
+  def encoded_call_no
+    URI.encode_www_form_component(@call_number)
   end
 
   def encoded_location
@@ -82,6 +81,14 @@ class SFXHandler
                  @library
                end
     URI.encode_www_form_component(location)
+  end
+
+  def encoded_title
+    URI.encode_www_form_component(@title)
+  end
+
+  def pid
+    "&amp;pid=DocNumber=#{@doc_number},Ip=library.mit.edu,Port=9909"
   end
 
   def sfx_host
