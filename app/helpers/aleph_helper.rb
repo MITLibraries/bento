@@ -28,6 +28,8 @@ module AlephHelper
       'https://libraries.mit.edu/music/'
     elsif library == 'Rotch Library'
       'https://libraries.mit.edu/rotch/'
+    elsif library == 'Library Storage Annex'
+      'https://libraries.mit.edu/lsa/'
     end
   end
 end
