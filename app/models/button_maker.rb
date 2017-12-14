@@ -21,7 +21,7 @@ class ButtonMaker
     @oclc = oclc
     @scan = scan
     # The order of this list controls the order in which buttons will display.
-    @options = %w(contact hold recall ill scan special_ill)
+    @options = %w(contact hold recall ill scan)
 
     # Properties of items. This must go *after* setting @item and @oclc, but
     # *before* setting @requestable.
@@ -136,27 +136,6 @@ class ButtonMaker
     ].all?
   end
 
-  # Some items are eligible for BorrowDirect even though they are not eligible
-  # for ILL. These are items that are in the library (which is why we do not
-  # ILL them) but whose loan terms are too short for some patrons' needs.
-  # Unfortunately we don't know if these items are actually *available* in BD;
-  # we will send them to BD to check. If they're not available there, BD will
-  # send them to ILL and MIT circ staff will end up cancelling the result.
-  # This is mildly annoying but it is the pre-bento status quo, as users
-  # already find BD on their own.
-  def eligible_for_special_ill?
-    return false if eligible_for_ill? # We don't want to display both buttons.
-    [
-      'Room Use Only',
-      '4 Hour Reserves',
-      '2 Hour Loan',
-      'Fall 2 Hours',
-      'Spring 2 Hours',
-      'IAP 2 Hours',
-      'Summer 2 Hours'
-    ].include?(@z30status)
-  end
-
   # ~~~~~~~~ Functions which return HTML for availability action buttons ~~~~~~~
 
   # The following functions construct URLs needed for item availability actions.
@@ -191,11 +170,6 @@ class ButtonMaker
       " href='#{url_for_scan}'>Request scan (2-3 days)</a>"
   end
 
-  def make_button_for_special_ill
-    "<a class='btn button-secondary button-small' "\
-      "href='#{url_for_special_ill}'>Get it with ILL (3-4 days)</a>"
-  end
-
   # ~~~~~~~~ Functions which create URLs for availability action buttons ~~~~~~~
   def url_for_hold
     queryarray = { func: 'item-hold-request',
@@ -222,14 +196,6 @@ class ButtonMaker
   def url_for_ill
     return unless @oclc_number.present?
     "https://mit.worldcat.org/search?q=no%3A#{@oclc_number}"
-  end
-
-  # special_ill items are only eligible via BorrowDirect.
-  def url_for_special_ill
-    # @identifier may be an ISBN or the ISSN, but either one works in the BD
-    # ISBN parameter.
-    'https://library.mit.edu/shib/bd.cgi?url_ver=Z39.88-2004' \
-      "&amp;rft.isbn=#{@identifier}"
   end
 
   # ~~~~~~~~ Utility functions needed to determine PDF scan eligibility ~~~~~~~~

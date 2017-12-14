@@ -17,7 +17,6 @@ class ButtonMakerTest < ActiveSupport::TestCase
     refute @ButtonMaker.all_buttons.include? @ButtonMaker.make_button_for_contact
     refute @ButtonMaker.all_buttons.include? @ButtonMaker.make_button_for_ill
     refute @ButtonMaker.all_buttons.include? @ButtonMaker.make_button_for_recall
-    refute @ButtonMaker.all_buttons.include? @ButtonMaker.make_button_for_special_ill
   end
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Test item properties ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -186,13 +185,6 @@ class ButtonMakerTest < ActiveSupport::TestCase
     refute maker.eligible_for_recall?
   end
 
-  test 'eligible for special ill' do
-    maker = ButtonMaker.new(@item, @oclc, @scan)
-    maker.instance_variable_set(:@status, 'In Library')
-    maker.instance_variable_set(:@z30status, 'Room Use Only')
-    assert maker.eligible_for_special_ill?
-  end
-
   test 'hold ineligibility by reason of z30 status code' do
     maker = ButtonMaker.new(@item, @oclc, @scan)
 
@@ -316,10 +308,5 @@ class ButtonMakerTest < ActiveSupport::TestCase
   test 'url for ill' do
     assert_equal('https://mit.worldcat.org/search?q=no%3A123456789',
                  @ButtonMaker.url_for_ill)
-  end
-
-  test 'url for special ill' do
-    assert_equal('https://library.mit.edu/shib/bd.cgi?url_ver=Z39.88-2004&amp;rft.isbn=0826213391',
-                 @ButtonMaker.url_for_special_ill)
   end
 end
