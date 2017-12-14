@@ -35,3 +35,7 @@
     </script>
   <% end %>
 </div>
+
+<% if Flipflop.enabled?(:debug) %>
+  <%= debug(@wtf_link) %>
+<% end %>

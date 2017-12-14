@@ -124,6 +124,23 @@ module RecordHelper
     sanitize Nokogiri::HTML.fragment(CGI.unescapeHTML(input)).to_s
   end
 
+  # Check fulltext_link to see if it is one we can proxy. We exclude aleph
+  # records with the assumption those should have SFX links if they are full
+  # text and most other stuff is going to be not useful. We _will_ miss some
+  # good links this way but it beats sending people to table of contents pages
+  # when they click a "full text" link.
+  def proxyable_link_with_unclear_usefulness?
+    proxyable?(@record.fulltext_link[:url]) && !aleph_record?
+  end
+
+  def proxyable?(link)
+    q = "<?xml version='1.0'?><proxy_url_request password='#{ENV['PROXY_PASSWORD']}'><urls><url>#{link}</url></urls></proxy_url_request>"
+    url = "http://libproxy.mit.edu/proxy_url?xml=#{q}"
+    response = HTTP.post(url)
+    xml_doc  = Nokogiri::XML(response)
+    xml_doc.xpath('//proxy_url_response/proxy_urls/url/@proxy').text == 'true'
+  end
+
   # link is a direct expiring pdflink
   def restricted_link?
     @record.fulltext_link[:expires] == true
@@ -166,6 +183,7 @@ module RecordHelper
   def excluded_subjects
     ENV['SCAN_EXCLUSIONS'].split(';')
   end
+
   def full_record_toggle_link
     link_text = if Flipflop.local_full_record?
                   'Turn off beta item detail view'
@@ -182,25 +200,35 @@ module RecordHelper
     # SFX links that we don't know for sure if we own; auth happens at SFX.
     # The check_online template requires an @sfx_link value to be set.
     if check_online?
+      @wtf_link = 'fulltext_link check_online (i.e. not in subscribed pool)'
       @sfx_link = @record.fulltext_link[:url]
       'availability_check_online'
 
     # Links is expiring / restricted so we can only show to affiliates.
     elsif guest_and_restricted_link?
+      @wtf_link = 'guest_and_restricted_link'
       'availability_restricted'
-
 
     # Restricted expiring link, but current user is allowed to access it.
     # We'll get a fresh version of the link and redirect them to it.
     elsif restricted_link?
+      @wtf_link = 'non-guest restricted_link'
       'availability_expiring'
 
     # Non restricted full text link (usually authenticated through SFX).
     elsif relevant_fulltext_link?(@record.fulltext_link)
+      @wtf_link = 'relevant_fulltext_link'
       'availability_full'
+
+    # non relevant link... maybe it's cool? Let's check
+    elsif proxyable_link_with_unclear_usefulness?
+      @wtf_link = 'non relevant full text but proxyable'
+      @proxy_link = "#{ENV['PROXY_PREFIX']}#{@record.fulltext_link[:url]}"
+      'availability_proxy'
 
     # When all else fails, make SFX sort it out.
     else
+      @wtf_link = '¯\_(ツ)_/¯'
       @sfx_link = SFXHandler.new(
         title: @record.eds_title,
         doc_number: clean_an,
