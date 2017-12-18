@@ -45,6 +45,8 @@ class ButtonMaker
     @z30status = @item.xpath('z30/z30-item-status').text
     # Yes, this excludes `z30/` on purpose.
     @z30status_code = @item.xpath('z30-item-status-code').text
+    @year = @item.xpath('z13/z13-year').text
+    @volume = @item.xpath('z30/z30-description').text
   end
 
   def all_buttons
@@ -189,7 +191,9 @@ class ButtonMaker
       call_number: @call_number,
       collection: @collection,
       library: @library,
-      title: @title
+      title: @title,
+      year: @year,
+      volume: @volume
     ).url_for_scan
   end
 
