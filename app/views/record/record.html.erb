@@ -33,3 +33,29 @@
     <%= render partial: "sidebar" %>
   </div>
 </div>
+
+<% content_for(:head) do %>
+  <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+
+  <meta name="DC.title" content="<%= @record.title %>" />
+  <meta name="DC.type" content="<%= @record.eds_publication_type %>" />
+  <meta name="DC.date" content="<%= @record.eds_publication_year %>" />
+
+  <% @record.eds_authors.each do |author| %>
+    <meta name="DC.creator" content="<%= author %>" />
+  <% end %>
+
+  <% if @record.eds_abstract.present? %>
+    <meta name="DCTERMS.abstract" content="<%= @record.eds_abstract %>" />
+  <% end %>
+
+  <% if @record.eds_source_title.present? %>
+    <meta name="DC.source" content="<%= @record.eds_source_title %>" />
+  <% end %>
+
+  <% if @record.eds_document_doi.present? %>
+    <meta name="DC.identifier" content="info:doi/<%= @record.eds_document_doi %>" />
+  <% end %>
+
+<% end %>
