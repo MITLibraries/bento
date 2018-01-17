@@ -6,7 +6,8 @@ class AlephTest < ActionDispatch::IntegrationTest
       get full_item_status_path, params: { id: 'MIT01001251550' }
       assert_response :success
       assert_select('.map-link') do |value|
-        assert(value.first[:href].include?('libraries.mit.edu/barker/'))
+        assert(value.first[:href].include?(
+          'libraries.mit.edu/locations/#!barker-library'))
       end
     end
   end
@@ -16,7 +17,8 @@ class AlephTest < ActionDispatch::IntegrationTest
       get full_item_status_path, params: { id: 'MIT01002519066' }
       assert_response :success
       assert_select('.map-link') do |value|
-        assert(value.first[:href].include?('libraries.mit.edu/dewey/'))
+        assert(value.first[:href].include?(
+          'libraries.mit.edu/locations/#!dewey-library'))
       end
     end
   end
@@ -26,7 +28,8 @@ class AlephTest < ActionDispatch::IntegrationTest
       get full_item_status_path, params: { id: 'MIT01001739356' }
       assert_response :success
       assert_select('.map-link') do |value|
-        assert(value.first[:href].include?('libraries.mit.edu/hayden/'))
+        assert(value.first[:href].include?(
+          'libraries.mit.edu/locations/#!hayden-library'))
       end
     end
   end
@@ -36,7 +39,9 @@ class AlephTest < ActionDispatch::IntegrationTest
       get full_item_status_path, params: { id: 'MIT01001975671' }
       assert_response :success
       assert_select('.map-link') do |value|
-        assert(value.last[:href].include?('libraries.mit.edu/archives/'))
+        assert(value.last[:href].include?(
+          'libraries.mit.edu/locations/#!institute-archives-special-collections'))
+
       end
     end
   end
@@ -46,7 +51,8 @@ class AlephTest < ActionDispatch::IntegrationTest
       get full_item_status_path, params: { id: 'MIT01001528789' }
       assert_response :success
       assert_select('.map-link') do |value|
-        assert(value.first[:href].include?('libraries.mit.edu/music/'))
+        assert(value.first[:href].include?(
+          'libraries.mit.edu/locations/#!lewis-music-library'))
       end
     end
   end
@@ -56,7 +62,8 @@ class AlephTest < ActionDispatch::IntegrationTest
       get full_item_status_path, params: { id: 'MIT01002403936' }
       assert_response :success
       assert_select('.map-link') do |value|
-        assert(value.first[:href].include?('libraries.mit.edu/rotch/'))
+        assert(value.first[:href].include?(
+          'libraries.mit.edu/locations/#!rotch-library'))
       end
     end
   end
@@ -66,7 +73,8 @@ class AlephTest < ActionDispatch::IntegrationTest
       get full_item_status_path, params: { id: 'MIT30000105498' }
       assert_response :success
       assert_select('.map-link') do |value|
-        assert(value.first[:href].include?('libraries.mit.edu/rotch/'))
+        assert(value.first[:href].include?(
+          'libraries.mit.edu/locations/#!rotch-library'))
       end
     end
   end
@@ -76,7 +84,8 @@ class AlephTest < ActionDispatch::IntegrationTest
       get full_item_status_path, params: { id: 'MIT01000171802' }
       assert_response :success
       assert_select('.map-link') do |value|
-        assert(value.first[:href].include?('libraries.mit.edu/lsa/'))
+        assert(value.first[:href].include?(
+          'libraries.mit.edu/locations/#!library-storage-annex'))
       end
     end
   end
