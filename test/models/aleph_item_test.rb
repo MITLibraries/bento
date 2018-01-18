@@ -48,29 +48,26 @@ class AlephItemTest < ActiveSupport::TestCase
       assert_equal('PS3515.U274 2001', status[0][:call_number])
       assert_equal(true, status[0][:available?])
       assert_equal('Available', status[0][:label])
-      assert_equal('v.1', status[0][:description])
+      assert_equal('v.16', status[0][:description])
     end
   end
 
-  test 'orders volumes in ascending order' do
+  test 'orders volumes in decending order' do
+    VCR.use_cassette('redefining realness') do
+      status = AlephItem.new.items('MIT01002415590', '123456789', 'true')
+      assert_equal('Barker Library', status[0][:library])
+      assert_equal('Dewey Library', status[1][:library])
+      assert_equal('Hayden Library', status[2][:library])
+      assert_equal('Lewis Music Library', status[3][:library])
+      assert_equal('Rotch Library', status[4][:library])
+    end
+  end
+
+  test 'orders libraries in alphabetical order' do
     VCR.use_cassette('realtime aleph volume') do
       status = AlephItem.new.items('MIT01001019412', '123456789', 'true')
-      assert_equal('v.1', status[0][:description])
-      assert_equal('v.16', status[15][:description])
-    end
-  end
-
-  # items are sorted so a single libraries holdings remain together
-  test 'items with multiple volumes in multiple libraries' do
-    # Art of Computer Programming, Knuth MIT01000239342
-    VCR.use_cassette('multiple libraries multiple volumes') do
-      status = AlephItem.new.items('MIT01000239342', '123456789', 'true')
-      assert_equal(['Barker Library', 'Barker Library', 'Barker Library',
-                    'Barker Library', 'Barker Library', 'Barker Library',
-                    'Barker Library', 'Barker Library', 'Barker Library',
-                    'Barker Library', 'Barker Library', 'Dewey Library',
-                    'Library Storage Annex', 'Library Storage Annex'],
-                   status.map { |x| x[:library] })
+      assert_equal('v.1', status[15][:description])
+      assert_equal('v.16', status[0][:description])
     end
   end
 
@@ -80,9 +77,12 @@ class AlephItemTest < ActiveSupport::TestCase
   test 'volumes with multiple digits sort by integer' do
     VCR.use_cassette('volumes with multiple digits') do
       status = AlephItem.new.items('MIT01000009192', '123456789', 'true')
+      # .reverse because we used to sort ascending and this was the easiest
+      # way to fix the test.
       assert_equal(['v.1', 'v.2', 'v.3', 'v.4', 'v.5', 'v.6', 'v.7', 'v.8',
                     'v.9', 'v.10', 'v.11', 'v.12', 'v.13', 'v.14', 'v.16',
-                    'v.17', 'v.18', 'v.19', 'v.20', 'v.21', 'v.22', 'v.24'],
+                    'v.17', 'v.18', 'v.19', 'v.20', 'v.21', 'v.22',
+                    'v.24'].reverse,
                    status.map { |x| x[:description] })
     end
   end

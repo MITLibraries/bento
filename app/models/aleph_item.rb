@@ -34,10 +34,16 @@ class AlephItem
   # are sorted within the library and not as a whole. Naive sorting of strings
   # will cause an order such as v.1 v.10 v.2. This sorts by the numbers in the
   # description to provde a human expected sort order.
+  # This sorts *first* by call number and *next* by library; this makes it
+  # easier for people to look through large journal holdings.
+  # Note that it swaps b <=>a for description but a<=>b for library. This lets
+  # us display dates/volumes in DESCENDING order (on the theory that people are
+  # most likely looking for more recent holdings), but libraries in ASCENDING
+  # order (since this is how humans expect alphabetization to work). 
   def custom_sort(items)
     items.sort do |a, b|
-      [a[:library], a[:description][/\d+/].to_i] <=>
-        [b[:library], b[:description][/\d+/].to_i]
+      [b[:description][/\d+/].to_i, a[:library]] <=>
+        [a[:description][/\d+/].to_i, b[:library]]
     end
   end
 
