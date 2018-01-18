@@ -16,13 +16,16 @@
 
 <%# using try instead of .present? due to how edsapi dynamically adds this
     element. It's either there or a no method error. %>
-<% if @record.try(:eds_extras_TOC) %>
+<% if @record.try(:eds_extras_NoteSerial) &&
+      summary_holdings(@record.eds_extras_NoteSerial).present? %>
+
   <div id="full-holdings" class="discovery-full-record-holdings-info">
     <h3 class="subtitle3">Holdings</h3>
-    <%# todo: this will need updating once Ebsco resolves a data mapping
-        problem described here
-        https://mitlibraries.atlassian.net/browse/DI-547 %>
-    <div class="holdings"><%= safe_output(@record.eds_extras_TOC) %></div>
+    <div class="holdings">
+      <% summary_holdings(@record.eds_extras_NoteSerial).each do |sh| %>
+        <%= safe_output(sh) %><br />
+      <% end %>
+    </div>
   </div>
 <% end %>
 
