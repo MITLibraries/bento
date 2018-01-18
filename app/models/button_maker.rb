@@ -158,7 +158,7 @@ class ButtonMaker
 
   def make_button_for_ill
     "<a class='btn button-secondary button-small' "\
-      "href='#{url_for_ill}'>Get non-MIT copy (3-4 days)</a>"
+      "href='#{url_for_ill}'>Request non-MIT copy (3-4 days)</a>"
   end
 
   def make_button_for_recall
