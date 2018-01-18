@@ -17,19 +17,19 @@ module AlephHelper
   # generates a link to an map for each library on campus
   def map_link(library)
     if library == 'Barker Library'
-      'https://libraries.mit.edu/barker/'
+      'https://libraries.mit.edu/locations/#!barker-library'
     elsif library == 'Dewey Library'
-      'https://libraries.mit.edu/dewey/'
+      'https://libraries.mit.edu/locations/#!dewey-library'
     elsif library == 'Hayden Library'
-      'https://libraries.mit.edu/hayden/'
+      'https://libraries.mit.edu/locations/#!hayden-library'
     elsif library == 'Institute Archives'
-      'https://libraries.mit.edu/archives/'
+      'https://libraries.mit.edu/locations/#!institute-archives-special-collections'
     elsif library == 'Lewis Music Library'
-      'https://libraries.mit.edu/music/'
+      'https://libraries.mit.edu/locations/#!lewis-music-library'
     elsif library == 'Rotch Library'
-      'https://libraries.mit.edu/rotch/'
+      'https://libraries.mit.edu/locations/#!rotch-library'
     elsif library == 'Library Storage Annex'
-      'https://libraries.mit.edu/lsa/'
+      'https://libraries.mit.edu/locations/#!library-storage-annex'
     end
   end
 end
