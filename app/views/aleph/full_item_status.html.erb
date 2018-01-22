@@ -1,16 +1,16 @@
 <p class="sr">Library locations: </p>
 
 <%# this conditionally opens two divs that are conditional closed below %>
-<% if @status.count > 5 %>
-<div class="expand-collapse-wrap is-collapsed">
-  <p class="expand-collapse-control"><button class="button">See more</button></p>
+<% if @status.count > 10 %>
+<div class="expand-collapse-wrap is-collapsed" data-xheight="800">
+  <p class="expand-collapse-control"><button class="button">Show more</button></p>
   <div class="expand-container">
 <% end %>
 
     <%= render partial: "list_local_locations" %>
 
 <%# this conditionally closes two divs that are conditional open above %>
-<% if @status.count > 5 %>
+<% if @status.count > 10 %>
   </div>
 </div>
 <script>Toggler();</script>
