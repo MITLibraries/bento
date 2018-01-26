@@ -157,6 +157,10 @@ class ButtonMaker
   end
 
   def make_button_for_ill
+    # It's possible to get this far but not be able to construct a valid ILL
+    # URL. This happens if the item is on order but we don't yet know its OCLC
+    # number.
+    return unless url_for_ill
     "<a class='btn button-secondary button-small' "\
       "href='#{url_for_ill}'>Request non-MIT copy (3-4 days)</a>"
   end

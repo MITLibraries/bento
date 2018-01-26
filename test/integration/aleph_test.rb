@@ -116,4 +116,14 @@ class AlephTest < ActionDispatch::IntegrationTest
       end
     end
   end
+
+  test 'handling of books on order' do
+    VCR.use_cassette('record: book is on order', allow_playback_repeats: true) do
+      get full_item_status_path, params: { id: 'MIT01002579423' }
+      # Make sure the metadata for the book does exist and is displayed...
+      assert_select 'span.library', text: 'Rotch Library'
+      # ...but there still isn't an action item.
+      assert_select '#full-avail a.btn', count: 0
+    end
+  end
 end
