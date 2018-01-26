@@ -120,4 +120,13 @@ class SearchTest < ActionDispatch::IntegrationTest
       end
     end
   end
+
+  test 'multiple item types can be displayed' do
+    VCR.use_cassette('why only us',
+                     allow_playback_repeats: true) do
+      get '/search/search_boxed?q=why+only+us&target=books'
+      assert_response :success
+      assert_select 'span.result-type', { text: 'Type: Book; eBook' }
+    end
+  end
 end

@@ -1,0 +1,399 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/UIDAuth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD"}'
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 26 Jan 2018 19:50:58 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '128'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+    http_version:
+  recorded_at: Fri, 26 Jan 2018 19:47:03 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=apiwhatnot
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 26 Jan 2018 19:50:58 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - aeb0399c-d732-4696-93eb-e4527762ded2
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-101853655"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '101'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+    http_version:
+  recorded_at: Fri, 26 Jan 2018 19:47:03 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&facetfilter=1,SourceType:Books,SourceType:eBooks,SourceType:Audiobooks,SourceType:Dissertations,SourceType:Music%20Scores,SourceType:Audio,SourceType:Videos&highlight=n&includefacets=n&pagenumber=1&query=why%20only%20us&resultsperpage=5&searchmode=all&sort=relevance&view=detailed
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 26 Jan 2018 19:51:00 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - b58cad34-3adb-4f5d-9991-adf054778e7b
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-101853655"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '26627'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,why+only+us&facetfilter=1,SourceType:Books,SourceType:eBooks,SourceType:Audiobooks,SourceType:Dissertations,SourceType:Music+Scores,SourceType:Audio,SourceType:Videos&expander=fulltext&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&autocorrect=n&view=detailed&resultsperpage=5&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"why
+        only us"},"RemoveAction":"removequery(1)"}],"FacetFiltersWithAction":[{"FilterId":1,"FacetValuesWithAction":[{"FacetValue":{"Id":"SourceType","Value":"Books"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Books)"},{"FacetValue":{"Id":"SourceType","Value":"eBooks"},"RemoveAction":"removefacetfiltervalue(1,SourceType:eBooks)"},{"FacetValue":{"Id":"SourceType","Value":"Audiobooks"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Audiobooks)"},{"FacetValue":{"Id":"SourceType","Value":"Dissertations"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Dissertations)"},{"FacetValue":{"Id":"SourceType","Value":"Music
+        Scores"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Music Scores)"},{"FacetValue":{"Id":"SourceType","Value":"Audio"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Audio)"},{"FacetValue":{"Id":"SourceType","Value":"Videos"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Videos)"}],"RemoveAction":"removefacetfilter(1)"}],"ExpandersWithAction":[{"Id":"fulltext","RemoveAction":"removeexpander(fulltext)"}]}},"SearchResult":{"Statistics":{"TotalHits":6132596,"TotalSearchTime":1851,"Databases":[{"Id":"eric","Label":"ERIC","Status":"0","Hits":11},{"Id":"egh","Label":"Environment
+        Index","Status":"0","Hits":1},{"Id":"inh","Label":"Inspec","Status":"0","Hits":9},{"Id":"ecn","Label":"EconLit","Status":"0","Hits":29},{"Id":"qth","Label":"LGBT
+        Life with Full Text","Status":"0","Hits":849},{"Id":"fmh","Label":"Gender
+        Studies Database","Status":"0","Hits":43},{"Id":"ibh","Label":"International
+        Bibliography of Theatre & Dance with Full Text","Status":"0","Hits":978},{"Id":"lxh","Label":"Library,
+        Information Science & Technology Abstracts","Status":"0","Hits":0},{"Id":"fah","Label":"Film
+        & Television Literature Index","Status":"0","Hits":0},{"Id":"ich","Label":"Index
+        Islamicus","Status":"0","Hits":0},{"Id":"hia","Label":"Historical Abstracts","Status":"0","Hits":0},{"Id":"8gh","Label":"GreenFILE","Status":"0","Hits":5},{"Id":"hma","Label":"Humanities
+        Abstracts (H.W. Wilson)","Status":"0","Hits":0},{"Id":"edsoao","Label":"Grove
+        Art Online","Status":"0","Hits":0},{"Id":"eue","Label":"Education Source","Status":"0","Hits":3517},{"Id":"hus","Label":"Humanities
+        Source","Status":"0","Hits":3243},{"Id":"edsomo","Label":"Grove Music Online","Status":"0","Hits":0},{"Id":"htm","Label":"History
+        of Science, Technology & Medicine","Status":"0","Hits":25},{"Id":"edshtl","Label":"HathiTrust","Status":"0","Hits":5774909},{"Id":"edsjsr","Label":"JSTOR
+        Journals","Status":"0","Hits":0},{"Id":"edsebo","Label":"Britannica Online","Status":"0","Hits":4},{"Id":"edseee","Label":"IEEE
+        Xplore Digital Library","Status":"0","Hits":6},{"Id":"edskan","Label":"Kanopy","Status":"0","Hits":56},{"Id":"edswbe","Label":"World
+        Bank eLibrary","Status":"0","Hits":167},{"Id":"rih","Label":"RILM Abstracts
+        of Music Literature (1967 to Present only)","Status":"0","Hits":28},{"Id":"agr","Label":"Agricola","Status":"0","Hits":14},{"Id":"lah","Label":"CAB
+        Abstracts","Status":"0","Hits":16},{"Id":"ufh","Label":"Communication & Mass
+        Media Complete","Status":"0","Hits":673},{"Id":"fyh","Label":"Women''s Studies
+        International","Status":"0","Hits":19},{"Id":"bth","Label":"Business Source
+        Complete","Status":"0","Hits":4104},{"Id":"mah","Label":"Music Index","Status":"0","Hits":0},{"Id":"a9h","Label":"Academic
+        Search Complete","Status":"0","Hits":1291},{"Id":"ahl","Label":"America: History
+        & Life","Status":"0","Hits":0},{"Id":"poh","Label":"Political Science Complete","Status":"0","Hits":1684},{"Id":"phl","Label":"Philosopher''s
+        Index","Status":"0","Hits":28},{"Id":"edswss","Label":"Social Sciences Citation
+        Index","Status":"0","Hits":3},{"Id":"edswsc","Label":"Science Citation Index","Status":"0","Hits":1},{"Id":"edswah","Label":"Arts
+        & Humanities Citation Index","Status":"0","Hits":0},{"Id":"edselp","Label":"ScienceDirect","Status":"0","Hits":85354},{"Id":"edsoso","Label":"Oxford
+        Scholarship Online","Status":"0","Hits":154},{"Id":"nlabk","Label":"Audiobook
+        Collection (EBSCOhost)","Status":"0","Hits":0},{"Id":"nlebk","Label":"eBook
+        Collection (EBSCOhost)","Status":"0","Hits":8872},{"Id":"rga","Label":"Readers''
+        Guide Abstracts (H.W. Wilson)","Status":"0","Hits":0},{"Id":"pix","Label":"Play
+        Index (H.W. Wilson)","Status":"0","Hits":0},{"Id":"cat00916a","Label":"MIT
+        Barton Catalog","Status":"0","Hits":376},{"Id":"edsasp","Label":"Alexander
+        Street Press","Status":"0","Hits":75},{"Id":"edo","Label":"Supplemental Index","Status":"0","Hits":42},{"Id":"edb","Label":"Complementary
+        Index","Status":"0","Hits":242834},{"Id":"edsoad","Label":"American National
+        Biography Online","Status":"0","Hits":0},{"Id":"edsodb","Label":"Oxford Dictionary
+        of National Biography","Status":"0","Hits":0},{"Id":"edsoro","Label":"Oxford
+        Reference","Status":"0","Hits":1},{"Id":"ant","Label":"Anthropology Plus","Status":"0","Hits":0},{"Id":"edsssb","Label":"Books24x7","Status":"0","Hits":3},{"Id":"aci","Label":"Applied
+        Science & Technology Source","Status":"0","Hits":0},{"Id":"cat01763a","Label":"MIT
+        Course Reserves","Status":"0","Hits":0},{"Id":"edscrc","Label":"Credo Reference","Status":"0","Hits":0},{"Id":"asu","Label":"Art
+        & Architecture Source","Status":"0","Hits":795},{"Id":"edsnmj","Label":"Naxos
+        Music Library Jazz","Status":"0","Hits":31},{"Id":"edsnol","Label":"Naxos
+        Music Library","Status":"0","Hits":808},{"Id":"ers","Label":"Research Starters","Status":"0","Hits":1339},{"Id":"edsvec","Label":"CQ
+        Press Voting & Elections Collection","Status":"0","Hits":0},{"Id":"edscoc","Label":"CQ
+        Press Congress Collection","Status":"0","Hits":0},{"Id":"edsspo","Label":"SpringerProtocols","Status":"0","Hits":0},{"Id":"edssmt","Label":"SpringerMaterials","Status":"0","Hits":0},{"Id":"msn","Label":"MathSciNet
+        via EBSCOhost","Status":"0","Hits":191},{"Id":"edsoec","Label":"OECD iLibrary","Status":"0","Hits":0},{"Id":"edsstc","Label":"SciTech
+        Connect","Status":"0","Hits":8},{"Id":"hev","Label":"European Views of the
+        Americas: 1493 to 1750","Status":"0","Hits":0},{"Id":"hsr","Label":"Humanities
+        & Social Sciences Index Retrospective: 1907-1984 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"edslex","Label":"LexisNexis
+        Academic: Law Reviews","Status":"0","Hits":0},{"Id":"edsjst","Label":"J-STAGE","Status":"0","Hits":0},{"Id":"edshol","Label":"HeinOnline","Status":"0","Hits":0},{"Id":"edshst","Label":"Henry
+        Stewart Talks","Status":"0","Hits":0},{"Id":"edsrsa","Label":"ReferenceUSA
+        - U.S. Businesses","Status":"0","Hits":0},{"Id":"edsktv","Label":"Kikuzo II
+        - 聞蔵Ⅱ","Status":"0","Hits":0},{"Id":"edsinv","Label":"IN VIVO","Status":"0","Hits":0},{"Id":"bvh","Label":"Avery
+        Index to Architectural Periodicals","Status":"0","Hits":0},{"Id":"fjh","Label":"The
+        New Republic Archive","Status":"0","Hits":0},{"Id":"nih","Label":"The Nation
+        Archive","Status":"0","Hits":0},{"Id":"apn","Label":"Alternative Press Index","Status":"0","Hits":0},{"Id":"edspdh","Label":"PsycARTICLES","Status":"0","Hits":0},{"Id":"edsarx","Label":"arXiv","Status":"0","Hits":0},{"Id":"air","Label":"Art
+        Index Retrospective (H.W. Wilson)","Status":"0","Hits":0},{"Id":"rgr","Label":"Readers''
+        Guide Retrospective: 1890-1982 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"bpr","Label":"Business
+        Periodicals Index Retrospective: 1913-1982 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"mdc","Label":"MEDLINE
+        Complete","Status":"0","Hits":0},{"Id":"edsdoj","Label":"Directory of Open
+        Access Journals","Status":"0","Hits":0},{"Id":"edsper","Label":"Persée","Status":"0","Hits":0},{"Id":"edsmbo","Label":"Marquis
+        Biographies Online","Status":"0","Hits":0},{"Id":"edsonp","Label":"OnePetro","Status":"0","Hits":0},{"Id":"edscao","Label":"CQ
+        Almanac Online Edition","Status":"0","Hits":0},{"Id":"edsmmd","Label":"ASM
+        Medical Materials Database","Status":"0","Hits":0}]},"Data":{"RecordFormat":"EP
+        Display","Records":[{"ResultId":1,"Header":{"DbId":"cat00916a","DbLabel":"MIT
+        Barton Catalog","An":"mit.002379994","RelevancyScore":"2590","PubType":"eBook","PubTypeId":"ebook"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.002379994&authtype=sso&custid=s8978330","ImageInfo":[{"Size":"thumb","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=S&Value=9780262034241"},{"Size":"medium","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9780262034241"}],"CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/002379994?","Name":"MIT
+        Barton Catalog Full Record (cat00916a)","Category":"libCatalog","Text":"View
+        catalog record","MouseOverText":"Go to Barton catalog to find this at the
+        MIT Libraries"},{"Url":"https:\/\/mit.worldcat.org\/search?q=no%3A927241552","Name":"WorldCat
+        customlink","Category":"ill","Text":"Get it in the library","MouseOverText":"Get
+        items from MIT & non-MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Why
+        only us : language and evolution \/ Robert C. Berwick and Noam Chomsky."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Berwick%2C+Robert+C%2E%22&quot;&gt;Berwick,
+        Robert C.&lt;\/searchLink&gt;, author"},{"Name":"TypePub","Label":"Publication
+        Type","Group":"TypPub","Data":"Book; eBook"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Language+acquisition+--+Psychological+aspects%22&quot;&gt;Language
+        acquisition -- Psychological aspects&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Human+evolution+--+Psychological+aspects%22&quot;&gt;Human
+        evolution -- Psychological aspects&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Minimalist+theory+%28Linguistics%29%22&quot;&gt;Minimalist
+        theory (Linguistics)&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Biolinguistics%22&quot;&gt;Biolinguistics&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Psycholinguistics%22&quot;&gt;Psycholinguistics&lt;\/searchLink&gt;"},{"Name":"Author","Label":"Other
+        Authors","Group":"Au","Data":"&lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Chomsky%2C+Noam%22&quot;&gt;Chomsky,
+        Noam&lt;\/searchLink&gt;, author"},{"Name":"URL","Label":"Online Access","Group":"URL","Data":"&lt;link
+        linkTarget=&quot;URL&quot; linkTerm=&quot;https:\/\/sfx.mit.edu\/sfx_local?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi\/fmt:kev:mtx:ctx&amp;ctx_ver=Z39.88-2004&amp;ctx_enc=info:ofi\/enc:UTF-8&amp;rfr_id=info:sid\/ALEPH:MIT01&amp;856_url=http%3A%2F%2Fmitpress.universitypressscholarship.com%2Fview%2F10.7551%2Fmitpress%2F9780262034241.001.0001%2Fupso-9780262034241&quot;
+        linkWindow=&quot;_blank&quot;&gt;Online Access - University Press Scholarship
+        Online&lt;\/link&gt;&lt;br \/&gt;&lt;link linkTarget=&quot;URL&quot; linkTerm=&quot;https:\/\/sfx.mit.edu\/sfx_local?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi\/fmt:kev:mtx:ctx&amp;ctx_ver=Z39.88-2004&amp;ctx_enc=info:ofi\/enc:UTF-8&amp;rfr_id=info:sid\/ALEPH:MIT01&amp;856_url=http%3A%2F%2Fmitpress-ebooks.mit.edu%2Fproduct%2Fonly-us&quot;
+        linkWindow=&quot;_blank&quot;&gt;Online Access - MIT Press&lt;\/link&gt;&lt;br
+        \/&gt;&lt;link linkTarget=&quot;URL&quot; linkTerm=&quot;https:\/\/sfx.mit.edu\/sfx_local?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi\/fmt:kev:mtx:ctx&amp;ctx_ver=Z39.88-2004&amp;ctx_enc=info:ofi\/enc:UTF-8&amp;rfr_id=info:sid\/ALEPH:MIT01&amp;856_url=http%3A%2F%2Fcognet.mit.edu%2Fbook%2Fwhy-only-us&quot;
+        linkWindow=&quot;_blank&quot;&gt;Online Access - MIT Cognet&lt;\/link&gt;"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Language
+        acquisition -- Psychological aspects","Type":"general"},{"SubjectFull":"Human
+        evolution -- Psychological aspects","Type":"general"},{"SubjectFull":"Minimalist
+        theory (Linguistics)","Type":"general"},{"SubjectFull":"Biolinguistics","Type":"general"},{"SubjectFull":"Psycholinguistics","Type":"general"}],"Titles":[{"TitleFull":"Why
+        only us : language and evolution.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Berwick,
+        Robert C."}}},{"PersonEntity":{"Name":{"NameFull":"Chomsky, Noam"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"2016"}],"Identifiers":[{"Type":"isbn-print","Value":"9780262034241"},{"Type":"isbn-print","Value":"0262034247"}],"Titles":[{"TitleFull":"Why
+        only us : language and evolution \/ Robert C. Berwick and Noam Chomsky.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Hayden
+        Library - Stacks","ShelfLocator":"P118.B475 2016"}]}}]},{"ResultId":2,"Header":{"DbId":"cat00916a","DbLabel":"MIT
+        Barton Catalog","An":"mit.002565878","RelevancyScore":"1856","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.002565878&authtype=sso&custid=s8978330","ImageInfo":[{"Size":"thumb","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=S&Value=9780231183482"},{"Size":"medium","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9780231183482"}],"CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/002565878?","Name":"MIT
+        Barton Catalog Full Record (cat00916a)","Category":"libCatalog","Text":"View
+        catalog record","MouseOverText":"Go to Barton catalog to find this at the
+        MIT Libraries"},{"Url":"https:\/\/mit.worldcat.org\/search?q=no%3A987677639","Name":"WorldCat
+        customlink","Category":"ill","Text":"Get it in the library","MouseOverText":"Get
+        items from MIT & non-MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Why
+        only art can save us : aesthetics and the absence of emergency \/ Santiago
+        Zabala."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Zabala%2C+Santiago%22&quot;&gt;Zabala,
+        Santiago&lt;\/searchLink&gt;, 1975-, author"},{"Name":"TypePub","Label":"Publication
+        Type","Group":"TypPub","Data":"Book"},{"Name":"Subject","Label":"Subject Terms","Group":"Su","Data":"&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Aesthetics%22&quot;&gt;Aesthetics&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Art+--+Philosophy%22&quot;&gt;Art
+        -- Philosophy&lt;\/searchLink&gt;"},{"Name":"SubjectPerson","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Heidegger%2C+Martin%2C+1889-1976%22&quot;&gt;Heidegger,
+        Martin, 1889-1976&lt;\/searchLink&gt;"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Heidegger,
+        Martin, 1889-1976","Type":"general"},{"SubjectFull":"Aesthetics","Type":"general"},{"SubjectFull":"Art
+        -- Philosophy","Type":"general"}],"Titles":[{"TitleFull":"Why only art can
+        save us : aesthetics and the absence of emergency.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Zabala,
+        Santiago"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"2017"}],"Identifiers":[{"Type":"isbn-print","Value":"9780231183482"},{"Type":"isbn-print","Value":"0231183488"}],"Titles":[{"TitleFull":"Why
+        only art can save us : aesthetics and the absence of emergency \/ Santiago
+        Zabala.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Rotch
+        Library - Stacks","ShelfLocator":"BH39.Z33 2017"}]}}]},{"ResultId":3,"Header":{"DbId":"edb","DbLabel":"Complementary
+        Index","An":"117247205","RelevancyScore":"1798","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edb&AN=117247205&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?ID=doi:10.1057\/978-1-137-58480-9_9&genre=book&atitle=&title=Why%20Only%20a%20God%20Can%20Save%20Us%3A%20Atonement.&isbn=9781137584793&volume=&issue=&date=20160101&aulast=Dillard,
+        Peter S.&spage=131&pages=131-146&sid=EBSCO:Complementary%20Index:117247205","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Why
+        Only a God Can Save Us: Atonement."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Dillard%2C+Peter+S%2E%22&quot;&gt;Dillard,
+        Peter S.&lt;\/searchLink&gt;"},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"Non-Metaphysical
+        Theology After Heidegger; 2016, p131-146, 16p"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Identifiers":[{"Type":"doi","Value":"10.1057\/978-1-137-58480-9_9"}],"Languages":[{"Code":"eng","Text":"English"}],"PhysicalDescription":{"Pagination":{"PageCount":"16","StartPage":"131"}},"Titles":[{"TitleFull":"Why
+        Only a God Can Save Us: Atonement.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Dillard,
+        Peter S."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Text":"2016","Type":"published","Y":"2016"}],"Identifiers":[{"Type":"isbn-print","Value":"9781137584793"}],"Titles":[{"TitleFull":"Non-Metaphysical
+        Theology After Heidegger","Type":"main"}]}}]}}}},{"ResultId":4,"Header":{"DbId":"htm","DbLabel":"History
+        of Science, Technology & Medicine","An":"XHMEB28508816-H","RelevancyScore":"1746","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=htm&AN=XHMEB28508816-H&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=book&atitle=&title=Why%20only%20us%3A%20language%20and%20evolution&isbn=9780262034241&volume=&issue=&date=20160101&aulast=&spage=&pages=&sid=EBSCO:History%20of%20Science%2C%20Technology%20%26%20Medicine:XHMEB28508816-H","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Why
+        only us: language and evolution"},{"Name":"OtherAuthors","Label":"Contributors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;ZT&quot; term=&quot;%22Chomsky, Noam%22&quot;&gt;Chomsky,
+        Noam&lt;\/searchLink&gt;"},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"&lt;searchLink
+        fieldCode=&quot;ZJ&quot; term=&quot;%22Why+only+us+%3A+language+and+evolution%22&quot;&gt;Why
+        only us : language and evolution&lt;\/searchLink&gt; 215 pages, 4 unnumbered
+        pages of plates : illustrations (some color) ; 21 cm"},{"Name":"Subject","Label":"Subjects","Group":"Su","Data":"&lt;link
+        linkTarget=&quot;resultList&quot; linkTerm=&quot;DE+%22Language+acquisition+--+Psychological+aspects%22&quot;&gt;Language
+        acquisition -- Psychological aspects&lt;\/link&gt;&lt;br \/&gt;&lt;link linkTarget=&quot;resultList&quot;
+        linkTerm=&quot;DE+%22Human+evolution+--+Psychological+aspects%22&quot;&gt;Human
+        evolution -- Psychological aspects&lt;\/link&gt;&lt;br \/&gt;&lt;link linkTarget=&quot;resultList&quot;
+        linkTerm=&quot;DE+%22Minimalist+theory+%28Linguistics%29%22&quot;&gt;Minimalist
+        theory (Linguistics)&lt;\/link&gt;&lt;br \/&gt;&lt;link linkTarget=&quot;resultList&quot;
+        linkTerm=&quot;DE+%22Biolinguistics%22&quot;&gt;Biolinguistics&lt;\/link&gt;&lt;br
+        \/&gt;&lt;link linkTarget=&quot;resultList&quot; linkTerm=&quot;DE+%22Psycholinguistics%22&quot;&gt;Psycholinguistics&lt;\/link&gt;"},{"Name":"Comment","Label":"Responsibility","Group":"Au","Data":"Robert
+        C. Berwick, Noam Chomsky"},{"Name":"CommentSource","Label":"Dataset Name","Group":"Src","Data":"Wellcome
+        Library for the History and Understanding of Medicine"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Subjects":[{"SubjectFull":"Language
+        acquisition -- Psychological aspects","Type":"general"},{"SubjectFull":"Human
+        evolution -- Psychological aspects","Type":"general"},{"SubjectFull":"Minimalist
+        theory (Linguistics)","Type":"general"},{"SubjectFull":"Biolinguistics","Type":"general"},{"SubjectFull":"Psycholinguistics","Type":"general"}],"Titles":[{"TitleFull":"Why
+        only us: language and evolution","Type":"main"}]},"BibRelationships":{"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"2016"}],"Identifiers":[{"Type":"isbn-print","Value":"9780262034241"},{"Type":"isbn-print","Value":"0262034247"}],"Titles":[{"TitleFull":"Why
+        only us : language and evolution","Type":"main"},{"TitleFull":"Why only us:
+        language and evolution","Type":"main"}]}}]}}}},{"ResultId":5,"Header":{"DbId":"nlebk","DbLabel":"eBook
+        Collection (EBSCOhost)","An":"745761","RelevancyScore":"1743","PubType":"eBook","PubTypeId":"ebook"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=nlebk&AN=745761&authtype=sso&custid=s8978330","ImageInfo":[{"Size":"thumb","Target":"http:\/\/rps2images.ebscohost.com\/rpsweb\/othumb?id=NL$745761$EPUB&s=r"},{"Size":"medium","Target":"http:\/\/rps2images.ebscohost.com\/rpsweb\/othumb?id=NL$745761$EPUB&s=d"}],"FullText":{"Links":[{"Type":"ebook-epub"}],"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=book&atitle=&title=Why%20We%20Make%20Mistakes%20%3A%20How%20We%20Look%20Without%20Seeing%2C%20Forget%20Things%20in%20Seconds%2C%20and%20Are%20All%20Pretty%20Sure%20WeAre%20Way%20Above%20Average&isbn=9780767928052&volume=&issue=&date=20090101&aulast=&spage=&pages=&sid=EBSCO:eBook%20Collection%20%28EBSCOhost%29:745761","Name":"SFX
+        link (not subscribed resources)","Category":"fullText","Text":"Check SFX for
+        availability","MouseOverText":"Check SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Why
+        We Make Mistakes : How We Look Without Seeing, Forget Things in Seconds, and
+        Are All Pretty Sure WeAre Way Above Average"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Hallinan%2C+Joseph+T%2E%22&quot;&gt;Hallinan,
+        Joseph T.&lt;\/searchLink&gt;"},{"Name":"TypePub","Label":"Resource Type","Group":"TypPub","Data":"eBook."},{"Name":"Abstract","Label":"Description","Group":"Ab","Data":"We
+        forget our passwords. We pay too much to go to the gym. We think we&#39;d
+        be happier if we lived in California (we wouldn&#39;t), and we think we should
+        stick with our first answer on tests (we shouldn&#39;t). Why do we make mistakes?
+        And could we do a little better?We human beings have design flaws. Our eyes
+        play tricks on us, our stories change in the retelling, and most of us are
+        fairly sure we&#39;re way above average. In Why We Make Mistakes, journalist
+        Joseph T. Hallinan sets out to explore the captivating science of human error—how
+        we think, see, remember, and forget, and how this sets us up for wholly irresistible
+        mistakes.In his quest to understand our imperfections, Hallinan delves into
+        psychology, neuroscience, and economics, with forays into aviation, consumer
+        behavior, geography, football, stock picking, and more. He discovers that
+        some of the same qualities that make us efficient also make us error prone.
+        We learn to move rapidly through the world, quickly recognizing patterns—but
+        overlooking details. Which is why thirteen-year-old boys discover errors that
+        NASA scientists miss—and why you can&#39;t find the beer in your refrigerator.
+        Why We Make Mistakes is enlivened by real-life stories—of weathermen whose
+        predictions are uncannily accurate and a witness who sent an innocent man
+        to jail—and offers valuable advice, such as how to remember where you&#39;ve
+        hidden something important. You&#39;ll learn why multitasking is a bad idea,
+        why men make errors women don&#39;t, and why most people think San Diego is
+        west of Reno (it&#39;s not).Why We Make Mistakes will open your eyes to the
+        reasons behind your mistakes—and have you vowing to do better the next time."},{"Name":"Subject","Label":"Subjects","Group":"Su","Data":"&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Failure+%28Psychology%29%22&quot;&gt;Failure
+        (Psychology)&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Errors%22&quot;&gt;Errors&lt;\/searchLink&gt;"},{"Name":"SubjectBISAC","Label":"Categories","Group":"Su","Data":"&lt;searchLink
+        fieldCode=&quot;ZK&quot; term=&quot;%22PSYCHOLOGY+%2F+Cognitive+Psychology+%26+Cognition%22&quot;&gt;PSYCHOLOGY
+        \/ Cognitive Psychology &amp; Cognition&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;ZK&quot; term=&quot;%22REFERENCE+%2F+Trivia%22&quot;&gt;REFERENCE
+        \/ Trivia&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;ZK&quot;
+        term=&quot;%22SCIENCE+%2F+Cognitive+Science%22&quot;&gt;SCIENCE \/ Cognitive
+        Science&lt;\/searchLink&gt;"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Classifications":[{"Code":"153","Scheme":"ddc","Type":"prePub"}],"Languages":[{"Code":"eng","Text":"English"}],"Subjects":[{"SubjectFull":"Failure
+        (Psychology)","Type":"general"},{"SubjectFull":"Errors","Type":"general"}],"Titles":[{"TitleFull":"Why
+        We Make Mistakes : How We Look Without Seeing, Forget Things in Seconds, and
+        Are All Pretty Sure WeAre Way Above Average","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Hallinan,
+        Joseph T."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"2009"},{"D":"08","M":"04","Type":"profile","Y":"2014"}],"Identifiers":[{"Type":"isbn-print","Value":"9780767928052"},{"Type":"isbn-electronic","Value":"9780767931472"}],"Titles":[{"TitleFull":"Why
+        We Make Mistakes : How We Look Without Seeing, Forget Things in Seconds, and
+        Are All Pretty Sure WeAre Way Above Average","Type":"main"}]}}]}}}}]}}}'
+    http_version:
+  recorded_at: Fri, 26 Jan 2018 19:47:05 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 26 Jan 2018 19:51:01 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 77f6792d-e6d6-4ae8-9d76-f4daf783e29b
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '20'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"IsSuccessful":"y"}'
+    http_version:
+  recorded_at: Fri, 26 Jan 2018 19:47:05 GMT
+recorded_with: VCR 3.0.3
