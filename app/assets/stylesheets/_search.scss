@@ -16,16 +16,29 @@
 
   .b-search-input {
     -webkit-appearance: none;
-    display: inline-block;
-    width: 80%;
+    width: 100%;
+    margin-bottom: .5rem;
     border: 1px solid $gray-l2;
     border-radius: 2px;
     padding: 6px 12px;
+
+    @media (min-width: $bp-screen-sm) {
+      display: inline-block;
+      width: 80%;
+      margin-bottom: 0;
+    }
   }
 
   .b-search-submit {
-    display: inline-block;
-    width: 18%;
+
+    @media (min-width: $bp-screen-sm) {
+      display: inline-block;
+      width: 18%;
+    }
+
+    .btn {
+      width: 100%;
+    }
   }
 }
 

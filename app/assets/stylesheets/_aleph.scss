@@ -35,13 +35,35 @@
     padding: .5rem 0;
   }
 
-  .location-wrap, 
-  .availability-wrap {
+  .location-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: .5rem;
   }
+
+  .availability-wrap {
+    margin-bottom: .5rem;
+
+    @media (min-width: $bp-screen-sm) {
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .availability-status, 
+  .availability-actions .btn {
+
+    @media (max-width: $bp-screen-sm) {
+      display: block;
+      margin: .5rem 0;
+    }
+  }
+
+
+
   
   .location-actions {
 

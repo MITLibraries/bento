@@ -6,6 +6,11 @@
 }
 
 .full-record {
+  margin-bottom: 2rem;
+
+  @media (min-width: $bp-screen-sm) {
+    margin-bottom: 0;
+  }
 
   .discovery-full-record-basic-info, 
   .discovery-full-record-availability, 
