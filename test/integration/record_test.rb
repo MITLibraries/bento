@@ -339,4 +339,12 @@ class RecordTest < ActionDispatch::IntegrationTest
          text: 'View in BartonPlus'}
     end
   end
+
+  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ metatags ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  test 'DC.type is mapped' do
+    VCR.use_cassette('record: article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_select('meta[name="DC.type"][content="Journal Article"]')
+    end
+  end
 end
