@@ -208,4 +208,30 @@ module RecordHelper
       'availability_check_online'
     end
   end
+
+  def map_record_type(record)
+    r_types = {
+      "Academic Journal" => "Journal Article",
+      "Magazines" => "Magazine Article",
+      "Trade Publications" => "Magazine Article",
+      "News" => "Newspaper Article",
+      "Books" => "Book",
+      "Reviews" => "Journal Article",
+      "Reports" => "Report",
+      "Conference Materials" => "Conference Paper",
+      "Dissertations/Theses" => "Thesis",
+      "Biographies" => "Book",
+      "Primary Source Documents" => "Manuscript",
+      "Government Documents" => "Report",
+      "Music Score" => "Document",
+      "Research Starters" => "Webpage",
+      "Electronic Resources" => "Webpage",
+      "Non-Print Resources" => "Webpage",
+      "Audio" => "Audio Recording",
+      "Videos" => "Video Recording",
+      "eBooks" => "Book",
+      "Maps" => "Map"
+    }
+    r_types[record.eds_publication_type] || record.eds_publication_type
+  end
 end

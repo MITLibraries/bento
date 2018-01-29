@@ -117,4 +117,14 @@ DOC
     assert_equal(true, scan?)
     ENV['SCAN_EXCLUSIONS'] = stored_env
   end
+
+  test 'maps EDS pub type to Zotero pub type' do
+    mock_record = stub(:eds_publication_type => 'Academic Journal')
+    assert_equal(map_record_type(mock_record), 'Journal Article')
+  end
+
+  test 'uses EDS pub type when no mapping exists' do
+    mock_record = stub(:eds_publication_type => 'Unhinged Lunacy')
+    assert_equal(map_record_type(mock_record), 'Unhinged Lunacy')
+  end
 end
