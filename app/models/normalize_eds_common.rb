@@ -84,8 +84,20 @@ class NormalizeEdsCommon
     @record['FullText']['Text']['Availability']&.to_i
   end
 
+  # Should be the same as in views/record/_basic_info; see DI-655.
+  # Unfortunately, while the EDS API makes it easy for us to get this in the
+  # full record view, here we're working with our own Frankenmodel and we have
+  # to rebuild the affordance.
   def type
-    @record.dig('Header', 'PubType')
+    typepub = @record['Items'].select do |hash|
+      hash['Name'] == 'TypePub'
+    end.first
+
+    if typepub.present? && typepub.key?('Data')
+      typepub['Data']                     # will get things like "Book; eBook"
+    else
+      @record.dig('Header', 'PubType')    # will get items with only one type
+    end
   end
 
   def authors
