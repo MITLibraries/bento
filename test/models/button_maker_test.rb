@@ -32,7 +32,6 @@ class ButtonMakerTest < ActiveSupport::TestCase
     assert_equal('Stacks', @ButtonMaker.instance_variable_get(:@collection))
   end
 
-  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Test item properties ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   test 'doc_number' do
     assert_equal('001019412', @ButtonMaker.instance_variable_get(:@doc_number))
   end
@@ -308,5 +307,13 @@ class ButtonMakerTest < ActiveSupport::TestCase
   test 'url for ill' do
     assert_equal('https://mit.worldcat.org/search?q=no%3A123456789',
                  @ButtonMaker.url_for_ill)
+  end
+
+  test 'ill button returns nil if ill url cannot be constructed' do
+    buttonmaker = ButtonMaker.new(@item, '', @scan)
+    # Check assumption: url should be nil by reason of the OCLC number being
+    # blank.
+    assert buttonmaker.url_for_ill.nil?
+    assert buttonmaker.make_button_for_ill.nil?
   end
 end
