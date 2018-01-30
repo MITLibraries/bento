@@ -23,7 +23,7 @@ class AlephItemTest < ActiveSupport::TestCase
       assert_equal('Stacks', status[0][:collection])
       assert_equal('PN1995.9.M86 M855 2010', status[0][:call_number])
       assert_equal(true, status[0][:available?])
-      assert_equal('Available', status[0][:label])
+      assert_equal('Available - In Library', status[0][:label])
       assert_equal('', status[0][:description])
     end
   end
@@ -35,7 +35,7 @@ class AlephItemTest < ActiveSupport::TestCase
       assert_equal('Service Desk', status[5][:collection])
       assert_equal('QA27.5.L44 2016a', status[5][:call_number])
       assert_equal(false, status[5][:available?])
-      assert_equal('Checked out', status[5][:label])
+      assert_equal('Not available - 03/02/2017 11:59 PM', status[5][:label])
       assert_equal('', status[5][:description])
     end
   end
@@ -47,7 +47,7 @@ class AlephItemTest < ActiveSupport::TestCase
       assert_equal('Stacks', status[0][:collection])
       assert_equal('PS3515.U274 2001', status[0][:call_number])
       assert_equal(true, status[0][:available?])
-      assert_equal('Available', status[0][:label])
+      assert_equal('Available - In Library', status[0][:label])
       assert_equal('v.16', status[0][:description])
     end
   end
@@ -92,7 +92,7 @@ class AlephItemTest < ActiveSupport::TestCase
   end
 
   test 'label' do
-    assert_equal('Available', @AlephTester.label(@item))
+    assert_equal('Available - In Library', @AlephTester.label(@item))
   end
 
   test 'library' do
@@ -110,5 +110,15 @@ class AlephItemTest < ActiveSupport::TestCase
       status = AlephItem.new.items('MIT01000296523', '02187052', 'false')
       assert_equal status.count, 990
     end
+  end
+
+  test 'reserve? for item not on reserve' do
+    refute @AlephTester.reserve?(@item)
+  end
+
+  test 'reserve? for item on reserve' do
+    collection = @item.at('z30/z30-collection')
+    collection.content = 'Reserve Stacks'
+    assert @AlephTester.reserve?(@item)
   end
 end

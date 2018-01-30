@@ -6,10 +6,6 @@ module AlephHelper
                             'DVD', 'DVDROM', 'USB DRIVE', 'VDISC', 'VIDEO')
   end
 
-  def reserve?(collection)
-    collection == 'Reserve Stacks'
-  end
-
   def archives?(library)
     library == 'Institute Archives'
   end

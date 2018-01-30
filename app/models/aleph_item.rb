@@ -15,6 +15,8 @@
 # efficiency winning out over a preferred application design.
 require 'open-uri'
 class AlephItem
+  include ProcessingLabeler
+
   # ex: https://walter.mit.edu/rest-dlf/record/MIT01000293592/items?view=full&key=SECRETKEY
   def items(id, oclc, scan)
     items = []
@@ -49,7 +51,7 @@ class AlephItem
 
   def process_item(item, oclc, scan)
     { library: library(item),
-      collection: item.xpath('z30/z30-collection').text,
+      collection: collection(item),
       call_number: item.xpath('z30/z30-call-no').text,
       available?: available?(item),
       label: label(item),
@@ -79,20 +81,38 @@ class AlephItem
      'Archives Reading Room Use Only']
   end
 
+  def collection(item)
+    item.xpath('z30/z30-collection').text
+  end
+
   def description(item)
     item.xpath('z30/z30-description').text
   end
 
+  # This will return something like "Available - $status" if the status is
+  # meaningful, or just "Available" if it isn't.
+  # The processing_label is provided by ProcessingLabeler; there's some work
+  # to be done in assuring data quality, so we encapsulate it there.
   def label(item)
+    [base_label(item),
+      processing_label(status(item), z30_item_process(item), reserve?(item))
+    ].compact.join(' - ')
+  end
+
+  def base_label(item)
     if available?(item)
       'Available'
     else
-      'Checked out'
+      'Not available'
     end
   end
 
   def library(item)
     item.xpath('z30/z30-sub-library').text
+  end
+
+  def reserve?(item)
+    collection(item) == 'Reserve Stacks'
   end
 
   def status(item)
@@ -106,6 +126,10 @@ class AlephItem
 
   def xml_status(id)
     Nokogiri::XML(open(status_url(id)))
+  end
+
+  def z30_item_process(item)
+    item.xpath('z30-item-process-status-code').text
   end
 end
 
