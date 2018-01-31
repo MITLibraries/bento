@@ -20,6 +20,17 @@ class NormalizeEdsTest < ActiveSupport::TestCase
     end
   end
 
+  test 'NoMethodError: private method select called for nil:NilClass' do
+    # https://rollbar.com/mit-libraries/bento/items/180/
+    VCR.use_cassette('popcorn books rollbar 180') do
+      searchterm = 'popcorn'
+      raw_query = SearchEds.new.search(searchterm, 'apiwhatnot',
+                                       ENV['EDS_BOOK_FACETS'])
+      query = NormalizeEds.new.to_result(raw_query, 'books', searchterm)
+      assert_equal(212_131, query['total'])
+    end
+  end
+
   test 'Handles NoMethodError: undefined method [] for nil:NilClass' do
     # https://rollbar.com/mit-libraries/bento/items/4/
     # The issue was the commas being treated delimiters
