@@ -22,6 +22,11 @@
 
 .discovery-full-record-availability-info {
 
+  .expand-collapse-wrap {
+    padding-bottom: 5rem;
+    font-size: 1.4rem;
+  }
+
   .list-local-locations {
     list-style-type: none;
     margin-top: 1rem;
@@ -53,7 +58,7 @@
     }
   }
 
-  .availability-status, 
+  .availability-status,
   .availability-actions .btn {
 
     @media (max-width: $bp-screen-sm) {
@@ -64,7 +69,7 @@
 
 
 
-  
+
   .location-actions {
 
     .btn {
@@ -80,6 +85,11 @@
       vertical-align: middle;
       font-size: 2rem;
     }
+  }
+
+  .show-even-more {
+    margin-top: 3rem;
+    font-weight: 600;
   }
 
 }

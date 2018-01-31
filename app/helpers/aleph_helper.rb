@@ -32,4 +32,17 @@ module AlephHelper
       'https://libraries.mit.edu/locations/#!library-storage-annex'
     end
   end
+
+  # special case for direct to aleph record links when starting from aleph data
+  # and not EDS data (i.e. when we are dealing with realtime info).
+  # Use the RecordHelper#local_record_source_url for most use cases.
+  def aleph_source_record(id)
+    if id.start_with?('MIT01')
+      "https://library.mit.edu/item/#{id.gsub('MIT01', '')}"
+    elsif id.start_with?('MIT30')
+      "https://library.mit.edu/res/#{id.gsub('MIT30', '')}"
+    else
+      raise 'Invalid Aleph ID provided. Cannot construct URL to Aleph.'
+    end
+  end
 end
