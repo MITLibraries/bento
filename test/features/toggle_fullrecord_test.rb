@@ -11,14 +11,14 @@ feature 'ToggleFullrecord' do
 
   test 'can toggle full record from app' do
     visit '/'
-    assert_text('Try our new beta item detail view')
+    assert_text('Try our beta "Details and requests" view')
 
-    click_on('Try our new beta item detail view')
-    refute_text('Try our new beta item detail view')
-    assert_text('Turn off beta item detail view')
+    click_on('Try our beta "Details and requests" view')
+    refute_text('Try our beta "Details and requests" view')
+    assert_text('Turn off beta "Details and requests" view')
 
-    click_on('Turn off beta item detail view')
-    assert_text('Try our new beta item detail view')
-    refute_text('Turn off beta item detail view')
+    click_on('Turn off beta "Details and requests" view')
+    assert_text('Try our beta "Details and requests" view')
+    refute_text('Turn off beta "Details and requests" view')
   end
 end

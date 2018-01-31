@@ -10,7 +10,7 @@ class FeatureController < ApplicationController
 
   def full_record_toggle
     session[:local_full_record] = session[:local_full_record].!
-    flash[:info] = "The beta item detail view is now #{full_record_message}."
+    flash[:info] = "The beta \"Details and requests\" view is now #{full_record_message}."
     redirect_back(fallback_location: root_path)
   end
 
