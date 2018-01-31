@@ -1,0 +1,376 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/UIDAuth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD"}'
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 31 Jan 2018 17:40:53 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '128'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+    http_version:
+  recorded_at: Wed, 31 Jan 2018 17:40:53 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?guest=n&profile=FAKE_EDS_PROFILE
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 31 Jan 2018 17:40:54 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - d8f7a2f8-b98d-4875-bd3d-f2cce1580893
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '1901068080'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '104'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+    http_version:
+  recorded_at: Wed, 31 Jan 2018 17:40:54 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Search?autosuggest=n&expander=fulltext&facetfilter=1,SourceType:Books,SourceType:eBooks,SourceType:Audiobooks,SourceType:Dissertations,SourceType:Music%20Scores,SourceType:Audio,SourceType:Videos&highlight=n&includefacets=n&pagenumber=1&query=popcorn&resultsperpage=5&searchmode=all&sort=relevance&view=detailed
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 31 Jan 2018 17:40:54 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 609f018e-bc32-4953-8633-374ced2ce7fd
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '1901068080'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '23013'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"SearchRequestGet":{"QueryString":"query-1=AND,popcorn&facetfilter=1,SourceType:Books,SourceType:eBooks,SourceType:Audiobooks,SourceType:Dissertations,SourceType:Music+Scores,SourceType:Audio,SourceType:Videos&expander=fulltext&sort=relevance&includefacets=n&searchmode=all&autosuggest=n&autocorrect=n&view=detailed&resultsperpage=5&pagenumber=1&highlight=n","SearchCriteriaWithActions":{"QueriesWithAction":[{"Query":{"BooleanOperator":"AND","Term":"popcorn"},"RemoveAction":"removequery(1)"}],"FacetFiltersWithAction":[{"FilterId":1,"FacetValuesWithAction":[{"FacetValue":{"Id":"SourceType","Value":"Books"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Books)"},{"FacetValue":{"Id":"SourceType","Value":"eBooks"},"RemoveAction":"removefacetfiltervalue(1,SourceType:eBooks)"},{"FacetValue":{"Id":"SourceType","Value":"Audiobooks"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Audiobooks)"},{"FacetValue":{"Id":"SourceType","Value":"Dissertations"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Dissertations)"},{"FacetValue":{"Id":"SourceType","Value":"Music
+        Scores"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Music Scores)"},{"FacetValue":{"Id":"SourceType","Value":"Audio"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Audio)"},{"FacetValue":{"Id":"SourceType","Value":"Videos"},"RemoveAction":"removefacetfiltervalue(1,SourceType:Videos)"}],"RemoveAction":"removefacetfilter(1)"}],"ExpandersWithAction":[{"Id":"fulltext","RemoveAction":"removeexpander(fulltext)"}]}},"SearchResult":{"Statistics":{"TotalHits":212131,"TotalSearchTime":223,"Databases":[{"Id":"eric","Label":"ERIC","Status":"0","Hits":3},{"Id":"egh","Label":"Environment
+        Index","Status":"0","Hits":1},{"Id":"inh","Label":"Inspec","Status":"0","Hits":2},{"Id":"ecn","Label":"EconLit","Status":"0","Hits":11},{"Id":"qth","Label":"LGBT
+        Life with Full Text","Status":"0","Hits":12},{"Id":"fmh","Label":"Gender Studies
+        Database","Status":"0","Hits":7},{"Id":"ibh","Label":"International Bibliography
+        of Theatre & Dance with Full Text","Status":"0","Hits":13},{"Id":"lxh","Label":"Library,
+        Information Science & Technology Abstracts","Status":"0","Hits":0},{"Id":"fah","Label":"Film
+        & Television Literature Index","Status":"0","Hits":0},{"Id":"ich","Label":"Index
+        Islamicus","Status":"0","Hits":0},{"Id":"hia","Label":"Historical Abstracts","Status":"0","Hits":0},{"Id":"8gh","Label":"GreenFILE","Status":"0","Hits":1},{"Id":"edsomo","Label":"Grove
+        Music Online","Status":"0","Hits":0},{"Id":"edsoao","Label":"Grove Art Online","Status":"0","Hits":0},{"Id":"hma","Label":"Humanities
+        Abstracts (H.W. Wilson)","Status":"0","Hits":0},{"Id":"eue","Label":"Education
+        Source","Status":"0","Hits":36},{"Id":"htm","Label":"History of Science, Technology
+        & Medicine","Status":"0","Hits":0},{"Id":"edshtl","Label":"HathiTrust","Status":"0","Hits":207114},{"Id":"edsjsr","Label":"JSTOR
+        Journals","Status":"0","Hits":0},{"Id":"edsebo","Label":"Britannica Online","Status":"0","Hits":3},{"Id":"hus","Label":"Humanities
+        Source","Status":"0","Hits":87},{"Id":"edswbe","Label":"World Bank eLibrary","Status":"0","Hits":0},{"Id":"edseee","Label":"IEEE
+        Xplore Digital Library","Status":"0","Hits":0},{"Id":"edskan","Label":"Kanopy","Status":"0","Hits":18},{"Id":"rih","Label":"RILM
+        Abstracts of Music Literature (1967 to Present only)","Status":"0","Hits":4},{"Id":"agr","Label":"Agricola","Status":"0","Hits":103},{"Id":"lah","Label":"CAB
+        Abstracts","Status":"0","Hits":24},{"Id":"ufh","Label":"Communication & Mass
+        Media Complete","Status":"0","Hits":1},{"Id":"fyh","Label":"Women''s Studies
+        International","Status":"0","Hits":6},{"Id":"bth","Label":"Business Source
+        Complete","Status":"0","Hits":59},{"Id":"mah","Label":"Music Index","Status":"0","Hits":0},{"Id":"a9h","Label":"Academic
+        Search Complete","Status":"0","Hits":6},{"Id":"ahl","Label":"America: History
+        & Life","Status":"0","Hits":0},{"Id":"poh","Label":"Political Science Complete","Status":"0","Hits":2},{"Id":"phl","Label":"Philosopher''s
+        Index","Status":"0","Hits":0},{"Id":"edswss","Label":"Social Sciences Citation
+        Index","Status":"0","Hits":0},{"Id":"edswsc","Label":"Science Citation Index","Status":"0","Hits":0},{"Id":"edswah","Label":"Arts
+        & Humanities Citation Index","Status":"0","Hits":0},{"Id":"edselp","Label":"ScienceDirect","Status":"0","Hits":1030},{"Id":"edsoso","Label":"Oxford
+        Scholarship Online","Status":"0","Hits":4},{"Id":"nlabk","Label":"Audiobook
+        Collection (EBSCOhost)","Status":"0","Hits":0},{"Id":"nlebk","Label":"eBook
+        Collection (EBSCOhost)","Status":"0","Hits":361},{"Id":"rga","Label":"Readers''
+        Guide Abstracts (H.W. Wilson)","Status":"0","Hits":1},{"Id":"pix","Label":"Play
+        Index (H.W. Wilson)","Status":"0","Hits":12},{"Id":"cat00916a","Label":"MIT
+        Barton Catalog","Status":"0","Hits":143},{"Id":"edsasp","Label":"Alexander
+        Street Press","Status":"0","Hits":610},{"Id":"edo","Label":"Supplemental Index","Status":"0","Hits":28},{"Id":"edb","Label":"Complementary
+        Index","Status":"0","Hits":2323},{"Id":"edsoad","Label":"American National
+        Biography Online","Status":"0","Hits":0},{"Id":"edsodb","Label":"Oxford Dictionary
+        of National Biography","Status":"0","Hits":0},{"Id":"edsoro","Label":"Oxford
+        Reference","Status":"0","Hits":31},{"Id":"ant","Label":"Anthropology Plus","Status":"0","Hits":0},{"Id":"edsssb","Label":"Books24x7","Status":"0","Hits":0},{"Id":"aci","Label":"Applied
+        Science & Technology Source","Status":"0","Hits":13},{"Id":"cat01763a","Label":"MIT
+        Course Reserves","Status":"0","Hits":0},{"Id":"edscrc","Label":"Credo Reference","Status":"0","Hits":0},{"Id":"asu","Label":"Art
+        & Architecture Source","Status":"0","Hits":2},{"Id":"edsnmj","Label":"Naxos
+        Music Library Jazz","Status":"0","Hits":5},{"Id":"edsnol","Label":"Naxos Music
+        Library","Status":"0","Hits":0},{"Id":"ers","Label":"Research Starters","Status":"0","Hits":52},{"Id":"edsvec","Label":"CQ
+        Press Voting & Elections Collection","Status":"0","Hits":0},{"Id":"edscoc","Label":"CQ
+        Press Congress Collection","Status":"0","Hits":0},{"Id":"edsspo","Label":"SpringerProtocols","Status":"0","Hits":0},{"Id":"edssmt","Label":"SpringerMaterials","Status":"0","Hits":0},{"Id":"msn","Label":"MathSciNet
+        via EBSCOhost","Status":"0","Hits":1},{"Id":"edsoec","Label":"OECD iLibrary","Status":"0","Hits":0},{"Id":"edsstc","Label":"SciTech
+        Connect","Status":"0","Hits":2},{"Id":"hev","Label":"European Views of the
+        Americas: 1493 to 1750","Status":"0","Hits":0},{"Id":"edsjst","Label":"J-STAGE","Status":"0","Hits":0},{"Id":"hsr","Label":"Humanities
+        & Social Sciences Index Retrospective: 1907-1984 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"edshol","Label":"HeinOnline","Status":"0","Hits":0},{"Id":"edshst","Label":"Henry
+        Stewart Talks","Status":"0","Hits":0},{"Id":"edslex","Label":"LexisNexis Academic:
+        Law Reviews","Status":"0","Hits":0},{"Id":"edsrsa","Label":"ReferenceUSA -
+        U.S. Businesses","Status":"0","Hits":0},{"Id":"edsinv","Label":"IN VIVO","Status":"0","Hits":0},{"Id":"edsktv","Label":"Kikuzo
+        II - 聞蔵Ⅱ","Status":"0","Hits":0},{"Id":"bvh","Label":"Avery Index to Architectural
+        Periodicals","Status":"0","Hits":0},{"Id":"fjh","Label":"The New Republic
+        Archive","Status":"0","Hits":0},{"Id":"nih","Label":"The Nation Archive","Status":"0","Hits":0},{"Id":"apn","Label":"Alternative
+        Press Index","Status":"0","Hits":0},{"Id":"edspdh","Label":"PsycARTICLES","Status":"0","Hits":0},{"Id":"edsarx","Label":"arXiv","Status":"0","Hits":0},{"Id":"air","Label":"Art
+        Index Retrospective (H.W. Wilson)","Status":"0","Hits":0},{"Id":"rgr","Label":"Readers''
+        Guide Retrospective: 1890-1982 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"bpr","Label":"Business
+        Periodicals Index Retrospective: 1913-1982 (H.W. Wilson)","Status":"0","Hits":0},{"Id":"mdc","Label":"MEDLINE
+        Complete","Status":"0","Hits":0},{"Id":"edsdoj","Label":"Directory of Open
+        Access Journals","Status":"0","Hits":0},{"Id":"edsper","Label":"Persée","Status":"0","Hits":0},{"Id":"edsmbo","Label":"Marquis
+        Biographies Online","Status":"0","Hits":0},{"Id":"edsonp","Label":"OnePetro","Status":"0","Hits":0},{"Id":"edscao","Label":"CQ
+        Almanac Online Edition","Status":"0","Hits":0},{"Id":"edsmmd","Label":"ASM
+        Medical Materials Database","Status":"0","Hits":0}]},"Data":{"RecordFormat":"EP
+        Display","Records":[{"ResultId":1,"Header":{"DbId":"cat00916a","DbLabel":"MIT
+        Barton Catalog","An":"mit.001739356","RelevancyScore":"2719","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001739356&authtype=sso&custid=s8978330","ImageInfo":[{"Size":"thumb","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=S&Value=9780752889351"},{"Size":"medium","Target":"http:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9780752889351"}],"CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/001739356?","Name":"MIT
+        Barton Catalog Full Record (cat00916a)","Category":"libCatalog","Text":"View
+        catalog record","MouseOverText":"Go to Barton catalog to find this at the
+        MIT Libraries"},{"Url":"https:\/\/mit.worldcat.org\/search?q=no%3A535493466","Name":"WorldCat
+        customlink","Category":"ill","Text":"Get it in the library","MouseOverText":"Get
+        items from MIT & non-MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn
+        : fifty years of rock &#39;n&#39; roll movies \/ Garry Mulholland."},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Mulholland%2C+Garry%22&quot;&gt;Mulholland,
+        Garry&lt;\/searchLink&gt;"},{"Name":"TypePub","Label":"Publication Type","Group":"TypPub","Data":"Book"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Rock+films+--+History+and+criticism%22&quot;&gt;Rock
+        films -- History and criticism&lt;\/searchLink&gt;"},{"Name":"Abstract","Label":"Abstract","Group":"Ab","Data":"Review:
+        &quot;Popcorn is no straight-forward &#39;best-of&#39; list; rather it is
+        part serious critical appreciation, part celebration of perceived B-movie
+        trash. Garry Mulholland is equally at home deconstructing the likes of Performance,
+        Gimme Shelter and Jubilee as celebrating Grease, Footloose and Glitter. Along
+        the way, classics of the genre are revisited. Turkeys are disinterred. Forgotten
+        gems are dusted down and re-examined; cult classics unearthed for a new generation.&quot;
+        &quot;The main aim is to get to the essence of the film and why it matters
+        ... or perhaps doesn&#39;t. In doing so, Popcorn reminds the reader why they
+        might have entered the cinema in the first place. As with Mulholland&#39;s
+        previous books on singles and albums, and as with all great criticism, the
+        reader will unquestionably return to the source galvanised, searching out
+        old, new and classic films on DVD.&quot;--BOOK JACKET."}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Rock
+        films -- History and criticism","Type":"general"}],"Titles":[{"TitleFull":"Popcorn
+        : fifty years of rock ''n'' roll movies.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Mulholland,
+        Garry"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"2010"}],"Identifiers":[{"Type":"isbn-print","Value":"9780752889351"},{"Type":"isbn-print","Value":"0752889354"}],"Titles":[{"TitleFull":"Popcorn
+        : fifty years of rock ''n'' roll movies \/ Garry Mulholland.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Hayden
+        Library - Stacks","ShelfLocator":"PN1995.9.M86 M855 2010"}]}}]},{"ResultId":2,"Header":{"DbId":"pix","DbLabel":"Play
+        Index (H.W. Wilson)","An":"68139893","RelevancyScore":"2059","PubType":"","PubTypeId":"unknown"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=pix&AN=68139893&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"}},"RecordInfo":{"BibRecord":{"BibEntity":{"Subjects":[{"SubjectFull":"Comedy","Type":"general"},{"SubjectFull":"Crime
+        and criminals","Type":"general"},{"SubjectFull":"Motion picture producers
+        and directors","Type":"general"},{"SubjectFull":"Motion pictures","Type":"general"},{"SubjectFull":"Satire","Type":"general"}],"Titles":[{"TitleFull":"Popcorn","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Elton,
+        Ben"}}}],"IsPartOfRelationships":[{"BibEntity":{"Titles":[{"TitleFull":"","Type":"main"}]}}]}}}},{"ResultId":3,"Header":{"DbId":"edshtl","DbLabel":"HathiTrust","An":"umn.31951d01197547d","RelevancyScore":"2056","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edshtl&AN=umn.31951d01197547d&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"http:\/\/hdl.handle.net\/2027\/umn.31951d01197547d?","Name":"EDS
+        - HathiTrust","Category":"fullText","Text":"View record in HathiTrust"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn
+        handbook"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Federal+Crop+Insurance+Corporation%2E+Product+Development+Branch%22&quot;&gt;Federal
+        Crop Insurance Corporation. Product Development Branch&lt;\/searchLink&gt;"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Crop+insurance%22&quot;&gt;Crop
+        insurance&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Crop+insurance+United+States+Handbooks%2C+manuals%2C+etc%22&quot;&gt;Crop
+        insurance United States Handbooks, manuals, etc&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Crop+insurance+claims%22&quot;&gt;Crop
+        insurance claims&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Crop+insurance+claims+United+States+Handbooks%2C+manuals%2C+etc%22&quot;&gt;Crop
+        insurance claims United States Handbooks, manuals, etc&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Popcorn%22&quot;&gt;Popcorn&lt;\/searchLink&gt;&lt;br
+        \/&gt;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Popcorn+Losses+United+States+Handbooks%2C+manuals%2C+etc%22&quot;&gt;Popcorn
+        Losses United States Handbooks, manuals, etc&lt;\/searchLink&gt;"},{"Name":"Identifiers","Label":"Original
+        Identifier","Group":"SrcInfo","Data":"sdr-umn002475380"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Crop
+        insurance","Type":"general"},{"SubjectFull":"Crop insurance United States
+        Handbooks, manuals, etc","Type":"general"},{"SubjectFull":"Crop insurance
+        claims","Type":"general"},{"SubjectFull":"Crop insurance claims United States
+        Handbooks, manuals, etc","Type":"general"},{"SubjectFull":"Popcorn","Type":"general"},{"SubjectFull":"Popcorn
+        Losses United States Handbooks, manuals, etc","Type":"general"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Federal
+        Crop Insurance Corporation. Product Development Branch"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1995"}],"Identifiers":[{"Type":"issn-locals","Value":"1"}],"Titles":[{"TitleFull":"Popcorn
+        handbook","Type":"main"}]}}]}}}},{"ResultId":4,"Header":{"DbId":"edshtl","DbLabel":"HathiTrust","An":"uiug.30112019286274","RelevancyScore":"2044","PubType":"Book","PubTypeId":"book"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=edshtl&AN=uiug.30112019286274&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"http:\/\/hdl.handle.net\/2027\/uiug.30112019286274?","Name":"EDS
+        - HathiTrust","Category":"fullText","Text":"View record in HathiTrust"}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Popcorn"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Brunson%2C+Arthur+M%2E%22&quot;&gt;Brunson,
+        Arthur M.&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;AR&quot;
+        term=&quot;%22Richardson%2C+Dewayne+L%2E%22&quot;&gt;Richardson, Dewayne L.&lt;\/searchLink&gt;"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Cookery+%28Popcorn%29%22&quot;&gt;Cookery
+        (Popcorn)&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22Popcorn%22&quot;&gt;Popcorn&lt;\/searchLink&gt;"},{"Name":"Identifiers","Label":"Original
+        Identifier","Group":"SrcInfo","Data":"sdr-uiuc973245"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"Cookery
+        (Popcorn)","Type":"general"},{"SubjectFull":"Popcorn","Type":"general"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Brunson,
+        Arthur M."}}},{"PersonEntity":{"Name":{"NameFull":"Richardson, Dewayne L."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"1958"}],"Identifiers":[{"Type":"issn-locals","Value":"1"}],"Titles":[{"TitleFull":"Popcorn","Type":"main"}]}}]}}}},{"ResultId":5,"Header":{"DbId":"lah","DbLabel":"CAB
+        Abstracts","An":"20133409620","RelevancyScore":"2034","PubType":"","PubTypeId":"unknown"},"PLink":"http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=lah&AN=20133409620&authtype=sso&custid=s8978330","FullText":{"Text":{"Availability":"0"},"CustomLinks":[{"Url":"https:\/\/sfx.mit.edu\/sfx_local?genre=bookitem&atitle=Effects%20of%20pericarp%20thickness%20of%20popcorn%20kernel%20on%20popping%20quality%20in%20cooked-oil%20popper.&title=Effects%20of%20pericarp%20thickness%20of%20popcorn%20kernel%20on%20popping%20quality%20in%20cooked-oil%20popper.&isbn=&volume=&issue=&date=2013&aulast=Srichomporn,
+        S.&spage=&pages=P50&sid=EBSCO:CAB%20Abstracts:20133409620","Name":"SFX link
+        (not subscribed resources)","Category":"fullText","Text":"Check SFX for availability","MouseOverText":"Check
+        SFX for availability."}]},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Effects
+        of pericarp thickness of popcorn kernel on popping quality in cooked-oil popper."},{"Name":"Author","Label":"Author(s)","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Srichomporn%2C%20S.%22&quot;&gt;Srichomporn,
+        S.&lt;\/searchLink&gt;; &lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Pothisoong%2C%20T.%22&quot;&gt;Pothisoong,
+        T.&lt;\/searchLink&gt;; &lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Boonsri%2C%20N.%22&quot;&gt;Boonsri,
+        N.&lt;\/searchLink&gt;; &lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Srichomporn%2C%20K.%22&quot;&gt;Srichomporn,
+        K.&lt;\/searchLink&gt;; &lt;searchLink fieldCode=&quot;AR&quot; term=&quot;%22Malumpong%2C%20C.%22&quot;&gt;Malumpong,
+        C.&lt;\/searchLink&gt;"},{"Name":"TitleSource","Label":"Source","Group":"Src","Data":"&lt;searchLink
+        fieldCode=&quot;SO&quot; term=&quot;%22Proceedings%20of%20the%2051st%20Kasetsart%20University%20Annual%20Conference%2C%20Bangkok%2C%20Thailand%2C%205-7%20February%202013%22&quot;&gt;Proceedings
+        of the 51st Kasetsart University Annual Conference, Bangkok, Thailand, 5-7
+        February 2013&lt;\/searchLink&gt;&#160;Bangkok:&#160;Kasetsart University,2013,&#160;P50"},{"Name":"Abstract","Label":"Abstract","Group":"Ab","Data":"Study
+        on the effect of pericarp thickness of popcorn kernel on popping quality in
+        cooked-oil popper were carried out at the National Corn and Sorghum Research
+        Center by using 19 popcorn varieties from 3 different sources namely; commercial
+        hybrid popcorn, experimental popcorn, and open pollinate popcorn. The experiment
+        aimed to identify the effects of pericarp thickness on popping quality of
+        popcorn for commercial products development. The result found that commercial
+        hybrid popcorn had the best popping quality with 180-240 micron of germinal
+        pericarp thickness, 202-228 micron of ab-germinal pericarp thickness, 34.9-39.3%
+        of amylose, 92-94% of popping percentage, 17.7-18.7 ml\/g of expansion volume,
+        3.1-3.4 ml\/grain of flake size, 14.4-14.9% grain moisture, large grain size,
+        and butterfly type with yellow flake. Pericarp thickness affected on all popping
+        quality traits and the positive correlation with percent of amylose, popping
+        percentage, expansion volume, and flake size but negative correlated with
+        percent grain moisture, and grain size with the correlation coefficient of
+        0.597, 0.370, 0.464, 0.781, 0.196, and -0.592 for germinal, pericarp and 0.528,
+        0.506, 0.660, 0.754, -0.187 and -0.334 for ab-germinal pericarp, respectively.
+        Generally pericarp of popcorn is covering and keeping the moisture within
+        grain. When popcorn grain was heated up to the suitable temperature the corn
+        will burst out and popping up."},{"Name":"Subset","Label":"Subject Subsets","Group":"Su","Data":"Human
+        Nutrition"},{"Name":"Subject","Label":"Subject Terms","Group":"Su","Data":"Descriptors:
+        &lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22amylose%22&quot;&gt;amylose&lt;\/searchLink&gt;;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22cooking%20oils%22&quot;&gt;cooking
+        oils&lt;\/searchLink&gt;;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22cultivars%22&quot;&gt;cultivars&lt;\/searchLink&gt;;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22feed%20grains%22&quot;&gt;feed grains&lt;\/searchLink&gt;;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22hybrids%22&quot;&gt;hybrids&lt;\/searchLink&gt;;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22kernels%22&quot;&gt;kernels&lt;\/searchLink&gt;;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22moisture%22&quot;&gt;moisture&lt;\/searchLink&gt;;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22pericarp%22&quot;&gt;pericarp&lt;\/searchLink&gt;;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22popcorn%22&quot;&gt;popcorn&lt;\/searchLink&gt;;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22popping%20quality%22&quot;&gt;popping
+        quality&lt;\/searchLink&gt;;&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22thickness%22&quot;&gt;thickness&lt;\/searchLink&gt;"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Code":"eng","Text":"English"}],"Titles":[{"TitleFull":"Effects
+        of pericarp thickness of popcorn kernel on popping quality in cooked-oil popper.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Srichomporn,
+        S."}}},{"PersonEntity":{"Name":{"NameFull":"Pothisoong, T."}}},{"PersonEntity":{"Name":{"NameFull":"Boonsri,
+        N."}}},{"PersonEntity":{"Name":{"NameFull":"Srichomporn, K."}}},{"PersonEntity":{"Name":{"NameFull":"Malumpong,
+        C."}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"","M":"","Type":"published","Y":"2013"}]}}]}}}}]}}}'
+    http_version:
+  recorded_at: Wed, 31 Jan 2018 17:40:54 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/endsession?sessiontoken=FakeSessiontoken
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Connection:
+      - close
+      Host:
+      - eds-api.ebscohost.com
+      User-Agent:
+      - http.rb/2.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - d77de931-fe86-4579-9549-fb6a60fe271d
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 17 Nov 2016 21:21:11 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"IsSuccessful":"y"}'
+    http_version:
+  recorded_at: Wed, 31 Jan 2018 17:40:55 GMT
+recorded_with: VCR 3.0.3

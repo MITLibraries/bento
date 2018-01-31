@@ -89,9 +89,11 @@ class NormalizeEdsCommon
   # full record view, here we're working with our own Frankenmodel and we have
   # to rebuild the affordance.
   def type
-    typepub = @record['Items'].select do |hash|
-      hash['Name'] == 'TypePub'
-    end.first
+    if @record['Items'].present?
+      typepub = @record['Items'].select do |hash|
+        hash['Name'] == 'TypePub'
+      end.first
+    end
 
     if typepub.present? && typepub.key?('Data')
       typepub['Data']                     # will get things like "Book; eBook"
