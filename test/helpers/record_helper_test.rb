@@ -127,4 +127,36 @@ DOC
     mock_record = stub(:eds_publication_type => 'Unhinged Lunacy')
     assert_equal(map_record_type(mock_record), 'Unhinged Lunacy')
   end
+
+  test 'no summary holdings in serial note' do
+    serial_note = 'yo I like yoyos yo.'
+    assert_equal([], summary_holdings(serial_note))
+  end
+
+  test 'just summary holdings in serial note' do
+    serial_note = '[s_h] do you like yoyos?'
+    assert_equal(['do you like yoyos?'], summary_holdings(serial_note))
+  end
+
+  test 'summary holdings and notes in serial note' do
+    serial_note = 'yo I like yoyos yo. [s_h] do you like yoyos?'
+    assert_equal(['do you like yoyos?'], summary_holdings(serial_note))
+  end
+
+  test 'mutiple summary holdings and notes in serial note' do
+    serial_note = 'yo I like yoyos yo. [s_h] do you like yoyos? [s_h] naptime'
+    assert_equal(['do you like yoyos?',
+                  'naptime'], summary_holdings(serial_note))
+  end
+
+  test 'mutiple summary holdings and no note in serial note' do
+    serial_note = '[s_h] do you like yoyos? [s_h] naptime'
+    assert_equal(['do you like yoyos?',
+                  'naptime'], summary_holdings(serial_note))
+  end
+
+  test 'nothing in serial note' do
+    serial_note = ''
+    assert_equal([], summary_holdings(serial_note))
+  end
 end

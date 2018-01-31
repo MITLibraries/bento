@@ -189,7 +189,6 @@ module RecordHelper
     elsif guest_and_restricted_link?
       'availability_restricted'
 
-
     # Restricted expiring link, but current user is allowed to access it.
     # We'll get a fresh version of the link and redirect them to it.
     elsif restricted_link?
@@ -233,5 +232,26 @@ module RecordHelper
       "Maps" => "Map"
     }
     r_types[record.eds_publication_type] || record.eds_publication_type
+  end
+
+  # Extract summary holdings from @record.eds_extras_NoteSerial
+  # see: https://mitlibraries.atlassian.net/browse/DI-547 for background.
+  # We need to handle cases where NoteSerial has no Summary Holdings, one
+  # summary holding after a Note, multiple summary holdings after a note,
+  # one or multiple summary holdings with no notes preceding.
+  # Summary Holdings are preceded by `[s_h]` in the string and may or may not
+  # exist.
+  def summary_holdings(note)
+    sh_count = note.scan('[s_h]').count
+    split_sh = note.split('[s_h]').map(&:strip)
+
+    if sh_count == split_sh.count
+      split_sh
+    elsif sh_count == split_sh.count - 1
+      split_sh.drop(1)
+    else
+      Rails.logger.warn("Summary Holdings concern: #{note}")
+      note
+    end
   end
 end
