@@ -117,6 +117,15 @@
   </div>
 <% end %>
 
+<%# using try instead of .present? due to how edsapi dynamically adds this
+      element. It's either there or a no method error. %>
+ <% if @record.try(:eds_extras_TOC) %>
+  <h3 class="section-title">Content notes</h3>
+  <div class="section-content">
+    <%= safe_output(@record.eds_extras_TOC) %>
+  </div>
+<% end %>
+
 <% if @record.eds_notes.present? %>
   <h3 class="section-title">Notes</h4>
   <div class="section-content">
