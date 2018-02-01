@@ -19,18 +19,18 @@ class AlephHelperTest < ActionView::TestCase
   end
 
   test 'aleph_source_record with MIT01 id' do
-    assert_equal('https://library.mit.edu/item/123456789',
-                 controller.aleph_source_record('MIT01123456789'))
+    assert_equal('https://library.mit.edu/F/?func=item-global&doc_library=MIT01&doc_number=123456789',
+                 controller.aleph_holdings_link('MIT01123456789'))
   end
 
   test 'aleph_source_record with MIT30 id' do
-    assert_equal('https://library.mit.edu/res/123456789',
-                 controller.aleph_source_record('MIT30123456789'))
+    assert_equal('https://library.mit.edu/F/?func=item-global&doc_library=MIT30&doc_number=123456789',
+                 controller.aleph_holdings_link('MIT30123456789'))
   end
 
   test 'aleph_source_record with bad id' do
     msg = assert_raises do
-      controller.aleph_source_record('YO123456789')
+      controller.aleph_holdings_link('YO123456789')
     end
     assert_equal(
       'Invalid Aleph ID provided. Cannot construct URL to Aleph.',
