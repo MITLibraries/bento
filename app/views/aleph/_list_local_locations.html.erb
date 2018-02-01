@@ -1,6 +1,6 @@
 <p class="sr">Library locations: </p>
 <ul class="list-local-locations">
-  <% @status.each do |s| %>
+  <% @status.take(99).each do |s| %>
     <li class="result-local-location">
       <%# Begin location wrap %>
       <div class="location-wrap">
@@ -53,3 +53,9 @@
     </li>
   <% end %>
 </ul>
+
+<% if @status.count > 99 %>
+<div class="show-even-more">
+  <p>Want to see even more? <a href="<%= aleph_source_record(params[:id]) %>">View in the catalog to sort and filter <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
+</div>
+<% end %>
