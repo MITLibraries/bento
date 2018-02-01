@@ -56,6 +56,6 @@
 
 <% if @status.count > 99 %>
 <div class="show-even-more">
-  <p>Want to see even more? <a href="<%= aleph_source_record(params[:id]) %>">View in the catalog to sort and filter <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
+  <p>Want to see even more? <a href="<%= aleph_holdings_link(params[:id]) %>">View in the catalog to sort and filter <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
 </div>
 <% end %>
