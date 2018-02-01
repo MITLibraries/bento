@@ -95,7 +95,8 @@ class ButtonMaker
       'Music CD/DVD',
       'Pass',
       'See Note Above',
-      'Two Week Loan'
+      'Two Week Loan',
+      'One Week Loan'
     ]
 
     # If it has a disqualifying status, you can't ILL it. If it doesn't, you're
