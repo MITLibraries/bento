@@ -129,13 +129,13 @@ class ButtonMakerTest < ActiveSupport::TestCase
   test 'eligible for hold' do
     maker = ButtonMaker.new(@item, @oclc, @scan)
     maker.instance_variable_set(:@status, 'In Library')
-    maker.instance_variable_set(:@requestable, true)
+    maker.instance_variable_set(:@hold_recallable, true)
     assert maker.eligible_for_hold?
 
     maker.instance_variable_set(:@status, 'MIT Reads')
     assert maker.eligible_for_hold?
 
-    maker.instance_variable_set(:@requestable, false)
+    maker.instance_variable_set(:@hold_recallable, false)
     refute maker.eligible_for_hold?
 
     maker.instance_variable_set(:@on_reserve, true)
@@ -151,7 +151,7 @@ class ButtonMakerTest < ActiveSupport::TestCase
 
     # Eligible for hold -> ineligible for ILL.
     maker.instance_variable_set(:@status, 'In Library')
-    maker.instance_variable_set(:@requestable, true)
+    maker.instance_variable_set(:@hold_recallable, true)
     refute maker.eligible_for_ill?
 
     maker.instance_variable_set(:@library, 'Hayden Library')
@@ -165,7 +165,7 @@ class ButtonMakerTest < ActiveSupport::TestCase
 
   test 'eligible for recall' do
     maker = ButtonMaker.new(@item, @oclc, @scan)
-    maker.instance_variable_set(:@requestable, true)
+    maker.instance_variable_set(:@hold_recallable, true)
     maker.instance_variable_set(:@status, 'Due sometime')
     assert maker.eligible_for_recall?
 
@@ -179,7 +179,7 @@ class ButtonMakerTest < ActiveSupport::TestCase
 
   test 'eligible for recall edge case' do
     maker = ButtonMaker.new(@item, @oclc, @scan)
-    maker.instance_variable_set(:@requestable, true)
+    maker.instance_variable_set(:@hold_recallable, true)
     maker.instance_variable_set(:@status, 'Missing')
     refute maker.eligible_for_recall?
   end
@@ -192,33 +192,33 @@ class ButtonMakerTest < ActiveSupport::TestCase
 
     # Now test z30 status codes that should yield ineligibility.
     maker.instance_variable_set(:@z30status_code, '04')
-    # We need to reset @requestable as it was set on object initialization, but
+    # We need to reset @hold_recallable as it was set on object initialization, but
     # the change to the z30 status will alter its expected value.
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_hold?
 
     maker.instance_variable_set(:@z30status_code, '06')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_hold?
 
     maker.instance_variable_set(:@z30status_code, '07')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_hold?
 
     maker.instance_variable_set(:@z30status_code, '08')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_hold?
 
     maker.instance_variable_set(:@z30status_code, '09')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_hold?
 
     maker.instance_variable_set(:@z30status_code, '11')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_hold?
 
     maker.instance_variable_set(:@z30status_code, '20')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_hold?
   end
 
@@ -231,31 +231,31 @@ class ButtonMakerTest < ActiveSupport::TestCase
 
     # Now test z30 status codes that should yield ineligibility.
     maker.instance_variable_set(:@z30status_code, '04')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_recall?
 
     maker.instance_variable_set(:@z30status_code, '06')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_recall?
 
     maker.instance_variable_set(:@z30status_code, '07')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_recall?
 
     maker.instance_variable_set(:@z30status_code, '08')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_recall?
 
     maker.instance_variable_set(:@z30status_code, '09')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_recall?
 
     maker.instance_variable_set(:@z30status_code, '11')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_recall?
 
     maker.instance_variable_set(:@z30status_code, '20')
-    maker.instance_variable_set(:@requestable, maker.requestable?)
+    maker.instance_variable_set(:@hold_recallable, maker.hold_recallable?)
     refute maker.eligible_for_recall?
   end
 
