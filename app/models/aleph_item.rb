@@ -39,7 +39,7 @@ class AlephItem
   # Note that it swaps b <=>a for description but a<=>b for library. This lets
   # us display dates/volumes in DESCENDING order (on the theory that people are
   # most likely looking for more recent holdings), but libraries in ASCENDING
-  # order (since this is how humans expect alphabetization to work). 
+  # order (since this is how humans expect alphabetization to work).
   def custom_sort(items)
     items.sort do |a, b|
       [b[:description][/\d+/].to_i, a[:library]] <=>
@@ -54,7 +54,14 @@ class AlephItem
       available?: available?(item),
       label: label(item),
       description: description(item),
-      buttons: ButtonMaker.new(item, oclc, scan).all_buttons }
+      buttons: all_buttons(item, oclc, scan) }
+  end
+
+  def all_buttons(item, oclc, scan)
+    [ButtonContact.new(item, oclc, scan).html_button,
+     ButtonHoldRecall.new(item, oclc, scan).html_button,
+     ButtonIll.new(item, oclc, scan).html_button,
+     ButtonScan.new(item, oclc, scan).html_button]
   end
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~ Properties of Aleph items ~~~~~~~~~~~~~~~~~~~~~~~~
