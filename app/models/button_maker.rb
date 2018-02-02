@@ -15,6 +15,8 @@
 # Refactor, but it just got too janky to deal with all the edge cases in our
 # circ logic - too hard to tell whether they'd all been dealt with, except by
 # pulling it all into a special-purpose, encapsulated place.
+# You probably don't want to, but when all else fails familiarize yourself with:
+# https://mitlibraries.atlassian.net/wiki/spaces/DI/pages/58654721/ButtonMaker+documentation
 class ButtonMaker
   def initialize(item, oclc, scan)
     @item = item
@@ -24,10 +26,10 @@ class ButtonMaker
     @options = %w(contact hold recall ill scan)
 
     # Properties of items. This must go *after* setting @item and @oclc, but
-    # *before* setting @requestable.
+    # *before* setting @hold_recallable.
     set_item_properties
 
-    @requestable = requestable?
+    @hold_recallable = hold_recallable?
   end
 
   def set_item_properties
@@ -68,7 +70,7 @@ class ButtonMaker
 
   def eligible_for_hold?
     return false if @on_reserve || @library == 'Physics Dept. Reading Room'
-    should_you_get_it_here?
+    should_you_get_it_here? && @hold_recallable
   end
 
   # Can you request that this item be ordered via ILL?
@@ -82,29 +84,30 @@ class ButtonMaker
   # or ILLiad. We prefer that patrons use BorrowDirect; WorldCat will send them
   # there preferentially if it is an option.
   def eligible_for_ill?
-    badz30 = [
-      '1 Day Loan',
-      '1 Week No Renew',
-      '1 Week No Renew Equip',
-      '2 Day Loan',
-      '24 Hour Loan',
-      '3 Day Loan',
-      'Audio Recorder',
-      'Due at Closing',
-      'Journal Loan',
-      'Music CD/DVD',
-      'Pass',
-      'See Note Above',
-      'Two Week Loan'
-    ]
-
     # If it has a disqualifying status, you can't ILL it. If it doesn't, you're
     # good to go.
     [
       should_you_get_it_here?,
       @status == 'Received',
-      badz30.include?(@z30status)
+      ineligible_for_ill_statuses.include?(@z30status)
     ].none?
+  end
+
+  # These z30 statuses are never allowed to request via ILL
+  def ineligible_for_ill_statuses
+    ['1 Day Loan',
+     '1 Week No Renew',
+     '1 Week No Renew Equip',
+     '2 Day Loan',
+     '24 Hour Loan',
+     '3 Day Loan',
+     'Audio Recorder',
+     'Due at Closing',
+     'Journal Loan',
+     'Music CD/DVD',
+     'Pass',
+     'See Note Above',
+     'Two Week Loan']
   end
 
   def eligible_for_recall?
@@ -120,7 +123,7 @@ class ButtonMaker
       @status.start_with?('Due'),
       @status.start_with?('In Transit'),
       recallable.include?(@status)
-    ].any? && @requestable
+    ].any? && @hold_recallable
   end
 
   # We do not allow patrons to request electronic scans of all materials.
@@ -260,7 +263,7 @@ class ButtonMaker
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Misc utilities ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   # Items with these process & item statuses may be put on hold/recalled.
-  def requestable?
+  def hold_recallable?
     return false if @on_reserve || @library == 'Physics Dept. Reading Room'
     [
       # Items with these status codes may be requested from any library,
@@ -288,7 +291,7 @@ class ButtonMaker
     # loan policies.
     [
       'In Library', 'MIT Reads', 'New Books Displ', 'On Display'
-    ].include?(@status) && @requestable
+    ].include?(@status)
   end
 
   def clean_oclc
