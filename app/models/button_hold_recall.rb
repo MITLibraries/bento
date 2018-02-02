@@ -2,19 +2,24 @@ class ButtonHoldRecall
   include ButtonMaker
 
   def html_button
-    return unless eligible?
-    if unavailable?
+    if eligible_recall?
       "<a class='btn button-subtle button-small' " \
         "href='#{url}'>Recall (7+ days)</a>"
-    else
+    elsif eligible_hold?
       "<a class='btn button-secondary button-small' " \
           "href='#{url}'>Place hold (1-2 days)</a>"
     end
   end
 
-  def eligible?
+  def eligible_hold?
     return false if @on_reserve || @library == 'Physics Dept. Reading Room'
     available_locally? && hold_recallable?
+  end
+
+  def eligible_recall?
+    return unless recallable_status?
+    return false if @on_reserve || @library == 'Physics Dept. Reading Room'
+    !eligible_hold? && hold_recallable?
   end
 
   def url
@@ -56,7 +61,7 @@ class ButtonHoldRecall
   # We have to actually enumerate recallable statuses. Note that we aren't
   # sure what all of these mean or if we even still use them, but this is how
   # Aleph is configured, so we're matching it.
-  def unavailable?
+  def recallable_status?
     [
       @status.start_with?('Due'),
       @status.start_with?('In Transit'),

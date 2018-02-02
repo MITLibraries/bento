@@ -6,9 +6,9 @@ class ButtonIll
     # It's possible to get this far but not be able to construct a valid ILL
     # URL. This happens if the item is on order but we don't yet know its OCLC
     # number.
-    return unless url_for_ill
+    return unless url
     "<a class='btn button-secondary button-small' "\
-      "href='#{url_for_ill}'>Request non-MIT copy (3-4 days)</a>"
+      "href='#{url}'>Request non-MIT copy (3-4 days)</a>"
   end
 
   # Can you request that this item be ordered via ILL?
@@ -31,7 +31,7 @@ class ButtonIll
     ].none?
   end
 
-  def url_for_ill
+  def url
     return unless @oclc_number.present?
     "https://mit.worldcat.org/search?q=no%3A#{@oclc_number}"
   end
