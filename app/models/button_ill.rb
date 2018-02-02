@@ -25,7 +25,7 @@ class ButtonIll
     # If it has a disqualifying status, you can't ILL it. If it doesn't, you're
     # good to go.
     [
-      available_locally?,
+      available_here_now?,
       @status == 'Received',
       ineligible_statuses.include?(@z30status)
     ].none?

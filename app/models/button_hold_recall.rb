@@ -13,7 +13,7 @@ class ButtonHoldRecall
 
   def eligible_hold?
     return false if @on_reserve || @library == 'Physics Dept. Reading Room'
-    available_locally? && hold_recallable?
+    available_here_now? && hold_recallable?
   end
 
   def eligible_recall?

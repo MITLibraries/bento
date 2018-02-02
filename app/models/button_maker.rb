@@ -44,17 +44,12 @@ module ButtonMaker
     @volume = @item.xpath('z30/z30-description').text
   end
 
-  # The following functions construct URLs needed for item availability actions.
-  # WE NEED THESE EVEN IF WE REFACTOR TO RELY MORE ON EBSCO RESULTS - they
-  # require Aleph data which is not known to EBSCO.
-  # These URLs will present authentication challenges for non-logged-in users,
-  # which will redirect appropriately upon success.
-
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Misc utilities ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  # We won't generally ILL items that fit these criteria - we want them to be
-  # placed on hold if possible.
-  def available_locally?
+  # This is used for both Hold/Recall and ILL purposes.
+  # We won't generally ILL or Recall items that fit these criteria as we want
+  # them to be placed on hold if possible.
+  def available_here_now?
     # You can request things that are in the library and have reasonable
     # loan policies.
     [
