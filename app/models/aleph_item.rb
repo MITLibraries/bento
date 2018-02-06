@@ -57,6 +57,10 @@ class AlephItem
       buttons: all_buttons(item, oclc, scan) }
   end
 
+  # Defines the buttons and button order that may display. Each button has
+  # logic that determines whether it will output HTML or not, so all we need to
+  # do here is call the #html_button method of each button we are interested in
+  # and the button will take care of the rest.
   def all_buttons(item, oclc, scan)
     [ButtonContact.new(item, oclc, scan).html_button,
      ButtonHoldRecall.new(item, oclc, scan).html_button,
