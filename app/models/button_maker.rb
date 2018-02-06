@@ -1,35 +1,19 @@
+# ButtonMaker is a shared set of methods used but ButtonX Classes to extract
+# necessary information from Aleph records. Each ButtonX Class provides an
+# `html_button` method that either returns `nil` or the html necessarry to
+# generate a button.
 
-# Given an item, the ButtonMaker does the following:
-# * checks its eligibility for all actions
-# * when eligible, creates the HTML for a button powering that action
-# all_buttons returns the list of buttons thus created.
-# This means that we don't have to do any complex logic in the HTML - we can
-# just iterate through all available buttons and display them.
-# Important features:
-# @options is a list of the names of each action that might be available for an
-# item.
-# For each action in options, the following functions must exist:
-# * eligible_for_#{action}? - returns true/false
-# * make_button_for_#{action} - returns HTML of relevant button
-# This should probably have related to the Great Not-Completed AlephObject
-# Refactor, but it just got too janky to deal with all the edge cases in our
-# circ logic - too hard to tell whether they'd all been dealt with, except by
-# pulling it all into a special-purpose, encapsulated place.
+# ButtonMaker is used by AlephItem to help it create html buttons with
+# actionable URLs for various Item requesting needs.
+
 # You probably don't want to, but when all else fails familiarize yourself with:
 # https://mitlibraries.atlassian.net/wiki/spaces/DI/pages/58654721/ButtonMaker+documentation
-class ButtonMaker
+module ButtonMaker
   def initialize(item, oclc, scan)
     @item = item
     @oclc = oclc
     @scan = scan
-    # The order of this list controls the order in which buttons will display.
-    @options = %w(contact hold recall ill scan)
-
-    # Properties of items. This must go *after* setting @item and @oclc, but
-    # *before* setting @hold_recallable.
     set_item_properties
-
-    @hold_recallable = hold_recallable?
   end
 
   def set_item_properties
@@ -51,242 +35,12 @@ class ButtonMaker
     @volume = @item.xpath('z30/z30-description').text
   end
 
-  def all_buttons
-    buttons = []
-    @options.each do |option|
-      eligibility_func = "eligible_for_#{option}?"
-      if method(eligibility_func).call
-        button_func = "make_button_for_#{option}"
-        buttons << method(button_func).call
-      end
-    end
-    buttons
-  end
-
-  # ~~~~~~~~~~~~~~~~ Eligibility determination functions ~~~~~~~~~~~~~~~~
-  def eligible_for_contact?
-    @library == 'Institute Archives'
-  end
-
-  def eligible_for_hold?
-    return false if @on_reserve || @library == 'Physics Dept. Reading Room'
-    should_you_get_it_here? && @hold_recallable
-  end
-
-  # Can you request that this item be ordered via ILL?
-  # Items must have an OCLC number to be ILLable. Items that are in the library
-  # now and can simply be borrowed, with reasonable loan terms, may not be
-  # ILLed. (Items that are in the library but have extremely short-term loan
-  # periods, such as two hours, are eligible for ILL in case patrons need them
-  # for a while. Those statuses are deliberately excluded from the `none?`
-  # status checker.
-  # Items eligible this way may ultimately be ordered via either BorrowDirect
-  # or ILLiad. We prefer that patrons use BorrowDirect; WorldCat will send them
-  # there preferentially if it is an option.
-  def eligible_for_ill?
-    # If it has a disqualifying status, you can't ILL it. If it doesn't, you're
-    # good to go.
-    [
-      should_you_get_it_here?,
-      @status == 'Received',
-      ineligible_for_ill_statuses.include?(@z30status)
-    ].none?
-  end
-
-  # These z30 statuses are never allowed to request via ILL
-  def ineligible_for_ill_statuses
-    ['1 Day Loan',
-     '1 Week No Renew',
-     '1 Week No Renew Equip',
-     '2 Day Loan',
-     '24 Hour Loan',
-     '3 Day Loan',
-     'Audio Recorder',
-     'Due at Closing',
-     'Journal Loan',
-     'Music CD/DVD',
-     'Pass',
-     'See Note Above',
-     'Two Week Loan']
-  end
-
-  def eligible_for_recall?
-    return false if @on_reserve || @library == 'Physics Dept. Reading Room'
-    # It's not enough to say `@status != 'In Library'`, because the item might
-    # have a status of 'On Order' or 'Missing', and those are not recallable.
-    # We have to actually enumerate recallable statuses. Note that we aren't
-    # sure what all of these mean or if we even still use them, but this is how
-    # Aleph is configured, so we're matching it.
-    recallable = ['Recalled', 'On Hold', 'Requested', 'Expected at $1',
-                  'Reshelving', 'Long Overdue', 'Claimed Returned']
-    [
-      @status.start_with?('Due'),
-      @status.start_with?('In Transit'),
-      recallable.include?(@status)
-    ].any? && @hold_recallable
-  end
-
-  # We do not allow patrons to request electronic scans of all materials.
-  # Sometimes this is a policy issue; sometimes it's a physical impossibility
-  # issue, like "item is not in the library right now" or "item is an audio
-  # tape".
-  def eligible_for_scan?
-    [
-      call_number_valid_for_scan?,
-      z30status_valid_for_scan?,
-      collection_valid_for_scan?,
-      status_valid_for_scan?,
-      library_valid_for_scan?,
-      !unscannable_standard?
-    ].all?
-  end
-
-  # ~~~~~~~~ Functions which return HTML for availability action buttons ~~~~~~~
-
-  # The following functions construct URLs needed for item availability actions.
-  # WE NEED THESE EVEN IF WE REFACTOR TO RELY MORE ON EBSCO RESULTS - they
-  # require Aleph data which is not known to EBSCO.
-  # These URLs will present authentication challenges for non-logged-in users,
-  # which will redirect appropriately upon success.
-
-  def make_button_for_contact
-    "<a class='btn button-secondary button-small' " \
-      "href='https://libraries.mit.edu/archives/'>Contact Us</a>"
-  end
-
-  def make_button_for_hold
-    "<a class='btn button-secondary button-small' " \
-      "href='#{url_for_hold}'>Place hold (1-2 days)</a>"
-  end
-
-  def make_button_for_ill
-    # It's possible to get this far but not be able to construct a valid ILL
-    # URL. This happens if the item is on order but we don't yet know its OCLC
-    # number.
-    return unless url_for_ill
-    "<a class='btn button-secondary button-small' "\
-      "href='#{url_for_ill}'>Request non-MIT copy (3-4 days)</a>"
-  end
-
-  def make_button_for_recall
-    # Yes, the hold URL and the recall URL are the same.
-    "<a class='btn button-subtle button-small' " \
-      "href='#{url_for_hold}'>Recall (7+ days)</a>"
-  end
-
-  def make_button_for_scan
-    "<a class='btn button-secondary button-small' " \
-      " href='#{url_for_scan}'>Request scan (2-3 days)</a>"
-  end
-
-  # ~~~~~~~~ Functions which create URLs for availability action buttons ~~~~~~~
-  def url_for_hold
-    queryarray = { func: 'item-hold-request',
-                   doc_library: 'MIT50',
-                   adm_doc_number: @doc_number,
-                   item_sequence: @item_sequence }
-
-    url = URI::HTTP.build(host: 'library.mit.edu',
-                          path: '/F',
-                          query: queryarray.to_query)
-    url.to_s
-  end
-
-  def url_for_scan
-    SFXHandler.new(
-      barcode: @barcode,
-      call_number: @call_number,
-      collection: @collection,
-      library: @library,
-      title: @title,
-      year: @year,
-      volume: @volume
-    ).url_for_scan
-  end
-
-  def url_for_ill
-    return unless @oclc_number.present?
-    "https://mit.worldcat.org/search?q=no%3A#{@oclc_number}"
-  end
-
-  # ~~~~~~~~ Utility functions needed to determine PDF scan eligibility ~~~~~~~~
-  def call_number_valid_for_scan?
-    !@call_number.start_with?('ARCH DRAW', 'ATLAS', 'AUDIO', 'AUDTAPE', 'CD',
-                              'CDROM', 'DSKETTE', 'DVD', 'DVDROM', 'FICHE',
-                              'FILM', 'FOLIO', 'INDEX', 'MAP', 'MFILM',
-                              'OVRSIZE', 'RECORD', 'REGULAR', 'SCORE', 'SMALL',
-                              'THESIS', 'USB DRIVE', 'VDISC', 'VIDEO')
-  end
-
-  def z30status_valid_for_scan?
-    [
-      '60 Day Loan',
-      'One Week Loan',
-      '1 Week No Renew',
-      'OCC 60',
-      'LSA 7',
-      'LSA 60',
-      'LSA Use Only'
-    ].include? @z30status
-  end
-
-  def collection_valid_for_scan?
-    [
-      'Stacks',
-      'Journal Collection',
-      'Off Campus Collection',
-      'Science Journals',
-      'Humanities Journals',
-      'Impulse Borrowing Display',
-      'Browsery',
-      'Graphic Novel Collection',
-      'Travel Collection'
-    ].include? @collection
-  end
-
-  def status_valid_for_scan?
-    ['In Library', 'New Books Displ'].include?(@status)
-  end
-
-  def library_valid_for_scan?
-    ['Physics Dept. Reading Room', 'Rotch Visual Collections',
-     'Institute Archives'].exclude? @library
-  end
-
-  # We don't scan certain engineering standards. See
-  # https://wikis.mit.edu/confluence/x/5igEBw for a link to the relevant
-  # spreadsheet.
-  def unscannable_standard?
-    @scan == 'false'
-  end
-
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Misc utilities ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  # Items with these process & item statuses may be put on hold/recalled.
-  def hold_recallable?
-    return false if @on_reserve || @library == 'Physics Dept. Reading Room'
-    [
-      # Items with these status codes may be requested from any library,
-      # except the Annex.
-      %w(01 03 05 12 19 21).include?(@z30status_code) &&
-        @library != 'Library Storage Annex',
-
-      # Items with status code 23 may be requested from only some libraries.
-      @z30status_code == '23' && ['Barker Library',
-                                  'Dewey Library',
-                                  'Hayden Library',
-                                  'Rotch Library',
-                                  'Library Storage Annex'].include?(@library),
-
-      # The Annex is special.
-      %w(13 14 15 56 57).include?(@z30status_code) &&
-        @library == 'Library Storage Annex'
-    ].any?
-  end
-
-  # We won't generally ILL items that fit these criteria - we want them to be
-  # placed on hold if possible.
-  def should_you_get_it_here?
+  # This is used for both Hold/Recall and ILL purposes.
+  # We won't generally ILL or Recall items that fit these criteria as we want
+  # them to be placed on hold if possible.
+  def available_here_now?
     # You can request things that are in the library and have reasonable
     # loan policies.
     [
