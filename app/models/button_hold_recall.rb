@@ -1,3 +1,7 @@
+# Creates a Button with an actionable URL for items that can be either put on
+# Hold or Recalled. Either one or zero of these options if ever valid (never
+# both). (i.e. it's okay if an item can't be held or recalled, but it is never
+# okay for an item to both holdable and recallabe).
 class ButtonHoldRecall
   include ButtonMaker
 

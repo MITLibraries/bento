@@ -1,3 +1,4 @@
+# Creates a Button with an actionable URL for items that can be ILLed.
 class ButtonIll
   include ButtonMaker
 

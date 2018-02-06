@@ -1,20 +1,11 @@
+# ButtonMaker is a shared set of methods used but ButtonX Classes to extract
+# necessary information from Aleph records. Each ButtonX Class provides an
+# `html_button` method that either returns `nil` or the html necessarry to
+# generate a button.
 
-# Given an item, the ButtonMaker does the following:
-# * checks its eligibility for all actions
-# * when eligible, creates the HTML for a button powering that action
-# all_buttons returns the list of buttons thus created.
-# This means that we don't have to do any complex logic in the HTML - we can
-# just iterate through all available buttons and display them.
-# Important features:
-# @options is a list of the names of each action that might be available for an
-# item.
-# For each action in options, the following functions must exist:
-# * eligible_for_#{action}? - returns true/false
-# * make_button_for_#{action} - returns HTML of relevant button
-# This should probably have related to the Great Not-Completed AlephObject
-# Refactor, but it just got too janky to deal with all the edge cases in our
-# circ logic - too hard to tell whether they'd all been dealt with, except by
-# pulling it all into a special-purpose, encapsulated place.
+# ButtonMaker is used by AlephItem to help it create html buttons with
+# actionable URLs for various Item requesting needs.
+
 # You probably don't want to, but when all else fails familiarize yourself with:
 # https://mitlibraries.atlassian.net/wiki/spaces/DI/pages/58654721/ButtonMaker+documentation
 module ButtonMaker

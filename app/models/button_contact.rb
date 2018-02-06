@@ -1,3 +1,5 @@
+# Creates a Button with an actionable URL for items that require contacting
+# a library for more information.
 class ButtonContact
   include ButtonMaker
 
