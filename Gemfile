@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.1'
+ruby '2.4.2'
 
 gem 'actionpack-action_caching'
 gem 'devise'
@@ -30,7 +30,7 @@ gem 'uglifier'
 group :production do
   gem 'dalli'
   gem 'memcachier'
-  gem 'pg'
+  gem 'pg', '0.21'
 end
 
 group :development, :test do
@@ -51,7 +51,6 @@ group :test do
   gem 'coveralls', require: false
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
-  gem 'minitest-reporters'
   gem 'mocha'
   gem 'simplecov', require: false
   gem 'vcr'
