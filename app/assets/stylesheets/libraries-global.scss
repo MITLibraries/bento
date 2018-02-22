@@ -1,4 +1,4 @@
-/* last updated 1/22/2018 - commit 6449ff3  */
+/* last updated 2/22/2018 - commit ff36bd9  */
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -350,7 +350,7 @@ hr {
   }
 }
 
-.wrap-header .header-slim .logo-mit-lib svg {
+.wrap-header .header-slim .logo-mit-lib img {
   height: 35px;
 }
 
@@ -381,7 +381,7 @@ hr {
 }
 
 .wrap-outer-content {
-  background-color: #f3f3f3;
+  background-color: #fff;
   color: #111;
 }
 
@@ -984,13 +984,16 @@ form .error .hint {
   color: #fafafa;
 }
 
+.wrap-header {
+  background: #111 url('vi-shape7-tp.svg') no-repeat 0 65%;
+}
 .wrap-header .logo-mit-lib {
   display: inline-block;
   fill: #fafafa;
 }
-.wrap-header .logo-mit-lib svg {
+.wrap-header .logo-mit-lib img {
   width: auto;
-  height: auto;
+  max-height: 44px;
   max-width: 100%;
 }
 .wrap-header .link-logo-mit .logo-mit {
@@ -1027,11 +1030,14 @@ form .error .hint {
 }
 
 .wrap-outer-footer {
-  background-color: #333;
+  background-color: #111;
   color: #fafafa;
   font-size: 1.2rem;
 }
 
+.wrap-footer {
+  background: #111 url("vi-shape7-tp.svg") no-repeat 10% center;
+}
 .wrap-footer a {
   color: #ccc;
 }
@@ -1047,10 +1053,10 @@ form .error .hint {
 .wrap-footer .logo-mit-lib {
   fill: #fafafa;
 }
-.wrap-footer .logo-mit-lib svg {
-  width: auto;
-  height: auto;
+.wrap-footer .logo-mit-lib img {
+  max-height: 60px;
   max-width: 100%;
+  vertical-align: baseline;
 }
 .wrap-footer .wrap-usergroups {
   font-size: 1.4rem;
@@ -1079,7 +1085,7 @@ form .error .hint {
 }
 
 .wrap-outer-footer-institute {
-  background-color: #595959;
+  background-color: #333;
   font-size: 1rem;
   color: #767676;
 }

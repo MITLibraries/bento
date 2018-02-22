@@ -1,4 +1,4 @@
-// from style guide - last updated 1/22/2018 - commit 271b76d 
+// from style guide - last updated 2/22/2018 - commit ff36bd9 
 function Toggler() {
   // set up all expand buttons
   var b = $( '.expand-collapse-wrap .button' );
