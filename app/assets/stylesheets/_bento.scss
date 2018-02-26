@@ -4,6 +4,20 @@
 // #GENERAL PAGE LAYOUT AND SIMPLE ELEMENTS
 // ----------------------------------------
 
+.wrap-outer-content {
+  background-color: #fcfcfc; // almost white but gives shape to result boxes
+}
+
+// .wrap-header and .wrap-footer are using asset pipeline versions of the svg
+// here to allow them to be served in production.
+.wrap-header {
+  background: #111 image-url("vi-shape7-tp.svg") no-repeat 0 65%;
+}
+
+.wrap-footer {
+  background: #111 image-url("vi-shape7-tp.svg") no-repeat 10% center;
+}
+
 //extra large spacing - for homepage search box
 .space-wrap {
   margin-top: 5%;
@@ -40,7 +54,7 @@
 .nudge-fullrecord-toggle {
   font-size: $fs-small;
   font-weight: $fw-bold;
-  
+
   a {
     color: $orange;
   }
