@@ -320,6 +320,13 @@ class RecordTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'multiple item types can be shown in document info section' do
+    VCR.use_cassette('record: multiple item types', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.002379994' }
+      assert_select 'ul.list-moreinfo li', text: /Book; eBook/
+    end
+  end
+
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ sidebar ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   test 'marc link is shown' do
     VCR.use_cassette('record: book', allow_playback_repeats: true) do
