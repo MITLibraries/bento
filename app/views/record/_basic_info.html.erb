@@ -44,14 +44,9 @@
   <% end %>
 <%# Includes Books; is catchall for other types not specified in wireframes %>
 <% else %>
-  <% if @record.eds_publication_type.present? %>
+  <% if publication_type(@record).present? %>
     <span class="record-type"><span class="sr">Type: </span>
-      <%# We could use @record.eds_publication_type, but that returns only one
-          value even when there are several item types. In particular, we
-          would end up displaying only 'eBook' when something is available in
-          both electronic and print form. This seems to provide a semicolon-
-          delimited list of item types. %>
-      <%= @record.get_item_data({name:'TypePub'}) %>
+      <%= publication_type(@record) %>
     </span>
   <% end %>
   <% if @record.eds_publication_year.present? %>

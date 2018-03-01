@@ -254,4 +254,18 @@ module RecordHelper
       note
     end
   end
+
+  # We could use @record.eds_publication_type, but that returns only one
+  # value even when there are several item types. In particular, we
+  # would end up displaying only 'eBook' when something is available in
+  # both electronic and print form. The TypePub element seems to provide a
+  # semicolon-delimited list of item types. However, it isn't always present,
+  # and when it isn't we should default to @record.eds_publication_type.
+  def publication_type(record)
+    if @record.get_item_data({name:'TypePub'}).present?
+      @record.get_item_data({name:'TypePub'})
+    else
+      @record.eds_publication_type
+    end
+  end
 end

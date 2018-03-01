@@ -6,9 +6,9 @@
 
 <h3 class="section-title">More information</h3>
 <ul class="list-moreinfo">
-  <% if @record.eds_publication_type.present? %>
+  <% if publication_type(@record).present? %>
     <li>
-      <span class="label">Document type:</span> <%= @record.eds_publication_type %>
+      <span class="label">Document type:</span> <%= publication_type(@record) %>
     </li>
   <% end %>
 
