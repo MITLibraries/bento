@@ -19,8 +19,8 @@
 <% if @record.try(:eds_extras_NoteSerial) &&
       summary_holdings(@record.eds_extras_NoteSerial).present? %>
 
-  <div id="full-holdings" class="discovery-full-record-holdings-info">
-    <h3 class="subtitle3">Holdings</h3>
+  <div id="full-holdings" class="wrap-holdings discovery-full-record-holdings-info">
+    <h3 class="subtitle3">Summary of volumes that MIT owns</h3>
     <div class="holdings">
       <% summary_holdings(@record.eds_extras_NoteSerial).each do |sh| %>
         <%= safe_output(sh) %><br />
