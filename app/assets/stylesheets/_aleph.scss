@@ -20,11 +20,18 @@
   background: linear-gradient(to bottom, $transparent-w 0%, $gray-l4 50%);
 }
 
-.discovery-full-record-availability-info {
+.wrap-availability {
 
   .expand-collapse-wrap {
     padding-bottom: 5rem;
     font-size: 1.4rem;
+  }
+
+  .availability-sort-info {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+    text-align: right;
+    font-style: italic;
   }
 
   .list-local-locations {

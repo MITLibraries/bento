@@ -29,12 +29,15 @@
   </div>
 <% end %>
 
-<%# This div id is used by the javascript - don't move or change it.) %>
-<div id="full-avail" class="discovery-full-record-availability-info">
-  <% if local_record? %>
-    Loading availability information <i class="fa fa-spinner fa-spin"></i>
-    <script>
-      RealtimeItem( "<%= clean_an %>", "<%= @record.eds_document_oclc %>", "<%= scan? %>" );
-    </script>
-  <% end %>
+<div class="wrap-availability">
+  <p class="availability-sort-info">items sorted by publication date</p>
+  <%# This div id is used by the javascript - don't move or change it.) %>
+  <div id="full-avail" class="discovery-full-record-availability-info">
+    <% if local_record? %>
+      Loading availability information <i class="fa fa-spinner fa-spin"></i>
+      <script>
+        RealtimeItem( "<%= clean_an %>", "<%= @record.eds_document_oclc %>", "<%= scan? %>" );
+      </script>
+    <% end %>
+  </div>
 </div>
