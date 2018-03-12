@@ -1,4 +1,4 @@
-<h3 class="section-title">Availability</h3>
+<h3 class="section-title sr">Availability</h3>
 <% if @record.fulltext_link.present? %>
   <div class="link-fulltext">
     <%# We used to have logic here that decided which HTML to display. However,
@@ -19,8 +19,8 @@
 <% if @record.try(:eds_extras_NoteSerial) &&
       summary_holdings(@record.eds_extras_NoteSerial).present? %>
 
-  <div id="full-holdings" class="discovery-full-record-holdings-info">
-    <h3 class="subtitle3">Holdings</h3>
+  <div id="full-holdings" class="wrap-holdings discovery-full-record-holdings-info">
+    <h3 class="subtitle3">Summary of volumes that MIT owns</h3>
     <div class="holdings">
       <% summary_holdings(@record.eds_extras_NoteSerial).each do |sh| %>
         <%= safe_output(sh) %><br />
@@ -29,12 +29,15 @@
   </div>
 <% end %>
 
-<%# This div id is used by the javascript - don't move or change it.) %>
-<div id="full-avail" class="discovery-full-record-availability-info">
-  <% if local_record? %>
-    Loading availability information <i class="fa fa-spinner fa-spin"></i>
-    <script>
-      RealtimeItem( "<%= clean_an %>", "<%= @record.eds_document_oclc %>", "<%= scan? %>" );
-    </script>
-  <% end %>
+<div class="wrap-availability">
+  <p class="availability-sort-info">items sorted by publication date</p>
+  <%# This div id is used by the javascript - don't move or change it.) %>
+  <div id="full-avail" class="discovery-full-record-availability-info">
+    <% if local_record? %>
+      Loading availability information <i class="fa fa-spinner fa-spin"></i>
+      <script>
+        RealtimeItem( "<%= clean_an %>", "<%= @record.eds_document_oclc %>", "<%= scan? %>" );
+      </script>
+    <% end %>
+  </div>
 </div>

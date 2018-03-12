@@ -4,7 +4,8 @@ class ButtonScan
 
   def html_button
     return unless eligible?
-    "<a class='btn button-secondary button-small' " \
+    "<a class='btn button-secondary button-small'" \
+    " title='You can request articles or chapters of books'" \
     " href='#{url}'>Request scan (2-3 days)</a>"
   end
 
