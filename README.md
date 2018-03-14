@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/MITLibraries/bento.svg?branch=master)](https://travis-ci.org/MITLibraries/bento)
 [![Coverage Status](https://coveralls.io/repos/github/MITLibraries/bento/badge.svg?branch=master)](https://coveralls.io/github/MITLibraries/bento?branch=master)
-[![Dependency Status](https://gemnasium.com/badges/github.com/MITLibraries/bento.svg)](https://gemnasium.com/github.com/MITLibraries/bento)
+[![Depfu](https://badges.depfu.com/badges/4e708126f48dfe5edf3b09b1dbc2854b/overview.svg)](https://depfu.com/github/MITLibraries/bento)
 [![Code Climate](https://codeclimate.com/github/MITLibraries/bento/badges/gpa.svg)](https://codeclimate.com/github/MITLibraries/bento)
 
 # MIT Bento
