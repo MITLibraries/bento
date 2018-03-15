@@ -15,3 +15,7 @@
 </div>
 <script>Toggler();</script>
 <% end %>
+
+<% if @status.count > 1 %>
+  <script>$(".availability-sort-info").removeClass("is-hidden");</script>
+<% end %>
