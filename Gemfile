@@ -52,7 +52,6 @@ group :test do
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
   gem 'mocha'
-  gem 'simplecov', require: false
   gem 'vcr'
   gem 'webmock'
 end
