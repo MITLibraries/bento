@@ -187,6 +187,10 @@ hr {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f23074', endColorstr='#544b8c',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
+
+  .wrap-header {
+    background: none;
+  }
 }
 
 .hd-1, .wrap-content h1,
