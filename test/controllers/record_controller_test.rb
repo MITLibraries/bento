@@ -67,7 +67,7 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: bananas', allow_playback_repeats: true) do
       get record_url('cat00916a', 'mit.001492509')
       assert_equal(@controller.send(:cache_path),
-                   'http://www.example.com/record/cat00916a/mit.001492509?guest=true&source=cat00916a')
+                   'http://www.example.com/record/cat00916a/mit.001492509?guest=true&pride=false&source=cat00916a')
       assert_response :success
     end
   end
@@ -79,8 +79,28 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
                              .returns('18.42.101.101')
       get record_url('cat00916a', 'mit.001492509')
       assert_equal(@controller.send(:cache_path),
-                   'http://www.example.com/record/cat00916a/mit.001492509?guest=false&source=cat00916a')
+                   'http://www.example.com/record/cat00916a/mit.001492509?guest=false&pride=false&source=cat00916a')
       assert_response :success
+    end
+  end
+
+  test 'cache_path for pride disabled' do
+    VCR.use_cassette('record: bananas', allow_playback_repeats: true) do
+      get record_url('cat00916a', 'mit.001492509')
+      assert_equal(@controller.send(:cache_path),
+                   'http://www.example.com/record/cat00916a/mit.001492509?guest=true&pride=false&source=cat00916a')
+      assert_response :success
+    end
+  end
+
+  test 'cache_path for pride enabled' do
+    Flipflop.stub(:enabled?, true) do
+      VCR.use_cassette('record: bananas', allow_playback_repeats: true) do
+        get record_url('cat00916a', 'mit.001492509')
+        assert_equal(@controller.send(:cache_path),
+                     'http://www.example.com/record/cat00916a/mit.001492509?guest=true&pride=true&source=cat00916a')
+        assert_response :success
+      end
     end
   end
 end
