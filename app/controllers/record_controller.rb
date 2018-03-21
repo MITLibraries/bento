@@ -47,7 +47,8 @@ class RecordController < ApplicationController
       guest: helpers.guest?,
       action: action_name,
       an: @record_an,
-      source: @record_source
+      source: @record_source,
+      pride: Flipflop.enabled?(:pride)
     )
   end
 
