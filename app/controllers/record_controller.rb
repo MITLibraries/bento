@@ -43,13 +43,13 @@ class RecordController < ApplicationController
   # record cache is guest dependent because it stores rendered HTML, and some
   # of that rendered HTML is different for guests.
   def cache_path
-    url_for(
-      guest: helpers.guest?,
+    base = url_for(
       action: action_name,
       an: @record_an,
-      source: @record_source,
-      pride: Flipflop.enabled?(:pride)
+      db_source: @record_source,
     )
+
+    "#{base}/#{helpers.guest?}/#{Flipflop.enabled?(:pride)}"
   end
 
   private
