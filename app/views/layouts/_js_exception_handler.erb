@@ -3,7 +3,32 @@
   <script>
   var _rollbarConfig = {
       accessToken: "<%= ENV['JS_EXCEPTION_LOGGER_KEY'] %>",
+      // This should suppress errors from third-party scripts:
+      // https://docs.rollbar.com/docs/reduce-noisy-javascript-errors#section-whitelist-specific-domains
+      hostWhiteList: ['lib.mit.edu', 'herokuapp.com'],
       captureUncaught: true,
+      checkIgnore: function(isUncaught, args, payload) {
+        // This suppresses an iOS specific error not relevant to our code.
+        if (window.__gCrWeb) {
+          return true;
+
+        // This suppresses a firefox-specific error not relevant to our code.
+        } else {
+          // Extract ['body']['message'] for all bodies in telemetry.
+          messages = telemetry.map(function(t) {
+            if ('body' in t) {
+              return t['body']['message']
+            }
+          })
+          // If the message contains __firefox__ do not report it.
+          if (messages.some(function(element) {
+              element.indexOf('__firefox__') > -1;
+            })) {
+            return true;
+          }
+        }
+        return false;
+      },
       captureUnhandledRejections: true,
       payload: {
           environment: "<%= Rails.env %>"
