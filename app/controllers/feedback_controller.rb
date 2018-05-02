@@ -6,7 +6,7 @@ class FeedbackController < ApplicationController
 
   def submit
     FeedbackMailer.feedback_email(params[:feedback_message],
-                                  request.remote_ip, params[:previous_page],
+                                  helpers.guest?, params[:previous_page],
                                   params[:contact_email], params[:contact_name],
                                   request.env['HTTP_USER_AGENT']).deliver_now
   end

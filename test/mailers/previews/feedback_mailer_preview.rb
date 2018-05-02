@@ -2,9 +2,11 @@
 class FeedbackMailerPreview < ActionMailer::Preview
   def feedback_email
     msg = 'This is a message. <p>It is important</p>'
-    ip = '0.0.0.0'
+    guest = true
     page = 'http://example.com/search/thing?q=popcorn%20rules'
     ua = 'Netscape 4.0'
-    FeedbackMailer.feedback_email(msg, ip, page, ua)
+    contact_name = 'Firsty Lastoson'
+    contact_email = 'yo@example.com'
+    FeedbackMailer.feedback_email(msg, guest, page, contact_email, contact_name, ua)
   end
 end
