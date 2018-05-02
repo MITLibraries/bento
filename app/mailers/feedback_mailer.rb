@@ -1,6 +1,10 @@
 class FeedbackMailer < ApplicationMailer
-  def feedback_email(msg, ip, page, contact_email, contact_name, ua)
-    @ip = ip
+  def feedback_email(msg, guest, page, contact_email, contact_name, ua)
+    @guest = if guest
+               'Non-MIT IP Detected'
+             else
+               'MIT IP Detected'
+             end
     @msg = msg
     @page = page
     @ua = ua
