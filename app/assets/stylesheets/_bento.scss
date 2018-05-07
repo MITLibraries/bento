@@ -81,6 +81,12 @@
   .wc-link {
     display: block;
   }
+
+  .advsearch-desc {
+    font-size: $fs-smallish;
+    color: $gray;
+    margin: 1rem 0 0 0;
+  }
 }
 
 .results-more {
