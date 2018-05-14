@@ -26,13 +26,13 @@
 <div id="hint"></div>
 
 <div class="gridband layout-2c">
-  <%= render partial: "placeholders", locals: { heading: 'Books and media', id: 'books_content', description: "Books, ebooks, audio books, music, and videos at MIT. <a class='wc-link' href='https://mit.worldcat.org/search?qt=wc_org_mit&qt=affiliate&q=#{params[:q]}'>Expand search to libraries around the world</a>" } %>
+  <%= render partial: "placeholders", locals: { heading: 'Books and media', id: 'books_content', description: "Books, ebooks, audio books, music, and videos at MIT. <a class='wc-link' href='https://mit.worldcat.org/search?qt=wc_org_mit&qt=affiliate&q=#{params[:q]}'>Expand search to libraries around the world</a>", advsearch: "<a href='https://mit.worldcat.org/search?qt=wc_org_mit&qt=affiliate&q=#{params[:q]}'>Expand your search to libraries around the world</a> or try <a href='https://libraries.mit.edu/bartonplus-advanced'>advanced search</a>" } %>
 
-  <%= render partial: "placeholders", locals: { heading: 'Articles and journals', id: 'articles_content', description: 'Articles from a variety of periodicals, including scholarly journals and magazines at MIT. <a href="https://libraries.mit.edu/search/">More search options</a>' } %>
+  <%= render partial: "placeholders", locals: { heading: 'Articles and journals', id: 'articles_content', description: 'Articles from a variety of periodicals, including scholarly journals and magazines at MIT. <a href="https://libraries.mit.edu/search/">More search options</a>', advsearch: "...or try <a href='https://libraries.mit.edu/bartonplus-advanced'>advanced search</a>" } %>
 </div>
 
 <div class="gridband layout-2c">
-  <%= render partial: "placeholders", locals: { heading: 'Library website and guides', id: 'website_content', description: 'MIT Libraries website and research guides.' } %>
+  <%= render partial: "placeholders", locals: { heading: 'Library website and guides', id: 'website_content', description: 'MIT Libraries website and research guides.', advsearch: '' } %>
 
   <%= render partial: "other_resources" %>
 </div>
