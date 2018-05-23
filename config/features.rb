@@ -32,9 +32,4 @@ Flipflop.configure do
     description: 'Enables a UI element to toggle full record. local_full_record,
                   still controls the actual full record display. This just
                   enables an affordance to toggle between states.'
-
-  feature :js_exception_logger,
-    default: ENV['JS_EXCEPTION_LOGGER_KEY'],
-    description: 'Enables JavaScript Exceptions to be logged to a central
-                 location'
 end

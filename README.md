@@ -75,8 +75,9 @@ custom hint metadata.
 - `GOOGLE_ANALYTICS`: Google Analytics property ID
 - `GOOGLE_ANALYTICS_LINKED_DOMAINS`: List of related domains, if your implementation uses cross-domain linking. Use syntax: `foo.com,bar.com`
 - `HINT_SOURCES`: Comma-separated Hint source names, in descending order of priority. (If unset, will default to `custom`).
-- `JS_EXCEPTION_LOGGER_KEY`: Enables and logs JavaScript errors to Rollbar.
+- `JS_EXCEPTION_LOGGER_KEY`: Enables and logs JavaScript errors.
   - Hints will only be displayed to the user if they are in `HINT_SOURCES`.
 - `LOG_LIKE_PROD`: uses prod-like logging in development if set
 - `LOG_LEVEL`: set log level for development, default is `:debug`
 - `RESULTS_PER_BOX`: defaults to 3
+- `SENTRY_DSN`: logs exceptions to Sentry

@@ -79,10 +79,10 @@
     },
     "RECAPTCHA_SECRET_KEY": "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe",
     "RECAPTCHA_SITE_KEY": "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI",
-    "ROLLBAR_ACCESS_TOKEN": {
+    "SCAN_EXCLUSIONS": {
       "required": true
     },
-    "SCAN_EXCLUSIONS": {
+    "SENTRY_DSN": {
       "required": true
     },
     "SECRET_KEY_BASE": {
