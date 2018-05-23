@@ -80,3 +80,4 @@ custom hint metadata.
 - `LOG_LIKE_PROD`: uses prod-like logging in development if set
 - `LOG_LEVEL`: set log level for development, default is `:debug`
 - `RESULTS_PER_BOX`: defaults to 3
+- `SENTRY_DSN`: logs exceptions to Sentry

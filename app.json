@@ -82,6 +82,9 @@
     "SCAN_EXCLUSIONS": {
       "required": true
     },
+    "SENTRY_DSN": {
+      "required": true
+    },
     "SECRET_KEY_BASE": {
       "required": true
     },
