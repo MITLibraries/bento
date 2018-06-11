@@ -77,7 +77,8 @@ class RecordController < ApplicationController
                                       profile: ENV['EDS_PROFILE'],
                                       guest: helpers.guest?,
                                       org: 'mit',
-                                      use_cache: false)
+                                      use_cache: false,
+                                      debug: ENV['EDS_DEBUG'])
     @record = session.retrieve(dbid: @record_source, an: @record_an)
   end
 
