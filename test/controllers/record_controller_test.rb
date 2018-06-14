@@ -22,6 +22,15 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'recover from bad EDS response' do
+    VCR.use_cassette('record: broken session',
+                     allow_playback_repeats: true) do
+      get record_url('dog00916a', 'mit.001492509')
+      assert_includes(@response.body,
+                      'An error occurred accessing the detail page')
+    end
+  end
+
   test 'clean_keywords' do
     VCR.use_cassette('record: article', allow_playback_repeats: true) do
       get record_url('aci', '123877356')

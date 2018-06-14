@@ -19,16 +19,20 @@ class RecordController < ApplicationController
   # See https://github.com/ebsco/edsapi-ruby/ . The page which gives all the
   # affordances of the record object is lib/ebsco/eds/record.rb.
   def record
-    fetch_eds_record
-    @keywords = extract_eds_text(@record.eds_author_supplied_keywords)
-    @subjects = extract_eds_text(@record.eds_subjects)
+    with_session_error_handling { fetch_eds_record }
+    if @record
+      @keywords = extract_eds_text(@record.eds_author_supplied_keywords)
+      @subjects = extract_eds_text(@record.eds_subjects)
 
-    # Don't use q as the parameter here - that will cause the search form to
-    # notice the parameter and prefill the search, which is behavior we *don't*
-    # want.
-    @previous = params[:previous]
-    rainbowify? if Flipflop.enabled?(:pride)
-    render 'record'
+      # Don't use q as the parameter here - that will cause the search form to
+      # notice the parameter and prefill the search, which is behavior we *don't*
+      # want.
+      @previous = params[:previous]
+      rainbowify? if Flipflop.enabled?(:pride)
+      render 'record'
+    else
+      render 'errors/eds_session_error'
+    end
   end
 
   # this method should never be cached because we need a fresh expiring URL
@@ -77,8 +81,25 @@ class RecordController < ApplicationController
                                       profile: ENV['EDS_PROFILE'],
                                       guest: helpers.guest?,
                                       org: 'mit',
-                                      use_cache: false)
+                                      use_cache: false,
+                                      debug: ENV['EDS_DEBUG'])
     @record = session.retrieve(dbid: @record_source, an: @record_an)
+  end
+
+  def with_session_error_handling
+    yield
+  rescue NoMethodError => e
+    Rails.logger.warn("EDS Error Detected while retrieving full record: #{e}")
+    @eds_error_link = rebuild_eds_full_record_link
+  end
+
+  # rebuild a EDS UI Full Record Link if our local is broken
+  def rebuild_eds_full_record_link
+    db, an = request.fullpath.split('/').reject(&:blank?) - ['record']
+    ['http://search.ebscohost.com/login.aspx?direct=true&site=eds-live',
+     "&db=#{db}",
+     "&AN=#{an}",
+     '&custid=s8978330&groupid=main&profile=eds&authtype=ip,sso'].join
   end
 
   # Keywords and subjects are sometimes provided as lists and sometimes as
