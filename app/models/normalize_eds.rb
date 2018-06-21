@@ -1,6 +1,8 @@
 # Tranforms results from {SearchEds} into normalized {Result}s
 #
 class NormalizeEds
+  class InvalidResults < StandardError; end
+
   # Translate EDS results into local result model
   def to_result(results, type, q)
     @type = type
@@ -11,6 +13,9 @@ class NormalizeEds
     norm['local_view_more'] = local_view_more(q)
     extract_results(results, norm)
     norm
+  rescue NoMethodError => e
+    raise NormalizeEds::InvalidResults,
+          "Error: #{e}; Results: #{results}; Type: #{type}, q: #{q}"
   end
 
   private
