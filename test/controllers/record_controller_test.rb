@@ -112,4 +112,22 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
       end
     end
   end
+
+  test 'handle db simultaneous user limit reached' do
+    VCR.use_cassette('record: simultaneous user limit reached',
+                     allow_playback_repeats: true) do
+      assert_raises RecordController::DbLimitReached do
+        get record_url('phl', 'PHL2218518')
+      end
+    end
+  end
+
+  test 'generic eds record error handler' do
+    VCR.use_cassette('record: unknown error handler',
+                     allow_playback_repeats: true) do
+      assert_raises RecordController::UnknownEdsError do
+        get record_url('phl', 'PHL2218518')
+      end
+    end
+  end
 end

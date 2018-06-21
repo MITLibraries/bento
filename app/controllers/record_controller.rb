@@ -1,11 +1,10 @@
 class RecordController < ApplicationController
   before_action :restricted!, only: [:direct_link]
   before_action :valid_url!
-  rescue_from EBSCO::EDS::BadRequest, with: proc {
-    raise RecordController::NoSuchRecordError, 'Record not found'
-  }
 
   class NoSuchRecordError < StandardError; end
+  class DbLimitReached < StandardError; end
+  class UnknownEdsError < StandardError; end
 
   # We are using ActionCaching due to EDS not providing an readily cacheable
   # object to use with low level caching like we do with our bento results.
@@ -83,7 +82,9 @@ class RecordController < ApplicationController
                                       org: 'mit',
                                       use_cache: false,
                                       debug: ENV['EDS_DEBUG'])
-    @record = session.retrieve(dbid: @record_source, an: @record_an)
+    @record = with_error_handling do
+      session.retrieve(dbid: @record_source, an: @record_an)
+    end
   end
 
   def with_session_error_handling
@@ -91,6 +92,20 @@ class RecordController < ApplicationController
   rescue NoMethodError => e
     Rails.logger.warn("EDS Error Detected while retrieving full record: #{e}")
     @eds_error_link = rebuild_eds_full_record_link
+  end
+
+  # detect and log known and unknown eds failures separately so we can
+  # better understand what is happening
+  def with_error_handling
+    yield
+  rescue EBSCO::EDS::BadRequest => e
+    if e.message.include?('Simultaneous User Limit Reached')
+      raise RecordController::DbLimitReached, e
+    elsif e.message.include?('DbId Not In Profile')
+      raise RecordController::NoSuchRecordError, "Record not found: #{e}"
+    else
+      raise RecordController::UnknownEdsError, e
+    end
   end
 
   # rebuild a EDS UI Full Record Link if our local is broken
