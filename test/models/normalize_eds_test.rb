@@ -183,4 +183,10 @@ class NormalizeEdsTest < ActiveSupport::TestCase
       assert(query['results'][0].valid?)
     end
   end
+
+  test 'handle bad results' do
+    assert_raises NormalizeEds::InvalidResults do
+      NormalizeEds.new.to_result('', 'articles', 'popcorn')
+    end
+  end
 end
