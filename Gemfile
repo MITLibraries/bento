@@ -30,7 +30,7 @@ gem 'uglifier'
 group :production do
   gem 'dalli'
   gem 'memcachier'
-  gem 'pg', '0.21'
+  gem 'pg'
 end
 
 group :development, :test do
