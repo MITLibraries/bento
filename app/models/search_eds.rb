@@ -18,6 +18,7 @@ class SearchEds
 
   def initialize
     @attempts = 0
+    @eds_http = HTTP.persistent(EDS_URL)
     @auth_token = uid_auth
     @results = {}
   end
@@ -51,13 +52,13 @@ class SearchEds
   end
 
   def search_filtered(term, facets, page, per_page)
-    result = HTTP.headers(accept: 'application/json',
-                          'x-authenticationToken': @auth_token,
-                          'x-sessionToken': @session_key)
-                 .timeout(:global, write: http_timeout,
-                                   connect: http_timeout,
-                                   read: http_timeout)
-                 .get(search_url(term, facets, page, per_page).to_s).to_s
+    result = @eds_http.headers(accept: 'application/json',
+                               'x-authenticationToken': @auth_token,
+                               'x-sessionToken': @session_key)
+                      .timeout(:global, write: http_timeout,
+                                        connect: http_timeout,
+                                        read: http_timeout)
+                      .get(search_url(term, facets, page, per_page).to_s).to_s
     json_result = JSON.parse(result)
     detect_eds_errors(json_result)
     json_result
@@ -126,10 +127,10 @@ class SearchEds
   end
 
   def uid_auth
-    response = HTTP.headers(accept: 'application/json').post(
+    response = @eds_http.headers(accept: 'application/json').post(
       "#{EDS_URL}/authservice/rest/UIDAuth",
       json: { "UserId": ENV['EDS_USER_ID'], "Password": ENV['EDS_PASSWORD'] }
-    )
+    ).flush
     return unless response.status == 200
     json_response = JSON.parse(response)
     json_response['AuthToken']
@@ -138,9 +139,9 @@ class SearchEds
   def create_session(profile)
     uri = [EDS_URL, '/edsapi/rest/CreateSession?profile=',
            profile, '&guest=n'].join('')
-    response = HTTP.headers(accept: 'application/json',
-                            "x-authenticationToken": @auth_token)
-                   .get(uri)
+    response = @eds_http.headers(accept: 'application/json',
+                                 "x-authenticationToken": @auth_token)
+                        .get(uri).flush
     response.headers['X-Sessiontoken']
   end
 
@@ -148,9 +149,10 @@ class SearchEds
     uri = [EDS_URL,
            '/edsapi/rest/endsession?sessiontoken=',
            URI.escape(@session_key).to_s].join('')
-    HTTP.headers(accept: 'application/json',
-                 "x-authenticationToken": @auth_token,
-                 'x-sessionToken': @session_key)
-        .get(uri)
+    @eds_http.headers(accept: 'application/json',
+                      "x-authenticationToken": @auth_token,
+                      'x-sessionToken': @session_key)
+             .get(uri).flush
+    @eds_http&.close
   end
 end
