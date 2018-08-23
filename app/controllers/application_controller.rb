@@ -9,10 +9,6 @@ class ApplicationController < ActionController::Base
     session[:flipflop_user] = true
   end
 
-  def new_session_path(_scope)
-    root_path
-  end
-
   private
 
   def valid_flipflop_key?

@@ -85,9 +85,3 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
   end
 end
-
-module ActionController
-  class TestCase
-    include Devise::Test::ControllerHelpers
-  end
-end
