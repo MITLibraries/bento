@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.5.1'
 
 gem 'actionpack-action_caching'
+gem 'barnes'
 gem 'ebsco-eds'
 gem 'flipflop'
 gem 'google-api-client'
