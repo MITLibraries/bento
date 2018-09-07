@@ -21,10 +21,7 @@
 
             <%= yield %>
 
-            <% unless current_page?(:controller => 'feedback', :action => 'index') %>
-              <%= render partial: "layouts/about-bento" %>
-            <% end %>
-
+            <%= render partial: "layouts/about-bento" %>
           </main>
           <!-- close content-main -->
         </div>
