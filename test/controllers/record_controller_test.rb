@@ -27,7 +27,7 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
                      allow_playback_repeats: true) do
       get record_url('dog00916a', 'mit.001492509')
       assert_includes(@response.body,
-                      'An error occurred accessing the detail page')
+                      'An error occurred accessing this record')
     end
   end
 
