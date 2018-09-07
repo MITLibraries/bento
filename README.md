@@ -59,17 +59,12 @@ custom hint metadata.
 - `EDS_PROFILE_URI`: URI for the EDS UI (not API) profile
 - `EDS_URL`: the root EDS API URL
 - `EDS_USER_ID`: your EDS API user id
-- `FEEDBACK_MAIL_TO`: email address to send feedback messages
 - `GOOGLE_API_KEY`: your Google Custom Search API key
 - `GOOGLE_CUSTOM_SEARCH_ID`: your Google Custom Search engine ID
 - `MAX_AUTHORS`: the maximum number of authors displayed in any record.
   If exceeded, 'et al' will be appended after this number.
 - `RECAPTCHA_SITE_KEY`
 - `RECAPTCHA_SECRET_KEY`
-- `SMTP_ADDRESS`
-- `SMTP_PASSWORD`
-- `SMTP_PORT`
-- `SMTP_USER`
 
 ## Optional Environment Variables
 

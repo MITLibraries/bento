@@ -10,9 +10,6 @@ Rails.application.routes.draw do
 
   get 'session/toggle_boxes', to: 'session#box_toggler'
 
-  get 'feedback', to: 'feedback#index', as: :feedback
-  post 'feedback', to: 'feedback#submit', as: :feedback_submit
-
   get 'item_status', to: 'aleph#item_status'
   get 'full_item_status', to: 'aleph#full_item_status'
 
