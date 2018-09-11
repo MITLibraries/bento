@@ -108,6 +108,7 @@ class SearchEds
   # message and our Exception catcher will alert developers.
   def prevent_multiple_retries
     return unless @attempts > 1
+
     raise 'Multiple Consecutive Session Token Invalid Responses from EDS'
   end
 
@@ -127,11 +128,15 @@ class SearchEds
   end
 
   def uid_auth
-    response = @eds_http.headers(accept: 'application/json').post(
-      "#{EDS_URL}/authservice/rest/UIDAuth",
-      json: { "UserId": ENV['EDS_USER_ID'], "Password": ENV['EDS_PASSWORD'] }
-    ).flush
+    response = @eds_http.headers(accept: 'application/json')
+                        .timeout(:global, write: http_timeout,
+                                          connect: http_timeout,
+                                          read: http_timeout)
+                        .post("#{EDS_URL}/authservice/rest/UIDAuth",
+                              json: { "UserId": ENV['EDS_USER_ID'],
+                                      "Password": ENV['EDS_PASSWORD'] }).flush
     return unless response.status == 200
+
     json_response = JSON.parse(response)
     json_response['AuthToken']
   end
@@ -141,6 +146,9 @@ class SearchEds
            profile, '&guest=n'].join('')
     response = @eds_http.headers(accept: 'application/json',
                                  "x-authenticationToken": @auth_token)
+                        .timeout(:global, write: http_timeout,
+                                          connect: http_timeout,
+                                          read: http_timeout)
                         .get(uri).flush
     response.headers['X-Sessiontoken']
   end
@@ -152,6 +160,8 @@ class SearchEds
     @eds_http.headers(accept: 'application/json',
                       "x-authenticationToken": @auth_token,
                       'x-sessionToken': @session_key)
+             .timeout(:global, write: http_timeout, connect: http_timeout,
+                               read: http_timeout)
              .get(uri).flush
     @eds_http&.close
   end
