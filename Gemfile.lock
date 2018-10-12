@@ -96,7 +96,7 @@ GEM
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.5.0)
-    ebsco-eds (1.0.0)
+    ebsco-eds (1.0.1)
       activesupport (~> 5.0)
       bibtex-ruby (~> 4.0)
       citeproc (>= 1.0.4, < 2.0)
