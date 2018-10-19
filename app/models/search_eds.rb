@@ -15,11 +15,12 @@ class SearchEds
 
   EDS_URL = ENV['EDS_URL'].freeze
   RESULTS_PER_BOX = ENV['RESULTS_PER_BOX'] || 5
+  EDS_SESSION_TIMEOUT = ENV['EDS_SESSION_TIMEOUT'] || 14
+  EDS_AUTH_TIMEOUT = ENV['EDS_AUTH_TIMEOUT'] || 29
 
   def initialize
-    @attempts = 0
     @eds_http = HTTP.persistent(EDS_URL)
-    @auth_token = uid_auth
+    @auth_token = cache_auth_token
     @results = {}
   end
 
@@ -28,11 +29,13 @@ class SearchEds
     # store passed parameters so we can retry later if we need to.
     @query = { term: term, profile: profile, facets: facets,
                page: page, per_page: per_page }
-    return 'invalid credentials' unless @auth_token
-    @session_key = create_session(profile) if @auth_token
-    raw_results = search_filtered(term, facets, page, per_page)
-    end_session
-    raw_results
+    raise 'EDS Error Detected: invalid credentials' unless @auth_token
+
+    # If we ever start doing anything with pagination or facets, we will need
+    # individual sessions per user. This is fine four the bento view needs now.
+    @session_key = cache_session_token(profile)
+
+    search_filtered(term, facets, page, per_page)
   end
 
   private
@@ -58,58 +61,25 @@ class SearchEds
                       .timeout(:global, write: http_timeout,
                                         connect: http_timeout,
                                         read: http_timeout)
-                      .get(search_url(term, facets, page, per_page).to_s).to_s
-    json_result = JSON.parse(result)
-    detect_eds_errors(json_result)
+                      .get(search_url(term, facets, page, per_page).to_s)
+
+    json_result = JSON.parse(result.to_s)
+
+    if eds_session_invalid?(json_result)
+      Rails.logger.warn('Clearing eds_session and eds_auth_token cache')
+      Rails.cache.delete('eds_session')
+      Rails.cache.delete('eds_auth_token')
+    end
+
+    raise "EDS Error Detected: #{json_result}" unless result.status == 200
+
     json_result
-  end
-
-  def detect_eds_errors(json_result)
-    detect_and_recover_from_bad_eds_session(json_result)
-    detect_general_eds_failure(json_result)
-  end
-
-  # Detect bad EDS session tokens and try again if we detect them.
-  # However, we don't want to infinite loop so we have to keep track of
-  # multiple consecutive failures and if we see them throw an exception.
-  def detect_and_recover_from_bad_eds_session(json_result)
-    prevent_multiple_retries
-    return unless eds_session_invalid?(json_result)
-    Rails.logger.warn('EDS API Session Token Invalid')
-    retry_query
-  end
-
-  # Detect general EDS errors. Bad sessions still get special treatment in a
-  # seprate method to allow us to try to recover. Detecting bad sessions must
-  # be done prior to this method or this one will grab the bad sessions and not
-  # retry.
-  def detect_general_eds_failure(json_result)
-    return if json_result.dig('ErrorDescription').blank?
-    raise "EDS Error Detected: #{json_result.dig('ErrorDescription')}"
   end
 
   # Check the returned JSON for specific error state.
   def eds_session_invalid?(json_result)
     json_result.dig('ErrorDescription').present? &&
       json_result.dig('ErrorDescription') == 'Session Token Invalid'
-  end
-
-  # Attempt to do another search. A new session token is generated as part of
-  # the `search` method.
-  def retry_query
-    Rails.logger.info('Retrying EDS Search')
-    @attempts += 1
-    search(@query[:term], @query[:profile], @query[:facets],
-           @query[:page], @query[:per_page])
-  end
-
-  # Throw an exception if we have tried twice to do a search and both times
-  # we had invalid session tokens. Users will receive a "try again later"
-  # message and our Exception catcher will alert developers.
-  def prevent_multiple_retries
-    return unless @attempts > 1
-
-    raise 'Multiple Consecutive Session Token Invalid Responses from EDS'
   end
 
   # The timeout value is multiplied by 3 in http.rb so we divide by 3
@@ -127,7 +97,15 @@ class SearchEds
     (t / 3)
   end
 
+  def cache_auth_token
+    Rails.cache.fetch('eds_auth_token', expires_in: EDS_AUTH_TIMEOUT.minutes,
+                                        race_condition_ttl: 5) do
+      uid_auth
+    end
+  end
+
   def uid_auth
+    Rails.logger.info('Requesting EDS Auth Token')
     response = @eds_http.headers(accept: 'application/json')
                         .timeout(:global, write: http_timeout,
                                           connect: http_timeout,
@@ -135,13 +113,27 @@ class SearchEds
                         .post("#{EDS_URL}/authservice/rest/UIDAuth",
                               json: { "UserId": ENV['EDS_USER_ID'],
                                       "Password": ENV['EDS_PASSWORD'] }).flush
-    return unless response.status == 200
+
+    # prevent caching if bad response
+    raise 'EDS Error: unable to get credentials' unless response.status == 200
 
     json_response = JSON.parse(response)
+
+    # prevent caching if no token is present
+    raise 'EDS Error: invalid credentials' unless json_response['AuthToken']
+
     json_response['AuthToken']
   end
 
+  def cache_session_token(profile)
+    Rails.cache.fetch('eds_session', expires_in: EDS_SESSION_TIMEOUT.minutes,
+                                     race_condition_ttl: 5) do
+      create_session(profile)
+    end
+  end
+
   def create_session(profile)
+    Rails.logger.info('Requesting EDS Session Token')
     uri = [EDS_URL, '/edsapi/rest/CreateSession?profile=',
            profile, '&guest=n'].join('')
     response = @eds_http.headers(accept: 'application/json',
@@ -150,19 +142,13 @@ class SearchEds
                                           connect: http_timeout,
                                           read: http_timeout)
                         .get(uri).flush
-    response.headers['X-Sessiontoken']
-  end
 
-  def end_session
-    uri = [EDS_URL,
-           '/edsapi/rest/endsession?sessiontoken=',
-           URI.escape(@session_key).to_s].join('')
-    @eds_http.headers(accept: 'application/json',
-                      "x-authenticationToken": @auth_token,
-                      'x-sessionToken': @session_key)
-             .timeout(:global, write: http_timeout, connect: http_timeout,
-                               read: http_timeout)
-             .get(uri).flush
-    @eds_http&.close
+    # prevent caching if bad response
+    raise 'EDS Error: invalid session' unless response.status == 200
+
+    # prevent caching if no token is present
+    raise 'EDS Error: invalid session' unless response.headers['X-Sessiontoken']
+
+    response.headers['X-Sessiontoken']
   end
 end
