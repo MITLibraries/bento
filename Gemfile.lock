@@ -96,6 +96,9 @@ GEM
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.5.0)
+    dotenv-rails (2.5.0)
+      dotenv (= 2.5.0)
+      railties (>= 3.2, < 6.0)
     ebsco-eds (1.0.0)
       activesupport (~> 5.0)
       bibtex-ruby (~> 4.0)
@@ -380,6 +383,7 @@ DEPENDENCIES
   binding_of_caller
   coveralls
   dalli
+  dotenv-rails
   ebsco-eds
   flipflop
   google-api-client

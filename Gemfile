@@ -40,6 +40,7 @@ group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'dotenv-rails'
   gem 'listen'
   gem 'rubocop'
   gem 'web-console'
