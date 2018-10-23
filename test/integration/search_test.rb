@@ -87,15 +87,6 @@ class SearchTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'only retries once on bad EDS session' do
-    VCR.use_cassette('bad eds session', allow_playback_repeats: true) do
-      error = assert_raise RuntimeError do
-        get '/search?q=popcorn&target=articles&per_page=5'
-      end
-      assert_match(/Consecutive Session Token/, error.message)
-    end
-  end
-
   test 'local full_record_link when enabled' do
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
