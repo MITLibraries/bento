@@ -88,7 +88,7 @@ GEM
       namae (~> 1.0)
     csl-styles (1.0.1.8)
       csl (~> 1.0)
-    dalli (2.7.8)
+    dalli (2.7.9)
     debug_inspector (0.0.3)
     declarative (0.0.10)
     declarative-option (0.1.0)
