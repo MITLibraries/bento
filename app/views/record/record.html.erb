@@ -1,3 +1,5 @@
+<%= content_for(:title, "Search | MIT Libraries") %>
+
 <%= render partial: "search/form" %>
 <% if path_to_previous.present? %>
   <%= link_to('Back to search results', search_bento_path(q: @previous)) %>
@@ -34,7 +36,7 @@
   </div>
 </div>
 
-<% content_for(:head) do %>
+<% content_for(:additional_meta_tag) do %>
   <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
   <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
 

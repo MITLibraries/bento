@@ -1,4 +1,0 @@
-<% if ENV['JS_EXCEPTION_LOGGER_KEY'].present? %>
-  <script src="https://cdn.ravenjs.com/3.25.2/raven.min.js" crossorigin="anonymous"></script>
-  <script>Raven.config('<%= ENV['JS_EXCEPTION_LOGGER_KEY'] %>').install()</script>
-<% end %>
