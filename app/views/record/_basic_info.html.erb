@@ -13,7 +13,7 @@
 <h2 class="record-title">
   <span class="sr">Title: </span>
   <% if @record.title.present? %>
-    <%= @record.title %>
+    <%= safe_output(@record.title) %>
   <% else %>
     No title provided for this item.
   <% end %>
