@@ -2,14 +2,13 @@
  Import each file directly to allow for controlling order and sharing variables
 */
 
-@import "libraries-global.scss";
-@import "_variables.scss";
-@import "_bento.scss";
-@import "_search.scss";
-@import "_results.scss";
-@import "_full-record.scss";
-@import "_hint.scss";
-@import "_aleph.scss";
-@import "_feedback.scss";
-@import "_shame.scss";
-@import "_print.scss";
+@import "libraries-main";
+@import "_bento";
+@import "_search";
+@import "_results";
+@import "_full-record";
+@import "_hint";
+@import "_aleph";
+@import "_feedback";
+@import "_shame";
+@import "_print";
