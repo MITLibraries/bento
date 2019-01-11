@@ -35,13 +35,15 @@
   }
 
   .result-title {
+    font-size: $fs-large;
     margin-bottom: .2em;
 
     a {
+      text-decoration: none;
 
       &:hover,
       &:focus {
-        color: $brand-primary;
+        color: $brand-primary-accent;
       }
     }
   }

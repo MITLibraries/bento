@@ -67,10 +67,11 @@
   background-color: $white-t;
   box-shadow: 0 0 3px 1px $smoke;
   padding: 15px;
-  border-top: 3px solid $green;
+  border-top: 3px solid $brand-primary;
 
   .title {
     margin-bottom: .1em;
+    font-size: $fs-xlarge;
   }
 
   .results-desc {
@@ -109,11 +110,11 @@
   font-size: 1.4rem;
 
   .title {
-    @extend .hd-2;
+    font-size: $fs-xlarge;
   }
 
   .title-sub {
-    @extend .hd-4;
+    @extend .hd-5;
   }
 
   .list-tools {
