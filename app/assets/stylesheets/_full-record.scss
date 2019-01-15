@@ -38,9 +38,10 @@
   }
 
   .record-title {
-    @extend .hd-3;
+    @extend .hd-4;
+    margin-bottom: .4em;
     font-weight: $fw-bold;
-    margin-bottom: .2em;
+    line-height: 1.1;
   }
 
   .record-author:after {
