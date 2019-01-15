@@ -35,8 +35,10 @@
   }
 
   .result-title {
-    font-size: $fs-large;
     margin-bottom: .2em;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    font-weight: $fw-bold;
 
     a {
       text-decoration: none;
@@ -128,10 +130,6 @@
 
   .wrap-result {
 
-    .result-title {
-      font-size: $fs-large;
-    }
-
     .result-authors {
       font-size: $fs-smallish;
     }
@@ -141,14 +139,6 @@
 .website_content {
   .wrap-result {
     padding: 1rem .5rem .5rem .5rem;
-
-    .result-title {
-      font-size: $fs-large;
-    }
-
-    .result-authors {
-      font-size: $fs-smallish;
-    }
 
     .result-get {
       display: none;
