@@ -14,19 +14,21 @@
   <h3 class="result-title">
     <span class="sr">Title: </span><%= link_to(result.truncated_title.html_safe, full_record_link(result), class: 'bento-link', data: {type: "Title"} ) %>
   </h3>
-  <div class="result-uniform-title">
-    <% if result.uniform_title %>
+  <% if result.uniform_title %>
+    <div class="result-uniform-title">
       <span class="sr">Alternate Title: </span><%= safe_output(result.uniform_title) %>
-    <% end %>
-  </div>
-  <p>
-    <% if result.type %>
+    </div>
+  <% end %>
+  <% if result.type %>
+    <p>
       <span class="result-type"><span class="sr">Type: </span><%= result.type %></span>
-    <% end %>
-    <% if result.year.present? && params[:target] == 'books' %>
+    </p>
+  <% end %>
+  <% if result.year.present? && params[:target] == 'books' %>
+    <p>
       <span class="result-year">Published <%= result.year %></span>
-    <% end %>
-  </p>
+    </p>
+  <% end %>
   <div class="result-body">
     <% if result.authors %>
       <p class="result-authors">
