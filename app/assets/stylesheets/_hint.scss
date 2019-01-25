@@ -2,10 +2,10 @@
 .hint-box {
   position: relative;
   margin: 1.5% 0;
-  box-shadow: 0px 1px 3px $shadow;
-  border-top: 3px solid $blue-bright;
+  box-shadow: 0px 1px 3px rgba($blue, .5);
+  border-top: 3px solid $blue;
+  background-color: $white-t;
   padding: 1.5%;
-  background-color: rgba($blue, .2);
 
   .type {
     margin-bottom: .5rem;
@@ -23,9 +23,5 @@
   .desc {
     margin-bottom: 0;
     font-size: $fs-small;
-  }
-
-  a {
-    color: darken($blue-muted, 10%);
   }
 }
