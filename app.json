@@ -23,6 +23,9 @@
     "EDS_BOOK_FACETS": {
       "required": true
     },
+    "EDS_NO_CAT_PROFILE": {
+      "required": true
+    },
     "EDS_PASSWORD": {
       "required": true
     },
@@ -98,6 +101,12 @@
       "required": true
     },
     "SMTP_USER": {
+      "required": true
+    },
+    "TIMDEX_USER": {
+      "required": true
+    },
+    "TIMDEX_PASS": {
       "required": true
     }
   },
