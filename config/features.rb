@@ -28,6 +28,6 @@ Flipflop.configure do
     description: 'Enables rainbows for records with LGBT subjects/keywords'
 
   feature :timdex,
-    default: false,
+    default: ENV['TIMDEX'],
     description: 'Uses TIMDEX instead of EDS for local content'
 end
