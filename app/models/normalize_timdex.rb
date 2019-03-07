@@ -22,6 +22,7 @@ class NormalizeTimdex
   # return them as an array of {result}s
   def extract_results(results, norm)
     return unless results['records']
+
     counter = 0
     results['records'].each do |item|
       break if counter >= 5
@@ -31,7 +32,7 @@ class NormalizeTimdex
       result.year = item.publication_date
       result.db_source = 'db source'
       result.an = "MIT01#{item.id}"
-      result.uniform_title = 'uniform title'
+      # result.uniform_title = 'uniform title'
       result.type = item.content_type
 
       result.location = item.locations
@@ -42,7 +43,9 @@ class NormalizeTimdex
     end
   end
 
-  # We currently have an array of author name, search jump start we need to replicate here for our views to remain stable. It may be better to rip this apart into seprate views. We'll see.
+  # We currently have an array of author name, search jump start we need to
+  # replicate here for our views to remain stable. It may be better to rip this
+  # apart into seprate views. We'll see.
   def ugh_authors(authors)
     authors.map { |a| [a, 'a'] }
   end
