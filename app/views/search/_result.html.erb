@@ -23,7 +23,7 @@
     <% if result.type %>
       <span class="result-type"><span class="sr">Type: </span><%= result.type %></span>
     <% end %>
-    <% if result.year.present? && params[:target] == 'books' %>
+    <% if result.year.present? && (params[:target] == 'books' || params[:target] == 'timdex') %>
       <span class="result-year">Published <%= result.year %></span>
     <% end %>
   </p>
@@ -68,8 +68,14 @@
     <% end %>
   </div>
 
+  <% if params[:target] == 'timdex' %>
+    <% accession_number = result.an %>
+  <% elsif params[:target] == 'books' %>
+    <% accession_number = result.clean_an %>
+  <% end %>
+
   <% if result.location.present? %>
-    <div id="stale_locations_<%= result.clean_an %>" class="result-local-locations">
+    <div id="stale_locations_<%= accession_number %>" class="result-local-locations">
       <p class="sr">Library locations: </p>
       <ul class="list-local-locations">
       <% result.location.each do |location| %>
@@ -81,15 +87,15 @@
     </div>
   <% end %>
 
-  <% if result.aleph_record? && params[:target] == 'books' %>
-    <div id="<%= result.clean_an %>" class='realtime_status result-local-locations' data-an="<%= result.clean_an %>">
+  <% if params[:target] == 'timdex' || (result.aleph_record? && params[:target] == 'books' && params[:target] == 'books') %>
+    <div id="<%= accession_number %>" class='realtime_status result-local-locations' data-an="<%= accession_number %>">
       Loading realtime status...
       <i class="fa fa-spinner fa-spin"></i>
     </div>
   <% end %>
 
   <% if result.aleph_cr_record? && params[:target] == 'books' %>
-    <div id="<%= result.clean_an %>" class='realtime_status result-local-locations' data-an="<%= result.clean_an %>">
+    <div id="<%= accession_number %>" class='realtime_status result-local-locations' data-an="<%= accession_number %>">
       Loading realtime status...
       <i class="fa fa-spinner fa-spin"></i>
     </div>

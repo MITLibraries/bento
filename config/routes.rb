@@ -15,7 +15,6 @@ Rails.application.routes.draw do
 
   get 'hint', to: 'hint#hint'
   get 'toggle', to: 'feature#toggle'
-  get 'full_record_toggle', to: 'feature#full_record_toggle'
 
   get 'record/(:db_source)/(:an)', to: 'record#record',
                                    as: :record,

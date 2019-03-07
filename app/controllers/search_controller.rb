@@ -47,7 +47,7 @@ class SearchController < ApplicationController
 
   # Array of search endpoints that are supported
   def valid_targets
-    %w[articles books google]
+    %w[articles books google timdex eds]
   end
 
   # Formatted date used in creating cache keys
@@ -58,17 +58,32 @@ class SearchController < ApplicationController
   def search_target(page, per_page)
     if params[:target] == 'google'
       search_google
+    elsif params[:target] == 'timdex'
+      search_timdex
     else
       search_eds(page, per_page)
     end
   end
 
+  def search_timdex
+    results = Timdex.search(strip_truncate_q)
+    NormalizeTimdex.new.to_result(results, strip_truncate_q)
+  end
+
   # Seaches EDS
   def search_eds(page, per_page)
     raw_results = SearchEds.new.search(
-      strip_truncate_q, ENV['EDS_PROFILE'], eds_facets, page, per_page
+      strip_truncate_q, eds_profile, eds_facets, page, per_page
     )
     NormalizeEds.new.to_result(raw_results, params[:target], strip_truncate_q)
+  end
+
+  def eds_profile
+    if Flipflop.enabled?(:timdex)
+      ENV['EDS_NO_CAT_PROFILE']
+    else
+      ENV['EDS_PROFILE']
+    end
   end
 
   def eds_facets

@@ -24,6 +24,7 @@ gem 'skylight'
 gem 'staccato'
 gem 'stringex'
 gem 'therubyracer', platforms: :ruby
+gem 'timdex-ruby'
 gem 'uglifier'
 
 group :production do
