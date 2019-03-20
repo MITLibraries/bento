@@ -30,8 +30,9 @@ class NormalizeTimdex
       result = Result.new(item.title, item.source_link)
       result.authors = ugh_authors(item.authors) if item.authors
       result.year = item.publication_date
-      result.db_source = 'db source'
+      result.db_source = 'timdex'
       result.an = "MIT01#{item.id}"
+      result.id = item.id
       # result.uniform_title = 'uniform title'
       result.type = item.content_type
 

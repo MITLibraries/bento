@@ -1,0 +1,81 @@
+<% search_prefix = '/search/bento?q=' %>
+
+<h3 class="section-title">More information</h3>
+<ul class="list-moreinfo">
+  <% if @record.content_type.present? %>
+    <li>
+      <span class="label">Document type:</span> <%= @record.content_type %>
+    </li>
+  <% end %>
+
+  <% if @record.authors.present? %>
+    <li>
+      <span class="label"><%= "Author".pluralize(@record.authors.count) %>:</span>
+      <% @record.authors.each do |author| %>
+        <span class="record-author"><%= author %></span>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if @record.imprint.present? %>
+    <% @record.imprint.each do |imprint| %>
+      <li>
+        <span class="label">Publication info:</span> <%= safe_output(imprint) %>
+      </li>
+    <% end %>
+  <% end %>
+
+  <% if @record.isbns.present? %>
+    <li>
+      <span class="label">ISBN:</span> <% @record.isbns.each do |isbn| %>
+        <span class="isbn"><%= isbn %></span><% if isbn != @record.isbns.last %>,<% end %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if @record.issns.present? %>
+    <li>
+      <span class="label">ISSN:</span> <% @record.issns.each do |issn| %>
+        <span class="isbn"><%= issn %></span><% if issn != @record.issns.last %>,<% end %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if @record.languages.present? %>
+    <li>
+      <span class="label"><%= "Language".pluralize(@record.languages.count) %>:</span> <%= @record.languages.join(', ') %>
+    </li>
+  <% end %>
+
+  <% if @record.physical_description.present? %>
+    <li>
+      <span class="label">Physical description:</span> <%= safe_output(@record.physical_description) %>
+    </li>
+  <% end %>
+
+  <% if @record.source.present? %>
+    <li>
+      <span class="label">Database:</span> <%= @record.source %>
+    </li>
+  <% end %>
+</ul>
+
+<% if @record.subjects.present? %>
+  <h3 class="section-title"><%= "Subject".pluralize(@record.subjects.count) %>:</h3>
+  <ul class="list-subjects">
+    <% @record.subjects.each do |subject| %>
+      <li>
+        <%= link_to(subject, search_prefix + subject, data: {type: "Subject"} ) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @record.notes.present? %>
+  <h3 class="section-title">Notes</h4>
+  <div class="section-content">
+    <% @record.notes.each do |note| %>
+      <p><%= safe_output(note) %></p>
+    <% end %>
+  </div>
+<% end %>

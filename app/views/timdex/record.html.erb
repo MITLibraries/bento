@@ -1,0 +1,41 @@
+<%= content_for(:title, "Search | MIT Libraries") %>
+
+<%= render partial: "search/form" %>
+<% if path_to_previous.present? %>
+  <%= link_to('Back to search results', search_bento_path(q: @previous)) %>
+<% end %>
+
+<div class="gridband layout-3q1q wrap-full-record">
+  <div class="col3q box-content region full-record" data-region="Full record">
+
+    <div class="discovery-full-record-basic-info">
+      <%= render partial: "basic_info" %>
+    </div>
+
+    <div class="discovery-full-record-availability">
+      <%= render partial: "availability" %>
+    </div>
+
+    <div class="discovery-full-record-more-info">
+      <%= render partial: "extended_info" %>
+    </div>
+
+  </div>
+
+  <div class="col1q-r sidebar">
+    <div class="bit">
+      <h3 class="title">Related</h3>
+      <ul>
+        <li>
+          <%= link_to('Source record', @record.source_link) %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="bit askus">
+      <h3 class="title">Ask Us</h3>
+      <p>Not finding what you're looking for?  We're here to help with anything from quick questions to in-depth research.</p>
+      <p><a class="btn button-secondary" href="https://libraries.mit.edu/ask/">Ask Us</a></p>
+    </div>
+  </div>
+</div>

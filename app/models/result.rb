@@ -5,7 +5,7 @@ class Result
   validates :url, presence: true
 
   attr_accessor :an, :authors, :available_url, :blurb, :check_sfx_url,
-                :citation, :db_source, :fulltext_links, :get_it_label, :in,
+                :citation, :db_source, :fulltext_links, :get_it_label, :id, :in,
                 :location, :marc_856, :online, :openurl, :publisher,
                 :record_links, :subjects, :thumbnail, :title, :type,
                 :uniform_title, :url, :winner, :year

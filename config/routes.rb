@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'hint', to: 'hint#hint'
   get 'toggle', to: 'feature#toggle'
 
+  get 'timdex/:id', to: 'timdex#record', as: :timdex
+
   get 'record/(:db_source)/(:an)', to: 'record#record',
                                    as: :record,
                                    # Normal URL routing disallows periods in

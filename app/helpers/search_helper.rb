@@ -26,6 +26,8 @@ module SearchHelper
   def full_record_link(result)
     if Flipflop.enabled?(:local_full_record) && params[:target] != 'google' && params[:target] != 'timdex'
       record_path(result.db_source.last, result.an)
+    elsif  params[:target] == 'timdex'
+      timdex_path(result.id)
     else
       result.url
     end
