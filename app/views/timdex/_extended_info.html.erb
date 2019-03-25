@@ -71,6 +71,15 @@
   </ul>
 <% end %>
 
+<% if @record.summary.present? %>
+  <h3 class="section-title">Abstract/summary</h3>
+  <div class="section-content">
+    <% @record.summary.each do |summary| %>
+      <%= safe_output(summary) %>
+    <% end %>
+  </div>
+<% end %>
+
 <% if @record.notes.present? %>
   <h3 class="section-title">Notes</h4>
   <div class="section-content">
