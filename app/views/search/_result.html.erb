@@ -1,5 +1,5 @@
 <div class="wrap-result">
-  <% if Flipflop.enabled?(:local_browse) %>
+  <% if Flipflop.enabled?(:local_browse) || params[:target] == 'timdex' %>
     <% search_prefix = '/search/bento?q=' %>
   <% else %>
     <% search_prefix = ENV['EDS_PROFILE_URI'] %>

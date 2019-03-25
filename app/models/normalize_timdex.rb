@@ -48,10 +48,10 @@ class NormalizeTimdex
   # replicate here for our views to remain stable. It may be better to rip this
   # apart into seprate views. We'll see.
   def ugh_authors(authors)
-    authors.map { |a| [a, 'a'] }
+    authors.map { |a| [a, a] }
   end
 
   def ugh_subjects(subjects)
-    subjects.map { |s| [s, 's'] }
+    subjects.map { |s| [s, s] }
   end
 end
