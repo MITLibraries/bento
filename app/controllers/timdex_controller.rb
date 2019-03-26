@@ -3,7 +3,7 @@ class TimdexController < ApplicationController
   class UnknownTimdexError < StandardError; end
 
   def record
-    response = Timdex.retrieve(params[:id])
+    response = Timdex.new(ENV['TIMDEX_USER'], ENV['TIMDEX_PASS']).retrieve(params[:id])
     if response['status'] == 200
       @record = response['record']
     elsif response['status'] == 404

@@ -66,7 +66,7 @@ class SearchController < ApplicationController
   end
 
   def search_timdex
-    results = Timdex.search(strip_truncate_q)
+    results = Timdex.new(ENV['TIMDEX_USER'], ENV['TIMDEX_PASS']).search(strip_truncate_q)
     NormalizeTimdex.new.to_result(results, strip_truncate_q)
   end
 
