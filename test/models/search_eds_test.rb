@@ -38,17 +38,17 @@ class SearchEdsTest < ActiveSupport::TestCase
 
   test 'can change timeout value' do
     VCR.use_cassette('custom timeout') do
-      assert_equal(2, SearchEds.new.send(:http_timeout))
+      assert_equal(6, SearchEds.new.send(:http_timeout))
     end
 
     ENV['EDS_TIMEOUT'] = '0.1'
     VCR.use_cassette('custom timeout') do
-      assert_equal(0.03333333333333333, SearchEds.new.send(:http_timeout))
+      assert_equal(0.1, SearchEds.new.send(:http_timeout))
     end
 
     ENV['EDS_TIMEOUT'] = '3'
     VCR.use_cassette('custom timeout') do
-      assert_equal(1, SearchEds.new.send(:http_timeout))
+      assert_equal(3, SearchEds.new.send(:http_timeout))
     end
   end
 

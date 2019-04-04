@@ -58,9 +58,7 @@ class SearchEds
     result = @eds_http.headers(accept: 'application/json',
                                'x-authenticationToken': @auth_token,
                                'x-sessionToken': @session_key)
-                      .timeout(:global, write: http_timeout,
-                                        connect: http_timeout,
-                                        read: http_timeout)
+                      .timeout(http_timeout)
                       .get(search_url(term, facets, page, per_page).to_s)
 
     json_result = JSON.parse(result.to_s)
@@ -94,7 +92,7 @@ class SearchEds
         else
           6
         end
-    (t / 3)
+    t
   end
 
   def cache_auth_token
@@ -107,9 +105,7 @@ class SearchEds
   def uid_auth
     Rails.logger.info('Requesting EDS Auth Token')
     response = @eds_http.headers(accept: 'application/json')
-                        .timeout(:global, write: http_timeout,
-                                          connect: http_timeout,
-                                          read: http_timeout)
+                        .timeout(http_timeout)
                         .post("#{EDS_URL}/authservice/rest/UIDAuth",
                               json: { "UserId": ENV['EDS_USER_ID'],
                                       "Password": ENV['EDS_PASSWORD'] }).flush
@@ -138,9 +134,7 @@ class SearchEds
            profile, '&guest=n'].join('')
     response = @eds_http.headers(accept: 'application/json',
                                  "x-authenticationToken": @auth_token)
-                        .timeout(:global, write: http_timeout,
-                                          connect: http_timeout,
-                                          read: http_timeout)
+                        .timeout(http_timeout)
                         .get(uri).flush
 
     # prevent caching if bad response
