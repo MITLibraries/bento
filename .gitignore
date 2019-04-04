@@ -26,3 +26,4 @@ doc/
 
 # Ignore personal notes
 todo.md
+.env.development
