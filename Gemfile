@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.6.1'
+ruby '2.6.3'
 
 gem 'actionpack-action_caching'
 gem 'barnes'
@@ -16,7 +16,7 @@ gem 'lograge'
 gem 'mitlibraries-theme'
 gem 'nokogiri'
 gem 'puma'
-gem 'rails', '5.1.6.2'
+gem 'rails', '5.1.7'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'sass-rails'
 gem 'sentry-raven'
@@ -34,7 +34,7 @@ end
 
 group :development, :test do
   gem 'pry-rails'
-  gem 'sqlite3'
+  gem 'sqlite3', '1.3.13'
 end
 
 group :development do
