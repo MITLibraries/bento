@@ -275,8 +275,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    recaptcha (4.14.0)
-      json
     ref (2.0.0)
     representable (3.0.4)
       declarative (< 0.1.0)
@@ -406,7 +404,6 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 5.1.7)
-  recaptcha
   rubocop
   sass-rails
   sentry-raven
