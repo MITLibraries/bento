@@ -40,8 +40,10 @@ class ButtonIllTest < ActiveSupport::TestCase
   end
 
   test 'url for ill' do
-    assert_equal('https://mit.worldcat.org/search?q=no%3A123456789',
-                 @button.url)
+    assert_equal(
+      'https://mit.on.worldcat.org/oclc/123456789',
+      @button.url
+    )
   end
 
   test 'ill button returns nil if ill url cannot be constructed' do
