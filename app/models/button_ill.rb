@@ -34,7 +34,7 @@ class ButtonIll
 
   def url
     return unless @oclc_number.present?
-    "https://mit.worldcat.org/search?q=no%3A#{@oclc_number}"
+    "https://mit.on.worldcat.org/oclc/#{@oclc_number}"
   end
 
   # These z30 statuses are never allowed to request via ILL
