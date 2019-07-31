@@ -11,36 +11,8 @@ class CustomHint
 
   def initialize(url)
     @url = url
-    # Validate the URL ~before~ setting @csv; there's no point in trying to
-    # fetch content over the network if we know the URL is bogus.
-    process_url
     @csv = csv
     @source = 'custom'
-  end
-
-  def process_url
-    canonicalize_url
-    validate_url
-  end
-
-  def validate_url
-    as_uri = URI(@url)
-
-    raise 'Invalid URL - not a Dropbox download URL' unless [
-      @url =~ URI.regexp,                 # It is a valid URL
-      as_uri.host == 'www.dropbox.com',   # ...from Dropbox
-      as_uri.query == 'dl=1'              # ...which triggers a file download
-    ].all?
-  end
-
-  # If a dropbox URL ends in ?dl=1, it downloads the file; if it ends in ?dl=0,
-  # it renders the file as HTML. We want to make sure we download the file, but
-  # the copy-link version gives the render-page option by default, so let's
-  # recover gracefully in that case.
-  def canonicalize_url
-    as_uri = URI(@url)
-    as_uri.query = 'dl=1' if as_uri.query == 'dl=0'
-    @url = as_uri.to_s
   end
 
   # Load csv hint source.
