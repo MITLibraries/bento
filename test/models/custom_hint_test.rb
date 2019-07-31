@@ -4,7 +4,7 @@ require 'test_helper'
 class CustomHintTest < ActiveSupport::TestCase
 
   setup do
-    @url = 'https://www.dropbox.com/s/f6p4qtj3chaqlp2/test_popular.csv?dl=0'
+    @url = 'https://example.com/whatever.csv'
   end
 
   test 'fails without URL argument' do
@@ -13,48 +13,9 @@ class CustomHintTest < ActiveSupport::TestCase
     end
   end
 
-  test 'fails if URL argument is not a real URL' do
-    assert_raise RuntimeError do
-      CustomHint.new('snoxboops')
-    end
-  end
-
-  test 'fails if URL argument is not a dropbox URL' do
-    VCR.use_cassette('custom hint bad URL', allow_playback_repeats: true) do
-      assert_raise RuntimeError do
-        CustomHint.new('https://valid.butnotdropbox.com')
-      end
-    end
-  end
-
-  test 'fails if URL lacks expected querystring' do
-    VCR.use_cassette('custom hint bad querystring', allow_playback_repeats: true) do
-      assert_raise RuntimeError do
-        CustomHint.new('https://www.dropbox.com?weird=querystring')
-      end
-    end
-  end
-
-  test 'fails if Dropbox file is not world-viewable' do
-    VCR.use_cassette('custom hint not viewable', allow_playback_repeats: true) do
-      assert_raise CSV::MalformedCSVError do
-        hint = CustomHint.new('https://www.dropbox.com/s/47o8j5e0wzxahjs/unshared.csv?dl=0')
-        hint.process_records
-      end
-    end
-  end
-
-  test 'render-HTML querystring replaced with download-file option' do
-    VCR.use_cassette('custom hint ok querystring', allow_playback_repeats: true) do
-      hint = CustomHint.new('https://www.dropbox.com/sh/lrguh6q5dd8yout/AAAYKs2ZQrbY1gBjGRft1iz6a?dl=0')
-      assert_equal('https://www.dropbox.com/sh/lrguh6q5dd8yout/AAAYKs2ZQrbY1gBjGRft1iz6a?dl=1',
-                   hint.url)
-    end
-  end
-
   test 'fails if CSV file not found at URL' do
     VCR.use_cassette('custom hint not csv', allow_playback_repeats: true) do
-      hint = CustomHint.new('https://www.dropbox.com/s/hzeorpw7fa1xdda/this_is_a_cc0_kitten_pic_not_a_csv.jpeg?dl=0')
+      hint = CustomHint.new('https://www.dropbox.com/s/hzeorpw7fa1xdda/this_is_a_cc0_kitten_pic_not_a_csv.jpeg?dl=1')
     end
   end
 
@@ -106,7 +67,7 @@ class CustomHintTest < ActiveSupport::TestCase
 
   test 'adds fingerprint if not present' do
     VCR.use_cassette('custom hint blank fingerprints', allow_playback_repeats: true) do
-      url = 'https://www.dropbox.com/s/3dgxge8b14ht0c3/custom%20hint%20for%20test%20suite.csv?dl=0'
+      url = 'https://www.dropbox.com/s/3dgxge8b14ht0c3/custom%20hint%20for%20test%20suite.csv?dl=1'
       CustomHint.new(url).process_records
       assert_equal('https://libraries.mit.edu/get/chinajournals',
                    Hint.match('cnki').url)
@@ -115,7 +76,7 @@ class CustomHintTest < ActiveSupport::TestCase
 
   test 'skips rows with neither fingerprint nor search' do
     VCR.use_cassette('custom hint blank fingerprints', allow_playback_repeats: true) do
-      url = 'https://www.dropbox.com/s/3dgxge8b14ht0c3/custom%20hint%20for%20test%20suite.csv?dl=0'
+      url = 'https://www.dropbox.com/s/3dgxge8b14ht0c3/custom%20hint%20for%20test%20suite.csv?dl=1'
       assert_equal(6, Hint.count)
       CustomHint.new(url).process_records
       assert_nil(Hint.find_by(title: 'No search here'))
