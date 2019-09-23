@@ -43,7 +43,7 @@ class SearchEds
   # Clean search term to match EDS expectations
   # Commas cause problems as they seem to be interpreted as multiple params.
   def clean_term(term)
-    URI.encode(term.strip.tr(' ', '+').delete(','))
+    URI.encode(term.strip.tr(' ', '+').delete(',').tr(':', '+'))
   end
 
   def search_url(term, facets, page, per_page)
