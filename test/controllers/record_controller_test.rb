@@ -85,7 +85,7 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
     VCR.use_cassette('record: bananas nonguest',
                      allow_playback_repeats: true) do
       ActionDispatch::Request.any_instance.stubs(:remote_ip)
-                             .returns('18.42.101.101')
+                             .returns('18.10.101.101')
       get record_url('cat00916a', 'mit.001492509')
       assert_equal(@controller.send(:cache_path),
                    'http://www.example.com/record/cat00916a/mit.001492509?guest=false&pride=false&source=cat00916a')
