@@ -19,7 +19,7 @@ class SFXHandlerConcernTest < MiniTest::Test
       volume: volume
     ).url_for_scan
 
-    expected_url = 'https://sfx.mit.edu/sfx_test?sid=ALEPH:BENTO&amp;call_number=PS3552.U827.P37+2000&amp;barcode=39080014585712&amp;title=Parable+of+the+sower&amp;location=Hayden+Library&amp;rft.date=2010&amp;rft.volume=10&amp;genre=journal'
+    expected_url = 'https://sfx.mit.edu/sfx_test?sid=ALEPH:BENTO&amp;call_number=PS3552.U827.P37+2000&amp;barcode=39080014585712&amp;title=Parable+of+the+sower&amp;location=Hayden+Library&amp;rft.date=2010&amp;rft.volume=10&amp;rft.stitle=&amp;genre=journal'
 
     assert_equal(expected_url, sfx_link)
   end
@@ -32,7 +32,7 @@ class SFXHandlerConcernTest < MiniTest::Test
       doc_number: clean_an
     ).url_generic
 
-    expected_url = 'https://sfx.mit.edu/sfx_test?sid=ALEPH:BENTO_FALLBACK&amp;call_number=&amp;barcode=&amp;title=This+is+a+title&amp;location=&amp;rft.date=&amp;rft.volume=&amp;pid=DocNumber=35819515,Ip=library.mit.edu,Port=9909'
+    expected_url = 'https://sfx.mit.edu/sfx_test?sid=ALEPH:BENTO_FALLBACK&amp;call_number=&amp;barcode=&amp;title=This+is+a+title&amp;location=&amp;rft.date=&amp;rft.volume=&amp;rft.stitle=&amp;pid=DocNumber=35819515,Ip=library.mit.edu,Port=9909'
 
     assert_equal(expected_url, sfx_link)
   end

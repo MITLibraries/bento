@@ -67,6 +67,17 @@ module RecordHelper
     )
   end
 
+  # If there are relevant custom links, use one.
+  def check_custom_link?
+    return false unless @record.fulltext_links.present?
+    @record.fulltext_links.each do |ftl|
+      if relevant_fulltext_link?(ftl)
+        @sfx_link = ftl[:url]
+      end
+    end
+    @sfx_link
+  end
+
   # domains we consider relevant when evaluating links
   def relevant_links
     ['libproxy.mit.edu', 'library.mit.edu', 'sfx.mit.edu', 'owens.mit.edu',
@@ -190,11 +201,18 @@ module RecordHelper
     elsif relevant_fulltext_link?(@record.fulltext_link)
       'availability_full'
 
+    # Sometimes sfx links show up elsewhere and are really good links.
+    elsif check_custom_link?
+      'availability_check_online'
+
     # When all else fails, make SFX sort it out.
     else
       @sfx_link = SFXHandler.new(
         title: @record.eds_title,
-        doc_number: clean_an,
+        source_title: @record.source_title,
+        year: @record.eds_publication_year,
+        volume: @record.eds_volume,
+        doc_number: clean_an
       ).url_generic
       'availability_check_online'
     end

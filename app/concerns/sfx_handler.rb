@@ -12,7 +12,8 @@ class SFXHandler
                  library: nil,
                  title: nil,
                  year: nil,
-                 volume: nil)
+                 volume: nil,
+                 source_title: nil)
     @barcode = barcode
     @call_number = call_number
     @collection = collection
@@ -21,6 +22,7 @@ class SFXHandler
     @library = library
     @year = year
     @volume = volume
+    @source_title = source_title
   end
 
   # Use this when you want to request a scan of an object.
@@ -44,7 +46,8 @@ class SFXHandler
       "&amp;title=#{encoded_title}",
       "&amp;location=#{encoded_location}",
       "&amp;rft.date=#{@year}",
-      "&amp;rft.volume=#{@volume}"
+      "&amp;rft.volume=#{@volume}",
+      "&amp;rft.stitle=#{@source_title}"
     ]
 
     url_parts.push(pid) if @doc_number

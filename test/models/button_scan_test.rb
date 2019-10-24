@@ -72,7 +72,7 @@ class ButtonScanTest < ActiveSupport::TestCase
         '&amp;barcode=39080023421933',
         '&amp;title=The+collected+works+of+Langston+Hughes+%2F+edited+with+an+introduction+by+Arnold+Rampersad.',
         '&amp;location=Hayden+Library',
-        '&amp;rft.date=2001&amp;rft.volume=v.16&amp;genre=journal'
+        '&amp;rft.date=2001&amp;rft.volume=v.16&amp;rft.stitle=&amp;genre=journal'
       ].join('')
       assert_equal(url, @button.url)
     end
@@ -88,7 +88,7 @@ class ButtonScanTest < ActiveSupport::TestCase
           '&amp;barcode=39080023421933',
           '&amp;title=The+collected+works+of+Langston+Hughes+%2F+edited+with+an+introduction+by+Arnold+Rampersad.',
           '&amp;location=Hayden+Library',
-          '&amp;rft.date=2001&amp;rft.volume=v.16&amp;genre=journal'
+          '&amp;rft.date=2001&amp;rft.volume=v.16&amp;rft.stitle=&amp;genre=journal'
         ].join('')
         assert_equal(url, @button.url)
       end
