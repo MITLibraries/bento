@@ -72,6 +72,7 @@ class AlephItem
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~ Properties of Aleph items ~~~~~~~~~~~~~~~~~~~~~~~~
   def available?(item)
+    return false if library(item) == 'Unavailable due to renovation'
     available_statuses.include?(status(item))
   end
 
@@ -100,7 +101,7 @@ class AlephItem
   end
 
   def base_label(item)
-    if available?(item)
+    if available?(item) && library(item) != 'Unavailable due to renovation'
       'Available'
     else
       'Not available'
@@ -116,7 +117,11 @@ class AlephItem
   end
 
   def status(item)
-    item.xpath('status').text
+    if library(item) == 'Unavailable due to renovation'
+      'Local copy unavailable'
+    else
+      item.xpath('status').text
+    end
   end
 
   def status_url(id)
