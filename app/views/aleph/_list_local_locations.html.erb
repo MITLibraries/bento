@@ -5,7 +5,11 @@
       <div class="location-wrap">
         <span class="location">
           <span class="library"><%= s[:library] %></span>
-          <span class="collection"><%= s[:collection] %>:</span>
+          <span class="collection">
+          <% if s[:collection] != 'Request via WorldCat' %>
+            <%= s[:collection] %>
+          <% end %>:
+          </span>
           <span class="callno"><%= s[:call_number] %></span>
           <span class="desc">
             <% if s[:description].present? %> <%= s[:description] %> <% end %>
@@ -14,11 +18,13 @@
         </span>
 
         <span class="location-actions">
-          <a href="<%= map_link(s[:library]) %>"
-             class="btn button-subtle map-link">
-             <i class="fa fa-map-marker" aria-hidden="true"></i>
-             <span class="sr">View <%= s[:library] %> location map</span>
-          </a>
+          <% if s[:library] != 'Unavailable due to renovation' %>
+            <a href="<%= map_link(s[:library]) %>"
+              class="btn button-subtle map-link">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span class="sr">View <%= s[:library] %> location map</span>
+            </a>
+          <% end %>
         </span>
       </div>
       <%# End location wrap %>

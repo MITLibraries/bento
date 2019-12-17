@@ -6,13 +6,21 @@ class ButtonHoldRecall
   include ButtonMaker
 
   def html_button
-    if eligible_recall?
+    if worldcatinate?
+      "<a class='btn button-secondary button-small' " \
+      "href='https://worldcatinator.mit.edu/?bibid=#{@doc_number}'>Request non-MIT copy (3-4 days)</a>"
+    elsif eligible_recall?
       "<a class='btn button-subtle button-small' " \
         "href='#{url}'>Recall (7+ days)</a>"
     elsif eligible_hold?
       "<a class='btn button-secondary button-small' " \
           "href='#{url}'>Place hold (1-2 days)</a>"
     end
+  end
+
+
+  def worldcatinate?
+    true if @library == 'Unavailable due to renovation'
   end
 
   def eligible_hold?
