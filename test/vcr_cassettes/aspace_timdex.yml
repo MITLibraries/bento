@@ -1,0 +1,216 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://timdex.mit.edu/graphql
+    body:
+      encoding: UTF-8
+      string: '{"query":"{search(searchterm: \"archives\", source: \"MIT ArchivesSpace\")
+        {hits records {sourceLink title identifier publicationDate physicalDescription
+        summary contributors { value } } } }"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Content-Type:
+      - application/json
+      Dnt:
+      - '1'
+      Origin:
+      - https://timdex.mit.edu
+      Connection:
+      - close
+      Host:
+      - timdex.mit.edu
+      User-Agent:
+      - http.rb/4.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 03 Mar 2020 15:52:08 GMT
+      Connection:
+      - close
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - ''
+      Access-Control-Max-Age:
+      - '7200'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2c8a32cb7575bc731a0685522dd42100"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7c16eb38-12e8-4589-87cf-cf440180e74b
+      X-Runtime:
+      - '0.316392'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"search":{"hits":81,"records":[{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/103","title":"Massachusetts
+        Institute of Technology, Institute Archives and Special Collections records","identifier":"MIT:archivespace:AC.0129","publicationDate":"1964-2003","physicalDescription":"62.3
+        Cubic Feet; 38 record cartons, 92 manuscript boxes, 2 half manuscript boxes,
+        2 flat boxes)\n","summary":["There are currently thirteen series of Institute
+        Archives and Special Collections records dating from 1964 to 2014."],"contributors":[{"value":"Massachusetts
+        Institute of Technology. Institute Archives and Special Collections"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1074","title":"Peter
+        S. Eagleson personal archives","identifier":"MIT:archivespace:MC.0583","publicationDate":"1933-2010","physicalDescription":"6
+        Cubic Feet; 6 record cartons","summary":null,"contributors":[{"value":"Eagleson,
+        Peter S."}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1280","title":"George
+        W. Clark personal archives","identifier":"MIT:archivespace:MC.0752","publicationDate":"1930-2007","physicalDescription":"12
+        Cubic Feet; In 8 record cartons, 4 manuscript boxes, 3 custom flat boxes,
+        and 1 oversize folder in flat box","summary":["The George W. Clark personal
+        archives contains records from George Clark documenting his career and research.
+        Clark was a member of the faculty at the Massachusetts Institute of Technology
+        (MIT) from  1954 to 1996 in the Department of Physics. He was a leader in
+        high energy astrophysics and cosmic x-ray research and served as the principle
+        investigator for several satellite projects. Clark was a member of several
+        professional science organizations and committees within MIT, as documented
+        in the records of this collection. Other material includes biographical information,
+        correspondences, professional visits with other researchers, and detailed
+        research information including much on his mentor Bruno Rossi."],"contributors":[{"value":"Clark,
+        George W."}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1248","title":"Mary
+        C. Potter personal archives","identifier":"MIT:archivespace:MC.0732","publicationDate":"approximately
+        1958 to 2015","physicalDescription":"63.6 Cubic Feet; 58 record cartons, 17
+        manuscript boxes","summary":null,"contributors":null},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1283","title":"Alice
+        K. Hartley personal archives","identifier":"MIT:archivespace:MC.0754","publicationDate":"1905-1999","physicalDescription":"8
+        Cubic Feet; 8 record cartons","summary":["This collection documents the early
+        life and career of Alice K. Hartley, an American computer scientist and businesswoman.
+        She was academically talented from an early age, which earned her several
+        awards and recognition throughout her teenage years, including a place as
+        a finalist in the nationwide Westinghouse Science Talent Search. She graduated
+        from MIT in 1959 with a BS Physics and went on to work at various companies
+        and firms, such as Bolt, Beranek and Newman (BBN), Palladian Software Inc.,
+        and Apple Computer Inc., with a main focus on the programming language Lisp.
+        On the side, Hartley liked to play and create computer games, as well as collect
+        and deal antiques. This collection contains materials from Hartley''s early
+        life such as photographs, report cards, and newspaper clippings about her
+        extracurricular activities and academic accomplishments throughout high school,
+        as well as work-related correspondence, papers, source codes, and research
+        data."],"contributors":[{"value":"Hartley, A. K. (Alice K.)"},{"value":"Flemming,
+        Jennifer T."}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1264","title":"Mark
+        E. Connelly personal archives","identifier":"MIT:archivespace:MC.0740","publicationDate":"1946-1986","physicalDescription":"10.2
+        Cubic Feet; 10 record cartons, 1 phase box, 1 oversize folder","summary":["Materials
+        in this collection document professional activities of Mark E. Connelly, Research
+        Engineer at the Massachusetts Institute of Technology. Connelly''s work was
+        focused primarily on hybrid computing, flight simulation, and air traffic
+        control, which was completed in the Laboratory for Information and Decision
+        Systems (LIDS). Materials span from 1946 to 1986 and comprise reports, technical
+        memoranda, correspondence, and research materials."],"contributors":null},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1101","title":"Gordon
+        H. Pettengill personal archives","identifier":"MIT:archivespace:MC.0609","publicationDate":"1950-2004","physicalDescription":"44
+        Cubic Feet; in 43 record cartons, 2 flat boxes","summary":null,"contributors":null},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1043","title":"Paul
+        Earls Archives","identifier":"MIT:archivespace:MC.0552","publicationDate":"undated","physicalDescription":"16.3
+        Cubic Feet; 16 record cartons, 1 manuscript box","summary":["The Paul Earls
+        archives contains a large number of music manuscripts and recordings of his
+        compositions, as well as slides of multi-media laser and sound works he created
+        in venues in the United States and Europe.\n\nfrom: \"What''s the Score: Spring
+        2000,\"  MIT Music Library newsletter\nPaul Earls was a fellow at the Massachusetts
+        Institute of Technology Center for Advanced Visual Studies (CAVS) from 1970
+        until his death in 1998. He was a composer known mostly for theatrical and
+        multi-media works that included his laser art such as The Death of King Phillip,
+        Icarus: a Sky Opera (with Otto Piene, Ian Strasfogel and Guenther Schneider-Siemssen),
+        and Mozart and Cosmology (with Beth Soll). He also wrote symphonic, choral,
+        chamber and electronic music. Examples include Brevis Mass, And On the Seventh
+        Day for full orchestra, Nun Danket Fantasy for organ, and Five Notables for
+        solo violin."],"contributors":[{"value":"Earls, Paul"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1218","title":"Shatswell
+        Ober personal archives","identifier":"MIT:archivespace:MC.0726","publicationDate":"1939-1963","physicalDescription":"0.3
+        Cubic Feet; in one manuscript box","summary":null,"contributors":null},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/878","title":"Joseph
+        Weizenbaum personal archives","identifier":"MIT:archivespace:MC.0383","publicationDate":"circa
+        1960s-1990s","physicalDescription":"19 Cubic Feet; 19 record cartons","summary":null,"contributors":[{"value":"Weizenbaum,
+        Joseph"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1266","title":"Hal
+        Abelson personal archives","identifier":"MIT:archivespace:MC.0743","publicationDate":"approximately
+        1962-2004","physicalDescription":"23.3 Cubic Feet; 23 record cartons, 1 manuscript
+        box","summary":["This collection comprises subject files compiled by Harold
+        \"Hal\" Abelson, the Class of 1922 Professor of Electrical Engineering and
+        Computer Science at the Massachusetts Institute of Technology (MIT). His field
+        of interest is educational computing and applications of symbolic and numerical
+        computing to science and engineering. Materials in this collection, spanning
+        from approximately 1962 to 2004, are arranged alphabetically. Subject files
+        primarily consist of correspondence, proposals, course notes, and publications."],"contributors":null},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1010","title":"Rainer
+        Weiss personal archives","identifier":"MIT:archivespace:MC.0517","publicationDate":"1946-1999","physicalDescription":"36
+        Cubic Feet; 111 manuscript boxes, 1 flat box","summary":null,"contributors":[{"value":"Weiss,
+        Rainer"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1240","title":"Sheila
+        Widnall personal archives","identifier":"MIT:archivespace:MC.0728","publicationDate":"1976-2002","physicalDescription":"0.3
+        Cubic Feet; 1 manuscript box","summary":null,"contributors":[{"value":"Widnall,
+        Sheila E."}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/794","title":"Mildred
+        Dresselhaus personal archives","identifier":"MIT:archivespace:MC.0281","publicationDate":"1989","physicalDescription":"3.0
+        Cassette(s; 1 container","summary":null,"contributors":[{"value":"Dresselhaus,
+        M. S."}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1274","title":"Leon
+        Trilling personal archives","identifier":"MIT:archivespace:MC.0746","publicationDate":"1940-2018","physicalDescription":"1.5
+        Cubic Feet; 3 boxes; 162.6 Megabytes; 116 digital files","summary":["Leon
+        Trilling (1924-2018) was emeritus professor in the MIT Department of Aeornautics
+        and Astronautics (AeroAstro) and the Program in Science, Technology, and Society.
+        He began his career at MIT in 1951 as a researcher, became a professor in
+        1959, and retired in 1994, after which he continued teaching at MIT for another
+        23 years. He was also the co-founder of the Massachusetts Department of Education''s
+        METCO Program, the longest continuously running voluntary school desegregation
+        program in the country. Leon Trilling personal archives includes his research
+        and work spanning 1940''s - 2018. Topics include aeronautical engineering,
+        aeronautical engineering and the USSR, and science education. He was also
+        very involved in the race integration of schools in the Boston area working
+        specifically in Brookline with METCO. His papers also reflect his work in
+        Maine with the Passamaquoddy STEM Project."],"contributors":[{"value":"Trilling,
+        Leon"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1305","title":"Noam
+        Chomsky personal archives","identifier":"MIT:archivespace:MC.0600","publicationDate":"1725-2015,1960-2010","physicalDescription":"332
+        Cubic Feet; 639 legal manuscript boxes, 110 letter manuscript boxes, 3 record
+        cartons, 4 flat boxes, 1 oversize folder","summary":["Noam Chomsky is a linguist
+        and political activist. The Noam Chomsky personal archives consists of Chomsky''s
+        lecture, speaking, and travel notes, writings, correspondence, research materials,
+        collected serial publications, and other materials documenting his life and
+        work."],"contributors":[{"value":"Chomsky, Noam"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1278","title":"Irving
+        M. London personal archives","identifier":"MIT:archivespace:MC.0750","publicationDate":"circa
+        1950s - 2010s","physicalDescription":"20 Cubic Feet; 20 record cartons","summary":["The
+        Irving M. London personal archives includes professional files from Irving
+        M. London documenting his career from Columbia University College of Physicians
+        and Surgeons to his teaching and adminstrative work for the Harvard-MIT Program
+        in Health Sciences and Technology (HST). Materials include London''s student
+        notebooks; lab notebooks from his research and time teaching at Columbia University
+        College of Physicians and Surgeons; Paris notebooks from the late 1940s to
+        the early 1950s; an alphabetical set of correspondence; research materials
+        relating to patents and grants; teaching materials such as lecture notes and
+        syllabi; outside MIT work (Johnson \u0026amp; Johnson, Genetix); and material
+        related to work done for professional organizations (National Academy of Sciences)."],"contributors":[{"value":"London,
+        Irving M., 1918-2018"},{"value":"London, Irving M., 1918-2018"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1255","title":"Peter
+        H. Schiller personal archives","identifier":"MIT:archivespace:MC.0736","publicationDate":"1959-2013","physicalDescription":"14
+        Cubic Feet; in 14 record cartons","summary":null,"contributors":null},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1268","title":"Gerald
+        Jay Sussman personal archives","identifier":"MIT:archivespace:MC.0744","publicationDate":"1965-2003","physicalDescription":"14.4
+        Cubic Feet; 14 record cartons, 1 manuscript box, 1 oversize folder","summary":["This
+        collection documents the activities of Gerald Jay Sussman, the Panasonic Professor
+        of Electrical Engineering at the Massachusetts Institute of Technology (MIT).
+        Materials, dating from 1965 to 2003, include course materials, research, and
+        publication and subject files in the field of computer science and artificial
+        intelligence."],"contributors":[{"value":"Sussman, Gerald Jay"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1257","title":"Stephen
+        J. Lippard personal archives","identifier":"MIT:archivespace:MC.0737","publicationDate":"1960s
+        - 2015","physicalDescription":"9 Cubic Feet; In 7 record cartons, 1 legal
+        manuscript box, 1 oversize folder","summary":null,"contributors":null}]}}}'
+    http_version: 
+  recorded_at: Tue, 03 Mar 2020 15:52:08 GMT
+recorded_with: VCR 5.0.0

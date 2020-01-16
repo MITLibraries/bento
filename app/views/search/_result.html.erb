@@ -1,6 +1,8 @@
 <div class="wrap-result">
   <% if Flipflop.enabled?(:local_browse) %>
     <% search_prefix = '/search/bento?q=' %>
+  <% elsif 'timdex' == params[:target] %>
+    <% search_prefix = ENV['ASPACE_SEARCH_URI'] %>
   <% else %>
     <% search_prefix = ENV['EDS_PROFILE_URI'] %>
   <% end %>
@@ -41,9 +43,22 @@
       </p>
     <% end %>
 
+    <% if result.year.present? && params[:target] == 'timdex' %>
+      <p>
+        <span class="result-year">Date range: <%= result.year %></span>
+      </p>
+    <% end %>
+
+    <% if result.physical_description %>
+      <p class="result-physical">
+        Size: <%= result.truncated_physical %>
+      </p>
+    <% end %>
+
     <% if result.blurb %>
       <p class="result-blurb">
-        <%= safe_output(result.blurb) %><br />
+        <% if params[:target] == 'timdex' %>Collection description:<br /><% end %>
+        <%= safe_output(result.truncated_blurb) %><br />
       </p>
     <% end %>
 

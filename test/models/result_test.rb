@@ -81,6 +81,13 @@ class ResultTest < ActiveSupport::TestCase
     assert_equal('title...', r.truncated_title.split(' ').last)
   end
 
+  test 'long physical description truncated' do
+    r = Result.new('title', 'http://example.com')
+    r.physical_description = 'physical ' * 100
+    assert(r.physical_description.length > 200)
+    assert(r.truncated_physical.length <= 200)
+  end
+
   test 'can set citation' do
     r = Result.new('title', 'http://example.com')
     r.citation = 'Journal of Stuff, vol.12, no.1, pp.2-12'

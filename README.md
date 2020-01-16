@@ -70,6 +70,8 @@ custom hint metadata.
   If exceeded, 'et al' will be appended after this number.
 - `RECAPTCHA_SITE_KEY`
 - `RECAPTCHA_SECRET_KEY`
+- `TIMDEX_URL`: The GraphQL endpoint for Timdex/ArchiveSpace
+- `ASPACE_SEARCH_URI`: the base search URL for the Timdex/ArchiveSpace application
 
 ## Optional Environment Variables
 

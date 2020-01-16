@@ -47,7 +47,7 @@ class SearchController < ApplicationController
 
   # Array of search endpoints that are supported
   def valid_targets
-    %w[articles books google]
+    %w[articles books google timdex]
   end
 
   # Formatted date used in creating cache keys
@@ -58,6 +58,8 @@ class SearchController < ApplicationController
   def search_target(page, per_page)
     if params[:target] == 'google'
       search_google
+    elsif params[:target] == 'timdex'
+      search_timdex
     else
       search_eds(page, per_page)
     end
@@ -83,6 +85,12 @@ class SearchController < ApplicationController
   def search_google
     raw_results = SearchGoogle.new.search(strip_truncate_q)
     NormalizeGoogle.new.to_result(raw_results, strip_truncate_q)
+  end
+
+  # Searches TIMDEX! API
+  def search_timdex
+    raw_results = SearchTimdex.new.search(strip_truncate_q)
+    NormalizeTimdex.new.to_result(raw_results, strip_truncate_q)
   end
 
   # Strips trailing and leading white space in search term

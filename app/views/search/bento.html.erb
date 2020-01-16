@@ -11,6 +11,8 @@
 
     <a href="#box-articles_content" data-type="Jump to articles"><span class="results-summary-item" data-region="articles">Articles and journals <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
 
+    <a href="#box-aspace_content" data-type="Jump to distinctive collections"><span class="results-summary-item" data-region="timdex">Archives and manuscripts <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
+
     <a href="#box-website_content" data-type="Jump to website"><span class="results-summary-item" data-region="google">Libraries website and guides <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
   </p>
 </div>
@@ -28,10 +30,12 @@
 </div>
 
 <div class="gridband layout-2c">
-  <%= render partial: "placeholders", locals: { heading: 'Library website and guides', id: 'website_content', description: 'MIT Libraries website and research guides.', advsearch: '' } %>
+  <%= render partial: "placeholders", locals: { heading: 'Archives & manuscripts collections', id: 'aspace_content', description: 'Unique and rare materials from <a href="https://libraries.mit.edu/distinctive-collections/">MIT Distinctive Collections</a>.', advsearch: "<a href='https://libraries.mit.edu/distinctive-collections/collections/'>Explore other MIT collections: rare books, visual materials, etc.</a>" } %>
 
-  <%= render partial: "other_resources" %>
+  <%= render partial: "placeholders", locals: { heading: 'Library website and guides', id: 'website_content', description: 'MIT Libraries website and research guides.', advsearch: '' } %>
 </div>
+
+<%= render partial: "other_resources" %>
 
 <%= render partial: "help" %>
 
@@ -41,6 +45,8 @@
   <%= render partial: "trigger_search", locals: { target: 'books', id: 'books_content'} %>
 
   <%= render partial: "trigger_search", locals: { target: 'google', id: 'website_content'} %>
+
+  <%= render partial: "trigger_search", locals: { target: 'timdex', id: 'aspace_content'} %>
 
   <%= render partial: "trigger_hint" %>
 </script>
