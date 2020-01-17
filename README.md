@@ -81,3 +81,34 @@ custom hint metadata.
 - `LOG_LEVEL`: set log level for development, default is `:debug`
 - `RESULTS_PER_BOX`: defaults to 3
 - `SENTRY_DSN`: logs exceptions to Sentry
+
+## Developing locally with Docker
+
+A Dockerfile is provided that is intended solely for development work as it is
+not optimized for production environments (and in fact doesn't install
+production required dependencies so for real don't use it for anything else).
+
+To build the container:
+
+`docker build -t bento .`
+
+To run the application while actively developing:
+
+`docker run -it -p 3000:3000 --mount type=bind,source=$(pwd),target=/bento bento`
+should mount your local copy of the code in a way in which
+your changes are immediately reflected in the running app.
+
+To run the tests it seems useful to mount your local code into a bash shell to
+pick up changes live:
+
+`docker run -it --mount type=bind,source=$(pwd),target=/bento --entrypoint /bin/bash bento`
+
+Once in the containers shell:
+
+`bundle exec rails test` should do the trick
+
+If you just leave those running, you should see changes you make locally
+reflected immediately in the running container.
+
+`docker-compose` will load your `.env` file automatically for your config and
+we use `/config/environment/test.rb` for test env stuff.
