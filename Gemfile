@@ -22,7 +22,6 @@ gem 'sentry-raven'
 gem 'skylight'
 gem 'staccato'
 gem 'stringex'
-gem 'therubyracer', platforms: :ruby
 gem 'uglifier'
 
 group :production do
