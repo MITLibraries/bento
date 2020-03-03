@@ -19,10 +19,6 @@ Flipflop.configure do
     default: ENV['LOCAL_FULL_RECORD'],
     description: 'Enables local full record instead of sending to EDS UI'
 
-  feature :hint_tracker,
-    default: ENV['HINT_TRACKER'],
-    description: 'Sends hint display to GA'
-
   feature :pride,
     default: ENV['PRIDE'],
     description: 'Enables rainbows for records with LGBT subjects/keywords'

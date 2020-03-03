@@ -14,6 +14,7 @@ It currently searches Ebsco Discovery Services API (EDS) and Google Custom
 Search API. Appropriate credentials for both are required (see below).
 
 ## Bento System Overview
+
 ![alt text](docs/charts/bento_overview.png "Bento system overview chart")
 
 ## Authentication Flow and Guest Mode Details
@@ -24,17 +25,21 @@ https://mitlibraries.atlassian.net/wiki/x/CoAeAw
 
 Tasks exist to reload hints from supported sources.
 Example to reload Aleph hints in a development environment:
+
 ```
 heroku local:run bin/rails reloadhints:aleph
 ```
+
 _note_: `reloadhints:aleph` requires ENV `ALEPH_HINT_SOURCE`
 
 To reload custom hints in a development environment:
+
 ```
 heroku local:run bin/rails reloadhints:custom[https://www.dropbox.com/blah/blah]
 ```
 
 To reload custom hints in a heroku environment:
+
 ```
 heroku run bin/rails reloadhints:custom['https://www.dropbox.com/blah/blah'] --app your-appname-staging
 ```
@@ -72,8 +77,6 @@ custom hint metadata.
 - `EDS_TIMEOUT`: value to override the 6 second default for EDS timeout
 - `FLIPFLOP_KEY`: set this to enable access to the flipflop dashboard
 - `GLOBAL_ALERT`: html message to display as a global header
-- `GOOGLE_ANALYTICS`: Google Analytics property ID
-- `GOOGLE_ANALYTICS_LINKED_DOMAINS`: List of related domains, if your implementation uses cross-domain linking. Use syntax: `foo.com,bar.com`
 - `HINT_SOURCES`: Comma-separated Hint source names, in descending order of priority. (If unset, will default to `custom`).
 - `JS_EXCEPTION_LOGGER_KEY`: Enables and logs JavaScript errors.
   - Hints will only be displayed to the user if they are in `HINT_SOURCES`.

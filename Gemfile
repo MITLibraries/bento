@@ -20,7 +20,6 @@ gem 'rails', '5.1.7'
 gem 'sass-rails'
 gem 'sentry-raven'
 gem 'skylight'
-gem 'staccato'
 gem 'stringex'
 gem 'uglifier'
 
