@@ -25,10 +25,12 @@ class ButtonHoldRecall
 
   def eligible_hold?
     return false if @on_reserve || @library == 'Physics Dept. Reading Room'
+    return false if Flipflop.enabled?(:disable_holds)
     available_here_now? && hold_recallable?
   end
 
   def eligible_recall?
+    return false if Flipflop.enabled?(:disable_recalls)
     return unless recallable_status?
     return false if @on_reserve || @library == 'Physics Dept. Reading Room'
     !eligible_hold? && hold_recallable?
