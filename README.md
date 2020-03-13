@@ -84,6 +84,9 @@ custom hint metadata.
 - `LOG_LEVEL`: set log level for development, default is `:debug`
 - `RESULTS_PER_BOX`: defaults to 3
 - `SENTRY_DSN`: logs exceptions to Sentry
+- `DISABLE_SCANS`: if set will disable scans for local aleph items
+- `DISABLE_HOLDS`: if set will disable holds for local aleph items
+- `DISABLE_RECALLS`: if set will disable recalls for local aleph items
 
 ## Developing locally with Docker
 

@@ -22,4 +22,16 @@ Flipflop.configure do
   feature :pride,
     default: ENV['PRIDE'],
     description: 'Enables rainbows for records with LGBT subjects/keywords'
+
+  feature :disable_holds,
+    default: ENV['DISABLE_HOLDS'],
+    description: 'Determines if holds for local items are currently enabled'
+
+  feature :disable_recalls,
+    default: ENV['DISABLE_RECALLS'],
+    description: 'Determines if recalls for local items are currently enabled'
+
+  feature :disable_scans,
+    default: ENV['DISABLE_SCANS'],
+    description: 'Determines if scans for local items are currently enabled'
 end

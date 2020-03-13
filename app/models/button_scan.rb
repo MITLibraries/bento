@@ -14,6 +14,7 @@ class ButtonScan
   # issue, like "item is not in the library right now" or "item is an audio
   # tape".
   def eligible?
+    return false if Flipflop.enabled?(:disable_scans) 
     [
       call_number_valid?,
       z30status_valid?,
