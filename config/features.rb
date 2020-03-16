@@ -27,6 +27,10 @@ Flipflop.configure do
     default: ENV['DISABLE_HOLDS'],
     description: 'Determines if holds for local items are currently enabled'
 
+  feature :disable_ills,
+    default: ENV['DISABLE_ILLS'],
+    description: 'Determines if ILLs for local items are currently enabled'
+
   feature :disable_recalls,
     default: ENV['DISABLE_RECALLS'],
     description: 'Determines if recalls for local items are currently enabled'
