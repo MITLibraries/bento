@@ -86,6 +86,7 @@ custom hint metadata.
 - `SENTRY_DSN`: logs exceptions to Sentry
 - `DISABLE_SCANS`: if set will disable scans for local aleph items
 - `DISABLE_HOLDS`: if set will disable holds for local aleph items
+- `DISABLE_ILLS`: if set will disable ILLs for local aleph items
 - `DISABLE_RECALLS`: if set will disable recalls for local aleph items
 
 ## Developing locally with Docker

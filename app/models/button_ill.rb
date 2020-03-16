@@ -23,6 +23,7 @@ class ButtonIll
   # or ILLiad. We prefer that patrons use BorrowDirect; WorldCat will send them
   # there preferentially if it is an option.
   def eligible?
+    return false if Flipflop.enabled?(:disable_ills) 
     # If it has a disqualifying status, you can't ILL it. If it doesn't, you're
     # good to go.
     [
