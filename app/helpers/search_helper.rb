@@ -6,6 +6,8 @@ module SearchHelper
       'articles and journals'
     elsif params[:target] == 'google'
       'website'
+    elsif params[:target] == 'timdex'
+      'archives and manuscripts'
     end
   end
 
@@ -24,7 +26,7 @@ module SearchHelper
   end
 
   def full_record_link(result)
-    if Flipflop.enabled?(:local_full_record) && params[:target] != 'google'
+    if Flipflop.enabled?(:local_full_record) && ['books','articles'].include?(params[:target])
       record_path(result.db_source.last, result.an)
     else
       result.url

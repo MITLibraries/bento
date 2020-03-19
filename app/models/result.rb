@@ -5,10 +5,10 @@ class Result
   validates :url, presence: true
 
   attr_accessor :an, :authors, :available_url, :blurb, :check_sfx_url,
-                :citation, :db_source, :fulltext_links, :get_it_label, :in,
-                :location, :marc_856, :online, :openurl, :publisher,
-                :record_links, :subjects, :thumbnail, :title, :type,
-                :uniform_title, :url, :winner, :year
+                :citation, :date_range, :db_source, :fulltext_links,
+                :get_it_label, :in, :location, :marc_856, :online, :openurl,
+                :physical_description, :publisher, :record_links, :subjects,
+                :thumbnail, :title, :type, :uniform_title, :url, :winner, :year
 
   MAX_TITLE_LENGTH = ENV['MAX_TITLE_LENGTH'] || 150
 
@@ -108,6 +108,14 @@ class Result
   def truncated_authors
     return authors if authors.length <= ENV['MAX_AUTHORS'].to_i
     authors[0...ENV['MAX_AUTHORS'].to_i] << 'et al'
+  end
+
+  def truncated_blurb
+    blurb.truncate(200, separator: ' ')
+  end
+
+  def truncated_physical
+    physical_description.truncate(200, separator: ' ')
   end
 
   def truncated_subjects

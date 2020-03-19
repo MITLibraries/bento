@@ -11,6 +11,9 @@
     "ALEPH_KEY": {
       "required": true
     },
+    "ASPACE_SEARCH_URI": {
+      "required": true
+    },
     "EDS_PROFILE": {
       "required": true
     },
@@ -96,6 +99,9 @@
       "required": true
     },
     "SMTP_USER": {
+      "required": true
+    },
+    "TIMDEX_URL": {
       "required": true
     }
   },

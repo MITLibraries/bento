@@ -61,6 +61,14 @@ class SearchTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'timdex results are populated' do
+    VCR.use_cassette('popcorn timdex',
+                     allow_playback_repeats: true) do
+      get '/search/search_boxed?q=popcorn&target=timdex'
+      assert_response :success
+    end
+  end
+
   test 'invalid target' do
     get '/search/search_boxed?q=popcorn&target=hackor'
     follow_redirect!

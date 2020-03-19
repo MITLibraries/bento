@@ -70,6 +70,11 @@
      color: $gray;
    }
 
+  .result-physical {
+    font-size: $fs-xsmall;
+    color: $gray;
+  }
+
   .result-pubinfo {
     font-size: $fs-xsmall;
     color: $gray;
@@ -83,6 +88,10 @@
     &:before {
       content: " | ";
       color: $gray-l2;
+    }
+
+    &:first-child:before {
+      content: none;
     }
    }
 

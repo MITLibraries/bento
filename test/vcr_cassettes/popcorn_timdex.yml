@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://timdex.mit.edu/graphql
+    body:
+      encoding: UTF-8
+      string: '{"query":"{\n  search(searchterm: \"popcorn\") {\nhits\n    records
+        {\n      sourceLink\n      title\n    }\n  }\n}\n"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Content-Type:
+      - application/json
+      Dnt:
+      - '1'
+      Origin:
+      - https://timdex.mit.edu
+      Connection:
+      - close
+      Host:
+      - timdex.mit.edu
+      User-Agent:
+      - http.rb/4.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 22 Jan 2020 20:00:11 GMT
+      Connection:
+      - close
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Expose-Headers:
+      - ''
+      Access-Control-Max-Age:
+      - '7200'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"3bb3af9cf9741d3b723558b09fc18168"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c9ce9b18-22b4-4dfc-8b5e-94ffce99aea5
+      X-Runtime:
+      - '1.107194'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"search":{"hits":115,"records":[{"sourceLink":"https://library.mit.edu/item/000346597","title":"Popcorn
+        Venus /"},{"sourceLink":"https://library.mit.edu/item/002623996","title":"Popcorn
+        Industry Profile: Belgium"},{"sourceLink":"https://library.mit.edu/item/002624002","title":"Popcorn
+        Industry Profile: Hong Kong"},{"sourceLink":"https://library.mit.edu/item/002176518","title":"Popcorn
+        Industry Profile: Denmark"},{"sourceLink":"https://library.mit.edu/item/002623995","title":"Popcorn
+        Industry Profile: Australia"},{"sourceLink":"https://library.mit.edu/item/002624001","title":"Popcorn
+        Industry Profile: Greece"},{"sourceLink":"https://library.mit.edu/item/002624006","title":"Popcorn
+        Industry Profile: Norway"},{"sourceLink":"https://library.mit.edu/item/002624012","title":"Popcorn
+        Industry Profile: Thailand"},{"sourceLink":"https://library.mit.edu/item/002176515","title":"Popcorn
+        Industry Profile: Austria"},{"sourceLink":"https://library.mit.edu/item/002200868","title":"Popcorn
+        Industry Profile: Ireland"},{"sourceLink":"https://library.mit.edu/item/002623993","title":"Popcorn
+        Industry Profile: Argentina"},{"sourceLink":"https://library.mit.edu/item/002623999","title":"Popcorn
+        Industry Profile: Germany"},{"sourceLink":"https://library.mit.edu/item/002624000","title":"Popcorn
+        Industry Profile: Global"},{"sourceLink":"https://library.mit.edu/item/002623997","title":"Popcorn
+        Industry Profile: Chile"},{"sourceLink":"https://library.mit.edu/item/002623998","title":"Popcorn
+        Industry Profile: Europe"},{"sourceLink":"https://library.mit.edu/item/002624011","title":"Popcorn
+        Industry Profile: Taiwan"},{"sourceLink":"https://library.mit.edu/item/002176516","title":"Popcorn
+        Industry Profile: Brazil"},{"sourceLink":"https://library.mit.edu/item/002176521","title":"Popcorn
+        Industry Profile: Hungary"},{"sourceLink":"https://library.mit.edu/item/002176522","title":"Popcorn
+        Industry Profile: Mexico"},{"sourceLink":"https://library.mit.edu/item/002176523","title":"Popcorn
+        Industry Profile: Poland"}]}}}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 20:00:12 GMT
+recorded_with: VCR 5.0.0
