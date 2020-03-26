@@ -1,6 +1,0 @@
-language: ruby
-cache: bundler
-sudo: false
-env:
-  - SPEC_REPORTER=true
-script: bin/rails test

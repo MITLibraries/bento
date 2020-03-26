@@ -45,10 +45,11 @@ group :development do
 end
 
 group :test do
-  gem 'coveralls', require: false
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
   gem 'mocha'
+  gem 'simplecov', require: false
+  gem 'simplecov-lcov', require: false
   gem 'vcr'
   gem 'webmock'
 end
