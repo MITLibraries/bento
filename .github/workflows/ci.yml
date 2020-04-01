@@ -20,8 +20,6 @@ jobs:
         key: bundle-use-ruby-ubuntu-latest-${{ hashFiles('.ruby-version') }}-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           bundle-use-ruby-ubuntu-latest-${{ hashFiles('.ruby-version') }}-
-    - name: install bundler
-      run: gem install bundler:2.1.4
     - name: bundle install
       run: |
         bundle config path vendor/bundle
