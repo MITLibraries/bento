@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://timdex.mit.edu/graphql
+    body:
+      encoding: UTF-8
+      string: '{"query":"{search(searchterm: \"''kevin lynch''\", source: \"MIT ArchivesSpace\")
+        {hits records {sourceLink title identifier publicationDate physicalDescription
+        summary contributors { value } } } }"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Content-Type:
+      - application/json
+      Origin:
+      - https://lib.mit.edu
+      Connection:
+      - Keep-Alive
+      Host:
+      - timdex.mit.edu
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 07 Apr 2020 15:26:20 GMT
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - ''
+      Access-Control-Max-Age:
+      - '7200'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2fa4ba5bebd9eedbe59b6d6fec88e45e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 938a7c7a-5c62-4a83-8843-be4e586017e4
+      X-Runtime:
+      - '0.816869'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"search":{"hits":3,"records":[{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/739","title":"Kevin
+        Lynch papers","identifier":"MIT:archivespace:MC.0208","publicationDate":"1934-1988","physicalDescription":"16.5
+        Cubic Feet; 12 record cartons, 8 manuscript boxes, 1 half manuscript box,
+        4 medium flat boxes, 1 large flat box, 3 small media boxes, 1 slide box and
+        2 loose drawings, 10 oversize folders","summary":["This collection documents
+        the career of Kevin Lynch. Lynch was a member of the faculty at the Massachusetts
+        Institute of Technology from 1948 to 1978 in the Department of City and Regional
+        Planning, and was a leader in the field of city planning and urban redevelopment.
+        Material in this collection covers research data, correspondence, course material,
+        trip diaries, and manuscripts."],"contributors":[{"value":"Lynch, Kevin, 1918-1984"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1143","title":"Louise
+        Chawla research papers on the Growing Up in Cities project","identifier":"MIT:archivespace:MC.0651","publicationDate":"1972-2018","physicalDescription":"2.5
+        Cubic Feet; 7 document boxes, 1 flat box","summary":null,"contributors":[{"value":"Chawla,
+        Louise"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/581","title":"Massachusetts
+        Institute of Technology, News Office records","identifier":"MIT:archivespace:AC.0069","publicationDate":"1920-2007","physicalDescription":"55.5
+        Cubic Feet; 53 record cartons, 5 manuscript boxes, 4 half manuscript boxes,
+        1 flat storage box","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. News Office"}]}]}}}'
+    http_version: null
+  recorded_at: Tue, 07 Apr 2020 15:26:20 GMT
+recorded_with: VCR 5.1.0
