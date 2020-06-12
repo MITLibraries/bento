@@ -64,10 +64,11 @@ class AlephItem
   # do here is call the #html_button method of each button we are interested in
   # and the button will take care of the rest.
   def all_buttons(item, oclc, scan)
-    [ButtonContact.new(item, oclc, scan).html_button,
-     ButtonHoldRecall.new(item, oclc, scan).html_button,
+    [ButtonHoldRecall.new(item, oclc, scan).html_button,
      ButtonIll.new(item, oclc, scan).html_button,
-     ButtonScan.new(item, oclc, scan).html_button]
+     ButtonScan.new(item, oclc, scan).html_button,
+     ButtonAeon.new(item, oclc, scan, "onsite").html_button,
+     ButtonAeon.new(item, oclc, scan, "copy").html_button]
   end
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~ Properties of Aleph items ~~~~~~~~~~~~~~~~~~~~~~~~
