@@ -9,10 +9,11 @@
 # You probably don't want to, but when all else fails familiarize yourself with:
 # https://mitlibraries.atlassian.net/wiki/spaces/DI/pages/58654721/ButtonMaker+documentation
 module ButtonMaker
-  def initialize(item, oclc, scan)
+  def initialize(item, oclc, scan, aeon_type="")
     @item = item
     @oclc = oclc
     @scan = scan
+    @aeon_type = aeon_type
     set_item_properties
   end
 
