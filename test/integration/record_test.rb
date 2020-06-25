@@ -55,10 +55,10 @@ class RecordTest < ActionDispatch::IntegrationTest
 
   test 'course reserve material is viewable' do
     VCR.use_cassette('record: course reserve', allow_playback_repeats: true) do
-      get record_url, params: { db_source: 'cat01763a', an: 'mitcr.000105015' }
+      get record_url, params: { db_source: 'cat01763a', an: 'mitcr.000115377' }
       assert_response :success
       assert_select('h2') do |value|
-        assert(value.text.include?('Economic analysis for business decisions'))
+        assert(value.text.include?('Inorganic chemistry'))
       end
     end
   end
@@ -98,6 +98,9 @@ class RecordTest < ActionDispatch::IntegrationTest
   end
 
   test 'emergency backup SFX link shown when we do not know what to do' do
+    # NOTE: this record is no longer in EDS but it is not clear how to indentify
+    # a suitable replacement record at this time. The cassette has been
+    # manually manipulated and can't be easily regenerated.
     VCR.use_cassette('record: omgwtfbbq', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'edsasp', an: 'edsasp.ASP2223378.CLMU' }
       assert_response :success
@@ -286,7 +289,7 @@ class RecordTest < ActionDispatch::IntegrationTest
   test 'should be able to display rainbows' do
     get '/toggle/?feature=pride'
     VCR.use_cassette('record: rainbows', allow_playback_repeats: true) do
-      get record_url, params: { db_source: 'qth', an: '17660728' }
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.002613248' }
       assert_response :success
       assert_select 'div.reasons'
     end
@@ -311,6 +314,10 @@ class RecordTest < ActionDispatch::IntegrationTest
   end
 
   test 'login is shown for pdflink on non-restricted records' do
+    # NOTE: the record we pull back here no longer has the correct access level
+    # for this test so the cassette has been manually modified to use 
+    # access level 6 instead of the current record level of 2 to demonstrate
+    # how the code works even if we can no longer find a valid record for tests
     VCR.use_cassette('record: pdflink unrestricted record',
                      allow_playback_repeats: true) do
       get record_url, params: { db_source: 'mdc', an: '25750248' }

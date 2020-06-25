@@ -131,9 +131,8 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
   test 'generic eds record error handler' do
     VCR.use_cassette('record: unknown error handler',
                      allow_playback_repeats: true) do
-      assert_raises RecordController::UnknownEdsError do
-        get record_url('phl', 'PHL2218518')
-      end
+      get record_url('phl', 'PHL2218518')
+      assert_includes(@response.body, 'The requested record was not found.')
     end
   end
 end

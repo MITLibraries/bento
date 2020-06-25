@@ -104,6 +104,61 @@ http_interactions:
   recorded_at: Thu, 24 Aug 2017 13:07:42 GMT
 - request:
     method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=n&profile=FAKE_EDS_PROFILE
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - ''
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 24 Aug 2017 13:07:40 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - ddb717da-412b-4ec2-96da-cbe22ee71f79
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-1143328204"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '101'
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"cb9c84e2-5928-4792-bdd3-5037e052140a.6vrfaGQCvB63gAaxFquqrDzQLkYOlFvsB1mZCK\/d3KU="}'
+    http_version:
+  recorded_at: Thu, 24 Aug 2017 13:07:42 GMT
+- request:
+    method: get
     uri: https://eds-api.ebscohost.com/edsapi/rest/Info
     body:
       encoding: US-ASCII
@@ -363,4 +418,194 @@ http_interactions:
         (2079-6374)","Type":"main"}]}}]}}}}}'
     http_version:
   recorded_at: Thu, 24 Aug 2017 13:07:43 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/ExportFormat?an=123877356&dbid=aci&format=all
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 09 Apr 2020 14:49:04 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 72d73e3e-3be2-435c-9630-2a00601ee11e
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-1572749080"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '3635'
+    body:
+      encoding: UTF-8
+      string: '{"Format":"RIS","Label":"RIS Format","Data":"TY  - \u000d\u000aAU  -
+        Khosravi, Farhad\u000d\u000aAU  - Loeian, Seyed Masoud\u000d\u000aAU  - Panchapakesan,
+        Balaji\u000d\u000aT1  - Ultrasensitive Label-Free Sensing of IL-6 Based on
+        PASE Functionalized Carbon Nanotube Micro-Arrays with RNA-Aptamers as Molecular
+        Recognition Elements.\u000d\u000aJO  - Biosensors (2079-6374)\u000d\u000aJF  -
+        Biosensors (2079-6374)\u000d\u000aJ1  - Biosensors (2079-6374)\u000d\u000aPY  -
+        2017\/06\/\/\u000d\u000aY1  - 2017\/06\/\/\u000d\u000aVL  - 7\u000d\u000aIS  -
+        2\u000d\u000aCP  - 2\u000d\u000aM3  - Article\u000d\u000aSP  - 17\u000d\u000aSN  -
+        20796374\u000d\u000aAB  - This study demonstrates the rapid and label-free
+        detection of Interleukin-6 (IL-6) using carbon nanotube micro-arrays with
+        aptamer as the molecular recognition element. Single wall carbon nanotubes
+        micro-arrays biosensors were manufactured using photo-lithography, metal deposition,
+        and etching techniques. Nanotube biosensors were functionalized with 1-Pyrenebutanoic
+        Acid Succinimidyl Ester (PASE) conjugated IL-6 aptamers. Real time response
+        of the sensor conductance was monitored with increasing concentration of IL-6
+        (1 pg\/mL to 10 ng\/mL), exposure to the sensing surface in buffer solution,
+        and clinically relevant spiked blood samples. Non-specific Bovine Serum Albumin
+        (BSA), PBS samples, and anti-IgG functionalized devices gave similar signatures
+        in the real time conductance versus time experiments with no significant change
+        in sensor signal. Exposure of the aptamer functionalized nanotube surface
+        to IL-6 decreased the conductance with increasing concentration of IL-6. Experiments
+        based on field effect transistor arrays suggested shift in drain current versus
+        gate voltage for 1 pg and 1 ng of IL-6 exposure. Non-specific BSA did not
+        produce any appreciable shift in the Ids versus Vg suggesting specific interactions
+        of IL-6 on PASE conjugated aptamer surface gave rise to the change in electrical
+        signal. Both Z axis and phase image in an Atomic Force Microscope (AFM) suggested
+        unambiguous molecular interaction of the IL-6 on the nanotube-aptamer surface
+        at 1 pg\/mL concentration. The concentration of 1 pg falls below the diagnostic
+        gray zone for cancer (2.3 pg-4 ng\/mL), which is an indicator of early stage
+        cancer. Thus, nanotube micro-arrays could potentially be developed for creating
+        multiplexed assays involving cancer biomarker proteins and possibly circulating
+        tumor cells all in a single assay using PASE functionalization protocol. [ABSTRACT
+        FROM AUTHOR]\u000d\u000aKW  - Carbon nanotubes\u000d\u000aKW  - Biosensors\u000d\u000aKW  -
+        Molecular recognition\u000d\u000aKW  - Carbon Nanotube Biosensors\u000d\u000aKW  -
+        Field Effect Transistors\u000d\u000aKW  - IL6\u000d\u000aN1  - Accession Number:
+        123877356; Authors: Khosravi, Farhad 1 Email Address: fkhosravi@wpi.edu; Loeian,
+        Seyed Masoud 1 Email Address: smloeian@wpi.edu; Panchapakesan, Balaji 1 Email
+        Address: bpanchapakesan@wpi.edu; Affiliations:  1: Small Systems Laboratory,
+        Department of Mechanical Engineering, Worcester Polytechnic Institute, Worcester,
+        MA 01532, USA; Subject: Carbon nanotubes; Subject: Biosensors; Subject: Molecular
+        recognition; Author-Supplied Keyword: Carbon Nanotube Biosensors; Author-Supplied
+        Keyword: Field Effect Transistors; Author-Supplied Keyword: IL6; Number of
+        Pages: 13p; Record Type: Article\u000d\u000aL3  - 10.3390\/bios7020017\u000d\u000aUR  -
+        http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=aci&AN=123877356&authtype=sso&custid=s8978330\u000d\u000aDP  -
+        EBSCOhost\u000d\u000aDB  - aci\u000d\u000aER  - \u000d\u000a"}'
+    http_version: null
+  recorded_at: Thu, 09 Apr 2020 14:49:07 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CitationStyles?an=123877356&dbid=aci&styles=all
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 09 Apr 2020 14:49:05 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Msg-Correlid:
+      - 178853d4-2c9c-40ab-b6ae-9b55d3837b35
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '3932'
+    body:
+      encoding: UTF-8
+      string: '{"Citations":[{"Id":"abnt","Label":"ABNT","SectionLabel":"References","Data":"KHOSRAVI,
+        F.; LOEIAN, S. M.; PANCHAPAKESAN, B. Ultrasensitive Label-Free Sensing of
+        IL-6 Based on PASE Functionalized Carbon Nanotube Micro-Arrays with RNA-Aptamers
+        as Molecular Recognition Elements. <b>Biosensors (2079-6374)<\/b>, <i>[s.
+        l.]<\/i>, v. 7, n. 2, p. 17, 2017. DOI 10.3390\/bios7020017. Disponível em:
+        http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=aci&AN=123877356&authtype=sso&custid=s8978330.
+        Acesso em: 9 abr. 2020.","Caption":"Brazilian National Standards"},{"Id":"ama","Label":"AMA","SectionLabel":"Reference
+        List","Data":"Khosravi F, Loeian SM, Panchapakesan B. Ultrasensitive Label-Free
+        Sensing of IL-6 Based on PASE Functionalized Carbon Nanotube Micro-Arrays
+        with RNA-Aptamers as Molecular Recognition Elements. <i>Biosensors (2079-6374)<\/i>.
+        2017;7(2):17. doi:10.3390\/bios7020017.","Caption":"American Medical Assoc."},{"Id":"apa","Label":"APA","SectionLabel":"References","Data":"Khosravi,
+        F., Loeian, S. M., & Panchapakesan, B. (2017). Ultrasensitive Label-Free Sensing
+        of IL-6 Based on PASE Functionalized Carbon Nanotube Micro-Arrays with RNA-Aptamers
+        as Molecular Recognition Elements. <i>Biosensors (2079-6374)<\/i>, <i>7<\/i>(2),
+        17. https:\/\/doi.org\/10.3390\/bios7020017","Caption":"American Psychological
+        Assoc.","Indent":1},{"Id":"chicago","Label":"Chicago\/Turabian: Author-Date","SectionLabel":"Reference
+        List","Data":"Khosravi, Farhad, Seyed Masoud Loeian, and Balaji Panchapakesan.
+        2017. “Ultrasensitive Label-Free Sensing of IL-6 Based on PASE Functionalized
+        Carbon Nanotube Micro-Arrays with RNA-Aptamers as Molecular Recognition Elements.”
+        <i>Biosensors (2079-6374)<\/i> 7 (2): 17. doi:10.3390\/bios7020017.","Indent":1},{"Id":"harvard","Label":"Harvard","SectionLabel":"References","Data":"Khosravi,
+        F., Loeian, S. M. and Panchapakesan, B. (2017) ‘Ultrasensitive Label-Free
+        Sensing of IL-6 Based on PASE Functionalized Carbon Nanotube Micro-Arrays
+        with RNA-Aptamers as Molecular Recognition Elements’, <i>Biosensors (2079-6374)<\/i>,
+        7(2), p. 17. doi: 10.3390\/bios7020017."},{"Id":"harvardaustralian","Label":"Harvard:
+        Australian","SectionLabel":"References","Data":"Khosravi, F, Loeian, SM &
+        Panchapakesan, B 2017, ‘Ultrasensitive Label-Free Sensing of IL-6 Based on
+        PASE Functionalized Carbon Nanotube Micro-Arrays with RNA-Aptamers as Molecular
+        Recognition Elements’, <i>Biosensors (2079-6374)<\/i>, vol. 7, no. 2, p. 17,
+        viewed 9 April 2020, <http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=aci&AN=123877356&authtype=sso&custid=s8978330>."},{"Id":"mla","Label":"MLA","SectionLabel":"Works
+        Cited","Data":"Khosravi, Farhad, et al. “Ultrasensitive Label-Free Sensing
+        of IL-6 Based on PASE Functionalized Carbon Nanotube Micro-Arrays with RNA-Aptamers
+        as Molecular Recognition Elements.” <i>Biosensors (2079-6374)<\/i>, vol. 7,
+        no. 2, June 2017, p. 17. <i>EBSCOhost<\/i>, doi:10.3390\/bios7020017.","Caption":"Modern
+        Language Assoc.","Indent":1},{"Id":"turabian","Label":"Chicago\/Turabian:
+        Humanities","SectionLabel":"Bibliography","Data":"Khosravi, Farhad, Seyed
+        Masoud Loeian, and Balaji Panchapakesan. “Ultrasensitive Label-Free Sensing
+        of IL-6 Based on PASE Functionalized Carbon Nanotube Micro-Arrays with RNA-Aptamers
+        as Molecular Recognition Elements.” <i>Biosensors (2079-6374)<\/i> 7, no.
+        2 (June 2017): 17. doi:10.3390\/bios7020017.","Indent":1},{"Id":"vancouver","Label":"Vancouver\/ICMJE","SectionLabel":"References","Data":"Khosravi
+        F, Loeian SM, Panchapakesan B. Ultrasensitive Label-Free Sensing of IL-6 Based
+        on PASE Functionalized Carbon Nanotube Micro-Arrays with RNA-Aptamers as Molecular
+        Recognition Elements. Biosensors (2079-6374) [Internet]. 2017 Jun [cited 2020
+        Apr 9];7(2):17. Available from: http:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=aci&AN=123877356&authtype=sso&custid=s8978330"}]}'
+    http_version: null
+  recorded_at: Thu, 09 Apr 2020 14:49:08 GMT
 recorded_with: VCR 3.0.3

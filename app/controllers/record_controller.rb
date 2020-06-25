@@ -114,6 +114,8 @@ class RecordController < ApplicationController
     else
       raise RecordController::UnknownEdsError, e
     end
+  rescue EBSCO::EDS::NotFound
+    raise RecordController::NoSuchRecordError
   end
 
   # rebuild a EDS UI Full Record Link if our local is broken
