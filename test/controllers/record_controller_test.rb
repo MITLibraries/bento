@@ -60,6 +60,15 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'record not found' do
+    VCR.use_cassette('record: not found', allow_playback_repeats: true) do
+      ActionDispatch::Request.any_instance.stubs(:remote_ip).returns('18.0.0.0')
+      assert_raises RecordController::NoSuchRecordError do
+        get record_direct_link_url('cat00916a', 'mit.003696445')
+      end
+    end
+  end
+
   test 'direct_link as guest' do
     get record_direct_link_url('cat00916a', 'mit.001492509')
     follow_redirect!
