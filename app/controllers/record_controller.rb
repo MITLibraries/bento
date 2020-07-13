@@ -103,6 +103,8 @@ class RecordController < ApplicationController
       raise RecordController::DbLimitReached, e
     elsif e.message.include?('DbId Not In Profile')
       raise RecordController::NoSuchRecordError, "Record not found: #{e}"
+    elsif e.message.include?('Record not found')
+      raise RecordController::NoSuchRecordError, "Record not found: #{e}"
     else
       raise RecordController::UnknownEdsError, e
     end
