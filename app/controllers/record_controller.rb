@@ -6,6 +6,12 @@ class RecordController < ApplicationController
   class DbLimitReached < StandardError; end
   class UnknownEdsError < StandardError; end
 
+  rescue_from NoSuchRecordError, with: :no_such_record
+
+  def no_such_record
+    render 'not_found', status: 404
+  end
+
   # We are using ActionCaching due to EDS not providing an readily cacheable
   # object to use with low level caching like we do with our bento results.
   # They provide a cache option but it is hardcoded to use a file system cache.
@@ -102,9 +108,9 @@ class RecordController < ApplicationController
     if e.message.include?('Simultaneous User Limit Reached')
       raise RecordController::DbLimitReached, e
     elsif e.message.include?('DbId Not In Profile')
-      raise RecordController::NoSuchRecordError, "Record not found: #{e}"
+      raise RecordController::NoSuchRecordError
     elsif e.message.include?('Record not found')
-      raise RecordController::NoSuchRecordError, "Record not found: #{e}"
+      raise RecordController::NoSuchRecordError
     else
       raise RecordController::UnknownEdsError, e
     end

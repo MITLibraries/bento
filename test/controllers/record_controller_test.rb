@@ -16,9 +16,8 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
   test 'should handle invalid parameters' do
     VCR.use_cassette('record: no such database',
                      allow_playback_repeats: true) do
-      assert_raises RecordController::NoSuchRecordError do
-        get record_url('dog00916a', 'mit.001492509')
-      end
+      get record_url('dog00916a', 'mit.001492509')
+      assert_includes(@response.body, 'The requested record was not found.')
     end
   end
 
@@ -54,18 +53,16 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
   test 'direct_link with invalid record' do
     VCR.use_cassette('record: direct invalid', allow_playback_repeats: true) do
       ActionDispatch::Request.any_instance.stubs(:remote_ip).returns('18.0.0.0')
-      assert_raises RecordController::NoSuchRecordError do
-        get record_direct_link_url('dog00916a', 'mit.001492509')
-      end
+      get record_direct_link_url('dog00916a', 'mit.001492509')
+      assert_includes(@response.body, 'The requested record was not found.')
     end
   end
 
   test 'record not found' do
     VCR.use_cassette('record: not found', allow_playback_repeats: true) do
       ActionDispatch::Request.any_instance.stubs(:remote_ip).returns('18.0.0.0')
-      assert_raises RecordController::NoSuchRecordError do
-        get record_direct_link_url('cat00916a', 'mit.003696445')
-      end
+      get record_direct_link_url('cat00916a', 'mit.003696445')
+      assert_includes(@response.body, 'The requested record was not found.')
     end
   end
 
