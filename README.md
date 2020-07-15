@@ -88,6 +88,11 @@ custom hint metadata.
 - `DISABLE_HOLDS`: if set will disable holds for local aleph items
 - `DISABLE_ILLS`: if set will disable ILLs for local aleph items
 - `DISABLE_RECALLS`: if set will disable recalls for local aleph items
+- `REQUESTS_PER_PERIOD`: number of requests per time period we allow from a
+  single non-MIT IP address. Defaults to 100. Example: "100".
+- `REQUEST_PERIOD`: sets time period for number of requests per time period in
+  minutes. Defaults to 1 minute. Example: "1". NOTE: for throttles to work in
+  development make sure to [enable the dev cache](https://guides.rubyonrails.org/caching_with_rails.html#caching-in-development)
 
 ## Developing locally with Docker
 

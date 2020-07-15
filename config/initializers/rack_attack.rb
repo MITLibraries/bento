@@ -25,10 +25,12 @@ class Rack::Attack
   # counted by rack-attack and this throttle may be activated too
   # quickly. If so, enable the condition to exclude them from tracking.
 
-  # Throttle all requests by IP (60rpm)
+  # Throttle all requests by IP (default is 100rpm)
   #
   # Key: "rack::attack:#{Time.now.to_i/:period}:req/ip:#{req.ip}"
-  throttle('req/ip', limit: 300, period: 5.minutes) do |req|
+  throttle('req/ip',
+          limit: (ENV.fetch('REQUESTS_PER_PERIOD') { 100 }).to_i,
+          period: (ENV.fetch('REQUEST_PERIOD') { 1 }).to_i.minutes) do |req|
     req.ip unless req.path.start_with?('/assets')
   end
 
@@ -78,4 +80,15 @@ class Rack::Attack
   #    {},   # headers
   #    ['']] # body
   # end
+
+  # Log when throttles are triggered
+  ActiveSupport::Notifications.subscribe("throttle.rack_attack") do |name, start, finish, request_id, payload|
+    @@rack_logger ||= ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
+    @@rack_logger.info{[
+      "[#{payload[:request].env['rack.attack.match_type']}]",
+      "[#{payload[:request].env['rack.attack.matched']}]",
+      "[#{payload[:request].env['rack.attack.match_discriminator']}]",
+      "[#{payload[:request].env['rack.attack.throttle_data']}]",
+      ].join(' ') }
+  end
 end
