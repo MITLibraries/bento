@@ -4,8 +4,7 @@ class NormalizeGoogle
   # Translate Google results into local result model
   def to_result(results, q)
     norm = {}
-    norm['total'] = results.queries['request'][0]
-                           .total_results.to_i
+    norm['total'] = results.queries.request[0].total_results.to_i
     norm['results'] = []
     norm['eds_ui_view_more'] = view_more(q)
     extract_results(results, norm)
