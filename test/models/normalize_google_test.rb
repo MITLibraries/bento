@@ -44,7 +44,7 @@ class NormalizeGoogleTest < ActiveSupport::TestCase
     VCR.use_cassette('google no metadata') do
       raw_query = SearchGoogle.new.search('weather patterns')
       query = NormalizeGoogle.new.to_result(raw_query, 'weather patterns')
-      assert_equal(88, query['total'])
+      assert_equal(3, query['total'])
     end
   end
 end

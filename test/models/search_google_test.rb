@@ -14,7 +14,8 @@ class SearchGoogleTest < ActiveSupport::TestCase
       msg = assert_raises(Google::Apis::ClientError) do
         SearchGoogle.new.search('endnote')
       end
-      assert_equal('keyInvalid: Bad Request', msg.message)
+      assert_equal('badRequest: API key not valid. Please pass a valid API key.',
+                    msg.message)
     end
   end
 end
