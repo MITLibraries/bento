@@ -13,7 +13,7 @@ class ButtonAeonTest < ActiveSupport::TestCase
   test 'html_button_eligible' do
     button = ButtonAeon.new(@item, @oclc, @scan)
     button.instance_variable_set(:@library, 'Institute Archives')
-    assert(button.html_button.include?('Order a copy'))
+    assert(button.html_button.include?('Order/get a copy'))
 
     button.instance_variable_set(:@aeon_type, 'onsite')
     assert(button.html_button.include?('Request for on-site use'))
