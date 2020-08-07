@@ -21,7 +21,7 @@ class ButtonAeon
     if @aeon_type == 'onsite'
       'Request for on-site use'
     else
-      'Order a copy'
+      'Order/get a copy'
     end
   end
 
