@@ -2,83 +2,83 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/customsearch/v1?cx=FAKE_GOOGLE_CUSTOM_SEARCH_ID&key=FAKE_GOOGLE_API_KEY&num=3&q=asdffdsaasdffdsa
+    uri: https://customsearch.googleapis.com/customsearch/v1?cx=FAKE_GOOGLE_CUSTOM_SEARCH_ID&key=FAKE_GOOGLE_API_KEY&num=3&q=asdffdsaasdffdsa
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
-      - |-
-        unknown/0.0.0 google-api-ruby-client/0.9.13 Mac OS X/10.11.6
-         (gzip)
+      - unknown/0.0.0 google-api-ruby-client/0.42.0 Mac OS X/10.15.6 (gzip)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Fri, 02 Sep 2016 14:15:21 GMT
+      - Fri, 17 Jul 2020 17:21:41 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/2.6.5 gdcl/0.42.0
+      Content-Type:
+      - application/x-www-form-urlencoded
   response:
     status:
       code: 200
       message: OK
     headers:
-      Expires:
-      - Fri, 02 Sep 2016 14:15:22 GMT
-      Date:
-      - Fri, 02 Sep 2016 14:15:22 GMT
-      Cache-Control:
-      - private, max-age=0, must-revalidate, no-transform
-      Etag:
-      - '"ZK6WcJ2_cdL-1Kol5cpaPQsD0mI/NFJlDpqCAJ6O5jawomZegzy1nZE"'
-      Vary:
-      - Origin
-      - X-Origin
       Content-Type:
       - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
       Content-Encoding:
       - gzip
-      X-Content-Type-Options:
-      - nosniff
+      Date:
+      - Fri, 17 Jul 2020 17:21:42 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
       X-Frame-Options:
       - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      Server:
-      - GSE
+      X-Content-Type-Options:
+      - nosniff
       Alt-Svc:
-      - quic=":443"; ma=2592000; v="36,35,34,33,32,31,30"
+      - h3-29=":443"; ma=2592000,h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443";
+        ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
+        ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: |
         {
-         "kind": "customsearch#search",
-         "url": {
-          "type": "application/json",
-          "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&cref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
-         },
-         "queries": {
-          "request": [
-           {
-            "title": "Google Custom Search - asdffdsaasdffdsa",
+          "kind": "customsearch#search",
+          "url": {
+            "type": "application/json",
+            "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+          },
+          "queries": {
+            "request": [
+              {
+                "title": "Google Custom Search - asdffdsaasdffdsa",
+                "searchTerms": "asdffdsaasdffdsa",
+                "count": 3,
+                "startIndex": 1,
+                "inputEncoding": "utf8",
+                "outputEncoding": "utf8",
+                "safe": "off",
+                "cx": "FAKE_GOOGLE_CUSTOM_SEARCH_ID"
+              }
+            ]
+          },
+          "searchInformation": {
+            "searchTime": 0.17266,
+            "formattedSearchTime": "0.17",
             "totalResults": "0",
-            "searchTerms": "asdffdsaasdffdsa",
-            "count": 3,
-            "inputEncoding": "utf8",
-            "outputEncoding": "utf8",
-            "safe": "off",
-            "cx": "FAKE_GOOGLE_CUSTOM_SEARCH_ID"
-           }
-          ]
-         },
-         "searchInformation": {
-          "searchTime": 0.376984,
-          "formattedSearchTime": "0.38",
-          "totalResults": "0",
-          "formattedTotalResults": "0"
-         }
+            "formattedTotalResults": "0"
+          }
         }
-    http_version: 
-  recorded_at: Fri, 02 Sep 2016 14:15:22 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Fri, 17 Jul 2020 17:21:42 GMT
+recorded_with: VCR 6.0.0

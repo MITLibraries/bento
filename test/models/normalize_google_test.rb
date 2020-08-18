@@ -7,7 +7,7 @@ class NormalizeGoogleTest < ActiveSupport::TestCase
       raw_query = SearchGoogle.new.search('endnote')
       query = NormalizeGoogle.new.to_result(raw_query, 'endnote')
       assert_equal(
-        'EndNote with LaTeX & BibTeX - EndNote at MIT',
+        'EndNote - Citation Management and Writing Tools - LibGuides',
         query['results'].first.title.split[0...9].join(' ')
       )
     end
@@ -18,7 +18,7 @@ class NormalizeGoogleTest < ActiveSupport::TestCase
       raw_query = SearchGoogle.new.search('endnote')
       query = NormalizeGoogle.new.to_result(raw_query, 'endnote')
       assert_equal(
-        'http://libguides.mit.edu/c.php?g=176170&p=1158648',
+        'https://libguides.mit.edu/endnote',
         query['results'].first.url
       )
     end
@@ -28,7 +28,8 @@ class NormalizeGoogleTest < ActiveSupport::TestCase
     VCR.use_cassette('valid google search and credentials') do
       raw_query = SearchGoogle.new.search('endnote')
       query = NormalizeGoogle.new.to_result(raw_query, 'endnote')
-      assert_includes(query['results'].first.blurb, 'with LaTeX and BibTeX')
+      assert_includes(query['results'].first.blurb,
+                      'help with citation management')
     end
   end
 
@@ -44,7 +45,7 @@ class NormalizeGoogleTest < ActiveSupport::TestCase
     VCR.use_cassette('google no metadata') do
       raw_query = SearchGoogle.new.search('weather patterns')
       query = NormalizeGoogle.new.to_result(raw_query, 'weather patterns')
-      assert_equal(88, query['total'])
+      assert_equal(3, query['total'])
     end
   end
 end

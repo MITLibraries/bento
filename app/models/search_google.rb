@@ -27,7 +27,7 @@ class SearchGoogle
   # @return [Hash] A Hash with search metadata and an Array of {Result}s
   def search(term)
     @service.list_cses(
-      term,
+      q: term,
       cx: ENV['GOOGLE_CUSTOM_SEARCH_ID'],
       num: ENV['RESULTS_PER_BOX'] || 3
     )
