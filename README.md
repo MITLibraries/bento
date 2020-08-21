@@ -75,6 +75,9 @@ custom hint metadata.
 
 - `ALEPH_HINT_SOURCE`: HTTP GET accessible marcxml source for Hints
 - `EDS_TIMEOUT`: value to override the 6 second default for EDS timeout
+- `EDS_GEM_HOSTS_LIST`: override list of hosts to use for our full record views
+  defaults to the (theoretically) load balanced EDS API endpoint. The protocol
+  is not included, so use `example.com` instead of `https://example.com`
 - `FLIPFLOP_KEY`: set this to enable access to the flipflop dashboard
 - `GLOBAL_ALERT`: html message to display as a global header
 - `HINT_SOURCES`: Comma-separated Hint source names, in descending order of priority. (If unset, will default to `custom`).
