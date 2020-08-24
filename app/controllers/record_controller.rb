@@ -81,13 +81,16 @@ class RecordController < ApplicationController
   end
 
   def fetch_eds_record
+    hosts = ENV.fetch('EDS_GEM_HOSTS_LIST', 'eds-api.ebscohost.com').split(',')
     session = EBSCO::EDS::Session.new(user: ENV['EDS_USER_ID'],
                                       pass: ENV['EDS_PASSWORD'],
                                       profile: ENV['EDS_PROFILE'],
                                       guest: helpers.guest?,
                                       org: 'mit',
                                       use_cache: false,
-                                      debug: ENV['EDS_DEBUG'])
+                                      debug: ENV['EDS_DEBUG'],
+                                      api_hosts_list: hosts
+                                     )
     @record = with_error_handling do
       session.retrieve(dbid: @record_source, an: @record_an)
     end
