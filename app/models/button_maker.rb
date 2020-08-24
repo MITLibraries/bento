@@ -21,7 +21,7 @@ module ButtonMaker
     @barcode = @item.xpath('z30/z30-barcode').text
     @call_number = @item.xpath('z30/z30-call-no').text
     @collection = @item.xpath('z30/z30-collection').text
-    @doc_number = @item.xpath('z30/z30-doc-number').text
+    @doc_number = @item.xpath('z13/z13-doc-number').text
     @identifier = clean_identifier # May be ISBN or ISSN
     @item_sequence = @item.xpath('z30/z30-item-sequence').text
     @library = @item.xpath('z30/z30-sub-library').text

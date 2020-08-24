@@ -20,6 +20,7 @@ class ButtonHoldRecall
 
 
   def worldcatinate?
+    return false if Flipflop.enabled?(:disable_worldcatinate)
     true if @library == 'Unavailable due to renovation'
   end
 

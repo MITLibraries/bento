@@ -13,7 +13,8 @@ class SFXHandler
                  title: nil,
                  year: nil,
                  volume: nil,
-                 source_title: nil)
+                 source_title: nil,
+                 sid: nil)
     @barcode = barcode
     @call_number = call_number
     @collection = collection
@@ -23,6 +24,7 @@ class SFXHandler
     @year = year
     @volume = volume
     @source_title = source_title
+    @sid = sid
   end
 
   # Use this when you want to request a scan of an object.
@@ -40,14 +42,14 @@ class SFXHandler
   def url_constructor(scan: false)
     url_parts = [
       sfx_host.to_s,
-      "?sid=ALEPH:#{analytics(scan)}",
+      "?sid=#{analytics(scan)}",
       "&amp;call_number=#{encoded_call_no}",
       "&amp;barcode=#{@barcode}",
       "&amp;title=#{encoded_title}",
       "&amp;location=#{encoded_location}",
-      "&amp;rft.date=#{@year}",
-      "&amp;rft.volume=#{@volume}",
-      "&amp;rft.stitle=#{@source_title}"
+      "&amp;rft.date=#{URI.encode_www_form_component(@year)}",
+      "&amp;rft.volume=#{URI.encode_www_form_component(@volume)}",
+      "&amp;rft.stitle=#{URI.encode_www_form_component(@source_title)}"
     ]
 
     url_parts.push(pid) if @doc_number
@@ -62,10 +64,12 @@ class SFXHandler
   # an object unsuitable for scan (e.g. audiotape, large-format map,
   # entire book).
   def analytics(scan)
-    if scan
-      'BENTO'
+    if @sid
+      @sid
+    elsif scan
+      'ALEPH:BENTO'
     else
-      'BENTO_FALLBACK'
+      'ALEPH:BENTO_FALLBACK'
     end
   end
 
@@ -91,14 +95,11 @@ class SFXHandler
   end
 
   def pid
-    "&amp;pid=DocNumber=#{@doc_number},Ip=library.mit.edu,Port=9909"
+    aleph_host = ENV.fetch('SFX_ALEPH_HOST', 'library.mit.edu')
+    "&amp;pid=DocNumber=#{@doc_number},Ip=#{aleph_host},Port=9909"
   end
 
   def sfx_host
-    if Rails.env.production?
-      'https://sfx.mit.edu/sfx_local'
-    else
-      'https://sfx.mit.edu/sfx_test'
-    end
+    ENV.fetch('SFX_HOST', 'https://sfx.mit.edu/sfx_local')
   end
 end
