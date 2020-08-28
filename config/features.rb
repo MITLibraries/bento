@@ -38,4 +38,12 @@ Flipflop.configure do
   feature :disable_scans,
     default: ENV['DISABLE_SCANS'],
     description: 'Determines if scans for local items are currently enabled'
+
+  feature :disable_request_digital,
+    default: ENV['DISABLE_REQUEST_DIGITAL'],
+    description: 'Determines if request digital via SFX is currently enabled'
+
+  feature :disable_worldcatinate,
+    default: ENV['DISABLE_WORLDCATINATE'],
+    description: 'Determines if links for renovation items should be enabled'
 end

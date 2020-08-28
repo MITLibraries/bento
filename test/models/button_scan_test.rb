@@ -82,7 +82,7 @@ class ButtonScanTest < ActiveSupport::TestCase
     Rails.stub :env, ActiveSupport::StringInquirer.new('production') do
       @button.stub :eligible?, true do
         url =  [
-          'https://sfx.mit.edu/sfx_local',
+          'https://sfx.mit.edu/sfx_test',
           '?sid=ALEPH:BENTO',
           "&amp;call_number=PS3515.U274+2001",
           '&amp;barcode=39080023421933',

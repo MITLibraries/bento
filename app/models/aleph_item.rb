@@ -13,6 +13,7 @@
 # - We pass in `oclc` and `scan` not because we love it, but because it saves
 # us from making two API calls to Aleph instead of one. This is a case of
 # efficiency winning out over a preferred application design.
+# - `scan` is set via `record_helper.rb`. You are welcome.
 require 'open-uri'
 class AlephItem
   include ProcessingLabeler
@@ -68,7 +69,8 @@ class AlephItem
      ButtonIll.new(item, oclc, scan).html_button,
      ButtonScan.new(item, oclc, scan).html_button,
      ButtonAeon.new(item, oclc, scan, "onsite").html_button,
-     ButtonAeon.new(item, oclc, scan, "copy").html_button]
+     ButtonAeon.new(item, oclc, scan, "copy").html_button,
+     ButtonRequestDigital.new(item, oclc, scan).html_button]
   end
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~ Properties of Aleph items ~~~~~~~~~~~~~~~~~~~~~~~~

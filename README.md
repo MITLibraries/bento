@@ -87,10 +87,14 @@ custom hint metadata.
 - `LOG_LEVEL`: set log level for development, default is `:debug`
 - `RESULTS_PER_BOX`: defaults to 3
 - `SENTRY_DSN`: logs exceptions to Sentry
+- `SFX_HOST`: URL to SFX Host. Defaults to production
+- `SFX_ALEPH_HOST`: domain (not full URL) of Aleph server SFX uses to do MARC
+  lookups. Defaults to production.
 - `DISABLE_SCANS`: if set will disable scans for local aleph items
 - `DISABLE_HOLDS`: if set will disable holds for local aleph items
 - `DISABLE_ILLS`: if set will disable ILLs for local aleph items
 - `DISABLE_RECALLS`: if set will disable recalls for local aleph items
+- `DISABLE_REQUEST_DIGITAL`: if set will disable request digital copy button
 - `REQUESTS_PER_PERIOD`: number of requests per time period we allow from a
   single non-MIT IP address. Defaults to 100. Example: "100".
 - `REQUEST_PERIOD`: sets time period for number of requests per time period in
