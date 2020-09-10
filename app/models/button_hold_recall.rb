@@ -14,7 +14,7 @@ class ButtonHoldRecall
         "href='#{url}'>Recall (7+ days)</a>"
     elsif eligible_hold?
       "<a class='btn button-secondary button-small' " \
-          "href='#{url}'>Place hold (1-2 days)</a>"
+          "href='#{url}'>Place hold</a>"
     end
   end
 
@@ -38,12 +38,13 @@ class ButtonHoldRecall
   end
 
   def url
+    aleph_host = ENV.fetch('ALEPH_UI_HOST', 'library.mit.edu')
     queryarray = { func: 'item-hold-request',
                    doc_library: 'MIT50',
                    adm_doc_number: @doc_number,
                    item_sequence: @item_sequence }
 
-    url = URI::HTTP.build(host: 'library.mit.edu',
+    url = URI::HTTP.build(host: aleph_host,
                           path: '/F',
                           query: queryarray.to_query)
     url.to_s
