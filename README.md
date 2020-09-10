@@ -50,6 +50,7 @@ custom hint metadata.
 ## Required Environment Variables
 
 - `ALEPH_API_URI`: endpoint URI for Aleph Realtime Availability checks
+- `ALEPH_UI_HOST`: hostname for Aleph UI. Defaults to production
 - `ALEPH_KEY`: we use a custom API adapter to aleph that restricts via key
   instead of IP address
 - `EDS_ARTICLE_FACETS`: facets to apply to create an articles search

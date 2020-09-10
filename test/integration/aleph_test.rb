@@ -93,7 +93,7 @@ class AlephTest < ActionDispatch::IntegrationTest
   test 'place hold link displayed' do
     VCR.use_cassette('realtime aleph') do
       get full_item_status_path, params: { id: 'MIT01001739356' }
-      assert_select 'a', text: 'Place hold (1-2 days)' do |value|
+      assert_select 'a', text: 'Place hold' do |value|
         parsed_url = URI.parse(value.first[:href])
         assert_equal parsed_url.host, 'library.mit.edu'
         assert_equal parsed_url.path, '/F'

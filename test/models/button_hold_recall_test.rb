@@ -13,13 +13,13 @@ class ButtonHoldRecallTest < ActiveSupport::TestCase
   test 'html_button_recall' do
     @button.stub :eligible_recall?, true do
       assert(@button.html_button.include?('Recall (7+ days)'))
-      refute(@button.html_button.include?('Place hold (1-2 days)'))
+      refute(@button.html_button.include?('Place hold'))
     end
   end
 
   test 'html_button_hold' do
     @button.stub :eligible_hold?, true do
-      assert(@button.html_button.include?('Place hold (1-2 days)'))
+      assert(@button.html_button.include?('Place hold'))
       refute(@button.html_button.include?('Recall (7+ days)'))
     end
   end
