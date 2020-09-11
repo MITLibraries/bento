@@ -14,7 +14,7 @@ class ButtonHoldRecall
         "href='#{url}'>Recall (7+ days)</a>"
     elsif eligible_hold?
       "<a class='btn button-secondary button-small' " \
-          "href='#{url}'>Place hold</a>"
+          "href='#{url}'>Request item</a>"
     end
   end
 
