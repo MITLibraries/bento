@@ -52,6 +52,7 @@ class ButtonHoldRecall
 
   # Items with these process & item statuses may be put on hold/recalled.
   def hold_recallable?
+    return false if @library == 'Unavailable due to renovation'
     return false if @on_reserve || @library == 'Physics Dept. Reading Room'
     [
       # Items with these status codes may be requested from any library,
