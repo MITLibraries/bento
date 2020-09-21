@@ -75,6 +75,8 @@ custom hint metadata.
 ## Optional Environment Variables
 
 - `ALEPH_HINT_SOURCE`: HTTP GET accessible marcxml source for Hints
+- `ALEPH_HOLD_TYPE`: Switches between links to Aleph `item-hold-request` and
+  `item-global`. Defaults to `item-global`.
 - `EDS_TIMEOUT`: value to override the 6 second default for EDS timeout
 - `EDS_GEM_HOSTS_LIST`: override list of hosts to use for our full record views
   defaults to the (theoretically) load balanced EDS API endpoint. The protocol

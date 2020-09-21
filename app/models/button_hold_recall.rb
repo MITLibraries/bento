@@ -39,10 +39,18 @@ class ButtonHoldRecall
 
   def url
     aleph_host = ENV.fetch('ALEPH_UI_HOST', 'library.mit.edu')
-    queryarray = { func: 'item-hold-request',
-                   doc_library: 'MIT50',
-                   adm_doc_number: @doc_number,
-                   item_sequence: @item_sequence }
+    aleph_hold_type = ENV.fetch('ALEPH_HOLD_TYPE', 'item-hold-request')
+
+    queryarray = if aleph_hold_type == 'item-hold-request'
+                   { func: 'item-hold-request',
+                     doc_library: 'MIT50',
+                     adm_doc_number: @doc_number,
+                     item_sequence: @item_sequence }
+                 else
+                   { func: 'item-global',
+                     doc_library: 'MIT01',
+                     doc_number: @doc_number }
+                 end
 
     url = URI::HTTP.build(host: aleph_host,
                           path: '/F',
