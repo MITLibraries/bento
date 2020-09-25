@@ -42,6 +42,7 @@ module ButtonMaker
   # We won't generally ILL or Recall items that fit these criteria as we want
   # them to be placed on hold if possible.
   def available_here_now?
+    return true if Flipflop.enabled?(:disable_recalls)
     # You can request things that are in the library and have reasonable
     # loan policies.
     [
