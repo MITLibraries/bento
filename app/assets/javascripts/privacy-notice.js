@@ -39,13 +39,11 @@ const privacyNotice = () => {
   if (!getCookieValue('mitlibPrivAck')) {
     document.body.innerHTML += `
       <div class="alert alert-banner" id="privacy-notice">
-        <div>
-          <p>
-            <i class="fa fa-info-circle fa-lg"></i>
-            By using this website, you consent to the <a href="#">MIT Libraries privacy policy</a>.
-           </p>
-           <button class="btn button-primary" onClick="setCookie();">I understand</a></button>
-        </div>
+        <p>
+          <i class="fa fa-info-circle fa-lg"></i>
+          By using this website, you consent to the <a href="#">MIT Libraries privacy policy</a>.
+         </p>
+         <button class="btn button-primary" onClick="setCookie();">I understand</a></button>
       </div>
     `;
   }
