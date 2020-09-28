@@ -40,11 +40,11 @@ const privacyNotice = () => {
     document.body.innerHTML += `
       <div class="alert alert-banner" id="privacy-notice">
         <div>
-          <span>
+          <p>
             <i class="fa fa-info-circle fa-lg"></i>
             By using this website, you consent to the <a href="#">MIT Libraries privacy policy</a>.
-           </span>
-           <span><button class="btn button-primary" onClick="setCookie();">I understand</a></button></span>
+           </p>
+           <button class="btn button-primary" onClick="setCookie();">I understand</a></button>
         </div>
       </div>
     `;
