@@ -99,7 +99,7 @@ class AlephItem
   # to be done in assuring data quality, so we encapsulate it there.
   def label(item)
     [base_label(item),
-      processing_label(status(item), z30_item_process(item), reserve?(item))
+      processing_label(status(item), z30_item_process(item))
     ].compact.join(' - ')
   end
 
