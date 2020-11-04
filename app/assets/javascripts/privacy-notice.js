@@ -5,7 +5,7 @@ var setCookie = function() {
   document.cookie = "mitlibPrivAck=true;domain=.mit.edu;path=/;expires=" + expiration;
 
   // Remove the privacy notice once the cookie is set
-  document.getElementById('privacy-notice').remove();
+  document.getElementById('privacy-notice').parentNode.removeChild(this);
 }
 
 // Fetch privacy notice acknowledgment cookie
