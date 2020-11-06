@@ -5,7 +5,10 @@ var setCookie = function() {
   document.cookie = "mitlibPrivAck=true;domain=.mit.edu;path=/;expires=" + expiration;
 
   // Remove the privacy notice once the cookie is set
-  document.getElementById('privacy-notice').parentNode.removeChild(this);
+  var privacyNode = document.getElementById('privacy-notice');
+  if (privacyNode.parentNode) {
+    privacyNode.parentNode.removeChild(privacyNode);
+  }
 }
 
 // Fetch privacy notice acknowledgment cookie
@@ -71,14 +74,12 @@ var addStylesheetRules = function(rules) {
 var privacyNotice = function() {
   if (!getCookieValue('mitlibPrivAck')) {
     document.body.innerHTML += `
-      <div class="privacy-notice-wrapper">
-        <div id="privacy-notice" style="position: fixed; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-radius: 2px; padding: 1.2rem 1.6rem; border: 1px solid #000; border-top: 5px solid #000; font-weight: 600; font-size: 16px; font-family: 'Helvetica Neue', Helvetica, Arial, 'Open Sans', sans-serif; background-color: #eee; color: #000; bottom: 40px; left: 10%; right: 10%; width: 80%">
-          <span style="margin-right: .5em;">
-            <i class="fa fa-info-circle fa-lg" style="display: inline-block; margin-right: .5em"></i>Your online privacy is important. See the <a href="https://libraries.mit.edu/privacy" style="transition: all .25s ease-in-out 0s;">MIT Libraries privacy policy</a> for information on how we handle your data.
-          </span>
-          <button onclick="setCookie();" style="transition: all .25s; height: 80%; border-radius: 3px; padding: 5px 10px; font-size: 16px; font-weight: 600; white-space: nowrap; color: #fff; text-decoration: none; cursor: pointer;">I understand</a></button>
-        </div>
-       </div>
+      <div id="privacy-notice" style="position: fixed; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-radius: 2px; padding: 1.2rem 1.6rem; border: 1px solid #000; border-top: 5px solid #000; font-weight: 600; font-size: 16px; font-family: 'Helvetica Neue', Helvetica, Arial, 'Open Sans', sans-serif; background-color: #eee; color: #000; bottom: 40px; left: 10%; right: 10%; width: 80%">
+        <span style="margin-right: .5em;">
+          <i class="fa fa-info-circle fa-lg" style="display: inline-block; margin-right: .5em"></i>Your online privacy is important. See the <a href="https://libraries.mit.edu/privacy" style="transition: all .25s ease-in-out 0s;">MIT Libraries privacy policy</a> for information on how we handle your data.
+        </span>
+        <button onclick="setCookie();" style="transition: all .25s; height: 80%; border-radius: 3px; padding: 5px 10px; font-size: 16px; font-weight: 600; white-space: nowrap; color: #fff; text-decoration: none; cursor: pointer;">I understand</a></button>
+      </div>
     `;
   }
 }
