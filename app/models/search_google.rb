@@ -16,8 +16,7 @@ class SearchGoogle
 
   def initialize
     cs = Google::Apis::CustomsearchV1
-    @service = cs::CustomsearchService.new
-    @service = Google::Apis::CustomsearchV1::CustomsearchService.new
+    @service = cs::CustomSearchAPIService.new
     @service.key = ENV['GOOGLE_API_KEY']
     @results = {}
   end
