@@ -1,27 +1,26 @@
-## Status
-**READY/IN DEVELOPMENT/HOLD**
+#### Developer
 
-#### What does this PR do?
-A few sentences describing the overall goals of the pull request's commits.
-Why are we making these changes? Is there more work to be done to fully
-achieve these goals?
+- [ ] All new ENV is documented in README
+- [ ] All new ENV has been added to Heroku Pipeline, Staging and Prod
+- [ ] ANDI or Wave has been run in accordance to
+      [our guide](https://mitlibraries.github.io/guides/basics/a11y.html) and
+      all issues introduced by these changes have been resolved or opened as new
+      issues (link to those issues in the Pull Request details above)
+- [ ] Stakeholder approval has been confirmed (or is not needed)
 
-#### Helpful background context (if appropriate)
+#### Code Reviewer
 
-#### How can a reviewer manually see the effects of these changes?
+- [ ] The commit message is clear and follows our guidelines
+      (not just this pull request message)
+- [ ] There are appropriate tests covering any new functionality
+- [ ] The documentation has been updated or is unnecessary
+- [ ] The changes have been verified
+- [ ] New dependencies are appropriate or there were no changes
 
-#### What are the relevant tickets?
-- https://mitlibraries.atlassian.net/browse/DI-
+#### Requires database migrations?
 
-#### Screenshots (if appropriate)
-
-#### Todo:
-- [ ] Tests
-- [ ] Documentation
-- [ ] Stakeholder approval
-
-#### Requires Database Migrations?
 YES | NO
 
 #### Includes new or updated dependencies?
+
 YES | NO
