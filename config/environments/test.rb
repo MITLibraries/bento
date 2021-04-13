@@ -22,6 +22,10 @@ Rails.application.configure do
   ENV['ALEPH_HINT_SOURCE'] = 'https://fake.example.com/s/fake/getserial_mini.xml?dl=1'
   ENV['FULL_RECORD_TOGGLE_BUTTON'] = 'true'
 
+  ENV['PRIMO_SEARCH_API_URL'] = 'https://another_fake_server.example.com'
+  ENV['PRIMO_SEARCH_API_KEY'] = 'FAKE_PRIMO_SEARCH_API_KEY'
+  ENV['PRIMO_VID_INST'] = 'FAKE_PRIMO_VID_INST'
+
   ENV['SCAN_EXCLUSIONS']='Materials -- Standards -- United States -- Periodicals;Materials -- Standards -- United States -- Periodicals;Standards, Engineering;Standards, Engineering -- Periodicals'
 
   ENV['TIMDEX_URL']='https://timdex.mit.edu/graphql'
