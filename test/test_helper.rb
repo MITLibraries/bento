@@ -76,6 +76,16 @@ VCR.configure do |config|
   config.filter_sensitive_data('FAKE_GOOGLE_CUSTOM_SEARCH_ID') do
     (ENV['GOOGLE_CUSTOM_SEARCH_ID']).to_s
   end
+
+  config.filter_sensitive_data('https://another_fake_server.example.com') do
+    (ENV['PRIMO_SEARCH_API_URL']).to_s
+  end
+  config.filter_sensitive_data('FAKE_PRIMO_SEARCH_API_KEY') do
+    (ENV['PRIMO_SEARCH_API_KEY']).to_s
+  end
+  config.filter_sensitive_data('FAKE_PRIMO_VID_INST') do
+    (ENV['PRIMO_VID_INST']).to_s
+  end
 end
 
 module ActiveSupport

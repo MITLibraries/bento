@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://another_fake_server.example.com/primo/v1/search?apikey=FAKE_PRIMO_SEARCH_API_KEY&inst=FAKE_PRIMO_VID_INST&q=any,contains,popcorn&scope=default_scope&tab=Everything&vid=FAKE_PRIMO_VID_INST
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - Keep-Alive
+      Host:
+      - api-na.hosted.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      X-Exl-Api-Remaining:
+      - '549998'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,POST,DELETE,PUT,OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Content-Length:
+      - '0'
+      Date:
+      - Tue, 13 Apr 2021 15:21:56 GMT
+      Connection:
+      - close
+      Server:
+      - CA-API-Gateway/9.0
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 13 Apr 2021 15:21:56 GMT
+recorded_with: VCR 6.0.0

@@ -67,6 +67,13 @@ custom hint metadata.
 - `GOOGLE_CUSTOM_SEARCH_ID`: your Google Custom Search engine ID
 - `MAX_AUTHORS`: the maximum number of authors displayed in any record.
   If exceeded, 'et al' will be appended after this number.
+- `PRIMO_SEARCH_API_KEY`: the Primo Search API key.
+- `PRIMO_SEARCH_API_URL`: the root URL for the Primo Search API.
+- `PRIMO_VID_INST`: this is actually two separate Primo Search API params, 
+`vid` and `inst`. We use the same variable for both because they are 
+currently the same value, so VCR will break when it filters out the real 
+values. If the values diverge in the future, they will need to become 
+separate variables.
 - `RECAPTCHA_SITE_KEY`
 - `RECAPTCHA_SECRET_KEY`
 - `TIMDEX_URL`: The GraphQL endpoint for Timdex/ArchiveSpace
