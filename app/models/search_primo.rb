@@ -3,7 +3,7 @@
 # == Required Environment Variables:
 # - PRIMO_SEARCH_API_URL
 # - PRIMO_SEARCH_API_KEY
-# - PRIMO_VID_INST
+# - PRIMO_VID
 #
 
 class SearchPrimo
@@ -11,16 +11,16 @@ class SearchPrimo
 
   PRIMO_SEARCH_API_URL = ENV['PRIMO_SEARCH_API_URL'].freeze
   PRIMO_SEARCH_API_KEY = ENV['PRIMO_SEARCH_API_KEY']
-  PRIMO_VID_INST = ENV['PRIMO_VID_INST']
+  PRIMO_VID = ENV['PRIMO_VID']
 
   def initialize
     @primo_http = HTTP.persistent(PRIMO_SEARCH_API_URL)
     @results = {}
   end
 
-  def search(term)
+  def search(term, scope)
     result = @primo_http.headers(accept: 'application/json')
-                        .get(search_url(term))
+                        .get(search_url(term, scope))
 
     raise "Primo Error Detected: #{result.status}" unless result.status == 200
 
@@ -36,9 +36,9 @@ class SearchPrimo
 
   # This is subject to change. Right now we are just using the required 
   # params and assuming that no operators are used.
-  def search_url(term)
-    [PRIMO_SEARCH_API_URL, '/primo/v1/search?vid=', PRIMO_VID_INST,
-     '&tab=Everything&scope=default_scope&q=any,contains,', clean_term(term),
-     '&inst=', PRIMO_VID_INST, '&apikey=', PRIMO_SEARCH_API_KEY].join('')
+  def search_url(term, scope)
+    [PRIMO_SEARCH_API_URL, '/primo/v1/search?q=any,contains,', 
+      clean_term(term), '&vid=', PRIMO_VID, '&tab=bento&scope=', scope,
+      '&apikey=', PRIMO_SEARCH_API_KEY].join('')
   end
 end
