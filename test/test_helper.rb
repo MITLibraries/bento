@@ -83,8 +83,8 @@ VCR.configure do |config|
   config.filter_sensitive_data('FAKE_PRIMO_SEARCH_API_KEY') do
     (ENV['PRIMO_SEARCH_API_KEY']).to_s
   end
-  config.filter_sensitive_data('FAKE_PRIMO_VID_INST') do
-    (ENV['PRIMO_VID_INST']).to_s
+  config.filter_sensitive_data('FAKE_PRIMO_VID') do
+    (ENV['PRIMO_VID']).to_s
   end
 end
 

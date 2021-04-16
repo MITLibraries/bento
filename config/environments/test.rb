@@ -24,7 +24,9 @@ Rails.application.configure do
 
   ENV['PRIMO_SEARCH_API_URL'] = 'https://another_fake_server.example.com'
   ENV['PRIMO_SEARCH_API_KEY'] = 'FAKE_PRIMO_SEARCH_API_KEY'
-  ENV['PRIMO_VID_INST'] = 'FAKE_PRIMO_VID_INST'
+  ENV['PRIMO_VID'] = 'FAKE_PRIMO_VID'
+  ENV['PRIMO_BOOK_SCOPE'] = 'alma'
+  ENV['PRIMO_ARTICLE_SCOPE'] = 'cdi'
 
   ENV['SCAN_EXCLUSIONS']='Materials -- Standards -- United States -- Periodicals;Materials -- Standards -- United States -- Periodicals;Standards, Engineering;Standards, Engineering -- Periodicals'
 

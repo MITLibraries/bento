@@ -1,0 +1,1808 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://another_fake_server.example.com/primo/v1/search?apikey=FAKE_PRIMO_SEARCH_API_KEY&q=any,contains,popcorn&scope=cdi&tab=bento&vid=FAKE_PRIMO_VID
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - Keep-Alive
+      Host:
+      - api-na.hosted.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Vary:
+      - accept-encoding
+      X-Exl-Api-Remaining:
+      - '549999'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,POST,DELETE,PUT,OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 16 Apr 2021 14:42:13 GMT
+      Server:
+      - CA-API-Gateway/9.0
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "info" : {
+            "totalResultsLocal" : -1,
+            "totalResultsPC" : 131890,
+            "total" : 131890,
+            "first" : 1,
+            "last" : 10
+          },
+          "highlights" : {
+            "snippet" : [ "popcorn" ],
+            "title" : [ "Popcorn", "popcorn" ],
+            "termsUnion" : [ "popcorn", "Popcorn" ]
+          },
+          "docs" : [ {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Popcorn" ],
+                "creationdate" : [ "201611" ]
+              },
+              "control" : {
+                "recordid" : [ "cdi_crossref_primary_10_1088_2058_7058_29_11_46" ],
+                "sourcerecordid" : [ "10_1088_2058_7058_29_11_46" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-c790-4ffb71fa678ae1427e5c8fc4dc8faddf186b598d2c7bf03781c03b21824f685e3" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNo9j8tKBDEQRQtRtB39Af8hdlWelaUMvmBAF7MP6XQKFLWHZOXfO43i5ly4i8u5ADeEt4TMo0bHKhwx6jgSjdafwPBfnsKA0RnFjt0FXPb-jkjeshvg_HU5lKV9XcGZ5I9er_9yA_uH-_32Se1eHp-3dztVQkRlRaZAkn3gXMnqUF1hKXY-Ms-zEPvJRZ51CZOgCUwFzaSJtRXPrpoN6N_Z0pbeW5V0aG-fuX0nwrQ-Sat0WqWTjokoWW9-AAIdOhI" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "sourceid" : [ "crossref" ],
+                "score" : [ "0.0218413" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "title" : [ "Popcorn", "Physics world" ],
+                "creationdate" : [ "2016" ],
+                "recordid" : [ "eNo9j8tKBDEQRQtRtB39Af8hdlWelaUMvmBAF7MP6XQKFLWHZOXfO43i5ly4i8u5ADeEt4TMo0bHKhwx6jgSjdafwPBfnsKA0RnFjt0FXPb-jkjeshvg_HU5lKV9XcGZ5I9er_9yA_uH-_32Se1eHp-3dztVQkRlRaZAkn3gXMnqUF1hKXY-Ms-zEPvJRZ51CZOgCUwFzaSJtRXPrpoN6N_Z0pbeW5V0aG-fuX0nwrQ-Sat0WqWTjokoWW9-AAIdOhI" ],
+                "recordtype" : [ "article" ],
+                "rsrctype" : [ "article" ],
+                "issn" : [ "0953-8585", "2058-7058" ],
+                "fulltext" : [ "true" ],
+                "startdate" : [ "201611" ],
+                "enddate" : [ "201611" ],
+                "scope" : [ "CITATION", "AAYXX" ]
+              },
+              "display" : {
+                "title" : [ "Popcorn" ],
+                "language" : [ "eng" ],
+                "source" : [ "Alma/SFX Local Collection" ],
+                "ispartof" : [ "Physics world, 2016-11, Vol.29 (11), p.42-42" ],
+                "identifier" : [ "ISSN: 0953-8585", "EISSN: 2058-7058", "DOI: 10.1088/2058-7058/29/11/46" ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "Physics world" ],
+                "genre" : [ "article" ],
+                "issn" : [ "0953-8585" ],
+                "pages" : [ "42-42" ],
+                "eissn" : [ "2058-7058" ],
+                "ristype" : [ "JOUR" ],
+                "doi" : [ "10.1088/2058-7058/29/11/46" ],
+                "atitle" : [ "Popcorn" ],
+                "date" : [ "2016-11" ],
+                "risdate" : [ "2016" ],
+                "volume" : [ "29" ],
+                "issue" : [ "11" ],
+                "spage" : [ "42" ],
+                "epage" : [ "42" ]
+              },
+              "facets" : {
+                "creationdate" : [ "2016" ],
+                "language" : [ "eng" ],
+                "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
+                "collection" : [ "CrossRef" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-c790-4ffb71fa678ae1427e5c8fc4dc8faddf186b598d2c7bf03781c03b21824f685e3" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Physics world" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-04-16 10:42:13&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-crossref&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Popcorn&rft.jtitle=Physics+world&rft.date=2016-11&rft.volume=29&rft.issue=11&rft.spage=42&rft.epage=42&rft.pages=42-42&rft.issn=0953-8585&rft.eissn=2058-7058&rft_id=info:doi/10.1088%2F2058-7058%2F29%2F11%2F46&rft_dat=<crossref>10_1088_2058_7058_29_11_46</crossref>&svc_dat=viewit"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ ],
+                "citedby" : [ ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_crossref_primary_10_1088_2058_7058_29_11_46"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Baryonic popcorn" ],
+                "creationdate" : [ "201211" ],
+                "author" : [ "Kaplunovsky, Vadim ; Melnikov, Dmitry ; Sonnenschein, Jacob" ]
+              },
+              "control" : {
+                "recordid" : [ "cdi_crossref_primary_10_1007_JHEP11_2012_047" ],
+                "sourcerecordid" : [ "2398248625" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-13587-9daf53164beef058ed5eb921b94da94a07fe2556b21234451e94de86bf2b991e3" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNpNjz1PwzAQhi0EEqUgsbEiscAQeuePOB6hKhRUCQaYrTg5o1YQB5sO_Pu6pAKme6V77uNh7AzhGgH05HE-e0a85ID8CqTeYyMEbopKarP_Lx-yo5RWAKjQwIid3tbxO3TL5rwPfRNid8wOfP2e6GRXx-z1bvYynReLp_uH6c2iQKEqXZi29kpgKR2RB1VRq8gZjs7ItjayBu2JK1U6jlxIqZByg6rSee6MQRJjdjHs7WP4XFP6squwjl0-abkwFZdVyVWmJgPVxJBSJG_7uPzIL1sEu9W2g7bdatus_TeRMtm9Ufyd-EFQoIBdRKtAo9gAAc1WHw" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "sourceid" : [ "proquest_cross" ],
+                "pqid" : [ "2398248625" ],
+                "score" : [ "0.020163124" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "In the large N\nc\nlimit cold dense nuclear matter must be in a lattice phase. This applies also to holographic models of hadron physics. In a class of such models, like the generalized Sakai-Sugimoto model, baryons take the form of instantons of the effective flavor gauge theory that resides on probe flavor branes. In this paper we study the phase structure of baryonic crystals by analyzing discrete periodic configurations of such instantons. We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density. Through these transitions normal (3D) lattices expand into the transverse dimension, eventually becoming a higher dimensional (4D) multi-layer lattice at large densities.We consider 3D lattices of zero size instantons as well as 1D periodic chains of finite size instantons, which serve as toy models of the full holographic systems. In particular, for the finite-size case we determine solutions of the corresponding ADHM equations for both a straight chain and for a 2D zigzag configuration where instantons pop up into the holographic dimension. At low density the system takes the form of an “abelian anti- ferromagnetic” straight periodic chain. Above a critical density there is a second order phase transition into a zigzag structure. An even higher density yields a rich phase space characterized by the formation of multi-layer zigzag structures. The finite size of the lattices in the transverse dimension is a signal of an emerging Fermi sea of quarks. We thus propose that the popcorn transitions indicate the onset of the “quarkyonic” phase of the cold dense nuclear matter." ],
+                "title" : [ "Baryonic popcorn", "The journal of high energy physics" ],
+                "creationdate" : [ "2012" ],
+                "recordid" : [ "eNpNjz1PwzAQhi0EEqUgsbEiscAQeuePOB6hKhRUCQaYrTg5o1YQB5sO_Pu6pAKme6V77uNh7AzhGgH05HE-e0a85ID8CqTeYyMEbopKarP_Lx-yo5RWAKjQwIid3tbxO3TL5rwPfRNid8wOfP2e6GRXx-z1bvYynReLp_uH6c2iQKEqXZi29kpgKR2RB1VRq8gZjs7ItjayBu2JK1U6jlxIqZByg6rSee6MQRJjdjHs7WP4XFP6squwjl0-abkwFZdVyVWmJgPVxJBSJG_7uPzIL1sEu9W2g7bdatus_TeRMtm9Ufyd-EFQoIBdRKtAo9gAAc1WHw" ],
+                "recordtype" : [ "article" ],
+                "sourceid" : [ "ARAPS", "P62", "PIMPY" ],
+                "creatorcontrib" : [ "Kaplunovsky, Vadim", "Melnikov, Dmitry", "Sonnenschein, Jacob" ],
+                "rsrctype" : [ "article" ],
+                "creator" : [ "Kaplunovsky, Vadim", "Melnikov, Dmitry", "Sonnenschein, Jacob" ],
+                "subject" : [ "Solitons Monopoles and Instantons ; AdS-CFT Correspondence ; Quantum Physics ; Quantum Field Theories, String Theory ; Classical and Quantum Gravitation, Relativity Theory ; Physics ; Phase Diagram of QCD ; Elementary Particles, Quantum Field Theory ; Flavor (particle physics) ; Lattices ; Chains ; Phase transitions ; Density ; Instantons ; Baryons ; Multilayers ; Gauge theory ; Ferromagnetism ; Configurations ; Nuclear matter ; Crystal structure ; Branes ; Solid phases" ],
+                "issn" : [ "1029-8479", "1029-8479" ],
+                "fulltext" : [ "true" ],
+                "addtitle" : [ "J. High Energ. Phys" ],
+                "general" : [ "Springer-Verlag", "Springer Nature B.V" ],
+                "startdate" : [ "201211" ],
+                "enddate" : [ "201211" ],
+                "scope" : [ "CITATION", "AAYXX", "AZQEC", "PQEST", "ARAPS", "P62", "BENPR", "DWQXO", "P5Z", "PIMPY", "HCIFZ", "8FE", "ABUWG", "BGLVJ", "8FG", "PQQKQ", "PQUKI" ]
+              },
+              "display" : {
+                "description" : [ "In the large N\nc\nlimit cold dense nuclear matter must be in a lattice phase. This applies also to holographic models of hadron physics. In a class of such models, like the generalized Sakai-Sugimoto model, baryons take the form of instantons of the effective flavor gauge theory that resides on probe flavor branes. In this paper we study the phase structure of baryonic crystals by analyzing discrete periodic configurations of such instantons. We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density. Through these transitions normal (3D) lattices expand into the transverse dimension, eventually becoming a higher dimensional (4D) multi-layer lattice at large densities.We consider 3D lattices of zero size instantons as well as 1D periodic chains of finite size instantons, which serve as toy models of the full holographic systems. In particular, for the finite-size case we determine solutions of the corresponding ADHM equations for both a straight chain and for a 2D zigzag configuration where instantons pop up into the holographic dimension. At low density the system takes the form of an “abelian anti- ferromagnetic” straight periodic chain. Above a critical density there is a second order phase transition into a zigzag structure. An even higher density yields a rich phase space characterized by the formation of multi-layer zigzag structures. The finite size of the lattices in the transverse dimension is a signal of an emerging Fermi sea of quarks. We thus propose that the popcorn transitions indicate the onset of the “quarkyonic” phase of the cold dense nuclear matter." ],
+                "title" : [ "Baryonic popcorn" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Kaplunovsky, Vadim ; Melnikov, Dmitry ; Sonnenschein, Jacob" ],
+                "subject" : [ "Solitons Monopoles and Instantons ; AdS-CFT Correspondence ; Quantum Physics ; Quantum Field Theories, String Theory ; Classical and Quantum Gravitation, Relativity Theory ; Physics ; Phase Diagram of QCD ; Elementary Particles, Quantum Field Theory ; Flavor (particle physics) ; Lattices ; Chains ; Phase transitions ; Density ; Instantons ; Baryons ; Multilayers ; Gauge theory ; Ferromagnetism ; Configurations ; Nuclear matter ; Crystal structure ; Branes ; Solid phases" ],
+                "source" : [ "Publicly Available Content Database", "ProQuest Advanced Technologies & Aerospace Collection", "Advanced Technologies & Aerospace Collection", "SpringerLink Contemporary (1997 - Present)", "© ProQuest LLC All rights reserved<img src=\"https://exlibris-pub.s3.amazonaws.com/PQ_Logo.jpg\" style=\"vertical-align:middle;margin-left:7px\">" ],
+                "publisher" : [ "Berlin/Heidelberg: Springer-Verlag" ],
+                "ispartof" : [ "The journal of high energy physics, 2012-11, Vol.2012 (11), p.1-85" ],
+                "identifier" : [ "ISSN: 1029-8479", "EISSN: 1029-8479", "DOI: 10.1007/JHEP11(2012)047" ],
+                "rights" : [ "SISSA, Trieste, Italy 2012", "SISSA, Trieste, Italy 2012." ],
+                "snippet" : [ ".... We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ],
+                "oa" : [ "free_for_read" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "The journal of high energy physics" ],
+                "genre" : [ "article" ],
+                "issn" : [ "1029-8479" ],
+                "abstract" : [ "In the large N\nc\nlimit cold dense nuclear matter must be in a lattice phase. This applies also to holographic models of hadron physics. In a class of such models, like the generalized Sakai-Sugimoto model, baryons take the form of instantons of the effective flavor gauge theory that resides on probe flavor branes. In this paper we study the phase structure of baryonic crystals by analyzing discrete periodic configurations of such instantons. We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density. Through these transitions normal (3D) lattices expand into the transverse dimension, eventually becoming a higher dimensional (4D) multi-layer lattice at large densities.We consider 3D lattices of zero size instantons as well as 1D periodic chains of finite size instantons, which serve as toy models of the full holographic systems. In particular, for the finite-size case we determine solutions of the corresponding ADHM equations for both a straight chain and for a 2D zigzag configuration where instantons pop up into the holographic dimension. At low density the system takes the form of an “abelian anti- ferromagnetic” straight periodic chain. Above a critical density there is a second order phase transition into a zigzag structure. An even higher density yields a rich phase space characterized by the formation of multi-layer zigzag structures. The finite size of the lattices in the transverse dimension is a signal of an emerging Fermi sea of quarks. We thus propose that the popcorn transitions indicate the onset of the “quarkyonic” phase of the cold dense nuclear matter." ],
+                "pages" : [ "1-85" ],
+                "eissn" : [ "1029-8479" ],
+                "ristype" : [ "JOUR" ],
+                "cop" : [ "Berlin/Heidelberg" ],
+                "pub" : [ "Springer-Verlag" ],
+                "doi" : [ "10.1007/JHEP11(2012)047" ],
+                "au" : [ "Kaplunovsky, Vadim", "Melnikov, Dmitry", "Sonnenschein, Jacob" ],
+                "atitle" : [ "Baryonic popcorn" ],
+                "stitle" : [ "J. High Energ. Phys" ],
+                "date" : [ "2012-11" ],
+                "risdate" : [ "2012" ],
+                "volume" : [ "2012" ],
+                "issue" : [ "11" ],
+                "spage" : [ "1" ],
+                "epage" : [ "85" ],
+                "oa" : [ "free_for_read" ]
+              },
+              "facets" : {
+                "creationdate" : [ "2012" ],
+                "language" : [ "eng" ],
+                "creatorcontrib" : [ "Kaplunovsky, Vadim", "Melnikov, Dmitry", "Sonnenschein, Jacob" ],
+                "topic" : [ "Solitons Monopoles and Instantons", "AdS-CFT Correspondence", "Quantum Physics", "Quantum Field Theories, String Theory", "Classical and Quantum Gravitation, Relativity Theory", "Physics", "Phase Diagram of QCD", "Elementary Particles, Quantum Field Theory", "Flavor (particle physics)", "Lattices", "Chains", "Phase transitions", "Density", "Instantons", "Baryons", "Multilayers", "Gauge theory", "Ferromagnetism", "Configurations", "Nuclear matter", "Crystal structure", "Branes", "Solid phases" ],
+                "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
+                "collection" : [ "CrossRef", "ProQuest Central Essentials", "ProQuest One Academic Eastern Edition", "Advanced Technologies & Aerospace Collection", "ProQuest Advanced Technologies & Aerospace Collection", "ProQuest Central", "ProQuest Central Korea", "Advanced Technologies & Aerospace Database", "Publicly Available Content Database", "SciTech Premium Collection", "ProQuest SciTech Collection", "ProQuest Central (Alumni Edition)", "Technology Collection", "ProQuest Technology Collection", "ProQuest One Academic", "ProQuest One Academic UKI Edition" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-13587-9daf53164beef058ed5eb921b94da94a07fe2556b21234451e94de86bf2b991e3" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "The journal of high energy physics" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-04-16 10:42:13&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-proquest_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Baryonic+popcorn&rft.jtitle=The+journal+of+high+energy+physics&rft.au=Kaplunovsky%2C+Vadim&rft.date=2012-11&rft.volume=2012&rft.issue=11&rft.spage=1&rft.epage=85&rft.pages=1-85&rft.issn=1029-8479&rft.eissn=1029-8479&rft_id=info:doi/10.1007%2FJHEP11%282012%29047&rft.pub=Springer-Verlag&rft.place=Berlin%2FHeidelberg&rft.stitle=J.+High+Energ.+Phys&rft_dat=<proquest_cross>2398248625</proquest_cross>&svc_dat=viewit"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ "FETCH-LOGICAL-13587-9daf53164beef058ed5eb921b94da94a07fe2556b21234451e94de86bf2b991e3" ],
+                "citedby" : [ "FETCH-LOGICAL-13587-9daf53164beef058ed5eb921b94da94a07fe2556b21234451e94de86bf2b991e3" ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_crossref_primary_10_1007_JHEP11_2012_047"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices" ],
+                "creationdate" : [ "20200717" ],
+                "author" : [ "Kleimeier, N. Fabian ; Turner, Andrew M ; Fortenberry, Ryan C ; Kaiser, Ralf I" ]
+              },
+              "control" : {
+                "recordid" : [ "cdi_proquest_miscellaneous_2407314819" ],
+                "sourcerecordid" : [ "2407314819" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-c3061-b5eadf12e70f9c8c632ffd728bac77c22cbaa8ef67092504d4de053fb474bc33" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNqF0UFv0zAUB3ALgdgYXDkiS1yGRIv97MTJcUSUVprUHXaPHOeZZkrtYjtMvfER-Iz7JHNpGRIX5IOtp5__etKfkLeczTlj8MnsNmYODBhjnJfPyDmXop6pUvLnp7cEUZyRVzHeZVMxxV-SMwGyqIoCzsn92tG0QbrwYavT4B319vfgxu-MD44uRv3DB-0ShY_i4eevz1PSDvsskV42S9Gs81mKD3Rw9Mpg0mOPm32PmTbeJT24wX2jK5cwxITjqANdGYyvyQurx4hvTvcFuV18uW2Ws-v111VzdT0zgpV81hWoe8sBFbO1qUwpwNpeQdVpo5QBMJ3WFdpSsRoKJnvZIyuE7aSSnRHiglweY3fBf58wpnY7RHNYw6GfYguSKcFlxetM3_9D7_wUXF4uK5AlVFDJrOZHZYKPMaBtd2HY6rBvOWsPjbSHRtqnRvKHd6fYqdti_8T_VJBBfQT3w4j7_8S1zc2y-Rv-CBm1mHs" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "sourceid" : [ "proquest_cross" ],
+                "pqid" : [ "2424628284" ],
+                "score" : [ "0.019135173" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "Acetaldehyde (CH3CHO) is ubiquitous throughout the interstellar medium and has been observed in cold molecular clouds, star forming regions, and in meteorites such as Murchison. As the simplest methyl‐bearing aldehyde, acetaldehyde constitutes a critical precursor to prebiotic molecules such as the sugar deoxyribose and amino acids via the Strecker synthesis. In this study, we reveal the first laboratory detection of 2,3‐butanedione (diacetyl, CH3COCOCH3) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K. Detailed isotopic substitution experiments combined with tunable vacuum ultraviolet (VUV) photoionization of the subliming molecules demonstrate that 2,3‐butanedione is formed predominantly via the barrier‐less radical–radical reaction of two acetyl radicals (CH3ĊO). These processes are of fundamental importance for a detailed understanding of how complex organic molecules (COMs) are synthesized in deep space thus constraining the molecular structures and complexity of molecules forming in extraterrestrial ices containing acetaldehyde through a vigorous galactic cosmic ray driven non‐equilibrium chemistry.\nInterstellar popcorn: Exploiting photoionization reflectron time‐of‐flight mass spectrometry, we demonstrate that the popcorn and butter flavorant 2,3‐butanedione (diacetyl) represents the main reaction product of acetaldehyde ices exposed to ionizing radiation." ],
+                "title" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices", "Chemphyschem" ],
+                "creationdate" : [ "2020" ],
+                "recordid" : [ "eNqF0UFv0zAUB3ALgdgYXDkiS1yGRIv97MTJcUSUVprUHXaPHOeZZkrtYjtMvfER-Iz7JHNpGRIX5IOtp5__etKfkLeczTlj8MnsNmYODBhjnJfPyDmXop6pUvLnp7cEUZyRVzHeZVMxxV-SMwGyqIoCzsn92tG0QbrwYavT4B319vfgxu-MD44uRv3DB-0ShY_i4eevz1PSDvsskV42S9Gs81mKD3Rw9Mpg0mOPm32PmTbeJT24wX2jK5cwxITjqANdGYyvyQurx4hvTvcFuV18uW2Ws-v111VzdT0zgpV81hWoe8sBFbO1qUwpwNpeQdVpo5QBMJ3WFdpSsRoKJnvZIyuE7aSSnRHiglweY3fBf58wpnY7RHNYw6GfYguSKcFlxetM3_9D7_wUXF4uK5AlVFDJrOZHZYKPMaBtd2HY6rBvOWsPjbSHRtqnRvKHd6fYqdti_8T_VJBBfQT3w4j7_8S1zc2y-Rv-CBm1mHs" ],
+                "recordtype" : [ "article" ],
+                "creatorcontrib" : [ "Kleimeier, N. Fabian", "Turner, Andrew M", "Fortenberry, Ryan C", "Kaiser, Ralf I" ],
+                "rsrctype" : [ "article" ],
+                "orcidid" : [ "https://orcid.org/0000-0002-7233-7206" ],
+                "creator" : [ "Kleimeier, N. Fabian", "Turner, Andrew M", "Fortenberry, Ryan C", "Kaiser, Ralf I" ],
+                "subject" : [ "non-equilibrium processes ; interstellar synthesis ; IR spectroscopy ; mass spectroscopy ; complex organic molecules ; Acetaldehyde - chemistry ; Cold Temperature ; Flavoring Agents - chemical synthesis ; Ultraviolet Rays ; Models, Chemical ; Free Radicals - chemistry ; Deuterium - chemistry ; Diacetyl - chemical synthesis ; Acetaldehyde - radiation effects ; Extraterrestrial Environment - chemistry ; Deep space ; Molecular structure ; Molecular clouds ; Galactic cosmic rays ; Substitution reactions ; Amino acids ; Ice ; Aldehydes ; Cosmic rays ; Acetaldehyde ; Complexity ; Organic chemistry ; Ionizing radiation ; Meteorites ; Star formation ; Photoionization ; Interstellar chemistry ; Astrochemistry ; Chemical synthesis ; Interstellar matter ; Index Medicus" ],
+                "issn" : [ "1439-4235", "1439-7641" ],
+                "fulltext" : [ "true" ],
+                "addtitle" : [ "Chemphyschem" ],
+                "general" : [ "Wiley Subscription Services, Inc" ],
+                "startdate" : [ "20200717" ],
+                "enddate" : [ "20200717" ],
+                "scope" : [ "CVF", "NPM", "EIF", "CUY", "ECM", "CGR", "CITATION", "AAYXX", "K9.", "7X8" ]
+              },
+              "display" : {
+                "description" : [ "Acetaldehyde (CH3CHO) is ubiquitous throughout the interstellar medium and has been observed in cold molecular clouds, star forming regions, and in meteorites such as Murchison. As the simplest methyl‐bearing aldehyde, acetaldehyde constitutes a critical precursor to prebiotic molecules such as the sugar deoxyribose and amino acids via the Strecker synthesis. In this study, we reveal the first laboratory detection of 2,3‐butanedione (diacetyl, CH3COCOCH3) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K. Detailed isotopic substitution experiments combined with tunable vacuum ultraviolet (VUV) photoionization of the subliming molecules demonstrate that 2,3‐butanedione is formed predominantly via the barrier‐less radical–radical reaction of two acetyl radicals (CH3ĊO). These processes are of fundamental importance for a detailed understanding of how complex organic molecules (COMs) are synthesized in deep space thus constraining the molecular structures and complexity of molecules forming in extraterrestrial ices containing acetaldehyde through a vigorous galactic cosmic ray driven non‐equilibrium chemistry.\nInterstellar popcorn: Exploiting photoionization reflectron time‐of‐flight mass spectrometry, we demonstrate that the popcorn and butter flavorant 2,3‐butanedione (diacetyl) represents the main reaction product of acetaldehyde ices exposed to ionizing radiation." ],
+                "title" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Kleimeier, N. Fabian ; Turner, Andrew M ; Fortenberry, Ryan C ; Kaiser, Ralf I" ],
+                "subject" : [ "non-equilibrium processes ; interstellar synthesis ; IR spectroscopy ; mass spectroscopy ; complex organic molecules ; Acetaldehyde - chemistry ; Cold Temperature ; Flavoring Agents - chemical synthesis ; Ultraviolet Rays ; Models, Chemical ; Free Radicals - chemistry ; Deuterium - chemistry ; Diacetyl - chemical synthesis ; Acetaldehyde - radiation effects ; Extraterrestrial Environment - chemistry ; Deep space ; Molecular structure ; Molecular clouds ; Galactic cosmic rays ; Substitution reactions ; Amino acids ; Ice ; Aldehydes ; Cosmic rays ; Acetaldehyde ; Complexity ; Organic chemistry ; Ionizing radiation ; Meteorites ; Star formation ; Photoionization ; Interstellar chemistry ; Astrochemistry ; Chemical synthesis ; Interstellar matter ; Index Medicus" ],
+                "source" : [ "Wiley-Blackwell PALCI Collection", "Wiley-Blackwell Journals \"Not In Any Collection\" 2014 - China", "Wiley Online Library Journals \"Not In Any Collection\" 2016", "Wiley-Blackwell 2013 Journals \"Not In Any Collection\"", "Orbis-Cascade Wiley-Blackwell Shared Titles 2011", "Alma/SFX Local Collection", "Wiley-Blackwell Journals \"Not In Any Collection\" 2011", "Wiley Online Library All Journals", "© ProQuest LLC All rights reserved<img src=\"https://exlibris-pub.s3.amazonaws.com/PQ_Logo.jpg\" style=\"vertical-align:middle;margin-left:7px\">" ],
+                "publisher" : [ "Germany: Wiley Subscription Services, Inc" ],
+                "ispartof" : [ "Chemphyschem, 2020-07-17, Vol.21 (14), p.1531-1540" ],
+                "identifier" : [ "ISSN: 1439-4235", "EISSN: 1439-7641", "DOI: 10.1002/cphc.202000116", "PMID: 32458552" ],
+                "rights" : [ "2020 Wiley‐VCH Verlag GmbH & Co. KGaA, Weinheim", "2020 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim." ],
+                "snippet" : [ "...) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K...", "...\n) - a butter and popcorn flavorant - synthesized within acetaldehyde-based interstellar analog ices exposed to ionizing radiation at 5 K..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "Chemphyschem" ],
+                "genre" : [ "article" ],
+                "orcidid" : [ "https://orcid.org/0000-0002-7233-7206" ],
+                "issn" : [ "1439-4235" ],
+                "addtitle" : [ "Chemphyschem" ],
+                "abstract" : [ "Acetaldehyde (CH3CHO) is ubiquitous throughout the interstellar medium and has been observed in cold molecular clouds, star forming regions, and in meteorites such as Murchison. As the simplest methyl‐bearing aldehyde, acetaldehyde constitutes a critical precursor to prebiotic molecules such as the sugar deoxyribose and amino acids via the Strecker synthesis. In this study, we reveal the first laboratory detection of 2,3‐butanedione (diacetyl, CH3COCOCH3) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K. Detailed isotopic substitution experiments combined with tunable vacuum ultraviolet (VUV) photoionization of the subliming molecules demonstrate that 2,3‐butanedione is formed predominantly via the barrier‐less radical–radical reaction of two acetyl radicals (CH3ĊO). These processes are of fundamental importance for a detailed understanding of how complex organic molecules (COMs) are synthesized in deep space thus constraining the molecular structures and complexity of molecules forming in extraterrestrial ices containing acetaldehyde through a vigorous galactic cosmic ray driven non‐equilibrium chemistry.\nInterstellar popcorn: Exploiting photoionization reflectron time‐of‐flight mass spectrometry, we demonstrate that the popcorn and butter flavorant 2,3‐butanedione (diacetyl) represents the main reaction product of acetaldehyde ices exposed to ionizing radiation." ],
+                "pages" : [ "1531-1540" ],
+                "eissn" : [ "1439-7641" ],
+                "ristype" : [ "JOUR" ],
+                "cop" : [ "Germany" ],
+                "pub" : [ "Wiley Subscription Services, Inc" ],
+                "doi" : [ "10.1002/cphc.202000116" ],
+                "tpages" : [ "10" ],
+                "au" : [ "Kleimeier, N. Fabian", "Turner, Andrew M", "Fortenberry, Ryan C", "Kaiser, Ralf I" ],
+                "atitle" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices" ],
+                "date" : [ "2020-07-17" ],
+                "risdate" : [ "2020" ],
+                "volume" : [ "21" ],
+                "issue" : [ "14" ],
+                "spage" : [ "1531" ],
+                "epage" : [ "1540" ]
+              },
+              "facets" : {
+                "creationdate" : [ "2020" ],
+                "language" : [ "eng" ],
+                "creatorcontrib" : [ "Kleimeier, N. Fabian", "Turner, Andrew M", "Fortenberry, Ryan C", "Kaiser, Ralf I" ],
+                "topic" : [ "non-equilibrium processes", "interstellar synthesis", "IR spectroscopy", "mass spectroscopy", "complex organic molecules", "Acetaldehyde - chemistry", "Cold Temperature", "Flavoring Agents - chemical synthesis", "Ultraviolet Rays", "Models, Chemical", "Free Radicals - chemistry", "Deuterium - chemistry", "Diacetyl - chemical synthesis", "Acetaldehyde - radiation effects", "Extraterrestrial Environment - chemistry", "Deep space", "Molecular structure", "Molecular clouds", "Galactic cosmic rays", "Substitution reactions", "Amino acids", "Ice", "Aldehydes", "Cosmic rays", "Acetaldehyde", "Complexity", "Organic chemistry", "Ionizing radiation", "Meteorites", "Star formation", "Photoionization", "Interstellar chemistry", "Astrochemistry", "Chemical synthesis", "Interstellar matter", "Index Medicus" ],
+                "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
+                "collection" : [ "MEDLINE (Ovid)", "PubMed", "MEDLINE", "MEDLINE", "MEDLINE", "Medline", "CrossRef", "ProQuest Health & Medical Complete (Alumni)", "MEDLINE - Academic" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-c3061-b5eadf12e70f9c8c632ffd728bac77c22cbaa8ef67092504d4de053fb474bc33" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Chemphyschem" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-04-16 10:42:13&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-proquest_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=On+the+Formation+of+the+Popcorn+Flavorant+2%2C3%E2%80%90Butanedione+%28CH3COCOCH3%29+in+Acetaldehyde%E2%80%90Containing+Interstellar+Ices&rft.jtitle=Chemphyschem&rft.au=Kleimeier%2C+N.+Fabian&rft.date=2020-07-17&rft.volume=21&rft.issue=14&rft.spage=1531&rft.epage=1540&rft.pages=1531-1540&rft.issn=1439-4235&rft.eissn=1439-7641&rft_id=info:doi/10.1002%2Fcphc.202000116&rft.pub=Wiley+Subscription+Services%2C+Inc&rft.place=Germany&rft_dat=<proquest_cross>2424628284</proquest_cross>&svc_dat=viewit"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ "FETCH-LOGICAL-c3061-b5eadf12e70f9c8c632ffd728bac77c22cbaa8ef67092504d4de053fb474bc33" ],
+                "citedby" : [ ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_proquest_miscellaneous_2407314819"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Popcorn Inspired Porous Macrocellular Carbon: Rapid Puffing Fabrication from Rice and Its Applications in Lithium–Sulfur Batteries" ],
+                "creationdate" : [ "20180105" ],
+                "author" : [ "Zhong, Yu ; Xia, Xinhui ; Deng, Shengjue ; Zhan, Jiye ; Fang, Ruyi ; Xia, Yang ; Wang, Xiuli ; Zhang, Qiang ; Tu, Jiangping" ]
+              },
+              "control" : {
+                "recordid" : [ "cdi_gale_infotracacademiconefile_A521493458" ],
+                "sourcerecordid" : [ "A521493458" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-14280-4fb93c46ebe9bec39404ddb7e2ff65f1612d85347e97ce15bf4ee0e962254e123" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNqFkM9OwzAMxisEEtPYlXNeoCNJ03_cxrTBpA2mAecqTZ0R1CZV0grtxoE34A15EjINbUfsgy3b3yf5FwTXBI8JxvSGg27GFJMUE0LwWTAgCWFhkjF8fuwjehmMnHvHPlhOcBQNgq-1aYWxGi20a5WFCq2NNb1DKy6sEVDXfc0tmnJbGn2LNrxV_qSXUuktmvPSKsE7ZTSS1jRoowQgriu06ByatG39t3VIabRU3Zvqm5_P7-e-lr1Fd7zrwCpwV8GF5LWD0V8dBq_z2cv0IVw-3S-mk2VIGM1wyGSZR4IlUEJegohyhllVlSlQKZNY-i9plcURSyFPBZC4lAwAQ55QGjMgNBoG44PvltdQKC1NZ7nwWUGjhNEglZ9PYkpYHrE4Owk8C-csyKK1quF2VxBc7LkXe-7FkbsX5AfBh3fa_XNdTGaPq5P2FwvRiaY" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "sourceid" : [ "gale_cross" ],
+                "galeid" : [ "A521493458" ],
+                "score" : [ "0.018670669" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "The advancement of electrochemical energy storage is closely bound up with the breakthrough of controllable fabrication of energy materials. Inspired by a popcorn fabrication from corn raw, herein a unique porous macrocellular carbon composed of cross‐linked nano/microsheets by a powerful puffing of rice precursor is described. The rice is directly puffed with a volume enlargement of ≈20 times when it is instantaneously released from a sealed environment with a high pressure of 1.0 MPa at 200 °C. Interestingly, when metal (e.g., Ni) nanoparticles are embedded in the puffed rice derived carbon (PRC), high‐quality PRC/metal composites are achieved with attractive properties of a high electrical conductivity of ≈7.2 × 104 S m−1, a large porosity of 85.1%, and a surface area of 1492.2 m2 g−1. The PRC/Ni are employed as a host in lithium–sulfur batteries. The designed PRC/Ni/S electrode exhibits a high reversible capacity of 1257.2 mA h g−1 at 0.2 C, a prolonged cycle life (821 mA h g−1 after 500 cycles), and enhanced rate capability, much better than other counterparts (PRC/S and rGO/S). The excellent properties are attributed to the advantages of PRC/Ni network with a high electrical conductivity, strong adsorption/blocking ability for polysulfides, and interconnected porous framework.\nA unique porous microcellular carbon composed of cross‐linked nano/microsheets created by a powerful puffing of a rice precursor is described. Because of the advantages of the puffed‐rice‐derived carbon/Ni network with a high electrical conductivity and strong adsorption/blocking ability for polysulfides, the microcellular carbon‐based electrode exhibits high sulfur utilization, long cycling life, and high rate performance in a working lithium–sulfur battery." ],
+                "title" : [ "Popcorn Inspired Porous Macrocellular Carbon: Rapid Puffing Fabrication from Rice and Its Applications in Lithium–Sulfur Batteries", "Advanced energy materials" ],
+                "creationdate" : [ "2018" ],
+                "recordid" : [ "eNqFkM9OwzAMxisEEtPYlXNeoCNJ03_cxrTBpA2mAecqTZ0R1CZV0grtxoE34A15EjINbUfsgy3b3yf5FwTXBI8JxvSGg27GFJMUE0LwWTAgCWFhkjF8fuwjehmMnHvHPlhOcBQNgq-1aYWxGi20a5WFCq2NNb1DKy6sEVDXfc0tmnJbGn2LNrxV_qSXUuktmvPSKsE7ZTSS1jRoowQgriu06ByatG39t3VIabRU3Zvqm5_P7-e-lr1Fd7zrwCpwV8GF5LWD0V8dBq_z2cv0IVw-3S-mk2VIGM1wyGSZR4IlUEJegohyhllVlSlQKZNY-i9plcURSyFPBZC4lAwAQ55QGjMgNBoG44PvltdQKC1NZ7nwWUGjhNEglZ9PYkpYHrE4Owk8C-csyKK1quF2VxBc7LkXe-7FkbsX5AfBh3fa_XNdTGaPq5P2FwvRiaY" ],
+                "recordtype" : [ "article" ],
+                "creatorcontrib" : [ "Zhong, Yu", "Xia, Xinhui", "Deng, Shengjue", "Zhan, Jiye", "Fang, Ruyi", "Xia, Yang", "Wang, Xiuli", "Zhang, Qiang", "Tu, Jiangping" ],
+                "rsrctype" : [ "article" ],
+                "orcidid" : [ "https://orcid.org/0000-0002-3929-1541" ],
+                "creator" : [ "Zhong, Yu", "Xia, Xinhui", "Deng, Shengjue", "Zhan, Jiye", "Fang, Ruyi", "Xia, Yang", "Wang, Xiuli", "Zhang, Qiang", "Tu, Jiangping" ],
+                "subject" : [ "biomass‐derived porous carbons ; lithium–sulfur batteries ; cathodes ; nanostructures ; metal–carbon composites ; Sulfur compounds ; Electrical conductivity ; Electrochemistry ; Porosity ; Batteries ; Sulfur ; Electric properties" ],
+                "issn" : [ "1614-6832", "1614-6840" ],
+                "fulltext" : [ "true" ],
+                "general" : [ "Wiley Subscription Services, Inc" ],
+                "startdate" : [ "20180105" ],
+                "enddate" : [ "20180105" ],
+                "scope" : [ "CITATION", "AAYXX", "BSHEE" ]
+              },
+              "display" : {
+                "description" : [ "The advancement of electrochemical energy storage is closely bound up with the breakthrough of controllable fabrication of energy materials. Inspired by a popcorn fabrication from corn raw, herein a unique porous macrocellular carbon composed of cross‐linked nano/microsheets by a powerful puffing of rice precursor is described. The rice is directly puffed with a volume enlargement of ≈20 times when it is instantaneously released from a sealed environment with a high pressure of 1.0 MPa at 200 °C. Interestingly, when metal (e.g., Ni) nanoparticles are embedded in the puffed rice derived carbon (PRC), high‐quality PRC/metal composites are achieved with attractive properties of a high electrical conductivity of ≈7.2 × 104 S m−1, a large porosity of 85.1%, and a surface area of 1492.2 m2 g−1. The PRC/Ni are employed as a host in lithium–sulfur batteries. The designed PRC/Ni/S electrode exhibits a high reversible capacity of 1257.2 mA h g−1 at 0.2 C, a prolonged cycle life (821 mA h g−1 after 500 cycles), and enhanced rate capability, much better than other counterparts (PRC/S and rGO/S). The excellent properties are attributed to the advantages of PRC/Ni network with a high electrical conductivity, strong adsorption/blocking ability for polysulfides, and interconnected porous framework.\nA unique porous microcellular carbon composed of cross‐linked nano/microsheets created by a powerful puffing of a rice precursor is described. Because of the advantages of the puffed‐rice‐derived carbon/Ni network with a high electrical conductivity and strong adsorption/blocking ability for polysulfides, the microcellular carbon‐based electrode exhibits high sulfur utilization, long cycling life, and high rate performance in a working lithium–sulfur battery." ],
+                "title" : [ "Popcorn Inspired Porous Macrocellular Carbon: Rapid Puffing Fabrication from Rice and Its Applications in Lithium–Sulfur Batteries" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Zhong, Yu ; Xia, Xinhui ; Deng, Shengjue ; Zhan, Jiye ; Fang, Ruyi ; Xia, Yang ; Wang, Xiuli ; Zhang, Qiang ; Tu, Jiangping" ],
+                "subject" : [ "biomass‐derived porous carbons ; lithium–sulfur batteries ; cathodes ; nanostructures ; metal–carbon composites ; Sulfur compounds ; Electrical conductivity ; Electrochemistry ; Porosity ; Batteries ; Sulfur ; Electric properties" ],
+                "source" : [ "Wiley-Blackwell Journals \"Not In Any Collection\" 2014 - China", "Wiley Online Library Journals \"Not In Any Collection\" 2016", "Wiley-Blackwell 2013 Journals \"Not In Any Collection\"", "Wiley-Blackwell Journals 2010-2013 Free Opt Ins - China", "Wiley-Blackwell Journals \"Not In Any Collection\" 2011", "Wiley Online Library All Journals" ],
+                "publisher" : [ "Wiley Subscription Services, Inc" ],
+                "ispartof" : [ "Advanced energy materials, 2018-01-05, Vol.8 (1), p.1701110-n/a" ],
+                "identifier" : [ "ISSN: 1614-6832", "EISSN: 1614-6840", "DOI: 10.1002/aenm.201701110" ],
+                "rights" : [ "2017 WILEY‐VCH Verlag GmbH & Co. KGaA, Weinheim", "COPYRIGHT 2018 Wiley Subscription Services, Inc." ],
+                "snippet" : [ ".... Inspired by a popcorn fabrication from corn raw, herein a unique porous macrocellular carbon composed of cross..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "Advanced energy materials" ],
+                "genre" : [ "article" ],
+                "orcidid" : [ "https://orcid.org/0000-0002-3929-1541" ],
+                "issn" : [ "1614-6832" ],
+                "abstract" : [ "The advancement of electrochemical energy storage is closely bound up with the breakthrough of controllable fabrication of energy materials. Inspired by a popcorn fabrication from corn raw, herein a unique porous macrocellular carbon composed of cross‐linked nano/microsheets by a powerful puffing of rice precursor is described. The rice is directly puffed with a volume enlargement of ≈20 times when it is instantaneously released from a sealed environment with a high pressure of 1.0 MPa at 200 °C. Interestingly, when metal (e.g., Ni) nanoparticles are embedded in the puffed rice derived carbon (PRC), high‐quality PRC/metal composites are achieved with attractive properties of a high electrical conductivity of ≈7.2 × 104 S m−1, a large porosity of 85.1%, and a surface area of 1492.2 m2 g−1. The PRC/Ni are employed as a host in lithium–sulfur batteries. The designed PRC/Ni/S electrode exhibits a high reversible capacity of 1257.2 mA h g−1 at 0.2 C, a prolonged cycle life (821 mA h g−1 after 500 cycles), and enhanced rate capability, much better than other counterparts (PRC/S and rGO/S). The excellent properties are attributed to the advantages of PRC/Ni network with a high electrical conductivity, strong adsorption/blocking ability for polysulfides, and interconnected porous framework.\nA unique porous microcellular carbon composed of cross‐linked nano/microsheets created by a powerful puffing of a rice precursor is described. Because of the advantages of the puffed‐rice‐derived carbon/Ni network with a high electrical conductivity and strong adsorption/blocking ability for polysulfides, the microcellular carbon‐based electrode exhibits high sulfur utilization, long cycling life, and high rate performance in a working lithium–sulfur battery." ],
+                "pages" : [ "1701110-n/a" ],
+                "eissn" : [ "1614-6840" ],
+                "ristype" : [ "JOUR" ],
+                "pub" : [ "Wiley Subscription Services, Inc" ],
+                "doi" : [ "10.1002/aenm.201701110" ],
+                "tpages" : [ "8" ],
+                "au" : [ "Zhong, Yu", "Xia, Xinhui", "Deng, Shengjue", "Zhan, Jiye", "Fang, Ruyi", "Xia, Yang", "Wang, Xiuli", "Zhang, Qiang", "Tu, Jiangping" ],
+                "atitle" : [ "Popcorn Inspired Porous Macrocellular Carbon: Rapid Puffing Fabrication from Rice and Its Applications in Lithium–Sulfur Batteries" ],
+                "date" : [ "2018-01-05" ],
+                "risdate" : [ "2018" ],
+                "volume" : [ "8" ],
+                "issue" : [ "1" ],
+                "spage" : [ "1701110" ],
+                "epage" : [ "n/a" ]
+              },
+              "facets" : {
+                "creationdate" : [ "2018" ],
+                "language" : [ "eng" ],
+                "creatorcontrib" : [ "Zhong, Yu", "Xia, Xinhui", "Deng, Shengjue", "Zhan, Jiye", "Fang, Ruyi", "Xia, Yang", "Wang, Xiuli", "Zhang, Qiang", "Tu, Jiangping" ],
+                "topic" : [ "biomass‐derived porous carbons", "lithium–sulfur batteries", "cathodes", "nanostructures", "metal–carbon composites", "Sulfur compounds", "Electrical conductivity", "Electrochemistry", "Porosity", "Batteries", "Sulfur", "Electric properties" ],
+                "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
+                "collection" : [ "CrossRef", "Academic OneFile (A&I only)" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-14280-4fb93c46ebe9bec39404ddb7e2ff65f1612d85347e97ce15bf4ee0e962254e123" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Advanced energy materials" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-04-16 10:42:13&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Popcorn+Inspired+Porous+Macrocellular+Carbon%3A+Rapid+Puffing+Fabrication+from+Rice+and+Its+Applications+in+Lithium%E2%80%93Sulfur+Batteries&rft.jtitle=Advanced+energy+materials&rft.au=Zhong%2C+Yu&rft.date=2018-01-05&rft.volume=8&rft.issue=1&rft.spage=1701110&rft.epage=n%2Fa&rft.pages=1701110-n%2Fa&rft.issn=1614-6832&rft.eissn=1614-6840&rft_id=info:doi/10.1002%2Faenm.201701110&rft.pub=Wiley+Subscription+Services%2C+Inc&rft_dat=<gale_cross>A521493458</gale_cross>&svc_dat=viewit&rft_galeid=A521493458"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ "FETCH-LOGICAL-14280-4fb93c46ebe9bec39404ddb7e2ff65f1612d85347e97ce15bf4ee0e962254e123" ],
+                "citedby" : [ "FETCH-LOGICAL-14280-4fb93c46ebe9bec39404ddb7e2ff65f1612d85347e97ce15bf4ee0e962254e123" ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_gale_infotracacademiconefile_A521493458"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Determination of perfluorinated alkyl acids in corn, popcorn and popcorn bags before and after cooking by focused ultrasound solid–liquid extraction, liquid chromatography and quadrupole-time of flight mass spectrometry" ],
+                "creationdate" : [ "20140815" ],
+                "author" : [ "Moreta, Cristina ; Tena, María Teresa" ]
+              },
+              "control" : {
+                "recordid" : [ "cdi_gale_infotracacademiconefile_A375736650" ],
+                "sourcerecordid" : [ "A375736650" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-c3503-5cd834cab94a649b1fc87b95fb5aa6d48e70dc72d08a7130176da5eab6da26f63" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNp9UbuO1TAQTQESy4U_oHBDtwl2Hk5ug7RantJKNFBbE3uc67uOnbUTRLr9B76Phi_B2ay2RC5mdHzOmVeWvWG0YJTxd-dCnoIfoSgpqwvKC8q6Z9kFpSXLj7ytXmQvYzxTylralhfZnw84YxiNg9l4R7wmEwZtFx82CBUBe7taAtKoSIwj0gd3SSY_bQkBp57yHoZIetQ-4AMOOhknvr81biD9SrSXS0yOi50DRL8kTvTWqL_3v625W4wi-Cv9yK2RS_II7cPMfggwndYH47sFVFgmbzGfzYhbz9qa4TSTEWIkcUI5JxHOYX2VPddgI75-jIfsx6eP36-_5DffPn-9vrrJZdXQKm-k6qpaQn-sgdfHnmnZtf2x0X0DwFXdYUuVbEtFO2hZlXbHFTQIfQol17w6ZMXuO4BFYZz22yDpKRyN9A61SfhV1TZtxXkqecjqXSCDjzGgFlMwI4RVMCq2O4qz2EcX2x0F5SLdMcne7rIJogSrAzhp4pO27HgiU5Z473cepqF_GgwiSoNOojIhbUcob_5f6B_A58Bk" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "sourceid" : [ "gale_cross" ],
+                "galeid" : [ "A375736650" ],
+                "score" : [ "0.018272474" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "backlink" : [ "$$Uhttp://pascal-francis.inist.fr/vibad/index.php?action=getRecordDetail&idt=28601401$$DView record in Pascal Francis" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "•FUSLE and UHPLC–(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging.•Complete extraction in one FUSLE cycle of only 10s.•Microwave popcorn bags and their content are analyzed before and after cooking.•PFAA levels from 3.50 to 750ng/g in packaging (mainly PFHxA). PFOA and PFOS not detected.•No PFAAs were found in corn and popcorn.\nAn analytical method is proposed to determine ten perfluorinated alkyl acids (PFAAs) [nine perfluorocarboxylic acids (PFCAs) and perfluorooctane sulfonate (PFOS)] in corn, popcorn and microwave popcorn packaging by focused ultrasound solid–liquid extraction (FUSLE) and ultra high performance liquid chromatography (UHPLC) coupled to quadrupole-time of flight mass spectrometry (QTOF-MS/MS). Selected PFAAs were extracted efficiently in only one 10-s cycle by FUSLE, a simple, safe and inexpensive technique. The developed method was validated for microwave popcorn bags matrix as well as corn and popcorn matrices in terms of linearity, matrix effect error, detection and quantification limits, repeatability and recovery values. The method showed good accuracy with recovery values around 100% except for the lowest chain length PFAAs, satisfactory reproducibility with RSDs under 16%, and sensitivity with limits of detection in the order of hundreds picograms per gram of sample (between 0.2 and 0.7ng/g). This method was also applied to the analysis of six microwave popcorn bags and the popcorn inside before and after cooking. PFCAs contents between 3.50ng/g and 750ng/g were found in bags, being PFHxA (perfluorohexanoic acid) the most abundant of them. However, no PFAAs were detected either corn or popcorn, therefore no migration was assumed." ],
+                "title" : [ "Determination of perfluorinated alkyl acids in corn, popcorn and popcorn bags before and after cooking by focused ultrasound solid–liquid extraction, liquid chromatography and quadrupole-time of flight mass spectrometry", "Journal of Chromatography A" ],
+                "creationdate" : [ "2014" ],
+                "recordid" : [ "eNp9UbuO1TAQTQESy4U_oHBDtwl2Hk5ug7RantJKNFBbE3uc67uOnbUTRLr9B76Phi_B2ay2RC5mdHzOmVeWvWG0YJTxd-dCnoIfoSgpqwvKC8q6Z9kFpSXLj7ytXmQvYzxTylralhfZnw84YxiNg9l4R7wmEwZtFx82CBUBe7taAtKoSIwj0gd3SSY_bQkBp57yHoZIetQ-4AMOOhknvr81biD9SrSXS0yOi50DRL8kTvTWqL_3v625W4wi-Cv9yK2RS_II7cPMfggwndYH47sFVFgmbzGfzYhbz9qa4TSTEWIkcUI5JxHOYX2VPddgI75-jIfsx6eP36-_5DffPn-9vrrJZdXQKm-k6qpaQn-sgdfHnmnZtf2x0X0DwFXdYUuVbEtFO2hZlXbHFTQIfQol17w6ZMXuO4BFYZz22yDpKRyN9A61SfhV1TZtxXkqecjqXSCDjzGgFlMwI4RVMCq2O4qz2EcX2x0F5SLdMcne7rIJogSrAzhp4pO27HgiU5Z473cepqF_GgwiSoNOojIhbUcob_5f6B_A58Bk" ],
+                "recordtype" : [ "article" ],
+                "creatorcontrib" : [ "Moreta, Cristina", "Tena, María Teresa" ],
+                "rsrctype" : [ "article" ],
+                "creator" : [ "Moreta, Cristina", "Tena, María Teresa" ],
+                "subject" : [ "Packaging ; Quadrupole-time of flight mass spectrometry ; Liquid chromatography ; Perfluorinated alkyl acids ; Focused ultrasound solid–liquid extraction ; Popcorn ; Fundamental and applied biological sciences. Psychology ; Food industries ; Biological and medical sciences ; Cereal and baking product industries ; Corn ; Ammonium perfluorooctanoate ; Mass spectrometry ; Analysis" ],
+                "issn" : [ "0021-9673" ],
+                "fulltext" : [ "true" ],
+                "general" : [ "Elsevier B.V", "Elsevier" ],
+                "startdate" : [ "20140815" ],
+                "enddate" : [ "20140815" ],
+                "scope" : [ "IQODW", "CITATION", "AAYXX", "BSHEE" ]
+              },
+              "display" : {
+                "description" : [ "•FUSLE and UHPLC–(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging.•Complete extraction in one FUSLE cycle of only 10s.•Microwave popcorn bags and their content are analyzed before and after cooking.•PFAA levels from 3.50 to 750ng/g in packaging (mainly PFHxA). PFOA and PFOS not detected.•No PFAAs were found in corn and popcorn.\nAn analytical method is proposed to determine ten perfluorinated alkyl acids (PFAAs) [nine perfluorocarboxylic acids (PFCAs) and perfluorooctane sulfonate (PFOS)] in corn, popcorn and microwave popcorn packaging by focused ultrasound solid–liquid extraction (FUSLE) and ultra high performance liquid chromatography (UHPLC) coupled to quadrupole-time of flight mass spectrometry (QTOF-MS/MS). Selected PFAAs were extracted efficiently in only one 10-s cycle by FUSLE, a simple, safe and inexpensive technique. The developed method was validated for microwave popcorn bags matrix as well as corn and popcorn matrices in terms of linearity, matrix effect error, detection and quantification limits, repeatability and recovery values. The method showed good accuracy with recovery values around 100% except for the lowest chain length PFAAs, satisfactory reproducibility with RSDs under 16%, and sensitivity with limits of detection in the order of hundreds picograms per gram of sample (between 0.2 and 0.7ng/g). This method was also applied to the analysis of six microwave popcorn bags and the popcorn inside before and after cooking. PFCAs contents between 3.50ng/g and 750ng/g were found in bags, being PFHxA (perfluorohexanoic acid) the most abundant of them. However, no PFAAs were detected either corn or popcorn, therefore no migration was assumed." ],
+                "title" : [ "Determination of perfluorinated alkyl acids in corn, popcorn and popcorn bags before and after cooking by focused ultrasound solid–liquid extraction, liquid chromatography and quadrupole-time of flight mass spectrometry" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Moreta, Cristina ; Tena, María Teresa" ],
+                "subject" : [ "Packaging ; Quadrupole-time of flight mass spectrometry ; Liquid chromatography ; Perfluorinated alkyl acids ; Focused ultrasound solid–liquid extraction ; Popcorn ; Fundamental and applied biological sciences. Psychology ; Food industries ; Biological and medical sciences ; Cereal and baking product industries ; Corn ; Ammonium perfluorooctanoate ; Mass spectrometry ; Analysis" ],
+                "source" : [ "ScienceDirect Pi2 Collection", "ScienceDirect Physical Sciences College Edition Backfile", "Medium Multidisciplinary Collection [ECMMC]", "ScienceDirect Journals (Transactional Access)", "ScienceDirect Polish National Consort 2007", "ScienceDirect Journals (5 years ago - present)", "Alma/SFX Local Collection", "ScienceDirect Government Edition", "Small Multidisciplinary Collection [ECSMC]" ],
+                "publisher" : [ "Amsterdam: Elsevier B.V" ],
+                "ispartof" : [ "Journal of Chromatography A, 2014-08-15, Vol.1355, p.211-218" ],
+                "identifier" : [ "ISSN: 0021-9673", "DOI: 10.1016/j.chroma.2014.06.018", "CODEN: JOCRAM" ],
+                "rights" : [ "2014 Elsevier B.V.", "2015 INIST-CNRS", "COPYRIGHT 2014 Elsevier B.V." ],
+                "snippet" : [ "•FUSLE and UHPLC–(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging...", "acents FUSLE and UHPLC-(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "Journal of Chromatography A" ],
+                "genre" : [ "article" ],
+                "issn" : [ "0021-9673" ],
+                "abstract" : [ "•FUSLE and UHPLC–(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging.•Complete extraction in one FUSLE cycle of only 10s.•Microwave popcorn bags and their content are analyzed before and after cooking.•PFAA levels from 3.50 to 750ng/g in packaging (mainly PFHxA). PFOA and PFOS not detected.•No PFAAs were found in corn and popcorn.\nAn analytical method is proposed to determine ten perfluorinated alkyl acids (PFAAs) [nine perfluorocarboxylic acids (PFCAs) and perfluorooctane sulfonate (PFOS)] in corn, popcorn and microwave popcorn packaging by focused ultrasound solid–liquid extraction (FUSLE) and ultra high performance liquid chromatography (UHPLC) coupled to quadrupole-time of flight mass spectrometry (QTOF-MS/MS). Selected PFAAs were extracted efficiently in only one 10-s cycle by FUSLE, a simple, safe and inexpensive technique. The developed method was validated for microwave popcorn bags matrix as well as corn and popcorn matrices in terms of linearity, matrix effect error, detection and quantification limits, repeatability and recovery values. The method showed good accuracy with recovery values around 100% except for the lowest chain length PFAAs, satisfactory reproducibility with RSDs under 16%, and sensitivity with limits of detection in the order of hundreds picograms per gram of sample (between 0.2 and 0.7ng/g). This method was also applied to the analysis of six microwave popcorn bags and the popcorn inside before and after cooking. PFCAs contents between 3.50ng/g and 750ng/g were found in bags, being PFHxA (perfluorohexanoic acid) the most abundant of them. However, no PFAAs were detected either corn or popcorn, therefore no migration was assumed." ],
+                "pages" : [ "211-218" ],
+                "coden" : [ "JOCRAM" ],
+                "ristype" : [ "JOUR" ],
+                "cop" : [ "Amsterdam" ],
+                "pub" : [ "Elsevier B.V" ],
+                "doi" : [ "10.1016/j.chroma.2014.06.018" ],
+                "au" : [ "Moreta, Cristina", "Tena, María Teresa" ],
+                "atitle" : [ "Determination of perfluorinated alkyl acids in corn, popcorn and popcorn bags before and after cooking by focused ultrasound solid–liquid extraction, liquid chromatography and quadrupole-time of flight mass spectrometry" ],
+                "date" : [ "2014-08-15" ],
+                "risdate" : [ "2014" ],
+                "volume" : [ "1355" ],
+                "spage" : [ "211" ],
+                "epage" : [ "218" ]
+              },
+              "facets" : {
+                "creationdate" : [ "2014" ],
+                "language" : [ "eng" ],
+                "creatorcontrib" : [ "Moreta, Cristina", "Tena, María Teresa" ],
+                "topic" : [ "Packaging", "Quadrupole-time of flight mass spectrometry", "Liquid chromatography", "Perfluorinated alkyl acids", "Focused ultrasound solid–liquid extraction", "Popcorn", "Fundamental and applied biological sciences. Psychology", "Food industries", "Biological and medical sciences", "Cereal and baking product industries", "Corn", "Ammonium perfluorooctanoate", "Mass spectrometry", "Analysis" ],
+                "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
+                "collection" : [ "Pascal-Francis", "CrossRef", "Academic OneFile (A&I only)" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-c3503-5cd834cab94a649b1fc87b95fb5aa6d48e70dc72d08a7130176da5eab6da26f63" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Journal of Chromatography A" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-04-16 10:42:13&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Determination+of+perfluorinated+alkyl+acids+in+corn%2C+popcorn+and+popcorn+bags+before+and+after+cooking+by+focused+ultrasound+solid%E2%80%93liquid+extraction%2C+liquid+chromatography+and+quadrupole-time+of+flight+mass+spectrometry&rft.jtitle=Journal+of+Chromatography+A&rft.au=Moreta%2C+Cristina&rft.date=2014-08-15&rft.volume=1355&rft.spage=211&rft.epage=218&rft.pages=211-218&rft.issn=0021-9673&rft.coden=JOCRAM&rft_id=info:doi/10.1016%2Fj.chroma.2014.06.018&rft.pub=Elsevier+B.V&rft.place=Amsterdam&rft_dat=<gale_cross>A375736650</gale_cross>&svc_dat=viewit&rft_galeid=A375736650"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ ],
+                "citedby" : [ ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_gale_infotracacademiconefile_A375736650"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "‘Popcorn’ in the Brain: A Cause for Confusion" ],
+                "creationdate" : [ "202102" ],
+                "author" : [ "Rafee, Shameer ; Killeen, Ronan P ; Tubridy, Niall" ]
+              },
+              "control" : {
+                "recordid" : [ "cdi_proquest_miscellaneous_2454123461" ],
+                "sourcerecordid" : [ "2454123461" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-c1927-be9e471d2bf0962ddbad6c341a5e3a80768c619ec3838e34a783bbee13f083ad3" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNp9kM1Kw0AQxxdRbK2-gUiOXhL3K5usB6EGv6CgBz0vm80ENzTZutsI3voY-np9ElNSr56GYX7_GeaH0DnBCcFEXDWJbpsWqoRiihMsE0z4AZqSNE3jjAh6iKYYYxpLxtkEnYTQDC2WqThGE8awJEyyKSLbzfeLWxnnu-3mJ7JdtH6H6NZr211H86jQfYCodj4qXFf3wbruFB3VehngbF9n6O3-7rV4jBfPD0_FfBEbImkWlyCBZ6SiZY2loFVV6koYxolOgekcZyI3gkgwLGc5MK6znJUlAGE1zpmu2AxdjntX3n30ENaqtcHAcqk7cH1QlKecUMYFGVA-osa7EDzUauVtq_2XIljtZKlGjbLUTpbCUg2yhtjF_kJf7mZ_oT87A3AzAjD8-WnBq2AsdAYq68GsVeXs_xd-Ab2QfDw" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "sourceid" : [ "proquest_cross" ],
+                "pqid" : [ "2454123461" ],
+                "score" : [ "0.01815351" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "title" : [ "‘Popcorn’ in the Brain: A Cause for Confusion", "The American journal of medicine" ],
+                "creationdate" : [ "2021" ],
+                "recordid" : [ "eNp9kM1Kw0AQxxdRbK2-gUiOXhL3K5usB6EGv6CgBz0vm80ENzTZutsI3voY-np9ElNSr56GYX7_GeaH0DnBCcFEXDWJbpsWqoRiihMsE0z4AZqSNE3jjAh6iKYYYxpLxtkEnYTQDC2WqThGE8awJEyyKSLbzfeLWxnnu-3mJ7JdtH6H6NZr211H86jQfYCodj4qXFf3wbruFB3VehngbF9n6O3-7rV4jBfPD0_FfBEbImkWlyCBZ6SiZY2loFVV6koYxolOgekcZyI3gkgwLGc5MK6znJUlAGE1zpmu2AxdjntX3n30ENaqtcHAcqk7cH1QlKecUMYFGVA-osa7EDzUauVtq_2XIljtZKlGjbLUTpbCUg2yhtjF_kJf7mZ_oT87A3AzAjD8-WnBq2AsdAYq68GsVeXs_xd-Ab2QfDw" ],
+                "recordtype" : [ "article" ],
+                "creatorcontrib" : [ "Rafee, Shameer", "Killeen, Ronan P", "Tubridy, Niall" ],
+                "rsrctype" : [ "article" ],
+                "orcidid" : [ "https://orcid.org/0000-0002-9231-8133", "https://orcid.org/0000-0002-0756-3135" ],
+                "creator" : [ "Rafee, Shameer", "Killeen, Ronan P", "Tubridy, Niall" ],
+                "subject" : [ "Hemangioma, Cavernous, Central Nervous System - surgery ; Young Adult ; Hemangioma, Cavernous, Central Nervous System - diagnosis ; Confusion - etiology ; Hemangioma, Cavernous, Central Nervous System - pathology ; Humans ; Index Medicus ; Abridged Index Medicus" ],
+                "issn" : [ "0002-9343", "1555-7162" ],
+                "fulltext" : [ "true" ],
+                "addtitle" : [ "Am J Med" ],
+                "general" : [ "Elsevier Inc" ],
+                "startdate" : [ "202102" ],
+                "enddate" : [ "202102" ],
+                "scope" : [ "CVF", "NPM", "EIF", "CUY", "ECM", "CGR", "CITATION", "AAYXX", "7X8" ]
+              },
+              "display" : {
+                "title" : [ "‘Popcorn’ in the Brain: A Cause for Confusion" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Rafee, Shameer ; Killeen, Ronan P ; Tubridy, Niall" ],
+                "subject" : [ "Hemangioma, Cavernous, Central Nervous System - surgery ; Young Adult ; Hemangioma, Cavernous, Central Nervous System - diagnosis ; Confusion - etiology ; Hemangioma, Cavernous, Central Nervous System - pathology ; Humans ; Index Medicus ; Abridged Index Medicus" ],
+                "source" : [ "Alma/SFX Local Collection", "© ProQuest LLC All rights reserved<img src=\"https://exlibris-pub.s3.amazonaws.com/PQ_Logo.jpg\" style=\"vertical-align:middle;margin-left:7px\">" ],
+                "publisher" : [ "United States: Elsevier Inc" ],
+                "ispartof" : [ "The American journal of medicine, 2021-02, Vol.134 (2), p.216-217" ],
+                "identifier" : [ "ISSN: 0002-9343", "EISSN: 1555-7162", "DOI: 10.1016/j.amjmed.2020.09.014", "PMID: 33091393" ],
+                "rights" : [ "2020 Elsevier Inc." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "The American journal of medicine" ],
+                "genre" : [ "article" ],
+                "orcidid" : [ "https://orcid.org/0000-0002-9231-8133", "https://orcid.org/0000-0002-0756-3135" ],
+                "issn" : [ "0002-9343" ],
+                "addtitle" : [ "Am J Med" ],
+                "pages" : [ "216-217" ],
+                "eissn" : [ "1555-7162" ],
+                "ristype" : [ "JOUR" ],
+                "cop" : [ "United States" ],
+                "pub" : [ "Elsevier Inc" ],
+                "doi" : [ "10.1016/j.amjmed.2020.09.014" ],
+                "au" : [ "Rafee, Shameer", "Killeen, Ronan P", "Tubridy, Niall" ],
+                "atitle" : [ "‘Popcorn’ in the Brain: A Cause for Confusion" ],
+                "date" : [ "2021-02" ],
+                "risdate" : [ "2021" ],
+                "volume" : [ "134" ],
+                "issue" : [ "2" ],
+                "spage" : [ "216" ],
+                "epage" : [ "217" ]
+              },
+              "facets" : {
+                "creationdate" : [ "2021" ],
+                "language" : [ "eng" ],
+                "creatorcontrib" : [ "Rafee, Shameer", "Killeen, Ronan P", "Tubridy, Niall" ],
+                "topic" : [ "Hemangioma, Cavernous, Central Nervous System - surgery", "Young Adult", "Hemangioma, Cavernous, Central Nervous System - diagnosis", "Confusion - etiology", "Hemangioma, Cavernous, Central Nervous System - pathology", "Humans", "Index Medicus", "Abridged Index Medicus" ],
+                "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
+                "collection" : [ "MEDLINE (Ovid)", "PubMed", "MEDLINE", "MEDLINE", "MEDLINE", "Medline", "CrossRef", "MEDLINE - Academic" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-c1927-be9e471d2bf0962ddbad6c341a5e3a80768c619ec3838e34a783bbee13f083ad3" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "The American journal of medicine" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-04-16 10:42:13&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-proquest_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=%E2%80%98Popcorn%E2%80%99+in+the+Brain%3A+A+Cause+for+Confusion&rft.jtitle=The+American+journal+of+medicine&rft.au=Rafee%2C+Shameer&rft.date=2021-02&rft.volume=134&rft.issue=2&rft.spage=216&rft.epage=217&rft.pages=216-217&rft.issn=0002-9343&rft.eissn=1555-7162&rft_id=info:doi/10.1016%2Fj.amjmed.2020.09.014&rft.pub=Elsevier+Inc&rft.place=United+States&rft_dat=<proquest_cross>2454123461</proquest_cross>&svc_dat=viewit"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ "FETCH-LOGICAL-c1927-be9e471d2bf0962ddbad6c341a5e3a80768c619ec3838e34a783bbee13f083ad3" ],
+                "citedby" : [ ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_proquest_miscellaneous_2454123461"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Multi-Skyrmions on AdS2×S2, rational maps and popcorn transitions" ],
+                "creationdate" : [ "201708" ],
+                "author" : [ "Canfora, Fabrizio ; Tallarita, Gianni" ]
+              },
+              "control" : {
+                "recordid" : [ "cdi_doaj_primary_oai_doaj_org_article_ca6c27608a414e0484c23159f93cb0b7" ],
+                "sourcerecordid" : [ "S0550321317301967" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-12051-2c631b1ebca7d2be2e5dde20bf2e0fb2cc5ce6abe5093b09d5d69df6f3ee04e73" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNo9kFtOwzAQRS0EEqWwBrIAEsZ27DSfpeJRqYiPwrflxwQc0iSyU6SuhAWxMRJAzM9I92qORoeQSwoZBSqv66zd26Z_O0STMaBFBjIDoEdkRhcFT6mQ7JjMQAhIOaP8lJzFWMM4ki9m5OZx3ww-3b4fws53bUy6Nlm6Lfv63LKrJOhhDHWT7HQfE926pO9624U2GYJuo5_aeE5OKt1EvPjbc_Jyd_u8ekg3T_fr1XKTUgaCpsxKTg1FY3XhmEGGwjlkYCqGUBlmrbAotUEBJTdQOuFk6SpZcUTIseBzsv7luk7Xqg9-p8NBddqrn6ALr0qHwdsGldXSskLCQuc0H68XuWWcirIquTVgJtbyl4Xjwx8eg4rWY2vR-YB2GIleUVCTYFWrf8FqEqxAqlEw_waviXPt" ],
+                "sourcetype" : [ "Open Website" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "sourceid" : [ "elsevier_doaj_" ],
+                "score" : [ "0.018152272" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "By combining two different techniques to construct multi-soliton solutions of the (3+1)-dimensional Skyrme model, the generalized hedgehog and the rational map ansatz, we find multi-Skyrmion configurations in AdS2×S2. We construct Skyrmionic multi-layered configurations such that the total Baryon charge is the product of the number of kinks along the radial AdS2 direction and the degree of the rational map. We show that, for fixed total Baryon charge, as one increases the charge density on ∂(AdS2×S2), it becomes increasingly convenient energetically to have configurations with more peaks in the radial AdS2 direction but a lower degree of the rational map. This has a direct relation with the so-called holographic popcorn transitions in which, when the charge density is high, multi-layered configurations with low charge on each layer are favored over configurations with few layers but with higher charge on each layer. The case in which the geometry is M2×S2 can also be analyzed." ],
+                "title" : [ "Multi-Skyrmions on AdS2×S2, rational maps and popcorn transitions", "Nuclear physics. B" ],
+                "creationdate" : [ "2017" ],
+                "recordid" : [ "eNo9kFtOwzAQRS0EEqWwBrIAEsZ27DSfpeJRqYiPwrflxwQc0iSyU6SuhAWxMRJAzM9I92qORoeQSwoZBSqv66zd26Z_O0STMaBFBjIDoEdkRhcFT6mQ7JjMQAhIOaP8lJzFWMM4ki9m5OZx3ww-3b4fws53bUy6Nlm6Lfv63LKrJOhhDHWT7HQfE926pO9624U2GYJuo5_aeE5OKt1EvPjbc_Jyd_u8ekg3T_fr1XKTUgaCpsxKTg1FY3XhmEGGwjlkYCqGUBlmrbAotUEBJTdQOuFk6SpZcUTIseBzsv7luk7Xqg9-p8NBddqrn6ALr0qHwdsGldXSskLCQuc0H68XuWWcirIquTVgJtbyl4Xjwx8eg4rWY2vR-YB2GIleUVCTYFWrf8FqEqxAqlEw_waviXPt" ],
+                "recordtype" : [ "article" ],
+                "sourceid" : [ "AAFTH", "DOA" ],
+                "creatorcontrib" : [ "Canfora, Fabrizio", "Tallarita, Gianni" ],
+                "rsrctype" : [ "article" ],
+                "creator" : [ "Canfora, Fabrizio", "Tallarita, Gianni" ],
+                "issn" : [ "0550-3213", "1873-1562" ],
+                "fulltext" : [ "true" ],
+                "general" : [ "Elsevier B.V", "Elsevier" ],
+                "startdate" : [ "201708" ],
+                "enddate" : [ "201708" ],
+                "scope" : [ "AAFTH", "6I.", "DOA" ]
+              },
+              "display" : {
+                "description" : [ "By combining two different techniques to construct multi-soliton solutions of the (3+1)-dimensional Skyrme model, the generalized hedgehog and the rational map ansatz, we find multi-Skyrmion configurations in AdS2×S2. We construct Skyrmionic multi-layered configurations such that the total Baryon charge is the product of the number of kinks along the radial AdS2 direction and the degree of the rational map. We show that, for fixed total Baryon charge, as one increases the charge density on ∂(AdS2×S2), it becomes increasingly convenient energetically to have configurations with more peaks in the radial AdS2 direction but a lower degree of the rational map. This has a direct relation with the so-called holographic popcorn transitions in which, when the charge density is high, multi-layered configurations with low charge on each layer are favored over configurations with few layers but with higher charge on each layer. The case in which the geometry is M2×S2 can also be analyzed." ],
+                "title" : [ "Multi-Skyrmions on AdS2×S2, rational maps and popcorn transitions" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Canfora, Fabrizio ; Tallarita, Gianni" ],
+                "source" : [ "ScienceDirect Pi2 Collection", "ScienceDirect Physical Sciences College Edition Backfile", "Directory of Open Access Journals", "ScienceDirect Journals (Transactional Access)", "ScienceDirect Polish National Consort 2007", "ScienceDirect Journals (5 years ago - present)", "Alma/SFX Local Collection", "Elsevier PhysicsDirect Journals", "Elsevier:ScienceDirect:Open Access", "Backfile Package - Mathematics 1995-2004 [BFJMAT9504]", "ScienceDirect Government Edition", "Elsevier:ScienceDirect:Mathematics Subject Collection:2018" ],
+                "publisher" : [ "Elsevier B.V" ],
+                "ispartof" : [ "Nuclear physics. B, 2017-08, Vol.921 (C), p.394-410" ],
+                "identifier" : [ "ISSN: 0550-3213", "EISSN: 1873-1562", "DOI: 10.1016/j.nuclphysb.2017.06.001" ],
+                "rights" : [ "2017 The Author(s)" ],
+                "snippet" : [ "... with more peaks in the radial AdS2 direction but a lower degree of the rational map. This has a direct relation with the so-called holographic popcorn transitions in which, when the charge density is high, multi-layered configurations with low charge on each layer are favored over configurations with few layers but with higher charge on each layer. The case in which the geometry is M2×S2 can also be analyzed." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ],
+                "oa" : [ "free_for_read" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "Nuclear physics. B" ],
+                "genre" : [ "article" ],
+                "issn" : [ "0550-3213" ],
+                "abstract" : [ "By combining two different techniques to construct multi-soliton solutions of the (3+1)-dimensional Skyrme model, the generalized hedgehog and the rational map ansatz, we find multi-Skyrmion configurations in AdS2×S2. We construct Skyrmionic multi-layered configurations such that the total Baryon charge is the product of the number of kinks along the radial AdS2 direction and the degree of the rational map. We show that, for fixed total Baryon charge, as one increases the charge density on ∂(AdS2×S2), it becomes increasingly convenient energetically to have configurations with more peaks in the radial AdS2 direction but a lower degree of the rational map. This has a direct relation with the so-called holographic popcorn transitions in which, when the charge density is high, multi-layered configurations with low charge on each layer are favored over configurations with few layers but with higher charge on each layer. The case in which the geometry is M2×S2 can also be analyzed." ],
+                "pages" : [ "394-410" ],
+                "eissn" : [ "1873-1562" ],
+                "ristype" : [ "JOUR" ],
+                "pub" : [ "Elsevier B.V" ],
+                "doi" : [ "10.1016/j.nuclphysb.2017.06.001" ],
+                "au" : [ "Canfora, Fabrizio", "Tallarita, Gianni" ],
+                "atitle" : [ "Multi-Skyrmions on AdS2×S2, rational maps and popcorn transitions" ],
+                "date" : [ "2017-08" ],
+                "risdate" : [ "2017" ],
+                "volume" : [ "921" ],
+                "issue" : [ "C" ],
+                "spage" : [ "394" ],
+                "epage" : [ "410" ],
+                "oa" : [ "free_for_read" ]
+              },
+              "facets" : {
+                "creationdate" : [ "2017" ],
+                "language" : [ "eng" ],
+                "creatorcontrib" : [ "Canfora, Fabrizio", "Tallarita, Gianni" ],
+                "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
+                "collection" : [ "Elsevier:ScienceDirect:Open Access", "ScienceDirect Open Access Titles", "Directory of Open Access Journals" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-12051-2c631b1ebca7d2be2e5dde20bf2e0fb2cc5ce6abe5093b09d5d69df6f3ee04e73" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Nuclear physics. B" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-04-16 10:42:13&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-elsevier_doaj_&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Multi-Skyrmions+on+AdS2%C3%97S2%2C+rational+maps+and+popcorn+transitions&rft.jtitle=Nuclear+physics.+B&rft.au=Canfora%2C+Fabrizio&rft.date=2017-08&rft.volume=921&rft.issue=C&rft.spage=394&rft.epage=410&rft.pages=394-410&rft.issn=0550-3213&rft.eissn=1873-1562&rft_id=info:doi/10.1016%2Fj.nuclphysb.2017.06.001&rft.pub=Elsevier+B.V&rft_dat=<elsevier_doaj_>S0550321317301967</elsevier_doaj_>&svc_dat=viewit"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ ],
+                "citedby" : [ ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_doaj_primary_oai_doaj_org_article_ca6c27608a414e0484c23159f93cb0b7"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Formation of Gold Nanorods by a Stochastic “Popcorn” Mechanism" ],
+                "creationdate" : [ "20120228" ],
+                "author" : [ "Edgar, Jonathan A ; McDonagh, Andrew M ; Cortie, Michael B" ]
+              },
+              "control" : {
+                "recordid" : [ "cdi_proquest_miscellaneous_924964320" ],
+                "sourcerecordid" : [ "924964320" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-13096-818189e24bfab4f47221b01b95055fd69b9fd99b5bc928924a25d561ef8d3bea3" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNptkL9OwzAQhy0EoqUw8ALIC0IMAduJnXiEihak8kcCJLbIdmyRKrGLnQzd-iDwcn0SjAqdkIez7r77SfcBcIzRBUYEX1pLUEoLNt8BQ8xTlqCCve1u_xQPwEEIc4RoXuRsHwwISVEc5kNwPXG-FV3tLHQGTl1TwQdhnXdVgHIJBXzunHoXoasVXK8-n9xCOW_Xqy94r2Pf1qE9BHtGNEEf_dYReJ3cvIxvk9nj9G58NUtwijhLChwf1ySTRsjMZDkhWCIsOUWUmopxyU3FuaRScVJwkglCK8qwNkWVSi3SETjb5C68--h16Mq2Dko3jbDa9aGMK5xlaVQxAucbUnkXgtemXPi6FX5ZYlT-GCu3xiJ78pvay1ZXW_JPUQRON4BQoZy73tt45D9B3xBUcrY" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "sourceid" : [ "proquest_cross" ],
+                "pqid" : [ "924964320" ],
+                "score" : [ "0.018080851" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "Gold nanorods have significant technological potential and are of broad interest to the nanotechnology community. The discovery of the seeded, wet-chemical synthetic process to produce them may be regarded as a landmark in the control of metal nanoparticle shape. However, the mechanism by which the initial spherical gold seeds acquire anisotropy is a critical, yet poorly understood, factor. Here we examine the very early stages of rod growth using a combination of techniques including cryogenic transmission electron microscopy, optical spectroscopy, and computational modeling. Reconciliation of the available experimental observations can only be achieved by invoking a stochastic, “popcorn”-like mechanism of growth, in which individual seeds lie quiescent for some time before suddenly and rapidly growing into rods. This is quite different from the steady, concurrent growth of nanorods that has been previously generally assumed. Furthermore we propose that the shape is controlled by the ratio of surface energy of rod sides to rod ends, with values of this quantity in the range of 0.3–0.8 indicated for typical growth solutions." ],
+                "title" : [ "Formation of Gold Nanorods by a Stochastic “Popcorn” Mechanism", "ACS nano" ],
+                "creationdate" : [ "2012" ],
+                "recordid" : [ "eNptkL9OwzAQhy0EoqUw8ALIC0IMAduJnXiEihak8kcCJLbIdmyRKrGLnQzd-iDwcn0SjAqdkIez7r77SfcBcIzRBUYEX1pLUEoLNt8BQ8xTlqCCve1u_xQPwEEIc4RoXuRsHwwISVEc5kNwPXG-FV3tLHQGTl1TwQdhnXdVgHIJBXzunHoXoasVXK8-n9xCOW_Xqy94r2Pf1qE9BHtGNEEf_dYReJ3cvIxvk9nj9G58NUtwijhLChwf1ySTRsjMZDkhWCIsOUWUmopxyU3FuaRScVJwkglCK8qwNkWVSi3SETjb5C68--h16Mq2Dko3jbDa9aGMK5xlaVQxAucbUnkXgtemXPi6FX5ZYlT-GCu3xiJ78pvay1ZXW_JPUQRON4BQoZy73tt45D9B3xBUcrY" ],
+                "recordtype" : [ "article" ],
+                "creatorcontrib" : [ "Edgar, Jonathan A", "McDonagh, Andrew M", "Cortie, Michael B" ],
+                "rsrctype" : [ "article" ],
+                "creator" : [ "Edgar, Jonathan A", "McDonagh, Andrew M", "Cortie, Michael B" ],
+                "issn" : [ "1936-0851", "1936-086X" ],
+                "fulltext" : [ "true" ],
+                "addtitle" : [ "ACS Nano" ],
+                "general" : [ "American Chemical Society" ],
+                "startdate" : [ "20120228" ],
+                "enddate" : [ "20120228" ],
+                "scope" : [ "NPM", "CITATION", "AAYXX", "7X8" ]
+              },
+              "display" : {
+                "description" : [ "Gold nanorods have significant technological potential and are of broad interest to the nanotechnology community. The discovery of the seeded, wet-chemical synthetic process to produce them may be regarded as a landmark in the control of metal nanoparticle shape. However, the mechanism by which the initial spherical gold seeds acquire anisotropy is a critical, yet poorly understood, factor. Here we examine the very early stages of rod growth using a combination of techniques including cryogenic transmission electron microscopy, optical spectroscopy, and computational modeling. Reconciliation of the available experimental observations can only be achieved by invoking a stochastic, “popcorn”-like mechanism of growth, in which individual seeds lie quiescent for some time before suddenly and rapidly growing into rods. This is quite different from the steady, concurrent growth of nanorods that has been previously generally assumed. Furthermore we propose that the shape is controlled by the ratio of surface energy of rod sides to rod ends, with values of this quantity in the range of 0.3–0.8 indicated for typical growth solutions." ],
+                "title" : [ "Formation of Gold Nanorods by a Stochastic “Popcorn” Mechanism" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Edgar, Jonathan A ; McDonagh, Andrew M ; Cortie, Michael B" ],
+                "source" : [ "American Chemical Society Single Title Subscriptions", "ACS Publications", "© ProQuest LLC All rights reserved<img src=\"https://exlibris-pub.s3.amazonaws.com/PQ_Logo.jpg\" style=\"vertical-align:middle;margin-left:7px\">" ],
+                "publisher" : [ "United States: American Chemical Society" ],
+                "ispartof" : [ "ACS nano, 2012-02-28, Vol.6 (2), p.1116-1125" ],
+                "identifier" : [ "ISSN: 1936-0851", "EISSN: 1936-086X", "DOI: 10.1021/nn203586j", "PMID: 22301937" ],
+                "rights" : [ "Copyright © 2012 American Chemical Society" ],
+                "snippet" : [ ".... Reconciliation of the available experimental observations can only be achieved by invoking a stochastic, “popcorn...", ".... Reconciliation of the available experimental observations can only be achieved by invoking a stochastic, \"popcorn\"-like mechanism of growth, in which individual..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ],
+                "oa" : [ "free_for_read" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "ACS nano" ],
+                "genre" : [ "article" ],
+                "issn" : [ "1936-0851" ],
+                "addtitle" : [ "ACS Nano" ],
+                "abstract" : [ "Gold nanorods have significant technological potential and are of broad interest to the nanotechnology community. The discovery of the seeded, wet-chemical synthetic process to produce them may be regarded as a landmark in the control of metal nanoparticle shape. However, the mechanism by which the initial spherical gold seeds acquire anisotropy is a critical, yet poorly understood, factor. Here we examine the very early stages of rod growth using a combination of techniques including cryogenic transmission electron microscopy, optical spectroscopy, and computational modeling. Reconciliation of the available experimental observations can only be achieved by invoking a stochastic, “popcorn”-like mechanism of growth, in which individual seeds lie quiescent for some time before suddenly and rapidly growing into rods. This is quite different from the steady, concurrent growth of nanorods that has been previously generally assumed. Furthermore we propose that the shape is controlled by the ratio of surface energy of rod sides to rod ends, with values of this quantity in the range of 0.3–0.8 indicated for typical growth solutions." ],
+                "pages" : [ "1116-1125" ],
+                "eissn" : [ "1936-086X" ],
+                "ristype" : [ "JOUR" ],
+                "cop" : [ "United States" ],
+                "pub" : [ "American Chemical Society" ],
+                "doi" : [ "10.1021/nn203586j" ],
+                "au" : [ "Edgar, Jonathan A", "McDonagh, Andrew M", "Cortie, Michael B" ],
+                "atitle" : [ "Formation of Gold Nanorods by a Stochastic “Popcorn” Mechanism" ],
+                "date" : [ "2012-02-28" ],
+                "risdate" : [ "2012" ],
+                "volume" : [ "6" ],
+                "issue" : [ "2" ],
+                "spage" : [ "1116" ],
+                "epage" : [ "1125" ],
+                "oa" : [ "free_for_read" ]
+              },
+              "facets" : {
+                "creationdate" : [ "2012" ],
+                "language" : [ "eng" ],
+                "creatorcontrib" : [ "Edgar, Jonathan A", "McDonagh, Andrew M", "Cortie, Michael B" ],
+                "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
+                "collection" : [ "PubMed", "CrossRef", "MEDLINE - Academic" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-13096-818189e24bfab4f47221b01b95055fd69b9fd99b5bc928924a25d561ef8d3bea3" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "ACS nano" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-04-16 10:42:13&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-proquest_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Formation+of+Gold+Nanorods+by+a+Stochastic+%E2%80%9CPopcorn%E2%80%9D+Mechanism&rft.jtitle=ACS+nano&rft.au=Edgar%2C+Jonathan+A&rft.date=2012-02-28&rft.volume=6&rft.issue=2&rft.spage=1116&rft.epage=1125&rft.pages=1116-1125&rft.issn=1936-0851&rft.eissn=1936-086X&rft_id=info:doi/10.1021%2Fnn203586j&rft.pub=American+Chemical+Society&rft.place=United+States&rft_dat=<proquest_cross>924964320</proquest_cross>&svc_dat=viewit"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ ],
+                "citedby" : [ "FETCH-LOGICAL-13096-818189e24bfab4f47221b01b95055fd69b9fd99b5bc928924a25d561ef8d3bea3" ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_proquest_miscellaneous_924964320"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Synthesis of popcorn-shaped gallium-platinum (GaPt3) nanoparticles as highly efficient and stable electrocatalysts for hydrogen evolution reaction" ],
+                "creationdate" : [ "20190220" ],
+                "author" : [ "Lim, Suh-Ciuan ; Chan, Cheng-Ying ; Chen, Kuan-Ting ; Tuan, Hsing-Yu" ]
+              },
+              "control" : {
+                "recordid" : [ "cdi_gale_infotracacademiconefile_A569709825" ],
+                "sourcerecordid" : [ "A569709825" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-c3443-c0079cdcabdfeae9cef90da4e646888c639ed0d31ed91e4352660fd284cd31913" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNqFkcGKFDEQhoMoOK4-gznqoXuTTne6-zgsugoLK6jnUJtUpjNkkibJLPRr-MRmHPEqFahQ5P-pLz8h7zlrOePy9tiiR12gnrZjfGo5b_nQvSA7Po2iEdMwvyQ7xrhoejnJ1-RNzkfG2ChHtiO_vm-hLJhdptHSNa46ptDkBVY09ADeu_OpWT0UF84n-uEevhXxkQYIcYVUnPaYKWS6uMPiN4rWOu0wFArB0FzgySP9s16KGgr4LZdMbUx02UyKBwwUn6M_FxcDTVgZ6uUteWXBZ3z3t9-Qn58__bj70jw83n-92z80WvS9aHRFmLXR8GQsAs4a7cwM9Cgr5jRpKWY0zAiOZubYi6GTklnTTb2uw5mLG9JefSsmKhdsLAl0LYMnp2NA6-p8P8h5ZPPUDVUwXgU6xZwTWrUmd4K0Kc7UJQt1VP-yUJcsFOeqZlGV-6sSK8-zw6Ty5Zs0Gpfqe2Wi-6_Hb2NPm44" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "sourceid" : [ "gale_cross" ],
+                "galeid" : [ "A569709825" ],
+                "score" : [ "0.01805773" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "The hydrogen evolution reaction (HER) holds great promise for clean energy, where electrocatalysts for HER perform as the cathode reaction of water splitting is the critical reaction process on fuel cell. In spite of the rapid growth of alternative materials, platinum (Pt)-based or platinum alloy materials are still the most efficient catalysts for HER. Here, we report a hot-solvent synthesis for producing pop-corn shaped gallium-platinum (GaPt3) nanoparticles, which exhibits intermetallic behavior with abundant uneven surfaces that guarantee the extensive catalytic active edge sites. The electrochemical catalytic activity of GaPt3-based electrode towards HER was demonstrated for the first time, resulting an outstanding performance of only 27 mV overpotential to achieve the 10 mA/cm2 current density and a Tafel slope of 43.3 mV/dec. (vs. RHE) in acidic media, which is rather superior to that of commercial Pt catalysts and a relatively low overpotential (<80 mV) was obtained even operated at large area (5 cm2). Moreover, cycling tests for 10000-cycle CV sweep (−0.3 to 0.2 V vs. RHE) and durability test for 48 h were applied and the performance remains still, thus giving the confirmation to the long-lasting feature of GaPt3 nanoparticles.\nThe GaPt3 nanoparticles with pop-corn like appearance were prepared via hot-solvent synthesis for the first time, exhibit high-performance catalytic and long-lasting properties as HER electrodes. [Display omitted]" ],
+                "title" : [ "Synthesis of popcorn-shaped gallium-platinum (GaPt3) nanoparticles as highly efficient and stable electrocatalysts for hydrogen evolution reaction", "Electrochimica acta" ],
+                "creationdate" : [ "2019" ],
+                "recordid" : [ "eNqFkcGKFDEQhoMoOK4-gznqoXuTTne6-zgsugoLK6jnUJtUpjNkkibJLPRr-MRmHPEqFahQ5P-pLz8h7zlrOePy9tiiR12gnrZjfGo5b_nQvSA7Po2iEdMwvyQ7xrhoejnJ1-RNzkfG2ChHtiO_vm-hLJhdptHSNa46ptDkBVY09ADeu_OpWT0UF84n-uEevhXxkQYIcYVUnPaYKWS6uMPiN4rWOu0wFArB0FzgySP9s16KGgr4LZdMbUx02UyKBwwUn6M_FxcDTVgZ6uUteWXBZ3z3t9-Qn58__bj70jw83n-92z80WvS9aHRFmLXR8GQsAs4a7cwM9Cgr5jRpKWY0zAiOZubYi6GTklnTTb2uw5mLG9JefSsmKhdsLAl0LYMnp2NA6-p8P8h5ZPPUDVUwXgU6xZwTWrUmd4K0Kc7UJQt1VP-yUJcsFOeqZlGV-6sSK8-zw6Ty5Zs0Gpfqe2Wi-6_Hb2NPm44" ],
+                "recordtype" : [ "article" ],
+                "creatorcontrib" : [ "Lim, Suh-Ciuan", "Chan, Cheng-Ying", "Chen, Kuan-Ting", "Tuan, Hsing-Yu" ],
+                "rsrctype" : [ "article" ],
+                "creator" : [ "Lim, Suh-Ciuan", "Chan, Cheng-Ying", "Chen, Kuan-Ting", "Tuan, Hsing-Yu" ],
+                "subject" : [ "Nanoparticles ; Hydrogen evolution reaction ; Platinum alloy ; Fuel cell ; Popcorn-shaped ; Intermetallic compounds ; Catalysts ; Hydrogen ; Fuel cells ; Green technology ; Platinum alloys" ],
+                "issn" : [ "0013-4686", "1873-3859" ],
+                "fulltext" : [ "true" ],
+                "general" : [ "Elsevier Ltd", "Elsevier B.V" ],
+                "startdate" : [ "20190220" ],
+                "enddate" : [ "20190220" ],
+                "scope" : [ "CITATION", "AAYXX", "BSHEE" ]
+              },
+              "display" : {
+                "description" : [ "The hydrogen evolution reaction (HER) holds great promise for clean energy, where electrocatalysts for HER perform as the cathode reaction of water splitting is the critical reaction process on fuel cell. In spite of the rapid growth of alternative materials, platinum (Pt)-based or platinum alloy materials are still the most efficient catalysts for HER. Here, we report a hot-solvent synthesis for producing pop-corn shaped gallium-platinum (GaPt3) nanoparticles, which exhibits intermetallic behavior with abundant uneven surfaces that guarantee the extensive catalytic active edge sites. The electrochemical catalytic activity of GaPt3-based electrode towards HER was demonstrated for the first time, resulting an outstanding performance of only 27 mV overpotential to achieve the 10 mA/cm2 current density and a Tafel slope of 43.3 mV/dec. (vs. RHE) in acidic media, which is rather superior to that of commercial Pt catalysts and a relatively low overpotential (<80 mV) was obtained even operated at large area (5 cm2). Moreover, cycling tests for 10000-cycle CV sweep (−0.3 to 0.2 V vs. RHE) and durability test for 48 h were applied and the performance remains still, thus giving the confirmation to the long-lasting feature of GaPt3 nanoparticles.\nThe GaPt3 nanoparticles with pop-corn like appearance were prepared via hot-solvent synthesis for the first time, exhibit high-performance catalytic and long-lasting properties as HER electrodes. [Display omitted]" ],
+                "title" : [ "Synthesis of popcorn-shaped gallium-platinum (GaPt3) nanoparticles as highly efficient and stable electrocatalysts for hydrogen evolution reaction" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Lim, Suh-Ciuan ; Chan, Cheng-Ying ; Chen, Kuan-Ting ; Tuan, Hsing-Yu" ],
+                "subject" : [ "Nanoparticles ; Hydrogen evolution reaction ; Platinum alloy ; Fuel cell ; Popcorn-shaped ; Intermetallic compounds ; Catalysts ; Hydrogen ; Fuel cells ; Green technology ; Platinum alloys" ],
+                "source" : [ "ScienceDirect Pi2 Collection", "ScienceDirect Physical Sciences College Edition Backfile", "Medium Multidisciplinary Collection [ECMMC]", "ScienceDirect Journals (Transactional Access)", "ScienceDirect Polish National Consort 2007", "ScienceDirect Journals (5 years ago - present)", "Alma/SFX Local Collection", "ScienceDirect Government Edition", "Small Multidisciplinary Collection [ECSMC]" ],
+                "publisher" : [ "Elsevier Ltd" ],
+                "ispartof" : [ "Electrochimica acta, 2019-02-20, Vol.297, p.288-296" ],
+                "identifier" : [ "ISSN: 0013-4686", "EISSN: 1873-3859", "DOI: 10.1016/j.electacta.2018.11.152" ],
+                "rights" : [ "2018 Elsevier Ltd", "COPYRIGHT 2019 Elsevier B.V." ],
+                "snippet" : [ "The hydrogen evolution reaction (HER) holds great promise for clean energy, where electrocatalysts for HER perform as the cathode reaction of water splitting..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "Electrochimica acta" ],
+                "genre" : [ "article" ],
+                "issn" : [ "0013-4686" ],
+                "abstract" : [ "The hydrogen evolution reaction (HER) holds great promise for clean energy, where electrocatalysts for HER perform as the cathode reaction of water splitting is the critical reaction process on fuel cell. In spite of the rapid growth of alternative materials, platinum (Pt)-based or platinum alloy materials are still the most efficient catalysts for HER. Here, we report a hot-solvent synthesis for producing pop-corn shaped gallium-platinum (GaPt3) nanoparticles, which exhibits intermetallic behavior with abundant uneven surfaces that guarantee the extensive catalytic active edge sites. The electrochemical catalytic activity of GaPt3-based electrode towards HER was demonstrated for the first time, resulting an outstanding performance of only 27 mV overpotential to achieve the 10 mA/cm2 current density and a Tafel slope of 43.3 mV/dec. (vs. RHE) in acidic media, which is rather superior to that of commercial Pt catalysts and a relatively low overpotential (<80 mV) was obtained even operated at large area (5 cm2). Moreover, cycling tests for 10000-cycle CV sweep (−0.3 to 0.2 V vs. RHE) and durability test for 48 h were applied and the performance remains still, thus giving the confirmation to the long-lasting feature of GaPt3 nanoparticles.\nThe GaPt3 nanoparticles with pop-corn like appearance were prepared via hot-solvent synthesis for the first time, exhibit high-performance catalytic and long-lasting properties as HER electrodes. [Display omitted]" ],
+                "pages" : [ "288-296" ],
+                "eissn" : [ "1873-3859" ],
+                "ristype" : [ "JOUR" ],
+                "pub" : [ "Elsevier Ltd" ],
+                "doi" : [ "10.1016/j.electacta.2018.11.152" ],
+                "au" : [ "Lim, Suh-Ciuan", "Chan, Cheng-Ying", "Chen, Kuan-Ting", "Tuan, Hsing-Yu" ],
+                "atitle" : [ "Synthesis of popcorn-shaped gallium-platinum (GaPt3) nanoparticles as highly efficient and stable electrocatalysts for hydrogen evolution reaction" ],
+                "date" : [ "2019-02-20" ],
+                "risdate" : [ "2019" ],
+                "volume" : [ "297" ],
+                "spage" : [ "288" ],
+                "epage" : [ "296" ]
+              },
+              "facets" : {
+                "creationdate" : [ "2019" ],
+                "language" : [ "eng" ],
+                "creatorcontrib" : [ "Lim, Suh-Ciuan", "Chan, Cheng-Ying", "Chen, Kuan-Ting", "Tuan, Hsing-Yu" ],
+                "topic" : [ "Nanoparticles", "Hydrogen evolution reaction", "Platinum alloy", "Fuel cell", "Popcorn-shaped", "Intermetallic compounds", "Catalysts", "Hydrogen", "Fuel cells", "Green technology", "Platinum alloys" ],
+                "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
+                "collection" : [ "CrossRef", "Academic OneFile (A&I only)" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-c3443-c0079cdcabdfeae9cef90da4e646888c639ed0d31ed91e4352660fd284cd31913" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Electrochimica acta" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-04-16 10:42:13&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Synthesis+of+popcorn-shaped+gallium-platinum+%28GaPt3%29+nanoparticles+as+highly+efficient+and+stable+electrocatalysts+for+hydrogen+evolution+reaction&rft.jtitle=Electrochimica+acta&rft.au=Lim%2C+Suh-Ciuan&rft.date=2019-02-20&rft.volume=297&rft.spage=288&rft.epage=296&rft.pages=288-296&rft.issn=0013-4686&rft.eissn=1873-3859&rft_id=info:doi/10.1016%2Fj.electacta.2018.11.152&rft.pub=Elsevier+Ltd&rft_dat=<gale_cross>A569709825</gale_cross>&svc_dat=viewit&rft_galeid=A569709825"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ ],
+                "citedby" : [ ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_gale_infotracacademiconefile_A569709825"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Popcorn-Derived Porous Carbon for Energy Storage and CO2 Capture" ],
+                "creationdate" : [ "20160816" ],
+                "author" : [ "Liang, Ting ; Chen, Chunlin ; Li, Xing ; Zhang, Jian" ]
+              },
+              "control" : {
+                "recordid" : [ "cdi_proquest_miscellaneous_1812224163" ],
+                "sourcerecordid" : [ "1812224163" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-a2536-dbc7e5f4beb04eb0dc513679ac73621405bf6dc5a22f58de2569bd2b0d532b4b3" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNp9kE1Lw0AQhhdRbK3-A5E9eknd7yQ3JdYPKLSgnpfdZFNSmmycbYT-e7e09ehhGBied2b3QeiWkikljD6YMkw3plu1QwNTZQnNJT9DYyoZSWTG0nM0JqngSSoUH6GrENaEkJyL_BKNWCqkpBkfo8el70sPXfLsoPlxFV568EPAhQHrO1x7wLPOwWqHP7YezMph01W4WLBI9NsB3DW6qM0muJtjn6Cvl9ln8ZbMF6_vxdM8MUxylVS2TJ2shXWWiFhVKSlXaW7KlCtGBZG2VnFoGKtlVjkmVW4rFkHJmRWWT9D9YW8P_ntwYavbJpRuExW4-GBNM8oYE1TxiIoDWoIPAVyte2haAztNid6709GdPrnTR3cxdne8MNjWVX-hk6wIkAOwj6_9AF388P87fwGsXH17" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "sourceid" : [ "proquest_cross" ],
+                "pqid" : [ "1812224163" ],
+                "score" : [ "0.018024664" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "Porous carbon materials have drawn tremendous attention due to its applications in energy storage, gas/water purification, catalyst support, and other important fields. However, producing high-performance carbons via a facile and efficient route is still a big challenge. Here we report the synthesis of microporous carbon materials by employing a steam-explosion method with subsequent potassium activation and carbonization of the obtained popcorn. The obtained carbon features a large specific surface area, high porosity, and doped nitrogen atoms. Using as an electrode material in supercapacitor, it displays a high specific capacitance of 245 F g–1 at 0.5 A g–1 and a remarkable stability of 97.8% retention after 5000 cycles at 5 A g–1. The product also exhibits a high CO2 adsorption capacity of 4.60 mmol g–1 under 1066 mbar and 25 °C. Both areal specific capacitance and specific CO2 uptake are directly proportional to the surface nitrogen content. This approach could thus enlighten the batch production of porous nitrogen-doped carbons for a wide range of energy and environmental applications." ],
+                "title" : [ "Popcorn-Derived Porous Carbon for Energy Storage and CO2 Capture", "Langmuir" ],
+                "creationdate" : [ "2016" ],
+                "recordid" : [ "eNp9kE1Lw0AQhhdRbK3-A5E9eknd7yQ3JdYPKLSgnpfdZFNSmmycbYT-e7e09ehhGBied2b3QeiWkikljD6YMkw3plu1QwNTZQnNJT9DYyoZSWTG0nM0JqngSSoUH6GrENaEkJyL_BKNWCqkpBkfo8el70sPXfLsoPlxFV568EPAhQHrO1x7wLPOwWqHP7YezMph01W4WLBI9NsB3DW6qM0muJtjn6Cvl9ln8ZbMF6_vxdM8MUxylVS2TJ2shXWWiFhVKSlXaW7KlCtGBZG2VnFoGKtlVjkmVW4rFkHJmRWWT9D9YW8P_ntwYavbJpRuExW4-GBNM8oYE1TxiIoDWoIPAVyte2haAztNid6709GdPrnTR3cxdne8MNjWVX-hk6wIkAOwj6_9AF388P87fwGsXH17" ],
+                "recordtype" : [ "article" ],
+                "creatorcontrib" : [ "Liang, Ting", "Chen, Chunlin", "Li, Xing", "Zhang, Jian" ],
+                "rsrctype" : [ "article" ],
+                "creator" : [ "Liang, Ting", "Chen, Chunlin", "Li, Xing", "Zhang, Jian" ],
+                "subject" : [ "Interfaces: Adsorption, Reactions, Films, Forces, Measurement Techniques, Charge Transfer, Electrochemistry, Electrocatalysis, Energy Production and Storage ; Index Medicus" ],
+                "issn" : [ "0743-7463", "1520-5827" ],
+                "fulltext" : [ "true" ],
+                "addtitle" : [ "Langmuir" ],
+                "general" : [ "American Chemical Society" ],
+                "startdate" : [ "20160816" ],
+                "enddate" : [ "20160816" ],
+                "scope" : [ "NPM", "CITATION", "AAYXX", "7X8" ]
+              },
+              "display" : {
+                "description" : [ "Porous carbon materials have drawn tremendous attention due to its applications in energy storage, gas/water purification, catalyst support, and other important fields. However, producing high-performance carbons via a facile and efficient route is still a big challenge. Here we report the synthesis of microporous carbon materials by employing a steam-explosion method with subsequent potassium activation and carbonization of the obtained popcorn. The obtained carbon features a large specific surface area, high porosity, and doped nitrogen atoms. Using as an electrode material in supercapacitor, it displays a high specific capacitance of 245 F g–1 at 0.5 A g–1 and a remarkable stability of 97.8% retention after 5000 cycles at 5 A g–1. The product also exhibits a high CO2 adsorption capacity of 4.60 mmol g–1 under 1066 mbar and 25 °C. Both areal specific capacitance and specific CO2 uptake are directly proportional to the surface nitrogen content. This approach could thus enlighten the batch production of porous nitrogen-doped carbons for a wide range of energy and environmental applications." ],
+                "title" : [ "Popcorn-Derived Porous Carbon for Energy Storage and CO2 Capture" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Liang, Ting ; Chen, Chunlin ; Li, Xing ; Zhang, Jian" ],
+                "subject" : [ "Interfaces: Adsorption, Reactions, Films, Forces, Measurement Techniques, Charge Transfer, Electrochemistry, Electrocatalysis, Energy Production and Storage ; Index Medicus" ],
+                "source" : [ "Alma/SFX Local Collection", "ACS Publications", "© ProQuest LLC All rights reserved<img src=\"https://exlibris-pub.s3.amazonaws.com/PQ_Logo.jpg\" style=\"vertical-align:middle;margin-left:7px\">" ],
+                "publisher" : [ "United States: American Chemical Society" ],
+                "ispartof" : [ "Langmuir, 2016-08-16, Vol.32 (32), p.8042-8049" ],
+                "identifier" : [ "ISSN: 0743-7463", "EISSN: 1520-5827", "DOI: 10.1021/acs.langmuir.6b01953", "PMID: 27455183" ],
+                "rights" : [ "Copyright © 2016 American Chemical Society" ],
+                "snippet" : [ ".... Here we report the synthesis of microporous carbon materials by employing a steam-explosion method with subsequent potassium activation and carbonization of the obtained popcorn..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "Langmuir" ],
+                "genre" : [ "article" ],
+                "issn" : [ "0743-7463" ],
+                "addtitle" : [ "Langmuir" ],
+                "abstract" : [ "Porous carbon materials have drawn tremendous attention due to its applications in energy storage, gas/water purification, catalyst support, and other important fields. However, producing high-performance carbons via a facile and efficient route is still a big challenge. Here we report the synthesis of microporous carbon materials by employing a steam-explosion method with subsequent potassium activation and carbonization of the obtained popcorn. The obtained carbon features a large specific surface area, high porosity, and doped nitrogen atoms. Using as an electrode material in supercapacitor, it displays a high specific capacitance of 245 F g–1 at 0.5 A g–1 and a remarkable stability of 97.8% retention after 5000 cycles at 5 A g–1. The product also exhibits a high CO2 adsorption capacity of 4.60 mmol g–1 under 1066 mbar and 25 °C. Both areal specific capacitance and specific CO2 uptake are directly proportional to the surface nitrogen content. This approach could thus enlighten the batch production of porous nitrogen-doped carbons for a wide range of energy and environmental applications." ],
+                "pages" : [ "8042-8049" ],
+                "eissn" : [ "1520-5827" ],
+                "ristype" : [ "JOUR" ],
+                "cop" : [ "United States" ],
+                "pub" : [ "American Chemical Society" ],
+                "doi" : [ "10.1021/acs.langmuir.6b01953" ],
+                "au" : [ "Liang, Ting", "Chen, Chunlin", "Li, Xing", "Zhang, Jian" ],
+                "atitle" : [ "Popcorn-Derived Porous Carbon for Energy Storage and CO2 Capture" ],
+                "date" : [ "2016-08-16" ],
+                "risdate" : [ "2016" ],
+                "volume" : [ "32" ],
+                "issue" : [ "32" ],
+                "spage" : [ "8042" ],
+                "epage" : [ "8049" ]
+              },
+              "facets" : {
+                "creationdate" : [ "2016" ],
+                "language" : [ "eng" ],
+                "creatorcontrib" : [ "Liang, Ting", "Chen, Chunlin", "Li, Xing", "Zhang, Jian" ],
+                "topic" : [ "Interfaces: Adsorption, Reactions, Films, Forces, Measurement Techniques, Charge Transfer, Electrochemistry, Electrocatalysis, Energy Production and Storage", "Index Medicus" ],
+                "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
+                "collection" : [ "PubMed", "CrossRef", "MEDLINE - Academic" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-a2536-dbc7e5f4beb04eb0dc513679ac73621405bf6dc5a22f58de2569bd2b0d532b4b3" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Langmuir" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-04-16 10:42:13&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-proquest_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Popcorn-Derived+Porous+Carbon+for+Energy+Storage+and+CO2+Capture&rft.jtitle=Langmuir&rft.au=Liang%2C+Ting&rft.date=2016-08-16&rft.volume=32&rft.issue=32&rft.spage=8042&rft.epage=8049&rft.pages=8042-8049&rft.issn=0743-7463&rft.eissn=1520-5827&rft_id=info:doi/10.1021%2Facs.langmuir.6b01953&rft.pub=American+Chemical+Society&rft.place=United+States&rft_dat=<proquest_cross>1812224163</proquest_cross>&svc_dat=viewit"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ ],
+                "citedby" : [ "FETCH-LOGICAL-a2536-dbc7e5f4beb04eb0dc513679ac73621405bf6dc5a22f58de2569bd2b0d532b4b3" ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_proquest_miscellaneous_1812224163"
+          } ],
+          "timelog" : {
+            "PC_SEARCH_CALL_TIME" : "630",
+            "PC_BUILD_JSON_AND_HIGLIGHTS" : "63",
+            "PC_SEARCH_TIME_TOTAL" : "693",
+            "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
+            "BUILD_COMBINED_RESULTS_MAP" : 694,
+            "COMBINED_SEARCH_TIME" : 700,
+            "PROCESS_COMBINED_RESULTS" : 0,
+            "FEATURED_SEARCH_TIME" : 1
+          },
+          "facets" : [ {
+            "name" : "jtitle",
+            "values" : [ {
+              "value" : "The Washington Post",
+              "count" : "7847"
+            }, {
+              "value" : "Chicago Tribune",
+              "count" : "7573"
+            }, {
+              "value" : "The Los Angeles Times",
+              "count" : "6313"
+            }, {
+              "value" : "The New York Times",
+              "count" : "5965"
+            }, {
+              "value" : "Toronto Star",
+              "count" : "3742"
+            }, {
+              "value" : "Edmonton Journal",
+              "count" : "2825"
+            }, {
+              "value" : "Variety",
+              "count" : "2731"
+            }, {
+              "value" : "The Hartford Courant",
+              "count" : "2612"
+            }, {
+              "value" : "The Wall Street Journal. Eastern Edition",
+              "count" : "2598"
+            }, {
+              "value" : "National Post",
+              "count" : "2597"
+            } ]
+          }, {
+            "name" : "lang",
+            "values" : [ {
+              "value" : "eng",
+              "count" : "131393"
+            }, {
+              "value" : "por",
+              "count" : "248"
+            }, {
+              "value" : "spa",
+              "count" : "196"
+            }, {
+              "value" : "ger",
+              "count" : "139"
+            }, {
+              "value" : "chi",
+              "count" : "88"
+            }, {
+              "value" : "jpn",
+              "count" : "80"
+            }, {
+              "value" : "fre",
+              "count" : "75"
+            }, {
+              "value" : "pol",
+              "count" : "18"
+            }, {
+              "value" : "kor",
+              "count" : "16"
+            }, {
+              "value" : "cze",
+              "count" : "13"
+            }, {
+              "value" : "slo",
+              "count" : "11"
+            }, {
+              "value" : "tur",
+              "count" : "8"
+            }, {
+              "value" : "ita",
+              "count" : "8"
+            }, {
+              "value" : "nor",
+              "count" : "5"
+            }, {
+              "value" : "swe",
+              "count" : "4"
+            }, {
+              "value" : "bul",
+              "count" : "3"
+            }, {
+              "value" : "rum",
+              "count" : "3"
+            }, {
+              "value" : "afr",
+              "count" : "2"
+            }, {
+              "value" : "ara",
+              "count" : "2"
+            }, {
+              "value" : "hrv",
+              "count" : "2"
+            } ]
+          }, {
+            "name" : "topic",
+            "values" : [ {
+              "value" : "Motion Pictures",
+              "count" : "6832"
+            }, {
+              "value" : "Science & Technology",
+              "count" : "5760"
+            }, {
+              "value" : "Life Sciences & Biomedicine",
+              "count" : "4234"
+            }, {
+              "value" : "Marketing",
+              "count" : "4061"
+            }, {
+              "value" : "Restaurants",
+              "count" : "4043"
+            }, {
+              "value" : "Food",
+              "count" : "2718"
+            }, {
+              "value" : "Humans",
+              "count" : "2388"
+            }, {
+              "value" : "Management",
+              "count" : "2115"
+            }, {
+              "value" : "Analysis",
+              "count" : "1789"
+            }, {
+              "value" : "Nutrition",
+              "count" : "1711"
+            }, {
+              "value" : "Theaters & Cinemas",
+              "count" : "1704"
+            }, {
+              "value" : "Snack Foods",
+              "count" : "1698"
+            }, {
+              "value" : "Methods",
+              "count" : "1694"
+            }, {
+              "value" : "Motion Picture Industry",
+              "count" : "1694"
+            }, {
+              "value" : "Diet",
+              "count" : "1638"
+            }, {
+              "value" : "Research",
+              "count" : "1631"
+            }, {
+              "value" : "Social Sciences",
+              "count" : "1577"
+            }, {
+              "value" : "Theater",
+              "count" : "1505"
+            }, {
+              "value" : "Health Aspects",
+              "count" : "1497"
+            } ]
+          }, {
+            "name" : "rtype",
+            "values" : [ {
+              "value" : "newspaper_articles",
+              "count" : "62829"
+            }, {
+              "value" : "articles",
+              "count" : "58135"
+            }, {
+              "value" : "reviews",
+              "count" : "3948"
+            }, {
+              "value" : "journals",
+              "count" : "2894"
+            }, {
+              "value" : "book_chapters",
+              "count" : "2266"
+            }, {
+              "value" : "reference_entrys",
+              "count" : "631"
+            }, {
+              "value" : "web_resources",
+              "count" : "504"
+            }, {
+              "value" : "conference_proceedings",
+              "count" : "327"
+            }, {
+              "value" : "reports",
+              "count" : "211"
+            }, {
+              "value" : "books",
+              "count" : "135"
+            }, {
+              "value" : "text_resources",
+              "count" : "10"
+            } ]
+          }, {
+            "name" : "domain",
+            "values" : [ {
+              "value" : "ProQuest Historical Newspapers",
+              "count" : "131890"
+            }, {
+              "value" : "Global Newsstream",
+              "count" : "64299"
+            }, {
+              "value" : "Factiva",
+              "count" : "60600"
+            }, {
+              "value" : "Nexis Uni",
+              "count" : "54076"
+            }, {
+              "value" : "PressReader",
+              "count" : "43237"
+            }, {
+              "value" : "Single Journals",
+              "count" : "32916"
+            }, {
+              "value" : "ABI/INFORM Collection",
+              "count" : "30697"
+            }, {
+              "value" : "Academic Search Complete",
+              "count" : "19284"
+            }, {
+              "value" : "Business Source Complete",
+              "count" : "17954"
+            }, {
+              "value" : "Factiva (Selected Full Text)",
+              "count" : "7112"
+            }, {
+              "value" : "Agricultural & Environmental Science Collection",
+              "count" : "6669"
+            }, {
+              "value" : "Flipster",
+              "count" : "4706"
+            }, {
+              "value" : "Ethnic NewsWatch",
+              "count" : "4258"
+            }, {
+              "value" : "Advanced Technologies & Aerospace Collection",
+              "count" : "3232"
+            }, {
+              "value" : "ProQuest Advanced Technologies & Aerospace Collection",
+              "count" : "3206"
+            }, {
+              "value" : "Environmental Science Collection",
+              "count" : "2852"
+            }, {
+              "value" : "Freely Accessible General Interest Journals",
+              "count" : "2701"
+            }, {
+              "value" : "Freely Accessible Journals",
+              "count" : "2654"
+            }, {
+              "value" : "Wall Street Journal Online",
+              "count" : "2601"
+            }, {
+              "value" : "Directory of Open Access Journals",
+              "count" : "2532"
+            } ]
+          }, {
+            "name" : "tlevel",
+            "values" : [ {
+              "value" : "open_access",
+              "count" : "3809"
+            }, {
+              "value" : "peer_reviewed",
+              "count" : "10813"
+            }, {
+              "value" : "online_resources",
+              "count" : "131890"
+            } ]
+          }, {
+            "name" : "newrecords",
+            "values" : [ {
+              "value" : "07 days back",
+              "count" : "33"
+            }, {
+              "value" : "90 days back",
+              "count" : "2420"
+            }, {
+              "value" : "30 days back",
+              "count" : "1736"
+            } ]
+          }, {
+            "name" : "creationdate",
+            "values" : [ {
+              "value" : "1900",
+              "count" : "57"
+            }, {
+              "value" : "1910",
+              "count" : "103"
+            }, {
+              "value" : "1920",
+              "count" : "35"
+            }, {
+              "value" : "1930",
+              "count" : "67"
+            }, {
+              "value" : "1940",
+              "count" : "167"
+            }, {
+              "value" : "1950",
+              "count" : "496"
+            }, {
+              "value" : "1951",
+              "count" : "69"
+            }, {
+              "value" : "1952",
+              "count" : "87"
+            }, {
+              "value" : "1953",
+              "count" : "71"
+            }, {
+              "value" : "1954",
+              "count" : "107"
+            }, {
+              "value" : "1955",
+              "count" : "89"
+            }, {
+              "value" : "1956",
+              "count" : "70"
+            }, {
+              "value" : "1957",
+              "count" : "84"
+            }, {
+              "value" : "1958",
+              "count" : "102"
+            }, {
+              "value" : "1959",
+              "count" : "59"
+            }, {
+              "value" : "1960",
+              "count" : "72"
+            }, {
+              "value" : "1961",
+              "count" : "62"
+            }, {
+              "value" : "1962",
+              "count" : "74"
+            }, {
+              "value" : "1963",
+              "count" : "37"
+            }, {
+              "value" : "1964",
+              "count" : "58"
+            }, {
+              "value" : "1965",
+              "count" : "46"
+            }, {
+              "value" : "1966",
+              "count" : "54"
+            }, {
+              "value" : "1967",
+              "count" : "44"
+            }, {
+              "value" : "1968",
+              "count" : "50"
+            }, {
+              "value" : "1969",
+              "count" : "112"
+            }, {
+              "value" : "1970",
+              "count" : "86"
+            }, {
+              "value" : "1971",
+              "count" : "74"
+            }, {
+              "value" : "1972",
+              "count" : "103"
+            }, {
+              "value" : "1973",
+              "count" : "85"
+            }, {
+              "value" : "1974",
+              "count" : "110"
+            }, {
+              "value" : "1975",
+              "count" : "100"
+            }, {
+              "value" : "1976",
+              "count" : "82"
+            }, {
+              "value" : "1977",
+              "count" : "133"
+            }, {
+              "value" : "1978",
+              "count" : "95"
+            }, {
+              "value" : "1979",
+              "count" : "119"
+            }, {
+              "value" : "1980",
+              "count" : "194"
+            }, {
+              "value" : "1981",
+              "count" : "237"
+            }, {
+              "value" : "1982",
+              "count" : "274"
+            }, {
+              "value" : "1983",
+              "count" : "229"
+            }, {
+              "value" : "1984",
+              "count" : "341"
+            }, {
+              "value" : "1985",
+              "count" : "759"
+            }, {
+              "value" : "1986",
+              "count" : "933"
+            }, {
+              "value" : "1987",
+              "count" : "1176"
+            }, {
+              "value" : "1988",
+              "count" : "1234"
+            }, {
+              "value" : "1989",
+              "count" : "1587"
+            }, {
+              "value" : "1990",
+              "count" : "1588"
+            }, {
+              "value" : "1991",
+              "count" : "1842"
+            }, {
+              "value" : "1992",
+              "count" : "2047"
+            }, {
+              "value" : "1993",
+              "count" : "1935"
+            }, {
+              "value" : "1994",
+              "count" : "2311"
+            }, {
+              "value" : "1995",
+              "count" : "2257"
+            }, {
+              "value" : "1996",
+              "count" : "2892"
+            }, {
+              "value" : "1997",
+              "count" : "2843"
+            }, {
+              "value" : "1998",
+              "count" : "3595"
+            }, {
+              "value" : "1999",
+              "count" : "3846"
+            }, {
+              "value" : "2000",
+              "count" : "4357"
+            }, {
+              "value" : "2001",
+              "count" : "4157"
+            }, {
+              "value" : "2002",
+              "count" : "4397"
+            }, {
+              "value" : "2003",
+              "count" : "4581"
+            }, {
+              "value" : "2004",
+              "count" : "4939"
+            }, {
+              "value" : "2005",
+              "count" : "5326"
+            }, {
+              "value" : "2006",
+              "count" : "5015"
+            }, {
+              "value" : "2007",
+              "count" : "5234"
+            }, {
+              "value" : "2008",
+              "count" : "5025"
+            }, {
+              "value" : "2009",
+              "count" : "4863"
+            }, {
+              "value" : "2010",
+              "count" : "4789"
+            }, {
+              "value" : "2011",
+              "count" : "4591"
+            }, {
+              "value" : "2012",
+              "count" : "5085"
+            }, {
+              "value" : "2013",
+              "count" : "5222"
+            }, {
+              "value" : "2014",
+              "count" : "5022"
+            }, {
+              "value" : "2015",
+              "count" : "4679"
+            }, {
+              "value" : "2016",
+              "count" : "4464"
+            }, {
+              "value" : "2017",
+              "count" : "4097"
+            }, {
+              "value" : "2018",
+              "count" : "3760"
+            }, {
+              "value" : "2019",
+              "count" : "3796"
+            }, {
+              "value" : "2020",
+              "count" : "2969"
+            }, {
+              "value" : "2021",
+              "count" : "748"
+            } ]
+          } ]
+        }
+  recorded_at: Fri, 16 Apr 2021 14:42:13 GMT
+recorded_with: VCR 6.0.0
