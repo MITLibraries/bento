@@ -26,7 +26,7 @@ class ButtonScan
   end
 
   def url
-    SFXHandler.new(
+    SfxHandler.new(
       barcode: @barcode,
       call_number: @call_number,
       collection: @collection,

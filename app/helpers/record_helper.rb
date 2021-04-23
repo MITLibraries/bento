@@ -207,7 +207,7 @@ module RecordHelper
 
     # When all else fails, make SFX sort it out.
     else
-      @sfx_link = SFXHandler.new(
+      @sfx_link = SfxHandler.new(
         title: @record.eds_title,
         source_title: @record.source_title,
         year: @record.eds_publication_year,

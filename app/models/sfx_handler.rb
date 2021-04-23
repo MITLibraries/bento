@@ -1,6 +1,6 @@
-class SFXHandler
+class SfxHandler
   # The SFX server will do the best it can with whatever it has, so we will
-  # initialize the SFXHandler with whatever data we happen to have. We're not
+  # initialize the SfxHandler with whatever data we happen to have. We're not
   # guaranteed to have all (or indeed any) of these objects; Aleph and EDS
   # provide different subsets of them. We provide default nil values so that
   # we don't have to pass parameters in when we don't have the corresponding
