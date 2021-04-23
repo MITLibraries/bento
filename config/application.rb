@@ -11,6 +11,11 @@ module MitBento
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration can go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded after loading
+    # the framework and any gems in your application.
+
     # Replace with a lambda or method name defined in ApplicationController
     # to implement access control for the Flipflop dashboard.
     config.flipflop.dashboard_access_filter = :flipflop_access_control

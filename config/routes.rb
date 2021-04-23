@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
   mount Flipflop::Engine => "/flipflop"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'search#index'
   get 'search/index', to: 'search#index'
