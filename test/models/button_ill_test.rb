@@ -11,15 +11,13 @@ class ButtonIllTest < ActiveSupport::TestCase
   end
 
   test 'html_button_eligible' do
-    @button.stub :eligible?, true do
-      assert(@button.html_button.include?('Request non-MIT copy (3-4 days)'))
-    end
+    @button.stubs(:eligible?).returns(true)
+    assert(@button.html_button.include?('Request non-MIT copy (3-4 days)'))
   end
 
   test 'html_button_ineligible' do
-    @button.stub :eligible?, false do
-      assert_nil(@button.html_button)
-    end
+    @button.stubs(:eligible?).returns(false)
+    assert_nil(@button.html_button)
   end
 
   test 'eligible for ill' do

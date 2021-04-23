@@ -48,8 +48,7 @@ end
 
 group :test do
   gem 'minitest-rails'
-  gem 'minitest-rails-capybara'
-  gem 'mocha'
+  gem 'mocha', require: false
   gem 'simplecov', require: false
   gem 'simplecov-lcov', require: false
   gem 'vcr'
