@@ -101,6 +101,8 @@ class Result
       an.split('.').last.prepend('MIT01')
     elsif aleph_cr_record?
       an.split('.').last.prepend('MIT30')
+    elsif alma_record?
+      an
     end
   end
 
@@ -140,5 +142,9 @@ class Result
     else
       false
     end
+  end
+
+  def alma_record?
+    an.present? && an.start_with?('alma') ? true : false
   end
 end

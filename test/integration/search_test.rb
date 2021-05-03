@@ -50,6 +50,28 @@ class SearchTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'Primo local results are populated' do
+    VCR.use_cassette('popcorn primo books',
+                     allow_playback_repeats: true) do
+      get '/search/search_boxed?q=popcorn&target=alma'
+      assert_response :success
+      assert_select('a.bento-link') do |value|
+        assert value.text.include?('Atmospheric Measurements during POPCORN')
+      end
+    end
+  end
+
+  test 'Primo CDI results are populated' do
+    VCR.use_cassette('popcorn primo articles',
+                     allow_playback_repeats: true) do
+      get '/search/search_boxed?q=popcorn&target=cdi'
+      assert_response :success
+      assert_select('a.bento-link') do |value|
+        assert value.text.include?('Baryonic popcorn')
+      end
+    end
+  end
+
   test 'google results are populated' do
     VCR.use_cassette('popcorn google',
                      allow_playback_repeats: true) do
