@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://another_fake_server.example.com/primo/v1/search?apikey=FAKE_PRIMO_SEARCH_API_KEY&q=any,contains,popcornandorangejuice&scope=alma&tab=bento&vid=FAKE_PRIMO_VID
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - Keep-Alive
+      Host:
+      - api-na.hosted.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      X-Exl-Api-Remaining:
+      - '549959'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,POST,DELETE,PUT,OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '517'
+      Date:
+      - Thu, 29 Apr 2021 19:24:17 GMT
+      Server:
+      - CA-API-Gateway/9.0
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "info" : {
+            "totalResultsLocal" : 0,
+            "totalResultsPC" : -1,
+            "total" : 0,
+            "first" : 1,
+            "last" : 0
+          },
+          "highlights" : { },
+          "docs" : [ ],
+          "timelog" : {
+            "CALL_SOLR_GET_IDS_LIST" : "64",
+            "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "0",
+            "PRIMA_LOCAL_SEARCH_TOTAL" : "72",
+            "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
+            "BUILD_COMBINED_RESULTS_MAP" : 73,
+            "COMBINED_SEARCH_TIME" : 75,
+            "PROCESS_COMBINED_RESULTS" : 0,
+            "FEATURED_SEARCH_TIME" : 0
+          },
+          "facets" : [ ]
+        }
+  recorded_at: Thu, 29 Apr 2021 19:24:18 GMT
+recorded_with: VCR 6.0.0

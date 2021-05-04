@@ -74,6 +74,9 @@ custom hint metadata.
 API endpoint to limit the search to local/Alma (Books+) results.
 - `PRIMO_ARTICLE_SCOPE`: assigned to the `scope` param of a Primo Search 
 API endpoint to limit  the search to CDI (Articles+) results.
+- `MIT_PRIMO_URL`: the root URL for MIT Libraries' Primo instance.
+- `SYNDETICS_PRIMO_URL`: the Syndetics API URL for Primo. This is used 
+to construct thumbnail URLs.
 - `RECAPTCHA_SITE_KEY`
 - `RECAPTCHA_SECRET_KEY`
 - `TIMDEX_URL`: The GraphQL endpoint for Timdex/ArchiveSpace

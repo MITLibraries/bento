@@ -47,7 +47,7 @@ class SearchController < ApplicationController
 
   # Array of search endpoints that are supported
   def valid_targets
-    %w[articles books google timdex]
+    %w[articles books google timdex alma cdi]
   end
 
   # Formatted date used in creating cache keys
@@ -60,8 +60,10 @@ class SearchController < ApplicationController
       search_google
     elsif params[:target] == 'timdex'
       search_timdex
-    else
+    elsif params[:target] == 'articles' || params[:target] == 'books'
       search_eds(page, per_page)
+    else
+      search_primo
     end
   end
 
@@ -79,6 +81,16 @@ class SearchController < ApplicationController
     elsif params[:target] == 'books'
       ENV['EDS_BOOK_FACETS']
     end
+  end
+
+  # Searches Primo
+  def search_primo
+    raw_results = SearchPrimo.new.search(strip_truncate_q, primo_scope)
+    NormalizePrimo.new.to_result(raw_results, params[:target], strip_truncate_q)
+  end
+
+  def primo_scope
+    params[:target] == 'alma' ? ENV['PRIMO_BOOK_SCOPE'] : ENV['PRIMO_ARTICLE_SCOPE']
   end
 
   # Searches Google Custom Search

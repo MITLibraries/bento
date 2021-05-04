@@ -27,6 +27,8 @@ Rails.application.configure do
   ENV['PRIMO_VID'] = 'FAKE_PRIMO_VID'
   ENV['PRIMO_BOOK_SCOPE'] = 'alma'
   ENV['PRIMO_ARTICLE_SCOPE'] = 'cdi'
+  ENV['MIT_PRIMO_URL'] = 'https://mit.primo.exlibrisgroup.com'
+  ENV['SYNDETICS_PRIMO_URL'] = 'https://syndetics.com/index.php?client=primo'
 
   ENV['SCAN_EXCLUSIONS']='Materials -- Standards -- United States -- Periodicals;Materials -- Standards -- United States -- Periodicals;Standards, Engineering;Standards, Engineering -- Periodicals'
 

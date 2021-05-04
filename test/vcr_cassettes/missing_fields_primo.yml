@@ -1,0 +1,248 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://another_fake_server.example.com/primo/v1/search?apikey=FAKE_PRIMO_SEARCH_API_KEY&q=any,contains,Ch%CA%BBoms%C5%ADk%CA%BBi%20kk%C5%ADt%20%C5%8Fmn%C5%ADn%20toj%C5%8Fn&scope=alma&tab=bento&vid=FAKE_PRIMO_VID
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - Keep-Alive
+      Host:
+      - api-na.hosted.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Vary:
+      - accept-encoding
+      X-Exl-Api-Remaining:
+      - '549960'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,POST,DELETE,PUT,OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '7908'
+      Date:
+      - Thu, 29 Apr 2021 19:24:17 GMT
+      Server:
+      - CA-API-Gateway/9.0
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "info" : {
+            "totalResultsLocal" : 1,
+            "totalResultsPC" : -1,
+            "total" : 1,
+            "first" : 1,
+            "last" : 1
+          },
+          "highlights" : {
+            "title" : [ "Chʻomsŭkʻi", "kkŭt", "ŏmnŭn", "tojŏn" ],
+            "termsUnion" : [ "Chʻomsŭkʻi", "kkŭt", "ŏmnŭn", "tojŏn" ]
+          },
+          "docs" : [ {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990013492720206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "language" : [ "kor" ],
+                "subject" : [ "Chomsky, Noam", "Linguists -- United States" ],
+                "format" : [ "363 p. : ill. ; 23 cm." ],
+                "identifier" : [ "$$CISBN$$V8976820444;$$COCLC$$V(OCoLC)61400624" ],
+                "lds04" : [ "Off Campus Collection copy from Noam Chomsky collection, with inscription." ],
+                "publisher" : [ "Sŏul-si : Gŭrinbi", "서울시 : 그린비" ],
+                "mms" : [ "990013492720206761" ],
+                "addtitle" : [ "Noam Chomsky : a life of dissent" ],
+                "vertitle" : [ "촘스키, 끝없는도전 = Noam Chomsky : a life of dissent / 로버트바스키지음 ; 장영준 옮김." ],
+                "edition" : [ "Chʻopʻan.", "초판." ],
+                "genre" : [ "Biography." ],
+                "unititle" : [ "Noam Chomsky. Korean" ],
+                "includes" : [ "Barsky, Robert F. Noam Chomsky. Korean$$QBarsky, Robert F. Noam Chomsky. Korean" ],
+                "place" : [ "Sŏul-si :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990013492720206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "001349272-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.020787643" ]
+              },
+              "addata" : {
+                "aulast" : [ "Barsky" ],
+                "aufirst" : [ "Robert F." ],
+                "auinit" : [ "R" ],
+                "au" : [ "Barsky, Robert F." ],
+                "addau" : [ "Jang, Yong Joon." ],
+                "addtitle" : [ "Noam Chomsky : a life of dissent" ],
+                "date" : [ "1998" ],
+                "isbn" : [ "8976820444" ],
+                "notes" : [ "Includes bibliographical references (p. 335-346) and index." ],
+                "cop" : [ "Sŏul-si" ],
+                "pub" : [ "Gŭrinbi" ],
+                "oclcid" : [ "(mcm)1349272mit01", "(ocolc)61400624" ],
+                "edition" : [ "Chʻopʻan." ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn = Noam Chomsky : a life of dissent" ]
+              },
+              "sort" : {
+                "title" : [ "Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn = Noam Chomsky : a life of dissent / Robŏtʻŭ Basŭkʻi chiŭm ; Chang Yŏng-jun omgim." ],
+                "author" : [ "Barsky, Robert F." ],
+                "creationdate" : [ "1998" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9008002799313317938" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "P85.C47.B56166 1998",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990013492720206761",
+                "holdId" : "2272211460006761",
+                "holKey" : "HoldingResultKey [mid=2272211460006761, libraryId=161682860006761, locationCode=OCC, callNumber=P85.C47.B56166 1998]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "P85.C47.B56166 1998",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990013492720206761",
+                "holdId" : "2272211460006761",
+                "holKey" : "HoldingResultKey [mid=2272211460006761, libraryId=161682860006761, locationCode=OCC, callNumber=P85.C47.B56166 1998]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "available_in_library" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990013492720206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:8976820444,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "P85.C47.B56166 1998",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "p000000000085.c000000000047.b000000056166000000001998",
+                "callNumberBrowseField" : "LOCAL_CL_09X"
+              }
+            }
+          } ],
+          "timelog" : {
+            "BUILD_RESULTS_RETRIVE_FROM_DB" : "28",
+            "CALL_SOLR_GET_IDS_LIST" : "436",
+            "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "375",
+            "RETRIVE_COLLECTION_DISCOVERY_INFO" : "8",
+            "RETRIVE_FROM_DB_COURSE_INFO" : "3",
+            "RETRIVE_FROM_DB_RECORDS" : "14",
+            "RETRIVE_FROM_DB_RELATIONS" : "1",
+            "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "324",
+            "SET_AVAILABILTY_HOLDING_DEDUPS" : "51",
+            "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "41",
+            "PRIMA_LOCAL_SEARCH_TOTAL" : "892",
+            "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
+            "BUILD_COMBINED_RESULTS_MAP" : 958,
+            "COMBINED_SEARCH_TIME" : 963,
+            "PROCESS_COMBINED_RESULTS" : 0,
+            "FEATURED_SEARCH_TIME" : 1
+          },
+          "facets" : [ ]
+        }
+  recorded_at: Thu, 29 Apr 2021 19:24:17 GMT
+recorded_with: VCR 6.0.0
