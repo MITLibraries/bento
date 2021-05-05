@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SFXHandlerConcernTest < MiniTest::Test
+class SfxHandlerTest < ActiveSupport::TestCase
   def test_eds_like_params_scan_url
     barcode = '39080014585712'
     call_number = 'PS3552.U827.P37 2000'
@@ -9,7 +9,7 @@ class SFXHandlerConcernTest < MiniTest::Test
     title = 'Parable of the sower'
     year = 2010
     volume = 10
-    sfx_link = SFXHandler.new(
+    sfx_link = SfxHandler.new(
       barcode: barcode,
       call_number: call_number,
       collection: collection,
@@ -27,7 +27,7 @@ class SFXHandlerConcernTest < MiniTest::Test
   def test_aleph_like_params_generic_url
     title = 'This is a title'
     clean_an = '35819515'
-    sfx_link = SFXHandler.new(
+    sfx_link = SfxHandler.new(
       title: title,
       doc_number: clean_an
     ).url_generic

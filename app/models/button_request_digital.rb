@@ -5,7 +5,7 @@ class ButtonRequestDigital
   include ButtonMaker
 
   def construct_sfx_link
-    SFXHandler.new(
+    SfxHandler.new(
       barcode: @barcode,
       call_number: @call_number,
       collection: @collection,

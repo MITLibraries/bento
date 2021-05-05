@@ -11,23 +11,20 @@ class ButtonHoldRecallTest < ActiveSupport::TestCase
   end
 
   test 'html_button_recall' do
-    @button.stub :eligible_recall?, true do
-      assert(@button.html_button.include?('Recall (7+ days)'))
-      refute(@button.html_button.include?('Request item'))
-    end
+    @button.stubs(:eligible_recall?).returns(true)
+    assert(@button.html_button.include?('Recall (7+ days)'))
+    refute(@button.html_button.include?('Request item'))
   end
 
   test 'html_button_hold' do
-    @button.stub :eligible_hold?, true do
-      assert(@button.html_button.include?('Request item'))
-      refute(@button.html_button.include?('Recall (7+ days)'))
-    end
+    @button.stubs(:eligible_hold?).returns(true)
+    assert(@button.html_button.include?('Request item'))
+    refute(@button.html_button.include?('Recall (7+ days)'))
   end
 
   test 'html_button_ineligible' do
-    @button.stub :eligible_hold?, false do
-      assert_nil(@button.html_button)
-    end
+    @button.stubs(:eligible_hold?).returns(false)
+    assert_nil(@button.html_button)
   end
 
   test 'status in library can hold not recall' do

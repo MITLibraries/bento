@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.6.5'
 
-gem 'actionpack-action_caching'
+gem 'actionpack-action_caching', github: 'rails/actionpack-action_caching', branch: 'master'
 gem 'barnes'
 gem 'bootsnap'
-gem 'ebsco-eds'
+gem 'ebsco-eds', github: 'MITLibraries/edsapi-ruby', branch: 'rails61support'
 gem 'flipflop'
 gem 'google-api-client'
 gem 'http'
@@ -18,7 +18,7 @@ gem 'mitlibraries-theme'
 gem 'nokogiri'
 gem 'puma'
 gem 'rack-attack'
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 6.1.0'
 gem 'sass-rails'
 gem 'sentry-raven'
 gem 'skylight'
@@ -27,13 +27,12 @@ gem 'uglifier'
 
 group :production do
   gem 'dalli'
-  gem 'memcachier'
-  gem 'pg', '0.21'
+  gem 'pg'
 end
 
 group :development, :test do
   gem 'pry-rails'
-  gem 'sqlite3', '1.3.13'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -48,8 +47,7 @@ end
 
 group :test do
   gem 'minitest-rails'
-  gem 'minitest-rails-capybara'
-  gem 'mocha'
+  gem 'mocha', require: false
   gem 'simplecov', require: false
   gem 'simplecov-lcov', require: false
   gem 'vcr'
