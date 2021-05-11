@@ -9,6 +9,7 @@ class NormalizePrimo
     norm = {}
     norm['total'] = results['info']['total']
     norm['results'] = []
+    norm['primo_ui_view_more'] = primo_ui_view_more(q)
     extract_results(results, norm)
     norm
   rescue NoMethodError => e
@@ -17,6 +18,11 @@ class NormalizePrimo
   end
 
   private
+
+  def primo_ui_view_more(q)
+    [ENV['MIT_PRIMO_URL'], '/discovery/search?query=any,contains,', q,
+     '&tab=bento&scope=', @type, '&vid=', ENV['PRIMO_VID']].join('')
+  end
 
   def extract_results(results, norm)
     return unless results['docs']

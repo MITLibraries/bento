@@ -69,7 +69,7 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     result = popcorn['results'].first
     assert_not_equal "Rudolph, J.$$QRudolph, J.", result.authors.first.first
     assert_equal ["Rudolph, J.",
-                  "https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Rudolph, J.&vid=FAKE_PRIMO_VID"],
+                  "https://mit.primo.exlibrisgroup.com/discovery/browse?browseQuery=Rudolph, J.&browseScope=author&vid=FAKE_PRIMO_VID"],
                   result.authors.first
   end
 

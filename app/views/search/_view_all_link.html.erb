@@ -3,6 +3,8 @@
   <% if @results['total'] > 0 %>
     <% if Flipflop.enabled?(:local_browse) && @results['local_view_more'] %>
       <% view_more_url = @results['local_view_more'] %>
+    <% elsif Flipflop.enabled?(:primo_search) %>
+      <% view_more_url = @results['primo_ui_view_more'] %>
     <% else %>
       <% view_more_url = @results['eds_ui_view_more'] %>
     <% end %>

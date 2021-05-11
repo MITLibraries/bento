@@ -67,6 +67,7 @@ custom hint metadata.
 - `GOOGLE_CUSTOM_SEARCH_ID`: your Google Custom Search engine ID
 - `MAX_AUTHORS`: the maximum number of authors displayed in any record.
   If exceeded, 'et al' will be appended after this number.
+- `PRIMO_SEARCH`: toggles feature flag to use Primo instead of EDS.
 - `PRIMO_SEARCH_API_KEY`: the Primo Search API key.
 - `PRIMO_SEARCH_API_URL`: the root URL for the Primo Search API.
 - `PRIMO_VID`: our Primo 'view ID'.

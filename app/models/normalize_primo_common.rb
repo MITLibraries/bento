@@ -51,8 +51,8 @@ class NormalizePrimoCommon
   end
 
   def author_link(author)
-    [ENV['MIT_PRIMO_URL'], '/discovery/search?query=creator,exact,', 
-     author, '&vid=', ENV['PRIMO_VID']].join('')
+    [ENV['MIT_PRIMO_URL'], '/discovery/browse?browseQuery=', 
+     author, '&browseScope=author&vid=', ENV['PRIMO_VID']].join('')
   end
 
   def year
@@ -85,6 +85,7 @@ class NormalizePrimoCommon
     r_types = {
       "BKSE" => "eBook",
       "reference_entry" => "Reference Entry",
+      "Book_chapter" => "Book Chapter"
     }
     r_types[type] || type.capitalize
   end

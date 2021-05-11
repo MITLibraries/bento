@@ -34,6 +34,16 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     end
   end
 
+  def multi_location
+    VCR.use_cassette('local journal primo',
+                     allow_playback_repeats: true) do
+      raw_query = SearchPrimo.new.search('Journal of heat transfer',
+                                          ENV['PRIMO_BOOK_SCOPE'])
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
+                                   'Journal of heat transfer')
+    end
+  end
+
   test 'constructs thumbnail links' do
     result = popcorn_books['results'].first
     assert_equal 'https://syndetics.com/index.php?client=primo&isbn=9789401708135/sc.jpg',
@@ -49,7 +59,7 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
   test 'constructs subjects with links' do
     result = popcorn_books['results'].first
     assert_equal ["Geography",
-                  "https://mit.primo.exlibrisgroup.com/discovery/search?query=sub,exact,Geography&vid=FAKE_PRIMO_VID"],
+                  "https://mit.primo.exlibrisgroup.com/discovery/browse?browseQuery=Geography&browseScope=subject.1&vid=FAKE_PRIMO_VID"],
                   result.subjects.first
   end
 
@@ -63,6 +73,14 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     result = physical_book['results'].first
     assert_equal [['Library Storage Annex Off Campus Collection', 
                   'P85.C47.B56166 1998']], result.location
+  end
+
+  test 'constructs multiple locations' do
+    result = multi_location['results'].first
+    assert_equal [['Library Storage Annex Journal Collection (LSA4)', 
+                   'TA.J86.H437'], 
+                  ['Barker Library Microforms', 'FICHE No Call #']], 
+                 result.location
   end
 
   test 'does not construct locations for eresources' do

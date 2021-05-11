@@ -36,8 +36,8 @@
         <% result.truncated_authors.each do |author| %>
         <span class="result-author">
           <% next if author[0] == nil %>
-          <% if params[:target] == ('alma' || 'cdi') %>
-            <%= link_to(author[0], author[1], data: {type: "Author"} ) unless author == "et al" %>
+          <% if params[:target] == 'alma' || params[:target] == 'cdi' %>
+            <%= link_to(author[0], author[1], data: {type: "Author"}) unless author == "et al" %>
           <% else %>
             <%= link_to(author[0], search_prefix + author[1], data: {type: "Author"} ) unless author == "et al" %>
           <% end %>
