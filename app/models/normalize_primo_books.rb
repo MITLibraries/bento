@@ -10,6 +10,7 @@ class NormalizePrimoBooks
     result.publisher = publisher
     result.location = location
     result.subjects = subjects
+    result.openurl = openurl
     result
   end
 
@@ -45,6 +46,16 @@ class NormalizePrimoBooks
     @record['delivery']['holding'].map do |holding|
       return unless holding['mainLocation'] && holding['subLocation'] && holding['callNumber']
       ["#{holding['mainLocation']} #{holding['subLocation']}", holding['callNumber']]
+    end
+  end
+
+  def openurl
+    return unless @record['pnx']['display']['mms']
+    return unless @record['delivery']['deliveryCategory']
+    mms_id = @record['pnx']['display']['mms'].first
+    if @record['delivery']['deliveryCategory'].include?('Alma-E')
+      [ENV['MIT_PRIMO_URL'], '/discovery/openurl?institution=', ENV['EXL_INST_ID'],
+      '&vid=', ENV['PRIMO_VID'], '&rft.mms_id=', mms_id].join('')
     end
   end
 end

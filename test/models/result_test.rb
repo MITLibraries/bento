@@ -244,4 +244,15 @@ class ResultTest < ActiveSupport::TestCase
     assert_nil(r.getit_url)
     assert_equal('http://sfx.mit.edu/example', r.check_sfx_url)
   end
+
+  test 'Primo full-text URLs map correctly to getit_url' do
+    r = Result.new('title', 'http://example.com')
+    r.openurl = 'https://mit.primo.exlibrisgroup.com/discovery/openurl?example'
+    assert_equal r.getit_url, r.openurl
+  end
+
+  test 'Primo records without full-text URLs do not a have getit_url' do
+    r = Result.new('title', 'http://example.com')
+    assert_nil r.getit_url
+  end
 end

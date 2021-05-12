@@ -93,4 +93,16 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     assert_nothing_raised { result.location }
     assert_nil result.location
   end
+
+  test 'constructs full-text links as expected' do
+    result = popcorn_books['results'].first
+    assert_equal "https://mit.primo.exlibrisgroup.com/discovery/openurl?institution=01MIT_INST&vid=FAKE_PRIMO_VID&rft.mms_id=990022823660206761",
+                 result.openurl
+  end
+
+  test 'handles results without full-text links' do
+    result = physical_book['results'].first
+    assert_nothing_raised { result.url }
+    assert_nil result.openurl
+  end
 end
