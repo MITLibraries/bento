@@ -1,0 +1,1944 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://another_fake_server.example.com/primo/v1/search?apikey=FAKE_PRIMO_SEARCH_API_KEY&q=any,contains,Journal%20of%20heat%20transfer&scope=alma&tab=bento&vid=FAKE_PRIMO_VID
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - Keep-Alive
+      Host:
+      - api-na.hosted.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Vary:
+      - accept-encoding
+      X-Exl-Api-Remaining:
+      - '549997'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,POST,DELETE,PUT,OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 11 May 2021 16:04:53 GMT
+      Server:
+      - CA-API-Gateway/9.0
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "info" : {
+            "totalResultsLocal" : 89,
+            "totalResultsPC" : -1,
+            "total" : 89,
+            "first" : 1,
+            "last" : 10
+          },
+          "highlights" : {
+            "creator" : [ "Heat", "Transfer" ],
+            "contributor" : [ "Heat", "Transfer" ],
+            "subject" : [ "Heat" ],
+            "title" : [ "Heat", "transfer", "Journal", "of heat", "heat", "journal" ],
+            "addtitle" : [ "journal", "of heat", "heat", "transfer", "Heat" ],
+            "termsUnion" : [ "Heat", "Transfer", "transfer", "Journal", "of heat", "heat", "journal" ]
+          },
+          "docs" : [ {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990002935920206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "journal" ],
+                "language" : [ "eng" ],
+                "title" : [ "Journal of heat transfer." ],
+                "subject" : [ "Heat -- Transmission" ],
+                "format" : [ "v. : ill. ; 29 cm." ],
+                "identifier" : [ "$$CLC$$V   61019573 //r892;$$CISSN$$V0022-1481;$$COCLC$$V(OCoLC)01782922;$$COCLC$$V(OCoLC)01713702;$$COCLC$$V(OCoLC)09764105" ],
+                "creationdate" : [ "c1959-" ],
+                "publisher" : [ "New York, N.Y. : American Society of Mechanical Engineers", "Vol. 81, no. 1 (Feb. 1959)-" ],
+                "mms" : [ "990002935920206761" ],
+                "dedupmemberids" : [ "9933112204206761" ],
+                "contributor" : [ "American Society of Mechanical Engineers.$$QAmerican Society of Mechanical Engineers." ],
+                "frequency" : [ "Quarterly" ],
+                "series" : [ "Transactions of the ASME ; ser. C$$QTransactions of the ASME ", "Transactions of the ASME (1959) ; ser. C.$$QTransactions of the ASME (1959) " ],
+                "genre" : [ "Periodicals." ],
+                "relation" : [ "$$Cearlier_title$$VTransactions of the ASME$$QTransactions of the ASME$$Z990003005480206761", "$$Cother_relationship$$VAmerican Society of Mechanical Engineers. Transactions of the American Society of Mechanical Engineers$$QTransactions of the American Society of Mechanical Engineers" ],
+                "place" : [ "New York, N.Y. :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990002935920206761" ],
+                "recordid" : [ "alma990002935920206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000293592-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.32079008" ]
+              },
+              "addata" : {
+                "stitle" : [ "J. heat transfer" ],
+                "date" : [ "1959", "c1959-" ],
+                "issn" : [ "0022-1481" ],
+                "coden" : [ "JHTRAO" ],
+                "cop" : [ "New York, N.Y" ],
+                "pub" : [ "American Society of Mechanical Engineers" ],
+                "oclcid" : [ "(mcm)293592", "(mcm)293592mit01", "mitb10293592", "(ocolc)1782922", "(ocolc)1713702", "(ocolc)9764105", "(vera)3557" ],
+                "lccn" : [ "61019573 //r892" ],
+                "seriestitle" : [ "Transactions of the ASME ; ser. C" ],
+                "format" : [ "journal" ],
+                "genre" : [ "journal" ],
+                "ristype" : [ "JOUR" ],
+                "jtitle" : [ "Journal of heat transfer." ]
+              },
+              "sort" : {
+                "title" : [ "Journal of heat transfer." ],
+                "author" : [ "American Society of Mechanical Engineers." ],
+                "creationdate" : [ "1959" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9004246921324852818" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Journal Collection (LSA4)",
+                "subLocationCode" : "LSA4",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TA.J86.H437",
+                "callNumberType" : "7",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990002935920206761",
+                "holdId" : "2247035880006761",
+                "holKey" : "HoldingResultKey [mid=2247035880006761, libraryId=161682860006761, locationCode=LSA4, callNumber=TA.J86.H437]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Journal Collection (LSA4)",
+                "subLocationCode" : "LSA4",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TA.J86.H437",
+                "callNumberType" : "7",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990002935920206761",
+                "holdId" : "2247035880006761",
+                "holKey" : "HoldingResultKey [mid=2247035880006761, libraryId=161682860006761, locationCode=LSA4, callNumber=TA.J86.H437]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              }, {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "ENG",
+                "availabilityStatus" : "check_holdings",
+                "subLocation" : "Microforms",
+                "subLocationCode" : "MFORM",
+                "mainLocation" : "Barker Library",
+                "callNumber" : "FICHE No Call #",
+                "callNumberType" : "8",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990002935920206761",
+                "holdId" : "2247035210006761",
+                "holKey" : "HoldingResultKey [mid=2247035210006761, libraryId=161683650006761, locationCode=MFORM, callNumber=FICHE No Call #]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:1"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "available_in_library", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : true,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : true,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990002935920206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                }, {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990002935920206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:1"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:61019573&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://scitation.aip.org/ASMEJournals/HeatTransfer/",
+                "displayLabel" : "$$Elinktorsrc"
+              }, {
+                "@id" : ":_2",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://www.asme.org/pubs/journals/heattran/",
+                "displayLabel" : "Tables of contents, 1996-1999"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "FICHE No Call #",
+                "callNumberBrowseField" : "8"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "ta 1ǂ j64",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990002819760206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "journal" ],
+                "language" : [ "mul;eng" ],
+                "title" : [ "International journal of heat and mass transfer." ],
+                "subject" : [ "Heat -- Transmission", "Mass transfer" ],
+                "format" : [ "ill., diagrs. 25 cm." ],
+                "identifier" : [ "$$CLC$$V   64009791;$$CISSN$$V0017-9310;$$COCLC$$V(OCoLC)01753576" ],
+                "creationdate" : [ "1960" ],
+                "publisher" : [ "Oxford, New York, Pergamon Press.", "v. 1-   June 1960-" ],
+                "mms" : [ "990002819760206761" ],
+                "dedupmemberids" : [ "9933113796606761" ],
+                "addtitle" : [ "Heat and mass transfer" ],
+                "frequency" : [ "Monthly, May 1962-" ],
+                "genre" : [ "Periodicals." ],
+                "relation" : [ "$$Cother_relationship$$VInternational communications in heat and mass transfer.$$Z990002868370206761", "$$Cother_relationship$$VProgress in heat and mass transfer.$$Z990002908100206761" ],
+                "place" : [ "Oxford, New York," ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990002819760206761" ],
+                "recordid" : [ "alma990002819760206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000281976-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.0049785483" ]
+              },
+              "addata" : {
+                "stitle" : [ "Int. j. heat mass transfer" ],
+                "addtitle" : [ "Heat and mass transfer" ],
+                "date" : [ "1960" ],
+                "issn" : [ "0017-9310" ],
+                "coden" : [ "IJHMAK" ],
+                "cop" : [ "Oxford" ],
+                "pub" : [ "Pergamon Press." ],
+                "oclcid" : [ "(mcm)281976", "(mcm)281976mit01", "mitb10281976", "(ocolc)1753576", "(sfx)954925403619", "(vera)3234" ],
+                "lccn" : [ "64009791" ],
+                "format" : [ "journal" ],
+                "genre" : [ "journal" ],
+                "ristype" : [ "JOUR" ],
+                "jtitle" : [ "International journal of heat and mass transfer." ]
+              },
+              "sort" : {
+                "title" : [ "International journal of heat and mass transfer." ],
+                "creationdate" : [ "1960" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9034897563700351872" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "QC320.I55",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990002819760206761",
+                "holdId" : "2218800840006761",
+                "holKey" : "HoldingResultKey [mid=2218800840006761, libraryId=161682860006761, locationCode=OCC, callNumber=QC320.I55]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "QC320.I55",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990002819760206761",
+                "holdId" : "2218800840006761",
+                "holKey" : "HoldingResultKey [mid=2218800840006761, libraryId=161682860006761, locationCode=OCC, callNumber=QC320.I55]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              }, {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "ENG",
+                "availabilityStatus" : "check_holdings",
+                "subLocation" : "Microforms",
+                "subLocationCode" : "MFORM",
+                "mainLocation" : "Barker Library",
+                "callNumber" : "FICHE No Call #",
+                "callNumberType" : "8",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990002819760206761",
+                "holdId" : "2218819160006761",
+                "holKey" : "HoldingResultKey [mid=2218819160006761, libraryId=161683650006761, locationCode=MFORM, callNumber=FICHE No Call #]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:1"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "available_in_library", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : true,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : true,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990002819760206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                }, {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990002819760206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:1"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:64009791&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://www.sciencedirect.com/science/journal/00179310",
+                "displayLabel" : "$$Elinktorsrc"
+              }, {
+                "@id" : ":_2",
+                "linkType" : "linktorsrc",
+                "linkURL" : "https://sfx.mit.edu/sfx%5Flocal?rft.object%5Fid=954925403619&url%5Fver=Z39.88-2004&ctx%5Fver=Z39.88-2004&ctx%5Fenc=info:ofi/enc:UTF-8&rfr%5Fid=info:sid/sfxit.com:opac%5F856&url%5Fctx%5Ffmt=info:ofi/fmt:kev:mtx:ctx&sfx.ignore%5Fdate%5Fthreshold=1&svc%5Fval%5Ffmt=info:ofi/fmt:kev:mtx:sch%5Fsvc&",
+                "displayLabel" : "$$Elinktorsrc"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "FICHE No Call #",
+                "callNumberBrowseField" : "8"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "qc\"320ǂ i55",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990003689980206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "journal" ],
+                "language" : [ "eng" ],
+                "title" : [ "Journal of thermophysics and heat transfer." ],
+                "subject" : [ "Space vehicles -- Thermodynamics", "Heat -- Transmission", "Heat engineering" ],
+                "format" : [ "v. : ill. ; 29 cm." ],
+                "identifier" : [ "$$CLC$$V   87640669;$$CISSN$$V0887-8722;$$COCLC$$V(OCoLC)13392807;$$CISSN$$V1533-6808" ],
+                "creationdate" : [ "c1986-" ],
+                "publisher" : [ "New York, NY : American Institute of Aeronautics and Astronautics", "Vol. 1, no. 1 (Jan. 1987)-" ],
+                "mms" : [ "990003689980206761" ],
+                "dedupmemberids" : [ "9933022967206761" ],
+                "contributor" : [ "American Institute of Aeronautics and Astronautics.$$QAmerican Institute of Aeronautics and Astronautics." ],
+                "addtitle" : [ "J. thermophysics" ],
+                "frequency" : [ "Quarterly" ],
+                "genre" : [ "Periodicals." ],
+                "relation" : [ "$$Cform$$VJournal of thermophysics and heat transfer (Online)$$QJournal of thermophysics and heat transfer (Online)" ],
+                "place" : [ "New York, NY :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990003689980206761" ],
+                "recordid" : [ "alma990003689980206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000368998-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.011723392" ]
+              },
+              "addata" : {
+                "stitle" : [ "J. thermophys. heat transf." ],
+                "addtitle" : [ "J. thermophysics" ],
+                "date" : [ "1987", "c1986-" ],
+                "issn" : [ "0887-8722", "1533-6808" ],
+                "coden" : [ "JTHTEO" ],
+                "cop" : [ "New York, NY" ],
+                "pub" : [ "American Institute of Aeronautics and Astronautics" ],
+                "oclcid" : [ "(mcm)368998", "(mcm)368998mit01", "mitb10368998", "(ocolc)13392807", "(vera)4486" ],
+                "lccn" : [ "87640669", "sn 86014108" ],
+                "format" : [ "journal" ],
+                "genre" : [ "journal" ],
+                "ristype" : [ "JOUR" ],
+                "jtitle" : [ "Journal of thermophysics and heat transfer." ]
+              },
+              "sort" : {
+                "title" : [ "Journal of thermophysics and heat transfer." ],
+                "author" : [ "American Institute of Aeronautics and Astronautics." ],
+                "creationdate" : [ "1987" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9011222830965202118" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TL900.J68",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990003689980206761",
+                "holdId" : "2262782440006761",
+                "holKey" : "HoldingResultKey [mid=2262782440006761, libraryId=161682860006761, locationCode=OCC, callNumber=TL900.J68]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TL900.J68",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990003689980206761",
+                "holdId" : "2262782440006761",
+                "holKey" : "HoldingResultKey [mid=2262782440006761, libraryId=161682860006761, locationCode=OCC, callNumber=TL900.J68]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "available_in_library", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990003689980206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:87640669&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://catalog.hathitrust.org/api/volumes/oclc/13392807.html",
+                "displayLabel" : "Hathi Trust"
+              }, {
+                "@id" : ":_2",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://arc.aiaa.org/loi/jtht",
+                "displayLabel" : "$$Elinktorsrc"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "TL900.J68",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "tl\"900ǂ j68",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990014388330206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "journal" ],
+                "language" : [ "eng" ],
+                "title" : [ "Letters in heat and mass transfer (Online)" ],
+                "subject" : [ "Heat -- Transmission", "Mass transfer" ],
+                "identifier" : [ "$$CLC$$V  2007233083;$$COCLC$$V(OCoLC)53039733;$$CISSN$$V0094-4548" ],
+                "creationdate" : [ "1974-1982" ],
+                "publisher" : [ "New York : Pergamon Press", "Vol. 1, issue 1 (July/Aug. 1974)-v. 9, no. 6 (Nov./Dec. 1982)." ],
+                "mms" : [ "990014388330206761" ],
+                "dedupmemberids" : [ "990002819670206761", "9933075826906761" ],
+                "contributor" : [ "International Center for Heat and Mass Transfer.$$QInternational Center for Heat and Mass Transfer." ],
+                "frequency" : [ "Six no. a year" ],
+                "genre" : [ "Periodicals." ],
+                "relation" : [ "$$Cform$$VAlso issued in print. Letters in heat and mass transfer$$QLetters in heat and mass transfer$$Z990002819670206761", "$$Clater_title$$VInternational communications in heat and mass transfer (Online)$$QInternational communications in heat and mass transfer (Online)", "$$Cother_relationship$$VCompanion publication: International journal of heat and mass transfer (Online)$$QInternational journal of heat and mass transfer (Online)" ],
+                "unititle" : [ "Letters in heat and mass transfer (Online)" ],
+                "place" : [ "New York] :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990014388330206761" ],
+                "recordid" : [ "alma990014388330206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "001438833-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.0031921514" ]
+              },
+              "addata" : {
+                "date" : [ "1974 - 1982", "1974-1982" ],
+                "issn" : [ "0094-4548" ],
+                "cop" : [ "New York" ],
+                "pub" : [ "Pergamon Press" ],
+                "oclcid" : [ "(mcm)1438833mit01", "(ocolc)53039733", "(vera)501116" ],
+                "lccn" : [ "2007233083" ],
+                "format" : [ "journal" ],
+                "genre" : [ "journal" ],
+                "ristype" : [ "JOUR" ],
+                "jtitle" : [ "Letters in heat and mass transfer (Online)" ]
+              },
+              "sort" : {
+                "title" : [ "Letters in heat and mass transfer (Online)" ],
+                "author" : [ "International Center for Heat and Mass Transfer." ],
+                "creationdate" : [ "1974" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9053297592296644764" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "No Call #",
+                "callNumberType" : "8",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990002819670206761",
+                "holdId" : "2218871330006761",
+                "holKey" : "HoldingResultKey [mid=2218871330006761, libraryId=161682860006761, locationCode=OCC, callNumber=No Call #]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "No Call #",
+                "callNumberType" : "8",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990002819670206761",
+                "holdId" : "2218871330006761",
+                "holKey" : "HoldingResultKey [mid=2218871330006761, libraryId=161682860006761, locationCode=OCC, callNumber=No Call #]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              }, {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "ENG",
+                "availabilityStatus" : "check_holdings",
+                "subLocation" : "Microforms",
+                "subLocationCode" : "MFORM",
+                "mainLocation" : "Barker Library",
+                "callNumber" : "FICHE No Call #",
+                "callNumberType" : "8",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990002819670206761",
+                "holdId" : "2218871240006761",
+                "holKey" : "HoldingResultKey [mid=2218871240006761, libraryId=161683650006761, locationCode=MFORM, callNumber=FICHE No Call #]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:1"
+              }, {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "NET",
+                "availabilityStatus" : "check_holdings",
+                "subLocation" : "zz Not in use NET EJ",
+                "subLocationCode" : "EJ",
+                "mainLocation" : "Internet Resource",
+                "callNumber" : "**See URL(s)",
+                "callNumberType" : "8",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990014388330206761",
+                "holdId" : "2229122780006761",
+                "holKey" : "HoldingResultKey [mid=2229122780006761, libraryId=161683420006761, locationCode=EJ, callNumber=**See URL(s)]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:2"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "available_in_library", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : true,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : true,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990002819670206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                }, {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990002819670206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:1"
+                }, {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990014388330206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:2"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:2007233083&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://www.sciencedirect.com/science/journal/00944548",
+                "displayLabel" : "$$Elinktorsrc"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "No Call #",
+                "callNumberBrowseField" : "8"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "qc\"319.8",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990003005480206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "journal" ],
+                "language" : [ "eng" ],
+                "title" : [ "Transactions of ASME." ],
+                "subject" : [ "Mechanical engineering" ],
+                "format" : [ "v. : ill. ; 24-29 cm." ],
+                "identifier" : [ "$$CLC$$Vsc 89034080;$$COCLC$$V(OCoLC)19731523" ],
+                "creationdate" : [ "19?? - 1958" ],
+                "publisher" : [ "New York, N.Y. : American Society of Mechanical Engineers", "-v. 80, no. 8 (Nov. 1958)." ],
+                "mms" : [ "990003005480206761" ],
+                "contributor" : [ "American Society of Mechanical Engineers.$$QAmerican Society of Mechanical Engineers." ],
+                "addtitle" : [ "Transactions of American Society of Mechanical Engineers", "Transactions of the ASME", "Transactions of the American Society of Mechanical Engineers" ],
+                "frequency" : [ "Eight no. a year" ],
+                "genre" : [ "Periodicals." ],
+                "relation" : [ "$$Cother_relationship$$VJournal of lubrication technology.$$Z990002834900206761", "$$Clater_title$$VJournal of engineering for power$$QJournal of engineering for power$$Z990002875270206761", "$$Clater_title$$VJournal of engineering for industry$$QJournal of engineering for industry$$Z990002935670206761", "$$Clater_title$$VJournal of heat transfer$$QJournal of heat transfer$$Z990002935920206761", "$$Clater_title$$VJournal of basic engineering$$QJournal of basic engineering$$Z990002935240206761", "$$Cother_relationship$$VAmerican Society of Mechanical Engineers. Transactions of the American Society of Mechanical Engineers$$QTransactions of the American Society of Mechanical Engineers" ],
+                "place" : [ "New York, N.Y. :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990003005480206761" ],
+                "recordid" : [ "alma990003005480206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000300548-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.0030415426" ]
+              },
+              "addata" : {
+                "addtitle" : [ "Transactions of American Society of Mechanical Engineers", "Transactions of the ASME", "Transactions of the American Society of Mechanical Engineers" ],
+                "date" : [ "19?? - 1958" ],
+                "cop" : [ "New York, N.Y" ],
+                "pub" : [ "American Society of Mechanical Engineers" ],
+                "oclcid" : [ "(mcm)300548", "(mcm)300548mit01", "mitb10300548", "(ocolc)19731523", "glis300548", "fax188655" ],
+                "lccn" : [ "sc 89034080" ],
+                "format" : [ "journal" ],
+                "genre" : [ "journal" ],
+                "ristype" : [ "JOUR" ],
+                "jtitle" : [ "Transactions of ASME." ]
+              },
+              "sort" : {
+                "title" : [ "Transactions of ASME." ],
+                "author" : [ "American Society of Mechanical Engineers." ],
+                "creationdate" : [ "1900" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9021086674212916948" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "check_holdings",
+                "subLocation" : "Journal Collection (JRNAL)",
+                "subLocationCode" : "JRNAL",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "No Call #",
+                "callNumberType" : "8",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990003005480206761",
+                "holdId" : "2257614770006761",
+                "holKey" : "HoldingResultKey [mid=2257614770006761, libraryId=161682860006761, locationCode=JRNAL, callNumber=No Call #]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "check_holdings",
+                "subLocation" : "Journal Collection (JRNAL)",
+                "subLocationCode" : "JRNAL",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "No Call #",
+                "callNumberType" : "8",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990003005480206761",
+                "holdId" : "2257614770006761",
+                "holKey" : "HoldingResultKey [mid=2257614770006761, libraryId=161682860006761, locationCode=JRNAL, callNumber=No Call #]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "check_holdings" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990003005480206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:sc 89034080&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "No Call #",
+                "callNumberBrowseField" : "8"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "tj .a000000000512",
+                "callNumberBrowseField" : "LOCAL_CL_09X"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990002908100206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "journal" ],
+                "language" : [ "eng" ],
+                "title" : [ "Progress in heat and mass transfer." ],
+                "subject" : [ "Heat -- Transmission", "Mass transfer" ],
+                "format" : [ "v. ill. 26 cm." ],
+                "identifier" : [ "$$CLC$$V   73091700;$$CISSN$$V0079-631X;$$COCLC$$V(OCoLC)01608191;$$COCLC$$V(OCoLC)00304740" ],
+                "creationdate" : [ "1969 - 197?" ],
+                "publisher" : [ "Oxford, New York, Pergamon Press.", "Ceased with vol. 8?" ],
+                "mms" : [ "990002908100206761" ],
+                "addtitle" : [ "International journal of heat and mass transfer.", "Heat transfer reviews." ],
+                "relation" : [ "$$Cother_relationship$$VInternational journal of heat and mass transfer$$QInternational journal of heat and mass transfer$$Z990002819760206761" ],
+                "place" : [ "Oxford, New York," ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990002908100206761" ],
+                "recordid" : [ "alma990002908100206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000290810-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.0017861724" ]
+              },
+              "addata" : {
+                "stitle" : [ "Prog. heat mass transfer" ],
+                "date" : [ "1969 - 197?" ],
+                "issn" : [ "0079-631X" ],
+                "coden" : [ "PGHMB9" ],
+                "cop" : [ "Oxford" ],
+                "pub" : [ "Pergamon Press." ],
+                "oclcid" : [ "(mcm)290810", "(mcm)290810mit01", "mitb10290810", "(ocolc)1608191", "glis290810", "(ocolc)304740", "fax18854" ],
+                "lccn" : [ "73091700" ],
+                "format" : [ "journal" ],
+                "genre" : [ "journal" ],
+                "ristype" : [ "JOUR" ],
+                "jtitle" : [ "Progress in heat and mass transfer." ]
+              },
+              "sort" : {
+                "title" : [ "Progress in heat and mass transfer." ],
+                "creationdate" : [ "1969" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9003008525285283420" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TJ260.P964",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990002908100206761",
+                "holdId" : "2227934470006761",
+                "holKey" : "HoldingResultKey [mid=2227934470006761, libraryId=161682860006761, locationCode=OCC, callNumber=TJ260.P964]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TJ260.P964",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990002908100206761",
+                "holdId" : "2227934470006761",
+                "holKey" : "HoldingResultKey [mid=2227934470006761, libraryId=161682860006761, locationCode=OCC, callNumber=TJ260.P964]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "available_in_library" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990002908100206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:73091700&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "TJ260.P964",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "tj000000000260.p000000000964",
+                "callNumberBrowseField" : "LOCAL_CL_09X"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990003689520206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "journal" ],
+                "language" : [ "eng" ],
+                "title" : [ "JSME international journal. Series II, Fluids engineering, heat transfer, power, combustion, thermophysical properties." ],
+                "subject" : [ "Mechanical engineering" ],
+                "format" : [ "5 v. : ill. ; 30 cm." ],
+                "identifier" : [ "$$CLC$$V   92642662 //r94;$$CISSN$$V0914-8817;$$COCLC$$V(OCoLC)17852357" ],
+                "creationdate" : [ "c1988-c1992" ],
+                "publisher" : [ "Tokyo, Japan : Japan Society of Mechanical Engineers", "Vol. 31, no. 1 (Feb. 1988)-v. 35, no. 4 (Nov. 1992)." ],
+                "mms" : [ "990003689520206761" ],
+                "dedupmemberids" : [ "9933109186606761" ],
+                "contributor" : [ "Nihon Kikai Gakkai.$$QNihon Kikai Gakkai." ],
+                "addtitle" : [ "Fluids engineering, heat transfer, power, combustion, thermophysical properties" ],
+                "frequency" : [ "Quarterly" ],
+                "genre" : [ "Periodicals." ],
+                "relation" : [ "$$Cearlier_title$$VJSME international journal$$QJSME international journal$$Z990003685960206761", "$$Clater_title$$VJSME international journal.  Series B, Fluids and thermal engineering$$QJSME international journal.  Series B, Fluids and thermal engineering$$Z990006499070206761" ],
+                "place" : [ "Tokyo, Japan :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990003689520206761" ],
+                "recordid" : [ "alma990003689520206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000368952-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.0014547773" ]
+              },
+              "addata" : {
+                "stitle" : [ "JSME int. j., Ser. 2 Fluids eng. heat transf. power combust. thermophys. prop." ],
+                "addtitle" : [ "Fluids engineering, heat transfer, power, combustion, thermophysical properties" ],
+                "date" : [ "1988 - 1992", "c1988-c1992" ],
+                "issn" : [ "0914-8817" ],
+                "coden" : [ "JSFPET" ],
+                "cop" : [ "Tokyo, Japan" ],
+                "pub" : [ "Japan Society of Mechanical Engineers" ],
+                "oclcid" : [ "(mcm)368952", "(mcm)368952mit01", "mitb10368952", "(sfx)954928596043", "(ocolc)17852357", "glis368952" ],
+                "lccn" : [ "92642662 //r94", "sn 88013883" ],
+                "format" : [ "journal" ],
+                "genre" : [ "journal" ],
+                "ristype" : [ "JOUR" ],
+                "jtitle" : [ "JSME international journal. Series II, Fluids engineering, heat transfer, power, combustion, thermophysical properties." ]
+              },
+              "sort" : {
+                "title" : [ "JSME international journal. Series II, Fluids engineering, heat transfer, power, combustion, thermophysical properties." ],
+                "author" : [ "Nihon Kikai Gakkai." ],
+                "creationdate" : [ "1988" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9085386931780974532" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Journal Collection (LSA4)",
+                "subLocationCode" : "LSA4",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TJ.J892",
+                "callNumberType" : "7",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990003689520206761",
+                "holdId" : "2262878950006761",
+                "holKey" : "HoldingResultKey [mid=2262878950006761, libraryId=161682860006761, locationCode=LSA4, callNumber=TJ.J892]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Journal Collection (LSA4)",
+                "subLocationCode" : "LSA4",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TJ.J892",
+                "callNumberType" : "7",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990003689520206761",
+                "holdId" : "2262878950006761",
+                "holKey" : "HoldingResultKey [mid=2262878950006761, libraryId=161682860006761, locationCode=LSA4, callNumber=TJ.J892]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "available_in_library", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990003689520206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:92642662&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://catalog.hathitrust.org/api/volumes/oclc/17852357.html",
+                "displayLabel" : "Hathi Trust"
+              }, {
+                "@id" : ":_2",
+                "linkType" : "linktorsrc",
+                "linkURL" : "https://sfx.mit.edu/sfx%5Flocal?rft.object%5Fid=954928596043&url%5Fver=Z39.88-2004&ctx%5Fver=Z39.88-2004&ctx%5Fenc=info:ofi/enc:UTF-8&rfr%5Fid=info:sid/sfxit.com:opac%5F856&url%5Fctx%5Ffmt=info:ofi/fmt:kev:mtx:ctx&sfx.ignore%5Fdate%5Fthreshold=1&svc%5Fval%5Ffmt=info:ofi/fmt:kev:mtx:sch%5Fsvc&",
+                "displayLabel" : "$$Elinktorsrc"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "TJ.J892",
+                "callNumberBrowseField" : "7"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "tj 1ǂ j752",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990005199140206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Heat transfer reviews, 1976-1986 " ],
+                "subject" : [ "Heat -- Transmission" ],
+                "format" : [ "vii, 681 p. ; 26 cm." ],
+                "identifier" : [ "$$CLC$$V   89021469;$$CISBN$$V0471524581;$$COCLC$$V(OCoLC)20853758" ],
+                "creationdate" : [ "c1990" ],
+                "publisher" : [ "New York : Wiley" ],
+                "mms" : [ "990005199140206761" ],
+                "contributor" : [ "Eckert, E. R. G. (Ernst Rudolf Georg), 1904-2004.$$QEckert, E. R. G." ],
+                "addtitle" : [ "International journal of heat and mass transfer." ],
+                "place" : [ "New York :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990005199140206761" ],
+                "recordid" : [ "alma990005199140206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000519914-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.0014270761" ]
+              },
+              "addata" : {
+                "aulast" : [ "Eckert" ],
+                "aufirst" : [ "E. R. G." ],
+                "auinit" : [ "E" ],
+                "addau" : [ "Eckert, E. R. G. (Ernst Rudolf Georg)" ],
+                "date" : [ "1990", "c1990" ],
+                "isbn" : [ "0471524581" ],
+                "notes" : [ "Includes bibliographical references." ],
+                "cop" : [ "New York" ],
+                "pub" : [ "Wiley" ],
+                "oclcid" : [ "(mcm)519914", "(mcm)519914mit01", "mitb10519914", "(ocolc)20853758", "glis519914" ],
+                "lccn" : [ "89021469" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Heat transfer reviews, 1976-1986" ]
+              },
+              "sort" : {
+                "title" : [ "Heat transfer reviews, 1976-1986 / edited by E.R.G. Eckert ... [et al.]." ],
+                "author" : [ "Eckert, E. R. G. (Ernst Rudolf Georg), 1904-2004." ],
+                "creationdate" : [ "1990" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9021358273130691239" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TJ260.H3965 1990",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990005199140206761",
+                "holdId" : "2238640780006761",
+                "holKey" : "HoldingResultKey [mid=2238640780006761, libraryId=161682860006761, locationCode=OCC, callNumber=TJ260.H3965 1990]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TJ260.H3965 1990",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990005199140206761",
+                "holdId" : "2238640780006761",
+                "holKey" : "HoldingResultKey [mid=2238640780006761, libraryId=161682860006761, locationCode=OCC, callNumber=TJ260.H3965 1990]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "available_in_library", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990005199140206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:0471524581,OCLC:,LCCN:89021469&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://catalog.hathitrust.org/api/volumes/oclc/20853758.html",
+                "displayLabel" : "Hathi Trust"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "TJ260.H3965 1990",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "tj\"260ǂ h3965 1990",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990000532160206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Developments in heat and mass transfer : Allan Ede memorial issue " ],
+                "subject" : [ "Heat -- Transmission", "Mass transfer" ],
+                "format" : [ "p. 1077-1216 : ill. ; 28 cm." ],
+                "identifier" : [ "$$CLC$$V   76025723;$$CISBN$$V0080212859;$$COCLC$$V(OCoLC)03320095" ],
+                "creationdate" : [ "1976" ],
+                "publisher" : [ "Oxford ; New York : Pergamon" ],
+                "mms" : [ "990000532160206761" ],
+                "contributor" : [ "Spalding, D. B. (Dudley Brian), 1923-$$QSpalding, D. B.", "Ede, A. J.$$QEde, A. J." ],
+                "addtitle" : [ "International journal of heat and mass transfer." ],
+                "place" : [ "Oxford ; New York :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990000532160206761" ],
+                "recordid" : [ "alma990000532160206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000053216-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.0013086726" ]
+              },
+              "addata" : {
+                "aulast" : [ "Spalding", "Ede" ],
+                "aufirst" : [ "D. B.", "A. J." ],
+                "auinit" : [ "D", "A" ],
+                "addau" : [ "Spalding, D. B. (Dudley Brian)", "Ede, A. J." ],
+                "date" : [ "1976" ],
+                "isbn" : [ "0080212859" ],
+                "notes" : [ "Includes bibliographies." ],
+                "cop" : [ "Oxford ;" ],
+                "pub" : [ "Pergamon" ],
+                "oclcid" : [ "(mcm)53216", "(mcm)53216mit01", "mitb10053216", "(ocolc)3320095", "glis53216" ],
+                "lccn" : [ "76025723" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Developments in heat and mass transfer : Allan Ede memorial issue" ]
+              },
+              "sort" : {
+                "title" : [ "Developments in heat and mass transfer : Allan Ede memorial issue / coordinating editor, D. B. Spaulding." ],
+                "author" : [ "Spalding, D. B. (Dudley Brian), 1923-" ],
+                "creationdate" : [ "1976" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9034217328821763243" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TJ260.D4",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990000532160206761",
+                "holdId" : "2248827980006761",
+                "holKey" : "HoldingResultKey [mid=2248827980006761, libraryId=161682860006761, locationCode=OCC, callNumber=TJ260.D4]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "TJ260.D4",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990000532160206761",
+                "holdId" : "2248827980006761",
+                "holKey" : "HoldingResultKey [mid=2248827980006761, libraryId=161682860006761, locationCode=OCC, callNumber=TJ260.D4]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "available_in_library" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990000532160206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:0080212859,OCLC:,LCCN:76025723&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "TJ260.D4",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "tj000000000260.d000000000004",
+                "callNumberBrowseField" : "LOCAL_CL_09X"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990006341460206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "journal" ],
+                "language" : [ "eng" ],
+                "title" : [ "Heat transfer research." ],
+                "subject" : [ "Heat -- Transmission" ],
+                "format" : [ "v. : ill. ; 26 cm." ],
+                "identifier" : [ "$$CLC$$V   92645910;$$CISSN$$V1064-2285;$$COCLC$$V(OCoLC)26275498" ],
+                "creationdate" : [ "c1992-" ],
+                "publisher" : [ "New York, N.Y. : Scripta Technica", "Vol. 24, no. 1 (1992)-" ],
+                "mms" : [ "990006341460206761" ],
+                "dedupmemberids" : [ "9933068134206761" ],
+                "contributor" : [ "Scripta Technica, inc.$$QScripta Technica, inc.", "American Society of Mechanical Engineers. Heat Transfer Division.$$QAmerican Society of Mechanical Engineers. Heat Transfer Division." ],
+                "edition" : [ "English ed." ],
+                "frequency" : [ "Eight no. a year" ],
+                "genre" : [ "Periodicals." ],
+                "relation" : [ "$$Clater_title$$VInternational journal of fluid mechanics research.$$Z990008918200206761", "$$Cform$$VHeat transfer research (Online)$$QHeat transfer research (Online)", "$$Cearlier_title$$VHeat transfer: Soviet research$$QHeat transfer: Soviet research$$Z990002906590206761" ],
+                "place" : [ "New York, N.Y. :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990006341460206761" ],
+                "recordid" : [ "alma990006341460206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000634146-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "6.300541E-4" ]
+              },
+              "addata" : {
+                "stitle" : [ "Heat transf. res." ],
+                "date" : [ "1992", "c1992-" ],
+                "issn" : [ "1064-2285" ],
+                "coden" : [ "HTREE7" ],
+                "cop" : [ "New York, N.Y" ],
+                "pub" : [ "Scripta Technica" ],
+                "oclcid" : [ "(mcm)634146mit01", "(vera)530156", "(ocolc)26275498" ],
+                "lccn" : [ "92645910", "sn 92005130" ],
+                "edition" : [ "English ed." ],
+                "format" : [ "journal" ],
+                "genre" : [ "journal" ],
+                "ristype" : [ "JOUR" ],
+                "jtitle" : [ "Heat transfer research." ]
+              },
+              "sort" : {
+                "title" : [ "Heat transfer research." ],
+                "author" : [ "Scripta Technica, inc." ],
+                "creationdate" : [ "1992" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9040881535041399509" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Journal Collection (LSA4)",
+                "subLocationCode" : "LSA4",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "QC.H442",
+                "callNumberType" : "7",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990006341460206761",
+                "holdId" : "2270107120006761",
+                "holKey" : "HoldingResultKey [mid=2270107120006761, libraryId=161682860006761, locationCode=LSA4, callNumber=QC.H442]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Journal Collection (LSA4)",
+                "subLocationCode" : "LSA4",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "QC.H442",
+                "callNumberType" : "7",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990006341460206761",
+                "holdId" : "2270107120006761",
+                "holKey" : "HoldingResultKey [mid=2270107120006761, libraryId=161682860006761, locationCode=LSA4, callNumber=QC.H442]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "available_in_library", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990006341460206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:92645910&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://catalog.hathitrust.org/api/volumes/oclc/26275498.html",
+                "displayLabel" : "Hathi Trust"
+              }, {
+                "@id" : ":_2",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://dl.begellhouse.com/journals/46784ef93dddff27.html",
+                "displayLabel" : "$$Elinktorsrc"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "QC.H442",
+                "callNumberBrowseField" : "7"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "qc\"320ǂ h38",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          } ],
+          "timelog" : {
+            "BUILD_RESULTS_RETRIVE_FROM_DB" : "1874",
+            "CALL_SOLR_GET_IDS_LIST" : "1076",
+            "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "7649",
+            "RETRIVE_COLLECTION_DISCOVERY_INFO" : "236",
+            "RETRIVE_FROM_DB_COURSE_INFO" : "3",
+            "RETRIVE_FROM_DB_RECORDS" : "786",
+            "RETRIVE_FROM_DB_RELATIONS" : "124",
+            "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "5464",
+            "SET_AVAILABILTY_HOLDING_DEDUPS" : "2185",
+            "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "3047",
+            "PRIMA_LOCAL_SEARCH_TOTAL" : "13670",
+            "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
+            "BUILD_COMBINED_RESULTS_MAP" : 13771,
+            "COMBINED_SEARCH_TIME" : 13781,
+            "PROCESS_COMBINED_RESULTS" : 0,
+            "FEATURED_SEARCH_TIME" : 1
+          },
+          "facets" : [ ]
+        }
+  recorded_at: Tue, 11 May 2021 16:04:53 GMT
+recorded_with: VCR 6.0.0

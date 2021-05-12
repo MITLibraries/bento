@@ -35,15 +35,16 @@ class NormalizePrimoBooks
   end
 
   def subject_link(subj)
-    [ENV['MIT_PRIMO_URL'], '/discovery/search?query=sub,exact,', 
-     subj, '&vid=', ENV['PRIMO_VID']].join('')
+    [ENV['MIT_PRIMO_URL'], '/discovery/browse?browseQuery=', 
+     subj, '&browseScope=subject.1&vid=', ENV['PRIMO_VID']].join('')
   end
 
   def location
     return unless @record['delivery']['holding'] && @record['delivery']['bestlocation']
     return if @record['delivery']['bestlocation']['mainLocation'] == 'Internet Resource'
-    location_concatted = @record['delivery']['bestlocation']['mainLocation'] + ' ' + @record['delivery']['bestlocation']['subLocation']
-    call_number = @record['delivery']['bestlocation']['callNumber']
-    [[location_concatted, call_number]]
+    @record['delivery']['holding'].map do |holding|
+      return unless holding['mainLocation'] && holding['subLocation'] && holding['callNumber']
+      ["#{holding['mainLocation']} #{holding['subLocation']}", holding['callNumber']]
+    end
   end
 end

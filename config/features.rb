@@ -46,4 +46,8 @@ Flipflop.configure do
   feature :disable_worldcatinate,
     default: ENV['DISABLE_WORLDCATINATE'],
     description: 'Determines if links for renovation items should be enabled'
+
+  feature :primo_search,
+    default: ENV['PRIMO_SEARCH'],
+    description: 'Returns results from Primo Search API instead of EDS'
 end
