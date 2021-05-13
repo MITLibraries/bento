@@ -29,6 +29,7 @@ Rails.application.configure do
   ENV['ALEPH_HINT_SOURCE'] = 'https://fake.example.com/s/fake/getserial_mini.xml?dl=1'
   ENV['FULL_RECORD_TOGGLE_BUTTON'] = 'true'
 
+  ENV['EXL_INST_ID'] = '01MIT_INST'
   ENV['PRIMO_SEARCH'] = 'true'
   ENV['PRIMO_SEARCH_API_URL'] = 'https://another_fake_server.example.com'
   ENV['PRIMO_SEARCH_API_KEY'] = 'FAKE_PRIMO_SEARCH_API_KEY'

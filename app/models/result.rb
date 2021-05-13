@@ -23,7 +23,13 @@ class Result
       best_link(marc_856, 'marc_856')
     elsif fulltext_links && relevant_fulltext_links?
       best_link(fulltext_links_picker(true), 'eds fulltext')
+    elsif Flipflop.enabled? :primo_search
+      alma_link_resolver_url
     end
+  end
+
+  def alma_link_resolver_url
+    self.openurl
   end
 
   # URL to use for check_sfx button in the UI

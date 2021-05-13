@@ -63,6 +63,7 @@ custom hint metadata.
 - `EDS_PROFILE_URI`: URI for the EDS UI (not API) profile
 - `EDS_URL`: the root EDS API URL
 - `EDS_USER_ID`: your EDS API user id
+- `EXL_INST_ID`: your Ex Libris institution ID.
 - `GOOGLE_API_KEY`: your Google Custom Search API key
 - `GOOGLE_CUSTOM_SEARCH_ID`: your Google Custom Search engine ID
 - `MAX_AUTHORS`: the maximum number of authors displayed in any record.

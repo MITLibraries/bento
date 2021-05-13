@@ -8,6 +8,7 @@ class NormalizePrimoArticles
   def article_metadata(result)
     result.citation = numbering || chapter_numbering
     result.in = journal_title || book_title
+    result.openurl = openurl
     result
   end
 
@@ -34,5 +35,10 @@ class NormalizePrimoArticles
     return unless @record['pnx']['addata']['btitle']
     return unless @record['pnx']['addata']['date'] && @record['pnx']['addata']['pages']
     "#{@record['pnx']['addata']['date'].join('')}, pp. #{@record['pnx']['addata']['pages'].join('')}"
+  end
+
+  def openurl
+    return unless @record['delivery']['almaOpenurl']
+    @record['delivery']['almaOpenurl']
   end
 end
