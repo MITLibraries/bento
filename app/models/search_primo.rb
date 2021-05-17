@@ -18,9 +18,9 @@ class SearchPrimo
     @results = {}
   end
 
-  def search(term, scope)
+  def search(term, scope, per_page)
     result = @primo_http.headers(accept: 'application/json')
-                        .get(search_url(term, scope))
+                        .get(search_url(term, scope, per_page))
 
     raise "Primo Error Detected: #{result.status}" unless result.status == 200
 
@@ -36,9 +36,9 @@ class SearchPrimo
 
   # This is subject to change. Right now we are just using the required 
   # params and assuming that no operators are used.
-  def search_url(term, scope)
+  def search_url(term, scope, per_page)
     [PRIMO_SEARCH_API_URL, '/primo/v1/search?q=any,contains,', 
       clean_term(term), '&vid=', PRIMO_VID, '&tab=bento&scope=', scope,
-      '&apikey=', PRIMO_SEARCH_API_KEY].join('')
+      '&limit=', per_page, '&apikey=', PRIMO_SEARCH_API_KEY].join('')
   end
 end

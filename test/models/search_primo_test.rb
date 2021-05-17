@@ -3,14 +3,14 @@ require 'test_helper'
 class SearchPrimoTest < ActiveSupport::TestCase
   test 'can call Primo API' do
     VCR.use_cassette('popcorn primo books', allow_playback_repeats: true) do
-      query = SearchPrimo.new.search('popcorn', ENV['PRIMO_BOOK_SCOPE'])
+      query = SearchPrimo.new.search('popcorn', ENV['PRIMO_BOOK_SCOPE'], 5)
       assert_equal Hash, query.class
     end
   end
 
-  test 'Local-scoped search returns local results' do
+  test 'locally scoped search returns local results' do
     VCR.use_cassette('popcorn primo books', allow_playback_repeats: true) do
-      query = SearchPrimo.new.search('popcorn', ENV['PRIMO_BOOK_SCOPE'])
+      query = SearchPrimo.new.search('popcorn', ENV['PRIMO_BOOK_SCOPE'], 5)
       assert_operator query['info']['total'], :>, 0
       assert_operator query['info']['totalResultsLocal'], :>, 0
       assert_equal query['info']['totalResultsLocal'], query['info']['total']
@@ -20,7 +20,7 @@ class SearchPrimoTest < ActiveSupport::TestCase
 
   test 'CDI-scoped search returns CDI results' do
     VCR.use_cassette('popcorn primo articles', allow_playback_repeats: true) do
-      query = SearchPrimo.new.search('popcorn', ENV['PRIMO_ARTICLE_SCOPE'])
+      query = SearchPrimo.new.search('popcorn', ENV['PRIMO_ARTICLE_SCOPE'], 5)
       assert_operator query['info']['total'], :>, 0
       assert_operator query['info']['totalResultsPC'], :>, 0
       assert_equal query['info']['totalResultsPC'], query['info']['total']
@@ -28,10 +28,22 @@ class SearchPrimoTest < ActiveSupport::TestCase
     end
   end
 
+  test 'search results are limited accordingly' do
+    VCR.use_cassette('popcorn primo books', allow_playback_repeats: true) do
+      query = SearchPrimo.new.search('popcorn', ENV['PRIMO_BOOK_SCOPE'], 5)
+      assert_equal 5, query['info']['last'] 
+    end
+
+    VCR.use_cassette('popcorn primo articles', allow_playback_repeats: true) do
+      query = SearchPrimo.new.search('popcorn', ENV['PRIMO_ARTICLE_SCOPE'], 5)
+      assert_equal 5, query['info']['last'] 
+    end
+  end
+
   test 'handles error states as expected' do
     VCR.use_cassette('bad primo response', allow_playback_repeats: true) do
       assert_raises "Primo Error Detected: 500 Internal Server Error" do 
-        SearchPrimo.new.search('popcorn', ENV['PRIMO_BOOK_SCOPE'])
+        SearchPrimo.new.search('popcorn', ENV['PRIMO_BOOK_SCOPE'], 5)
       end
     end
   end

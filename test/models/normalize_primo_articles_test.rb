@@ -5,7 +5,7 @@ class NormalizePrimoArticlesTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn primo articles',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('popcorn', 
-                                         ENV['PRIMO_ARTICLE_SCOPE'])
+                                         ENV['PRIMO_ARTICLE_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_ARTICLE_SCOPE'], 
                                    'popcorn')
     end
@@ -15,7 +15,7 @@ class NormalizePrimoArticlesTest < ActiveSupport::TestCase
     VCR.use_cassette('primo chapter',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('"spider monkey optimization algorithm"',
-                                         ENV['PRIMO_ARTICLE_SCOPE'])
+                                         ENV['PRIMO_ARTICLE_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_ARTICLE_SCOPE'], 
                                    '"spider monkey optimization algorithm"')
     end
@@ -28,7 +28,7 @@ class NormalizePrimoArticlesTest < ActiveSupport::TestCase
     VCR.use_cassette('missing fields primo articles', 
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('popcorn', 
-                                         ENV['PRIMO_ARTICLE_SCOPE'])
+                                         ENV['PRIMO_ARTICLE_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_ARTICLE_SCOPE'], 
                                    'popcorn')
     end
@@ -36,11 +36,11 @@ class NormalizePrimoArticlesTest < ActiveSupport::TestCase
 
   def missing_fields_chapter
     # Note that this cassette has been manually eduited to remove the 
-    # following fields from the first result: btitle, pages, date.
+    # following fields from the first result: btitle, pages.
     VCR.use_cassette('missing fields primo chapter',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('"spider monkey optimization algorithm"',
-                                         ENV['PRIMO_ARTICLE_SCOPE'])
+                                         ENV['PRIMO_ARTICLE_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_ARTICLE_SCOPE'], 
                                    '"spider monkey optimization algorithm"')
     end
@@ -91,7 +91,7 @@ class NormalizePrimoArticlesTest < ActiveSupport::TestCase
 
   test 'constructs full-text links as expected' do
     result = popcorn_articles['results'].first
-    assert_equal 'https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-04-16 10:42:13&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-crossref&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Popcorn&rft.jtitle=Physics+world&rft.date=2016-11&rft.volume=29&rft.issue=11&rft.spage=42&rft.epage=42&rft.pages=42-42&rft.issn=0953-8585&rft.eissn=2058-7058&rft_id=info:doi/10.1088%2F2058-7058%2F29%2F11%2F46&rft_dat=<crossref>10_1088_2058_7058_29_11_46</crossref>&svc_dat=viewit',
+    assert_equal 'https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 11:06:14&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-crossref&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Popcorn&rft.jtitle=Physics+world&rft.date=2016-11&rft.volume=29&rft.issue=11&rft.spage=42&rft.epage=42&rft.pages=42-42&rft.issn=0953-8585&rft.eissn=2058-7058&rft_id=info:doi/10.1088%2F2058-7058%2F29%2F11%2F46&rft_dat=<crossref>10_1088_2058_7058_29_11_46</crossref>&svc_dat=viewit',
                   result.openurl
   end
 
