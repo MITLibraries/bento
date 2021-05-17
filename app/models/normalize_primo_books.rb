@@ -54,8 +54,9 @@ class NormalizePrimoBooks
     return unless @record['delivery']['deliveryCategory']
     mms_id = @record['pnx']['display']['mms'].first
     if @record['delivery']['deliveryCategory'].include?('Alma-E')
-      [ENV['MIT_PRIMO_URL'], '/discovery/openurl?institution=', ENV['EXL_INST_ID'],
-      '&vid=', ENV['PRIMO_VID'], '&rft.mms_id=', mms_id].join('')
+      [ENV['MIT_PRIMO_URL'], '/discovery/openurl?institution=', 
+       ENV['EXL_INST_ID'], '&vid=', ENV['PRIMO_VID'], '&rft.mms_id=', mms_id,
+       '&u.ignore_date_coverage=true'].join('')
     end
   end
 end
