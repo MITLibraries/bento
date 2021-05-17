@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://another_fake_server.example.com/primo/v1/search?apikey=FAKE_PRIMO_SEARCH_API_KEY&q=any,contains,Ch%CA%BBoms%C5%ADk%CA%BBi%20kk%C5%ADt%20%C5%8Fmn%C5%ADn%20toj%C5%8Fn&scope=alma&tab=bento&vid=FAKE_PRIMO_VID
+    uri: https://another_fake_server.example.com/primo/v1/search?apikey=FAKE_PRIMO_SEARCH_API_KEY&limit=5&q=any,contains,Ch%CA%BBoms%C5%ADk%CA%BBi%20kk%C5%ADt%20%C5%8Fmn%C5%ADn%20toj%C5%8Fn&scope=alma&tab=bento&vid=FAKE_PRIMO_VID
     body:
       encoding: UTF-8
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Vary:
       - accept-encoding
       X-Exl-Api-Remaining:
-      - '549960'
+      - '549998'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -35,9 +35,9 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '7908'
+      - '7959'
       Date:
-      - Thu, 29 Apr 2021 19:24:17 GMT
+      - Mon, 17 May 2021 15:06:01 GMT
       Server:
       - CA-API-Gateway/9.0
     body:
@@ -84,7 +84,7 @@ http_interactions:
                 "originalsourceid" : [ "001349272-MIT01" ],
                 "sourcesystem" : [ "ILS" ],
                 "sourceformat" : [ "MARC21" ],
-                "score" : [ "0.020787643" ]
+                "score" : [ "0.020869972" ]
               },
               "addata" : {
                 "aulast" : [ "Barsky" ],
@@ -189,6 +189,7 @@ http_interactions:
               "hasFilteredServices" : null,
               "digitalAuxiliaryMode" : false,
               "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
               "GetIt1" : [ {
                 "category" : "Alma-P",
                 "links" : [ {
@@ -225,24 +226,24 @@ http_interactions:
             }
           } ],
           "timelog" : {
-            "BUILD_RESULTS_RETRIVE_FROM_DB" : "28",
-            "CALL_SOLR_GET_IDS_LIST" : "436",
-            "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "375",
-            "RETRIVE_COLLECTION_DISCOVERY_INFO" : "8",
-            "RETRIVE_FROM_DB_COURSE_INFO" : "3",
-            "RETRIVE_FROM_DB_RECORDS" : "14",
-            "RETRIVE_FROM_DB_RELATIONS" : "1",
-            "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "324",
-            "SET_AVAILABILTY_HOLDING_DEDUPS" : "51",
-            "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "41",
-            "PRIMA_LOCAL_SEARCH_TOTAL" : "892",
+            "BUILD_RESULTS_RETRIVE_FROM_DB" : "280",
+            "CALL_SOLR_GET_IDS_LIST" : "2693",
+            "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "396",
+            "RETRIVE_COLLECTION_DISCOVERY_INFO" : "147",
+            "RETRIVE_FROM_DB_COURSE_INFO" : "39",
+            "RETRIVE_FROM_DB_RECORDS" : "74",
+            "RETRIVE_FROM_DB_RELATIONS" : "17",
+            "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "197",
+            "SET_AVAILABILTY_HOLDING_DEDUPS" : "199",
+            "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "125",
+            "PRIMA_LOCAL_SEARCH_TOTAL" : "3511",
             "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
-            "BUILD_COMBINED_RESULTS_MAP" : 958,
-            "COMBINED_SEARCH_TIME" : 963,
+            "BUILD_COMBINED_RESULTS_MAP" : 5226,
+            "COMBINED_SEARCH_TIME" : 5229,
             "PROCESS_COMBINED_RESULTS" : 0,
-            "FEATURED_SEARCH_TIME" : 1
+            "FEATURED_SEARCH_TIME" : 0
           },
           "facets" : [ ]
         }
-  recorded_at: Thu, 29 Apr 2021 19:24:17 GMT
+  recorded_at: Mon, 17 May 2021 15:06:01 GMT
 recorded_with: VCR 6.0.0

@@ -5,7 +5,7 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn primo books',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('popcorn', 
-                                         ENV['PRIMO_BOOK_SCOPE'])
+                                         ENV['PRIMO_BOOK_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 
                                    'popcorn')
     end
@@ -18,7 +18,7 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     VCR.use_cassette('missing fields primo books', 
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('popcorn', 
-                                         ENV['PRIMO_BOOK_SCOPE'])
+                                         ENV['PRIMO_BOOK_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 
                                    'popcorn')
     end
@@ -28,7 +28,7 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     VCR.use_cassette('physical book primo', 
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn', 
-                                         ENV['PRIMO_BOOK_SCOPE'])
+                                         ENV['PRIMO_BOOK_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 
                                    'Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn')
     end
@@ -38,7 +38,7 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     VCR.use_cassette('local journal primo',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('Journal of heat transfer',
-                                          ENV['PRIMO_BOOK_SCOPE'])
+                                          ENV['PRIMO_BOOK_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
                                    'Journal of heat transfer')
     end

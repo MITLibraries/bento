@@ -5,7 +5,7 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn primo',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('popcorn', 
-                                         ENV['PRIMO_BOOK_SCOPE'])
+                                         ENV['PRIMO_BOOK_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 
                                    'popcorn')
     end
@@ -13,12 +13,12 @@ class NormalizePrimoTest < ActiveSupport::TestCase
 
   def missing_fields
     # Note that this cassette has been manually edited to remove the 
-    # following fields from the result: creationdate, title, author, 
-    # contributor
+    # following fields from the result: creationdate, title, creator, 
+    # contributor, type, recordid
     VCR.use_cassette('missing fields primo', 
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn', 
-                                         ENV['PRIMO_BOOK_SCOPE'])
+                                         ENV['PRIMO_BOOK_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 
                                    'Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn')
     end
@@ -28,7 +28,7 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     VCR.use_cassette('no results primo',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('popcornandorangejuice',
-                                         ENV['PRIMO_BOOK_SCOPE'])
+                                         ENV['PRIMO_BOOK_SCOPE'], 5)
       query = NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
                                            'popcornandorangejuice')
       assert_equal(0, query['total'])

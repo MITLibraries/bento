@@ -63,7 +63,7 @@ class SearchController < ApplicationController
     elsif params[:target] == 'articles' || params[:target] == 'books'
       search_eds(page, per_page)
     else
-      search_primo
+      search_primo(per_page)
     end
   end
 
@@ -84,8 +84,8 @@ class SearchController < ApplicationController
   end
 
   # Searches Primo
-  def search_primo
-    raw_results = SearchPrimo.new.search(strip_truncate_q, primo_scope)
+  def search_primo(per_page)
+    raw_results = SearchPrimo.new.search(strip_truncate_q, primo_scope, per_page)
     NormalizePrimo.new.to_result(raw_results, params[:target], strip_truncate_q)
   end
 
