@@ -37,8 +37,16 @@ class NormalizePrimoArticles
     "#{@record['pnx']['addata']['date'].join('')}, pp. #{@record['pnx']['addata']['pages'].join('')}"
   end
 
+  # Here we are converting the Alma link resolver URL provided by the Primo 
+  # Search API to redirect to the Primo UI. This is done for UX purposes, 
+  # as the regular Alma link resolver URLs redirect to a plaintext 
+  # disambiguation page.
   def openurl
     return unless @record['delivery']['almaOpenurl']
-    @record['delivery']['almaOpenurl']
+    primo_openurl = ['https://mit.primo.exlibrisgroup.com/discovery/openurl?institution=',
+                     ENV['EXL_INST_ID'], '&vid=', ENV['PRIMO_VID'],'&'].join('')
+    link_resolver_url = @record['delivery']['almaOpenurl'].gsub('https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?',
+                                                                primo_openurl)
+    [link_resolver_url, '&u.ignore_date_coverage=true'].join('')
   end
 end
