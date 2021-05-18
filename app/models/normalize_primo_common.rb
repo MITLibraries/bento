@@ -29,25 +29,29 @@ class NormalizePrimoCommon
     author_list = []
 
     if @record['pnx']['display']['creator'] 
-      @record['pnx']['display']['creator'].each do |au|
-        author = sanitize_author(au)
-        author_list << [author, author_link(author)]
+      creators = sanitize_authors(@record['pnx']['display']['creator'])
+      creators.each do |creator|
+        author_list << [creator, author_link(creator)]
       end
     end
 
     if @record['pnx']['display']['contributor']
-      @record['pnx']['display']['contributor'].each do |au|
-        author = sanitize_author(au)
-        author_list << [author, author_link(author)]
+      contributors = sanitize_authors(@record['pnx']['display']['contributor'])
+      contributors.each do |contributor|
+        author_list << [contributor, author_link(contributor)]
       end
     end
 
     author_list.uniq
   end
 
-  # This method is required to remove MARC artifacts from the API response
-  def sanitize_author(author)
-    author.gsub(/\$\$Q.*$/, '')
+  # This method is required to clean up bad data in the API response
+  def sanitize_authors(authors)
+    if authors.any? { |author| author.include?(';') }
+      authors.map! { |author| author.split(';') }.flatten!
+    end
+
+    authors.map { |author| author.strip.gsub(/\$\$Q.*$/, '') }
   end
 
   def author_link(author)

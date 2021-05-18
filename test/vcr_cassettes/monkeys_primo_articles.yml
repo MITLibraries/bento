@@ -1,0 +1,1231 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://another_fake_server.example.com/primo/v1/search?apikey=FAKE_PRIMO_SEARCH_API_KEY&limit=5&q=any,contains,monkeys&scope=cdi&tab=bento&vid=FAKE_PRIMO_VID
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - Keep-Alive
+      Host:
+      - api-na.hosted.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Vary:
+      - accept-encoding
+      X-Exl-Api-Remaining:
+      - '549964'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,POST,DELETE,PUT,OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Mon, 17 May 2021 20:06:52 GMT
+      Server:
+      - CA-API-Gateway/9.0
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "info" : {
+            "totalResultsLocal" : -1,
+            "totalResultsPC" : 754746,
+            "total" : 754746,
+            "first" : 1,
+            "last" : 5
+          },
+          "highlights" : {
+            "snippet" : [ "monkey", "monkeys" ],
+            "title" : [ "Monkeys", "monkeys", "Monkey" ],
+            "termsUnion" : [ "monkey", "monkeys", "Monkeys", "Monkey" ]
+          },
+          "docs" : [ {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Monkeys" ],
+                "creationdate" : [ "20120418" ],
+                "author" : [ "Liu, Ken" ]
+              },
+              "control" : {
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "recordid" : [ "cdi_crossref_primary_10_1038_484410a" ],
+                "sourcerecordid" : [ "10_1038_484410a" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-11782-215b52dfce158458f5dc4d2f5c42ec852dff2b5941e5ec4bc08d67d449b552403" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNotjk1rwkAQQAdRNGrpz-hpdWYzkx2PRdoqRLzoOST7AVZbS_bkvxepp3d48HgAr4QLwlKXrMyE7QAKYlcZrtQNoUC0alDLagLTnL8RUchxAePd9fccb3kOo9Recnx5cgbHz4_DemPq_dd2_V4bIqfWWJJObEg-kiiLJgmeg03i2UavD5VsJyumKNFz51FD5QLzqhOxjOUM3v67vr_m3MfU_PWnn7a_NYTN4795_pd3tqI0vQ" ],
+                "sourceid" : [ "crossref" ],
+                "score" : [ "0.018675037" ]
+              },
+              "addata" : {
+                "issn" : [ "0028-0836" ],
+                "jtitle" : [ "Nature (London)" ],
+                "genre" : [ "article" ],
+                "au" : [ "Liu, Ken" ],
+                "atitle" : [ "Monkeys" ],
+                "date" : [ "2012-04-18" ],
+                "risdate" : [ "2012" ],
+                "volume" : [ "484" ],
+                "issue" : [ "7394" ],
+                "spage" : [ "410" ],
+                "epage" : [ "410" ],
+                "pages" : [ "410-410" ],
+                "eissn" : [ "1476-4687" ],
+                "ristype" : [ "JOUR" ],
+                "doi" : [ "10.1038/484410a" ],
+                "format" : [ "journal" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "creator" : [ "Liu, Ken" ],
+                "recordid" : [ "eNotjk1rwkAQQAdRNGrpz-hpdWYzkx2PRdoqRLzoOST7AVZbS_bkvxepp3d48HgAr4QLwlKXrMyE7QAKYlcZrtQNoUC0alDLagLTnL8RUchxAePd9fccb3kOo9Recnx5cgbHz4_DemPq_dd2_V4bIqfWWJJObEg-kiiLJgmeg03i2UavD5VsJyumKNFz51FD5QLzqhOxjOUM3v67vr_m3MfU_PWnn7a_NYTN4795_pd3tqI0vQ" ],
+                "recordtype" : [ "article" ],
+                "title" : [ "Monkeys", "Nature (London)" ],
+                "creationdate" : [ "2012" ],
+                "scope" : [ "AAYXX", "CITATION" ],
+                "creatorcontrib" : [ "Liu, Ken" ],
+                "issn" : [ "0028-0836", "1476-4687" ],
+                "fulltext" : [ "true" ],
+                "rsrctype" : [ "article" ],
+                "startdate" : [ "20120418" ],
+                "enddate" : [ "20120418" ]
+              },
+              "display" : {
+                "lds50" : [ "peer_reviewed" ],
+                "type" : [ "article" ],
+                "source" : [ "Academic Search Complete", "Medline Complete", "Alma/SFX Local Collection", "ProQuest Advanced Technologies & Aerospace Collection", "Advanced Technologies & Aerospace Collection", "Nature Journal Archive", "Nature Journals Online", "Agricultural & Environmental Science Collection", "Environmental Science Collection" ],
+                "creator" : [ "Liu, Ken" ],
+                "ispartof" : [ "Nature (London), 2012-04-18, Vol.484 (7394), p.410-410" ],
+                "identifier" : [ "ISSN: 0028-0836", "EISSN: 1476-4687", "DOI: 10.1038/484410a" ],
+                "language" : [ "eng" ],
+                "snippet" : [ "...Ted and Kathy stared at the chaotic scene through the bars of the cage. A large, male macaque monkey about two feet tall screeched and lifted the typewriter..." ],
+                "title" : [ "Monkeys" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "facets" : {
+                "language" : [ "eng" ],
+                "creationdate" : [ "2012" ],
+                "creatorcontrib" : [ "Liu, Ken" ],
+                "rsrctype" : [ "articles" ],
+                "prefilter" : [ "articles" ],
+                "collection" : [ "CrossRef" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-11782-215b52dfce158458f5dc4d2f5c42ec852dff2b5941e5ec4bc08d67d449b552403" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Nature (London)" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 16:06:53&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-crossref&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Monkeys&rft.jtitle=Nature+%28London%29&rft.au=Liu%2C+Ken&rft.date=2012-04-18&rft.volume=484&rft.issue=7394&rft.spage=410&rft.epage=410&rft.pages=410-410&rft.issn=0028-0836&rft.eissn=1476-4687&rft_id=info:doi/10.1038%2F484410a&rft_dat=<crossref>10_1038_484410a</crossref>&svc_dat=viewit"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ ],
+                "citedby" : [ ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_crossref_primary_10_1038_484410a"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Information seeking by rhesus monkeys (Macaca mulatta) and capuchin monkeys (Cebus apella)" ],
+                "creationdate" : [ "201107" ],
+                "author" : [ "Beran, Michael J ; Smith, J. David" ]
+              },
+              "control" : {
+                "sourcetype" : [ "Open Access Repository" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "pqid" : [ "867321609" ],
+                "galeid" : [ "A256414754" ],
+                "recordid" : [ "cdi_pubmedcentral_primary_oai_pubmedcentral_nih_gov_3095768" ],
+                "sourcerecordid" : [ "A256414754" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-1691t-755d341723f843a89e42dc0402e9ef754773e44639110d83b16497fb4295ccd73" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNqFkU-P0zAQxS0EYsvCV4BcEOwhYfwncXJZqapYWGkRF7hwsVxn0rqb2MVOVuq3x1G7XTghHyzN_N7TzDxC3lEoKNDq064wfuPsaL0rGFBaACtS_RlZ0FryXNa8fk4WABRyYFJekFcx7gBAMFm_JBeMirLhki3Ir1vX-TDo2SmLiPfWbbL1IQtbjFPMBu_u8RCzj9-0SS8bpl6Po77KtGszo_eT2Vr3RK1wnUR6j32vr16TF53uI745_Zfk583nH6uv-d33L7er5V1Oq4aOuSzLlgsqGe9qwXXdoGCtAQEMG-xkKaTkKETFG0qhrfmaVqKR3VqwpjSmlfySXB9999N6wNagG4Pu1T7YQYeD8tqqfzvObtXGPygOTSmrOhl8OBkE_3vCOKrBRjPv4NBPUdWV5IxW0CSyOJIb3aOy6XTJcD5Mi4M13mFnU33JykpQkUZPAnkUmOBjDNidx6Kg5iTVTp2TVHOSCphK9aR8-_dWZ91jdAl4fwJ0NLrvgnbGxidOMJCshsQtjxymDB4sBhWNRWewtQHNqFpv_zvMH0D3wFI" ],
+                "sourceid" : [ "gale_pubme" ],
+                "score" : [ "0.016651459" ]
+              },
+              "addata" : {
+                "abstract" : [ "Animal metacognition is an active, growing research area, and one part of metacognition is flexible information-seeking behavior. In Roberts et al. (2009), pigeons failed an intuitive information-seeking task. They basically refused, despite multiple fostering experiments, to view a sample image before attempting to find its match. Roberts et al. concluded that pigeons’ lack of an information-seeking capacity reflected their broader lack of metacognition. We report a striking species contrast to pigeons. Eight rhesus macaques and seven capuchin monkeys passed the Roberts et al. test of information seeking—often in their first testing session. Members of both primate species appreciated immediately the lack of information signaled by an occluded sample, and the need for an information-seeking response to manage the situation. In subsequent testing, macaques demonstrated flexible/varied forms of information management. Capuchins did not. The research findings bear on the phylogenetic distribution of metacognition across the vertebrates, and on the underlying psychological requirements for metacognitive and information-seeking performances." ],
+                "issn" : [ "0010-0277" ],
+                "addtitle" : [ "Cognition" ],
+                "oa" : [ "free_for_read" ],
+                "jtitle" : [ "Cognition" ],
+                "genre" : [ "article" ],
+                "au" : [ "Beran, Michael J", "Smith, J. David" ],
+                "atitle" : [ "Information seeking by rhesus monkeys (Macaca mulatta) and capuchin monkeys (Cebus apella)" ],
+                "date" : [ "2011-07" ],
+                "risdate" : [ "2011" ],
+                "volume" : [ "120" ],
+                "issue" : [ "1" ],
+                "spage" : [ "90" ],
+                "epage" : [ "105" ],
+                "pages" : [ "90-105" ],
+                "eissn" : [ "1873-7838" ],
+                "coden" : [ "CGTNAU" ],
+                "ristype" : [ "JOUR" ],
+                "cop" : [ "Amsterdam" ],
+                "pub" : [ "Elsevier B.V" ],
+                "doi" : [ "10.1016/j.cognition.2011.02.016" ],
+                "format" : [ "journal" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "backlink" : [ "$$Uhttp://pascal-francis.inist.fr/vibad/index.php?action=getRecordDetail&idt=24207280$$DView record in Pascal Francis" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "creator" : [ "Beran, Michael J", "Smith, J. David" ],
+                "subject" : [ "Comparative cognition ; Monkeys ; Information seeking ; Primate cognition ; Metacognition ; Fundamental and applied biological sciences. Psychology ; Biological and medical sciences ; Cognition. Intelligence ; Miscellaneous ; Psychology. Psychoanalysis. Psychiatry ; Psychology. Psychophysiology ; Learning ; Psychomotor Performance ; Animals ; Discrimination (Psychology) ; Female ; Information Seeking Behavior ; Male ; Cognition ; Macaca mulatta - psychology ; Photic Stimulation ; Cebus - psychology ; Pigeons ; Index Medicus ; primate cognition ; monkeys ; comparative cognition ; metacognition ; information seeking" ],
+                "recordid" : [ "eNqFkU-P0zAQxS0EYsvCV4BcEOwhYfwncXJZqapYWGkRF7hwsVxn0rqb2MVOVuq3x1G7XTghHyzN_N7TzDxC3lEoKNDq064wfuPsaL0rGFBaACtS_RlZ0FryXNa8fk4WABRyYFJekFcx7gBAMFm_JBeMirLhki3Ir1vX-TDo2SmLiPfWbbL1IQtbjFPMBu_u8RCzj9-0SS8bpl6Po77KtGszo_eT2Vr3RK1wnUR6j32vr16TF53uI745_Zfk583nH6uv-d33L7er5V1Oq4aOuSzLlgsqGe9qwXXdoGCtAQEMG-xkKaTkKETFG0qhrfmaVqKR3VqwpjSmlfySXB9999N6wNagG4Pu1T7YQYeD8tqqfzvObtXGPygOTSmrOhl8OBkE_3vCOKrBRjPv4NBPUdWV5IxW0CSyOJIb3aOy6XTJcD5Mi4M13mFnU33JykpQkUZPAnkUmOBjDNidx6Kg5iTVTp2TVHOSCphK9aR8-_dWZ91jdAl4fwJ0NLrvgnbGxidOMJCshsQtjxymDB4sBhWNRWewtQHNqFpv_zvMH0D3wFI" ],
+                "recordtype" : [ "article" ],
+                "title" : [ "Information seeking by rhesus monkeys (Macaca mulatta) and capuchin monkeys (Cebus apella)", "Cognition" ],
+                "creationdate" : [ "2011" ],
+                "scope" : [ "IQODW", "CGR", "CUY", "CVF", "ECM", "EIF", "NPM", "AAYXX", "CITATION", "BSHEE", "7X8", "5PM" ],
+                "creatorcontrib" : [ "Beran, Michael J", "Smith, J. David" ],
+                "issn" : [ "0010-0277", "1873-7838" ],
+                "fulltext" : [ "true" ],
+                "addtitle" : [ "Cognition" ],
+                "general" : [ "Elsevier B.V", "Elsevier" ],
+                "rsrctype" : [ "article" ],
+                "startdate" : [ "201107" ],
+                "enddate" : [ "201107" ],
+                "description" : [ "Animal metacognition is an active, growing research area, and one part of metacognition is flexible information-seeking behavior. In Roberts et al. (2009), pigeons failed an intuitive information-seeking task. They basically refused, despite multiple fostering experiments, to view a sample image before attempting to find its match. Roberts et al. concluded that pigeons’ lack of an information-seeking capacity reflected their broader lack of metacognition. We report a striking species contrast to pigeons. Eight rhesus macaques and seven capuchin monkeys passed the Roberts et al. test of information seeking—often in their first testing session. Members of both primate species appreciated immediately the lack of information signaled by an occluded sample, and the need for an information-seeking response to manage the situation. In subsequent testing, macaques demonstrated flexible/varied forms of information management. Capuchins did not. The research findings bear on the phylogenetic distribution of metacognition across the vertebrates, and on the underlying psychological requirements for metacognitive and information-seeking performances." ]
+              },
+              "display" : {
+                "lds50" : [ "peer_reviewed" ],
+                "type" : [ "article" ],
+                "source" : [ "ScienceDirect Pi2 Collection", "Elsevier:ScienceDirect:Social Sciences Subject Collection:2018", "Medium Multidisciplinary Collection [ECMMC]", "ScienceDirect Journals (Transactional Access)", "ScienceDirect Polish National Consort 2007", "ScienceDirect Journals (5 years ago - present)", "ScienceDirect Social & Behavioral Sciences College Edition Backfile", "Alma/SFX Local Collection", "Life Sciences Japan [FCJLS]", "Elsevier:ScienceDirect:Neuroscience Subject Collection:2017", "ScienceDirect Government Edition", "Small Multidisciplinary Collection [ECSMC]", "ScienceDirect Health & Life Sciences College Edition Backfile" ],
+                "creator" : [ "Beran, Michael J ; Smith, J. David" ],
+                "publisher" : [ "Amsterdam: Elsevier B.V" ],
+                "ispartof" : [ "Cognition, 2011-07, Vol.120 (1), p.90-105" ],
+                "identifier" : [ "ISSN: 0010-0277", "EISSN: 1873-7838", "DOI: 10.1016/j.cognition.2011.02.016", "PMID: 21459372", "CODEN: CGTNAU" ],
+                "subject" : [ "Comparative cognition ; Monkeys ; Information seeking ; Primate cognition ; Metacognition ; Fundamental and applied biological sciences. Psychology ; Biological and medical sciences ; Cognition. Intelligence ; Miscellaneous ; Psychology. Psychoanalysis. Psychiatry ; Psychology. Psychophysiology ; Learning ; Psychomotor Performance ; Animals ; Discrimination (Psychology) ; Female ; Information Seeking Behavior ; Male ; Cognition ; Macaca mulatta - psychology ; Photic Stimulation ; Cebus - psychology ; Pigeons ; Index Medicus ; primate cognition ; monkeys ; comparative cognition ; metacognition ; information seeking" ],
+                "language" : [ "eng" ],
+                "rights" : [ "2011 Elsevier B.V.", "2015 INIST-CNRS", "Copyright © 2011 Elsevier B.V. All rights reserved.", "COPYRIGHT 2011 Elsevier B.V.", "2011 Elsevier B.V. All rights reserved. 2011" ],
+                "snippet" : [ ".... We report a striking species contrast to pigeons. Eight rhesus macaques and seven capuchin monkeys passed the Roberts et al..." ],
+                "title" : [ "Information seeking by rhesus monkeys (Macaca mulatta) and capuchin monkeys (Cebus apella)" ],
+                "oa" : [ "free_for_read" ],
+                "description" : [ "Animal metacognition is an active, growing research area, and one part of metacognition is flexible information-seeking behavior. In Roberts et al. (2009), pigeons failed an intuitive information-seeking task. They basically refused, despite multiple fostering experiments, to view a sample image before attempting to find its match. Roberts et al. concluded that pigeons’ lack of an information-seeking capacity reflected their broader lack of metacognition. We report a striking species contrast to pigeons. Eight rhesus macaques and seven capuchin monkeys passed the Roberts et al. test of information seeking—often in their first testing session. Members of both primate species appreciated immediately the lack of information signaled by an occluded sample, and the need for an information-seeking response to manage the situation. In subsequent testing, macaques demonstrated flexible/varied forms of information management. Capuchins did not. The research findings bear on the phylogenetic distribution of metacognition across the vertebrates, and on the underlying psychological requirements for metacognitive and information-seeking performances." ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "facets" : {
+                "language" : [ "eng" ],
+                "creationdate" : [ "2011" ],
+                "creatorcontrib" : [ "Beran, Michael J", "Smith, J. David" ],
+                "rsrctype" : [ "articles" ],
+                "topic" : [ "Comparative cognition", "Monkeys", "Information seeking", "Primate cognition", "Metacognition", "Fundamental and applied biological sciences. Psychology", "Biological and medical sciences", "Cognition. Intelligence", "Miscellaneous", "Psychology. Psychoanalysis. Psychiatry", "Psychology. Psychophysiology", "Learning", "Psychomotor Performance", "Animals", "Discrimination (Psychology)", "Female", "Information Seeking Behavior", "Male", "Cognition", "Macaca mulatta - psychology", "Photic Stimulation", "Cebus - psychology", "Pigeons", "Index Medicus", "primate cognition", "monkeys", "comparative cognition", "metacognition", "information seeking" ],
+                "prefilter" : [ "articles" ],
+                "collection" : [ "Pascal-Francis", "Medline", "MEDLINE", "MEDLINE (Ovid)", "MEDLINE", "MEDLINE", "PubMed", "CrossRef", "Academic OneFile (A&I only)", "MEDLINE - Academic", "PubMed Central (Full Participant titles)" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-1691t-755d341723f843a89e42dc0402e9ef754773e44639110d83b16497fb4295ccd73" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Cognition" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 16:06:53&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_pubme&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Information+seeking+by+rhesus+monkeys+%28Macaca+mulatta%29+and+capuchin+monkeys+%28Cebus+apella%29&rft.jtitle=Cognition&rft.au=Beran%2C+Michael+J&rft.date=2011-07&rft.volume=120&rft.issue=1&rft.spage=90&rft.epage=105&rft.pages=90-105&rft.issn=0010-0277&rft.eissn=1873-7838&rft.coden=CGTNAU&rft_id=info:doi/10.1016%2Fj.cognition.2011.02.016&rft.pub=Elsevier+B.V&rft.place=Amsterdam&rft_dat=<gale_pubme>867321609</gale_pubme>&svc_dat=viewit&rft_galeid=A256414754"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ ],
+                "citedby" : [ "FETCH-LOGICAL-1691t-755d341723f843a89e42dc0402e9ef754773e44639110d83b16497fb4295ccd73" ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_pubmedcentral_primary_oai_pubmedcentral_nih_gov_3095768"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Limited Evidence of Number-Space Mapping in Rhesus Monkeys (Macaca mulatta) and Capuchin Monkeys (Sapajus apella)" ],
+                "creationdate" : [ "201908" ],
+                "author" : [ "Beran, Michael J ; French, Kristin ; Smith, Travis R ; Parrish, Audrey E" ]
+              },
+              "control" : {
+                "sourcetype" : [ "Open Access Repository" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "pqid" : [ "2196249846" ],
+                "recordid" : [ "cdi_pubmedcentral_primary_oai_pubmedcentral_nih_gov_6684444" ],
+                "sourcerecordid" : [ "2281147834" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-a385t-c1e1f0f5a61b8d6a40ab407f2493d993fa6387e2b11b678df4609bc7c7964f4a3" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNp9kV1rFDEUhoNY7Fq98RcEvLHi2GSSzceNIEvVwq4F216HM5mkm3U-0mSmsP_elC0tvfHk4nDIc15e3oPQB0q-UsLkmR17UopK-QotqGa6qomSr9GCSLasJGHiGL3NeVcYQbl8g44ZUVrUjC3Q3Tr0YXItPr8PrRusw6PHv-e-cam6ilDmDcQYhlscBvxn6_Kc8WYc_rp9xp82YMvD_dzBNMEphqHFK4iz3Rb4ibqCCLuyBtF1HZy-Q0ceuuzeP_YTdPPj_Hr1q1pf_rxYfV9XwNRyqix11BO_BEEb1QrgBBpOpK-5Zq3WzINgSrq6obQRUrWeC6IbK63UgnsO7AR9O-jGuelda90wJehMTKGHtDcjBPPyZwhbczveGyEUL1UEPj4KpPFudnkyu3FOQ_Fs6lrRkqRi_6doCZlrxUWhPh8om8ack_NPPigxD0c0z0cs8JcDXIIzMe8tpCnYzmU7p1TMPrCGMmaYKT7YP_iynTM" ],
+                "sourceid" : [ "proquest_pubme" ],
+                "score" : [ "0.016333867" ]
+              },
+              "addata" : {
+                "abstract" : [ "Humans exhibit evidence of a mental number line that suggests a left-to-right, or sometimes right-to-left, representation of smaller to larger numbers. The Spatial Numerical Association of Response Codes (SNARC) effect is one example of this mental number line and has been investigated extensively in humans. Less research has been done with animals, and results have been inconclusive. Rugani, Vallortigara, Priftis, and Regolin (2015) found that young chicks showed a bias to respond to small quantities presented to their left and large quantities presented to their right when forced to move toward those stimuli to gain food reward. We replicated this design with rhesus macaques and capuchin monkeys using a computerized task, but we did not find this outcome. We also trained monkeys to choose between 2 arrays of dots, and then assessed biases in terms of choice location and response latency on trials with a numerical difference and on trials with equal numbers of items in both sets. There was no evidence of SNARC-like effects in equal trials, although when arrays differed in number, 12 of 19 monkeys showed differential performance depending on whether the smaller array was at the left or at the right onscreen. These results indicate that SNARC-like effects may not emerge in all contexts and may not be phylogenetically widespread. More effort is needed to broaden the number of species assessed and match other methods that are used with human participants so that we can better define the presence and extent of such effects." ],
+                "orcidid" : [ "https://orcid.org/0000-0002-2504-0338" ],
+                "issn" : [ "0735-7036" ],
+                "jtitle" : [ "Journal of comparative psychology (1983)" ],
+                "genre" : [ "article" ],
+                "au" : [ "Beran, Michael J", "French, Kristin", "Smith, Travis R", "Parrish, Audrey E" ],
+                "atitle" : [ "Limited Evidence of Number-Space Mapping in Rhesus Monkeys (Macaca mulatta) and Capuchin Monkeys (Sapajus apella)" ],
+                "date" : [ "2019-08" ],
+                "risdate" : [ "2019" ],
+                "volume" : [ "133" ],
+                "issue" : [ "3" ],
+                "spage" : [ "281" ],
+                "epage" : [ "293" ],
+                "pages" : [ "281-293" ],
+                "eissn" : [ "1939-2087" ],
+                "ristype" : [ "JOUR" ],
+                "cop" : [ "Washington" ],
+                "pub" : [ "American Psychological Association" ],
+                "doi" : [ "10.1037/com0000177" ],
+                "format" : [ "journal" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "creator" : [ "Beran, Michael J", "French, Kristin", "Smith, Travis R", "Parrish, Audrey E" ],
+                "contributor" : [ "Fragaszy, Dorothy M" ],
+                "subject" : [ "Clinical trials ; Numerical analysis ; Monkeys & apes ; Research methodology ; Numbers ; monkeys ; mental number line ; space ; SNARC effect" ],
+                "recordid" : [ "eNp9kV1rFDEUhoNY7Fq98RcEvLHi2GSSzceNIEvVwq4F216HM5mkm3U-0mSmsP_elC0tvfHk4nDIc15e3oPQB0q-UsLkmR17UopK-QotqGa6qomSr9GCSLasJGHiGL3NeVcYQbl8g44ZUVrUjC3Q3Tr0YXItPr8PrRusw6PHv-e-cam6ilDmDcQYhlscBvxn6_Kc8WYc_rp9xp82YMvD_dzBNMEphqHFK4iz3Rb4ibqCCLuyBtF1HZy-Q0ceuuzeP_YTdPPj_Hr1q1pf_rxYfV9XwNRyqix11BO_BEEb1QrgBBpOpK-5Zq3WzINgSrq6obQRUrWeC6IbK63UgnsO7AR9O-jGuelda90wJehMTKGHtDcjBPPyZwhbczveGyEUL1UEPj4KpPFudnkyu3FOQ_Fs6lrRkqRi_6doCZlrxUWhPh8om8ack_NPPigxD0c0z0cs8JcDXIIzMe8tpCnYzmU7p1TMPrCGMmaYKT7YP_iynTM" ],
+                "recordtype" : [ "article" ],
+                "title" : [ "Limited Evidence of Number-Space Mapping in Rhesus Monkeys (Macaca mulatta) and Capuchin Monkeys (Sapajus apella)", "Journal of comparative psychology (1983)" ],
+                "creationdate" : [ "2019" ],
+                "sourceid" : [ "7RZ" ],
+                "scope" : [ "AAYXX", "CITATION", "7RZ", "5PM" ],
+                "orcidid" : [ "https://orcid.org/0000-0002-2504-0338" ],
+                "creatorcontrib" : [ "Beran, Michael J", "French, Kristin", "Smith, Travis R", "Parrish, Audrey E" ],
+                "issn" : [ "0735-7036", "1939-2087" ],
+                "fulltext" : [ "true" ],
+                "general" : [ "American Psychological Association" ],
+                "rsrctype" : [ "article" ],
+                "startdate" : [ "201908" ],
+                "enddate" : [ "201908" ],
+                "description" : [ "Humans exhibit evidence of a mental number line that suggests a left-to-right, or sometimes right-to-left, representation of smaller to larger numbers. The Spatial Numerical Association of Response Codes (SNARC) effect is one example of this mental number line and has been investigated extensively in humans. Less research has been done with animals, and results have been inconclusive. Rugani, Vallortigara, Priftis, and Regolin (2015) found that young chicks showed a bias to respond to small quantities presented to their left and large quantities presented to their right when forced to move toward those stimuli to gain food reward. We replicated this design with rhesus macaques and capuchin monkeys using a computerized task, but we did not find this outcome. We also trained monkeys to choose between 2 arrays of dots, and then assessed biases in terms of choice location and response latency on trials with a numerical difference and on trials with equal numbers of items in both sets. There was no evidence of SNARC-like effects in equal trials, although when arrays differed in number, 12 of 19 monkeys showed differential performance depending on whether the smaller array was at the left or at the right onscreen. These results indicate that SNARC-like effects may not emerge in all contexts and may not be phylogenetically widespread. More effort is needed to broaden the number of species assessed and match other methods that are used with human participants so that we can better define the presence and extent of such effects." ]
+              },
+              "display" : {
+                "lds50" : [ "peer_reviewed" ],
+                "type" : [ "article" ],
+                "source" : [ "Alma/SFX Local Collection", "PsycARTICLES" ],
+                "creator" : [ "Beran, Michael J ; French, Kristin ; Smith, Travis R ; Parrish, Audrey E" ],
+                "contributor" : [ "Fragaszy, Dorothy M" ],
+                "publisher" : [ "Washington: American Psychological Association" ],
+                "ispartof" : [ "Journal of comparative psychology (1983), 2019-08, Vol.133 (3), p.281-293" ],
+                "identifier" : [ "ISSN: 0735-7036", "EISSN: 1939-2087", "DOI: 10.1037/com0000177", "PMID: 30896233" ],
+                "subject" : [ "Clinical trials ; Numerical analysis ; Monkeys & apes ; Research methodology ; Numbers ; monkeys ; mental number line ; space ; SNARC effect" ],
+                "language" : [ "eng" ],
+                "rights" : [ "2019 American Psychological Association", "2019, American Psychological Association. American Psychological Association", "Copyright American Psychological Association Aug 2019" ],
+                "snippet" : [ ".... We replicated this design with rhesus macaques and capuchin monkeys using a computerized task, but we did not find this outcome..." ],
+                "title" : [ "Limited Evidence of Number-Space Mapping in Rhesus Monkeys (Macaca mulatta) and Capuchin Monkeys (Sapajus apella)" ],
+                "description" : [ "Humans exhibit evidence of a mental number line that suggests a left-to-right, or sometimes right-to-left, representation of smaller to larger numbers. The Spatial Numerical Association of Response Codes (SNARC) effect is one example of this mental number line and has been investigated extensively in humans. Less research has been done with animals, and results have been inconclusive. Rugani, Vallortigara, Priftis, and Regolin (2015) found that young chicks showed a bias to respond to small quantities presented to their left and large quantities presented to their right when forced to move toward those stimuli to gain food reward. We replicated this design with rhesus macaques and capuchin monkeys using a computerized task, but we did not find this outcome. We also trained monkeys to choose between 2 arrays of dots, and then assessed biases in terms of choice location and response latency on trials with a numerical difference and on trials with equal numbers of items in both sets. There was no evidence of SNARC-like effects in equal trials, although when arrays differed in number, 12 of 19 monkeys showed differential performance depending on whether the smaller array was at the left or at the right onscreen. These results indicate that SNARC-like effects may not emerge in all contexts and may not be phylogenetically widespread. More effort is needed to broaden the number of species assessed and match other methods that are used with human participants so that we can better define the presence and extent of such effects." ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "facets" : {
+                "language" : [ "eng" ],
+                "creationdate" : [ "2019" ],
+                "creatorcontrib" : [ "Beran, Michael J", "French, Kristin", "Smith, Travis R", "Parrish, Audrey E" ],
+                "rsrctype" : [ "articles" ],
+                "topic" : [ "Clinical trials", "Numerical analysis", "Monkeys & apes", "Research methodology", "Numbers", "monkeys", "mental number line", "space", "SNARC effect" ],
+                "prefilter" : [ "articles" ],
+                "collection" : [ "CrossRef", "PsycARTICLES", "PubMed Central (Full Participant titles)" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-a385t-c1e1f0f5a61b8d6a40ab407f2493d993fa6387e2b11b678df4609bc7c7964f4a3" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Journal of comparative psychology (1983)" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 16:06:53&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-proquest_pubme&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Limited+Evidence+of+Number-Space+Mapping+in+Rhesus+Monkeys+%28Macaca+mulatta%29+and+Capuchin+Monkeys+%28Sapajus+apella%29&rft.jtitle=Journal+of+comparative+psychology+%281983%29&rft.au=Beran%2C+Michael+J&rft.date=2019-08&rft.volume=133&rft.issue=3&rft.spage=281&rft.epage=293&rft.pages=281-293&rft.issn=0735-7036&rft.eissn=1939-2087&rft_id=info:doi/10.1037%2Fcom0000177&rft.pub=American+Psychological+Association&rft.place=Washington&rft_dat=<proquest_pubme>2196249846</proquest_pubme>&svc_dat=viewit"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ ],
+                "citedby" : [ ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_pubmedcentral_primary_oai_pubmedcentral_nih_gov_6684444"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Monkey See, Monkey Plan, Monkey Do: The End-State Comfort Effect in Cotton-Top Tamarins (Saguinus oedipus)" ],
+                "creationdate" : [ "20071201" ],
+                "author" : [ "Weiss, Daniel J ; Wark, Jason D ; Rosenbaum, David A" ]
+              },
+              "control" : {
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "pqid" : [ "68541774" ],
+                "galeid" : [ "A171616869" ],
+                "recordid" : [ "cdi_proquest_miscellaneous_68541774" ],
+                "sourcerecordid" : [ "A171616869" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-1503t-a6dcd2ae3d1efe94f68d47feb40552427a4297cc839f86be3749a501acb70c573" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNqNUdGO1CAUJUbjjqufoOHJaGIrFAqtb5txXDdZo8mMz4Shl7F1CrNAk92_l7GT2de9PACXc0645yCEKSlprs9DSbmQRVs1pKwIkSWpSCXK-2docX54jhakrUUhWyku0KsYB5JLMvESXdCGMMopW6Dhh3d_4QGvAT7h0_nXXrvz5av_gjd_AK9cV6yTToCXfrQ-JLyyFkzCvcudlLwrNv6AN3rUoXcRf1jr3dS7KWIPXX-Y4sfX6IXV-whvTvsl-v1ttVl-L25_Xt8sr24LWhOWCi0601UaWEfBQsutaDouLWw5qeuKV1LzqpXGNKy1jdgCk7zVNaHabCUxtWSX6P2sewj-boKY1NhHA_s8FfgpKtHUnErJM7CcgTu9B9U761PQJq8Oxt54B7bP_SsqqaCiEW0mNDPBBB9jAKsOoc_zPihK1DEYNaij_-rovzoGo_4Ho-4z9d3pU9N2hO6ReEoiA-oZEPUO1OCn4LJJTxF-O_OGmHw463JCBJeEs3_rHaIG" ],
+                "sourceid" : [ "gale_proqu" ],
+                "score" : [ "0.016323581" ]
+              },
+              "addata" : {
+                "abstract" : [ "The way human adults grasp objects is typically influenced by their knowledge of what they'intend to do with the objects. This influence is reflected in the end-state comfort effect: Actors adopt initially uncomfortable postures to accommodate later task demands. Although many experiments have demonstrated this effect, to the best of our knowledge its phylogenetic roots have not been investigated. In two experiments, we tested whether 9 cotton-top tamarin monkeys would show the end-state comfort effect. We did so by presenting the monkeys with a small cup containing a marshmallow. The cup was suspended in different orientations. The monkeys inhibited their natural grasping tendencies and adopted unusual grasping postures to accommodate subsequent task requirements, thus demonstrating the end-state comfort effect. This outcome provides evidence for more sophisticated motor planning than has previously been ascribed to this and related species." ],
+                "issn" : [ "0956-7976" ],
+                "addtitle" : [ "Psychol Sci" ],
+                "jtitle" : [ "Psychological science" ],
+                "genre" : [ "article" ],
+                "au" : [ "Weiss, Daniel J", "Wark, Jason D", "Rosenbaum, David A" ],
+                "atitle" : [ "Monkey See, Monkey Plan, Monkey Do: The End-State Comfort Effect in Cotton-Top Tamarins (Saguinus oedipus)" ],
+                "date" : [ "2007-12-01" ],
+                "risdate" : [ "2007" ],
+                "volume" : [ "18" ],
+                "issue" : [ "12" ],
+                "spage" : [ "1063" ],
+                "epage" : [ "1068" ],
+                "pages" : [ "1063-1068" ],
+                "eissn" : [ "1467-9280" ],
+                "ristype" : [ "JOUR" ],
+                "cop" : [ "Los Angeles, CA" ],
+                "pub" : [ "Blackwell Publishing" ],
+                "doi" : [ "10.1111/j.1467-9280.2007.02026.x" ],
+                "format" : [ "journal" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "creator" : [ "Weiss, Daniel J", "Wark, Jason D", "Rosenbaum, David A" ],
+                "subject" : [ "Marshmallows ; Hands ; Trials ; Animals ; Terraces ; Primates ; Problem solving ; Monkeys ; Research Articles ; Comparative psychology ; Posture ; Behavior, Animal ; Psychomotor Performance ; Female ; Male ; Cognition ; Saguinus ; Hand Strength ; Index Medicus" ],
+                "recordid" : [ "eNqNUdGO1CAUJUbjjqufoOHJaGIrFAqtb5txXDdZo8mMz4Shl7F1CrNAk92_l7GT2de9PACXc0645yCEKSlprs9DSbmQRVs1pKwIkSWpSCXK-2docX54jhakrUUhWyku0KsYB5JLMvESXdCGMMopW6Dhh3d_4QGvAT7h0_nXXrvz5av_gjd_AK9cV6yTToCXfrQ-JLyyFkzCvcudlLwrNv6AN3rUoXcRf1jr3dS7KWIPXX-Y4sfX6IXV-whvTvsl-v1ttVl-L25_Xt8sr24LWhOWCi0601UaWEfBQsutaDouLWw5qeuKV1LzqpXGNKy1jdgCk7zVNaHabCUxtWSX6P2sewj-boKY1NhHA_s8FfgpKtHUnErJM7CcgTu9B9U761PQJq8Oxt54B7bP_SsqqaCiEW0mNDPBBB9jAKsOoc_zPihK1DEYNaij_-rovzoGo_4Ho-4z9d3pU9N2hO6ReEoiA-oZEPUO1OCn4LJJTxF-O_OGmHw463JCBJeEs3_rHaIG" ],
+                "recordtype" : [ "article" ],
+                "title" : [ "Monkey See, Monkey Plan, Monkey Do: The End-State Comfort Effect in Cotton-Top Tamarins (Saguinus oedipus)", "Psychological science" ],
+                "creationdate" : [ "2007" ],
+                "scope" : [ "CGR", "CUY", "CVF", "ECM", "EIF", "NPM", "AAYXX", "CITATION", "BSHEE", "7X8" ],
+                "creatorcontrib" : [ "Weiss, Daniel J", "Wark, Jason D", "Rosenbaum, David A" ],
+                "issn" : [ "0956-7976", "1467-9280" ],
+                "fulltext" : [ "true" ],
+                "addtitle" : [ "Psychol Sci" ],
+                "general" : [ "Blackwell Publishing", "SAGE Publications", "Wiley Subscription Services, Inc" ],
+                "rsrctype" : [ "article" ],
+                "startdate" : [ "20071201" ],
+                "enddate" : [ "20071201" ],
+                "description" : [ "The way human adults grasp objects is typically influenced by their knowledge of what they'intend to do with the objects. This influence is reflected in the end-state comfort effect: Actors adopt initially uncomfortable postures to accommodate later task demands. Although many experiments have demonstrated this effect, to the best of our knowledge its phylogenetic roots have not been investigated. In two experiments, we tested whether 9 cotton-top tamarin monkeys would show the end-state comfort effect. We did so by presenting the monkeys with a small cup containing a marshmallow. The cup was suspended in different orientations. The monkeys inhibited their natural grasping tendencies and adopted unusual grasping postures to accommodate subsequent task requirements, thus demonstrating the end-state comfort effect. This outcome provides evidence for more sophisticated motor planning than has previously been ascribed to this and related species." ]
+              },
+              "display" : {
+                "lds50" : [ "peer_reviewed" ],
+                "type" : [ "article" ],
+                "source" : [ "Academic Search Complete", "Business Source Complete", "SAGE Complete A-Z List (1999-Present)", "Medline Complete", "JSTOR Life Sciences", "Alma/SFX Local Collection", "SAGE Complete A-Z List" ],
+                "creator" : [ "Weiss, Daniel J ; Wark, Jason D ; Rosenbaum, David A" ],
+                "publisher" : [ "Los Angeles, CA: Blackwell Publishing" ],
+                "ispartof" : [ "Psychological science, 2007-12-01, Vol.18 (12), p.1063-1068" ],
+                "identifier" : [ "ISSN: 0956-7976", "EISSN: 1467-9280", "DOI: 10.1111/j.1467-9280.2007.02026.x", "PMID: 18031413" ],
+                "subject" : [ "Marshmallows ; Hands ; Trials ; Animals ; Terraces ; Primates ; Problem solving ; Monkeys ; Research Articles ; Comparative psychology ; Posture ; Behavior, Animal ; Psychomotor Performance ; Female ; Male ; Cognition ; Saguinus ; Hand Strength ; Index Medicus" ],
+                "language" : [ "eng" ],
+                "rights" : [ "Copyright 2007 Association for Psychological Science", "2007 Association for Psychological Science", "COPYRIGHT 2007 Blackwell Publishers Ltd." ],
+                "snippet" : [ "... investigated. In two experiments, we tested whether 9 cotton-top tamarin monkeys would show the end-state comfort effect..." ],
+                "title" : [ "Monkey See, Monkey Plan, Monkey Do: The End-State Comfort Effect in Cotton-Top Tamarins (Saguinus oedipus)" ],
+                "description" : [ "The way human adults grasp objects is typically influenced by their knowledge of what they'intend to do with the objects. This influence is reflected in the end-state comfort effect: Actors adopt initially uncomfortable postures to accommodate later task demands. Although many experiments have demonstrated this effect, to the best of our knowledge its phylogenetic roots have not been investigated. In two experiments, we tested whether 9 cotton-top tamarin monkeys would show the end-state comfort effect. We did so by presenting the monkeys with a small cup containing a marshmallow. The cup was suspended in different orientations. The monkeys inhibited their natural grasping tendencies and adopted unusual grasping postures to accommodate subsequent task requirements, thus demonstrating the end-state comfort effect. This outcome provides evidence for more sophisticated motor planning than has previously been ascribed to this and related species." ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "facets" : {
+                "language" : [ "eng" ],
+                "creationdate" : [ "2007" ],
+                "creatorcontrib" : [ "Weiss, Daniel J", "Wark, Jason D", "Rosenbaum, David A" ],
+                "rsrctype" : [ "articles" ],
+                "topic" : [ "Marshmallows", "Hands", "Trials", "Animals", "Terraces", "Primates", "Problem solving", "Monkeys", "Research Articles", "Comparative psychology", "Posture", "Behavior, Animal", "Psychomotor Performance", "Female", "Male", "Cognition", "Saguinus", "Hand Strength", "Index Medicus" ],
+                "prefilter" : [ "articles" ],
+                "collection" : [ "Medline", "MEDLINE", "MEDLINE (Ovid)", "MEDLINE", "MEDLINE", "PubMed", "CrossRef", "Academic OneFile (A&I only)", "MEDLINE - Academic" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-1503t-a6dcd2ae3d1efe94f68d47feb40552427a4297cc839f86be3749a501acb70c573" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Psychological science" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 16:06:53&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_proqu&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Monkey+See%2C+Monkey+Plan%2C+Monkey+Do%3A+The+End-State+Comfort+Effect+in+Cotton-Top+Tamarins+%28Saguinus+oedipus%29&rft.jtitle=Psychological+science&rft.au=Weiss%2C+Daniel+J&rft.date=2007-12-01&rft.volume=18&rft.issue=12&rft.spage=1063&rft.epage=1068&rft.pages=1063-1068&rft.issn=0956-7976&rft.eissn=1467-9280&rft_id=info:doi/10.1111%2Fj.1467-9280.2007.02026.x&rft.pub=Blackwell+Publishing&rft.place=Los+Angeles%2C+CA&rft_dat=<gale_proqu>68541774</gale_proqu>&svc_dat=viewit&rft_galeid=A171616869"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ "FETCH-LOGICAL-1503t-a6dcd2ae3d1efe94f68d47feb40552427a4297cc839f86be3749a501acb70c573" ],
+                "citedby" : [ ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_proquest_miscellaneous_68541774"
+          }, {
+            "pnx" : {
+              "sort" : {
+                "title" : [ "Spider Monkeys (Ateles geoffroyi) and Capuchin Monkeys (Cebus apella) Follow Gaze Around Barriers" ],
+                "creationdate" : [ "200911" ],
+                "author" : [ "Amici, Federica ; Aureli, Filippo ; Visalberghi, Elisabetta ; Call, Josep" ]
+              },
+              "control" : {
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
+                "pqid" : [ "210400690" ],
+                "galeid" : [ "A213956916" ],
+                "recordid" : [ "cdi_proquest_journals_614508006" ],
+                "sourcerecordid" : [ "A213956916" ],
+                "originalsourceid" : [ "FETCH-LOGICAL-1490t-a06afdd905c7d6c4888fccd4efcba78b256a174cd6f6fb4cefd699213cadb3653" ],
+                "recordtype" : [ "article" ],
+                "addsrcrecordid" : [ "eNp90VFrFDEQAOBFFDyr4E8IgtCCWyeb3WTzeD1sK1R8UJ_DbDKpqXubNdlFzl9vylkEEcnDQPhmhpmpqpcczjkI9RYBuAKlH1UbroWuG-jV42oDSnS1AiGfVs9yvgMAyVu1qfDTHBwl9iFO3-iQ2el2oZEyu6XofYqHcMZwcmyH82q_humP29GwZoYzjSOescs4jvEHu8KfxLYpriXlAlMKlPLz6onHMdOL3_Gk-nL57vPuur75ePV-t72peathqREkeuc0dFY5adu-7721riVvB1T90HQSuWqtk176obXkndS64cKiG4TsxEn16lh3TvH7Snkxd3FNU2lpyqgd9GXk_6GGQ1uIhoLOj-gWRzJh8nFJaMtztA82TuRD-d-W3rqTmt9XPT0m2BRzTuTNnMIe08FwMPdXMQ9XKfTNkeKMZs4Hi2kJtmzcrinRtBgb94Y3wrRGyL7w1__mf7lfiHiaVQ" ],
+                "sourceid" : [ "gale_proqu" ],
+                "score" : [ "0.016278299" ]
+              },
+              "addata" : {
+                "abstract" : [ "Gaze following is an adaptive skill that might have been selected in social species, such as many nonhuman primates, to obtain information about food location, predators, and social interactions. The authors investigated the ability of spider monkeys (\nAteles geoffroyi\n) and capuchin monkeys (\nCebus apella\n) to follow the gaze of a human around barriers and the presence of \"looking back\" behavior. In the 1st experiment, a human looked to a target location inside the testing room, whereas in the 2nd experiment, the human looked behind an opaque barrier placed outside the testing room. The authors compared the frequency of looking at the target location with the corresponding baseline looking frequencies. Both species (a) showed evidence of spontaneous gaze following in the 1st experiment and (b) engaged in gaze following behind the barrier in the 2nd experiment. In contrast, neither species performed \"looking back\" responses. The authors conclude that both monkey species showed some indication of perspective-taking abilities, although the absence of \"looking back\" behavior suggests a potential difference from the abilities shown by the great apes." ],
+                "orcidid" : [ "https://orcid.org/0000-0003-3539-1067", "https://orcid.org/0000-0002-0671-013X", "https://orcid.org/0000-0001-7407-5468" ],
+                "issn" : [ "0735-7036" ],
+                "jtitle" : [ "Journal of comparative psychology (1983)" ],
+                "genre" : [ "article" ],
+                "au" : [ "Amici, Federica", "Aureli, Filippo", "Visalberghi, Elisabetta", "Call, Josep" ],
+                "atitle" : [ "Spider Monkeys (Ateles geoffroyi) and Capuchin Monkeys (Cebus apella) Follow Gaze Around Barriers" ],
+                "date" : [ "2009-11" ],
+                "risdate" : [ "2009" ],
+                "volume" : [ "123" ],
+                "issue" : [ "4" ],
+                "spage" : [ "368" ],
+                "epage" : [ "374" ],
+                "pages" : [ "368-374" ],
+                "eissn" : [ "1939-2087" ],
+                "ristype" : [ "JOUR" ],
+                "cop" : [ "Washington" ],
+                "pub" : [ "American Psychological Association" ],
+                "doi" : [ "10.1037/a0017079" ],
+                "format" : [ "journal" ]
+              },
+              "links" : {
+                "openurl" : [ "$$Topenurl_article" ],
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "creator" : [ "Amici, Federica", "Aureli, Filippo", "Visalberghi, Elisabetta", "Call, Josep" ],
+                "contributor" : [ "Burghardt, Gordon M" ],
+                "subject" : [ "Spider monkeys ; Cognition ; Research ; Behavior ; Gaze ; Comparative analysis ; Animal behavior ; Monkeys & apes ; Animal cognition" ],
+                "recordid" : [ "eNp90VFrFDEQAOBFFDyr4E8IgtCCWyeb3WTzeD1sK1R8UJ_DbDKpqXubNdlFzl9vylkEEcnDQPhmhpmpqpcczjkI9RYBuAKlH1UbroWuG-jV42oDSnS1AiGfVs9yvgMAyVu1qfDTHBwl9iFO3-iQ2el2oZEyu6XofYqHcMZwcmyH82q_humP29GwZoYzjSOescs4jvEHu8KfxLYpriXlAlMKlPLz6onHMdOL3_Gk-nL57vPuur75ePV-t72peathqREkeuc0dFY5adu-7721riVvB1T90HQSuWqtk176obXkndS64cKiG4TsxEn16lh3TvH7Snkxd3FNU2lpyqgd9GXk_6GGQ1uIhoLOj-gWRzJh8nFJaMtztA82TuRD-d-W3rqTmt9XPT0m2BRzTuTNnMIe08FwMPdXMQ9XKfTNkeKMZs4Hi2kJtmzcrinRtBgb94Y3wrRGyL7w1__mf7lfiHiaVQ" ],
+                "recordtype" : [ "article" ],
+                "title" : [ "Spider Monkeys (Ateles geoffroyi) and Capuchin Monkeys (Cebus apella) Follow Gaze Around Barriers: Evidence for Perspective Taking?", "Journal of comparative psychology (1983)" ],
+                "creationdate" : [ "2009" ],
+                "sourceid" : [ "7RZ" ],
+                "scope" : [ "AAYXX", "CITATION", "BSHEE", "7RZ" ],
+                "orcidid" : [ "https://orcid.org/0000-0003-3539-1067", "https://orcid.org/0000-0002-0671-013X", "https://orcid.org/0000-0001-7407-5468" ],
+                "creatorcontrib" : [ "Amici, Federica", "Aureli, Filippo", "Visalberghi, Elisabetta", "Call, Josep" ],
+                "issn" : [ "0735-7036", "1939-2087" ],
+                "fulltext" : [ "true" ],
+                "general" : [ "American Psychological Association", "American Psychological Association, Inc" ],
+                "rsrctype" : [ "article" ],
+                "startdate" : [ "200911" ],
+                "enddate" : [ "200911" ],
+                "description" : [ "Gaze following is an adaptive skill that might have been selected in social species, such as many nonhuman primates, to obtain information about food location, predators, and social interactions. The authors investigated the ability of spider monkeys (\nAteles geoffroyi\n) and capuchin monkeys (\nCebus apella\n) to follow the gaze of a human around barriers and the presence of \"looking back\" behavior. In the 1st experiment, a human looked to a target location inside the testing room, whereas in the 2nd experiment, the human looked behind an opaque barrier placed outside the testing room. The authors compared the frequency of looking at the target location with the corresponding baseline looking frequencies. Both species (a) showed evidence of spontaneous gaze following in the 1st experiment and (b) engaged in gaze following behind the barrier in the 2nd experiment. In contrast, neither species performed \"looking back\" responses. The authors conclude that both monkey species showed some indication of perspective-taking abilities, although the absence of \"looking back\" behavior suggests a potential difference from the abilities shown by the great apes." ]
+              },
+              "display" : {
+                "lds50" : [ "peer_reviewed" ],
+                "type" : [ "article" ],
+                "source" : [ "Alma/SFX Local Collection", "PsycARTICLES" ],
+                "creator" : [ "Amici, Federica ; Aureli, Filippo ; Visalberghi, Elisabetta ; Call, Josep" ],
+                "contributor" : [ "Burghardt, Gordon M" ],
+                "publisher" : [ "Washington: American Psychological Association" ],
+                "ispartof" : [ "Journal of comparative psychology (1983), 2009-11, Vol.123 (4), p.368-374" ],
+                "identifier" : [ "ISSN: 0735-7036", "EISSN: 1939-2087", "DOI: 10.1037/a0017079" ],
+                "subject" : [ "Spider monkeys ; Cognition ; Research ; Behavior ; Gaze ; Comparative analysis ; Animal behavior ; Monkeys & apes ; Animal cognition" ],
+                "language" : [ "eng" ],
+                "rights" : [ "2009 American Psychological Association", "COPYRIGHT 2009 American Psychological Association, Inc.", "2009, American Psychological Association" ],
+                "snippet" : [ ".... The authors investigated the ability of spider monkeys (\nAteles geoffroyi\n) and capuchin monkeys (\nCebus apella...", ".... The authors investigated the ability of spider monkeys (Ateles geoffroyi) and capuchin monkeys (Cebus apella...", ".... The authors investigated the ability of spider monkeys ( Ateles geoffroyi) and capuchin monkeys ( Cebus apella..." ],
+                "title" : [ "Spider Monkeys (Ateles geoffroyi) and Capuchin Monkeys (Cebus apella) Follow Gaze Around Barriers: Evidence for Perspective Taking?" ],
+                "description" : [ "Gaze following is an adaptive skill that might have been selected in social species, such as many nonhuman primates, to obtain information about food location, predators, and social interactions. The authors investigated the ability of spider monkeys (\nAteles geoffroyi\n) and capuchin monkeys (\nCebus apella\n) to follow the gaze of a human around barriers and the presence of \"looking back\" behavior. In the 1st experiment, a human looked to a target location inside the testing room, whereas in the 2nd experiment, the human looked behind an opaque barrier placed outside the testing room. The authors compared the frequency of looking at the target location with the corresponding baseline looking frequencies. Both species (a) showed evidence of spontaneous gaze following in the 1st experiment and (b) engaged in gaze following behind the barrier in the 2nd experiment. In contrast, neither species performed \"looking back\" responses. The authors conclude that both monkey species showed some indication of perspective-taking abilities, although the absence of \"looking back\" behavior suggests a potential difference from the abilities shown by the great apes." ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
+              "facets" : {
+                "language" : [ "eng" ],
+                "creationdate" : [ "2009" ],
+                "creatorcontrib" : [ "Amici, Federica", "Aureli, Filippo", "Visalberghi, Elisabetta", "Call, Josep" ],
+                "rsrctype" : [ "articles" ],
+                "topic" : [ "Spider monkeys", "Cognition", "Research", "Behavior", "Gaze", "Comparative analysis", "Animal behavior", "Monkeys & apes", "Animal cognition" ],
+                "prefilter" : [ "articles" ],
+                "collection" : [ "CrossRef", "Academic OneFile (A&I only)", "PsycARTICLES" ],
+                "toplevel" : [ "peer_reviewed", "online_resources" ],
+                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-1490t-a06afdd905c7d6c4888fccd4efcba78b256a174cd6f6fb4cefd699213cadb3653" ],
+                "frbrtype" : [ "5" ],
+                "jtitle" : [ "Journal of comparative psychology (1983)" ]
+              }
+            },
+            "delivery" : {
+              "link" : [ {
+                "@id" : "_:0",
+                "linkType" : "http://purl.org/pnx/linkType/thumbnail",
+                "linkURL" : "syndetics_thumb_exl",
+                "displayLabel" : "thumbnail"
+              } ],
+              "deliveryCategory" : [ "Remote Search Resource" ],
+              "availability" : [ "fulltext" ],
+              "displayLocation" : false,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : "",
+              "feDisplayOtherLocations" : false,
+              "displayedAvailability" : "true",
+              "holding" : [ ],
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 16:06:53&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_proqu&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Spider+Monkeys+%28Ateles+geoffroyi%29+and+Capuchin+Monkeys+%28Cebus+apella%29+Follow+Gaze+Around+Barriers&rft.jtitle=Journal+of+comparative+psychology+%281983%29&rft.au=Amici%2C+Federica&rft.date=2009-11&rft.volume=123&rft.issue=4&rft.spage=368&rft.epage=374&rft.pages=368-374&rft.issn=0735-7036&rft.eissn=1939-2087&rft_id=info:doi/10.1037%2Fa0017079&rft.pub=American+Psychological+Association&rft.place=Washington&rft_dat=<gale_proqu>210400690</gale_proqu>&svc_dat=viewit&rft_galeid=A213956916"
+            },
+            "context" : "PC",
+            "adaptor" : "Primo Central",
+            "extras" : {
+              "citationTrails" : {
+                "citing" : [ ],
+                "citedby" : [ "FETCH-LOGICAL-1490t-a06afdd905c7d6c4888fccd4efcba78b256a174cd6f6fb4cefd699213cadb3653" ]
+              },
+              "timesCited" : { }
+            },
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_proquest_journals_614508006"
+          } ],
+          "timelog" : {
+            "PC_SEARCH_CALL_TIME" : "709",
+            "PC_BUILD_JSON_AND_HIGLIGHTS" : "39",
+            "PC_SEARCH_TIME_TOTAL" : "748",
+            "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
+            "BUILD_COMBINED_RESULTS_MAP" : 749,
+            "COMBINED_SEARCH_TIME" : 755,
+            "PROCESS_COMBINED_RESULTS" : 0,
+            "FEATURED_SEARCH_TIME" : 1
+          },
+          "facets" : [ {
+            "name" : "jtitle",
+            "values" : [ {
+              "value" : "Billboard",
+              "count" : "12488"
+            }, {
+              "value" : "The New York Times",
+              "count" : "11857"
+            }, {
+              "value" : "Plos One",
+              "count" : "11771"
+            }, {
+              "value" : "The Washington Post",
+              "count" : "11596"
+            }, {
+              "value" : "The Los Angeles Times",
+              "count" : "10246"
+            }, {
+              "value" : "Journal Of Comparative Neurology",
+              "count" : "9270"
+            }, {
+              "value" : "Chicago Tribune",
+              "count" : "8862"
+            }, {
+              "value" : "Variety",
+              "count" : "8547"
+            }, {
+              "value" : "Health & Medicine Week",
+              "count" : "7873"
+            }, {
+              "value" : "Toronto Star",
+              "count" : "6120"
+            } ]
+          }, {
+            "name" : "lang",
+            "values" : [ {
+              "value" : "eng",
+              "count" : "743708"
+            }, {
+              "value" : "jpn",
+              "count" : "16069"
+            }, {
+              "value" : "chi",
+              "count" : "2008"
+            }, {
+              "value" : "por",
+              "count" : "1523"
+            }, {
+              "value" : "spa",
+              "count" : "838"
+            }, {
+              "value" : "fre",
+              "count" : "770"
+            }, {
+              "value" : "ger",
+              "count" : "704"
+            }, {
+              "value" : "rus",
+              "count" : "346"
+            }, {
+              "value" : "pol",
+              "count" : "139"
+            }, {
+              "value" : "tur",
+              "count" : "106"
+            }, {
+              "value" : "nor",
+              "count" : "100"
+            }, {
+              "value" : "dut",
+              "count" : "62"
+            }, {
+              "value" : "afr",
+              "count" : "56"
+            }, {
+              "value" : "swe",
+              "count" : "50"
+            }, {
+              "value" : "kor",
+              "count" : "48"
+            }, {
+              "value" : "ita",
+              "count" : "43"
+            }, {
+              "value" : "cze",
+              "count" : "32"
+            }, {
+              "value" : "hrv",
+              "count" : "30"
+            }, {
+              "value" : "slv",
+              "count" : "24"
+            }, {
+              "value" : "slo",
+              "count" : "18"
+            } ]
+          }, {
+            "name" : "topic",
+            "values" : [ {
+              "value" : "Science & Technology",
+              "count" : "254914"
+            }, {
+              "value" : "Life Sciences & Biomedicine",
+              "count" : "224081"
+            }, {
+              "value" : "Animals",
+              "count" : "196447"
+            }, {
+              "value" : "Humans",
+              "count" : "148045"
+            }, {
+              "value" : "Male",
+              "count" : "105162"
+            }, {
+              "value" : "Female",
+              "count" : "88288"
+            }, {
+              "value" : "Neurosciences",
+              "count" : "84950"
+            }, {
+              "value" : "Biological And Medical Sciences",
+              "count" : "82128"
+            }, {
+              "value" : "Neurosciences & Neurology",
+              "count" : "80614"
+            }, {
+              "value" : "Research",
+              "count" : "51979"
+            }, {
+              "value" : "Fundamental And Applied Biological Sciences. Psychology",
+              "count" : "48006"
+            }, {
+              "value" : "Medical Sciences",
+              "count" : "38931"
+            }, {
+              "value" : "Adult",
+              "count" : "38600"
+            }, {
+              "value" : "Rats",
+              "count" : "34983"
+            }, {
+              "value" : "Analysis",
+              "count" : "34387"
+            }, {
+              "value" : "Mice",
+              "count" : "29981"
+            }, {
+              "value" : "Social Sciences",
+              "count" : "29369"
+            }, {
+              "value" : "Science & Technology - Other Topics",
+              "count" : "25710"
+            }, {
+              "value" : "Research Article",
+              "count" : "25170"
+            }, {
+              "value" : "Multidisciplinary Sciences",
+              "count" : "24958"
+            } ]
+          }, {
+            "name" : "rtype",
+            "values" : [ {
+              "value" : "articles",
+              "count" : "565620"
+            }, {
+              "value" : "newspaper_articles",
+              "count" : "104273"
+            }, {
+              "value" : "reviews",
+              "count" : "27058"
+            }, {
+              "value" : "journals",
+              "count" : "23039"
+            }, {
+              "value" : "book_chapters",
+              "count" : "22789"
+            }, {
+              "value" : "reference_entrys",
+              "count" : "6291"
+            }, {
+              "value" : "conference_proceedings",
+              "count" : "2395"
+            }, {
+              "value" : "books",
+              "count" : "1626"
+            }, {
+              "value" : "web_resources",
+              "count" : "743"
+            }, {
+              "value" : "reports",
+              "count" : "631"
+            }, {
+              "value" : "text_resources",
+              "count" : "251"
+            }, {
+              "value" : "datasets",
+              "count" : "11"
+            }, {
+              "value" : "other",
+              "count" : "2"
+            }, {
+              "value" : "images",
+              "count" : "1"
+            }, {
+              "value" : "videos",
+              "count" : "1"
+            } ]
+          }, {
+            "name" : "domain",
+            "values" : [ {
+              "value" : "ProQuest Historical Newspapers",
+              "count" : "754746"
+            }, {
+              "value" : "Academic Search Complete",
+              "count" : "192377"
+            }, {
+              "value" : "Medline Complete",
+              "count" : "164520"
+            }, {
+              "value" : "Single Journals",
+              "count" : "164118"
+            }, {
+              "value" : "Factiva",
+              "count" : "163185"
+            }, {
+              "value" : "PubMed Central",
+              "count" : "113300"
+            }, {
+              "value" : "Nexis Uni",
+              "count" : "113223"
+            }, {
+              "value" : "Global Newsstream",
+              "count" : "104096"
+            }, {
+              "value" : "Wiley Online Library All Journals",
+              "count" : "94310"
+            }, {
+              "value" : "DOAJ Directory of Open Access Journals - Not for CDI Discovery",
+              "count" : "87721"
+            }, {
+              "value" : "Wiley Online Library Full Collection 2016",
+              "count" : "81134"
+            }, {
+              "value" : "Wiley Online Library Journals + OA Offset 2015-2017",
+              "count" : "80931"
+            }, {
+              "value" : "PressReader",
+              "count" : "80129"
+            }, {
+              "value" : "ABI/INFORM Collection",
+              "count" : "73353"
+            }, {
+              "value" : "Wiley Online Library All Backfiles",
+              "count" : "69515"
+            }, {
+              "value" : "Publicly Available Content Database",
+              "count" : "63675"
+            }, {
+              "value" : "SpringerLink Contemporary (1997 - Present)",
+              "count" : "63516"
+            }, {
+              "value" : "ScienceDirect Journals (Transactional Access)",
+              "count" : "57350"
+            }, {
+              "value" : "ScienceDirect Journals (5 years ago - present)",
+              "count" : "54663"
+            }, {
+              "value" : "Business Source Complete",
+              "count" : "51261"
+            } ]
+          }, {
+            "name" : "tlevel",
+            "values" : [ {
+              "value" : "open_access",
+              "count" : "184631"
+            }, {
+              "value" : "peer_reviewed",
+              "count" : "367104"
+            }, {
+              "value" : "online_resources",
+              "count" : "754746"
+            } ]
+          }, {
+            "name" : "newrecords",
+            "values" : [ {
+              "value" : "07 days back",
+              "count" : "113"
+            }, {
+              "value" : "30 days back",
+              "count" : "1413"
+            }, {
+              "value" : "90 days back",
+              "count" : "12629"
+            } ]
+          }, {
+            "name" : "creationdate",
+            "values" : [ {
+              "value" : "1700",
+              "count" : "1"
+            }, {
+              "value" : "1800",
+              "count" : "346"
+            }, {
+              "value" : "1900",
+              "count" : "6289"
+            }, {
+              "value" : "1910",
+              "count" : "2049"
+            }, {
+              "value" : "1920",
+              "count" : "2048"
+            }, {
+              "value" : "1930",
+              "count" : "3217"
+            }, {
+              "value" : "1940",
+              "count" : "4066"
+            }, {
+              "value" : "1950",
+              "count" : "3348"
+            }, {
+              "value" : "1951",
+              "count" : "403"
+            }, {
+              "value" : "1952",
+              "count" : "568"
+            }, {
+              "value" : "1953",
+              "count" : "511"
+            }, {
+              "value" : "1954",
+              "count" : "471"
+            }, {
+              "value" : "1955",
+              "count" : "598"
+            }, {
+              "value" : "1956",
+              "count" : "605"
+            }, {
+              "value" : "1957",
+              "count" : "691"
+            }, {
+              "value" : "1958",
+              "count" : "712"
+            }, {
+              "value" : "1959",
+              "count" : "832"
+            }, {
+              "value" : "1960",
+              "count" : "860"
+            }, {
+              "value" : "1961",
+              "count" : "887"
+            }, {
+              "value" : "1962",
+              "count" : "952"
+            }, {
+              "value" : "1963",
+              "count" : "1164"
+            }, {
+              "value" : "1964",
+              "count" : "1210"
+            }, {
+              "value" : "1965",
+              "count" : "1376"
+            }, {
+              "value" : "1966",
+              "count" : "1382"
+            }, {
+              "value" : "1967",
+              "count" : "1447"
+            }, {
+              "value" : "1968",
+              "count" : "1739"
+            }, {
+              "value" : "1969",
+              "count" : "3030"
+            }, {
+              "value" : "1970",
+              "count" : "1846"
+            }, {
+              "value" : "1971",
+              "count" : "2024"
+            }, {
+              "value" : "1972",
+              "count" : "2061"
+            }, {
+              "value" : "1973",
+              "count" : "2352"
+            }, {
+              "value" : "1974",
+              "count" : "2289"
+            }, {
+              "value" : "1975",
+              "count" : "2471"
+            }, {
+              "value" : "1976",
+              "count" : "2541"
+            }, {
+              "value" : "1977",
+              "count" : "2951"
+            }, {
+              "value" : "1978",
+              "count" : "2905"
+            }, {
+              "value" : "1979",
+              "count" : "2920"
+            }, {
+              "value" : "1980",
+              "count" : "3236"
+            }, {
+              "value" : "1981",
+              "count" : "3637"
+            }, {
+              "value" : "1982",
+              "count" : "3568"
+            }, {
+              "value" : "1983",
+              "count" : "3784"
+            }, {
+              "value" : "1984",
+              "count" : "4169"
+            }, {
+              "value" : "1985",
+              "count" : "5021"
+            }, {
+              "value" : "1986",
+              "count" : "5134"
+            }, {
+              "value" : "1987",
+              "count" : "5815"
+            }, {
+              "value" : "1988",
+              "count" : "6263"
+            }, {
+              "value" : "1989",
+              "count" : "6471"
+            }, {
+              "value" : "1990",
+              "count" : "6918"
+            }, {
+              "value" : "1991",
+              "count" : "7700"
+            }, {
+              "value" : "1992",
+              "count" : "8580"
+            }, {
+              "value" : "1993",
+              "count" : "8586"
+            }, {
+              "value" : "1994",
+              "count" : "8976"
+            }, {
+              "value" : "1995",
+              "count" : "9175"
+            }, {
+              "value" : "1996",
+              "count" : "11374"
+            }, {
+              "value" : "1997",
+              "count" : "13620"
+            }, {
+              "value" : "1998",
+              "count" : "15355"
+            }, {
+              "value" : "1999",
+              "count" : "16508"
+            }, {
+              "value" : "2000",
+              "count" : "18252"
+            }, {
+              "value" : "2001",
+              "count" : "19006"
+            }, {
+              "value" : "2002",
+              "count" : "19507"
+            }, {
+              "value" : "2003",
+              "count" : "21519"
+            }, {
+              "value" : "2004",
+              "count" : "23967"
+            }, {
+              "value" : "2005",
+              "count" : "25808"
+            }, {
+              "value" : "2006",
+              "count" : "27507"
+            }, {
+              "value" : "2007",
+              "count" : "27640"
+            }, {
+              "value" : "2008",
+              "count" : "27440"
+            }, {
+              "value" : "2009",
+              "count" : "26384"
+            }, {
+              "value" : "2010",
+              "count" : "27020"
+            }, {
+              "value" : "2011",
+              "count" : "28921"
+            }, {
+              "value" : "2012",
+              "count" : "31285"
+            }, {
+              "value" : "2013",
+              "count" : "32189"
+            }, {
+              "value" : "2014",
+              "count" : "33523"
+            }, {
+              "value" : "2015",
+              "count" : "31004"
+            }, {
+              "value" : "2016",
+              "count" : "30589"
+            }, {
+              "value" : "2017",
+              "count" : "29332"
+            }, {
+              "value" : "2018",
+              "count" : "26561"
+            }, {
+              "value" : "2019",
+              "count" : "23528"
+            }, {
+              "value" : "2020",
+              "count" : "20334"
+            }, {
+              "value" : "2021",
+              "count" : "6956"
+            } ]
+          } ]
+        }
+  recorded_at: Mon, 17 May 2021 20:06:53 GMT
+recorded_with: VCR 6.0.0

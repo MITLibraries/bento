@@ -11,6 +11,16 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     end
   end
 
+  def monkeys
+    VCR.use_cassette('monkeys primo articles',
+                     allow_playback_repeats: true) do
+      raw_query = SearchPrimo.new.search('monkeys',
+                                         ENV['PRIMO_ARTICLE_SCOPE'], 5)
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_ARTICLE_SCOPE'], 
+                                   'monkeys')
+    end
+  end
+
   def missing_fields
     # Note that this cassette has been manually edited to remove the 
     # following fields from the result: creationdate, title, creator, 
@@ -70,7 +80,48 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     assert_not_equal "Rudolph, J.$$QRudolph, J.", result.authors.first.first
     assert_equal ["Rudolph, J.",
                   "https://mit.primo.exlibrisgroup.com/discovery/browse?browseQuery=Rudolph, J.&browseScope=author&vid=FAKE_PRIMO_VID"],
-                  result.authors.first
+                 result.authors.first
+  end
+
+  test 'multiple authors in a single element are appropriately parsed' do
+    result = monkeys['results'].second
+    assert_not_equal ['Beran, Michael J ; Smith, J. David'], result.authors.first.first
+    assert_equal ['Beran, Michael J',
+                  'https://mit.primo.exlibrisgroup.com/discovery/browse?browseQuery=Beran, Michael J&browseScope=author&vid=FAKE_PRIMO_VID'],
+                 result.authors.first
+    assert_equal ['Smith, J. David',
+                  'https://mit.primo.exlibrisgroup.com/discovery/browse?browseQuery=Smith, J. David&browseScope=author&vid=FAKE_PRIMO_VID'],
+                 result.authors.second
+  end
+
+  test 'cleans up single author data in the expected Alma format' do
+    normalizer = NormalizePrimoCommon.new('record', ENV['PRIMO_BOOK_SCOPE'])
+    authors = ['Evans, Bill$$QEvans, Bill']
+    assert_equal ['Evans, Bill'], normalizer.sanitize_authors(authors)
+  end
+
+  test 'cleans up multiple author data in the expected Alma format' do
+    normalizer = NormalizePrimoCommon.new('record', ENV['PRIMO_BOOK_SCOPE'])
+    authors = ['Blakey, Art$$QBlakey, Art', 'Shorter, Wayne$$QShorter, Wayne']
+    assert_equal ['Blakey, Art', 'Shorter, Wayne'], normalizer.sanitize_authors(authors)
+  end
+
+  test 'cleans up multiple author data in the expected CDI format' do
+    normalizer = NormalizePrimoCommon.new('record', ENV['PRIMO_ARTICLE_SCOPE'])
+    authors = ['Blakey, Art ; Shorter, Wayne']
+    assert_equal ['Blakey, Art', 'Shorter, Wayne'], normalizer.sanitize_authors(authors)
+  end
+
+  test 'does not attempt to clean up acceptable single author data' do
+    normalizer = NormalizePrimoCommon.new('record', ENV['PRIMO_BOOK_SCOPE'])
+    authors = ['Redman, Joshua']
+    assert_equal ['Redman, Joshua'], normalizer.sanitize_authors(authors)
+  end
+
+  test 'does not attempt to clean up acceptable multiple author data' do
+    normalizer = NormalizePrimoCommon.new('record', ENV['PRIMO_BOOK_SCOPE'])
+    authors = ['Redman, Joshua', 'Mehldau, Brad']
+    assert_equal ['Redman, Joshua', 'Mehldau, Brad'], normalizer.sanitize_authors(authors)
   end
 
   test 'types are normalized' do
