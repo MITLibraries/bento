@@ -36,6 +36,8 @@ class NormalizePrimoBooks
   end
 
   def subject_link(subj)
+    # We need to remove hyphens to accommodate Primo's subject browse
+    subj = subj.split('--').map { |el| el.strip }.join(' ') if subj.include?('--')
     [ENV['MIT_PRIMO_URL'], '/discovery/browse?browseQuery=', 
      subj, '&browseScope=subject.1&vid=', ENV['PRIMO_VID']].join('')
   end
