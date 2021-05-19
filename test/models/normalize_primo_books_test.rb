@@ -69,6 +69,13 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     assert_nil result.subjects
   end
 
+  test 'removes hyphens from subject links' do
+    result = physical_book['results'].first
+    assert_equal ['Linguists -- United States',
+                  'https://mit.primo.exlibrisgroup.com/discovery/browse?browseQuery=Linguists United States&browseScope=subject.1&vid=FAKE_PRIMO_VID'],
+                 result.subjects.second
+  end
+
   test 'constructs locations as expected' do
     result = physical_book['results'].first
     assert_equal [['Library Storage Annex Off Campus Collection', 
