@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://another_fake_server.example.com/primo/v1/search?apikey=FAKE_PRIMO_SEARCH_API_KEY&limit=5&q=any,contains,%22spider%20monkey%20optimization%20algorithm%22&scope=cdi&tab=bento&vid=FAKE_PRIMO_VID
+    uri: https://another_fake_server.example.com/v1/search?apikey=FAKE_PRIMO_API_KEY&limit=5&q=any,contains,%22spider%20monkey%20optimization%20algorithm%22&scope=FAKE_PRIMO_ARTICLE_SCOPE&tab=FAKE_PRIMO_TAB&vid=FAKE_PRIMO_VID
     body:
       encoding: UTF-8
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Vary:
       - accept-encoding
       X-Exl-Api-Remaining:
-      - '549989'
+      - '549964'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -37,7 +37,7 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Date:
-      - Mon, 17 May 2021 15:07:39 GMT
+      - Wed, 19 May 2021 14:51:08 GMT
       Server:
       - CA-API-Gateway/9.0
     body:
@@ -59,33 +59,72 @@ http_interactions:
           "docs" : [ {
             "pnx" : {
               "sort" : {
-                "title" : [ "Spider Monkey Optimization Algorithm" ],
+                "author" : [ "Sharma, Harish ; Hazrati, Garima ; Bansal, Jagdish Chand" ],
                 "creationdate" : [ "20180607" ],
-                "author" : [ "Sharma, Harish ; Hazrati, Garima ; Bansal, Jagdish Chand" ]
+                "title" : [ "Spider Monkey Optimization Algorithm" ]
               },
               "control" : {
-                "sourcetype" : [ "Publisher" ],
-                "sourceformat" : [ "XML" ],
-                "sourcesystem" : [ "Other" ],
-                "recordid" : [ "cdi_springer_books_10_1007_978_3_319_91341_4_4" ],
+                "recordid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_springer_books_10_1007_978_3_319_91341_4_4" ],
                 "sourcerecordid" : [ "springer_books_10_1007_978_3_319_91341_4_4" ],
                 "originalsourceid" : [ "FETCH-LOGICAL-s1397-6006f56c8c52059e65132578461f88ebc04d8ce35bd2434b1742b3730ea4bc273" ],
                 "recordtype" : [ "book_chapter" ],
                 "addsrcrecordid" : [ "eNo9kLtOw0AURJeXRAj5AhoXtAv3-u6zjCICSEEpAIlu5bXXYZXEtrxu4Osx4VGNZkYaaQ5jVwg3CKBvrTacOKHlFkkgF04csQsag4PXx2yCRgG3EujkvyArT_8KYd_O2Syl6GEcVCZXNGHXz12sQp89tc02fGTrboj7-FkMsW2y-W7T9nF431-ys7rYpTD71Sl7Xd69LB74an3_uJiveEKymisAVUtVmlLmIG1QEimX2giFtTHBlyAqUwaSvsoFCY9a5J40QSiEL3NNU4Y_u6nrY7MJvfNtu00OwX0zcCMDR2585g6f3ciAvgAvS0jO" ],
+                "sourcetype" : [ "Publisher" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
                 "sourceid" : [ "springer" ],
                 "score" : [ "0.5" ]
               },
+              "links" : {
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "openurl" : [ "$$Topenurl_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "Foraging behavior of social creatures has always been a matter of study for the development of optimization algorithms. Spider Monkey Optimization (SMO) is a global optimization algorithm inspired by Fission-Fusion social (FFS) structure of spider monkeys during their foraging behavior. SMO exquisitely depicts two fundamental concepts of swarm intelligence: self-organization and division of labor. SMO has gained popularity in recent years as a swarm intelligence based algorithm and is being applied to many engineering optimization problems. This chapter presents the Spider Monkey Optimization algorithm in detail. A numerical example of SMO procedure has also been given for a better understanding of its working." ],
+                "creationdate" : [ "2018" ],
+                "title" : [ "Spider Monkey Optimization Algorithm", "Evolutionary and Swarm Intelligence Algorithms" ],
+                "recordid" : [ "eNo9kLtOw0AURJeXRAj5AhoXtAv3-u6zjCICSEEpAIlu5bXXYZXEtrxu4Osx4VGNZkYaaQ5jVwg3CKBvrTacOKHlFkkgF04csQsag4PXx2yCRgG3EujkvyArT_8KYd_O2Syl6GEcVCZXNGHXz12sQp89tc02fGTrboj7-FkMsW2y-W7T9nF431-ys7rYpTD71Sl7Xd69LB74an3_uJiveEKymisAVUtVmlLmIG1QEimX2giFtTHBlyAqUwaSvsoFCY9a5J40QSiEL3NNU4Y_u6nrY7MJvfNtu00OwX0zcCMDR2585g6f3ciAvgAvS0jO" ],
+                "recordtype" : [ "book_chapter" ],
+                "sourceid" : [ "" ],
+                "creatorcontrib" : [ "Sharma, Harish", "Hazrati, Garima", "Bansal, Jagdish Chand" ],
+                "rsrctype" : [ "book_chapter" ],
+                "creator" : [ "Sharma, Harish", "Hazrati, Garima", "Bansal, Jagdish Chand" ],
+                "subject" : [ "Spider monkey optimization ; Swarm intelligence ; Numerical optimization ; Fission-fusion social structure" ],
+                "isbn" : [ "3319913395", "9783319913391", "3319913417", "9783319913414" ],
+                "issn" : [ "1860-949X", "1860-9503" ],
+                "fulltext" : [ "true" ],
+                "general" : [ "Springer International Publishing" ],
+                "startdate" : [ "20180607" ],
+                "enddate" : [ "20180607" ],
+                "scope" : [ "" ]
+              },
+              "display" : {
+                "description" : [ "Foraging behavior of social creatures has always been a matter of study for the development of optimization algorithms. Spider Monkey Optimization (SMO) is a global optimization algorithm inspired by Fission-Fusion social (FFS) structure of spider monkeys during their foraging behavior. SMO exquisitely depicts two fundamental concepts of swarm intelligence: self-organization and division of labor. SMO has gained popularity in recent years as a swarm intelligence based algorithm and is being applied to many engineering optimization problems. This chapter presents the Spider Monkey Optimization algorithm in detail. A numerical example of SMO procedure has also been given for a better understanding of its working." ],
+                "title" : [ "Spider Monkey Optimization Algorithm" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Sharma, Harish ; Hazrati, Garima ; Bansal, Jagdish Chand" ],
+                "subject" : [ "Spider monkey optimization ; Swarm intelligence ; Numerical optimization ; Fission-fusion social structure" ],
+                "source" : [ "Springer Book Series", "Springer Intelligent Technologies and Robotics eBooks 2019 English/International" ],
+                "publisher" : [ "Cham: Springer International Publishing" ],
+                "ispartof" : [ "Evolutionary and Swarm Intelligence Algorithms, 2018-06-07, p.43-59" ],
+                "identifier" : [ "ISSN: 1860-949X", "ISBN: 3319913395", "ISBN: 9783319913391", "EISSN: 1860-9503", "EISBN: 3319913417", "EISBN: 9783319913414", "DOI: 10.1007/978-3-319-91341-4_4" ],
+                "relation" : [ "Studies in Computational Intelligence" ],
+                "rights" : [ "Springer International Publishing AG, part of Springer Nature 2019" ],
+                "snippet" : [ ".... This chapter presents the Spider Monkey Optimization algorithm in detail. A numerical example of SMO procedure has also been given for a better understanding of its working." ],
+                "type" : [ "book_chapter" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
+              },
               "addata" : {
-                "abstract" : [ "Foraging behavior of social creatures has always been a matter of study for the development of optimization algorithms. Spider Monkey Optimization (SMO) is a global optimization algorithm inspired by Fission-Fusion social (FFS) structure of spider monkeys during their foraging behavior. SMO exquisitely depicts two fundamental concepts of swarm intelligence: self-organization and division of labor. SMO has gained popularity in recent years as a swarm intelligence based algorithm and is being applied to many engineering optimization problems. This chapter presents the Spider Monkey Optimization algorithm in detail. A numerical example of SMO procedure has also been given for a better understanding of its working." ],
+                "format" : [ "book" ],
+                "genre" : [ "bookitem" ],
                 "isbn" : [ "3319913395", "9783319913391" ],
                 "issn" : [ "1860-949X" ],
-                "genre" : [ "bookitem" ],
-                "au" : [ "Sharma, Harish", "Hazrati, Garima", "Bansal, Jagdish Chand" ],
-                "btitle" : [ "Evolutionary and Swarm Intelligence Algorithms" ],
-                "atitle" : [ "Spider Monkey Optimization Algorithm" ],
-                "seriestitle" : [ "Studies in Computational Intelligence" ],
-                "date" : [ "2018-06-07" ],
-                "risdate" : [ "2018" ],
+                "abstract" : [ "Foraging behavior of social creatures has always been a matter of study for the development of optimization algorithms. Spider Monkey Optimization (SMO) is a global optimization algorithm inspired by Fission-Fusion social (FFS) structure of spider monkeys during their foraging behavior. SMO exquisitely depicts two fundamental concepts of swarm intelligence: self-organization and division of labor. SMO has gained popularity in recent years as a swarm intelligence based algorithm and is being applied to many engineering optimization problems. This chapter presents the Spider Monkey Optimization algorithm in detail. A numerical example of SMO procedure has also been given for a better understanding of its working." ],
                 "spage" : [ "43" ],
                 "epage" : [ "59" ],
                 "pages" : [ "43-59" ],
@@ -95,63 +134,24 @@ http_interactions:
                 "cop" : [ "Cham" ],
                 "pub" : [ "Springer International Publishing" ],
                 "doi" : [ "10.1007/978-3-319-91341-4_4" ],
-                "format" : [ "book" ]
-              },
-              "links" : {
-                "openurl" : [ "$$Topenurl_article" ],
-                "openurlfulltext" : [ "$$Topenurlfull_article" ],
-                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
-              },
-              "search" : {
-                "creator" : [ "Sharma, Harish", "Hazrati, Garima", "Bansal, Jagdish Chand" ],
-                "subject" : [ "Spider monkey optimization ; Swarm intelligence ; Numerical optimization ; Fission-fusion social structure" ],
-                "recordid" : [ "eNo9kLtOw0AURJeXRAj5AhoXtAv3-u6zjCICSEEpAIlu5bXXYZXEtrxu4Osx4VGNZkYaaQ5jVwg3CKBvrTacOKHlFkkgF04csQsag4PXx2yCRgG3EujkvyArT_8KYd_O2Syl6GEcVCZXNGHXz12sQp89tc02fGTrboj7-FkMsW2y-W7T9nF431-ys7rYpTD71Sl7Xd69LB74an3_uJiveEKymisAVUtVmlLmIG1QEimX2giFtTHBlyAqUwaSvsoFCY9a5J40QSiEL3NNU4Y_u6nrY7MJvfNtu00OwX0zcCMDR2585g6f3ciAvgAvS0jO" ],
-                "recordtype" : [ "book_chapter" ],
-                "title" : [ "Spider Monkey Optimization Algorithm", "Evolutionary and Swarm Intelligence Algorithms" ],
-                "creationdate" : [ "2018" ],
-                "sourceid" : [ "" ],
-                "scope" : [ "" ],
-                "creatorcontrib" : [ "Sharma, Harish", "Hazrati, Garima", "Bansal, Jagdish Chand" ],
-                "isbn" : [ "3319913395", "9783319913391", "3319913417", "9783319913414" ],
-                "issn" : [ "1860-949X", "1860-9503" ],
-                "fulltext" : [ "true" ],
-                "general" : [ "Springer International Publishing" ],
-                "rsrctype" : [ "book_chapter" ],
-                "startdate" : [ "20180607" ],
-                "enddate" : [ "20180607" ],
-                "description" : [ "Foraging behavior of social creatures has always been a matter of study for the development of optimization algorithms. Spider Monkey Optimization (SMO) is a global optimization algorithm inspired by Fission-Fusion social (FFS) structure of spider monkeys during their foraging behavior. SMO exquisitely depicts two fundamental concepts of swarm intelligence: self-organization and division of labor. SMO has gained popularity in recent years as a swarm intelligence based algorithm and is being applied to many engineering optimization problems. This chapter presents the Spider Monkey Optimization algorithm in detail. A numerical example of SMO procedure has also been given for a better understanding of its working." ]
-              },
-              "display" : {
-                "lds50" : [ "peer_reviewed" ],
-                "type" : [ "book_chapter" ],
-                "source" : [ "Springer Book Series", "Springer Intelligent Technologies and Robotics eBooks 2019 English/International" ],
-                "creator" : [ "Sharma, Harish ; Hazrati, Garima ; Bansal, Jagdish Chand" ],
-                "publisher" : [ "Cham: Springer International Publishing" ],
-                "ispartof" : [ "Evolutionary and Swarm Intelligence Algorithms, 2018-06-07, p.43-59" ],
-                "identifier" : [ "ISSN: 1860-949X", "ISBN: 3319913395", "ISBN: 9783319913391", "EISSN: 1860-9503", "EISBN: 3319913417", "EISBN: 9783319913414", "DOI: 10.1007/978-3-319-91341-4_4" ],
-                "subject" : [ "Spider monkey optimization ; Swarm intelligence ; Numerical optimization ; Fission-fusion social structure" ],
-                "language" : [ "eng" ],
-                "relation" : [ "Studies in Computational Intelligence" ],
-                "rights" : [ "Springer International Publishing AG, part of Springer Nature 2019" ],
-                "snippet" : [ ".... This chapter presents the Spider Monkey Optimization algorithm in detail. A numerical example of SMO procedure has also been given for a better understanding of its working." ],
-                "title" : [ "Spider Monkey Optimization Algorithm" ],
-                "description" : [ "Foraging behavior of social creatures has always been a matter of study for the development of optimization algorithms. Spider Monkey Optimization (SMO) is a global optimization algorithm inspired by Fission-Fusion social (FFS) structure of spider monkeys during their foraging behavior. SMO exquisitely depicts two fundamental concepts of swarm intelligence: self-organization and division of labor. SMO has gained popularity in recent years as a swarm intelligence based algorithm and is being applied to many engineering optimization problems. This chapter presents the Spider Monkey Optimization algorithm in detail. A numerical example of SMO procedure has also been given for a better understanding of its working." ]
-              },
-              "delivery" : {
-                "fulltext" : [ "fulltext" ],
-                "delcategory" : [ "Remote Search Resource" ]
+                "au" : [ "Sharma, Harish", "Hazrati, Garima", "Bansal, Jagdish Chand" ],
+                "btitle" : [ "Evolutionary and Swarm Intelligence Algorithms" ],
+                "atitle" : [ "Spider Monkey Optimization Algorithm" ],
+                "seriestitle" : [ "Studies in Computational Intelligence" ],
+                "date" : [ "2018-06-07" ],
+                "risdate" : [ "2018" ]
               },
               "facets" : {
-                "language" : [ "eng" ],
                 "creationdate" : [ "2018" ],
                 "creatorcontrib" : [ "Sharma, Harish", "Hazrati, Garima", "Bansal, Jagdish Chand" ],
-                "rsrctype" : [ "book_chapters" ],
                 "topic" : [ "Spider monkey optimization", "Swarm intelligence", "Numerical optimization", "Fission-fusion social structure" ],
                 "prefilter" : [ "book_chapters" ],
+                "rsrctype" : [ "book_chapters" ],
                 "toplevel" : [ "peer_reviewed", "online_resources" ],
-                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-s1397-6006f56c8c52059e65132578461f88ebc04d8ce35bd2434b1742b3730ea4bc273" ],
+                "frbrgroupid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_FETCH-LOGICAL-s1397-6006f56c8c52059e65132578461f88ebc04d8ce35bd2434b1742b3730ea4bc273" ],
                 "frbrtype" : [ "5" ],
-                "jtitle" : [ "Evolutionary and Swarm Intelligence Algorithms" ]
+                "jtitle" : [ "Evolutionary and Swarm Intelligence Algorithms" ],
+                "language" : [ "eng" ]
               }
             },
             "delivery" : {
@@ -169,7 +169,7 @@ http_interactions:
               "feDisplayOtherLocations" : false,
               "displayedAvailability" : "true",
               "holding" : [ ],
-              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 11:07:39&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-springer&rft_val_fmt=info:ofi/fmt:kev:mtx:book&rft.genre=bookitem&rft.atitle=Spider+Monkey+Optimization+Algorithm&rft.btitle=Evolutionary+and+Swarm+Intelligence+Algorithms&rft.au=Sharma%2C+Harish&rft.date=2018-06-07&rft.spage=43&rft.epage=59&rft.pages=43-59&rft.issn=1860-949X&rft.eissn=1860-9503&rft.isbn=3319913395&rft_id=info:doi/10.1007%2F978-3-319-91341-4_4&rft.eisbn=3319913417&rft.pub=Springer+International+Publishing&rft.place=Cham&rft.series=Studies+in+Computational+Intelligence&rft_dat=<springer>springer_books_10_1007_978_3_319_91341_4_4</springer>&svc_dat=viewit"
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-19 10:51:08&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-springer&rft_val_fmt=info:ofi/fmt:kev:mtx:book&rft.genre=bookitem&rft.atitle=Spider+Monkey+Optimization+Algorithm&rft.btitle=Evolutionary+and+Swarm+Intelligence+Algorithms&rft.au=Sharma%2C+Harish&rft.date=2018-06-07&rft.spage=43&rft.epage=59&rft.pages=43-59&rft.issn=1860-949X&rft.eissn=1860-9503&rft.isbn=3319913395&rft_id=info:doi/10.1007%2F978-3-319-91341-4_4&rft.eisbn=3319913417&rft.pub=Springer+International+Publishing&rft.place=Cham&rft.series=Studies+in+Computational+Intelligence&rft_dat=<springer>springer_books_10_1007_978_3_319_91341_4_4</springer>&svc_dat=viewit"
             },
             "context" : "PC",
             "adaptor" : "Primo Central",
@@ -180,41 +180,78 @@ http_interactions:
               },
               "timesCited" : { }
             },
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_springer_books_10_1007_978_3_319_91341_4_4"
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/FAKE_PRIMO_ARTICLE_SCOPE_springer_books_10_1007_978_3_319_91341_4_4"
           }, {
             "pnx" : {
               "sort" : {
-                "title" : [ "Spider monkey optimization algorithm for constrained optimization problems" ],
+                "author" : [ "Gupta, Kavita ; Deep, Kusum ; Bansal, Jagdish Chand" ],
                 "creationdate" : [ "201712" ],
-                "author" : [ "Gupta, Kavita ; Deep, Kusum ; Bansal, Jagdish Chand" ]
+                "title" : [ "Spider monkey optimization algorithm for constrained optimization problems" ]
               },
               "control" : {
-                "sourcetype" : [ "Aggregation Database" ],
-                "sourceformat" : [ "XML" ],
-                "sourcesystem" : [ "Other" ],
-                "pqid" : [ "1954549491" ],
-                "galeid" : [ "A511146853" ],
-                "recordid" : [ "cdi_proquest_journals_1954549491" ],
+                "recordid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_proquest_journals_1954549491" ],
                 "sourcerecordid" : [ "A511146853" ],
                 "originalsourceid" : [ "FETCH-LOGICAL-c4535-a86bbb71376b77001df386e11d5ee8348311a0f24f136a8d8e9b5b193114734b3" ],
                 "recordtype" : [ "article" ],
                 "addsrcrecordid" : [ "eNp9kEtLxDAUhYsoOD5-gLuCS-mY2yRNuxwGnwy4UNchaZMxY9vUpLMYf71pK4oKkkXC5Tvn3JwoOgM0B4TYpUeIIpQgyJKUQJGgvWgGBOOEEVbsj-80YRnBh9GR9xuEUmAUz6L7x85UysWNbV_VLrZdbxrzLnpj21jUa-tM_9LE2rq4tK3vnTCtqn5inbOyVo0_iQ60qL06_byPo-frq6flbbJ6uLlbLlZJSSimicgzKSUDzDLJGEJQaZxnCqCiSuWY5BhAIJ0SDTgTeZWrQlIJRRgThonEx9H55BuC37bK93xjt64NkRwKSigpSAGBmk_UWtSKm1bbsHwZTqUaE_6itAnzBYVgm-UUBwFMgtJZ753SvHOmEW7HAfGhYz51zEPHfOiYo6C5mDQ-sO1auS9NOlADnQJP8ch_J_yhR3BQLFxvyrDX6N-FZv5NYL8TPgDsCJqd" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
                 "sourceid" : [ "gale_proqu" ],
-                "score" : [ "0.09796392" ]
+                "pqid" : [ "1954549491" ],
+                "galeid" : [ "A511146853" ],
+                "score" : [ "0.09796783" ]
+              },
+              "links" : {
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "openurl" : [ "$$Topenurl_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "In this paper, a modified version of spider monkey optimization (SMO) algorithm for solving constrained optimization problems has been proposed. To the best of author’s knowledge, this is the first attempt to develop a version of SMO which can solve constrained continuous optimization problems by using the Deb’s technique for handling constraints. The proposed algorithm is named constrained spider monkey optimization (CSMO) algorithm. The performance of CSMO is investigated on the well-defined constrained optimization problems of CEC2006 and CEC2010 benchmark sets. The results of the proposed algorithm are compared with constrained versions of particle swarm optimization, artificial bee colony and differential evolution. Outcome of the experiment and the discussion of results demonstrate that CSMO handles the global optimization task very well for constrained optimization problems and shows better performance in comparison with compared algorithms. Such an outcome will be an encouragement for the research community to further explore the potential of SMO in solving benchmarks as well as real-world problems, which are often constrained in nature." ],
+                "creationdate" : [ "2017" ],
+                "title" : [ "Spider monkey optimization algorithm for constrained optimization problems", "Soft computing (Berlin, Germany)", "Soft Computing" ],
+                "recordid" : [ "eNp9kEtLxDAUhYsoOD5-gLuCS-mY2yRNuxwGnwy4UNchaZMxY9vUpLMYf71pK4oKkkXC5Tvn3JwoOgM0B4TYpUeIIpQgyJKUQJGgvWgGBOOEEVbsj-80YRnBh9GR9xuEUmAUz6L7x85UysWNbV_VLrZdbxrzLnpj21jUa-tM_9LE2rq4tK3vnTCtqn5inbOyVo0_iQ60qL06_byPo-frq6flbbJ6uLlbLlZJSSimicgzKSUDzDLJGEJQaZxnCqCiSuWY5BhAIJ0SDTgTeZWrQlIJRRgThonEx9H55BuC37bK93xjt64NkRwKSigpSAGBmk_UWtSKm1bbsHwZTqUaE_6itAnzBYVgm-UUBwFMgtJZ753SvHOmEW7HAfGhYz51zEPHfOiYo6C5mDQ-sO1auS9NOlADnQJP8ch_J_yhR3BQLFxvyrDX6N-FZv5NYL8TPgDsCJqd" ],
+                "recordtype" : [ "article" ],
+                "creatorcontrib" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
+                "rsrctype" : [ "article" ],
+                "orcidid" : [ "https://orcid.org/0000-0003-3104-3233" ],
+                "creator" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
+                "subject" : [ "Engineering ; Deb’s technique ; CEC2006 ; Computational Intelligence ; Control, Robotics, Mechatronics ; Artificial Intelligence (incl. Robotics) ; Spider monkey optimization ; CEC2010 ; Mathematical Logic and Foundations ; Constrained optimization ; Monkeys ; Algorithms ; Mathematical optimization ; Analysis ; Bees ; Optimization algorithms ; Benchmarks ; Global optimization ; Swarm intelligence" ],
+                "issn" : [ "1432-7643", "1433-7479" ],
+                "fulltext" : [ "true" ],
+                "addtitle" : [ "Soft Comput" ],
+                "general" : [ "Springer Berlin Heidelberg", "Springer", "Springer Nature B.V" ],
+                "startdate" : [ "201712" ],
+                "enddate" : [ "201712" ],
+                "scope" : [ "AAYXX", "CITATION", "BSHEE" ]
+              },
+              "display" : {
+                "description" : [ "In this paper, a modified version of spider monkey optimization (SMO) algorithm for solving constrained optimization problems has been proposed. To the best of author’s knowledge, this is the first attempt to develop a version of SMO which can solve constrained continuous optimization problems by using the Deb’s technique for handling constraints. The proposed algorithm is named constrained spider monkey optimization (CSMO) algorithm. The performance of CSMO is investigated on the well-defined constrained optimization problems of CEC2006 and CEC2010 benchmark sets. The results of the proposed algorithm are compared with constrained versions of particle swarm optimization, artificial bee colony and differential evolution. Outcome of the experiment and the discussion of results demonstrate that CSMO handles the global optimization task very well for constrained optimization problems and shows better performance in comparison with compared algorithms. Such an outcome will be an encouragement for the research community to further explore the potential of SMO in solving benchmarks as well as real-world problems, which are often constrained in nature." ],
+                "title" : [ "Spider monkey optimization algorithm for constrained optimization problems" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Gupta, Kavita ; Deep, Kusum ; Bansal, Jagdish Chand" ],
+                "subject" : [ "Engineering ; Deb’s technique ; CEC2006 ; Computational Intelligence ; Control, Robotics, Mechatronics ; Artificial Intelligence (incl. Robotics) ; Spider monkey optimization ; CEC2010 ; Mathematical Logic and Foundations ; Constrained optimization ; Monkeys ; Algorithms ; Mathematical optimization ; Analysis ; Bees ; Optimization algorithms ; Benchmarks ; Global optimization ; Swarm intelligence" ],
+                "source" : [ "SpringerLink Contemporary (1997 - Present)" ],
+                "publisher" : [ "Berlin/Heidelberg: Springer Berlin Heidelberg" ],
+                "ispartof" : [ "Soft computing (Berlin, Germany), 2017-12, Vol.21 (23), p.6933-6962" ],
+                "identifier" : [ "ISSN: 1432-7643", "EISSN: 1433-7479", "DOI: 10.1007/s00500-016-2419-0" ],
+                "rights" : [ "Springer-Verlag GmbH Germany 2017", "Springer-Verlag Berlin Heidelberg 2016", "COPYRIGHT 2017 Springer" ],
+                "snippet" : [ "...Soft Comput (2017) 21:6933–6962\nDOI 10.1007/s00500-016-2419-0\nFOUNDATIONS\nSpider monkey optimization algorithm for constrained\noptimization problems\nKavita..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
               },
               "addata" : {
-                "abstract" : [ "In this paper, a modified version of spider monkey optimization (SMO) algorithm for solving constrained optimization problems has been proposed. To the best of author’s knowledge, this is the first attempt to develop a version of SMO which can solve constrained continuous optimization problems by using the Deb’s technique for handling constraints. The proposed algorithm is named constrained spider monkey optimization (CSMO) algorithm. The performance of CSMO is investigated on the well-defined constrained optimization problems of CEC2006 and CEC2010 benchmark sets. The results of the proposed algorithm are compared with constrained versions of particle swarm optimization, artificial bee colony and differential evolution. Outcome of the experiment and the discussion of results demonstrate that CSMO handles the global optimization task very well for constrained optimization problems and shows better performance in comparison with compared algorithms. Such an outcome will be an encouragement for the research community to further explore the potential of SMO in solving benchmarks as well as real-world problems, which are often constrained in nature." ],
-                "orcidid" : [ "https://orcid.org/0000-0003-3104-3233" ],
-                "issn" : [ "1432-7643" ],
+                "format" : [ "journal" ],
                 "jtitle" : [ "Soft computing (Berlin, Germany)" ],
                 "genre" : [ "article" ],
-                "au" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
-                "atitle" : [ "Spider monkey optimization algorithm for constrained optimization problems" ],
-                "stitle" : [ "Soft Comput" ],
-                "date" : [ "2017-12" ],
-                "risdate" : [ "2017" ],
-                "volume" : [ "21" ],
-                "issue" : [ "23" ],
+                "orcidid" : [ "https://orcid.org/0000-0003-3104-3233" ],
+                "issn" : [ "1432-7643" ],
+                "abstract" : [ "In this paper, a modified version of spider monkey optimization (SMO) algorithm for solving constrained optimization problems has been proposed. To the best of author’s knowledge, this is the first attempt to develop a version of SMO which can solve constrained continuous optimization problems by using the Deb’s technique for handling constraints. The proposed algorithm is named constrained spider monkey optimization (CSMO) algorithm. The performance of CSMO is investigated on the well-defined constrained optimization problems of CEC2006 and CEC2010 benchmark sets. The results of the proposed algorithm are compared with constrained versions of particle swarm optimization, artificial bee colony and differential evolution. Outcome of the experiment and the discussion of results demonstrate that CSMO handles the global optimization task very well for constrained optimization problems and shows better performance in comparison with compared algorithms. Such an outcome will be an encouragement for the research community to further explore the potential of SMO in solving benchmarks as well as real-world problems, which are often constrained in nature." ],
                 "spage" : [ "6933" ],
                 "epage" : [ "6962" ],
                 "pages" : [ "6933-6962" ],
@@ -223,63 +260,26 @@ http_interactions:
                 "cop" : [ "Berlin/Heidelberg" ],
                 "pub" : [ "Springer Berlin Heidelberg" ],
                 "doi" : [ "10.1007/s00500-016-2419-0" ],
-                "format" : [ "journal" ]
-              },
-              "links" : {
-                "openurl" : [ "$$Topenurl_article" ],
-                "openurlfulltext" : [ "$$Topenurlfull_article" ],
-                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
-              },
-              "search" : {
-                "creator" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
-                "subject" : [ "Engineering ; Deb’s technique ; CEC2006 ; Computational Intelligence ; Control, Robotics, Mechatronics ; Artificial Intelligence (incl. Robotics) ; Spider monkey optimization ; CEC2010 ; Mathematical Logic and Foundations ; Constrained optimization ; Monkeys ; Algorithms ; Mathematical optimization ; Analysis ; Bees ; Optimization algorithms ; Benchmarks ; Global optimization ; Swarm intelligence" ],
-                "recordid" : [ "eNp9kEtLxDAUhYsoOD5-gLuCS-mY2yRNuxwGnwy4UNchaZMxY9vUpLMYf71pK4oKkkXC5Tvn3JwoOgM0B4TYpUeIIpQgyJKUQJGgvWgGBOOEEVbsj-80YRnBh9GR9xuEUmAUz6L7x85UysWNbV_VLrZdbxrzLnpj21jUa-tM_9LE2rq4tK3vnTCtqn5inbOyVo0_iQ60qL06_byPo-frq6flbbJ6uLlbLlZJSSimicgzKSUDzDLJGEJQaZxnCqCiSuWY5BhAIJ0SDTgTeZWrQlIJRRgThonEx9H55BuC37bK93xjt64NkRwKSigpSAGBmk_UWtSKm1bbsHwZTqUaE_6itAnzBYVgm-UUBwFMgtJZ753SvHOmEW7HAfGhYz51zEPHfOiYo6C5mDQ-sO1auS9NOlADnQJP8ch_J_yhR3BQLFxvyrDX6N-FZv5NYL8TPgDsCJqd" ],
-                "recordtype" : [ "article" ],
-                "title" : [ "Spider monkey optimization algorithm for constrained optimization problems", "Soft computing (Berlin, Germany)", "Soft Computing" ],
-                "creationdate" : [ "2017" ],
-                "scope" : [ "AAYXX", "CITATION", "BSHEE" ],
-                "orcidid" : [ "https://orcid.org/0000-0003-3104-3233" ],
-                "creatorcontrib" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
-                "issn" : [ "1432-7643", "1433-7479" ],
-                "fulltext" : [ "true" ],
-                "addtitle" : [ "Soft Comput" ],
-                "general" : [ "Springer Berlin Heidelberg", "Springer", "Springer Nature B.V" ],
-                "rsrctype" : [ "article" ],
-                "startdate" : [ "201712" ],
-                "enddate" : [ "201712" ],
-                "description" : [ "In this paper, a modified version of spider monkey optimization (SMO) algorithm for solving constrained optimization problems has been proposed. To the best of author’s knowledge, this is the first attempt to develop a version of SMO which can solve constrained continuous optimization problems by using the Deb’s technique for handling constraints. The proposed algorithm is named constrained spider monkey optimization (CSMO) algorithm. The performance of CSMO is investigated on the well-defined constrained optimization problems of CEC2006 and CEC2010 benchmark sets. The results of the proposed algorithm are compared with constrained versions of particle swarm optimization, artificial bee colony and differential evolution. Outcome of the experiment and the discussion of results demonstrate that CSMO handles the global optimization task very well for constrained optimization problems and shows better performance in comparison with compared algorithms. Such an outcome will be an encouragement for the research community to further explore the potential of SMO in solving benchmarks as well as real-world problems, which are often constrained in nature." ]
-              },
-              "display" : {
-                "lds50" : [ "peer_reviewed" ],
-                "type" : [ "article" ],
-                "source" : [ "SpringerLink Contemporary (1997 - Present)" ],
-                "creator" : [ "Gupta, Kavita ; Deep, Kusum ; Bansal, Jagdish Chand" ],
-                "publisher" : [ "Berlin/Heidelberg: Springer Berlin Heidelberg" ],
-                "ispartof" : [ "Soft computing (Berlin, Germany), 2017-12, Vol.21 (23), p.6933-6962" ],
-                "identifier" : [ "ISSN: 1432-7643", "EISSN: 1433-7479", "DOI: 10.1007/s00500-016-2419-0" ],
-                "subject" : [ "Engineering ; Deb’s technique ; CEC2006 ; Computational Intelligence ; Control, Robotics, Mechatronics ; Artificial Intelligence (incl. Robotics) ; Spider monkey optimization ; CEC2010 ; Mathematical Logic and Foundations ; Constrained optimization ; Monkeys ; Algorithms ; Mathematical optimization ; Analysis ; Bees ; Optimization algorithms ; Benchmarks ; Global optimization ; Swarm intelligence" ],
-                "language" : [ "eng" ],
-                "rights" : [ "Springer-Verlag GmbH Germany 2017", "Springer-Verlag Berlin Heidelberg 2016", "COPYRIGHT 2017 Springer" ],
-                "snippet" : [ "...Soft Comput (2017) 21:6933–6962\nDOI 10.1007/s00500-016-2419-0\nFOUNDATIONS\nSpider monkey optimization algorithm for constrained\noptimization problems\nKavita..." ],
-                "title" : [ "Spider monkey optimization algorithm for constrained optimization problems" ],
-                "description" : [ "In this paper, a modified version of spider monkey optimization (SMO) algorithm for solving constrained optimization problems has been proposed. To the best of author’s knowledge, this is the first attempt to develop a version of SMO which can solve constrained continuous optimization problems by using the Deb’s technique for handling constraints. The proposed algorithm is named constrained spider monkey optimization (CSMO) algorithm. The performance of CSMO is investigated on the well-defined constrained optimization problems of CEC2006 and CEC2010 benchmark sets. The results of the proposed algorithm are compared with constrained versions of particle swarm optimization, artificial bee colony and differential evolution. Outcome of the experiment and the discussion of results demonstrate that CSMO handles the global optimization task very well for constrained optimization problems and shows better performance in comparison with compared algorithms. Such an outcome will be an encouragement for the research community to further explore the potential of SMO in solving benchmarks as well as real-world problems, which are often constrained in nature." ]
-              },
-              "delivery" : {
-                "fulltext" : [ "fulltext" ],
-                "delcategory" : [ "Remote Search Resource" ]
+                "au" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
+                "atitle" : [ "Spider monkey optimization algorithm for constrained optimization problems" ],
+                "stitle" : [ "Soft Comput" ],
+                "date" : [ "2017-12" ],
+                "risdate" : [ "2017" ],
+                "volume" : [ "21" ],
+                "issue" : [ "23" ]
               },
               "facets" : {
-                "language" : [ "eng" ],
                 "creationdate" : [ "2017" ],
                 "creatorcontrib" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
-                "rsrctype" : [ "articles" ],
                 "topic" : [ "Engineering", "Deb’s technique", "CEC2006", "Computational Intelligence", "Control, Robotics, Mechatronics", "Artificial Intelligence (incl. Robotics)", "Spider monkey optimization", "CEC2010", "Mathematical Logic and Foundations", "Constrained optimization", "Monkeys", "Algorithms", "Mathematical optimization", "Analysis", "Bees", "Optimization algorithms", "Benchmarks", "Global optimization", "Swarm intelligence" ],
                 "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
                 "collection" : [ "CrossRef", "Academic OneFile (A&I only)" ],
                 "toplevel" : [ "peer_reviewed", "online_resources" ],
-                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-c4535-a86bbb71376b77001df386e11d5ee8348311a0f24f136a8d8e9b5b193114734b3" ],
+                "frbrgroupid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_FETCH-LOGICAL-c4535-a86bbb71376b77001df386e11d5ee8348311a0f24f136a8d8e9b5b193114734b3" ],
                 "frbrtype" : [ "5" ],
-                "jtitle" : [ "Soft computing (Berlin, Germany)", "Soft Computing" ]
+                "jtitle" : [ "Soft computing (Berlin, Germany)", "Soft Computing" ],
+                "language" : [ "eng" ]
               }
             },
             "delivery" : {
@@ -297,7 +297,7 @@ http_interactions:
               "feDisplayOtherLocations" : false,
               "displayedAvailability" : "true",
               "holding" : [ ],
-              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 11:07:39&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_proqu&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Spider+monkey+optimization+algorithm+for+constrained+optimization+problems&rft.jtitle=Soft+computing+%28Berlin%2C+Germany%29&rft.au=Gupta%2C+Kavita&rft.date=2017-12&rft.volume=21&rft.issue=23&rft.spage=6933&rft.epage=6962&rft.pages=6933-6962&rft.issn=1432-7643&rft.eissn=1433-7479&rft_id=info:doi/10.1007%2Fs00500-016-2419-0&rft.pub=Springer+Berlin+Heidelberg&rft.place=Berlin%2FHeidelberg&rft.stitle=Soft+Comput&rft_dat=<gale_proqu>1954549491</gale_proqu>&svc_dat=viewit&rft_galeid=A511146853"
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-19 10:51:08&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_proqu&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Spider+monkey+optimization+algorithm+for+constrained+optimization+problems&rft.jtitle=Soft+computing+%28Berlin%2C+Germany%29&rft.au=Gupta%2C+Kavita&rft.date=2017-12&rft.volume=21&rft.issue=23&rft.spage=6933&rft.epage=6962&rft.pages=6933-6962&rft.issn=1432-7643&rft.eissn=1433-7479&rft_id=info:doi/10.1007%2Fs00500-016-2419-0&rft.pub=Springer+Berlin+Heidelberg&rft.place=Berlin%2FHeidelberg&rft.stitle=Soft+Comput&rft_dat=<gale_proqu>1954549491</gale_proqu>&svc_dat=viewit&rft_galeid=A511146853"
             },
             "context" : "PC",
             "adaptor" : "Primo Central",
@@ -308,99 +308,99 @@ http_interactions:
               },
               "timesCited" : { }
             },
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_proquest_journals_1954549491"
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/FAKE_PRIMO_ARTICLE_SCOPE_proquest_journals_1954549491"
           }, {
             "pnx" : {
               "sort" : {
-                "title" : [ "Load Balancing in Software-Defined Networks Using Spider Monkey Optimization Algorithm for the Internet of Things" ],
+                "author" : [ "Mayilsamy, Jayaprakash ; Rangasamy, Devi Priya" ],
                 "creationdate" : [ "20200911" ],
-                "author" : [ "Mayilsamy, Jayaprakash ; Rangasamy, Devi Priya" ]
+                "title" : [ "Load Balancing in Software-Defined Networks Using Spider Monkey Optimization Algorithm for the Internet of Things" ]
               },
               "control" : {
-                "sourcetype" : [ "Aggregation Database" ],
-                "sourceformat" : [ "XML" ],
-                "sourcesystem" : [ "Other" ],
-                "galeid" : [ "A648108178" ],
-                "recordid" : [ "cdi_gale_infotracacademiconefile_A648108178" ],
+                "recordid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_gale_infotracacademiconefile_A648108178" ],
                 "sourcerecordid" : [ "A648108178" ],
                 "originalsourceid" : [ "FETCH-LOGICAL-c2032-a0314266ddaf9e39d6ea75bbe0c9f084f2f1067cc8540a91b5386aa7a1a8c8053" ],
                 "recordtype" : [ "article" ],
                 "addsrcrecordid" : [ "eNotkNtKAzEQhoMoWA8v4FVeIDrJ7ibZy3oWqr1Qwbtlmk3a2DapSUDq07u1MhcDw3w__B8hFxwuOYC6ypwLpRgIYKAUVEwekBFvlGC6qj8OyQha0TIpuDgmJzl_AgxYK0bkaxKxp9e4wmB8mFMf6Gt05RuTZbfW-WB7-mLLd0zLTN_z7uV143ub6HMMS7ul003xa_-DxcdAx6t5TL4s1tTFRMvC0qdQbAq20Ojo22LA8xk5crjK9vx_n5L3-7u3m0c2mT483YwnzAioBEOoeC2k7Ht0ra3aXlpUzWxmwbQOdO2E4yCVMbqpAVs-ayotERVy1EZDU52Sy33uHFe288HFktAM09u1NzEM5Yb7WNaag-ZKD4DYAybFnJN13Sb5NaZtx6HbWe72lrvBcvdnuZPVLxCzcQY" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
                 "sourceid" : [ "gale_cross" ],
-                "score" : [ "0.06633203" ]
+                "galeid" : [ "A648108178" ],
+                "score" : [ "0.06633455" ]
+              },
+              "links" : {
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "openurl" : [ "$$Topenurl_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "In the Internet of Things (IoT), the number of devices connected to the internet, and they can collect and exchange information at any time. IoT is helpful for the progress of a smart city and different applications. Software-Defined Network (SDN) offers programmability and flexibility in the IoT network. Nevertheless, the adoption of the number of gadgets will increase the transmission delay and this will lead the network to heavy loaded. To overcome this issue, an efficient load balancing technique has to be presented in the SDN network. By considering this solution as an aim, spider monkey optimization algorithm based load balancing (LB-SMOA) is presented in this paper. Using this technique, the controller with minimum load is selected and this selected controller balances the load of the heavily loaded controller. Simulation results show that the performance of the proposed LB-SMOA outperforms the existing load balancing techniques in terms of average response time, packet loss rate, and throughput." ],
+                "creationdate" : [ "2020" ],
+                "title" : [ "Load Balancing in Software-Defined Networks Using Spider Monkey Optimization Algorithm for the Internet of Things", "Wireless personal communications" ],
+                "recordid" : [ "eNotkNtKAzEQhoMoWA8v4FVeIDrJ7ibZy3oWqr1Qwbtlmk3a2DapSUDq07u1MhcDw3w__B8hFxwuOYC6ypwLpRgIYKAUVEwekBFvlGC6qj8OyQha0TIpuDgmJzl_AgxYK0bkaxKxp9e4wmB8mFMf6Gt05RuTZbfW-WB7-mLLd0zLTN_z7uV143ub6HMMS7ul003xa_-DxcdAx6t5TL4s1tTFRMvC0qdQbAq20Ojo22LA8xk5crjK9vx_n5L3-7u3m0c2mT483YwnzAioBEOoeC2k7Ht0ra3aXlpUzWxmwbQOdO2E4yCVMbqpAVs-ayotERVy1EZDU52Sy33uHFe288HFktAM09u1NzEM5Yb7WNaag-ZKD4DYAybFnJN13Sb5NaZtx6HbWe72lrvBcvdnuZPVLxCzcQY" ],
+                "recordtype" : [ "article" ],
+                "creatorcontrib" : [ "Mayilsamy, Jayaprakash", "Rangasamy, Devi Priya" ],
+                "rsrctype" : [ "article" ],
+                "creator" : [ "Mayilsamy, Jayaprakash", "Rangasamy, Devi Priya" ],
+                "subject" : [ "Information networks ; Monkeys ; Computer networks ; Engineering schools ; Algorithms ; Mathematical optimization" ],
+                "issn" : [ "0929-6212", "1572-834X" ],
+                "fulltext" : [ "true" ],
+                "general" : [ "Springer" ],
+                "startdate" : [ "20200911" ],
+                "enddate" : [ "20200911" ],
+                "scope" : [ "AAYXX", "CITATION", "BSHEE" ]
+              },
+              "display" : {
+                "description" : [ "In the Internet of Things (IoT), the number of devices connected to the internet, and they can collect and exchange information at any time. IoT is helpful for the progress of a smart city and different applications. Software-Defined Network (SDN) offers programmability and flexibility in the IoT network. Nevertheless, the adoption of the number of gadgets will increase the transmission delay and this will lead the network to heavy loaded. To overcome this issue, an efficient load balancing technique has to be presented in the SDN network. By considering this solution as an aim, spider monkey optimization algorithm based load balancing (LB-SMOA) is presented in this paper. Using this technique, the controller with minimum load is selected and this selected controller balances the load of the heavily loaded controller. Simulation results show that the performance of the proposed LB-SMOA outperforms the existing load balancing techniques in terms of average response time, packet loss rate, and throughput." ],
+                "title" : [ "Load Balancing in Software-Defined Networks Using Spider Monkey Optimization Algorithm for the Internet of Things" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Mayilsamy, Jayaprakash ; Rangasamy, Devi Priya" ],
+                "subject" : [ "Information networks ; Monkeys ; Computer networks ; Engineering schools ; Algorithms ; Mathematical optimization" ],
+                "source" : [ "SpringerLink Contemporary (1997 - Present)" ],
+                "publisher" : [ "Springer" ],
+                "ispartof" : [ "Wireless personal communications, 2020-09-11, Vol.116 (1), p.23" ],
+                "identifier" : [ "ISSN: 0929-6212", "EISSN: 1572-834X", "DOI: 10.1007/s11277-020-07703-6" ],
+                "rights" : [ "COPYRIGHT 2021 Springer" ],
+                "snippet" : [ ".... By considering this solution as an aim, spider monkey optimization algorithm based load balancing (LB-SMOA..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
               },
               "addata" : {
-                "abstract" : [ "In the Internet of Things (IoT), the number of devices connected to the internet, and they can collect and exchange information at any time. IoT is helpful for the progress of a smart city and different applications. Software-Defined Network (SDN) offers programmability and flexibility in the IoT network. Nevertheless, the adoption of the number of gadgets will increase the transmission delay and this will lead the network to heavy loaded. To overcome this issue, an efficient load balancing technique has to be presented in the SDN network. By considering this solution as an aim, spider monkey optimization algorithm based load balancing (LB-SMOA) is presented in this paper. Using this technique, the controller with minimum load is selected and this selected controller balances the load of the heavily loaded controller. Simulation results show that the performance of the proposed LB-SMOA outperforms the existing load balancing techniques in terms of average response time, packet loss rate, and throughput." ],
-                "issn" : [ "0929-6212" ],
+                "format" : [ "journal" ],
                 "jtitle" : [ "Wireless personal communications" ],
                 "genre" : [ "article" ],
-                "au" : [ "Mayilsamy, Jayaprakash", "Rangasamy, Devi Priya" ],
-                "atitle" : [ "Load Balancing in Software-Defined Networks Using Spider Monkey Optimization Algorithm for the Internet of Things" ],
-                "date" : [ "2020-09-11" ],
-                "risdate" : [ "2020" ],
-                "volume" : [ "116" ],
-                "issue" : [ "1" ],
+                "issn" : [ "0929-6212" ],
+                "abstract" : [ "In the Internet of Things (IoT), the number of devices connected to the internet, and they can collect and exchange information at any time. IoT is helpful for the progress of a smart city and different applications. Software-Defined Network (SDN) offers programmability and flexibility in the IoT network. Nevertheless, the adoption of the number of gadgets will increase the transmission delay and this will lead the network to heavy loaded. To overcome this issue, an efficient load balancing technique has to be presented in the SDN network. By considering this solution as an aim, spider monkey optimization algorithm based load balancing (LB-SMOA) is presented in this paper. Using this technique, the controller with minimum load is selected and this selected controller balances the load of the heavily loaded controller. Simulation results show that the performance of the proposed LB-SMOA outperforms the existing load balancing techniques in terms of average response time, packet loss rate, and throughput." ],
                 "spage" : [ "23" ],
                 "pages" : [ "23-" ],
                 "eissn" : [ "1572-834X" ],
                 "ristype" : [ "JOUR" ],
                 "pub" : [ "Springer" ],
                 "doi" : [ "10.1007/s11277-020-07703-6" ],
-                "format" : [ "journal" ]
-              },
-              "links" : {
-                "openurl" : [ "$$Topenurl_article" ],
-                "openurlfulltext" : [ "$$Topenurlfull_article" ],
-                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
-              },
-              "search" : {
-                "creator" : [ "Mayilsamy, Jayaprakash", "Rangasamy, Devi Priya" ],
-                "subject" : [ "Information networks ; Monkeys ; Computer networks ; Engineering schools ; Algorithms ; Mathematical optimization" ],
-                "recordid" : [ "eNotkNtKAzEQhoMoWA8v4FVeIDrJ7ibZy3oWqr1Qwbtlmk3a2DapSUDq07u1MhcDw3w__B8hFxwuOYC6ypwLpRgIYKAUVEwekBFvlGC6qj8OyQha0TIpuDgmJzl_AgxYK0bkaxKxp9e4wmB8mFMf6Gt05RuTZbfW-WB7-mLLd0zLTN_z7uV143ub6HMMS7ul003xa_-DxcdAx6t5TL4s1tTFRMvC0qdQbAq20Ojo22LA8xk5crjK9vx_n5L3-7u3m0c2mT483YwnzAioBEOoeC2k7Ht0ra3aXlpUzWxmwbQOdO2E4yCVMbqpAVs-ayotERVy1EZDU52Sy33uHFe288HFktAM09u1NzEM5Yb7WNaag-ZKD4DYAybFnJN13Sb5NaZtx6HbWe72lrvBcvdnuZPVLxCzcQY" ],
-                "recordtype" : [ "article" ],
-                "title" : [ "Load Balancing in Software-Defined Networks Using Spider Monkey Optimization Algorithm for the Internet of Things", "Wireless personal communications" ],
-                "creationdate" : [ "2020" ],
-                "scope" : [ "AAYXX", "CITATION", "BSHEE" ],
-                "creatorcontrib" : [ "Mayilsamy, Jayaprakash", "Rangasamy, Devi Priya" ],
-                "issn" : [ "0929-6212", "1572-834X" ],
-                "fulltext" : [ "true" ],
-                "general" : [ "Springer" ],
-                "rsrctype" : [ "article" ],
-                "startdate" : [ "20200911" ],
-                "enddate" : [ "20200911" ],
-                "description" : [ "In the Internet of Things (IoT), the number of devices connected to the internet, and they can collect and exchange information at any time. IoT is helpful for the progress of a smart city and different applications. Software-Defined Network (SDN) offers programmability and flexibility in the IoT network. Nevertheless, the adoption of the number of gadgets will increase the transmission delay and this will lead the network to heavy loaded. To overcome this issue, an efficient load balancing technique has to be presented in the SDN network. By considering this solution as an aim, spider monkey optimization algorithm based load balancing (LB-SMOA) is presented in this paper. Using this technique, the controller with minimum load is selected and this selected controller balances the load of the heavily loaded controller. Simulation results show that the performance of the proposed LB-SMOA outperforms the existing load balancing techniques in terms of average response time, packet loss rate, and throughput." ]
-              },
-              "display" : {
-                "lds50" : [ "peer_reviewed" ],
-                "type" : [ "article" ],
-                "source" : [ "SpringerLink Contemporary (1997 - Present)" ],
-                "creator" : [ "Mayilsamy, Jayaprakash ; Rangasamy, Devi Priya" ],
-                "publisher" : [ "Springer" ],
-                "ispartof" : [ "Wireless personal communications, 2020-09-11, Vol.116 (1), p.23" ],
-                "identifier" : [ "ISSN: 0929-6212", "EISSN: 1572-834X", "DOI: 10.1007/s11277-020-07703-6" ],
-                "subject" : [ "Information networks ; Monkeys ; Computer networks ; Engineering schools ; Algorithms ; Mathematical optimization" ],
-                "language" : [ "eng" ],
-                "rights" : [ "COPYRIGHT 2021 Springer" ],
-                "snippet" : [ ".... By considering this solution as an aim, spider monkey optimization algorithm based load balancing (LB-SMOA..." ],
-                "title" : [ "Load Balancing in Software-Defined Networks Using Spider Monkey Optimization Algorithm for the Internet of Things" ],
-                "description" : [ "In the Internet of Things (IoT), the number of devices connected to the internet, and they can collect and exchange information at any time. IoT is helpful for the progress of a smart city and different applications. Software-Defined Network (SDN) offers programmability and flexibility in the IoT network. Nevertheless, the adoption of the number of gadgets will increase the transmission delay and this will lead the network to heavy loaded. To overcome this issue, an efficient load balancing technique has to be presented in the SDN network. By considering this solution as an aim, spider monkey optimization algorithm based load balancing (LB-SMOA) is presented in this paper. Using this technique, the controller with minimum load is selected and this selected controller balances the load of the heavily loaded controller. Simulation results show that the performance of the proposed LB-SMOA outperforms the existing load balancing techniques in terms of average response time, packet loss rate, and throughput." ]
-              },
-              "delivery" : {
-                "fulltext" : [ "fulltext" ],
-                "delcategory" : [ "Remote Search Resource" ]
+                "au" : [ "Mayilsamy, Jayaprakash", "Rangasamy, Devi Priya" ],
+                "atitle" : [ "Load Balancing in Software-Defined Networks Using Spider Monkey Optimization Algorithm for the Internet of Things" ],
+                "date" : [ "2020-09-11" ],
+                "risdate" : [ "2020" ],
+                "volume" : [ "116" ],
+                "issue" : [ "1" ]
               },
               "facets" : {
-                "language" : [ "eng" ],
                 "creationdate" : [ "2020" ],
                 "creatorcontrib" : [ "Mayilsamy, Jayaprakash", "Rangasamy, Devi Priya" ],
-                "rsrctype" : [ "articles" ],
                 "topic" : [ "Information networks", "Monkeys", "Computer networks", "Engineering schools", "Algorithms", "Mathematical optimization" ],
                 "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
                 "collection" : [ "CrossRef", "Academic OneFile (A&I only)" ],
                 "toplevel" : [ "peer_reviewed", "online_resources" ],
-                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-c2032-a0314266ddaf9e39d6ea75bbe0c9f084f2f1067cc8540a91b5386aa7a1a8c8053" ],
+                "frbrgroupid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_FETCH-LOGICAL-c2032-a0314266ddaf9e39d6ea75bbe0c9f084f2f1067cc8540a91b5386aa7a1a8c8053" ],
                 "frbrtype" : [ "5" ],
-                "jtitle" : [ "Wireless personal communications" ]
+                "jtitle" : [ "Wireless personal communications" ],
+                "language" : [ "eng" ]
               }
             },
             "delivery" : {
@@ -418,7 +418,7 @@ http_interactions:
               "feDisplayOtherLocations" : false,
               "displayedAvailability" : "true",
               "holding" : [ ],
-              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 11:07:39&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Load+Balancing+in+Software-Defined+Networks+Using+Spider+Monkey+Optimization+Algorithm+for+the+Internet+of+Things&rft.jtitle=Wireless+personal+communications&rft.au=Mayilsamy%2C+Jayaprakash&rft.date=2020-09-11&rft.volume=116&rft.issue=1&rft.spage=23&rft.pages=23-&rft.issn=0929-6212&rft.eissn=1572-834X&rft_id=info:doi/10.1007%2Fs11277-020-07703-6&rft.pub=Springer&rft_dat=<gale_cross>A648108178</gale_cross>&svc_dat=viewit&rft_galeid=A648108178"
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-19 10:51:08&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Load+Balancing+in+Software-Defined+Networks+Using+Spider+Monkey+Optimization+Algorithm+for+the+Internet+of+Things&rft.jtitle=Wireless+personal+communications&rft.au=Mayilsamy%2C+Jayaprakash&rft.date=2020-09-11&rft.volume=116&rft.issue=1&rft.spage=23&rft.pages=23-&rft.issn=0929-6212&rft.eissn=1572-834X&rft_id=info:doi/10.1007%2Fs11277-020-07703-6&rft.pub=Springer&rft_dat=<gale_cross>A648108178</gale_cross>&svc_dat=viewit&rft_galeid=A648108178"
             },
             "context" : "PC",
             "adaptor" : "Primo Central",
@@ -429,37 +429,75 @@ http_interactions:
               },
               "timesCited" : { }
             },
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_gale_infotracacademiconefile_A648108178"
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/FAKE_PRIMO_ARTICLE_SCOPE_gale_infotracacademiconefile_A648108178"
           }, {
             "pnx" : {
               "sort" : {
-                "title" : [ "Fitness Based Position Update in Spider Monkey Optimization Algorithm" ],
+                "author" : [ "Kumar, Sandeep ; Kumari, Rajani ; Sharma, Vivek Kumar" ],
                 "creationdate" : [ "2015" ],
-                "author" : [ "Kumar, Sandeep ; Kumari, Rajani ; Sharma, Vivek Kumar" ]
+                "title" : [ "Fitness Based Position Update in Spider Monkey Optimization Algorithm" ]
               },
               "control" : {
-                "sourcetype" : [ "Aggregation Database" ],
-                "sourceformat" : [ "XML" ],
-                "sourcesystem" : [ "Other" ],
-                "recordid" : [ "cdi_crossref_primary_10_1016_j_procs_2015_08_504" ],
+                "recordid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_crossref_primary_10_1016_j_procs_2015_08_504" ],
                 "sourcerecordid" : [ "S1877050915026393" ],
                 "originalsourceid" : [ "FETCH-LOGICAL-13717-d8daa60802f6b983fbeceb5cddc434894041080d598ad47d8b29e62f858b60923" ],
                 "recordtype" : [ "article" ],
                 "addsrcrecordid" : [ "eNp9kM9KAzEQh4MoWGqfwEteYNfJ_k0OHmpprVCpoD2HbDKrWbubJVmE-vRuWw-enMsM_OYbho-QWwYxA1bcNXHvnQ5xAiyPgcc5ZBdkwnhZRpCDuPwzX5NZCA2MlXIuWDkhy5UdOgyBPqiAhr64YAfrOrrrjRqQ2o6-9tagp8-u-8QD3faDbe23Oi3N9-_O2-GjvSFXtdoHnP32Kdmtlm-LdbTZPj4t5puIpSUrI8ONUgVwSOqiEjytK9RY5doYnaUZFxlkbExNLrgyWWl4lQgskprnvCpAJOmUpOe72rsQPNay97ZV_iAZyKMM2ciTDHmUIYHLUcZI3Z8pHF_7suhl0BY7jcZ61IM0zv7L_wACJmkX" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
                 "sourceid" : [ "elsevier_cross" ],
-                "score" : [ "0.06633203" ]
+                "score" : [ "0.06633455" ]
+              },
+              "links" : {
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "openurl" : [ "$$Topenurl_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "Spider Monkey Optimization (SMO) technique is most recent member in the family of swarm optimization algorithms.SMO algorithm fall in class of Nature Inspired Algorithm (NIA). SMO algorithm is good in exploration and exploitation of local search space and it is well balanced algorithm most of the times. This paper presents a new strategy to update position of solution during local leader phase using fitness of individuals. The proposed algorithm is named as Fitness based Position Update in SMO (FPSMO) algorithm as it updates position of individuals based on their fitness. The anticipated strategy enhances the rate of convergence. The planned FPSMO approach tested over nineteen benchmark functions and for one real world problem so as to establish superiority of it over basic SMO algorithm." ],
+                "creationdate" : [ "2015" ],
+                "title" : [ "Fitness Based Position Update in Spider Monkey Optimization Algorithm", "Procedia computer science" ],
+                "recordid" : [ "eNp9kM9KAzEQh4MoWGqfwEteYNfJ_k0OHmpprVCpoD2HbDKrWbubJVmE-vRuWw-enMsM_OYbho-QWwYxA1bcNXHvnQ5xAiyPgcc5ZBdkwnhZRpCDuPwzX5NZCA2MlXIuWDkhy5UdOgyBPqiAhr64YAfrOrrrjRqQ2o6-9tagp8-u-8QD3faDbe23Oi3N9-_O2-GjvSFXtdoHnP32Kdmtlm-LdbTZPj4t5puIpSUrI8ONUgVwSOqiEjytK9RY5doYnaUZFxlkbExNLrgyWWl4lQgskprnvCpAJOmUpOe72rsQPNay97ZV_iAZyKMM2ciTDHmUIYHLUcZI3Z8pHF_7suhl0BY7jcZ61IM0zv7L_wACJmkX" ],
+                "recordtype" : [ "article" ],
+                "sourceid" : [ "AAFTH" ],
+                "creatorcontrib" : [ "Kumar, Sandeep", "Kumari, Rajani", "Sharma, Vivek Kumar" ],
+                "rsrctype" : [ "article" ],
+                "creator" : [ "Kumar, Sandeep", "Kumari, Rajani", "Sharma, Vivek Kumar" ],
+                "subject" : [ "Engineering optimization problems ; fission-fusion social structure ; Nature Inspired Algorithms ; Swarm intelligence ; Spider Monkey Optimization Algorithm" ],
+                "issn" : [ "1877-0509", "1877-0509" ],
+                "fulltext" : [ "true" ],
+                "general" : [ "Elsevier B.V" ],
+                "startdate" : [ "2015" ],
+                "enddate" : [ "2015" ],
+                "scope" : [ "6I.", "AAFTH", "AAYXX", "CITATION" ]
+              },
+              "display" : {
+                "description" : [ "Spider Monkey Optimization (SMO) technique is most recent member in the family of swarm optimization algorithms.SMO algorithm fall in class of Nature Inspired Algorithm (NIA). SMO algorithm is good in exploration and exploitation of local search space and it is well balanced algorithm most of the times. This paper presents a new strategy to update position of solution during local leader phase using fitness of individuals. The proposed algorithm is named as Fitness based Position Update in SMO (FPSMO) algorithm as it updates position of individuals based on their fitness. The anticipated strategy enhances the rate of convergence. The planned FPSMO approach tested over nineteen benchmark functions and for one real world problem so as to establish superiority of it over basic SMO algorithm." ],
+                "title" : [ "Fitness Based Position Update in Spider Monkey Optimization Algorithm" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Kumar, Sandeep ; Kumari, Rajani ; Sharma, Vivek Kumar" ],
+                "subject" : [ "Engineering optimization problems ; fission-fusion social structure ; Nature Inspired Algorithms ; Swarm intelligence ; Spider Monkey Optimization Algorithm" ],
+                "source" : [ "ScienceDirect Journals (Transactional Access)", "ScienceDirect Journals (5 years ago - present)", "Elsevier:ScienceDirect:Open Access" ],
+                "publisher" : [ "Elsevier B.V" ],
+                "ispartof" : [ "Procedia computer science, 2015, Vol.62, p.442-449" ],
+                "identifier" : [ "ISSN: 1877-0509", "EISSN: 1877-0509", "DOI: 10.1016/j.procs.2015.08.504" ],
+                "rights" : [ "2015 The Authors" ],
+                "snippet" : [ "Spider Monkey Optimization (SMO) technique is most recent member in the family of swarm optimization algorithms.SMO algorithm fall in class of Nature Inspired..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ],
+                "oa" : [ "free_for_read" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
               },
               "addata" : {
-                "abstract" : [ "Spider Monkey Optimization (SMO) technique is most recent member in the family of swarm optimization algorithms.SMO algorithm fall in class of Nature Inspired Algorithm (NIA). SMO algorithm is good in exploration and exploitation of local search space and it is well balanced algorithm most of the times. This paper presents a new strategy to update position of solution during local leader phase using fitness of individuals. The proposed algorithm is named as Fitness based Position Update in SMO (FPSMO) algorithm as it updates position of individuals based on their fitness. The anticipated strategy enhances the rate of convergence. The planned FPSMO approach tested over nineteen benchmark functions and for one real world problem so as to establish superiority of it over basic SMO algorithm." ],
-                "issn" : [ "1877-0509" ],
-                "oa" : [ "free_for_read" ],
+                "format" : [ "journal" ],
                 "jtitle" : [ "Procedia computer science" ],
                 "genre" : [ "article" ],
-                "au" : [ "Kumar, Sandeep", "Kumari, Rajani", "Sharma, Vivek Kumar" ],
-                "atitle" : [ "Fitness Based Position Update in Spider Monkey Optimization Algorithm" ],
-                "date" : [ "2015" ],
-                "risdate" : [ "2015" ],
-                "volume" : [ "62" ],
+                "issn" : [ "1877-0509" ],
+                "abstract" : [ "Spider Monkey Optimization (SMO) technique is most recent member in the family of swarm optimization algorithms.SMO algorithm fall in class of Nature Inspired Algorithm (NIA). SMO algorithm is good in exploration and exploitation of local search space and it is well balanced algorithm most of the times. This paper presents a new strategy to update position of solution during local leader phase using fitness of individuals. The proposed algorithm is named as Fitness based Position Update in SMO (FPSMO) algorithm as it updates position of individuals based on their fitness. The anticipated strategy enhances the rate of convergence. The planned FPSMO approach tested over nineteen benchmark functions and for one real world problem so as to establish superiority of it over basic SMO algorithm." ],
                 "spage" : [ "442" ],
                 "epage" : [ "449" ],
                 "pages" : [ "442-449" ],
@@ -467,63 +505,25 @@ http_interactions:
                 "ristype" : [ "JOUR" ],
                 "pub" : [ "Elsevier B.V" ],
                 "doi" : [ "10.1016/j.procs.2015.08.504" ],
-                "format" : [ "journal" ]
-              },
-              "links" : {
-                "openurl" : [ "$$Topenurl_article" ],
-                "openurlfulltext" : [ "$$Topenurlfull_article" ],
-                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
-              },
-              "search" : {
-                "creator" : [ "Kumar, Sandeep", "Kumari, Rajani", "Sharma, Vivek Kumar" ],
-                "subject" : [ "Engineering optimization problems ; fission-fusion social structure ; Nature Inspired Algorithms ; Swarm intelligence ; Spider Monkey Optimization Algorithm" ],
-                "recordid" : [ "eNp9kM9KAzEQh4MoWGqfwEteYNfJ_k0OHmpprVCpoD2HbDKrWbubJVmE-vRuWw-enMsM_OYbho-QWwYxA1bcNXHvnQ5xAiyPgcc5ZBdkwnhZRpCDuPwzX5NZCA2MlXIuWDkhy5UdOgyBPqiAhr64YAfrOrrrjRqQ2o6-9tagp8-u-8QD3faDbe23Oi3N9-_O2-GjvSFXtdoHnP32Kdmtlm-LdbTZPj4t5puIpSUrI8ONUgVwSOqiEjytK9RY5doYnaUZFxlkbExNLrgyWWl4lQgskprnvCpAJOmUpOe72rsQPNay97ZV_iAZyKMM2ciTDHmUIYHLUcZI3Z8pHF_7suhl0BY7jcZ61IM0zv7L_wACJmkX" ],
-                "recordtype" : [ "article" ],
-                "title" : [ "Fitness Based Position Update in Spider Monkey Optimization Algorithm", "Procedia computer science" ],
-                "creationdate" : [ "2015" ],
-                "sourceid" : [ "AAFTH" ],
-                "scope" : [ "6I.", "AAFTH", "AAYXX", "CITATION" ],
-                "creatorcontrib" : [ "Kumar, Sandeep", "Kumari, Rajani", "Sharma, Vivek Kumar" ],
-                "issn" : [ "1877-0509", "1877-0509" ],
-                "fulltext" : [ "true" ],
-                "general" : [ "Elsevier B.V" ],
-                "rsrctype" : [ "article" ],
-                "startdate" : [ "2015" ],
-                "enddate" : [ "2015" ],
-                "description" : [ "Spider Monkey Optimization (SMO) technique is most recent member in the family of swarm optimization algorithms.SMO algorithm fall in class of Nature Inspired Algorithm (NIA). SMO algorithm is good in exploration and exploitation of local search space and it is well balanced algorithm most of the times. This paper presents a new strategy to update position of solution during local leader phase using fitness of individuals. The proposed algorithm is named as Fitness based Position Update in SMO (FPSMO) algorithm as it updates position of individuals based on their fitness. The anticipated strategy enhances the rate of convergence. The planned FPSMO approach tested over nineteen benchmark functions and for one real world problem so as to establish superiority of it over basic SMO algorithm." ]
-              },
-              "display" : {
-                "lds50" : [ "peer_reviewed" ],
-                "type" : [ "article" ],
-                "source" : [ "ScienceDirect Journals (Transactional Access)", "ScienceDirect Journals (5 years ago - present)", "Elsevier:ScienceDirect:Open Access" ],
-                "creator" : [ "Kumar, Sandeep ; Kumari, Rajani ; Sharma, Vivek Kumar" ],
-                "publisher" : [ "Elsevier B.V" ],
-                "ispartof" : [ "Procedia computer science, 2015, Vol.62, p.442-449" ],
-                "identifier" : [ "ISSN: 1877-0509", "EISSN: 1877-0509", "DOI: 10.1016/j.procs.2015.08.504" ],
-                "subject" : [ "Engineering optimization problems ; fission-fusion social structure ; Nature Inspired Algorithms ; Swarm intelligence ; Spider Monkey Optimization Algorithm" ],
-                "language" : [ "eng" ],
-                "rights" : [ "2015 The Authors" ],
-                "snippet" : [ "Spider Monkey Optimization (SMO) technique is most recent member in the family of swarm optimization algorithms.SMO algorithm fall in class of Nature Inspired..." ],
-                "title" : [ "Fitness Based Position Update in Spider Monkey Optimization Algorithm" ],
-                "oa" : [ "free_for_read" ],
-                "description" : [ "Spider Monkey Optimization (SMO) technique is most recent member in the family of swarm optimization algorithms.SMO algorithm fall in class of Nature Inspired Algorithm (NIA). SMO algorithm is good in exploration and exploitation of local search space and it is well balanced algorithm most of the times. This paper presents a new strategy to update position of solution during local leader phase using fitness of individuals. The proposed algorithm is named as Fitness based Position Update in SMO (FPSMO) algorithm as it updates position of individuals based on their fitness. The anticipated strategy enhances the rate of convergence. The planned FPSMO approach tested over nineteen benchmark functions and for one real world problem so as to establish superiority of it over basic SMO algorithm." ]
-              },
-              "delivery" : {
-                "fulltext" : [ "fulltext" ],
-                "delcategory" : [ "Remote Search Resource" ]
+                "au" : [ "Kumar, Sandeep", "Kumari, Rajani", "Sharma, Vivek Kumar" ],
+                "atitle" : [ "Fitness Based Position Update in Spider Monkey Optimization Algorithm" ],
+                "date" : [ "2015" ],
+                "risdate" : [ "2015" ],
+                "volume" : [ "62" ],
+                "oa" : [ "free_for_read" ]
               },
               "facets" : {
-                "language" : [ "eng" ],
                 "creationdate" : [ "2015" ],
                 "creatorcontrib" : [ "Kumar, Sandeep", "Kumari, Rajani", "Sharma, Vivek Kumar" ],
-                "rsrctype" : [ "articles" ],
                 "topic" : [ "Engineering optimization problems", "fission-fusion social structure", "Nature Inspired Algorithms", "Swarm intelligence", "Spider Monkey Optimization Algorithm" ],
                 "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
                 "collection" : [ "ScienceDirect Open Access Titles", "Elsevier:ScienceDirect:Open Access", "CrossRef" ],
                 "toplevel" : [ "peer_reviewed", "online_resources" ],
-                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-13717-d8daa60802f6b983fbeceb5cddc434894041080d598ad47d8b29e62f858b60923" ],
+                "frbrgroupid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_FETCH-LOGICAL-13717-d8daa60802f6b983fbeceb5cddc434894041080d598ad47d8b29e62f858b60923" ],
                 "frbrtype" : [ "5" ],
-                "jtitle" : [ "Procedia computer science" ]
+                "jtitle" : [ "Procedia computer science" ],
+                "language" : [ "eng" ]
               }
             },
             "delivery" : {
@@ -541,7 +541,7 @@ http_interactions:
               "feDisplayOtherLocations" : false,
               "displayedAvailability" : "true",
               "holding" : [ ],
-              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 11:07:39&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-elsevier_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Fitness+Based+Position+Update+in+Spider+Monkey+Optimization+Algorithm&rft.jtitle=Procedia+computer+science&rft.au=Kumar%2C+Sandeep&rft.date=2015&rft.volume=62&rft.spage=442&rft.epage=449&rft.pages=442-449&rft.issn=1877-0509&rft.eissn=1877-0509&rft_id=info:doi/10.1016%2Fj.procs.2015.08.504&rft.pub=Elsevier+B.V&rft_dat=<elsevier_cross>S1877050915026393</elsevier_cross>&svc_dat=viewit"
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-19 10:51:08&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-elsevier_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Fitness+Based+Position+Update+in+Spider+Monkey+Optimization+Algorithm&rft.jtitle=Procedia+computer+science&rft.au=Kumar%2C+Sandeep&rft.date=2015&rft.volume=62&rft.spage=442&rft.epage=449&rft.pages=442-449&rft.issn=1877-0509&rft.eissn=1877-0509&rft_id=info:doi/10.1016%2Fj.procs.2015.08.504&rft.pub=Elsevier+B.V&rft_dat=<elsevier_cross>S1877050915026393</elsevier_cross>&svc_dat=viewit"
             },
             "context" : "PC",
             "adaptor" : "Primo Central",
@@ -552,38 +552,74 @@ http_interactions:
               },
               "timesCited" : { }
             },
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_crossref_primary_10_1016_j_procs_2015_08_504"
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/FAKE_PRIMO_ARTICLE_SCOPE_crossref_primary_10_1016_j_procs_2015_08_504"
           }, {
             "pnx" : {
               "sort" : {
-                "title" : [ "Improving the Local Search Ability of Spider Monkey Optimization Algorithm Using Quadratic Approximation for Unconstrained Optimization" ],
+                "author" : [ "Gupta, Kavita ; Deep, Kusum ; Bansal, Jagdish Chand" ],
                 "creationdate" : [ "201705" ],
-                "author" : [ "Gupta, Kavita ; Deep, Kusum ; Bansal, Jagdish Chand" ]
+                "title" : [ "Improving the Local Search Ability of Spider Monkey Optimization Algorithm Using Quadratic Approximation for Unconstrained Optimization" ]
               },
               "control" : {
-                "sourcetype" : [ "Aggregation Database" ],
-                "sourceformat" : [ "XML" ],
-                "sourcesystem" : [ "Other" ],
-                "galeid" : [ "A491502847" ],
-                "recordid" : [ "cdi_gale_infotracacademiconefile_A491502847" ],
+                "recordid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_gale_infotracacademiconefile_A491502847" ],
                 "sourcerecordid" : [ "A491502847" ],
                 "originalsourceid" : [ "FETCH-LOGICAL-13488-9b8c7ed6b3b6f4261fda805911bb286e42b69b9fc1f75f55be8ff253ae9020333" ],
                 "recordtype" : [ "article" ],
                 "addsrcrecordid" : [ "eNpVUMtOwzAQtBBIlMKFL_APpPiVxDlGFY9KhQqVniPbsVtDYkdOeIQf4LdxWy7sHna1uzOaHQCuMZrhGDfKWzfDBHF8AiaYZXnCM4ZOwQRxwpK8oOk5uOj7V4QQpoxPwM-i7YL_sG4Lh52GS69EA9daBLWDpbSNHUboDVx3ttYBPnr3pke46gbb2m8xWO9g2Wx9sMOuhZt-T_P8LuoQVwqWXaT-su3xzvgAN0551w9BWKfrfzSX4MyIptdXf3UKNne3L_OHZLm6X8zLZbKXy5NCcpXrOpNUZoaRDJtacJQWGEtJeKYZkVkhC6OwyVOTplJzY0hKhS4QQZTSKZgdebei0ZV1xkc1KmatWxvFaWPjvGQFThHhLI8AfAR8xsVYdSH-E8YKo2pveLU3vDoYXs1Xi6dDR38Bikl5KQ" ],
+                "sourcetype" : [ "Aggregation Database" ],
+                "sourceformat" : [ "XML" ],
+                "sourcesystem" : [ "Other" ],
                 "sourceid" : [ "gale_wiley" ],
-                "score" : [ "0.06524757" ]
+                "galeid" : [ "A491502847" ],
+                "score" : [ "0.06524965" ]
+              },
+              "links" : {
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "openurl" : [ "$$Topenurl_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "Spider monkey optimization (SMO) algorithm, which simulates the food searching behavior of a swarm of spider monkeys, is a new addition to the class of swarm intelligent techniques for solving unconstrained optimization problems. The purpose of this article is to study the performance of SMO after incorporating quadratic approximation (QA) operator in it. The proposed version is named as QA‐based spider monkey optimization (QASMO). An experimental study has been carried out to check the validity and applicability of QASMO. For validation purpose, the performance of QASMO is tested over a benchmark set of 46 scalable and nonscalable problems, and results are compared with the original SMO algorithm. In order to test the applicability of the proposed algorithm in solving real‐life optimization problems, one of the most challenging optimization problems, namely, Lennard–Jones (LJ) problem is considered. LJ clusters containing atoms from three to ten have been taken into consideration, and results are presented. To the best of our knowledge, this is the first attempt to apply SMO and its proposed variant on a real‐life problem. The results demonstrate that incorporation of QA in SMO has positive effects on its performance in terms of reliability, efficiency, and accuracy." ],
+                "creationdate" : [ "2017" ],
+                "title" : [ "Improving the Local Search Ability of Spider Monkey Optimization Algorithm Using Quadratic Approximation for Unconstrained Optimization", "Computational intelligence" ],
+                "recordid" : [ "eNpVUMtOwzAQtBBIlMKFL_APpPiVxDlGFY9KhQqVniPbsVtDYkdOeIQf4LdxWy7sHna1uzOaHQCuMZrhGDfKWzfDBHF8AiaYZXnCM4ZOwQRxwpK8oOk5uOj7V4QQpoxPwM-i7YL_sG4Lh52GS69EA9daBLWDpbSNHUboDVx3ttYBPnr3pke46gbb2m8xWO9g2Wx9sMOuhZt-T_P8LuoQVwqWXaT-su3xzvgAN0551w9BWKfrfzSX4MyIptdXf3UKNne3L_OHZLm6X8zLZbKXy5NCcpXrOpNUZoaRDJtacJQWGEtJeKYZkVkhC6OwyVOTplJzY0hKhS4QQZTSKZgdebei0ZV1xkc1KmatWxvFaWPjvGQFThHhLI8AfAR8xsVYdSH-E8YKo2pveLU3vDoYXs1Xi6dDR38Bikl5KQ" ],
+                "recordtype" : [ "article" ],
+                "creatorcontrib" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
+                "rsrctype" : [ "article" ],
+                "creator" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
+                "subject" : [ "spider monkey optimization, quadratic approximation, swarm intelligent techniques, unconstrained optimization, global optimization ; Lennard–Jones problem ; Usage ; Monkeys ; Algorithms ; Mathematical optimization" ],
+                "issn" : [ "0824-7935", "1467-8640" ],
+                "fulltext" : [ "true" ],
+                "general" : [ "Wiley Subscription Services, Inc" ],
+                "startdate" : [ "201705" ],
+                "enddate" : [ "201705" ],
+                "scope" : [ "BSHEE" ]
+              },
+              "display" : {
+                "description" : [ "Spider monkey optimization (SMO) algorithm, which simulates the food searching behavior of a swarm of spider monkeys, is a new addition to the class of swarm intelligent techniques for solving unconstrained optimization problems. The purpose of this article is to study the performance of SMO after incorporating quadratic approximation (QA) operator in it. The proposed version is named as QA‐based spider monkey optimization (QASMO). An experimental study has been carried out to check the validity and applicability of QASMO. For validation purpose, the performance of QASMO is tested over a benchmark set of 46 scalable and nonscalable problems, and results are compared with the original SMO algorithm. In order to test the applicability of the proposed algorithm in solving real‐life optimization problems, one of the most challenging optimization problems, namely, Lennard–Jones (LJ) problem is considered. LJ clusters containing atoms from three to ten have been taken into consideration, and results are presented. To the best of our knowledge, this is the first attempt to apply SMO and its proposed variant on a real‐life problem. The results demonstrate that incorporation of QA in SMO has positive effects on its performance in terms of reliability, efficiency, and accuracy." ],
+                "title" : [ "Improving the Local Search Ability of Spider Monkey Optimization Algorithm Using Quadratic Approximation for Unconstrained Optimization" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Gupta, Kavita ; Deep, Kusum ; Bansal, Jagdish Chand" ],
+                "subject" : [ "spider monkey optimization, quadratic approximation, swarm intelligent techniques, unconstrained optimization, global optimization ; Lennard–Jones problem ; Usage ; Monkeys ; Algorithms ; Mathematical optimization" ],
+                "source" : [ "Academic Search Complete", "Business Source Complete", "Wiley Online Library Full Collection 2016", "Alma/SFX Local Collection", "Applied Science & Technology Source", "Wiley Online Library Journals + OA Offset 2015-2017", "Wiley Online Library All Journals" ],
+                "publisher" : [ "Wiley Subscription Services, Inc" ],
+                "ispartof" : [ "Computational intelligence, 2017-05, Vol.33 (2), p.210-240" ],
+                "identifier" : [ "ISSN: 0824-7935", "EISSN: 1467-8640", "DOI: 10.1111/coin.12081" ],
+                "rights" : [ "2016 Wiley Periodicals, Inc.", "COPYRIGHT 2017 Blackwell Publishers Ltd." ],
+                "snippet" : [ "Spider monkey optimization (SMO) algorithm, which simulates the food searching behavior of a swarm of spider monkeys, is a new addition to the class of swarm..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
               },
               "addata" : {
-                "abstract" : [ "Spider monkey optimization (SMO) algorithm, which simulates the food searching behavior of a swarm of spider monkeys, is a new addition to the class of swarm intelligent techniques for solving unconstrained optimization problems. The purpose of this article is to study the performance of SMO after incorporating quadratic approximation (QA) operator in it. The proposed version is named as QA‐based spider monkey optimization (QASMO). An experimental study has been carried out to check the validity and applicability of QASMO. For validation purpose, the performance of QASMO is tested over a benchmark set of 46 scalable and nonscalable problems, and results are compared with the original SMO algorithm. In order to test the applicability of the proposed algorithm in solving real‐life optimization problems, one of the most challenging optimization problems, namely, Lennard–Jones (LJ) problem is considered. LJ clusters containing atoms from three to ten have been taken into consideration, and results are presented. To the best of our knowledge, this is the first attempt to apply SMO and its proposed variant on a real‐life problem. The results demonstrate that incorporation of QA in SMO has positive effects on its performance in terms of reliability, efficiency, and accuracy." ],
-                "issn" : [ "0824-7935" ],
+                "format" : [ "journal" ],
                 "jtitle" : [ "Computational intelligence" ],
                 "genre" : [ "article" ],
-                "au" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
-                "atitle" : [ "Improving the Local Search Ability of Spider Monkey Optimization Algorithm Using Quadratic Approximation for Unconstrained Optimization" ],
-                "date" : [ "2017-05" ],
-                "risdate" : [ "2017" ],
-                "volume" : [ "33" ],
-                "issue" : [ "2" ],
+                "issn" : [ "0824-7935" ],
+                "abstract" : [ "Spider monkey optimization (SMO) algorithm, which simulates the food searching behavior of a swarm of spider monkeys, is a new addition to the class of swarm intelligent techniques for solving unconstrained optimization problems. The purpose of this article is to study the performance of SMO after incorporating quadratic approximation (QA) operator in it. The proposed version is named as QA‐based spider monkey optimization (QASMO). An experimental study has been carried out to check the validity and applicability of QASMO. For validation purpose, the performance of QASMO is tested over a benchmark set of 46 scalable and nonscalable problems, and results are compared with the original SMO algorithm. In order to test the applicability of the proposed algorithm in solving real‐life optimization problems, one of the most challenging optimization problems, namely, Lennard–Jones (LJ) problem is considered. LJ clusters containing atoms from three to ten have been taken into consideration, and results are presented. To the best of our knowledge, this is the first attempt to apply SMO and its proposed variant on a real‐life problem. The results demonstrate that incorporation of QA in SMO has positive effects on its performance in terms of reliability, efficiency, and accuracy." ],
                 "spage" : [ "210" ],
                 "epage" : [ "240" ],
                 "pages" : [ "210-240" ],
@@ -591,62 +627,26 @@ http_interactions:
                 "ristype" : [ "JOUR" ],
                 "pub" : [ "Wiley Subscription Services, Inc" ],
                 "doi" : [ "10.1111/coin.12081" ],
-                "tpages" : [ "31" ],
-                "format" : [ "journal" ]
-              },
-              "links" : {
-                "openurl" : [ "$$Topenurl_article" ],
-                "openurlfulltext" : [ "$$Topenurlfull_article" ],
-                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
-              },
-              "search" : {
-                "creator" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
-                "subject" : [ "spider monkey optimization, quadratic approximation, swarm intelligent techniques, unconstrained optimization, global optimization ; Lennard–Jones problem ; Usage ; Monkeys ; Algorithms ; Mathematical optimization" ],
-                "recordid" : [ "eNpVUMtOwzAQtBBIlMKFL_APpPiVxDlGFY9KhQqVniPbsVtDYkdOeIQf4LdxWy7sHna1uzOaHQCuMZrhGDfKWzfDBHF8AiaYZXnCM4ZOwQRxwpK8oOk5uOj7V4QQpoxPwM-i7YL_sG4Lh52GS69EA9daBLWDpbSNHUboDVx3ttYBPnr3pke46gbb2m8xWO9g2Wx9sMOuhZt-T_P8LuoQVwqWXaT-su3xzvgAN0551w9BWKfrfzSX4MyIptdXf3UKNne3L_OHZLm6X8zLZbKXy5NCcpXrOpNUZoaRDJtacJQWGEtJeKYZkVkhC6OwyVOTplJzY0hKhS4QQZTSKZgdebei0ZV1xkc1KmatWxvFaWPjvGQFThHhLI8AfAR8xsVYdSH-E8YKo2pveLU3vDoYXs1Xi6dDR38Bikl5KQ" ],
-                "recordtype" : [ "article" ],
-                "title" : [ "Improving the Local Search Ability of Spider Monkey Optimization Algorithm Using Quadratic Approximation for Unconstrained Optimization", "Computational intelligence" ],
-                "creationdate" : [ "2017" ],
-                "scope" : [ "BSHEE" ],
-                "creatorcontrib" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
-                "issn" : [ "0824-7935", "1467-8640" ],
-                "fulltext" : [ "true" ],
-                "general" : [ "Wiley Subscription Services, Inc" ],
-                "rsrctype" : [ "article" ],
-                "startdate" : [ "201705" ],
-                "enddate" : [ "201705" ],
-                "description" : [ "Spider monkey optimization (SMO) algorithm, which simulates the food searching behavior of a swarm of spider monkeys, is a new addition to the class of swarm intelligent techniques for solving unconstrained optimization problems. The purpose of this article is to study the performance of SMO after incorporating quadratic approximation (QA) operator in it. The proposed version is named as QA‐based spider monkey optimization (QASMO). An experimental study has been carried out to check the validity and applicability of QASMO. For validation purpose, the performance of QASMO is tested over a benchmark set of 46 scalable and nonscalable problems, and results are compared with the original SMO algorithm. In order to test the applicability of the proposed algorithm in solving real‐life optimization problems, one of the most challenging optimization problems, namely, Lennard–Jones (LJ) problem is considered. LJ clusters containing atoms from three to ten have been taken into consideration, and results are presented. To the best of our knowledge, this is the first attempt to apply SMO and its proposed variant on a real‐life problem. The results demonstrate that incorporation of QA in SMO has positive effects on its performance in terms of reliability, efficiency, and accuracy." ]
-              },
-              "display" : {
-                "lds50" : [ "peer_reviewed" ],
-                "type" : [ "article" ],
-                "source" : [ "Academic Search Complete", "Business Source Complete", "Wiley Online Library Full Collection 2016", "Alma/SFX Local Collection", "Applied Science & Technology Source", "Wiley Online Library Journals + OA Offset 2015-2017", "Wiley Online Library All Journals" ],
-                "creator" : [ "Gupta, Kavita ; Deep, Kusum ; Bansal, Jagdish Chand" ],
-                "publisher" : [ "Wiley Subscription Services, Inc" ],
-                "ispartof" : [ "Computational intelligence, 2017-05, Vol.33 (2), p.210-240" ],
-                "identifier" : [ "ISSN: 0824-7935", "EISSN: 1467-8640", "DOI: 10.1111/coin.12081" ],
-                "subject" : [ "spider monkey optimization, quadratic approximation, swarm intelligent techniques, unconstrained optimization, global optimization ; Lennard–Jones problem ; Usage ; Monkeys ; Algorithms ; Mathematical optimization" ],
-                "language" : [ "eng" ],
-                "rights" : [ "2016 Wiley Periodicals, Inc.", "COPYRIGHT 2017 Blackwell Publishers Ltd." ],
-                "snippet" : [ "Spider monkey optimization (SMO) algorithm, which simulates the food searching behavior of a swarm of spider monkeys, is a new addition to the class of swarm..." ],
-                "title" : [ "Improving the Local Search Ability of Spider Monkey Optimization Algorithm Using Quadratic Approximation for Unconstrained Optimization" ],
-                "description" : [ "Spider monkey optimization (SMO) algorithm, which simulates the food searching behavior of a swarm of spider monkeys, is a new addition to the class of swarm intelligent techniques for solving unconstrained optimization problems. The purpose of this article is to study the performance of SMO after incorporating quadratic approximation (QA) operator in it. The proposed version is named as QA‐based spider monkey optimization (QASMO). An experimental study has been carried out to check the validity and applicability of QASMO. For validation purpose, the performance of QASMO is tested over a benchmark set of 46 scalable and nonscalable problems, and results are compared with the original SMO algorithm. In order to test the applicability of the proposed algorithm in solving real‐life optimization problems, one of the most challenging optimization problems, namely, Lennard–Jones (LJ) problem is considered. LJ clusters containing atoms from three to ten have been taken into consideration, and results are presented. To the best of our knowledge, this is the first attempt to apply SMO and its proposed variant on a real‐life problem. The results demonstrate that incorporation of QA in SMO has positive effects on its performance in terms of reliability, efficiency, and accuracy." ]
-              },
-              "delivery" : {
-                "fulltext" : [ "fulltext" ],
-                "delcategory" : [ "Remote Search Resource" ]
+                "au" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
+                "atitle" : [ "Improving the Local Search Ability of Spider Monkey Optimization Algorithm Using Quadratic Approximation for Unconstrained Optimization" ],
+                "date" : [ "2017-05" ],
+                "risdate" : [ "2017" ],
+                "volume" : [ "33" ],
+                "issue" : [ "2" ],
+                "tpages" : [ "31" ]
               },
               "facets" : {
-                "language" : [ "eng" ],
                 "creationdate" : [ "2017" ],
                 "creatorcontrib" : [ "Gupta, Kavita", "Deep, Kusum", "Bansal, Jagdish Chand" ],
-                "rsrctype" : [ "articles" ],
                 "topic" : [ "spider monkey optimization, quadratic approximation, swarm intelligent techniques, unconstrained optimization, global optimization", "Lennard–Jones problem", "Usage", "Monkeys", "Algorithms", "Mathematical optimization" ],
                 "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
                 "collection" : [ "Academic OneFile (A&I only)" ],
                 "toplevel" : [ "peer_reviewed", "online_resources" ],
-                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-13488-9b8c7ed6b3b6f4261fda805911bb286e42b69b9fc1f75f55be8ff253ae9020333" ],
+                "frbrgroupid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_FETCH-LOGICAL-13488-9b8c7ed6b3b6f4261fda805911bb286e42b69b9fc1f75f55be8ff253ae9020333" ],
                 "frbrtype" : [ "5" ],
-                "jtitle" : [ "Computational intelligence" ]
+                "jtitle" : [ "Computational intelligence" ],
+                "language" : [ "eng" ]
               }
             },
             "delivery" : {
@@ -664,7 +664,7 @@ http_interactions:
               "feDisplayOtherLocations" : false,
               "displayedAvailability" : "true",
               "holding" : [ ],
-              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 11:07:39&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_wiley&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Improving+the+Local+Search+Ability+of+Spider+Monkey+Optimization+Algorithm+Using+Quadratic+Approximation+for+Unconstrained+Optimization&rft.jtitle=Computational+intelligence&rft.au=Gupta%2C+Kavita&rft.date=2017-05&rft.volume=33&rft.issue=2&rft.spage=210&rft.epage=240&rft.pages=210-240&rft.issn=0824-7935&rft.eissn=1467-8640&rft_id=info:doi/10.1111%2Fcoin.12081&rft.pub=Wiley+Subscription+Services%2C+Inc&rft_dat=<gale_wiley>A491502847</gale_wiley>&svc_dat=viewit&rft_galeid=A491502847"
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-19 10:51:08&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_wiley&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Improving+the+Local+Search+Ability+of+Spider+Monkey+Optimization+Algorithm+Using+Quadratic+Approximation+for+Unconstrained+Optimization&rft.jtitle=Computational+intelligence&rft.au=Gupta%2C+Kavita&rft.date=2017-05&rft.volume=33&rft.issue=2&rft.spage=210&rft.epage=240&rft.pages=210-240&rft.issn=0824-7935&rft.eissn=1467-8640&rft_id=info:doi/10.1111%2Fcoin.12081&rft.pub=Wiley+Subscription+Services%2C+Inc&rft_dat=<gale_wiley>A491502847</gale_wiley>&svc_dat=viewit&rft_galeid=A491502847"
             },
             "context" : "PC",
             "adaptor" : "Primo Central",
@@ -675,17 +675,17 @@ http_interactions:
               },
               "timesCited" : { }
             },
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_gale_infotracacademiconefile_A491502847"
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/FAKE_PRIMO_ARTICLE_SCOPE_gale_infotracacademiconefile_A491502847"
           } ],
           "timelog" : {
-            "PC_SEARCH_CALL_TIME" : "451",
-            "PC_BUILD_JSON_AND_HIGLIGHTS" : "42",
-            "PC_SEARCH_TIME_TOTAL" : "493",
-            "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
-            "BUILD_COMBINED_RESULTS_MAP" : 494,
-            "COMBINED_SEARCH_TIME" : 501,
+            "PC_SEARCH_CALL_TIME" : "497",
+            "PC_BUILD_JSON_AND_HIGLIGHTS" : "48",
+            "PC_SEARCH_TIME_TOTAL" : "545",
+            "BUILD_BLEND_AND_CACHE_RESULTS" : 1,
+            "BUILD_COMBINED_RESULTS_MAP" : 547,
+            "COMBINED_SEARCH_TIME" : 553,
             "PROCESS_COMBINED_RESULTS" : 0,
-            "FEATURED_SEARCH_TIME" : 1
+            "FEATURED_SEARCH_TIME" : 2
           },
           "facets" : [ {
             "name" : "jtitle",
@@ -756,6 +756,9 @@ http_interactions:
               "value" : "Computer Science",
               "count" : "15"
             }, {
+              "value" : "Optimierungsalgorithmus",
+              "count" : "15"
+            }, {
               "value" : "Optimization Algorithms",
               "count" : "14"
             }, {
@@ -763,9 +766,6 @@ http_interactions:
               "count" : "14"
             }, {
               "value" : "Engineering, Electrical & Electronic",
-              "count" : "13"
-            }, {
-              "value" : "Optimierungsalgorithmus",
               "count" : "13"
             }, {
               "value" : "Analysis",
@@ -913,12 +913,12 @@ http_interactions:
               "count" : "12"
             }, {
               "value" : "2020",
-              "count" : "20"
+              "count" : "19"
             }, {
               "value" : "2021",
               "count" : "15"
             } ]
           } ]
         }
-  recorded_at: Mon, 17 May 2021 15:07:39 GMT
+  recorded_at: Wed, 19 May 2021 14:51:08 GMT
 recorded_with: VCR 6.0.0

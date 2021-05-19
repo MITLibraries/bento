@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://another_fake_server.example.com/primo/v1/search?apikey=FAKE_PRIMO_SEARCH_API_KEY&limit=5&q=any,contains,popcorn&scope=alma&tab=bento&vid=FAKE_PRIMO_VID
+    uri: https://another_fake_server.example.com/v1/search?apikey=FAKE_PRIMO_API_KEY&limit=5&q=any,contains,popcorn&scope=FAKE_PRIMO_BOOK_SCOPE&tab=FAKE_PRIMO_TAB&vid=FAKE_PRIMO_VID
     body:
       encoding: UTF-8
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Vary:
       - accept-encoding
       X-Exl-Api-Remaining:
-      - '549995'
+      - '549966'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -37,7 +37,7 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Date:
-      - Mon, 17 May 2021 15:06:25 GMT
+      - Wed, 19 May 2021 14:50:56 GMT
       Server:
       - CA-API-Gateway/9.0
     body:
@@ -86,7 +86,7 @@ http_interactions:
                 "originalsourceid" : [ "002282366-MIT01" ],
                 "sourcesystem" : [ "ILS" ],
                 "sourceformat" : [ "MARC21" ],
-                "score" : [ "2.9496138E-4" ]
+                "score" : [ "2.957334E-4" ]
               },
               "addata" : {
                 "aulast" : [ "Rudolph" ],
@@ -229,42 +229,42 @@ http_interactions:
           }, {
             "context" : "L",
             "adaptor" : "Local Search Engine",
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019721306761",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724606761",
             "pnx" : {
               "display" : {
                 "source" : [ "Alma" ],
                 "type" : [ "journal" ],
                 "language" : [ "fre" ],
-                "title" : [ "Popcorn Industry Profile: Thailand" ],
+                "title" : [ "Popcorn Industry Profile: Australia" ],
                 "publisher" : [ "Datamonitor Plc" ],
-                "mms" : [ "9933019721306761" ],
+                "mms" : [ "9933019724606761" ],
                 "version" : [ "1" ]
               },
               "control" : {
-                "sourcerecordid" : [ "9933019721306761" ],
-                "recordid" : [ "alma9933019721306761" ],
+                "sourcerecordid" : [ "9933019724606761" ],
+                "recordid" : [ "alma9933019724606761" ],
                 "sourceid" : "alma",
-                "originalsourceid" : [ "991000000000573078" ],
+                "originalsourceid" : [ "991000000000573049" ],
                 "sourcesystem" : [ "SFX" ],
                 "sourceformat" : [ "MARC21" ],
-                "score" : [ "5.5851083E-4" ]
+                "score" : [ "5.616534E-4" ]
               },
               "addata" : {
                 "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
                 "pub" : [ "Datamonitor Plc" ],
-                "oclcid" : [ "(ckb)1000000000573078" ],
+                "oclcid" : [ "(ckb)1000000000573049" ],
                 "format" : [ "journal" ],
                 "genre" : [ "journal" ],
                 "ristype" : [ "JOUR" ],
-                "jtitle" : [ "Popcorn Industry Profile: Thailand" ]
+                "jtitle" : [ "Popcorn Industry Profile: Australia" ]
               },
               "sort" : {
-                "title" : [ "Popcorn Industry Profile: Thailand" ],
+                "title" : [ "Popcorn Industry Profile: Australia" ],
                 "creationdate" : [ "0000" ]
               },
               "facets" : {
                 "frbrtype" : [ "6" ],
-                "frbrgroupid" : [ "9003628398970808267" ]
+                "frbrgroupid" : [ "9059165500462499698" ]
               }
             },
             "delivery" : {
@@ -310,42 +310,42 @@ http_interactions:
           }, {
             "context" : "L",
             "adaptor" : "Local Search Engine",
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019723406761",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724306761",
             "pnx" : {
               "display" : {
                 "source" : [ "Alma" ],
                 "type" : [ "journal" ],
                 "language" : [ "fre" ],
-                "title" : [ "Popcorn Industry Profile: Greece" ],
+                "title" : [ "Popcorn Industry Profile: Brazil" ],
                 "publisher" : [ "Datamonitor Plc" ],
-                "mms" : [ "9933019723406761" ],
+                "mms" : [ "9933019724306761" ],
                 "version" : [ "1" ]
               },
               "control" : {
-                "sourcerecordid" : [ "9933019723406761" ],
-                "recordid" : [ "alma9933019723406761" ],
+                "sourcerecordid" : [ "9933019724306761" ],
+                "recordid" : [ "alma9933019724306761" ],
                 "sourceid" : "alma",
-                "originalsourceid" : [ "991000000000573061" ],
+                "originalsourceid" : [ "991000000000573052" ],
                 "sourcesystem" : [ "SFX" ],
                 "sourceformat" : [ "MARC21" ],
-                "score" : [ "5.5851083E-4" ]
+                "score" : [ "5.616534E-4" ]
               },
               "addata" : {
                 "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
                 "pub" : [ "Datamonitor Plc" ],
-                "oclcid" : [ "(ckb)1000000000573061" ],
+                "oclcid" : [ "(ckb)1000000000573052" ],
                 "format" : [ "journal" ],
                 "genre" : [ "journal" ],
                 "ristype" : [ "JOUR" ],
-                "jtitle" : [ "Popcorn Industry Profile: Greece" ]
+                "jtitle" : [ "Popcorn Industry Profile: Brazil" ]
               },
               "sort" : {
-                "title" : [ "Popcorn Industry Profile: Greece" ],
+                "title" : [ "Popcorn Industry Profile: Brazil" ],
                 "creationdate" : [ "0000" ]
               },
               "facets" : {
                 "frbrtype" : [ "6" ],
-                "frbrgroupid" : [ "9037562016405007885" ]
+                "frbrgroupid" : [ "9083335249684128851" ]
               }
             },
             "delivery" : {
@@ -391,42 +391,42 @@ http_interactions:
           }, {
             "context" : "L",
             "adaptor" : "Local Search Engine",
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019722106761",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724806761",
             "pnx" : {
               "display" : {
                 "source" : [ "Alma" ],
                 "type" : [ "journal" ],
                 "language" : [ "fre" ],
-                "title" : [ "Popcorn Industry Profile: South Korea" ],
+                "title" : [ "Popcorn Industry Profile: Argentina" ],
                 "publisher" : [ "Datamonitor Plc" ],
-                "mms" : [ "9933019722106761" ],
+                "mms" : [ "9933019724806761" ],
                 "version" : [ "1" ]
               },
               "control" : {
-                "sourcerecordid" : [ "9933019722106761" ],
-                "recordid" : [ "alma9933019722106761" ],
+                "sourcerecordid" : [ "9933019724806761" ],
+                "recordid" : [ "alma9933019724806761" ],
                 "sourceid" : "alma",
-                "originalsourceid" : [ "991000000000573073" ],
+                "originalsourceid" : [ "991000000000573047" ],
                 "sourcesystem" : [ "SFX" ],
                 "sourceformat" : [ "MARC21" ],
-                "score" : [ "5.5851083E-4" ]
+                "score" : [ "5.616534E-4" ]
               },
               "addata" : {
                 "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
                 "pub" : [ "Datamonitor Plc" ],
-                "oclcid" : [ "(ckb)1000000000573073" ],
+                "oclcid" : [ "(ckb)1000000000573047" ],
                 "format" : [ "journal" ],
                 "genre" : [ "journal" ],
                 "ristype" : [ "JOUR" ],
-                "jtitle" : [ "Popcorn Industry Profile: South Korea" ]
+                "jtitle" : [ "Popcorn Industry Profile: Argentina" ]
               },
               "sort" : {
-                "title" : [ "Popcorn Industry Profile: South Korea" ],
+                "title" : [ "Popcorn Industry Profile: Argentina" ],
                 "creationdate" : [ "0000" ]
               },
               "facets" : {
                 "frbrtype" : [ "6" ],
-                "frbrgroupid" : [ "9004595849084473098" ]
+                "frbrgroupid" : [ "9001959784471604878" ]
               }
             },
             "delivery" : {
@@ -472,42 +472,42 @@ http_interactions:
           }, {
             "context" : "L",
             "adaptor" : "Local Search Engine",
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724206761",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724506761",
             "pnx" : {
               "display" : {
                 "source" : [ "Alma" ],
                 "type" : [ "journal" ],
                 "language" : [ "fre" ],
-                "title" : [ "Popcorn Industry Profile: Chile" ],
+                "title" : [ "Popcorn Industry Profile: Austria" ],
                 "publisher" : [ "Datamonitor Plc" ],
-                "mms" : [ "9933019724206761" ],
+                "mms" : [ "9933019724506761" ],
                 "version" : [ "1" ]
               },
               "control" : {
-                "sourcerecordid" : [ "9933019724206761" ],
-                "recordid" : [ "alma9933019724206761" ],
+                "sourcerecordid" : [ "9933019724506761" ],
+                "recordid" : [ "alma9933019724506761" ],
                 "sourceid" : "alma",
-                "originalsourceid" : [ "991000000000573053" ],
+                "originalsourceid" : [ "991000000000573050" ],
                 "sourcesystem" : [ "SFX" ],
                 "sourceformat" : [ "MARC21" ],
-                "score" : [ "5.5851083E-4" ]
+                "score" : [ "5.616534E-4" ]
               },
               "addata" : {
                 "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
                 "pub" : [ "Datamonitor Plc" ],
-                "oclcid" : [ "(ckb)1000000000573053" ],
+                "oclcid" : [ "(ckb)1000000000573050" ],
                 "format" : [ "journal" ],
                 "genre" : [ "journal" ],
                 "ristype" : [ "JOUR" ],
-                "jtitle" : [ "Popcorn Industry Profile: Chile" ]
+                "jtitle" : [ "Popcorn Industry Profile: Austria" ]
               },
               "sort" : {
-                "title" : [ "Popcorn Industry Profile: Chile" ],
+                "title" : [ "Popcorn Industry Profile: Austria" ],
                 "creationdate" : [ "0000" ]
               },
               "facets" : {
                 "frbrtype" : [ "6" ],
-                "frbrgroupid" : [ "9007649350935717203" ]
+                "frbrgroupid" : [ "9060146011692305880" ]
               }
             },
             "delivery" : {
@@ -552,24 +552,24 @@ http_interactions:
             }
           } ],
           "timelog" : {
-            "BUILD_RESULTS_RETRIVE_FROM_DB" : "66",
-            "CALL_SOLR_GET_IDS_LIST" : "500",
-            "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "495",
-            "RETRIVE_COLLECTION_DISCOVERY_INFO" : "1",
-            "RETRIVE_FROM_DB_COURSE_INFO" : "42",
-            "RETRIVE_FROM_DB_RECORDS" : "19",
+            "BUILD_RESULTS_RETRIVE_FROM_DB" : "39",
+            "CALL_SOLR_GET_IDS_LIST" : "779",
+            "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "276",
+            "RETRIVE_COLLECTION_DISCOVERY_INFO" : "20",
+            "RETRIVE_FROM_DB_COURSE_INFO" : "2",
+            "RETRIVE_FROM_DB_RECORDS" : "11",
             "RETRIVE_FROM_DB_RELATIONS" : "2",
-            "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "389",
-            "SET_AVAILABILTY_HOLDING_DEDUPS" : "106",
-            "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "152",
-            "PRIMA_LOCAL_SEARCH_TOTAL" : "1227",
+            "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "166",
+            "SET_AVAILABILTY_HOLDING_DEDUPS" : "110",
+            "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "166",
+            "PRIMA_LOCAL_SEARCH_TOTAL" : "1270",
             "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
-            "BUILD_COMBINED_RESULTS_MAP" : 1256,
-            "COMBINED_SEARCH_TIME" : 1258,
+            "BUILD_COMBINED_RESULTS_MAP" : 1298,
+            "COMBINED_SEARCH_TIME" : 1301,
             "PROCESS_COMBINED_RESULTS" : 0,
             "FEATURED_SEARCH_TIME" : 0
           },
           "facets" : [ ]
         }
-  recorded_at: Mon, 17 May 2021 15:06:26 GMT
+  recorded_at: Wed, 19 May 2021 14:50:57 GMT
 recorded_with: VCR 6.0.0
