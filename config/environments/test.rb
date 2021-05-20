@@ -37,6 +37,7 @@ Rails.application.configure do
   ENV['PRIMO_TAB'] = 'FAKE_PRIMO_TAB'
   ENV['PRIMO_BOOK_SCOPE'] = 'FAKE_PRIMO_BOOK_SCOPE'
   ENV['PRIMO_ARTICLE_SCOPE'] = 'FAKE_PRIMO_ARTICLE_SCOPE'
+  ENV['PRIMO_MAIN_VIEW_TAB'] = 'all'
   ENV['MIT_PRIMO_URL'] = 'https://mit.primo.exlibrisgroup.com'
   ENV['SYNDETICS_PRIMO_URL'] = 'https://syndetics.com/index.php?client=primo'
 

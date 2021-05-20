@@ -79,7 +79,7 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     result = popcorn['results'].first
     assert_not_equal "Rudolph, J.$$QRudolph, J.", result.authors.first.first
     assert_equal ["Rudolph, J.",
-                  "https://mit.primo.exlibrisgroup.com/discovery/browse?browseQuery=Rudolph, J.&browseScope=author&vid=FAKE_PRIMO_VID"],
+                  "https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Rudolph, J.&tab=all&search_scope=all&vid=FAKE_PRIMO_VID"],
                  result.authors.first
   end
 
@@ -87,10 +87,10 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     result = monkeys['results'].second
     assert_not_equal ['Beran, Michael J ; Smith, J. David'], result.authors.first.first
     assert_equal ['Beran, Michael J',
-                  'https://mit.primo.exlibrisgroup.com/discovery/browse?browseQuery=Beran, Michael J&browseScope=author&vid=FAKE_PRIMO_VID'],
+                  'https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Beran, Michael J&tab=all&search_scope=all&vid=FAKE_PRIMO_VID'],
                  result.authors.first
     assert_equal ['Smith, J. David',
-                  'https://mit.primo.exlibrisgroup.com/discovery/browse?browseQuery=Smith, J. David&browseScope=author&vid=FAKE_PRIMO_VID'],
+                  'https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Smith, J. David&tab=all&search_scope=all&vid=FAKE_PRIMO_VID'],
                  result.authors.second
   end
 
