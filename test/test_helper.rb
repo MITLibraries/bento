@@ -76,14 +76,25 @@ VCR.configure do |config|
     (ENV['GOOGLE_CUSTOM_SEARCH_ID']).to_s
   end
 
-  config.filter_sensitive_data('https://another_fake_server.example.com') do
-    (ENV['PRIMO_SEARCH_API_URL']).to_s
+  # The only sensitive data here is the API key, but filtering these makes 
+  # for less frequent cassette regeneration and thus less test suite maintenance.
+  config.filter_sensitive_data('https://another_fake_server.example.com/v1') do
+    (ENV['PRIMO_API_URL']).to_s
   end
-  config.filter_sensitive_data('FAKE_PRIMO_SEARCH_API_KEY') do
-    (ENV['PRIMO_SEARCH_API_KEY']).to_s
+  config.filter_sensitive_data('FAKE_PRIMO_API_KEY') do
+    (ENV['PRIMO_API_KEY']).to_s
   end
   config.filter_sensitive_data('FAKE_PRIMO_VID') do
     (ENV['PRIMO_VID']).to_s
+  end
+  config.filter_sensitive_data('FAKE_PRIMO_TAB') do
+    (ENV['PRIMO_TAB']).to_s
+  end
+  config.filter_sensitive_data('FAKE_PRIMO_BOOK_SCOPE') do
+    (ENV['PRIMO_BOOK_SCOPE']).to_s
+  end
+  config.filter_sensitive_data('FAKE_PRIMO_ARTICLE_SCOPE') do
+    (ENV['PRIMO_ARTICLE_SCOPE']).to_s
   end
 end
 

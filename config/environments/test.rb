@@ -31,11 +31,12 @@ Rails.application.configure do
 
   ENV['EXL_INST_ID'] = '01MIT_INST'
   ENV['PRIMO_SEARCH'] = 'true'
-  ENV['PRIMO_SEARCH_API_URL'] = 'https://another_fake_server.example.com'
-  ENV['PRIMO_SEARCH_API_KEY'] = 'FAKE_PRIMO_SEARCH_API_KEY'
+  ENV['PRIMO_API_URL'] = 'https://another_fake_server.example.com/v1'
+  ENV['PRIMO_API_KEY'] = 'FAKE_PRIMO_API_KEY'
   ENV['PRIMO_VID'] = 'FAKE_PRIMO_VID'
-  ENV['PRIMO_BOOK_SCOPE'] = 'alma'
-  ENV['PRIMO_ARTICLE_SCOPE'] = 'cdi'
+  ENV['PRIMO_TAB'] = 'FAKE_PRIMO_TAB'
+  ENV['PRIMO_BOOK_SCOPE'] = 'FAKE_PRIMO_BOOK_SCOPE'
+  ENV['PRIMO_ARTICLE_SCOPE'] = 'FAKE_PRIMO_ARTICLE_SCOPE'
   ENV['MIT_PRIMO_URL'] = 'https://mit.primo.exlibrisgroup.com'
   ENV['SYNDETICS_PRIMO_URL'] = 'https://syndetics.com/index.php?client=primo'
 

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://another_fake_server.example.com/primo/v1/search?apikey=FAKE_PRIMO_SEARCH_API_KEY&limit=5&q=any,contains,popcorn&scope=cdi&tab=bento&vid=FAKE_PRIMO_VID
+    uri: https://another_fake_server.example.com/v1/search?apikey=FAKE_PRIMO_API_KEY&limit=5&q=any,contains,popcorn&scope=FAKE_PRIMO_ARTICLE_SCOPE&tab=FAKE_PRIMO_TAB&vid=FAKE_PRIMO_VID
     body:
       encoding: UTF-8
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Vary:
       - accept-encoding
       X-Exl-Api-Remaining:
-      - '549997'
+      - '549971'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -37,7 +37,7 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Date:
-      - Mon, 17 May 2021 15:06:13 GMT
+      - Wed, 19 May 2021 14:29:19 GMT
       Server:
       - CA-API-Gateway/9.0
     body:
@@ -46,8 +46,8 @@ http_interactions:
         {
           "info" : {
             "totalResultsLocal" : -1,
-            "totalResultsPC" : 132266,
-            "total" : 132266,
+            "totalResultsPC" : 132284,
+            "total" : 132284,
             "first" : 1,
             "last" : 5
           },
@@ -63,7 +63,7 @@ http_interactions:
                 "title" : [ "Popcorn" ]
               },
               "control" : {
-                "recordid" : [ "cdi_crossref_primary_10_1088_2058_7058_29_11_46" ],
+                "recordid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_crossref_primary_10_1088_2058_7058_29_11_46" ],
                 "sourcerecordid" : [ "10_1088_2058_7058_29_11_46" ],
                 "originalsourceid" : [ "FETCH-LOGICAL-c128t-ee53964c4847586f864697370a066d4cdc2e5946f17ec07873e31601378e11d53" ],
                 "recordtype" : [ "article" ],
@@ -72,21 +72,7 @@ http_interactions:
                 "sourceformat" : [ "XML" ],
                 "sourcesystem" : [ "Other" ],
                 "sourceid" : [ "crossref" ],
-                "score" : [ "0.021811698" ]
-              },
-              "addata" : {
-                "issn" : [ "0953-8585" ],
-                "genre" : [ "article" ],
-                "atitle" : [ "Popcorn" ],
-                "date" : [ "2016-11" ],
-                "risdate" : [ "2016" ],
-                "spage" : [ "42" ],
-                "epage" : [ "42" ],
-                "pages" : [ "42-42" ],
-                "eissn" : [ "2058-7058" ],
-                "ristype" : [ "JOUR" ],
-                "doi" : [ "10.1088/2058-7058/29/11/46" ],
-                "format" : [ "journal" ]
+                "score" : [ "0.021807468" ]
               },
               "links" : {
                 "openurlfulltext" : [ "$$Topenurlfull_article" ],
@@ -98,36 +84,50 @@ http_interactions:
                 "title" : [ "Popcorn", "Physics world" ],
                 "recordid" : [ "eNo9j81KBDEQhBtR1nHdF_Ad4nQn6U7nKIt_sKAHPYchkwFl11kSL769DoqXKqjDx1cAV4TXhKq9RVYTfqK3sSfqvZxA9z-eQoeRnVFWPoeL1t4RSbxyB6vn-Zjn-nEJZ9Owb2Xz12t4vbt92T6Y3dP94_ZmZzJZ_TSlsIvis1cfWGVS8RKDCzigyOjzmG3h6GWiUDIGDa44EiQXtBCN7NZgf7m5zq3VMqVjfTsM9SsRpuVKWqzTYp1sTETJi_sGjyA4gg" ],
                 "recordtype" : [ "article" ],
-                "scope" : [ "AAYXX", "CITATION" ],
+                "rsrctype" : [ "article" ],
                 "issn" : [ "0953-8585", "2058-7058" ],
                 "fulltext" : [ "true" ],
-                "rsrctype" : [ "article" ],
                 "startdate" : [ "201611" ],
-                "enddate" : [ "201611" ]
+                "enddate" : [ "201611" ],
+                "scope" : [ "AAYXX", "CITATION" ]
               },
               "display" : {
                 "title" : [ "Popcorn" ],
-                "ispartof" : [ "Physics world, 2016-11, Vol.29 (11), p.42-42" ],
-                "type" : [ "article" ],
-                "source" : [ "Alma/SFX Local Collection" ],
-                "identifier" : [ "ISSN: 0953-8585", "EISSN: 2058-7058", "DOI: 10.1088/2058-7058/29/11/46" ],
                 "language" : [ "eng" ],
+                "source" : [ "Alma/SFX Local Collection" ],
+                "ispartof" : [ "Physics world, 2016-11, Vol.29 (11), p.42-42" ],
+                "identifier" : [ "ISSN: 0953-8585", "EISSN: 2058-7058", "DOI: 10.1088/2058-7058/29/11/46" ],
+                "type" : [ "article" ],
                 "lds50" : [ "peer_reviewed" ]
               },
               "delivery" : {
                 "fulltext" : [ "fulltext" ],
                 "delcategory" : [ "Remote Search Resource" ]
               },
+              "addata" : {
+                "format" : [ "journal" ],
+                "genre" : [ "article" ],
+                "issn" : [ "0953-8585" ],
+                "spage" : [ "42" ],
+                "epage" : [ "42" ],
+                "pages" : [ "42-42" ],
+                "eissn" : [ "2058-7058" ],
+                "ristype" : [ "JOUR" ],
+                "doi" : [ "10.1088/2058-7058/29/11/46" ],
+                "atitle" : [ "Popcorn" ],
+                "date" : [ "2016-11" ],
+                "risdate" : [ "2016" ]
+              },
               "facets" : {
                 "creationdate" : [ "2016" ],
-                "rsrctype" : [ "articles" ],
-                "language" : [ "eng" ],
                 "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
                 "collection" : [ "CrossRef" ],
                 "toplevel" : [ "peer_reviewed", "online_resources" ],
-                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-c128t-ee53964c4847586f864697370a066d4cdc2e5946f17ec07873e31601378e11d53" ],
+                "frbrgroupid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_FETCH-LOGICAL-c128t-ee53964c4847586f864697370a066d4cdc2e5946f17ec07873e31601378e11d53" ],
                 "frbrtype" : [ "5" ],
-                "jtitle" : [ "Physics world" ]
+                "jtitle" : [ "Physics world" ],
+                "language" : [ "eng" ]
               }
             },
             "delivery" : {
@@ -155,16 +155,16 @@ http_interactions:
               },
               "timesCited" : { }
             },
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_crossref_primary_10_1088_2058_7058_29_11_46"
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/FAKE_PRIMO_ARTICLE_SCOPE_crossref_primary_10_1088_2058_7058_29_11_46"
           }, {
             "pnx" : {
               "sort" : {
+                "author" : [ "Kaplunovsky, Vadim ; Melnikov, Dmitry ; Sonnenschein, Jacob" ],
                 "creationdate" : [ "201211" ],
-                "title" : [ "Baryonic popcorn" ],
-                "author" : [ "Kaplunovsky, Vadim ; Melnikov, Dmitry ; Sonnenschein, Jacob" ]
+                "title" : [ "Baryonic popcorn" ]
               },
               "control" : {
-                "recordid" : [ "cdi_crossref_primary_10_1007_JHEP11_2012_047" ],
+                "recordid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_crossref_primary_10_1007_JHEP11_2012_047" ],
                 "sourcerecordid" : [ "2398248625" ],
                 "originalsourceid" : [ "FETCH-LOGICAL-1444t-760d0b45d816a0d8fb674d5ced8ad47da0fb828871854d5ffde60f57a93cabd93" ],
                 "recordtype" : [ "article" ],
@@ -174,20 +174,58 @@ http_interactions:
                 "sourcesystem" : [ "Other" ],
                 "sourceid" : [ "proquest_cross" ],
                 "pqid" : [ "2398248625" ],
-                "score" : [ "0.020141866" ]
+                "score" : [ "0.020139625" ]
+              },
+              "links" : {
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "openurl" : [ "$$Topenurl_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "In the large N\nc\nlimit cold dense nuclear matter must be in a lattice phase. This applies also to holographic models of hadron physics. In a class of such models, like the generalized Sakai-Sugimoto model, baryons take the form of instantons of the effective flavor gauge theory that resides on probe flavor branes. In this paper we study the phase structure of baryonic crystals by analyzing discrete periodic configurations of such instantons. We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density. Through these transitions normal (3D) lattices expand into the transverse dimension, eventually becoming a higher dimensional (4D) multi-layer lattice at large densities.We consider 3D lattices of zero size instantons as well as 1D periodic chains of finite size instantons, which serve as toy models of the full holographic systems. In particular, for the finite-size case we determine solutions of the corresponding ADHM equations for both a straight chain and for a 2D zigzag configuration where instantons pop up into the holographic dimension. At low density the system takes the form of an “abelian anti- ferromagnetic” straight periodic chain. Above a critical density there is a second order phase transition into a zigzag structure. An even higher density yields a rich phase space characterized by the formation of multi-layer zigzag structures. The finite size of the lattices in the transverse dimension is a signal of an emerging Fermi sea of quarks. We thus propose that the popcorn transitions indicate the onset of the “quarkyonic” phase of the cold dense nuclear matter." ],
+                "creationdate" : [ "2012" ],
+                "title" : [ "Baryonic popcorn", "The journal of high energy physics" ],
+                "recordid" : [ "eNpNj01LAzEQhoMoWKvgzavgRQ9rZ_KxSY5aqlUKetBzyG4SadHNmrQH_72pW9TTvAzPfDyEnCFcI4CcPM5nz4iXFJBeAZd7ZIRAdaW41Pv_8iE5ynkFgAI1jMjprU1fsVu2533s25i6Y3IQ7Hv2J7s6Jq93s5fpvFo83T9MbxYVcs7XlazBQcOFU1hbcCo0teROtN4p67h0FkKjqFISlSj9EJyvIQhpNWtt4zQbk4thb5_i58bntVnFTerKSUOZVpSrmopCTQaqTTHn5IPp0_KjvGwQzFbbDNpmq22K9t9ELmT35tPvxA-CDBnsIhoBEtk3fBNW7g" ],
+                "recordtype" : [ "article" ],
+                "sourceid" : [ "ARAPS", "P62", "PIMPY" ],
+                "creatorcontrib" : [ "Kaplunovsky, Vadim", "Melnikov, Dmitry", "Sonnenschein, Jacob" ],
+                "rsrctype" : [ "article" ],
+                "creator" : [ "Kaplunovsky, Vadim", "Melnikov, Dmitry", "Sonnenschein, Jacob" ],
+                "subject" : [ "Solitons Monopoles and Instantons ; AdS-CFT Correspondence ; Quantum Physics ; Quantum Field Theories, String Theory ; Classical and Quantum Gravitation, Relativity Theory ; Physics ; Phase Diagram of QCD ; Elementary Particles, Quantum Field Theory ; Flavor (particle physics) ; Lattices ; Chains ; Phase transitions ; Density ; Instantons ; Baryons ; Multilayers ; Gauge theory ; Ferromagnetism ; Configurations ; Nuclear matter ; Crystal structure ; Branes ; Solid phases" ],
+                "issn" : [ "1029-8479", "1029-8479" ],
+                "fulltext" : [ "true" ],
+                "addtitle" : [ "J. High Energ. Phys" ],
+                "general" : [ "Springer-Verlag", "Springer Nature B.V" ],
+                "startdate" : [ "201211" ],
+                "enddate" : [ "201211" ],
+                "scope" : [ "AAYXX", "CITATION", "8FE", "8FG", "ABUWG", "ARAPS", "AZQEC", "BENPR", "BGLVJ", "DWQXO", "HCIFZ", "P5Z", "P62", "PIMPY", "PQEST", "PQQKQ", "PQUKI" ]
+              },
+              "display" : {
+                "description" : [ "In the large N\nc\nlimit cold dense nuclear matter must be in a lattice phase. This applies also to holographic models of hadron physics. In a class of such models, like the generalized Sakai-Sugimoto model, baryons take the form of instantons of the effective flavor gauge theory that resides on probe flavor branes. In this paper we study the phase structure of baryonic crystals by analyzing discrete periodic configurations of such instantons. We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density. Through these transitions normal (3D) lattices expand into the transverse dimension, eventually becoming a higher dimensional (4D) multi-layer lattice at large densities.We consider 3D lattices of zero size instantons as well as 1D periodic chains of finite size instantons, which serve as toy models of the full holographic systems. In particular, for the finite-size case we determine solutions of the corresponding ADHM equations for both a straight chain and for a 2D zigzag configuration where instantons pop up into the holographic dimension. At low density the system takes the form of an “abelian anti- ferromagnetic” straight periodic chain. Above a critical density there is a second order phase transition into a zigzag structure. An even higher density yields a rich phase space characterized by the formation of multi-layer zigzag structures. The finite size of the lattices in the transverse dimension is a signal of an emerging Fermi sea of quarks. We thus propose that the popcorn transitions indicate the onset of the “quarkyonic” phase of the cold dense nuclear matter." ],
+                "title" : [ "Baryonic popcorn" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Kaplunovsky, Vadim ; Melnikov, Dmitry ; Sonnenschein, Jacob" ],
+                "subject" : [ "Solitons Monopoles and Instantons ; AdS-CFT Correspondence ; Quantum Physics ; Quantum Field Theories, String Theory ; Classical and Quantum Gravitation, Relativity Theory ; Physics ; Phase Diagram of QCD ; Elementary Particles, Quantum Field Theory ; Flavor (particle physics) ; Lattices ; Chains ; Phase transitions ; Density ; Instantons ; Baryons ; Multilayers ; Gauge theory ; Ferromagnetism ; Configurations ; Nuclear matter ; Crystal structure ; Branes ; Solid phases" ],
+                "source" : [ "Publicly Available Content Database", "ProQuest Advanced Technologies & Aerospace Collection", "Advanced Technologies & Aerospace Collection", "SpringerLink Contemporary (1997 - Present)" ],
+                "publisher" : [ "Berlin/Heidelberg: Springer-Verlag" ],
+                "ispartof" : [ "The journal of high energy physics, 2012-11, Vol.2012 (11), p.1-85" ],
+                "identifier" : [ "ISSN: 1029-8479", "EISSN: 1029-8479", "DOI: 10.1007/JHEP11(2012)047" ],
+                "rights" : [ "SISSA, Trieste, Italy 2012", "SISSA, Trieste, Italy 2012." ],
+                "snippet" : [ ".... We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ],
+                "oa" : [ "free_for_read" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
               },
               "addata" : {
-                "abstract" : [ "In the large N\nc\nlimit cold dense nuclear matter must be in a lattice phase. This applies also to holographic models of hadron physics. In a class of such models, like the generalized Sakai-Sugimoto model, baryons take the form of instantons of the effective flavor gauge theory that resides on probe flavor branes. In this paper we study the phase structure of baryonic crystals by analyzing discrete periodic configurations of such instantons. We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density. Through these transitions normal (3D) lattices expand into the transverse dimension, eventually becoming a higher dimensional (4D) multi-layer lattice at large densities.We consider 3D lattices of zero size instantons as well as 1D periodic chains of finite size instantons, which serve as toy models of the full holographic systems. In particular, for the finite-size case we determine solutions of the corresponding ADHM equations for both a straight chain and for a 2D zigzag configuration where instantons pop up into the holographic dimension. At low density the system takes the form of an “abelian anti- ferromagnetic” straight periodic chain. Above a critical density there is a second order phase transition into a zigzag structure. An even higher density yields a rich phase space characterized by the formation of multi-layer zigzag structures. The finite size of the lattices in the transverse dimension is a signal of an emerging Fermi sea of quarks. We thus propose that the popcorn transitions indicate the onset of the “quarkyonic” phase of the cold dense nuclear matter." ],
-                "issn" : [ "1029-8479" ],
-                "oa" : [ "free_for_read" ],
+                "format" : [ "journal" ],
                 "jtitle" : [ "The journal of high energy physics" ],
                 "genre" : [ "article" ],
-                "au" : [ "Kaplunovsky, Vadim", "Melnikov, Dmitry", "Sonnenschein, Jacob" ],
-                "atitle" : [ "Baryonic popcorn" ],
-                "stitle" : [ "J. High Energ. Phys" ],
-                "date" : [ "2012-11" ],
-                "risdate" : [ "2012" ],
-                "volume" : [ "2012" ],
+                "issn" : [ "1029-8479" ],
+                "abstract" : [ "In the large N\nc\nlimit cold dense nuclear matter must be in a lattice phase. This applies also to holographic models of hadron physics. In a class of such models, like the generalized Sakai-Sugimoto model, baryons take the form of instantons of the effective flavor gauge theory that resides on probe flavor branes. In this paper we study the phase structure of baryonic crystals by analyzing discrete periodic configurations of such instantons. We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density. Through these transitions normal (3D) lattices expand into the transverse dimension, eventually becoming a higher dimensional (4D) multi-layer lattice at large densities.We consider 3D lattices of zero size instantons as well as 1D periodic chains of finite size instantons, which serve as toy models of the full holographic systems. In particular, for the finite-size case we determine solutions of the corresponding ADHM equations for both a straight chain and for a 2D zigzag configuration where instantons pop up into the holographic dimension. At low density the system takes the form of an “abelian anti- ferromagnetic” straight periodic chain. Above a critical density there is a second order phase transition into a zigzag structure. An even higher density yields a rich phase space characterized by the formation of multi-layer zigzag structures. The finite size of the lattices in the transverse dimension is a signal of an emerging Fermi sea of quarks. We thus propose that the popcorn transitions indicate the onset of the “quarkyonic” phase of the cold dense nuclear matter." ],
                 "spage" : [ "1" ],
                 "epage" : [ "85" ],
                 "pages" : [ "1-85" ],
@@ -196,64 +234,26 @@ http_interactions:
                 "cop" : [ "Berlin/Heidelberg" ],
                 "pub" : [ "Springer-Verlag" ],
                 "doi" : [ "10.1007/JHEP11(2012)047" ],
-                "format" : [ "journal" ]
-              },
-              "links" : {
-                "openurlfulltext" : [ "$$Topenurlfull_article" ],
-                "openurl" : [ "$$Topenurl_article" ],
-                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
-              },
-              "search" : {
-                "creationdate" : [ "2012" ],
-                "title" : [ "Baryonic popcorn", "The journal of high energy physics" ],
-                "creator" : [ "Kaplunovsky, Vadim", "Melnikov, Dmitry", "Sonnenschein, Jacob" ],
-                "recordid" : [ "eNpNj01LAzEQhoMoWKvgzavgRQ9rZ_KxSY5aqlUKetBzyG4SadHNmrQH_72pW9TTvAzPfDyEnCFcI4CcPM5nz4iXFJBeAZd7ZIRAdaW41Pv_8iE5ynkFgAI1jMjprU1fsVu2533s25i6Y3IQ7Hv2J7s6Jq93s5fpvFo83T9MbxYVcs7XlazBQcOFU1hbcCo0teROtN4p67h0FkKjqFISlSj9EJyvIQhpNWtt4zQbk4thb5_i58bntVnFTerKSUOZVpSrmopCTQaqTTHn5IPp0_KjvGwQzFbbDNpmq22K9t9ELmT35tPvxA-CDBnsIhoBEtk3fBNW7g" ],
-                "recordtype" : [ "article" ],
-                "sourceid" : [ "ARAPS", "P62", "PIMPY" ],
-                "scope" : [ "AAYXX", "CITATION", "8FE", "8FG", "ABUWG", "ARAPS", "AZQEC", "BENPR", "BGLVJ", "DWQXO", "HCIFZ", "P5Z", "P62", "PIMPY", "PQEST", "PQQKQ", "PQUKI" ],
-                "creatorcontrib" : [ "Kaplunovsky, Vadim", "Melnikov, Dmitry", "Sonnenschein, Jacob" ],
-                "issn" : [ "1029-8479", "1029-8479" ],
-                "fulltext" : [ "true" ],
-                "addtitle" : [ "J. High Energ. Phys" ],
-                "general" : [ "Springer-Verlag", "Springer Nature B.V" ],
-                "rsrctype" : [ "article" ],
-                "startdate" : [ "201211" ],
-                "enddate" : [ "201211" ],
-                "subject" : [ "Solitons Monopoles and Instantons ; AdS-CFT Correspondence ; Quantum Physics ; Quantum Field Theories, String Theory ; Classical and Quantum Gravitation, Relativity Theory ; Physics ; Phase Diagram of QCD ; Elementary Particles, Quantum Field Theory ; Flavor (particle physics) ; Lattices ; Chains ; Phase transitions ; Density ; Instantons ; Baryons ; Multilayers ; Gauge theory ; Ferromagnetism ; Configurations ; Nuclear matter ; Crystal structure ; Branes ; Solid phases" ],
-                "description" : [ "In the large N\nc\nlimit cold dense nuclear matter must be in a lattice phase. This applies also to holographic models of hadron physics. In a class of such models, like the generalized Sakai-Sugimoto model, baryons take the form of instantons of the effective flavor gauge theory that resides on probe flavor branes. In this paper we study the phase structure of baryonic crystals by analyzing discrete periodic configurations of such instantons. We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density. Through these transitions normal (3D) lattices expand into the transverse dimension, eventually becoming a higher dimensional (4D) multi-layer lattice at large densities.We consider 3D lattices of zero size instantons as well as 1D periodic chains of finite size instantons, which serve as toy models of the full holographic systems. In particular, for the finite-size case we determine solutions of the corresponding ADHM equations for both a straight chain and for a 2D zigzag configuration where instantons pop up into the holographic dimension. At low density the system takes the form of an “abelian anti- ferromagnetic” straight periodic chain. Above a critical density there is a second order phase transition into a zigzag structure. An even higher density yields a rich phase space characterized by the formation of multi-layer zigzag structures. The finite size of the lattices in the transverse dimension is a signal of an emerging Fermi sea of quarks. We thus propose that the popcorn transitions indicate the onset of the “quarkyonic” phase of the cold dense nuclear matter." ]
-              },
-              "display" : {
-                "title" : [ "Baryonic popcorn" ],
-                "publisher" : [ "Berlin/Heidelberg: Springer-Verlag" ],
-                "ispartof" : [ "The journal of high energy physics, 2012-11, Vol.2012 (11), p.1-85" ],
-                "type" : [ "article" ],
-                "source" : [ "Publicly Available Content Database", "ProQuest Advanced Technologies & Aerospace Collection", "Advanced Technologies & Aerospace Collection", "SpringerLink Contemporary (1997 - Present)" ],
-                "creator" : [ "Kaplunovsky, Vadim ; Melnikov, Dmitry ; Sonnenschein, Jacob" ],
-                "identifier" : [ "ISSN: 1029-8479", "EISSN: 1029-8479", "DOI: 10.1007/JHEP11(2012)047" ],
-                "subject" : [ "Solitons Monopoles and Instantons ; AdS-CFT Correspondence ; Quantum Physics ; Quantum Field Theories, String Theory ; Classical and Quantum Gravitation, Relativity Theory ; Physics ; Phase Diagram of QCD ; Elementary Particles, Quantum Field Theory ; Flavor (particle physics) ; Lattices ; Chains ; Phase transitions ; Density ; Instantons ; Baryons ; Multilayers ; Gauge theory ; Ferromagnetism ; Configurations ; Nuclear matter ; Crystal structure ; Branes ; Solid phases" ],
-                "language" : [ "eng" ],
-                "rights" : [ "SISSA, Trieste, Italy 2012", "SISSA, Trieste, Italy 2012." ],
-                "snippet" : [ ".... We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density..." ],
-                "lds50" : [ "peer_reviewed" ],
-                "oa" : [ "free_for_read" ],
-                "description" : [ "In the large N\nc\nlimit cold dense nuclear matter must be in a lattice phase. This applies also to holographic models of hadron physics. In a class of such models, like the generalized Sakai-Sugimoto model, baryons take the form of instantons of the effective flavor gauge theory that resides on probe flavor branes. In this paper we study the phase structure of baryonic crystals by analyzing discrete periodic configurations of such instantons. We find that instanton configurations exhibit a series of “popcorn” transitions upon increasing the density. Through these transitions normal (3D) lattices expand into the transverse dimension, eventually becoming a higher dimensional (4D) multi-layer lattice at large densities.We consider 3D lattices of zero size instantons as well as 1D periodic chains of finite size instantons, which serve as toy models of the full holographic systems. In particular, for the finite-size case we determine solutions of the corresponding ADHM equations for both a straight chain and for a 2D zigzag configuration where instantons pop up into the holographic dimension. At low density the system takes the form of an “abelian anti- ferromagnetic” straight periodic chain. Above a critical density there is a second order phase transition into a zigzag structure. An even higher density yields a rich phase space characterized by the formation of multi-layer zigzag structures. The finite size of the lattices in the transverse dimension is a signal of an emerging Fermi sea of quarks. We thus propose that the popcorn transitions indicate the onset of the “quarkyonic” phase of the cold dense nuclear matter." ]
-              },
-              "delivery" : {
-                "fulltext" : [ "fulltext" ],
-                "delcategory" : [ "Remote Search Resource" ]
+                "au" : [ "Kaplunovsky, Vadim", "Melnikov, Dmitry", "Sonnenschein, Jacob" ],
+                "atitle" : [ "Baryonic popcorn" ],
+                "stitle" : [ "J. High Energ. Phys" ],
+                "date" : [ "2012-11" ],
+                "risdate" : [ "2012" ],
+                "volume" : [ "2012" ],
+                "oa" : [ "free_for_read" ]
               },
               "facets" : {
                 "creationdate" : [ "2012" ],
                 "creatorcontrib" : [ "Kaplunovsky, Vadim", "Melnikov, Dmitry", "Sonnenschein, Jacob" ],
-                "rsrctype" : [ "articles" ],
-                "language" : [ "eng" ],
                 "topic" : [ "Solitons Monopoles and Instantons", "AdS-CFT Correspondence", "Quantum Physics", "Quantum Field Theories, String Theory", "Classical and Quantum Gravitation, Relativity Theory", "Physics", "Phase Diagram of QCD", "Elementary Particles, Quantum Field Theory", "Flavor (particle physics)", "Lattices", "Chains", "Phase transitions", "Density", "Instantons", "Baryons", "Multilayers", "Gauge theory", "Ferromagnetism", "Configurations", "Nuclear matter", "Crystal structure", "Branes", "Solid phases" ],
                 "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
                 "collection" : [ "CrossRef", "ProQuest SciTech Collection", "ProQuest Technology Collection", "ProQuest Central (Alumni Edition)", "Advanced Technologies & Aerospace Collection", "ProQuest Central Essentials", "ProQuest Central", "Technology Collection", "ProQuest Central Korea", "SciTech Premium Collection", "Advanced Technologies & Aerospace Database", "ProQuest Advanced Technologies & Aerospace Collection", "Publicly Available Content Database", "ProQuest One Academic Eastern Edition", "ProQuest One Academic", "ProQuest One Academic UKI Edition" ],
                 "toplevel" : [ "peer_reviewed", "online_resources" ],
-                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-1444t-760d0b45d816a0d8fb674d5ced8ad47da0fb828871854d5ffde60f57a93cabd93" ],
+                "frbrgroupid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_FETCH-LOGICAL-1444t-760d0b45d816a0d8fb674d5ced8ad47da0fb828871854d5ffde60f57a93cabd93" ],
                 "frbrtype" : [ "5" ],
-                "jtitle" : [ "The journal of high energy physics" ]
+                "jtitle" : [ "The journal of high energy physics" ],
+                "language" : [ "eng" ]
               }
             },
             "delivery" : {
@@ -271,7 +271,7 @@ http_interactions:
               "feDisplayOtherLocations" : false,
               "displayedAvailability" : "true",
               "holding" : [ ],
-              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 11:06:14&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-proquest_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Baryonic+popcorn&rft.jtitle=The+journal+of+high+energy+physics&rft.au=Kaplunovsky%2C+Vadim&rft.date=2012-11&rft.volume=2012&rft.issue=11&rft.spage=1&rft.epage=85&rft.pages=1-85&rft.issn=1029-8479&rft.eissn=1029-8479&rft_id=info:doi/10.1007%2FJHEP11%282012%29047&rft.pub=Springer-Verlag&rft.place=Berlin%2FHeidelberg&rft.stitle=J.+High+Energ.+Phys&rft_dat=<proquest_cross>2398248625</proquest_cross>&svc_dat=viewit"
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-19 10:29:20&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-proquest_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Baryonic+popcorn&rft.jtitle=The+journal+of+high+energy+physics&rft.au=Kaplunovsky%2C+Vadim&rft.date=2012-11&rft.volume=2012&rft.issue=11&rft.spage=1&rft.epage=85&rft.pages=1-85&rft.issn=1029-8479&rft.eissn=1029-8479&rft_id=info:doi/10.1007%2FJHEP11%282012%29047&rft.pub=Springer-Verlag&rft.place=Berlin%2FHeidelberg&rft.stitle=J.+High+Energ.+Phys&rft_dat=<proquest_cross>2398248625</proquest_cross>&svc_dat=viewit"
             },
             "context" : "PC",
             "adaptor" : "Primo Central",
@@ -282,17 +282,17 @@ http_interactions:
               },
               "timesCited" : { }
             },
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_crossref_primary_10_1007_JHEP11_2012_047"
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/FAKE_PRIMO_ARTICLE_SCOPE_crossref_primary_10_1007_JHEP11_2012_047"
           }, {
             "pnx" : {
               "sort" : {
+                "author" : [ "Kleimeier, N. Fabian ; Turner, Andrew M ; Fortenberry, Ryan C ; Kaiser, Ralf I" ],
                 "creationdate" : [ "20200717" ],
-                "title" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices" ],
-                "author" : [ "Kleimeier, N. Fabian ; Turner, Andrew M ; Fortenberry, Ryan C ; Kaiser, Ralf I" ]
+                "title" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices" ]
               },
               "control" : {
-                "recordid" : [ "cdi_proquest_miscellaneous_2407314819" ],
-                "sourcerecordid" : [ "2424628284" ],
+                "recordid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_proquest_miscellaneous_2407314819" ],
+                "sourcerecordid" : [ "2407314819" ],
                 "originalsourceid" : [ "FETCH-LOGICAL-c3921-7425719fe6aa68a5d649da00a96e2c5717c5c4056e278e2b3c7592ba26eeb8653" ],
                 "recordtype" : [ "article" ],
                 "addsrcrecordid" : [ "eNqF0ctqGzEUBmARWpo07TbLIugmhdiRji4zs0yHODYEnEW6HmTNcT1hLLmSpsG7PkKfMU8SuXZS6KZoodunH8FPyBlnY84YXNrNyo6BAWOMc31ETrgU1ajQkr85rCUIdUzex_iQTckK_o4cC5CqVApOyOPc0bRCOvFhbVLnHfXLPwd3fmN9cHTSm58-GJcoXIinX7-_Dsk4bLNEel5PRT3PYyq-0M7RK4vJ9C2uti1mWnuXTOc6953OXMIQE_a9CXRmMX4gb5emj_jxMJ-Sb5Pr-3o6up3fzOqr25EVFfBRIUEVvFqiNkaXRrVaVq1hzFQawearwiormcq7okRYCFuoChYGNOKi1EqckvN97ib4HwPG1Ky7aHf_cOiH2IBkheCy5FWmn_-hD34ILv8uK5AaSihlVuO9ssHHGHDZbEK3NmHbcNbsKml2lTSvleQHnw6xw2KN7St_6SCDag8eux63_4lr6rtp_Tf8GU8Hl3g" ],
@@ -301,21 +301,59 @@ http_interactions:
                 "sourcesystem" : [ "Other" ],
                 "sourceid" : [ "proquest_cross" ],
                 "pqid" : [ "2424628284" ],
-                "score" : [ "0.019118225" ]
+                "score" : [ "0.019115865" ]
+              },
+              "links" : {
+                "openurlfulltext" : [ "$$Topenurlfull_article" ],
+                "openurl" : [ "$$Topenurl_article" ],
+                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
+              },
+              "search" : {
+                "description" : [ "Acetaldehyde (CH3CHO) is ubiquitous throughout the interstellar medium and has been observed in cold molecular clouds, star forming regions, and in meteorites such as Murchison. As the simplest methyl‐bearing aldehyde, acetaldehyde constitutes a critical precursor to prebiotic molecules such as the sugar deoxyribose and amino acids via the Strecker synthesis. In this study, we reveal the first laboratory detection of 2,3‐butanedione (diacetyl, CH3COCOCH3) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K. Detailed isotopic substitution experiments combined with tunable vacuum ultraviolet (VUV) photoionization of the subliming molecules demonstrate that 2,3‐butanedione is formed predominantly via the barrier‐less radical–radical reaction of two acetyl radicals (CH3ĊO). These processes are of fundamental importance for a detailed understanding of how complex organic molecules (COMs) are synthesized in deep space thus constraining the molecular structures and complexity of molecules forming in extraterrestrial ices containing acetaldehyde through a vigorous galactic cosmic ray driven non‐equilibrium chemistry.\nInterstellar popcorn: Exploiting photoionization reflectron time‐of‐flight mass spectrometry, we demonstrate that the popcorn and butter flavorant 2,3‐butanedione (diacetyl) represents the main reaction product of acetaldehyde ices exposed to ionizing radiation." ],
+                "creationdate" : [ "2020" ],
+                "title" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices", "Chemphyschem" ],
+                "recordid" : [ "eNqF0ctqGzEUBmARWpo07TbLIugmhdiRji4zs0yHODYEnEW6HmTNcT1hLLmSpsG7PkKfMU8SuXZS6KZoodunH8FPyBlnY84YXNrNyo6BAWOMc31ETrgU1ajQkr85rCUIdUzex_iQTckK_o4cC5CqVApOyOPc0bRCOvFhbVLnHfXLPwd3fmN9cHTSm58-GJcoXIinX7-_Dsk4bLNEel5PRT3PYyq-0M7RK4vJ9C2uti1mWnuXTOc6953OXMIQE_a9CXRmMX4gb5emj_jxMJ-Sb5Pr-3o6up3fzOqr25EVFfBRIUEVvFqiNkaXRrVaVq1hzFQawearwiormcq7okRYCFuoChYGNOKi1EqckvN97ib4HwPG1Ky7aHf_cOiH2IBkheCy5FWmn_-hD34ILv8uK5AaSihlVuO9ssHHGHDZbEK3NmHbcNbsKml2lTSvleQHnw6xw2KN7St_6SCDag8eux63_4lr6rtp_Tf8GU8Hl3g" ],
+                "recordtype" : [ "article" ],
+                "creatorcontrib" : [ "Kleimeier, N. Fabian", "Turner, Andrew M", "Fortenberry, Ryan C", "Kaiser, Ralf I" ],
+                "rsrctype" : [ "article" ],
+                "orcidid" : [ "https://orcid.org/0000-0002-7233-7206" ],
+                "creator" : [ "Kleimeier, N. Fabian", "Turner, Andrew M", "Fortenberry, Ryan C", "Kaiser, Ralf I" ],
+                "subject" : [ "non-equilibrium processes ; interstellar synthesis ; IR spectroscopy ; mass spectroscopy ; complex organic molecules ; Acetaldehyde - chemistry ; Cold Temperature ; Flavoring Agents - chemical synthesis ; Ultraviolet Rays ; Models, Chemical ; Free Radicals - chemistry ; Deuterium - chemistry ; Diacetyl - chemical synthesis ; Acetaldehyde - radiation effects ; Extraterrestrial Environment - chemistry ; Deep space ; Molecular structure ; Molecular clouds ; Galactic cosmic rays ; Substitution reactions ; Amino acids ; Ice ; Aldehydes ; Cosmic rays ; Acetaldehyde ; Complexity ; Organic chemistry ; Ionizing radiation ; Meteorites ; Star formation ; Photoionization ; Interstellar chemistry ; Astrochemistry ; Chemical synthesis ; Interstellar matter ; Index Medicus" ],
+                "issn" : [ "1439-4235", "1439-7641" ],
+                "fulltext" : [ "true" ],
+                "addtitle" : [ "Chemphyschem" ],
+                "general" : [ "Wiley Subscription Services, Inc" ],
+                "startdate" : [ "20200717" ],
+                "enddate" : [ "20200717" ],
+                "scope" : [ "CGR", "CUY", "CVF", "ECM", "EIF", "NPM", "AAYXX", "CITATION", "K9.", "7X8" ]
+              },
+              "display" : {
+                "description" : [ "Acetaldehyde (CH3CHO) is ubiquitous throughout the interstellar medium and has been observed in cold molecular clouds, star forming regions, and in meteorites such as Murchison. As the simplest methyl‐bearing aldehyde, acetaldehyde constitutes a critical precursor to prebiotic molecules such as the sugar deoxyribose and amino acids via the Strecker synthesis. In this study, we reveal the first laboratory detection of 2,3‐butanedione (diacetyl, CH3COCOCH3) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K. Detailed isotopic substitution experiments combined with tunable vacuum ultraviolet (VUV) photoionization of the subliming molecules demonstrate that 2,3‐butanedione is formed predominantly via the barrier‐less radical–radical reaction of two acetyl radicals (CH3ĊO). These processes are of fundamental importance for a detailed understanding of how complex organic molecules (COMs) are synthesized in deep space thus constraining the molecular structures and complexity of molecules forming in extraterrestrial ices containing acetaldehyde through a vigorous galactic cosmic ray driven non‐equilibrium chemistry.\nInterstellar popcorn: Exploiting photoionization reflectron time‐of‐flight mass spectrometry, we demonstrate that the popcorn and butter flavorant 2,3‐butanedione (diacetyl) represents the main reaction product of acetaldehyde ices exposed to ionizing radiation." ],
+                "title" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Kleimeier, N. Fabian ; Turner, Andrew M ; Fortenberry, Ryan C ; Kaiser, Ralf I" ],
+                "subject" : [ "non-equilibrium processes ; interstellar synthesis ; IR spectroscopy ; mass spectroscopy ; complex organic molecules ; Acetaldehyde - chemistry ; Cold Temperature ; Flavoring Agents - chemical synthesis ; Ultraviolet Rays ; Models, Chemical ; Free Radicals - chemistry ; Deuterium - chemistry ; Diacetyl - chemical synthesis ; Acetaldehyde - radiation effects ; Extraterrestrial Environment - chemistry ; Deep space ; Molecular structure ; Molecular clouds ; Galactic cosmic rays ; Substitution reactions ; Amino acids ; Ice ; Aldehydes ; Cosmic rays ; Acetaldehyde ; Complexity ; Organic chemistry ; Ionizing radiation ; Meteorites ; Star formation ; Photoionization ; Interstellar chemistry ; Astrochemistry ; Chemical synthesis ; Interstellar matter ; Index Medicus" ],
+                "source" : [ "Wiley-Blackwell PALCI Collection", "Wiley-Blackwell Journals \"Not In Any Collection\" 2014 - China", "Wiley Online Library Journals \"Not In Any Collection\" 2016", "Wiley-Blackwell 2013 Journals \"Not In Any Collection\"", "Orbis-Cascade Wiley-Blackwell Shared Titles 2011", "Alma/SFX Local Collection", "Wiley-Blackwell Journals \"Not In Any Collection\" 2011", "Wiley Online Library All Journals" ],
+                "publisher" : [ "Germany: Wiley Subscription Services, Inc" ],
+                "ispartof" : [ "Chemphyschem, 2020-07-17, Vol.21 (14), p.1531-1540" ],
+                "identifier" : [ "ISSN: 1439-4235", "EISSN: 1439-7641", "DOI: 10.1002/cphc.202000116", "PMID: 32458552" ],
+                "rights" : [ "2020 Wiley‐VCH Verlag GmbH & Co. KGaA, Weinheim", "2020 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim." ],
+                "snippet" : [ "...) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K...", "...\n) - a butter and popcorn flavorant - synthesized within acetaldehyde-based interstellar analog ices exposed to ionizing radiation at 5 K..." ],
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
+              },
+              "delivery" : {
+                "fulltext" : [ "fulltext" ],
+                "delcategory" : [ "Remote Search Resource" ]
               },
               "addata" : {
-                "abstract" : [ "Acetaldehyde (CH3CHO) is ubiquitous throughout the interstellar medium and has been observed in cold molecular clouds, star forming regions, and in meteorites such as Murchison. As the simplest methyl‐bearing aldehyde, acetaldehyde constitutes a critical precursor to prebiotic molecules such as the sugar deoxyribose and amino acids via the Strecker synthesis. In this study, we reveal the first laboratory detection of 2,3‐butanedione (diacetyl, CH3COCOCH3) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K. Detailed isotopic substitution experiments combined with tunable vacuum ultraviolet (VUV) photoionization of the subliming molecules demonstrate that 2,3‐butanedione is formed predominantly via the barrier‐less radical–radical reaction of two acetyl radicals (CH3ĊO). These processes are of fundamental importance for a detailed understanding of how complex organic molecules (COMs) are synthesized in deep space thus constraining the molecular structures and complexity of molecules forming in extraterrestrial ices containing acetaldehyde through a vigorous galactic cosmic ray driven non‐equilibrium chemistry.\nInterstellar popcorn: Exploiting photoionization reflectron time‐of‐flight mass spectrometry, we demonstrate that the popcorn and butter flavorant 2,3‐butanedione (diacetyl) represents the main reaction product of acetaldehyde ices exposed to ionizing radiation." ],
+                "format" : [ "journal" ],
+                "jtitle" : [ "Chemphyschem" ],
+                "genre" : [ "article" ],
                 "orcidid" : [ "https://orcid.org/0000-0002-7233-7206" ],
                 "issn" : [ "1439-4235" ],
                 "addtitle" : [ "Chemphyschem" ],
-                "jtitle" : [ "Chemphyschem" ],
-                "genre" : [ "article" ],
-                "au" : [ "Kleimeier, N. Fabian", "Turner, Andrew M", "Fortenberry, Ryan C", "Kaiser, Ralf I" ],
-                "atitle" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices" ],
-                "date" : [ "2020-07-17" ],
-                "risdate" : [ "2020" ],
-                "volume" : [ "21" ],
-                "issue" : [ "14" ],
+                "abstract" : [ "Acetaldehyde (CH3CHO) is ubiquitous throughout the interstellar medium and has been observed in cold molecular clouds, star forming regions, and in meteorites such as Murchison. As the simplest methyl‐bearing aldehyde, acetaldehyde constitutes a critical precursor to prebiotic molecules such as the sugar deoxyribose and amino acids via the Strecker synthesis. In this study, we reveal the first laboratory detection of 2,3‐butanedione (diacetyl, CH3COCOCH3) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K. Detailed isotopic substitution experiments combined with tunable vacuum ultraviolet (VUV) photoionization of the subliming molecules demonstrate that 2,3‐butanedione is formed predominantly via the barrier‐less radical–radical reaction of two acetyl radicals (CH3ĊO). These processes are of fundamental importance for a detailed understanding of how complex organic molecules (COMs) are synthesized in deep space thus constraining the molecular structures and complexity of molecules forming in extraterrestrial ices containing acetaldehyde through a vigorous galactic cosmic ray driven non‐equilibrium chemistry.\nInterstellar popcorn: Exploiting photoionization reflectron time‐of‐flight mass spectrometry, we demonstrate that the popcorn and butter flavorant 2,3‐butanedione (diacetyl) represents the main reaction product of acetaldehyde ices exposed to ionizing radiation." ],
                 "spage" : [ "1531" ],
                 "epage" : [ "1540" ],
                 "pages" : [ "1531-1540" ],
@@ -324,64 +362,26 @@ http_interactions:
                 "cop" : [ "Germany" ],
                 "pub" : [ "Wiley Subscription Services, Inc" ],
                 "doi" : [ "10.1002/cphc.202000116" ],
-                "tpages" : [ "10" ],
-                "format" : [ "journal" ]
-              },
-              "links" : {
-                "openurlfulltext" : [ "$$Topenurlfull_article" ],
-                "openurl" : [ "$$Topenurl_article" ],
-                "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
-              },
-              "search" : {
-                "creationdate" : [ "2020" ],
-                "title" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices", "Chemphyschem" ],
-                "creator" : [ "Kleimeier, N. Fabian", "Turner, Andrew M", "Fortenberry, Ryan C", "Kaiser, Ralf I" ],
-                "recordid" : [ "eNqF0ctqGzEUBmARWpo07TbLIugmhdiRji4zs0yHODYEnEW6HmTNcT1hLLmSpsG7PkKfMU8SuXZS6KZoodunH8FPyBlnY84YXNrNyo6BAWOMc31ETrgU1ajQkr85rCUIdUzex_iQTckK_o4cC5CqVApOyOPc0bRCOvFhbVLnHfXLPwd3fmN9cHTSm58-GJcoXIinX7-_Dsk4bLNEel5PRT3PYyq-0M7RK4vJ9C2uti1mWnuXTOc6953OXMIQE_a9CXRmMX4gb5emj_jxMJ-Sb5Pr-3o6up3fzOqr25EVFfBRIUEVvFqiNkaXRrVaVq1hzFQawearwiormcq7okRYCFuoChYGNOKi1EqckvN97ib4HwPG1Ky7aHf_cOiH2IBkheCy5FWmn_-hD34ILv8uK5AaSihlVuO9ssHHGHDZbEK3NmHbcNbsKml2lTSvleQHnw6xw2KN7St_6SCDag8eux63_4lr6rtp_Tf8GU8Hl3g" ],
-                "recordtype" : [ "article" ],
-                "scope" : [ "CGR", "CUY", "CVF", "ECM", "EIF", "NPM", "AAYXX", "CITATION", "K9.", "7X8" ],
-                "creatorcontrib" : [ "Kleimeier, N. Fabian", "Turner, Andrew M", "Fortenberry, Ryan C", "Kaiser, Ralf I" ],
-                "orcidid" : [ "https://orcid.org/0000-0002-7233-7206" ],
-                "issn" : [ "1439-4235", "1439-7641" ],
-                "fulltext" : [ "true" ],
-                "addtitle" : [ "Chemphyschem" ],
-                "general" : [ "Wiley Subscription Services, Inc" ],
-                "rsrctype" : [ "article" ],
-                "startdate" : [ "20200717" ],
-                "enddate" : [ "20200717" ],
-                "subject" : [ "non-equilibrium processes ; interstellar synthesis ; IR spectroscopy ; mass spectroscopy ; complex organic molecules ; Acetaldehyde - chemistry ; Cold Temperature ; Flavoring Agents - chemical synthesis ; Ultraviolet Rays ; Models, Chemical ; Free Radicals - chemistry ; Deuterium - chemistry ; Diacetyl - chemical synthesis ; Acetaldehyde - radiation effects ; Extraterrestrial Environment - chemistry ; Deep space ; Molecular structure ; Molecular clouds ; Galactic cosmic rays ; Substitution reactions ; Amino acids ; Ice ; Aldehydes ; Cosmic rays ; Acetaldehyde ; Complexity ; Organic chemistry ; Ionizing radiation ; Meteorites ; Star formation ; Photoionization ; Interstellar chemistry ; Astrochemistry ; Chemical synthesis ; Interstellar matter ; Index Medicus" ],
-                "description" : [ "Acetaldehyde (CH3CHO) is ubiquitous throughout the interstellar medium and has been observed in cold molecular clouds, star forming regions, and in meteorites such as Murchison. As the simplest methyl‐bearing aldehyde, acetaldehyde constitutes a critical precursor to prebiotic molecules such as the sugar deoxyribose and amino acids via the Strecker synthesis. In this study, we reveal the first laboratory detection of 2,3‐butanedione (diacetyl, CH3COCOCH3) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K. Detailed isotopic substitution experiments combined with tunable vacuum ultraviolet (VUV) photoionization of the subliming molecules demonstrate that 2,3‐butanedione is formed predominantly via the barrier‐less radical–radical reaction of two acetyl radicals (CH3ĊO). These processes are of fundamental importance for a detailed understanding of how complex organic molecules (COMs) are synthesized in deep space thus constraining the molecular structures and complexity of molecules forming in extraterrestrial ices containing acetaldehyde through a vigorous galactic cosmic ray driven non‐equilibrium chemistry.\nInterstellar popcorn: Exploiting photoionization reflectron time‐of‐flight mass spectrometry, we demonstrate that the popcorn and butter flavorant 2,3‐butanedione (diacetyl) represents the main reaction product of acetaldehyde ices exposed to ionizing radiation." ]
-              },
-              "display" : {
-                "title" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices" ],
-                "publisher" : [ "Germany: Wiley Subscription Services, Inc" ],
-                "ispartof" : [ "Chemphyschem, 2020-07-17, Vol.21 (14), p.1531-1540" ],
-                "type" : [ "article" ],
-                "source" : [ "Wiley-Blackwell PALCI Collection", "Wiley-Blackwell Journals \"Not In Any Collection\" 2014 - China", "Wiley Online Library Journals \"Not In Any Collection\" 2016", "Wiley-Blackwell 2013 Journals \"Not In Any Collection\"", "Orbis-Cascade Wiley-Blackwell Shared Titles 2011", "Alma/SFX Local Collection", "Wiley-Blackwell Journals \"Not In Any Collection\" 2011", "Wiley Online Library All Journals" ],
-                "creator" : [ "Kleimeier, N. Fabian ; Turner, Andrew M ; Fortenberry, Ryan C ; Kaiser, Ralf I" ],
-                "identifier" : [ "ISSN: 1439-4235", "EISSN: 1439-7641", "DOI: 10.1002/cphc.202000116", "PMID: 32458552" ],
-                "subject" : [ "non-equilibrium processes ; interstellar synthesis ; IR spectroscopy ; mass spectroscopy ; complex organic molecules ; Acetaldehyde - chemistry ; Cold Temperature ; Flavoring Agents - chemical synthesis ; Ultraviolet Rays ; Models, Chemical ; Free Radicals - chemistry ; Deuterium - chemistry ; Diacetyl - chemical synthesis ; Acetaldehyde - radiation effects ; Extraterrestrial Environment - chemistry ; Deep space ; Molecular structure ; Molecular clouds ; Galactic cosmic rays ; Substitution reactions ; Amino acids ; Ice ; Aldehydes ; Cosmic rays ; Acetaldehyde ; Complexity ; Organic chemistry ; Ionizing radiation ; Meteorites ; Star formation ; Photoionization ; Interstellar chemistry ; Astrochemistry ; Chemical synthesis ; Interstellar matter ; Index Medicus" ],
-                "language" : [ "eng" ],
-                "rights" : [ "2020 Wiley‐VCH Verlag GmbH & Co. KGaA, Weinheim", "2020 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim." ],
-                "snippet" : [ "...) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K...", "...\n) - a butter and popcorn flavorant - synthesized within acetaldehyde-based interstellar analog ices exposed to ionizing radiation at 5 K..." ],
-                "lds50" : [ "peer_reviewed" ],
-                "description" : [ "Acetaldehyde (CH3CHO) is ubiquitous throughout the interstellar medium and has been observed in cold molecular clouds, star forming regions, and in meteorites such as Murchison. As the simplest methyl‐bearing aldehyde, acetaldehyde constitutes a critical precursor to prebiotic molecules such as the sugar deoxyribose and amino acids via the Strecker synthesis. In this study, we reveal the first laboratory detection of 2,3‐butanedione (diacetyl, CH3COCOCH3) – a butter and popcorn flavorant – synthesized within acetaldehyde‐based interstellar analog ices exposed to ionizing radiation at 5 K. Detailed isotopic substitution experiments combined with tunable vacuum ultraviolet (VUV) photoionization of the subliming molecules demonstrate that 2,3‐butanedione is formed predominantly via the barrier‐less radical–radical reaction of two acetyl radicals (CH3ĊO). These processes are of fundamental importance for a detailed understanding of how complex organic molecules (COMs) are synthesized in deep space thus constraining the molecular structures and complexity of molecules forming in extraterrestrial ices containing acetaldehyde through a vigorous galactic cosmic ray driven non‐equilibrium chemistry.\nInterstellar popcorn: Exploiting photoionization reflectron time‐of‐flight mass spectrometry, we demonstrate that the popcorn and butter flavorant 2,3‐butanedione (diacetyl) represents the main reaction product of acetaldehyde ices exposed to ionizing radiation." ]
-              },
-              "delivery" : {
-                "fulltext" : [ "fulltext" ],
-                "delcategory" : [ "Remote Search Resource" ]
+                "au" : [ "Kleimeier, N. Fabian", "Turner, Andrew M", "Fortenberry, Ryan C", "Kaiser, Ralf I" ],
+                "atitle" : [ "On the Formation of the Popcorn Flavorant 2,3‐Butanedione (CH3COCOCH3) in Acetaldehyde‐Containing Interstellar Ices" ],
+                "date" : [ "2020-07-17" ],
+                "risdate" : [ "2020" ],
+                "volume" : [ "21" ],
+                "issue" : [ "14" ],
+                "tpages" : [ "10" ]
               },
               "facets" : {
                 "creationdate" : [ "2020" ],
                 "creatorcontrib" : [ "Kleimeier, N. Fabian", "Turner, Andrew M", "Fortenberry, Ryan C", "Kaiser, Ralf I" ],
-                "rsrctype" : [ "articles" ],
-                "language" : [ "eng" ],
                 "topic" : [ "non-equilibrium processes", "interstellar synthesis", "IR spectroscopy", "mass spectroscopy", "complex organic molecules", "Acetaldehyde - chemistry", "Cold Temperature", "Flavoring Agents - chemical synthesis", "Ultraviolet Rays", "Models, Chemical", "Free Radicals - chemistry", "Deuterium - chemistry", "Diacetyl - chemical synthesis", "Acetaldehyde - radiation effects", "Extraterrestrial Environment - chemistry", "Deep space", "Molecular structure", "Molecular clouds", "Galactic cosmic rays", "Substitution reactions", "Amino acids", "Ice", "Aldehydes", "Cosmic rays", "Acetaldehyde", "Complexity", "Organic chemistry", "Ionizing radiation", "Meteorites", "Star formation", "Photoionization", "Interstellar chemistry", "Astrochemistry", "Chemical synthesis", "Interstellar matter", "Index Medicus" ],
                 "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
                 "collection" : [ "Medline", "MEDLINE", "MEDLINE (Ovid)", "MEDLINE", "MEDLINE", "PubMed", "CrossRef", "ProQuest Health & Medical Complete (Alumni)", "MEDLINE - Academic" ],
                 "toplevel" : [ "peer_reviewed", "online_resources" ],
-                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-c3921-7425719fe6aa68a5d649da00a96e2c5717c5c4056e278e2b3c7592ba26eeb8653" ],
+                "frbrgroupid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_FETCH-LOGICAL-c3921-7425719fe6aa68a5d649da00a96e2c5717c5c4056e278e2b3c7592ba26eeb8653" ],
                 "frbrtype" : [ "5" ],
-                "jtitle" : [ "Chemphyschem" ]
+                "jtitle" : [ "Chemphyschem" ],
+                "language" : [ "eng" ]
               }
             },
             "delivery" : {
@@ -399,7 +399,7 @@ http_interactions:
               "feDisplayOtherLocations" : false,
               "displayedAvailability" : "true",
               "holding" : [ ],
-              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 11:06:14&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-proquest_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=On+the+Formation+of+the+Popcorn+Flavorant+2%2C3%E2%80%90Butanedione+%28CH3COCOCH3%29+in+Acetaldehyde%E2%80%90Containing+Interstellar+Ices&rft.jtitle=Chemphyschem&rft.au=Kleimeier%2C+N.+Fabian&rft.date=2020-07-17&rft.volume=21&rft.issue=14&rft.spage=1531&rft.epage=1540&rft.pages=1531-1540&rft.issn=1439-4235&rft.eissn=1439-7641&rft_id=info:doi/10.1002%2Fcphc.202000116&rft.pub=Wiley+Subscription+Services%2C+Inc&rft.place=Germany&rft_dat=<proquest_cross>2424628284</proquest_cross>&svc_dat=viewit"
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-19 10:29:20&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-proquest_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=On+the+Formation+of+the+Popcorn+Flavorant+2%2C3%E2%80%90Butanedione+%28CH3COCOCH3%29+in+Acetaldehyde%E2%80%90Containing+Interstellar+Ices&rft.jtitle=Chemphyschem&rft.au=Kleimeier%2C+N.+Fabian&rft.date=2020-07-17&rft.volume=21&rft.issue=14&rft.spage=1531&rft.epage=1540&rft.pages=1531-1540&rft.issn=1439-4235&rft.eissn=1439-7641&rft_id=info:doi/10.1002%2Fcphc.202000116&rft.pub=Wiley+Subscription+Services%2C+Inc&rft.place=Germany&rft_dat=<proquest_cross>2424628284</proquest_cross>&svc_dat=viewit"
             },
             "context" : "PC",
             "adaptor" : "Primo Central",
@@ -410,16 +410,16 @@ http_interactions:
               },
               "timesCited" : { }
             },
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_proquest_miscellaneous_2407314819"
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/FAKE_PRIMO_ARTICLE_SCOPE_proquest_miscellaneous_2407314819"
           }, {
             "pnx" : {
               "sort" : {
+                "author" : [ "Zhong, Yu ; Xia, Xinhui ; Deng, Shengjue ; Zhan, Jiye ; Fang, Ruyi ; Xia, Yang ; Wang, Xiuli ; Zhang, Qiang ; Tu, Jiangping" ],
                 "creationdate" : [ "20180105" ],
-                "title" : [ "Popcorn Inspired Porous Macrocellular Carbon: Rapid Puffing Fabrication from Rice and Its Applications in Lithium–Sulfur Batteries" ],
-                "author" : [ "Zhong, Yu ; Xia, Xinhui ; Deng, Shengjue ; Zhan, Jiye ; Fang, Ruyi ; Xia, Yang ; Wang, Xiuli ; Zhang, Qiang ; Tu, Jiangping" ]
+                "title" : [ "Popcorn Inspired Porous Macrocellular Carbon: Rapid Puffing Fabrication from Rice and Its Applications in Lithium–Sulfur Batteries" ]
               },
               "control" : {
-                "recordid" : [ "cdi_gale_infotracacademiconefile_A521493458" ],
+                "recordid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_gale_infotracacademiconefile_A521493458" ],
                 "sourcerecordid" : [ "A521493458" ],
                 "originalsourceid" : [ "FETCH-LOGICAL-15140-710dc5cd389bae35d5b9b9fce24b7cfd5a241dfd1f9ccef3bafc996bac6877b13" ],
                 "recordtype" : [ "article" ],
@@ -429,29 +429,7 @@ http_interactions:
                 "sourcesystem" : [ "Other" ],
                 "sourceid" : [ "gale_cross" ],
                 "galeid" : [ "A521493458" ],
-                "score" : [ "0.018662874" ]
-              },
-              "addata" : {
-                "abstract" : [ "The advancement of electrochemical energy storage is closely bound up with the breakthrough of controllable fabrication of energy materials. Inspired by a popcorn fabrication from corn raw, herein a unique porous macrocellular carbon composed of cross‐linked nano/microsheets by a powerful puffing of rice precursor is described. The rice is directly puffed with a volume enlargement of ≈20 times when it is instantaneously released from a sealed environment with a high pressure of 1.0 MPa at 200 °C. Interestingly, when metal (e.g., Ni) nanoparticles are embedded in the puffed rice derived carbon (PRC), high‐quality PRC/metal composites are achieved with attractive properties of a high electrical conductivity of ≈7.2 × 104 S m−1, a large porosity of 85.1%, and a surface area of 1492.2 m2 g−1. The PRC/Ni are employed as a host in lithium–sulfur batteries. The designed PRC/Ni/S electrode exhibits a high reversible capacity of 1257.2 mA h g−1 at 0.2 C, a prolonged cycle life (821 mA h g−1 after 500 cycles), and enhanced rate capability, much better than other counterparts (PRC/S and rGO/S). The excellent properties are attributed to the advantages of PRC/Ni network with a high electrical conductivity, strong adsorption/blocking ability for polysulfides, and interconnected porous framework.\nA unique porous microcellular carbon composed of cross‐linked nano/microsheets created by a powerful puffing of a rice precursor is described. Because of the advantages of the puffed‐rice‐derived carbon/Ni network with a high electrical conductivity and strong adsorption/blocking ability for polysulfides, the microcellular carbon‐based electrode exhibits high sulfur utilization, long cycling life, and high rate performance in a working lithium–sulfur battery." ],
-                "orcidid" : [ "https://orcid.org/0000-0002-3929-1541" ],
-                "issn" : [ "1614-6832" ],
-                "jtitle" : [ "Advanced energy materials" ],
-                "genre" : [ "article" ],
-                "au" : [ "Zhong, Yu", "Xia, Xinhui", "Deng, Shengjue", "Zhan, Jiye", "Fang, Ruyi", "Xia, Yang", "Wang, Xiuli", "Zhang, Qiang", "Tu, Jiangping" ],
-                "atitle" : [ "Popcorn Inspired Porous Macrocellular Carbon: Rapid Puffing Fabrication from Rice and Its Applications in Lithium–Sulfur Batteries" ],
-                "date" : [ "2018-01-05" ],
-                "risdate" : [ "2018" ],
-                "volume" : [ "8" ],
-                "issue" : [ "1" ],
-                "spage" : [ "1701110" ],
-                "epage" : [ "n/a" ],
-                "pages" : [ "1701110-n/a" ],
-                "eissn" : [ "1614-6840" ],
-                "ristype" : [ "JOUR" ],
-                "pub" : [ "Wiley Subscription Services, Inc" ],
-                "doi" : [ "10.1002/aenm.201701110" ],
-                "tpages" : [ "8" ],
-                "format" : [ "journal" ]
+                "score" : [ "0.018661754" ]
               },
               "links" : {
                 "openurlfulltext" : [ "$$Topenurlfull_article" ],
@@ -459,54 +437,76 @@ http_interactions:
                 "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
               },
               "search" : {
+                "description" : [ "The advancement of electrochemical energy storage is closely bound up with the breakthrough of controllable fabrication of energy materials. Inspired by a popcorn fabrication from corn raw, herein a unique porous macrocellular carbon composed of cross‐linked nano/microsheets by a powerful puffing of rice precursor is described. The rice is directly puffed with a volume enlargement of ≈20 times when it is instantaneously released from a sealed environment with a high pressure of 1.0 MPa at 200 °C. Interestingly, when metal (e.g., Ni) nanoparticles are embedded in the puffed rice derived carbon (PRC), high‐quality PRC/metal composites are achieved with attractive properties of a high electrical conductivity of ≈7.2 × 104 S m−1, a large porosity of 85.1%, and a surface area of 1492.2 m2 g−1. The PRC/Ni are employed as a host in lithium–sulfur batteries. The designed PRC/Ni/S electrode exhibits a high reversible capacity of 1257.2 mA h g−1 at 0.2 C, a prolonged cycle life (821 mA h g−1 after 500 cycles), and enhanced rate capability, much better than other counterparts (PRC/S and rGO/S). The excellent properties are attributed to the advantages of PRC/Ni network with a high electrical conductivity, strong adsorption/blocking ability for polysulfides, and interconnected porous framework.\nA unique porous microcellular carbon composed of cross‐linked nano/microsheets created by a powerful puffing of a rice precursor is described. Because of the advantages of the puffed‐rice‐derived carbon/Ni network with a high electrical conductivity and strong adsorption/blocking ability for polysulfides, the microcellular carbon‐based electrode exhibits high sulfur utilization, long cycling life, and high rate performance in a working lithium–sulfur battery." ],
                 "creationdate" : [ "2018" ],
                 "title" : [ "Popcorn Inspired Porous Macrocellular Carbon: Rapid Puffing Fabrication from Rice and Its Applications in Lithium–Sulfur Batteries", "Advanced energy materials" ],
-                "creator" : [ "Zhong, Yu", "Xia, Xinhui", "Deng, Shengjue", "Zhan, Jiye", "Fang, Ruyi", "Xia, Yang", "Wang, Xiuli", "Zhang, Qiang", "Tu, Jiangping" ],
                 "recordid" : [ "eNqFkLtOw0AQRS0EEijQUu8POOz4vXQhIhApQMSjtmZfYZG9a-3aQnQU_AF_yJdgBEpKZooZzdxzixtFp0CnQGlyhsq204RCSQGA7kVHUEAWF1VG97d7mhxGJyG80LEyBjRNj6KPteuE85YsbeiMV5KsnXdDIDcovBOqaYYGPZmj586ek3vszCgZtDZ2QxbIvRHYG2eJ9q4l90YoglaSZR_IrOuav28gxpKV6Z_N0H69fz4MjR48ucC-V96ocBwdaGyCOvmbk-hpcfk4v45Xd1fL-WwVQw4ZjUugUuRCphXjqNJc5pxxpoVKMl4KLXNMMpBagmZCKJ1y1IKxgqMoqrLkkE6i6a_vBhtVG6td71GMLVVrhLNKm_E-yxPIWJrl1Q4YswjBK1133rTo32qg9U_u9U_u9Tb3EWC_wOvo9PaPup5d3t7s2G8KmIsa" ],
                 "recordtype" : [ "article" ],
-                "scope" : [ "AAYXX", "CITATION", "BSHEE" ],
                 "creatorcontrib" : [ "Zhong, Yu", "Xia, Xinhui", "Deng, Shengjue", "Zhan, Jiye", "Fang, Ruyi", "Xia, Yang", "Wang, Xiuli", "Zhang, Qiang", "Tu, Jiangping" ],
+                "rsrctype" : [ "article" ],
                 "orcidid" : [ "https://orcid.org/0000-0002-3929-1541" ],
+                "creator" : [ "Zhong, Yu", "Xia, Xinhui", "Deng, Shengjue", "Zhan, Jiye", "Fang, Ruyi", "Xia, Yang", "Wang, Xiuli", "Zhang, Qiang", "Tu, Jiangping" ],
+                "subject" : [ "biomass‐derived porous carbons ; lithium–sulfur batteries ; cathodes ; nanostructures ; metal–carbon composites ; Sulfur compounds ; Electrical conductivity ; Electrochemistry ; Porosity ; Batteries ; Sulfur ; Electric properties" ],
                 "issn" : [ "1614-6832", "1614-6840" ],
                 "fulltext" : [ "true" ],
                 "general" : [ "Wiley Subscription Services, Inc" ],
-                "rsrctype" : [ "article" ],
                 "startdate" : [ "20180105" ],
                 "enddate" : [ "20180105" ],
-                "subject" : [ "biomass‐derived porous carbons ; lithium–sulfur batteries ; cathodes ; nanostructures ; metal–carbon composites ; Sulfur compounds ; Electrical conductivity ; Electrochemistry ; Porosity ; Batteries ; Sulfur ; Electric properties" ],
-                "description" : [ "The advancement of electrochemical energy storage is closely bound up with the breakthrough of controllable fabrication of energy materials. Inspired by a popcorn fabrication from corn raw, herein a unique porous macrocellular carbon composed of cross‐linked nano/microsheets by a powerful puffing of rice precursor is described. The rice is directly puffed with a volume enlargement of ≈20 times when it is instantaneously released from a sealed environment with a high pressure of 1.0 MPa at 200 °C. Interestingly, when metal (e.g., Ni) nanoparticles are embedded in the puffed rice derived carbon (PRC), high‐quality PRC/metal composites are achieved with attractive properties of a high electrical conductivity of ≈7.2 × 104 S m−1, a large porosity of 85.1%, and a surface area of 1492.2 m2 g−1. The PRC/Ni are employed as a host in lithium–sulfur batteries. The designed PRC/Ni/S electrode exhibits a high reversible capacity of 1257.2 mA h g−1 at 0.2 C, a prolonged cycle life (821 mA h g−1 after 500 cycles), and enhanced rate capability, much better than other counterparts (PRC/S and rGO/S). The excellent properties are attributed to the advantages of PRC/Ni network with a high electrical conductivity, strong adsorption/blocking ability for polysulfides, and interconnected porous framework.\nA unique porous microcellular carbon composed of cross‐linked nano/microsheets created by a powerful puffing of a rice precursor is described. Because of the advantages of the puffed‐rice‐derived carbon/Ni network with a high electrical conductivity and strong adsorption/blocking ability for polysulfides, the microcellular carbon‐based electrode exhibits high sulfur utilization, long cycling life, and high rate performance in a working lithium–sulfur battery." ]
+                "scope" : [ "AAYXX", "CITATION", "BSHEE" ]
               },
               "display" : {
+                "description" : [ "The advancement of electrochemical energy storage is closely bound up with the breakthrough of controllable fabrication of energy materials. Inspired by a popcorn fabrication from corn raw, herein a unique porous macrocellular carbon composed of cross‐linked nano/microsheets by a powerful puffing of rice precursor is described. The rice is directly puffed with a volume enlargement of ≈20 times when it is instantaneously released from a sealed environment with a high pressure of 1.0 MPa at 200 °C. Interestingly, when metal (e.g., Ni) nanoparticles are embedded in the puffed rice derived carbon (PRC), high‐quality PRC/metal composites are achieved with attractive properties of a high electrical conductivity of ≈7.2 × 104 S m−1, a large porosity of 85.1%, and a surface area of 1492.2 m2 g−1. The PRC/Ni are employed as a host in lithium–sulfur batteries. The designed PRC/Ni/S electrode exhibits a high reversible capacity of 1257.2 mA h g−1 at 0.2 C, a prolonged cycle life (821 mA h g−1 after 500 cycles), and enhanced rate capability, much better than other counterparts (PRC/S and rGO/S). The excellent properties are attributed to the advantages of PRC/Ni network with a high electrical conductivity, strong adsorption/blocking ability for polysulfides, and interconnected porous framework.\nA unique porous microcellular carbon composed of cross‐linked nano/microsheets created by a powerful puffing of a rice precursor is described. Because of the advantages of the puffed‐rice‐derived carbon/Ni network with a high electrical conductivity and strong adsorption/blocking ability for polysulfides, the microcellular carbon‐based electrode exhibits high sulfur utilization, long cycling life, and high rate performance in a working lithium–sulfur battery." ],
                 "title" : [ "Popcorn Inspired Porous Macrocellular Carbon: Rapid Puffing Fabrication from Rice and Its Applications in Lithium–Sulfur Batteries" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Zhong, Yu ; Xia, Xinhui ; Deng, Shengjue ; Zhan, Jiye ; Fang, Ruyi ; Xia, Yang ; Wang, Xiuli ; Zhang, Qiang ; Tu, Jiangping" ],
+                "subject" : [ "biomass‐derived porous carbons ; lithium–sulfur batteries ; cathodes ; nanostructures ; metal–carbon composites ; Sulfur compounds ; Electrical conductivity ; Electrochemistry ; Porosity ; Batteries ; Sulfur ; Electric properties" ],
+                "source" : [ "Wiley-Blackwell Journals \"Not In Any Collection\" 2014 - China", "Wiley Online Library Journals \"Not In Any Collection\" 2016", "Wiley-Blackwell 2013 Journals \"Not In Any Collection\"", "Wiley-Blackwell Journals 2010-2013 Free Opt Ins - China", "Wiley-Blackwell Journals \"Not In Any Collection\" 2011", "Wiley Online Library All Journals" ],
                 "publisher" : [ "Wiley Subscription Services, Inc" ],
                 "ispartof" : [ "Advanced energy materials, 2018-01-05, Vol.8 (1), p.1701110-n/a" ],
-                "type" : [ "article" ],
-                "source" : [ "Wiley-Blackwell Journals \"Not In Any Collection\" 2014 - China", "Wiley Online Library Journals \"Not In Any Collection\" 2016", "Wiley-Blackwell 2013 Journals \"Not In Any Collection\"", "Wiley-Blackwell Journals 2010-2013 Free Opt Ins - China", "Wiley-Blackwell Journals \"Not In Any Collection\" 2011", "Wiley Online Library All Journals" ],
-                "creator" : [ "Zhong, Yu ; Xia, Xinhui ; Deng, Shengjue ; Zhan, Jiye ; Fang, Ruyi ; Xia, Yang ; Wang, Xiuli ; Zhang, Qiang ; Tu, Jiangping" ],
                 "identifier" : [ "ISSN: 1614-6832", "EISSN: 1614-6840", "DOI: 10.1002/aenm.201701110" ],
-                "subject" : [ "biomass‐derived porous carbons ; lithium–sulfur batteries ; cathodes ; nanostructures ; metal–carbon composites ; Sulfur compounds ; Electrical conductivity ; Electrochemistry ; Porosity ; Batteries ; Sulfur ; Electric properties" ],
-                "language" : [ "eng" ],
                 "rights" : [ "2017 WILEY‐VCH Verlag GmbH & Co. KGaA, Weinheim", "COPYRIGHT 2018 Wiley Subscription Services, Inc." ],
                 "snippet" : [ ".... Inspired by a popcorn fabrication from corn raw, herein a unique porous macrocellular carbon composed of cross..." ],
-                "lds50" : [ "peer_reviewed" ],
-                "description" : [ "The advancement of electrochemical energy storage is closely bound up with the breakthrough of controllable fabrication of energy materials. Inspired by a popcorn fabrication from corn raw, herein a unique porous macrocellular carbon composed of cross‐linked nano/microsheets by a powerful puffing of rice precursor is described. The rice is directly puffed with a volume enlargement of ≈20 times when it is instantaneously released from a sealed environment with a high pressure of 1.0 MPa at 200 °C. Interestingly, when metal (e.g., Ni) nanoparticles are embedded in the puffed rice derived carbon (PRC), high‐quality PRC/metal composites are achieved with attractive properties of a high electrical conductivity of ≈7.2 × 104 S m−1, a large porosity of 85.1%, and a surface area of 1492.2 m2 g−1. The PRC/Ni are employed as a host in lithium–sulfur batteries. The designed PRC/Ni/S electrode exhibits a high reversible capacity of 1257.2 mA h g−1 at 0.2 C, a prolonged cycle life (821 mA h g−1 after 500 cycles), and enhanced rate capability, much better than other counterparts (PRC/S and rGO/S). The excellent properties are attributed to the advantages of PRC/Ni network with a high electrical conductivity, strong adsorption/blocking ability for polysulfides, and interconnected porous framework.\nA unique porous microcellular carbon composed of cross‐linked nano/microsheets created by a powerful puffing of a rice precursor is described. Because of the advantages of the puffed‐rice‐derived carbon/Ni network with a high electrical conductivity and strong adsorption/blocking ability for polysulfides, the microcellular carbon‐based electrode exhibits high sulfur utilization, long cycling life, and high rate performance in a working lithium–sulfur battery." ]
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
               },
               "delivery" : {
                 "fulltext" : [ "fulltext" ],
                 "delcategory" : [ "Remote Search Resource" ]
               },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "Advanced energy materials" ],
+                "genre" : [ "article" ],
+                "orcidid" : [ "https://orcid.org/0000-0002-3929-1541" ],
+                "issn" : [ "1614-6832" ],
+                "abstract" : [ "The advancement of electrochemical energy storage is closely bound up with the breakthrough of controllable fabrication of energy materials. Inspired by a popcorn fabrication from corn raw, herein a unique porous macrocellular carbon composed of cross‐linked nano/microsheets by a powerful puffing of rice precursor is described. The rice is directly puffed with a volume enlargement of ≈20 times when it is instantaneously released from a sealed environment with a high pressure of 1.0 MPa at 200 °C. Interestingly, when metal (e.g., Ni) nanoparticles are embedded in the puffed rice derived carbon (PRC), high‐quality PRC/metal composites are achieved with attractive properties of a high electrical conductivity of ≈7.2 × 104 S m−1, a large porosity of 85.1%, and a surface area of 1492.2 m2 g−1. The PRC/Ni are employed as a host in lithium–sulfur batteries. The designed PRC/Ni/S electrode exhibits a high reversible capacity of 1257.2 mA h g−1 at 0.2 C, a prolonged cycle life (821 mA h g−1 after 500 cycles), and enhanced rate capability, much better than other counterparts (PRC/S and rGO/S). The excellent properties are attributed to the advantages of PRC/Ni network with a high electrical conductivity, strong adsorption/blocking ability for polysulfides, and interconnected porous framework.\nA unique porous microcellular carbon composed of cross‐linked nano/microsheets created by a powerful puffing of a rice precursor is described. Because of the advantages of the puffed‐rice‐derived carbon/Ni network with a high electrical conductivity and strong adsorption/blocking ability for polysulfides, the microcellular carbon‐based electrode exhibits high sulfur utilization, long cycling life, and high rate performance in a working lithium–sulfur battery." ],
+                "spage" : [ "1701110" ],
+                "epage" : [ "n/a" ],
+                "pages" : [ "1701110-n/a" ],
+                "eissn" : [ "1614-6840" ],
+                "ristype" : [ "JOUR" ],
+                "pub" : [ "Wiley Subscription Services, Inc" ],
+                "doi" : [ "10.1002/aenm.201701110" ],
+                "au" : [ "Zhong, Yu", "Xia, Xinhui", "Deng, Shengjue", "Zhan, Jiye", "Fang, Ruyi", "Xia, Yang", "Wang, Xiuli", "Zhang, Qiang", "Tu, Jiangping" ],
+                "atitle" : [ "Popcorn Inspired Porous Macrocellular Carbon: Rapid Puffing Fabrication from Rice and Its Applications in Lithium–Sulfur Batteries" ],
+                "date" : [ "2018-01-05" ],
+                "risdate" : [ "2018" ],
+                "volume" : [ "8" ],
+                "issue" : [ "1" ],
+                "tpages" : [ "8" ]
+              },
               "facets" : {
                 "creationdate" : [ "2018" ],
                 "creatorcontrib" : [ "Zhong, Yu", "Xia, Xinhui", "Deng, Shengjue", "Zhan, Jiye", "Fang, Ruyi", "Xia, Yang", "Wang, Xiuli", "Zhang, Qiang", "Tu, Jiangping" ],
-                "rsrctype" : [ "articles" ],
-                "language" : [ "eng" ],
                 "topic" : [ "biomass‐derived porous carbons", "lithium–sulfur batteries", "cathodes", "nanostructures", "metal–carbon composites", "Sulfur compounds", "Electrical conductivity", "Electrochemistry", "Porosity", "Batteries", "Sulfur", "Electric properties" ],
                 "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
                 "collection" : [ "CrossRef", "Academic OneFile (A&I only)" ],
                 "toplevel" : [ "peer_reviewed", "online_resources" ],
-                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-15140-710dc5cd389bae35d5b9b9fce24b7cfd5a241dfd1f9ccef3bafc996bac6877b13" ],
+                "frbrgroupid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_FETCH-LOGICAL-15140-710dc5cd389bae35d5b9b9fce24b7cfd5a241dfd1f9ccef3bafc996bac6877b13" ],
                 "frbrtype" : [ "5" ],
-                "jtitle" : [ "Advanced energy materials" ]
+                "jtitle" : [ "Advanced energy materials" ],
+                "language" : [ "eng" ]
               }
             },
             "delivery" : {
@@ -524,7 +524,7 @@ http_interactions:
               "feDisplayOtherLocations" : false,
               "displayedAvailability" : "true",
               "holding" : [ ],
-              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 11:06:14&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Popcorn+Inspired+Porous+Macrocellular+Carbon%3A+Rapid+Puffing+Fabrication+from+Rice+and+Its+Applications+in+Lithium%E2%80%93Sulfur+Batteries&rft.jtitle=Advanced+energy+materials&rft.au=Zhong%2C+Yu&rft.date=2018-01-05&rft.volume=8&rft.issue=1&rft.spage=1701110&rft.epage=n%2Fa&rft.pages=1701110-n%2Fa&rft.issn=1614-6832&rft.eissn=1614-6840&rft_id=info:doi/10.1002%2Faenm.201701110&rft.pub=Wiley+Subscription+Services%2C+Inc&rft_dat=<gale_cross>A521493458</gale_cross>&svc_dat=viewit&rft_galeid=A521493458"
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-19 10:29:20&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Popcorn+Inspired+Porous+Macrocellular+Carbon%3A+Rapid+Puffing+Fabrication+from+Rice+and+Its+Applications+in+Lithium%E2%80%93Sulfur+Batteries&rft.jtitle=Advanced+energy+materials&rft.au=Zhong%2C+Yu&rft.date=2018-01-05&rft.volume=8&rft.issue=1&rft.spage=1701110&rft.epage=n%2Fa&rft.pages=1701110-n%2Fa&rft.issn=1614-6832&rft.eissn=1614-6840&rft_id=info:doi/10.1002%2Faenm.201701110&rft.pub=Wiley+Subscription+Services%2C+Inc&rft_dat=<gale_cross>A521493458</gale_cross>&svc_dat=viewit&rft_galeid=A521493458"
             },
             "context" : "PC",
             "adaptor" : "Primo Central",
@@ -535,16 +535,16 @@ http_interactions:
               },
               "timesCited" : { }
             },
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_gale_infotracacademiconefile_A521493458"
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/FAKE_PRIMO_ARTICLE_SCOPE_gale_infotracacademiconefile_A521493458"
           }, {
             "pnx" : {
               "sort" : {
+                "author" : [ "Moreta, Cristina ; Tena, María Teresa" ],
                 "creationdate" : [ "20140815" ],
-                "title" : [ "Determination of perfluorinated alkyl acids in corn, popcorn and popcorn bags before and after cooking by focused ultrasound solid–liquid extraction, liquid chromatography and quadrupole-time of flight mass spectrometry" ],
-                "author" : [ "Moreta, Cristina ; Tena, María Teresa" ]
+                "title" : [ "Determination of perfluorinated alkyl acids in corn, popcorn and popcorn bags before and after cooking by focused ultrasound solid–liquid extraction, liquid chromatography and quadrupole-time of flight mass spectrometry" ]
               },
               "control" : {
-                "recordid" : [ "cdi_gale_infotracacademiconefile_A375736650" ],
+                "recordid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_gale_infotracacademiconefile_A375736650" ],
                 "sourcerecordid" : [ "A375736650" ],
                 "originalsourceid" : [ "FETCH-LOGICAL-c436t-4c2d02cac160bfc00839f52ce48a8038d7cd2282efb1b0e77c1513a81ba816633" ],
                 "recordtype" : [ "article" ],
@@ -554,27 +554,7 @@ http_interactions:
                 "sourcesystem" : [ "Other" ],
                 "sourceid" : [ "gale_cross" ],
                 "galeid" : [ "A375736650" ],
-                "score" : [ "0.018273484" ]
-              },
-              "addata" : {
-                "abstract" : [ "•FUSLE and UHPLC–(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging.•Complete extraction in one FUSLE cycle of only 10s.•Microwave popcorn bags and their content are analyzed before and after cooking.•PFAA levels from 3.50 to 750ng/g in packaging (mainly PFHxA). PFOA and PFOS not detected.•No PFAAs were found in corn and popcorn.\nAn analytical method is proposed to determine ten perfluorinated alkyl acids (PFAAs) [nine perfluorocarboxylic acids (PFCAs) and perfluorooctane sulfonate (PFOS)] in corn, popcorn and microwave popcorn packaging by focused ultrasound solid–liquid extraction (FUSLE) and ultra high performance liquid chromatography (UHPLC) coupled to quadrupole-time of flight mass spectrometry (QTOF-MS/MS). Selected PFAAs were extracted efficiently in only one 10-s cycle by FUSLE, a simple, safe and inexpensive technique. The developed method was validated for microwave popcorn bags matrix as well as corn and popcorn matrices in terms of linearity, matrix effect error, detection and quantification limits, repeatability and recovery values. The method showed good accuracy with recovery values around 100% except for the lowest chain length PFAAs, satisfactory reproducibility with RSDs under 16%, and sensitivity with limits of detection in the order of hundreds picograms per gram of sample (between 0.2 and 0.7ng/g). This method was also applied to the analysis of six microwave popcorn bags and the popcorn inside before and after cooking. PFCAs contents between 3.50ng/g and 750ng/g were found in bags, being PFHxA (perfluorohexanoic acid) the most abundant of them. However, no PFAAs were detected either corn or popcorn, therefore no migration was assumed." ],
-                "issn" : [ "0021-9673" ],
-                "jtitle" : [ "Journal of Chromatography A" ],
-                "genre" : [ "article" ],
-                "au" : [ "Moreta, Cristina", "Tena, María Teresa" ],
-                "atitle" : [ "Determination of perfluorinated alkyl acids in corn, popcorn and popcorn bags before and after cooking by focused ultrasound solid–liquid extraction, liquid chromatography and quadrupole-time of flight mass spectrometry" ],
-                "date" : [ "2014-08-15" ],
-                "risdate" : [ "2014" ],
-                "volume" : [ "1355" ],
-                "spage" : [ "211" ],
-                "epage" : [ "218" ],
-                "pages" : [ "211-218" ],
-                "coden" : [ "JOCRAM" ],
-                "ristype" : [ "JOUR" ],
-                "cop" : [ "Amsterdam" ],
-                "pub" : [ "Elsevier B.V" ],
-                "doi" : [ "10.1016/j.chroma.2014.06.018" ],
-                "format" : [ "journal" ]
+                "score" : [ "0.01826014" ]
               },
               "links" : {
                 "openurlfulltext" : [ "$$Topenurlfull_article" ],
@@ -583,53 +563,73 @@ http_interactions:
                 "thumbnail" : [ "$$Usyndetics_thumb_exl" ]
               },
               "search" : {
+                "description" : [ "•FUSLE and UHPLC–(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging.•Complete extraction in one FUSLE cycle of only 10s.•Microwave popcorn bags and their content are analyzed before and after cooking.•PFAA levels from 3.50 to 750ng/g in packaging (mainly PFHxA). PFOA and PFOS not detected.•No PFAAs were found in corn and popcorn.\nAn analytical method is proposed to determine ten perfluorinated alkyl acids (PFAAs) [nine perfluorocarboxylic acids (PFCAs) and perfluorooctane sulfonate (PFOS)] in corn, popcorn and microwave popcorn packaging by focused ultrasound solid–liquid extraction (FUSLE) and ultra high performance liquid chromatography (UHPLC) coupled to quadrupole-time of flight mass spectrometry (QTOF-MS/MS). Selected PFAAs were extracted efficiently in only one 10-s cycle by FUSLE, a simple, safe and inexpensive technique. The developed method was validated for microwave popcorn bags matrix as well as corn and popcorn matrices in terms of linearity, matrix effect error, detection and quantification limits, repeatability and recovery values. The method showed good accuracy with recovery values around 100% except for the lowest chain length PFAAs, satisfactory reproducibility with RSDs under 16%, and sensitivity with limits of detection in the order of hundreds picograms per gram of sample (between 0.2 and 0.7ng/g). This method was also applied to the analysis of six microwave popcorn bags and the popcorn inside before and after cooking. PFCAs contents between 3.50ng/g and 750ng/g were found in bags, being PFHxA (perfluorohexanoic acid) the most abundant of them. However, no PFAAs were detected either corn or popcorn, therefore no migration was assumed." ],
                 "creationdate" : [ "2014" ],
                 "title" : [ "Determination of perfluorinated alkyl acids in corn, popcorn and popcorn bags before and after cooking by focused ultrasound solid–liquid extraction, liquid chromatography and quadrupole-time of flight mass spectrometry", "Journal of Chromatography A" ],
-                "creator" : [ "Moreta, Cristina", "Tena, María Teresa" ],
                 "recordid" : [ "eNp9Uc1u3iAQ9KGVmqZ9gx649Ba7gP1h51IpSn-lSL20Z7SGxR9fMDhgV_Ut79Dn66VPUhxHOVYIsRpmhh22KN4wWjHKxLtTpY4xjFBxypqKioqy7llxRiln5aVo6xfFy5ROlLKWtvys-PMBZ4yj9TDb4EkwZMJo3BLiBqEm4G5XR0BZnYj1RIXoL8gUpq0g4PVT3cOQSI8mRHzAwWTjzA-31g-kX4kJaknZcXFzhBSWzEnBWf33_rezd4vVBH_lG7U1ckEeoT3MHIYI03F9ML5bQMdlCg7L2Y649WycHY4zGSElkiZUcxbhHNdXxXMDLuHrx_O8-PHp4_frL-XNt89fr69uStXUYi4bxTXlChQTtDeK0q6-NAeusOmgo3WnW6U57zianvUU21axA6uhY33eQtT1eVHtvgM4lNabsAXJS-NoVfBobMav6vbQ1kIcaBY0u0DFkFJEI6doR4irZFRuc5QnuUeX2xwlFTLPMcve7rIJkgJnInhl05OWdyKTKcu89zsPc-ifFqNMyqJXqG3MvyN1sP9_6B9CLL_L" ],
                 "recordtype" : [ "article" ],
-                "scope" : [ "IQODW", "AAYXX", "CITATION", "BSHEE" ],
                 "creatorcontrib" : [ "Moreta, Cristina", "Tena, María Teresa" ],
+                "rsrctype" : [ "article" ],
+                "creator" : [ "Moreta, Cristina", "Tena, María Teresa" ],
+                "subject" : [ "Packaging ; Quadrupole-time of flight mass spectrometry ; Liquid chromatography ; Perfluorinated alkyl acids ; Focused ultrasound solid–liquid extraction ; Popcorn ; Fundamental and applied biological sciences. Psychology ; Food industries ; Biological and medical sciences ; Cereal and baking product industries ; Corn ; Ammonium perfluorooctanoate ; Mass spectrometry ; Analysis" ],
                 "issn" : [ "0021-9673" ],
                 "fulltext" : [ "true" ],
                 "general" : [ "Elsevier B.V", "Elsevier" ],
-                "rsrctype" : [ "article" ],
                 "startdate" : [ "20140815" ],
                 "enddate" : [ "20140815" ],
-                "subject" : [ "Packaging ; Quadrupole-time of flight mass spectrometry ; Liquid chromatography ; Perfluorinated alkyl acids ; Focused ultrasound solid–liquid extraction ; Popcorn ; Fundamental and applied biological sciences. Psychology ; Food industries ; Biological and medical sciences ; Cereal and baking product industries ; Corn ; Ammonium perfluorooctanoate ; Mass spectrometry ; Analysis" ],
-                "description" : [ "•FUSLE and UHPLC–(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging.•Complete extraction in one FUSLE cycle of only 10s.•Microwave popcorn bags and their content are analyzed before and after cooking.•PFAA levels from 3.50 to 750ng/g in packaging (mainly PFHxA). PFOA and PFOS not detected.•No PFAAs were found in corn and popcorn.\nAn analytical method is proposed to determine ten perfluorinated alkyl acids (PFAAs) [nine perfluorocarboxylic acids (PFCAs) and perfluorooctane sulfonate (PFOS)] in corn, popcorn and microwave popcorn packaging by focused ultrasound solid–liquid extraction (FUSLE) and ultra high performance liquid chromatography (UHPLC) coupled to quadrupole-time of flight mass spectrometry (QTOF-MS/MS). Selected PFAAs were extracted efficiently in only one 10-s cycle by FUSLE, a simple, safe and inexpensive technique. The developed method was validated for microwave popcorn bags matrix as well as corn and popcorn matrices in terms of linearity, matrix effect error, detection and quantification limits, repeatability and recovery values. The method showed good accuracy with recovery values around 100% except for the lowest chain length PFAAs, satisfactory reproducibility with RSDs under 16%, and sensitivity with limits of detection in the order of hundreds picograms per gram of sample (between 0.2 and 0.7ng/g). This method was also applied to the analysis of six microwave popcorn bags and the popcorn inside before and after cooking. PFCAs contents between 3.50ng/g and 750ng/g were found in bags, being PFHxA (perfluorohexanoic acid) the most abundant of them. However, no PFAAs were detected either corn or popcorn, therefore no migration was assumed." ]
+                "scope" : [ "IQODW", "AAYXX", "CITATION", "BSHEE" ]
               },
               "display" : {
+                "description" : [ "•FUSLE and UHPLC–(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging.•Complete extraction in one FUSLE cycle of only 10s.•Microwave popcorn bags and their content are analyzed before and after cooking.•PFAA levels from 3.50 to 750ng/g in packaging (mainly PFHxA). PFOA and PFOS not detected.•No PFAAs were found in corn and popcorn.\nAn analytical method is proposed to determine ten perfluorinated alkyl acids (PFAAs) [nine perfluorocarboxylic acids (PFCAs) and perfluorooctane sulfonate (PFOS)] in corn, popcorn and microwave popcorn packaging by focused ultrasound solid–liquid extraction (FUSLE) and ultra high performance liquid chromatography (UHPLC) coupled to quadrupole-time of flight mass spectrometry (QTOF-MS/MS). Selected PFAAs were extracted efficiently in only one 10-s cycle by FUSLE, a simple, safe and inexpensive technique. The developed method was validated for microwave popcorn bags matrix as well as corn and popcorn matrices in terms of linearity, matrix effect error, detection and quantification limits, repeatability and recovery values. The method showed good accuracy with recovery values around 100% except for the lowest chain length PFAAs, satisfactory reproducibility with RSDs under 16%, and sensitivity with limits of detection in the order of hundreds picograms per gram of sample (between 0.2 and 0.7ng/g). This method was also applied to the analysis of six microwave popcorn bags and the popcorn inside before and after cooking. PFCAs contents between 3.50ng/g and 750ng/g were found in bags, being PFHxA (perfluorohexanoic acid) the most abundant of them. However, no PFAAs were detected either corn or popcorn, therefore no migration was assumed." ],
                 "title" : [ "Determination of perfluorinated alkyl acids in corn, popcorn and popcorn bags before and after cooking by focused ultrasound solid–liquid extraction, liquid chromatography and quadrupole-time of flight mass spectrometry" ],
+                "language" : [ "eng" ],
+                "creator" : [ "Moreta, Cristina ; Tena, María Teresa" ],
+                "subject" : [ "Packaging ; Quadrupole-time of flight mass spectrometry ; Liquid chromatography ; Perfluorinated alkyl acids ; Focused ultrasound solid–liquid extraction ; Popcorn ; Fundamental and applied biological sciences. Psychology ; Food industries ; Biological and medical sciences ; Cereal and baking product industries ; Corn ; Ammonium perfluorooctanoate ; Mass spectrometry ; Analysis" ],
+                "source" : [ "ScienceDirect Pi2 Collection", "ScienceDirect Physical Sciences College Edition Backfile", "Medium Multidisciplinary Collection [ECMMC]", "ScienceDirect Journals (Transactional Access)", "ScienceDirect Polish National Consort 2007", "ScienceDirect Journals (5 years ago - present)", "Alma/SFX Local Collection", "ScienceDirect Government Edition", "Small Multidisciplinary Collection [ECSMC]" ],
                 "publisher" : [ "Amsterdam: Elsevier B.V" ],
                 "ispartof" : [ "Journal of Chromatography A, 2014-08-15, Vol.1355, p.211-218" ],
-                "type" : [ "article" ],
-                "source" : [ "ScienceDirect Pi2 Collection", "ScienceDirect Physical Sciences College Edition Backfile", "Medium Multidisciplinary Collection [ECMMC]", "ScienceDirect Journals (Transactional Access)", "ScienceDirect Polish National Consort 2007", "ScienceDirect Journals (5 years ago - present)", "Alma/SFX Local Collection", "ScienceDirect Government Edition", "Small Multidisciplinary Collection [ECSMC]" ],
-                "creator" : [ "Moreta, Cristina ; Tena, María Teresa" ],
                 "identifier" : [ "ISSN: 0021-9673", "DOI: 10.1016/j.chroma.2014.06.018", "CODEN: JOCRAM" ],
-                "subject" : [ "Packaging ; Quadrupole-time of flight mass spectrometry ; Liquid chromatography ; Perfluorinated alkyl acids ; Focused ultrasound solid–liquid extraction ; Popcorn ; Fundamental and applied biological sciences. Psychology ; Food industries ; Biological and medical sciences ; Cereal and baking product industries ; Corn ; Ammonium perfluorooctanoate ; Mass spectrometry ; Analysis" ],
-                "language" : [ "eng" ],
                 "rights" : [ "2014 Elsevier B.V.", "2015 INIST-CNRS", "COPYRIGHT 2014 Elsevier B.V." ],
                 "snippet" : [ "•FUSLE and UHPLC–(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging...", "acents FUSLE and UHPLC-(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging..." ],
-                "lds50" : [ "peer_reviewed" ],
-                "description" : [ "•FUSLE and UHPLC–(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging.•Complete extraction in one FUSLE cycle of only 10s.•Microwave popcorn bags and their content are analyzed before and after cooking.•PFAA levels from 3.50 to 750ng/g in packaging (mainly PFHxA). PFOA and PFOS not detected.•No PFAAs were found in corn and popcorn.\nAn analytical method is proposed to determine ten perfluorinated alkyl acids (PFAAs) [nine perfluorocarboxylic acids (PFCAs) and perfluorooctane sulfonate (PFOS)] in corn, popcorn and microwave popcorn packaging by focused ultrasound solid–liquid extraction (FUSLE) and ultra high performance liquid chromatography (UHPLC) coupled to quadrupole-time of flight mass spectrometry (QTOF-MS/MS). Selected PFAAs were extracted efficiently in only one 10-s cycle by FUSLE, a simple, safe and inexpensive technique. The developed method was validated for microwave popcorn bags matrix as well as corn and popcorn matrices in terms of linearity, matrix effect error, detection and quantification limits, repeatability and recovery values. The method showed good accuracy with recovery values around 100% except for the lowest chain length PFAAs, satisfactory reproducibility with RSDs under 16%, and sensitivity with limits of detection in the order of hundreds picograms per gram of sample (between 0.2 and 0.7ng/g). This method was also applied to the analysis of six microwave popcorn bags and the popcorn inside before and after cooking. PFCAs contents between 3.50ng/g and 750ng/g were found in bags, being PFHxA (perfluorohexanoic acid) the most abundant of them. However, no PFAAs were detected either corn or popcorn, therefore no migration was assumed." ]
+                "type" : [ "article" ],
+                "lds50" : [ "peer_reviewed" ]
               },
               "delivery" : {
                 "fulltext" : [ "fulltext" ],
                 "delcategory" : [ "Remote Search Resource" ]
               },
+              "addata" : {
+                "format" : [ "journal" ],
+                "jtitle" : [ "Journal of Chromatography A" ],
+                "genre" : [ "article" ],
+                "issn" : [ "0021-9673" ],
+                "abstract" : [ "•FUSLE and UHPLC–(QTOF)MS/MS of nine PFCAs and PFOS in corn, popcorn and packaging.•Complete extraction in one FUSLE cycle of only 10s.•Microwave popcorn bags and their content are analyzed before and after cooking.•PFAA levels from 3.50 to 750ng/g in packaging (mainly PFHxA). PFOA and PFOS not detected.•No PFAAs were found in corn and popcorn.\nAn analytical method is proposed to determine ten perfluorinated alkyl acids (PFAAs) [nine perfluorocarboxylic acids (PFCAs) and perfluorooctane sulfonate (PFOS)] in corn, popcorn and microwave popcorn packaging by focused ultrasound solid–liquid extraction (FUSLE) and ultra high performance liquid chromatography (UHPLC) coupled to quadrupole-time of flight mass spectrometry (QTOF-MS/MS). Selected PFAAs were extracted efficiently in only one 10-s cycle by FUSLE, a simple, safe and inexpensive technique. The developed method was validated for microwave popcorn bags matrix as well as corn and popcorn matrices in terms of linearity, matrix effect error, detection and quantification limits, repeatability and recovery values. The method showed good accuracy with recovery values around 100% except for the lowest chain length PFAAs, satisfactory reproducibility with RSDs under 16%, and sensitivity with limits of detection in the order of hundreds picograms per gram of sample (between 0.2 and 0.7ng/g). This method was also applied to the analysis of six microwave popcorn bags and the popcorn inside before and after cooking. PFCAs contents between 3.50ng/g and 750ng/g were found in bags, being PFHxA (perfluorohexanoic acid) the most abundant of them. However, no PFAAs were detected either corn or popcorn, therefore no migration was assumed." ],
+                "spage" : [ "211" ],
+                "epage" : [ "218" ],
+                "pages" : [ "211-218" ],
+                "coden" : [ "JOCRAM" ],
+                "ristype" : [ "JOUR" ],
+                "cop" : [ "Amsterdam" ],
+                "pub" : [ "Elsevier B.V" ],
+                "doi" : [ "10.1016/j.chroma.2014.06.018" ],
+                "au" : [ "Moreta, Cristina", "Tena, María Teresa" ],
+                "atitle" : [ "Determination of perfluorinated alkyl acids in corn, popcorn and popcorn bags before and after cooking by focused ultrasound solid–liquid extraction, liquid chromatography and quadrupole-time of flight mass spectrometry" ],
+                "date" : [ "2014-08-15" ],
+                "risdate" : [ "2014" ],
+                "volume" : [ "1355" ]
+              },
               "facets" : {
                 "creationdate" : [ "2014" ],
                 "creatorcontrib" : [ "Moreta, Cristina", "Tena, María Teresa" ],
-                "rsrctype" : [ "articles" ],
-                "language" : [ "eng" ],
                 "topic" : [ "Packaging", "Quadrupole-time of flight mass spectrometry", "Liquid chromatography", "Perfluorinated alkyl acids", "Focused ultrasound solid–liquid extraction", "Popcorn", "Fundamental and applied biological sciences. Psychology", "Food industries", "Biological and medical sciences", "Cereal and baking product industries", "Corn", "Ammonium perfluorooctanoate", "Mass spectrometry", "Analysis" ],
                 "prefilter" : [ "articles" ],
+                "rsrctype" : [ "articles" ],
                 "collection" : [ "Pascal-Francis", "CrossRef", "Academic OneFile (A&I only)" ],
                 "toplevel" : [ "peer_reviewed", "online_resources" ],
-                "frbrgroupid" : [ "cdi_FETCH-LOGICAL-c436t-4c2d02cac160bfc00839f52ce48a8038d7cd2282efb1b0e77c1513a81ba816633" ],
+                "frbrgroupid" : [ "FAKE_PRIMO_ARTICLE_SCOPE_FETCH-LOGICAL-c436t-4c2d02cac160bfc00839f52ce48a8038d7cd2282efb1b0e77c1513a81ba816633" ],
                 "frbrtype" : [ "5" ],
-                "jtitle" : [ "Journal of Chromatography A" ]
+                "jtitle" : [ "Journal of Chromatography A" ],
+                "language" : [ "eng" ]
               }
             },
             "delivery" : {
@@ -647,7 +647,7 @@ http_interactions:
               "feDisplayOtherLocations" : false,
               "displayedAvailability" : "true",
               "holding" : [ ],
-              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-17 11:06:14&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Determination+of+perfluorinated+alkyl+acids+in+corn%2C+popcorn+and+popcorn+bags+before+and+after+cooking+by+focused+ultrasound+solid%E2%80%93liquid+extraction%2C+liquid+chromatography+and+quadrupole-time+of+flight+mass+spectrometry&rft.jtitle=Journal+of+Chromatography+A&rft.au=Moreta%2C+Cristina&rft.date=2014-08-15&rft.volume=1355&rft.spage=211&rft.epage=218&rft.pages=211-218&rft.issn=0021-9673&rft.coden=JOCRAM&rft_id=info:doi/10.1016%2Fj.chroma.2014.06.018&rft.pub=Elsevier+B.V&rft.place=Amsterdam&rft_dat=<gale_cross>A375736650</gale_cross>&svc_dat=viewit&rft_galeid=A375736650"
+              "almaOpenurl" : "https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-19 10:29:20&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-gale_cross&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Determination+of+perfluorinated+alkyl+acids+in+corn%2C+popcorn+and+popcorn+bags+before+and+after+cooking+by+focused+ultrasound+solid%E2%80%93liquid+extraction%2C+liquid+chromatography+and+quadrupole-time+of+flight+mass+spectrometry&rft.jtitle=Journal+of+Chromatography+A&rft.au=Moreta%2C+Cristina&rft.date=2014-08-15&rft.volume=1355&rft.spage=211&rft.epage=218&rft.pages=211-218&rft.issn=0021-9673&rft.coden=JOCRAM&rft_id=info:doi/10.1016%2Fj.chroma.2014.06.018&rft.pub=Elsevier+B.V&rft.place=Amsterdam&rft_dat=<gale_cross>A375736650</gale_cross>&svc_dat=viewit&rft_galeid=A375736650"
             },
             "context" : "PC",
             "adaptor" : "Primo Central",
@@ -658,15 +658,15 @@ http_interactions:
               },
               "timesCited" : { }
             },
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/cdi_gale_infotracacademiconefile_A375736650"
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/PC/FAKE_PRIMO_ARTICLE_SCOPE_gale_infotracacademiconefile_A375736650"
           } ],
           "timelog" : {
-            "PC_SEARCH_CALL_TIME" : "663",
-            "PC_BUILD_JSON_AND_HIGLIGHTS" : "39",
-            "PC_SEARCH_TIME_TOTAL" : "702",
+            "PC_SEARCH_CALL_TIME" : "126",
+            "PC_BUILD_JSON_AND_HIGLIGHTS" : "62",
+            "PC_SEARCH_TIME_TOTAL" : "188",
             "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
-            "BUILD_COMBINED_RESULTS_MAP" : 703,
-            "COMBINED_SEARCH_TIME" : 710,
+            "BUILD_COMBINED_RESULTS_MAP" : 190,
+            "COMBINED_SEARCH_TIME" : 199,
             "PROCESS_COMBINED_RESULTS" : 0,
             "FEATURED_SEARCH_TIME" : 1
           },
@@ -674,10 +674,10 @@ http_interactions:
             "name" : "jtitle",
             "values" : [ {
               "value" : "The Washington Post",
-              "count" : "7878"
+              "count" : "7877"
             }, {
               "value" : "Chicago Tribune",
-              "count" : "7579"
+              "count" : "7580"
             }, {
               "value" : "The Los Angeles Times",
               "count" : "6322"
@@ -686,7 +686,7 @@ http_interactions:
               "count" : "5992"
             }, {
               "value" : "Toronto Star",
-              "count" : "3743"
+              "count" : "3744"
             }, {
               "value" : "Edmonton Journal",
               "count" : "2833"
@@ -698,7 +698,7 @@ http_interactions:
               "count" : "2612"
             }, {
               "value" : "The Wall Street Journal. Eastern Edition",
-              "count" : "2600"
+              "count" : "2604"
             }, {
               "value" : "National Post",
               "count" : "2598"
@@ -707,7 +707,7 @@ http_interactions:
             "name" : "lang",
             "values" : [ {
               "value" : "eng",
-              "count" : "131767"
+              "count" : "131784"
             }, {
               "value" : "por",
               "count" : "249"
@@ -716,7 +716,7 @@ http_interactions:
               "count" : "202"
             }, {
               "value" : "ger",
-              "count" : "141"
+              "count" : "142"
             }, {
               "value" : "chi",
               "count" : "88"
@@ -770,33 +770,36 @@ http_interactions:
             "name" : "topic",
             "values" : [ {
               "value" : "Motion Pictures",
-              "count" : "6843"
+              "count" : "6849"
             }, {
               "value" : "Science & Technology",
-              "count" : "5824"
+              "count" : "5815"
             }, {
               "value" : "Life Sciences & Biomedicine",
-              "count" : "4279"
+              "count" : "4272"
             }, {
               "value" : "Marketing",
-              "count" : "4190"
+              "count" : "4191"
             }, {
               "value" : "Restaurants",
               "count" : "4076"
             }, {
               "value" : "Food",
-              "count" : "2726"
+              "count" : "2727"
             }, {
               "value" : "Humans",
               "count" : "2418"
             }, {
               "value" : "Management",
-              "count" : "2124"
+              "count" : "2123"
             }, {
               "value" : "Analysis",
               "count" : "1800"
             }, {
               "value" : "Nutrition",
+              "count" : "1715"
+            }, {
+              "value" : "Theaters & Cinemas",
               "count" : "1711"
             }, {
               "value" : "Snack Foods",
@@ -805,35 +808,32 @@ http_interactions:
               "value" : "Methods",
               "count" : "1707"
             }, {
-              "value" : "Theaters & Cinemas",
-              "count" : "1707"
-            }, {
               "value" : "Motion Picture Industry",
-              "count" : "1698"
+              "count" : "1699"
             }, {
               "value" : "Diet",
-              "count" : "1643"
+              "count" : "1645"
             }, {
               "value" : "Research",
-              "count" : "1641"
+              "count" : "1636"
             }, {
               "value" : "Social Sciences",
-              "count" : "1581"
+              "count" : "1576"
             }, {
               "value" : "Theater",
-              "count" : "1508"
+              "count" : "1503"
             }, {
               "value" : "Health Aspects",
-              "count" : "1501"
+              "count" : "1500"
             } ]
           }, {
             "name" : "rtype",
             "values" : [ {
               "value" : "newspaper_articles",
-              "count" : "62942"
+              "count" : "62949"
             }, {
               "value" : "articles",
-              "count" : "58336"
+              "count" : "58347"
             }, {
               "value" : "reviews",
               "count" : "3968"
@@ -848,7 +848,7 @@ http_interactions:
               "count" : "632"
             }, {
               "value" : "web_resources",
-              "count" : "535"
+              "count" : "534"
             }, {
               "value" : "conference_proceedings",
               "count" : "328"
@@ -857,7 +857,7 @@ http_interactions:
               "count" : "213"
             }, {
               "value" : "books",
-              "count" : "135"
+              "count" : "136"
             }, {
               "value" : "text_resources",
               "count" : "9"
@@ -866,64 +866,64 @@ http_interactions:
             "name" : "domain",
             "values" : [ {
               "value" : "ProQuest Historical Newspapers",
-              "count" : "132266"
+              "count" : "132284"
             }, {
               "value" : "Global Newsstream",
-              "count" : "64456"
+              "count" : "64463"
             }, {
               "value" : "Factiva",
-              "count" : "60921"
+              "count" : "60931"
             }, {
               "value" : "Nexis Uni",
-              "count" : "54236"
+              "count" : "54247"
             }, {
               "value" : "PressReader",
               "count" : "43423"
             }, {
               "value" : "Single Journals",
-              "count" : "32986"
+              "count" : "32877"
             }, {
               "value" : "ABI/INFORM Collection",
-              "count" : "30745"
+              "count" : "30753"
             }, {
               "value" : "Academic Search Complete",
-              "count" : "19383"
+              "count" : "19414"
             }, {
               "value" : "Business Source Complete",
-              "count" : "17986"
+              "count" : "17988"
             }, {
               "value" : "Factiva (Selected Full Text)",
-              "count" : "7127"
+              "count" : "7126"
             }, {
               "value" : "Agricultural & Environmental Science Collection",
-              "count" : "6734"
+              "count" : "6741"
             }, {
               "value" : "Flipster",
-              "count" : "4769"
+              "count" : "4779"
             }, {
               "value" : "Ethnic NewsWatch",
-              "count" : "4266"
+              "count" : "4267"
             }, {
               "value" : "Advanced Technologies & Aerospace Collection",
               "count" : "3261"
             }, {
               "value" : "ProQuest Advanced Technologies & Aerospace Collection",
-              "count" : "3219"
+              "count" : "3220"
             }, {
               "value" : "Environmental Science Collection",
-              "count" : "2890"
+              "count" : "2892"
             }, {
               "value" : "Freely Accessible General Interest Journals",
-              "count" : "2717"
+              "count" : "2716"
             }, {
               "value" : "Freely Accessible Journals",
               "count" : "2658"
             }, {
               "value" : "Wall Street Journal Online",
-              "count" : "2603"
+              "count" : "2607"
             }, {
               "value" : "DOAJ Directory of Open Access Journals - Not for CDI Discovery",
-              "count" : "2574"
+              "count" : "2579"
             } ]
           }, {
             "name" : "tlevel",
@@ -932,22 +932,22 @@ http_interactions:
               "count" : "3866"
             }, {
               "value" : "peer_reviewed",
-              "count" : "10892"
+              "count" : "10898"
             }, {
               "value" : "online_resources",
-              "count" : "132266"
+              "count" : "132284"
             } ]
           }, {
             "name" : "newrecords",
             "values" : [ {
               "value" : "07 days back",
-              "count" : "24"
-            }, {
-              "value" : "30 days back",
-              "count" : "186"
+              "count" : "18"
             }, {
               "value" : "90 days back",
-              "count" : "2557"
+              "count" : "2531"
+            }, {
+              "value" : "30 days back",
+              "count" : "204"
             } ]
           }, {
             "name" : "creationdate",
@@ -1109,16 +1109,16 @@ http_interactions:
               "count" : "2894"
             }, {
               "value" : "1997",
-              "count" : "2844"
+              "count" : "2845"
             }, {
               "value" : "1998",
               "count" : "3596"
             }, {
               "value" : "1999",
-              "count" : "3846"
+              "count" : "3847"
             }, {
               "value" : "2000",
-              "count" : "4357"
+              "count" : "4358"
             }, {
               "value" : "2001",
               "count" : "4157"
@@ -1136,31 +1136,31 @@ http_interactions:
               "count" : "5328"
             }, {
               "value" : "2006",
-              "count" : "5017"
+              "count" : "5015"
             }, {
               "value" : "2007",
-              "count" : "5236"
+              "count" : "5234"
             }, {
               "value" : "2008",
               "count" : "5026"
             }, {
               "value" : "2009",
-              "count" : "4864"
+              "count" : "4865"
             }, {
               "value" : "2010",
-              "count" : "4793"
+              "count" : "4792"
             }, {
               "value" : "2011",
-              "count" : "4592"
+              "count" : "4591"
             }, {
               "value" : "2012",
-              "count" : "5089"
+              "count" : "5088"
             }, {
               "value" : "2013",
               "count" : "5227"
             }, {
               "value" : "2014",
-              "count" : "5031"
+              "count" : "5032"
             }, {
               "value" : "2015",
               "count" : "4667"
@@ -1169,21 +1169,21 @@ http_interactions:
               "count" : "4523"
             }, {
               "value" : "2017",
-              "count" : "4092"
+              "count" : "4091"
             }, {
               "value" : "2018",
-              "count" : "3810"
+              "count" : "3808"
             }, {
               "value" : "2019",
-              "count" : "3797"
+              "count" : "3799"
             }, {
               "value" : "2020",
-              "count" : "2978"
+              "count" : "2979"
             }, {
               "value" : "2021",
-              "count" : "933"
+              "count" : "952"
             } ]
           } ]
         }
-  recorded_at: Mon, 17 May 2021 15:06:14 GMT
+  recorded_at: Wed, 19 May 2021 14:29:20 GMT
 recorded_with: VCR 6.0.0

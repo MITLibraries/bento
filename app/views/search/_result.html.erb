@@ -25,7 +25,7 @@
     <% if result.type %>
       <span class="result-type"><span class="sr">Type: </span><%= result.type %></span>
     <% end %>
-    <% if result.year.present? && (params[:target] == 'books' || params[:target] ==  'alma') %>
+    <% if result.year.present? && (params[:target] == 'books' || params[:target] == ENV['PRIMO_BOOK_SCOPE']) %>
       <span class="result-year">Published <%= result.year %></span>
     <% end %>
   </p>
@@ -36,7 +36,7 @@
         <% result.truncated_authors.each do |author| %>
         <span class="result-author">
           <% next if author[0] == nil %>
-          <% if params[:target] == 'alma' || params[:target] == 'cdi' %>
+          <% if params[:target] == ENV['PRIMO_BOOK_SCOPE'] || params[:target] == ENV['PRIMO_ARTICLE_SCOPE'] %>
             <%= link_to(author[0], author[1], data: {type: "Author"}) unless author == "et al" %>
           <% else %>
             <%= link_to(author[0], search_prefix + author[1], data: {type: "Author"} ) unless author == "et al" %>
@@ -79,7 +79,7 @@
         <ul class="list-subjects">
         <% result.truncated_subjects.each do |subject| %>
           <li class="result-subjectheading">
-            <% if params[:target] == 'alma' %>
+            <% if params[:target] == ENV['PRIMO_BOOK_SCOPE'] %>
               <%= link_to(subject[0], subject[1], data: {type: "Subject"} ) %>
             <% else %>
               <%= link_to(subject[0], search_prefix + subject[1], data: {type: "Subject"} ) %>

@@ -69,9 +69,12 @@ custom hint metadata.
 - `MAX_AUTHORS`: the maximum number of authors displayed in any record.
   If exceeded, 'et al' will be appended after this number.
 - `PRIMO_SEARCH`: toggles feature flag to use Primo instead of EDS.
-- `PRIMO_SEARCH_API_KEY`: the Primo Search API key.
-- `PRIMO_SEARCH_API_URL`: the root URL for the Primo Search API.
+- `PRIMO_API_KEY`: the Primo API key.
+- `PRIMO_API_URL`: the server URL for the Primo API.
 - `PRIMO_VID`: our Primo 'view ID'.
+- `PRIMO_TAB`: the value of the Primo `tab` param for Bento.
+- `PRIMO_MAIN_VIEW_TAB` the value of the `tab` param for the Primo UI 
+main search view. (This is used for links to Primo searches.)
 - `PRIMO_BOOK_SCOPE`: assigned to the `scope` param of a Primo Search 
 API endpoint to limit the search to local/Alma (Books+) results.
 - `PRIMO_ARTICLE_SCOPE`: assigned to the `scope` param of a Primo Search 

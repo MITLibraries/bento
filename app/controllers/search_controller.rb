@@ -47,7 +47,7 @@ class SearchController < ApplicationController
 
   # Array of search endpoints that are supported
   def valid_targets
-    %w[articles books google timdex alma cdi]
+    %w[articles books google timdex catalog cdi]
   end
 
   # Formatted date used in creating cache keys
@@ -90,7 +90,7 @@ class SearchController < ApplicationController
   end
 
   def primo_scope
-    params[:target] == 'alma' ? ENV['PRIMO_BOOK_SCOPE'] : ENV['PRIMO_ARTICLE_SCOPE']
+    params[:target] == 'catalog' ? ENV['PRIMO_BOOK_SCOPE'] : ENV['PRIMO_ARTICLE_SCOPE']
   end
 
   # Searches Google Custom Search

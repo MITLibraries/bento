@@ -8,7 +8,7 @@ module SearchHelper
       'website'
     elsif params[:target] == 'timdex'
       'archives and manuscripts'
-    elsif params[:target] == 'alma'
+    elsif params[:target] == 'catalog'
       'books'
     elsif params[:target] == 'cdi'
       'articles'

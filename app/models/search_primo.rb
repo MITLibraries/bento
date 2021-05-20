@@ -1,20 +1,22 @@
 # Searches Primosearch API and formats results into {Result} object
 #
 # == Required Environment Variables:
-# - PRIMO_SEARCH_API_URL
-# - PRIMO_SEARCH_API_KEY
+# - PRIMO_API_URL
+# - PRIMO_API_KEY
 # - PRIMO_VID
+# - PRIMO_TAB
 #
 
 class SearchPrimo
   attr_reader :results
 
-  PRIMO_SEARCH_API_URL = ENV['PRIMO_SEARCH_API_URL'].freeze
-  PRIMO_SEARCH_API_KEY = ENV['PRIMO_SEARCH_API_KEY']
+  PRIMO_API_URL = ENV['PRIMO_API_URL'].freeze
+  PRIMO_API_KEY = ENV['PRIMO_API_KEY']
   PRIMO_VID = ENV['PRIMO_VID']
+  PRIMO_TAB = ENV['PRIMO_TAB']
 
   def initialize
-    @primo_http = HTTP.persistent(PRIMO_SEARCH_API_URL)
+    @primo_http = HTTP.persistent(PRIMO_API_URL)
     @results = {}
   end
 
@@ -37,8 +39,8 @@ class SearchPrimo
   # This is subject to change. Right now we are just using the required 
   # params and assuming that no operators are used.
   def search_url(term, scope, per_page)
-    [PRIMO_SEARCH_API_URL, '/primo/v1/search?q=any,contains,', 
-      clean_term(term), '&vid=', PRIMO_VID, '&tab=bento&scope=', scope,
-      '&limit=', per_page, '&apikey=', PRIMO_SEARCH_API_KEY].join('')
+    [PRIMO_API_URL, '/search?q=any,contains,', clean_term(term), '&vid=', 
+      PRIMO_VID, '&tab=', PRIMO_TAB, '&scope=', scope, '&limit=', 
+      per_page, '&apikey=', PRIMO_API_KEY].join('')
   end
 end

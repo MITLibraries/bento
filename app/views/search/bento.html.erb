@@ -8,9 +8,9 @@
     <span class="title">Found: </span>
 
     <% if Flipflop.enabled? :primo_search %>
-      <a href="#box-books_content" data-type="Jump to books"><span class="results-summary-item" data-region="alma">Books+ <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
+      <a href="#box-books_content" data-type="Jump to books"><span class="results-summary-item" data-region="<%= ENV['PRIMO_BOOK_SCOPE'] %>">Books+ <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
 
-      <a href="#box-articles_content" data-type="Jump to articles"><span class="results-summary-item" data-region="cdi">Articles+ <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
+      <a href="#box-articles_content" data-type="Jump to articles"><span class="results-summary-item" data-region="<%= ENV['PRIMO_ARTICLE_SCOPE'] %>">Articles+ <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
     <% else %>
       <a href="#box-books_content" data-type="Jump to books"><span class="results-summary-item" data-region="books">Books and media <span class="count"><i class="fa fa-spinner fa-spin"></i></span></span></a>
 
@@ -53,9 +53,9 @@
 
 <script>
   <% if Flipflop.enabled? :primo_search %>
-    <%= render partial: "trigger_search", locals: { target: 'cdi', id: 'articles_content'} %>
+    <%= render partial: "trigger_search", locals: { target: ENV['PRIMO_ARTICLE_SCOPE'], id: 'articles_content'} %>
 
-    <%= render partial: "trigger_search", locals: { target: 'alma', id: 'books_content'} %>
+    <%= render partial: "trigger_search", locals: { target: ENV['PRIMO_BOOK_SCOPE'], id: 'books_content'} %>
   <% else %>
     <%= render partial: "trigger_search", locals: { target: 'articles', id: 'articles_content'} %>
 
