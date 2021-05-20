@@ -9,9 +9,9 @@ module SearchHelper
     elsif params[:target] == 'timdex'
       'archives and manuscripts'
     elsif params[:target] == 'catalog'
-      'books'
+      'books and media'
     elsif params[:target] == 'cdi'
-      'articles'
+      'articles and chapters'
     end
   end
 
