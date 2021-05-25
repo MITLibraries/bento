@@ -4,7 +4,7 @@ class Result
   validates :title, presence: true
   validates :url, presence: true
 
-  attr_accessor :an, :authors, :available_url, :blurb, :check_sfx_url,
+  attr_accessor :an, :authors, :availability_status, :available_url, :blurb, :check_sfx_url,
                 :citation, :date_range, :db_source, :fulltext_links,
                 :get_it_label, :in, :location, :marc_856, :online, :openurl,
                 :physical_description, :publisher, :record_links, :subjects,
@@ -152,5 +152,13 @@ class Result
 
   def alma_record?
     an.present? && an.start_with?('alma') ? true : false
+  end
+
+  def available?
+    self.availability_status.any? { |status| status == 'available' }
+  end
+
+  def check_holdings?
+    self.availability_status.any? { |status| status == 'check_holdings' }
   end
 end
