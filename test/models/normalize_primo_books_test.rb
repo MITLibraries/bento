@@ -25,6 +25,8 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
   end
 
   def physical_book
+    #Note that the availabilityStatus field in the this result has been 
+    # changed from 'available' to 'unavailable'
     VCR.use_cassette('physical book primo', 
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn', 
@@ -111,5 +113,18 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     result = physical_book['results'].first
     assert_nothing_raised { result.url }
     assert_nil result.openurl
+  end
+
+  test 'extracts availabilty status as expected' do
+    available_result = multi_location['results'].first
+    unavailable_result = physical_book['results'].first
+    assert_equal ['available', 'check_holdings'], available_result.availability_status
+    assert_equal ['unavailable'], unavailable_result.availability_status
+  end
+
+  test 'handles results without availability status' do
+    result = missing_fields_books['results'].first
+    assert_nothing_raised { result.availability_status }
+    assert_nil result.availability_status
   end
 end

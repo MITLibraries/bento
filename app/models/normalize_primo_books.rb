@@ -11,6 +11,7 @@ class NormalizePrimoBooks
     result.location = location
     result.subjects = subjects
     result.openurl = openurl
+    result.availability_status = availability_status
     result
   end
 
@@ -59,6 +60,13 @@ class NormalizePrimoBooks
       [ENV['MIT_PRIMO_URL'], '/discovery/openurl?institution=', 
        ENV['EXL_INST_ID'], '&vid=', ENV['PRIMO_VID'], '&rft.mms_id=', mms_id,
        '&u.ignore_date_coverage=true'].join('')
+    end
+  end
+
+  def availability_status
+    return unless @record['delivery']['holding']
+    @record['delivery']['holding'].map do |loc|
+      loc['availabilityStatus']
     end
   end
 end

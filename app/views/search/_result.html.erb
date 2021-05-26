@@ -91,7 +91,30 @@
     <% end %>
   </div>
 
-  <% if result.location.present? %>
+  <% if result.location.present? && params[:target] == ENV['PRIMO_BOOK_SCOPE'] %>
+    <div id="<%= result.clean_an %>" class="result-local-locations">
+      <div class="realtime-primo">
+        <% if result.available? %>
+          <i class="fa fa-check" aria-hidden="true"></i>
+          <span> Available in library</span>
+        <% elsif result.check_holdings? %>
+          <i class="fa fa-question" aria-hidden="true"></i>
+          <span> May be available in library</span>
+        <% else %>
+          <i class="fa fa-times" aria-hidden="true"></i>
+          <span> Not currently available in library</span>
+        <% end %>
+      </div>
+      <p class="sr">Library locations: </p>
+      <ul class="list-local-locations">
+      <% result.location.each do |location| %>
+        <li class="result-local-location">
+          <%= location[0] %>: <%= location[1] %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  <% elsif result.location.present? %>
     <div id="stale_locations_<%= result.clean_an %>" class="result-local-locations">
       <p class="sr">Library locations: </p>
       <ul class="list-local-locations">
