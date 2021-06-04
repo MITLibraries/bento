@@ -1,0 +1,906 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://another_fake_server.example.com/v1/search?apikey=FAKE_PRIMO_API_KEY&limit=5&q=any,contains,they%20called%20us%20enemy&scope=FAKE_PRIMO_BOOK_SCOPE&tab=FAKE_PRIMO_TAB&vid=FAKE_PRIMO_VID
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - Keep-Alive
+      Host:
+      - api-na.hosted.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Vary:
+      - accept-encoding
+      X-Exl-Api-Remaining:
+      - '549965'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,POST,DELETE,PUT,OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 04 Jun 2021 20:16:17 GMT
+      Server:
+      - CA-API-Gateway/9.0
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "info" : {
+            "totalResultsLocal" : 98,
+            "totalResultsPC" : -1,
+            "total" : 98,
+            "first" : 1,
+            "last" : 5
+          },
+          "highlights" : {
+            "general" : [ "U.S" ],
+            "creator" : [ "U.S" ],
+            "contributor" : [ "U.S" ],
+            "lds09" : [ "U.S" ],
+            "subject" : [ "United", "States" ],
+            "toc" : [ "enemy", "Enemies", "enemies" ],
+            "description" : [ "United", "States", "They Called", "Called", "called", "enemy" ],
+            "title" : [ "enemy", "They called", "called", "us" ],
+            "termsUnion" : [ "U.S", "United", "States", "enemy", "Enemies", "enemies", "They Called", "Called", "called", "They called", "us" ]
+          },
+          "docs" : [ {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990028126970206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "crsinfo" : [ "$$R21W.744-FA20$$V21W.744-FA20: Comics Writing; 21W - Writing & Humanistic Studies$$MComics Writing" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "They called us enemy " ],
+                "subject" : [ "Takei, George, 1937-", "Takei, George, 1937- -- Childhood and youth", "Japanese Americans -- Evacuation and relocation, 1942-1945", "California -- History -- 1850-1950" ],
+                "format" : [ "204 pages : chiefly illustrations ; 23 cm" ],
+                "identifier" : [ "$$CISBN$$V9781603094504;$$CISBN$$V1603094504;$$COCLC$$V(OCoLC)1057852913" ],
+                "creationdate" : [ "2019" ],
+                "lds07" : [ "940.53/1773 D769.8.A6 1057852913 9781603094504 1603094504" ],
+                "lds09" : [ "Marietta, GA : Top Shelf Productions, 2019   2019  2019   gau" ],
+                "creator" : [ "Takei, George, 1937- author.$$QTakei, George" ],
+                "publisher" : [ "Marietta, GA : Top Shelf Productions" ],
+                "description" : [ "\"A stunning graphic memoir recounting actor/author/activist George Takei's childhood imprisoned within American concentration camps during World War II. Experience the forces that shaped an American icon -- and America itself -- in this gripping tale of courage, country, loyalty, and love. George Takei has captured hearts and minds worldwide with his captivating stage presence and outspoken commitment to equal rights. But long before he braved new frontiers in Star Trek, he woke up as a four-year-old boy to find his own birth country at war with his father's -- and their entire family forced from their home into an uncertain future. In 1942, at the order of President Franklin D. Roosevelt, every person of Japanese descent on the west coast was rounded up and shipped to one of ten 'relocation centers', hundreds or thousands of miles from home, where they would be held for years under armed guard. They Called Us Enemy is Takei's firsthand account of those years behind barbed wire, the joys and terrors of growing up under legalized racism, his mother's hard choices, his father's faith in democracy, and the way those experiences planted the seeds for his astonishing future. What is American? Who gets to decide? When the world is against you, what can one person do?\"--Provided by publisher." ],
+                "mms" : [ "990028126970206761" ],
+                "contributor" : [ "Eisinger, Justin, author.$$QEisinger, Justin", "Scott, Steven (Comics author), author.$$QScott, Steven", "Becker, Harmony, artist.$$QBecker, Harmony" ],
+                "genre" : [ "Comic books, strips, etc." ],
+                "place" : [ "Marietta, GA :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990028126970206761" ],
+                "recordid" : [ "alma990028126970206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "002812697-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.8656729" ]
+              },
+              "addata" : {
+                "aulast" : [ "Takei" ],
+                "aufirst" : [ "George" ],
+                "auinit" : [ "G" ],
+                "au" : [ "Takei, George" ],
+                "addau" : [ "Eisinger, Justin", "Scott, Steven", "Becker, Harmony" ],
+                "date" : [ "2019 - 2019", "2019" ],
+                "isbn" : [ "9781603094504", "1603094504" ],
+                "abstract" : [ "\"A stunning graphic memoir recounting actor/author/activist George Takei's childhood imprisoned within American concentration camps during World War II. Experience the forces that shaped an American icon -- and America itself -- in this gripping tale of courage, country, loyalty, and love. George Takei has captured hearts and minds worldwide with his captivating stage presence and outspoken commitment to equal rights. But long before he braved new frontiers in Star Trek, he woke up as a four-year-old boy to find his own birth country at war with his father's -- and their entire family forced from their home into an uncertain future. In 1942, at the order of President Franklin D. Roosevelt, every person of Japanese descent on the west coast was rounded up and shipped to one of ten 'relocation centers', hundreds or thousands of miles from home, where they would be held for years under armed guard. They Called Us Enemy is Takei's firsthand account of those years behind barbed wire, the joys and terrors of growing up under legalized racism, his mother's hard choices, his father's faith in democracy, and the way those experiences planted the seeds for his astonishing future. What is American? Who gets to decide? When the world is against you, what can one person do?\"--Provided by publisher." ],
+                "cop" : [ "Marietta, GA" ],
+                "pub" : [ "Top Shelf Productions" ],
+                "oclcid" : [ "(mcm)2812697mit01", "nhccybp", "(ocolc)1057852913" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "They called us enemy" ]
+              },
+              "sort" : {
+                "title" : [ "They called us enemy / written by George Takei, Justin Eisinger, Steven Scott ; art by Harmony Becker." ],
+                "author" : [ "Takei, George, 1937- author." ],
+                "creationdate" : [ "2019" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9014278883951724869" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "ENG",
+                "availabilityStatus" : "unavailable",
+                "subLocation" : "Course Support",
+                "subLocationCode" : "RSERV",
+                "mainLocation" : "Barker Library",
+                "callNumber" : "D769.8.A6 T347 2019",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990028126970206761",
+                "holdId" : "2233638480006761",
+                "holKey" : "HoldingResultKey [mid=null, libraryId=161683650006761, locationCode=RSERV, callNumber=D769.8.A6 T347 2019]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "ENG",
+                "availabilityStatus" : "unavailable",
+                "subLocation" : "Course Support",
+                "subLocationCode" : "RSERV",
+                "mainLocation" : "Barker Library",
+                "callNumber" : "D769.8.A6 T347 2019",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990028126970206761",
+                "holdId" : "2233638480006761",
+                "holKey" : "HoldingResultKey [mid=null, libraryId=161683650006761, locationCode=RSERV, callNumber=D769.8.A6 T347 2019]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "unavailable" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990028126970206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:1603094504,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "D769.8.A6 T347 2019",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "d\"769.8 a6ǂt347 2019",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990026123010206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "The enemy " ],
+                "subject" : [ "Hope", "United States -- History -- 20th century" ],
+                "format" : [ "99 pages ; 24 cm" ],
+                "identifier" : [ "$$CLC$$V  2006035575;$$CISBN$$V9780822338628;$$CISBN$$V0822338629;$$CISBN$$V9780822339601;$$CISBN$$V0822339609;$$COCLC$$V(OCoLC)75087943" ],
+                "creationdate" : [ "2007" ],
+                "lds07" : [ "811/.54 PS3553.A4883 E54 2007 75087943   2006035575 9780822338628 0822338629 9780822339601 0822339609" ],
+                "lds09" : [ "Durham : Duke University Press,    2007   ncu" ],
+                "lds01" : [ "In English, with some poems in Spanish." ],
+                "creator" : [ "Campo, Rafael, author.$$QCampo, Rafael" ],
+                "publisher" : [ "Durham : Duke University Press" ],
+                "description" : [ "\"In his fifth collection of poetry, the award-winning writer and physician Rafael Campo considers what it means to be the enemy in America today. Using the empathetic medium of a poetry grounded in the sentient physical body we all share, he writes of a country endlessly at war--not only against so-called evildoers abroad but also with its own troubled conscience. Yet whether he is addressing the U.S. invasion of Iraq, the battle against the AIDS pandemic, or the \"culture wars\" surrounding the issues of feminism and gay marriage, Campo's compelling poems affirm the notion that from even the most bitter of conflicts arises hope. That hope--expressed here in the Cuban exile's dream of someday returning to his homeland, in a dying IV drug user's wish for humane medical treatment, in a downcast housewife's desire to express herself meaningfully through art--is that somehow we can be better than ourselves. Through a kaleidoscopic lens of poetic forms, Campo reveals this greatest of human aspirations as the one sustaining us all\"-- Publisher's description." ],
+                "mms" : [ "990026123010206761" ],
+                "contents" : [ "I. The enemy. Dialogue with sun and poet -- Addressed to her (Provincetown, June 2002) -- \"Elsa, Varadero, 1934\" -- Night has fallen -- Personal mythology -- Piranhas -- Brief treatise on the new millennial poetics -- El viejo y la mar -- Ode to the man incidentally caught in the photograph of us on my desk -- The enemy -- God, gays, and guns -- Patriotic poem -- Post-9/11 parable -- Sestina dolorosa -- What passes now for moral discourse -- from Libro de preguntas -- II. Eighteen days in France. Eighteen days in France -- III. Towards a theory of memory. from Cien sonetos de amor -- A simple Cuban meal -- The sailfish -- Ganymede, to Zeus -- After the long drive -- For Jorge, after twenty years -- Song in the off-season -- Catastrophic sestina -- Toward a theory of memory -- Patagonia -- Defense of marriage -- The story of us -- The sodomite's lament -- Equinoctial downpour -- Pantoum for our imagined break-up -- The changing of the seasons -- Once, it seemed better -- October, last sail -- IV. Dawn, new age. Dawn, new age -- Allegorical -- Progress -- The crocuses -- Crybaby Haiku -- \"Silence=death\" -- Clinical vignettes -- You bring out the doctor in me -- Composite of three poems from the same anthology by Williams, Rukeyser, and Sexton -- Tuesday morning -- Arriving -- Absolution -- On doctoring -- Sick day." ],
+                "genre" : [ "Poetry." ],
+                "relation" : [ "$$Cform$$VOnline version: Campo, Rafael. Enemy. Durham : Duke University Press, 2007$$QEnemy.", "$$Cform$$VOnline version: Campo, Rafael. Enemy. Durham : Duke University Press, 2007$$QEnemy." ],
+                "mesh" : [ "Personal Narratives" ],
+                "place" : [ "Durham :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990026123010206761" ],
+                "recordid" : [ "alma990026123010206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "002612301-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "7.933078E-5" ]
+              },
+              "addata" : {
+                "aulast" : [ "Campo" ],
+                "aufirst" : [ "Rafael" ],
+                "auinit" : [ "R" ],
+                "au" : [ "Campo, Rafael" ],
+                "date" : [ "2007" ],
+                "isbn" : [ "9780822338628", "0822338629", "9780822339601", "0822339609" ],
+                "abstract" : [ "\"In his fifth collection of poetry, the award-winning writer and physician Rafael Campo considers what it means to be the enemy in America today. Using the empathetic medium of a poetry grounded in the sentient physical body we all share, he writes of a country endlessly at war--not only against so-called evildoers abroad but also with its own troubled conscience. Yet whether he is addressing the U.S. invasion of Iraq, the battle against the AIDS pandemic, or the \"culture wars\" surrounding the issues of feminism and gay marriage, Campo's compelling poems affirm the notion that from even the most bitter of conflicts arises hope. That hope--expressed here in the Cuban exile's dream of someday returning to his homeland, in a dying IV drug user's wish for humane medical treatment, in a downcast housewife's desire to express herself meaningfully through art--is that somehow we can be better than ourselves. Through a kaleidoscopic lens of poetic forms, Campo reveals this greatest of human aspirations as the one sustaining us all\"-- Publisher's description." ],
+                "cop" : [ "Durham" ],
+                "pub" : [ "Duke University Press" ],
+                "oclcid" : [ "(mcm)2612301mit01", "(ocolc)75087943" ],
+                "lccn" : [ "2006035575" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "The enemy" ]
+              },
+              "sort" : {
+                "title" : [ "enemy / Rafael Campo." ],
+                "author" : [ "Campo, Rafael, author." ],
+                "creationdate" : [ "2007" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9008941241243458400" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "ENG",
+                "availabilityStatus" : "unavailable",
+                "subLocation" : "Humanities & Science Temporary Collection",
+                "subLocationCode" : "HYSTK",
+                "mainLocation" : "Barker Library",
+                "callNumber" : "PS3553.A4883 E54 2007",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990026123010206761",
+                "holdId" : "2212643000006761",
+                "holKey" : "HoldingResultKey [mid=null, libraryId=161683650006761, locationCode=HYSTK, callNumber=PS3553.A4883 E54 2007]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "ENG",
+                "availabilityStatus" : "unavailable",
+                "subLocation" : "Humanities & Science Temporary Collection",
+                "subLocationCode" : "HYSTK",
+                "mainLocation" : "Barker Library",
+                "callNumber" : "PS3553.A4883 E54 2007",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990026123010206761",
+                "holdId" : "2212643000006761",
+                "holKey" : "HoldingResultKey [mid=null, libraryId=161683650006761, locationCode=HYSTK, callNumber=PS3553.A4883 E54 2007]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "unavailable" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990026123010206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:0822338629,OCLC:,LCCN:2006035575&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "PS3553.A4883 E54 2007",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "ps#3553 a4883 e54 2007",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990008852250206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Future warfare : anthology " ],
+                "subject" : [ "United States Army -- Forecasting", "United States Army -- Operational readiness", "Military planning -- United States", "Warfare, Conventional -- Forecasting", "Maneuver warfare", "Rapid dominance (Military science)", "War -- Effect of technological innovations on", "Strategy", "Twenty-first century", "United States -- Military policy" ],
+                "format" : [ "xxii, 213 p. : ill., charts ; 23 cm." ],
+                "identifier" : [ "$$CISBN$$V1584870001;$$COCLC$$V(OCoLC)41447143" ],
+                "creationdate" : [ "1999" ],
+                "lds07" : [ "41447143 1584870001" ],
+                "lds09" : [ "Carlisle Barracks, Pa. : U.S. Army War College,    1999   pau" ],
+                "lds10" : [ "Includes bibliographical references and index." ],
+                "creator" : [ "Scales, Robert H., 1944-$$QScales, Robert H." ],
+                "publisher" : [ "Carlisle Barracks, Pa. : U.S. Army War College" ],
+                "mms" : [ "990008852250206761" ],
+                "contributor" : [ "Murray, Williamson.$$QMurray, Williamson.", "Van Riper, Paul K.$$QVan Riper, Paul K.", "Parmentola, John A.$$QParmentola, John A.", "Army War College (U.S.)$$QArmy War College (U.S.)" ],
+                "contents" : [ "Introduction / Williamson Murray -- 1. Cycles of war / Robert H. Scales, Jr. -- 2. Preparing for war in the 21st Century / Robert H. Scales, Jr., Paul K. Van Riper -- 3. Adaptive enemies: dealing with the strategic threat after 2010 / Robert H. Scales, Jr. -- 4. A sword with two edges: maneuver in 21st Century warfare / Robert H. Scales, Jr. -- 5. Clashes of visions: sizing and shaping our forces in a fiscally constrained environment / Robert H. Scales, Jr. -- 6. America's Army: preparing for tomorrow's security challenges / Robert H. Scales, Jr. -- 7. The dawn of a new age of warfare: and the clarion call for enhanced maneuver capabilities / Robert H. Scales, Jr. -- 8. The annual report for the Army After Next Project to the Chief of Staff of the Army / Robert H. Scales, Jr. -- 9. The Army After Next: intertwining military art, science, and technology out to the year 2025 / Robert H. Scales, Jr., John A. Parmentola -- 10. The indirect approach: how U.S. military forces can avoid the pitfalls of future urban warfare / Robert H. Scales, Jr. -- 11. Trust, not technology, sustains coalitions / Robert H. Scales, Jr. -- 12. In war, the U.S. can't go it alone / Robert H. Scales, Jr." ],
+                "genre" : [ "Forecasts." ],
+                "place" : [ "Carlisle Barracks, Pa. :" ],
+                "version" : [ "2" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990008852250206761" ],
+                "recordid" : [ "alma990008852250206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000885225-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "5.9809514E-5" ]
+              },
+              "addata" : {
+                "aulast" : [ "Scales" ],
+                "aufirst" : [ "Robert H." ],
+                "auinit" : [ "R" ],
+                "au" : [ "Scales, Robert H." ],
+                "addau" : [ "Murray, Williamson.", "Van Riper, Paul K.", "Parmentola, John A." ],
+                "date" : [ "1999" ],
+                "isbn" : [ "1584870001" ],
+                "notes" : [ "Includes bibliographical references and index." ],
+                "cop" : [ "Carlisle Barracks, Pa" ],
+                "pub" : [ "U.S. Army War College" ],
+                "oclcid" : [ "(mcm)885225", "(mcm)885225mit01", "mitb10885225", "(ocolc)41447143" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Future warfare : anthology" ]
+              },
+              "sort" : {
+                "title" : [ "Future warfare : anthology / Robert H. Scales, Jr." ],
+                "author" : [ "Scales, Robert H., 1944-" ],
+                "creationdate" : [ "1999" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "5" ],
+                "frbrgroupid" : [ "9084925621548105380" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "DEW",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Dewey Library",
+                "callNumber" : "U413.S33 1999",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990008852250206761",
+                "holdId" : "2252352830006761",
+                "holKey" : "HoldingResultKey [mid=2252352830006761, libraryId=161684770006761, locationCode=STACK, callNumber=U413.S33 1999]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "DEW",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Dewey Library",
+                "callNumber" : "U413.S33 1999",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990008852250206761",
+                "holdId" : "2252352830006761",
+                "holKey" : "HoldingResultKey [mid=2252352830006761, libraryId=161684770006761, locationCode=STACK, callNumber=U413.S33 1999]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "available_in_library", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990008852250206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:1584870001,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://FAKE_PRIMO_BOOK_SCOPE.hathitrust.org/api/volumes/oclc/41447143.html",
+                "displayLabel" : "Hathi Trust"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "U413.S33 1999",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "u000000000413.s000000000033000000001999",
+                "callNumberBrowseField" : "LOCAL_CL_09X"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990032496060206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Dangerous guests : enemy captives and revolutionary communities during the War for Independence " ],
+                "subject" : [ "Prisoners of war -- Pennsylvania -- Lancaster -- History -- 18th century", "Nationalism -- Pennsylvania -- Lancaster -- History -- 18th century", "Lancaster (Pa.) -- History -- Revolution, 1775-1783 -- Prisoners and prisons", "United States -- History -- Revolution, 1775-1783 -- Prisoners and prisons" ],
+                "format" : [ "1 online resource (ix, 247 pages) : illustrations, map", "text file PDF" ],
+                "identifier" : [ "$$CISBN$$V0801454948;$$CISBN$$V9780801454943;$$COCLC$$V(OCoLC)890952244;$$COCLC$$V(OCoLC)891382325;$$COCLC$$V(OCoLC)922998169;$$COCLC$$V(OCoLC)960201241;$$COCLC$$V(OCoLC)961646374;$$COCLC$$V(OCoLC)979575376;$$COCLC$$V(OCoLC)988539655;$$COCLC$$V(OCoLC)992902500;$$COCLC$$V(OCoLC)1013938847;$$COCLC$$V(OCoLC)1058558398;$$COCLC$$V(OCoLC)1058861163;$$COCLC$$V(OCoLC)1066644236;$$COCLC$$V(OCoLC)1076776940;$$COCLC$$V(OCoLC)1081184798;$$COCLC$$V(OCoLC)1097151200;$$CISBN$$V9780801450556;$$CISBN$$V0801450551" ],
+                "creationdate" : [ "2014" ],
+                "lds07" : [ "973.3 F159.L2 891382325 890952244 891382325 922998169 960201241 961646374 979575376 988539655 992902500 1013938847 1058558398 1058861163 1066644236 1076776940 1081184798 1097151200 10.7591/9780801454943 9780801450556 0801450551 0801454948 9780801454943" ],
+                "lds09" : [ "Ithaca : Cornell University Press,  2014   nyu" ],
+                "lds10" : [ "Includes bibliographical references and index." ],
+                "lds01" : [ "In English." ],
+                "creator" : [ "Miller, Ken, 1966- author.$$QMiller, Ken" ],
+                "publisher" : [ "Ithaca : Cornell University Press" ],
+                "description" : [ "In Dangerous Guests, Ken Miller reveals how wartime pressures nurtured a budding patriotism in the ethnically diverse revolutionary community of Lancaster, Pennsylvania. During the War for Independence, American revolutionaries held more than thirteen thousand prisoners--both British regulars and their so-called Hessian auxiliaries--in makeshift detention camps far from the fighting. As the Americans' principal site for incarcerating enemy prisoners of war, Lancaster stood at the nexus of two vastly different revolutionary worlds: one national, the other intensely local. Captives came under the control of local officials loosely supervised by state and national authorities. Concentrating the prisoners in the heart of their communities brought the revolutionaries' enemies to their doorstep, with residents now facing a daily war at home. Many prisoners openly defied their hosts, fleeing, plotting, and rebelling, often with the clandestine support of local loyalists. By early 1779, General George Washington, furious over the captives' ongoing attempts to subvert the American war effort, branded them \"dangerous guests in the bowels of our Country.\" The challenge of creating an autonomous national identity in the newly emerging United States was nowhere more evident than in Lancaster, where the establishment of a detention camp served as a flashpoint for new conflict in a community already unsettled by stark ethnic, linguistic, and religious differences. Many Lancaster residents soon sympathized with the Hessians detained in their town while the loyalist population considered the British detainees to be the true patriots of the war. Miller demonstrates that in Lancaster, the notably local character of the war reinforced not only preoccupations with internal security but also novel commitments to cause and country." ],
+                "mms" : [ "990032496060206761" ],
+                "contents" : [ "Prologue : a community at war -- \"A colony of aliens\" : diversity, politics, and war in pre-revolutionary Lancaster, Pennsylvania -- \"Divided we must inevitably fall\" : war comes to Lancaster -- \"A dangerous set of people\" : British captives and the making of revolutionary identity -- \"'Tis Britain alone that is our enemy\" : German captives and the making of American identity -- \"Enemies of our peace\" : captives, the disaffected, and the refinement of American patriotism -- \"The country is full of prisoners of war\" : nationalism, resistance, and assimilation -- Epilogue : the empty barracks." ],
+                "place" : [ "Ithaca :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990032496060206761" ],
+                "recordid" : [ "alma990032496060206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "003249606-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "4.660318E-5" ]
+              },
+              "addata" : {
+                "aulast" : [ "Miller" ],
+                "aufirst" : [ "Ken" ],
+                "auinit" : [ "K" ],
+                "au" : [ "Miller, Ken" ],
+                "date" : [ "2014" ],
+                "isbn" : [ "0801454948", "9780801454943", "9780801450556", "0801450551" ],
+                "notes" : [ "Includes bibliographical references and index." ],
+                "abstract" : [ "In Dangerous Guests, Ken Miller reveals how wartime pressures nurtured a budding patriotism in the ethnically diverse revolutionary community of Lancaster, Pennsylvania. During the War for Independence, American revolutionaries held more than thirteen thousand prisoners--both British regulars and their so-called Hessian auxiliaries--in makeshift detention camps far from the fighting. As the Americans' principal site for incarcerating enemy prisoners of war, Lancaster stood at the nexus of two vastly different revolutionary worlds: one national, the other intensely local. Captives came under the control of local officials loosely supervised by state and national authorities. Concentrating the prisoners in the heart of their communities brought the revolutionaries' enemies to their doorstep, with residents now facing a daily war at home. Many prisoners openly defied their hosts, fleeing, plotting, and rebelling, often with the clandestine support of local loyalists. By early 1779, General George Washington, furious over the captives' ongoing attempts to subvert the American war effort, branded them \"dangerous guests in the bowels of our Country.\" The challenge of creating an autonomous national identity in the newly emerging United States was nowhere more evident than in Lancaster, where the establishment of a detention camp served as a flashpoint for new conflict in a community already unsettled by stark ethnic, linguistic, and religious differences. Many Lancaster residents soon sympathized with the Hessians detained in their town while the loyalist population considered the British detainees to be the true patriots of the war. Miller demonstrates that in Lancaster, the notably local character of the war reinforced not only preoccupations with internal security but also novel commitments to cause and country." ],
+                "cop" : [ "Ithaca" ],
+                "pub" : [ "Cornell University Press" ],
+                "oclcid" : [ "(mcm)3249606mit01", "(ocolc)890952244", "(ocolc)891382325", "(ocolc)922998169", "(ocolc)960201241", "(ocolc)961646374", "(ocolc)979575376", "(ocolc)988539655", "(ocolc)992902500", "(ocolc)1013938847", "(ocolc)1058558398", "(ocolc)1058861163", "(ocolc)1066644236", "(ocolc)1076776940", "(ocolc)1081184798", "(ocolc)1097151200" ],
+                "doi" : [ "10.7591/9780801454943" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Dangerous guests : enemy captives and revolutionary communities during the War for Independence" ]
+              },
+              "sort" : {
+                "title" : [ "Dangerous guests : enemy captives and revolutionary communities during the War for Independence / Ken Miller." ],
+                "author" : [ "Miller, Ken, 1966- author." ],
+                "creationdate" : [ "2014" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9024444437922131846" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : null,
+              "holding" : null,
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-E" ],
+              "serviceMode" : [ "Viewit" ],
+              "availability" : [ "not_restricted" ],
+              "availabilityLinks" : null,
+              "availabilityLinksUrl" : null,
+              "displayedAvailability" : "Not available",
+              "displayLocation" : null,
+              "additionalLocations" : null,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : null,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : null,
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:9780801454943,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "https://www.jstor.org/stable/10.7591/j.ctt1287ckk",
+                "displayLabel" : "$$Elinktorsrc"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : false,
+                "callNumber" : "",
+                "callNumberBrowseField" : ""
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "f\"159 l2ǂm55 2014",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990013865470206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Democratizing the enemy : the Japanese American internment " ],
+                "subject" : [ "Japanese Americans -- Evacuation and relocation, 1942-1945" ],
+                "format" : [ "xviii, 319 p. ; 24 cm." ],
+                "identifier" : [ "$$CLC$$V  2003057956;$$CISBN$$V0691009457 (acid-free paper);$$COCLC$$V(OCoLC)52631404;$$COCLC$$V(OCoLC)56459569" ],
+                "creationdate" : [ "c2004" ],
+                "lds07" : [ "940.53/089/956073 D769.8.A6.H39 2004 56459569 52631404 56459569   2003057956 0691009457 (acid-free paper)" ],
+                "lds09" : [ "Princeton, N.J. : Princeton University Press,    2004   nju" ],
+                "lds10" : [ "Includes bibliographical references (p. [223]-303) and index." ],
+                "creator" : [ "Hayashi, Brian Masaru, 1955-$$QHayashi, Brian Masaru" ],
+                "publisher" : [ "Princeton, N.J. : Princeton University Press" ],
+                "description" : [ "Publisher's description: During World War II some 120,000 Japanese Americans were forcibly removed from their homes and detained in concentration camps in several states. These Japanese Americans lost millions of dollars in property and were forced to live in so-called \"assembly centers\" surrounded by barbed wire fences and armed sentries. In this insightful and groundbreaking work, Brian Hayashi reevaluates the three-year ordeal of interred Japanese Americans. Using previously undiscovered documents, he examines the forces behind the U.S. government's decision to establish internment camps. His conclusion: the motives of government officials and top military brass likely transcended the standard explanations of racism, wartime hysteria, and leadership failure. Among the other surprising factors that played into the decision, Hayashi writes, were land development in the American West and plans for the American occupation of Japan. What was the long-term impact of America's actions? While many historians have explored that question, Hayashi takes a fresh look at how U.S. concentration camps affected not only their victims and American civil liberties, but also people living in locations as diverse as American Indian reservations and northeast Thailand." ],
+                "mms" : [ "990013865470206761" ],
+                "contents" : [ "Prologue : beyond Civil Rights -- 1. Governors and their advisers, 1918-1942 -- 2. The governed : Japanese Americans and politics, 1880-1942 -- 3. Establishing the structures of internment, from limited to mass internment, 1942-1943 -- 4. The liberal democratic way of management, 1942-1943 -- 5. \"Why awake a sleeping lion?\" : governance during the quiet period, 1943-1944 -- 6. \"Taking away the candy\" : relocation, the twilight of the Japanese Empire, and Japanese American politics, 1944-1945 -- 7. The long shadow of internment -- Epilogue : toward human rights." ],
+                "place" : [ "Princeton, N.J. :" ],
+                "version" : [ "2" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990013865470206761" ],
+                "recordid" : [ "alma990013865470206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "001386547-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "1.649389E-5" ]
+              },
+              "addata" : {
+                "aulast" : [ "Hayashi" ],
+                "aufirst" : [ "Brian Masaru" ],
+                "auinit" : [ "B" ],
+                "au" : [ "Hayashi, Brian Masaru" ],
+                "date" : [ "2004", "c2004" ],
+                "isbn" : [ "0691009457" ],
+                "notes" : [ "Includes bibliographical references (p. [223]-303) and index." ],
+                "abstract" : [ "Publisher's description: During World War II some 120,000 Japanese Americans were forcibly removed from their homes and detained in concentration camps in several states. These Japanese Americans lost millions of dollars in property and were forced to live in so-called \"assembly centers\" surrounded by barbed wire fences and armed sentries. In this insightful and groundbreaking work, Brian Hayashi reevaluates the three-year ordeal of interred Japanese Americans. Using previously undiscovered documents, he examines the forces behind the U.S. government's decision to establish internment camps. His conclusion: the motives of government officials and top military brass likely transcended the standard explanations of racism, wartime hysteria, and leadership failure. Among the other surprising factors that played into the decision, Hayashi writes, were land development in the American West and plans for the American occupation of Japan. What was the long-term impact of America's actions? While many historians have explored that question, Hayashi takes a fresh look at how U.S. concentration camps affected not only their victims and American civil liberties, but also people living in locations as diverse as American Indian reservations and northeast Thailand." ],
+                "cop" : [ "Princeton, N.J" ],
+                "pub" : [ "Princeton University Press" ],
+                "oclcid" : [ "(mcm)1386547mit01", "(ocolc)52631404", "(ocolc)56459569" ],
+                "lccn" : [ "2003057956" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Democratizing the enemy : the Japanese American internment" ]
+              },
+              "sort" : {
+                "title" : [ "Democratizing the enemy : the Japanese American internment / Brian Masaru Hayashi." ],
+                "author" : [ "Hayashi, Brian Masaru, 1955-" ],
+                "creationdate" : [ "2004" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "5" ],
+                "frbrgroupid" : [ "9084586021147358975" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "D769.8.A6.H39 2004",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990013865470206761",
+                "holdId" : "2219189240006761",
+                "holKey" : "HoldingResultKey [mid=2219189240006761, libraryId=161684210006761, locationCode=STACK, callNumber=D769.8.A6.H39 2004]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "D769.8.A6.H39 2004",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990013865470206761",
+                "holdId" : "2219189240006761",
+                "holKey" : "HoldingResultKey [mid=2219189240006761, libraryId=161684210006761, locationCode=STACK, callNumber=D769.8.A6.H39 2004]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "available_in_library", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990013865470206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:0691009457,OCLC:,LCCN:2003057956&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "https://archive.org/details/democratizingene00haya",
+                "displayLabel" : "Internet Archive"
+              }, {
+                "@id" : ":_2",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://www.degruyter.com/isbn/9781400837748",
+                "displayLabel" : "$$Elinktorsrc"
+              }, {
+                "@id" : ":_3",
+                "linkType" : "addlink",
+                "linkURL" : "http://www.loc.gov/catdir/description/prin051/2003057956.html",
+                "displayLabel" : "Publisher description"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "D769.8.A6.H39 2004",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "d\"769.8 a6 h39 2004",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          } ],
+          "timelog" : {
+            "BUILD_RESULTS_RETRIVE_FROM_DB" : "470",
+            "CALL_SOLR_GET_IDS_LIST" : "135",
+            "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "602",
+            "RETRIVE_COLLECTION_DISCOVERY_INFO" : "219",
+            "RETRIVE_FROM_DB_COURSE_INFO" : "143",
+            "RETRIVE_FROM_DB_RECORDS" : "73",
+            "RETRIVE_FROM_DB_RELATIONS" : "23",
+            "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "477",
+            "SET_AVAILABILTY_HOLDING_DEDUPS" : "125",
+            "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "671",
+            "PRIMA_LOCAL_SEARCH_TOTAL" : "1892",
+            "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
+            "BUILD_COMBINED_RESULTS_MAP" : 1972,
+            "COMBINED_SEARCH_TIME" : 1977,
+            "PROCESS_COMBINED_RESULTS" : 0,
+            "FEATURED_SEARCH_TIME" : 0
+          },
+          "facets" : [ ]
+        }
+  recorded_at: Fri, 04 Jun 2021 20:16:18 GMT
+recorded_with: VCR 6.0.0
