@@ -255,23 +255,4 @@ class ResultTest < ActiveSupport::TestCase
     r = Result.new('title', 'http://example.com')
     assert_nil r.getit_url
   end
-
-  test 'Availabilty is evaluated as expected' do
-    r = Result.new('title', 'http://example.com')
-    r.availability_status = ['available']
-    assert r.available?
-
-    r.availability_status = ['available', 'unavailable']
-    assert r.available?
-
-    r.availability_status = ['unavailable']
-    assert_not r.available?
-
-    r.availability_status = ['foo']
-    assert_not r.available?
-
-    r.availability_status = ['check_holdings']
-    assert_not r.available?
-    assert r.check_holdings?
-  end
 end

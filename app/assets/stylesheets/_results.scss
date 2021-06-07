@@ -133,9 +133,24 @@
   }
 
   .realtime-primo {
+    display:  flex;
+    justify-content:  space-between;
     padding-bottom: 5px;
     font-size: 1.4rem;
     text-indent: .5rem;
+
+    .location-info {
+      text-indent:  0;
+      padding-left: .5rem;
+    }
+
+    td .fa {
+      vertical-align: top;
+    }
+
+    .fa-question {
+      color: #FF7700;
+    }
   }
 }
 

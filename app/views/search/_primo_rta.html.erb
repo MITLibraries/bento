@@ -1,0 +1,21 @@
+<div id="<%= result.clean_an %>" class="result-local-locations">
+  <div class="realtime-primo">
+    <% if result.availability == 'available' %>
+      <i class="fa fa-check" aria-hidden="true"></i>
+      <p class="location-info">Available in <%= result.location[0] %> 
+        (<%= result.location[1] %>) <%= "and other locations" if 
+        result.other_availability %> - 
+        <%= link_to 'check options', full_record_link(result) %></p>
+    <% elsif result.availability == 'check_holdings' %>
+      <i class="fa fa-question" aria-hidden="true"></i>
+      <p class="location-info">May be available in <%= result.location[0] %> 
+        (<%= result.location[1] %>) - 
+        <%= link_to 'check options', full_record_link(result) %></p>
+    <% else %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+      <p class="location-info">Not currently available in <%= result.location[0] %> 
+        (<%= result.location[1] %>) - 
+        <%= link_to 'check options', full_record_link(result) %></p>
+    <% end %>
+  </div>
+</div>

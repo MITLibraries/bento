@@ -1,0 +1,1020 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://another_fake_server.example.com/v1/search?apikey=FAKE_PRIMO_API_KEY&limit=5&q=any,contains,chomsky%20lyons&scope=FAKE_PRIMO_BOOK_SCOPE&tab=FAKE_PRIMO_TAB&vid=FAKE_PRIMO_VID
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - Keep-Alive
+      Host:
+      - api-na.hosted.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Vary:
+      - accept-encoding
+      X-Exl-Api-Remaining:
+      - '549942'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,POST,DELETE,PUT,OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 04 Jun 2021 20:50:05 GMT
+      Server:
+      - CA-API-Gateway/9.0
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "info" : {
+            "totalResultsLocal" : 6,
+            "totalResultsPC" : -1,
+            "total" : 6,
+            "first" : 1,
+            "last" : 5
+          },
+          "highlights" : {
+            "general" : [ "Lyon" ],
+            "creator" : [ "Lyons" ],
+            "contributor" : [ "Lyons" ],
+            "lds09" : [ "Lyon" ],
+            "subject" : [ "Chomsky" ],
+            "toc" : [ "Chomsky", "Lyons" ],
+            "description" : [ "Lyons" ],
+            "title" : [ "Chomsky" ],
+            "termsUnion" : [ "Lyon", "Lyons", "Chomsky" ]
+          },
+          "docs" : [ {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990000523650206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Chomsky " ],
+                "subject" : [ "Chomsky, Noam", "Linguistics -- Research", "Generative grammar" ],
+                "format" : [ "184 p. ; 23 cm." ],
+                "identifier" : [ "$$CLC$$V   78303691;$$CISBN$$V0855276908 :;$$COCLC$$V(OCoLC)03613511" ],
+                "creationdate" : [ "1977" ],
+                "lds07" : [ "03613511    78303691 0855276908 :" ],
+                "lds09" : [ "Hassocks [Eng.] : Harvester Press,    1977   enk" ],
+                "lds10" : [ "Bibliography: p. 176-181." ],
+                "creator" : [ "Lyons, John, 1932-2020.$$QLyons, John" ],
+                "publisher" : [ "Hassocks Eng. : Harvester Press" ],
+                "mms" : [ "990000523650206761" ],
+                "edition" : [ "2d ed." ],
+                "place" : [ "Hassocks Eng.] :" ],
+                "version" : [ "2" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990000523650206761" ],
+                "recordid" : [ "alma990000523650206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000052365-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.3110416" ]
+              },
+              "addata" : {
+                "aulast" : [ "Lyons" ],
+                "aufirst" : [ "John" ],
+                "auinit" : [ "J" ],
+                "au" : [ "Lyons, John" ],
+                "date" : [ "1977" ],
+                "isbn" : [ "0855276908" ],
+                "notes" : [ "Bibliography: p. 176-181." ],
+                "cop" : [ "Hassocks [Eng" ],
+                "pub" : [ "Harvester Press" ],
+                "oclcid" : [ "(mcm)52365", "(mcm)52365mit01", "mitb10052365", "(ocolc)3613511", "glis52365" ],
+                "lccn" : [ "78303691" ],
+                "edition" : [ "2d ed." ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Chomsky" ]
+              },
+              "sort" : {
+                "title" : [ "Chomsky / John Lyons." ],
+                "author" : [ "Lyons, John, 1932-2020." ],
+                "creationdate" : [ "1977" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "5" ],
+                "frbrgroupid" : [ "9074295209607163095" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "P85.C548.L991 1977",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990000523650206761",
+                "holdId" : "2245676330006761",
+                "holKey" : "HoldingResultKey [mid=2245676330006761, libraryId=161684210006761, locationCode=STACK, callNumber=P85.C548.L991 1977]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "P85.C548.L991 1977",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990000523650206761",
+                "holdId" : "2245676330006761",
+                "holKey" : "HoldingResultKey [mid=2245676330006761, libraryId=161684210006761, locationCode=STACK, callNumber=P85.C548.L991 1977]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              }, {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "P85.C548.L991 1977",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990000523650206761",
+                "holdId" : "2245676370006761",
+                "holKey" : "HoldingResultKey [mid=2245676370006761, libraryId=161682860006761, locationCode=OCC, callNumber=P85.C548.L991 1977]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:1"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "available_in_library", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : true,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : true,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990000523650206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                }, {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990000523650206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:1"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:0855276908,OCLC:,LCCN:78303691&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://FAKE_PRIMO_BOOK_SCOPE.hathitrust.org/api/volumes/oclc/3613511.html",
+                "displayLabel" : "Hathi Trust"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "P85.C548.L991 1977",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "p000000000085.c000000000548l000000000991000000001977",
+                "callNumberBrowseField" : "LOCAL_CL_09X"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990005193490206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Noam Chomsky." ],
+                "subject" : [ "Chomsky, Noam", "Linguists -- United States" ],
+                "format" : [ "xii, 143 p. illus. 20 cm." ],
+                "identifier" : [ "$$CLC$$V   73104148 //r87;$$CISBN$$V067051473X;$$COCLC$$V(OCoLC)00104474" ],
+                "creationdate" : [ "1970" ],
+                "lds07" : [ "P85.C47 00104474    73104148 //r87 067051473X" ],
+                "lds09" : [ "New York, Viking Press    1970   nyu" ],
+                "lds10" : [ "Bibliography: p. [135]-137." ],
+                "creator" : [ "Lyons, John, 1932-2020.$$QLyons, John" ],
+                "publisher" : [ "New York, Viking Press" ],
+                "mms" : [ "990005193490206761" ],
+                "series" : [ "Modern masters$$QModern masters", "Modern masters (New York, N.Y.)$$QModern masters (New York, N.Y.)" ],
+                "genre" : [ "Biography." ],
+                "place" : [ "New York," ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990005193490206761" ],
+                "recordid" : [ "alma990005193490206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000519349-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "0.010820456" ]
+              },
+              "addata" : {
+                "aulast" : [ "Lyons" ],
+                "aufirst" : [ "John" ],
+                "auinit" : [ "J" ],
+                "au" : [ "Lyons, John" ],
+                "date" : [ "1970" ],
+                "isbn" : [ "067051473X" ],
+                "notes" : [ "Bibliography: p. [135]-137." ],
+                "cop" : [ "New York" ],
+                "pub" : [ "Viking Press" ],
+                "oclcid" : [ "(mcm)519349", "(mcm)519349mit01", "mitb10519349", "(ocolc)104474", "glis519349" ],
+                "lccn" : [ "73104148 //r87" ],
+                "seriestitle" : [ "Modern masters" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Noam Chomsky." ]
+              },
+              "sort" : {
+                "title" : [ "Noam Chomsky." ],
+                "author" : [ "Lyons, John, 1932-2020." ],
+                "creationdate" : [ "1970" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9004408189972816123" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "ARC",
+                "availabilityStatus" : "available",
+                "subLocation" : "Noncirculating Collection 1",
+                "subLocationCode" : "NOLN1",
+                "mainLocation" : "Institute Archives",
+                "callNumber" : "P85.C47 L9 1970b",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990005193490206761",
+                "holdId" : "2238689010006761",
+                "holKey" : "HoldingResultKey [mid=2238689010006761, libraryId=161686860006761, locationCode=NOLN1, callNumber=P85.C47 L9 1970b]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "ARC",
+                "availabilityStatus" : "available",
+                "subLocation" : "Noncirculating Collection 1",
+                "subLocationCode" : "NOLN1",
+                "mainLocation" : "Institute Archives",
+                "callNumber" : "P85.C47 L9 1970b",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990005193490206761",
+                "holdId" : "2238689010006761",
+                "holKey" : "HoldingResultKey [mid=2238689010006761, libraryId=161686860006761, locationCode=NOLN1, callNumber=P85.C47 L9 1970b]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              }, {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "available",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "P85.C548.L991",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990005193490206761",
+                "holdId" : "2238689030006761",
+                "holKey" : "HoldingResultKey [mid=2238689030006761, libraryId=161682860006761, locationCode=OCC, callNumber=P85.C548.L991]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:1"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "available_in_library", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : true,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : true,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990005193490206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                }, {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990005193490206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:1"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:067051473X,OCLC:,LCCN:73104148&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "http://FAKE_PRIMO_BOOK_SCOPE.hathitrust.org/api/volumes/oclc/104474.html",
+                "displayLabel" : "Hathi Trust"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "P85.C47 L9 1970b",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "p!85 c47ǂl9 1970b 0",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990028242660206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Approaches to Intentionality." ],
+                "format" : [ "1 online resource" ],
+                "identifier" : [ "$$CISBN$$V9780198752226;$$CISBN$$V0198752229;$$COCLC$$V(OCoLC)1035791553" ],
+                "creationdate" : [ "Feb. 1998" ],
+                "lds07" : [ "153.8 1035791553 9780198752226 9780198752226 0198752229" ],
+                "lds09" : [ "New York : Oxford University Press, Incorporated    ncu" ],
+                "creator" : [ "Lyons, William, author.$$QLyons, William" ],
+                "publisher" : [ "New York : Oxford University Press, Incorporated" ],
+                "description" : [ "What is intentionality? Intentionality is a distinguishing characteristic of states of mind (such as beliefs, thoughts, wishes, dreams, and desires): that they are about things outside themselves. About this book: William Lyons explores various ways in which philosophers have tried to explain intentionality, and then suggests a new way. Part I of the book gives a critical account of the five most comprehensive and prominent current approaches to intentionality. These approaches can be summarised as the instrumentalist approach, derived from Carnap and Quine and culminating in the work of Daniel Dennett; the linguistic approach, derived from the work of Chomsky and exhibited most fully in the work of Jerry Fodor; the biological approach, developed by Ruth Garrett Millikan, Colin McGinn, and others; the information-processing approach which has been given a definitive form in the work of Fred Dretske; and the functional role approach of Brian Loar. In Part II, Professor Lyons sets out a multi-level, developmental approach to intentionality. Drawing upon work in neurophysiology and psychology, the author argues that intentionality is to be found, in different forms, at the levels of brain functioning, prelinguistic consciousness, language, and at the holistic level of `whole person performance' which is demarcated by our ordinary everyday talk about beliefs, desires, hopes, intentions, and the other `propositional attitudes'. Written in a direct, clear, and lively style, the extended survey of contemporary debate in Part I will be invaluable to the student of philosophy of mind or cognitive science as well as to the scholars and graduate students who will find an original new theory to contend with in Part II." ],
+                "mms" : [ "990028242660206761" ],
+                "dedupmemberids" : [ "9933132361006761" ],
+                "edition" : [ "Reprint." ],
+                "place" : [ "New York :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990028242660206761" ],
+                "recordid" : [ "alma990028242660206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "002824266-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "9.5146673E-4" ]
+              },
+              "addata" : {
+                "aulast" : [ "Lyons" ],
+                "aufirst" : [ "William" ],
+                "auinit" : [ "W" ],
+                "au" : [ "Lyons, William" ],
+                "date" : [ "1998 - 0226", "Feb. 1998" ],
+                "isbn" : [ "9780198752226", "0198752229" ],
+                "abstract" : [ "What is intentionality? Intentionality is a distinguishing characteristic of states of mind (such as beliefs, thoughts, wishes, dreams, and desires): that they are about things outside themselves. About this book: William Lyons explores various ways in which philosophers have tried to explain intentionality, and then suggests a new way. Part I of the book gives a critical account of the five most comprehensive and prominent current approaches to intentionality. These approaches can be summarised as the instrumentalist approach, derived from Carnap and Quine and culminating in the work of Daniel Dennett; the linguistic approach, derived from the work of Chomsky and exhibited most fully in the work of Jerry Fodor; the biological approach, developed by Ruth Garrett Millikan, Colin McGinn, and others; the information-processing approach which has been given a definitive form in the work of Fred Dretske; and the functional role approach of Brian Loar. In Part II, Professor Lyons sets out a multi-level, developmental approach to intentionality. Drawing upon work in neurophysiology and psychology, the author argues that intentionality is to be found, in different forms, at the levels of brain functioning, prelinguistic consciousness, language, and at the holistic level of `whole person performance' which is demarcated by our ordinary everyday talk about beliefs, desires, hopes, intentions, and the other `propositional attitudes'. Written in a direct, clear, and lively style, the extended survey of contemporary debate in Part I will be invaluable to the student of philosophy of mind or cognitive science as well as to the scholars and graduate students who will find an original new theory to contend with in Part II." ],
+                "cop" : [ "New York" ],
+                "pub" : [ "Oxford University Press, Incorporated" ],
+                "oclcid" : [ "(mcm)2824266mit01", "(ocolc)1035791553" ],
+                "edition" : [ "Reprint." ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Approaches to Intentionality." ]
+              },
+              "sort" : {
+                "title" : [ "Approaches to Intentionality." ],
+                "author" : [ "Lyons, William, author." ],
+                "creationdate" : [ "1998" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9053082630735534342" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "NET",
+                "availabilityStatus" : "check_holdings",
+                "subLocation" : "UNASSIGNED location",
+                "subLocationCode" : "UNASSIGNED",
+                "mainLocation" : "Internet Resource",
+                "callNumber" : "**See URL(s)",
+                "callNumberType" : "8",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990028242660206761",
+                "holdId" : "2263127550006761",
+                "holKey" : "HoldingResultKey [mid=2263127550006761, libraryId=161683420006761, locationCode=UNASSIGNED, callNumber=**See URL(s)]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "NET",
+                "availabilityStatus" : "check_holdings",
+                "subLocation" : "UNASSIGNED location",
+                "subLocationCode" : "UNASSIGNED",
+                "mainLocation" : "Internet Resource",
+                "callNumber" : "**See URL(s)",
+                "callNumberType" : "8",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990028242660206761",
+                "holdId" : "2263127550006761",
+                "holKey" : "HoldingResultKey [mid=2263127550006761, libraryId=161683420006761, locationCode=UNASSIGNED, callNumber=**See URL(s)]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+              "serviceMode" : [ "ovp", "Viewit" ],
+              "availability" : [ "check_holdings", "not_restricted" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990028242660206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:0198752229,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              }, {
+                "@id" : ":_1",
+                "linkType" : "linktorsrc",
+                "linkURL" : "https://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780198752226.001.0001/acprof-9780198752226",
+                "displayLabel" : "$$Elinktorsrc"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "**See URL(s)",
+                "callNumberBrowseField" : "8"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "153.8",
+                "callNumberBrowseField" : "DEWEY_DECIMAL_CLASSIFICATION"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990023951670206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "fre" ],
+                "title" : [ "Arguments minimalistes : une présentation du Programme minimaliste de Noam Chomsky " ],
+                "subject" : [ "Chomsky, Noam", "Minimalist theory (Linguistics)" ],
+                "format" : [ "446 pages ; 23 cm." ],
+                "identifier" : [ "$$CISBN$$V9782847886832 (pbk.);$$CISBN$$V2847886834 (pbk.);$$COCLC$$V(OCoLC)945484734" ],
+                "creationdate" : [ "2015" ],
+                "lds07" : [ "P158.28.R68 2015 945484734 9782847886832 (pbk.) 2847886834 (pbk.)" ],
+                "lds09" : [ "Lyon : ENS éditions,  2015   fr" ],
+                "lds10" : [ "Includes bibliographical references (pages 421-434) and index." ],
+                "creator" : [ "Rouveret, Alain, author.$$QRouveret, Alain" ],
+                "publisher" : [ "Lyon : ENS éditions" ],
+                "mms" : [ "990023951670206761" ],
+                "series" : [ "Collection Langages$$QCollection Langages", "Langages (Lyon, France)$$QLangages (Lyon, France)" ],
+                "contents" : [ "1. Faculté de Langage -- Le langage est un objet du monde naturel -- Chomsky lecteur de Descartes et de Galilée -- Au-delà de l'adéquation explicative -- La thèse minimaliste forte -- La nécessité conceptuelle virtuelle -- Le facteur 3 -- Le problème de la variation -- 2. Architecture -- Conditions de design optimal -- Dérivations/représentations -- Le Lexique et la sélection lexicale -- Merge et Move -- Merge -- Move -- La préférence de Merge sur Move -- Spell-Out -- Un nouveau dispositif -- Spell-Out /Transfer cyclique -- LF/SEM -- 3. Traits et catégories -- La forme des items lexicaux -- Le Principe d'uniformité -- Quelques traits formels -- Les traits cp -- La personne et le nombre -- Le genre grammatical -- Catégories fonctionnelles -- Deux types de catégories -- La tête -- L'approche cartographique -- Présentation et objectifs -- La périphérie gauche -- Pourquoi les schémas cartographiques sont nécessaires -- L'interface syntaxe-morphologie -- Deux conceptions opposées -- Le Principe du miroir -- La Morphologie Distribuée -- La conception minimaliste -- 4. Structure syntagmatique -- De Syntactic Structures à Barriers -- Bare phrase structure IMerge -- Propriétés de la structure syntagmatique -- Caractérisation de Merge -- Labels et projections -- Autres instances de Merge -- Merge interne (mouvement) -- Merge de paire (adjonction) -- Merge parallèle (multidominance) -- La Condition d'extension -- Relations structurales basiques et dérivées -- Remarque sur la notion de gouvernement -- Conclusion -- 5. Étiquetage, linéarisation -- Étiquetage -- Un algorithme d'étiquetage -- Étiquetage par l'item lexical saillant -- La proposition de Donati et Cecchetto (2011) -- Linéarisation -- L'Axiome de correspondance linéaire -- Formulation du LCA -- Dérivation des propriétés de la théorie X-barre -- Adjoints et spécifieurs -- Réanalyses -- Problèmes -- Bare phrase structure et linéarisation -- Conclusion -- 6. Accord -- Pourquoi Agree? -- L'opération Agree : sondes, cibles, Condition d'activité -- L'accord sujet-verbe en français -- Légitimation casuelle des objets directs -- Complétude des sondes et des cibles -- La Condition de complétude -- Syntaxe des sujets dans les propositions infinitives -- Constructions à montée (raising structures) -- Constructions ECM (Exceptional Case marking, marquage casuel exceptionnel) -- Constructions à contrôle -- Le Temps défectif porte-t-il un trait [EPP]? -- Les constructions causatives et la défectivité de v -- Raffinements -- La Condition d'activité est-elle nécessaire? -- Intervention défective -- Les constructions à sujet explétif -- La construction existentielle en there -- Accord avec l'associé -- Composition en traits de there -- Absence d'effets d'intervention -- Sondes et cibles complètes et défectives -- Autres constructions explétives -- Le phénomène du sujet nul -- Les fonctions d'Agree -- Accord et sélection -- Accord et modification -- Accord syntaxique / accord morphologique -- 7.", "Mouvement -- Le mouvement est-il une imperfection? -- Le mouvement est une imperfection apparente -- Le mouvement n'est pas une imperfection -- La dualité de la sémantique -- Relations sémantiques et mouvement -- Une triple partition : interprétations, positions, stratégies -- Asymétrie des deux interfaces -- Le rôle de la morphologie -- Une conception téléologique du mouvement? -- Implémentation du mouvement -- Théorie du mouvement par copie -- Cyclicité et sous-jacence -- Intervention -- Condition d'uniformité des chaînes -- Mouvement A' -- Mouvement de tête -- Mouvement de tête et structure fonctionnelle -- Difficultés de l'approche syntaxique -- Analyses syntaxiques concurrentes -- Mouvement résiduel -- Mouvement phonologique -- Propriétés diagnostiques -- 8. Phases -- Trois arguments pour l'existence des phases -- La théorie des phases -- Difficultés -- Convergence -- Éclaircissements -- Le mouvement phasal -- Spell-Out / prononciation -- Statut phasal de vP et de DP -- Phases fortes / phases faibles -- Un vP généralisé? -- Les DP définissent-ils des phases? -- Les phases dans la théorie de la localité -- Le trait [EF] et le mouvement indirectement guidé par les traits -- Îlots forts -- Le cycle unique -- Extension de la théorie des phases : l'héritage de traits -- L'hypothèse de l'héritage -- Dérivation des constructions interrogatives -- La Condition du sujet -- L'héritage de traits dans le système C-T -- Héritage et nécessité conceptuelle -- Propriétés diagnostiques -- 9. Intervention -- Condition du lien minimal -- Formulation de la Minimal Link Condition -- Minimalité relativisée aux traits -- Îlots faibles -- La Contrainte de la personne et du cas -- Une çonception disjonctive de la localité -- Une unification impossible -- Agree, Move et la PIC -- 10. Processus silencieux -- Mouvement syntagmatique silencieux -- Localité des mouvements syntagmatiques silencieux -- Propositions minimalistes -- Mouvement silencieux, accord ou liage non sélectif? -- Dépendances référentielles -- Difficultés de l'approche classique -- Domaines locaux -- La théorie du liage en LF -- Reconstruction -- Liage anaphorique -- Traits impliqués dans le liage anaphorique -- Définition du domaine de liage -- Élimination de la Condition A -- Localité du liage anaphorique -- 11. Grammaire générative et minimalisme : permanences et mutations -- Le minimalisme est-il une révolution scientifique? -- Les innovations minimalistes -- Préférences -- Le syndrome du vaisseau Argo." ],
+                "place" : [ "Lyon :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990023951670206761" ],
+                "recordid" : [ "alma990023951670206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "002395167-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "7.9520156E-5" ]
+              },
+              "addata" : {
+                "aulast" : [ "Rouveret" ],
+                "aufirst" : [ "Alain" ],
+                "auinit" : [ "A" ],
+                "au" : [ "Rouveret, Alain" ],
+                "date" : [ "2015" ],
+                "isbn" : [ "9782847886832", "2847886834" ],
+                "notes" : [ "Includes bibliographical references (pages 421-434) and index." ],
+                "cop" : [ "Lyon" ],
+                "pub" : [ "ENS éditions" ],
+                "oclcid" : [ "(mcm)2395167mit01", "(ocolc)945484734" ],
+                "seriestitle" : [ "Collection Langages" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Arguments minimalistes : une présentation du Programme minimaliste de Noam Chomsky" ]
+              },
+              "sort" : {
+                "title" : [ "Arguments minimalistes : une présentation du Programme minimaliste de Noam Chomsky / Alain Rouveret." ],
+                "author" : [ "Rouveret, Alain, author." ],
+                "creationdate" : [ "2015" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9047313899768531315" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "P158.28.R68 2015",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990023951670206761",
+                "holdId" : "227877880006761",
+                "holKey" : "HoldingResultKey [mid=227877880006761, libraryId=161684210006761, locationCode=STACK, callNumber=P158.28.R68 2015]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "P158.28.R68 2015",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990023951670206761",
+                "holdId" : "227877880006761",
+                "holKey" : "HoldingResultKey [mid=227877880006761, libraryId=161684210006761, locationCode=STACK, callNumber=P158.28.R68 2015]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "available_in_library" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990023951670206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:2847886834,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "P158.28.R68 2015",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "p\"158.28 r68 2015",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990012623490206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Fuzzy grammar : a reader " ],
+                "subject" : [ "Relational grammar", "Grammar, Comparative and general" ],
+                "format" : [ "vii, 526 p. : ill. ; 25 cm." ],
+                "identifier" : [ "$$CISBN$$V019926256X;$$CISBN$$V0199262578 (pbk.) :;$$COCLC$$V(OCoLC)53156091" ],
+                "creationdate" : [ "2004" ],
+                "lds07" : [ "415 P158.6.F899 2004 53156091 019926256X 0199262578 (pbk.) :" ],
+                "lds09" : [ "Oxford ; Oxford University Press,    2004   enk" ],
+                "lds10" : [ "Includes bibliographical references and indexes." ],
+                "publisher" : [ "Oxford ; New York : Oxford University Press" ],
+                "mms" : [ "990012623490206761" ],
+                "contributor" : [ "Aarts, Bas, 1961-$$QAarts, Bas" ],
+                "contents" : [ "Introduction: The Nature of Grammatical Categories and their Representation -- Pt. I. Philosophical Background -- 1. Categories / Aristotle -- 2. Concepts / Gottlob Frege -- 3. Vagueness / Bertrand Russell -- 4. Family Resemblances / Ludwig Wittgenstein -- 5. The Phenomena of Vagueness / Rosanna Keefe -- Pt. II. Categories in Cognition -- 6. The Boundaries of Words and their Meanings / William Labov -- 7. Principles of Categorization / Eleanor Rosch -- 8. Categorizaton, Fuzziness, and Family Resemblances / Ray Jackendoff -- 9. Discreteness / Ronald W. Langacker -- 10. The Importance of Categorization / George Lakoff -- Pt. III. Categories in Grammar -- 11. Parts of Speech / Otto Jespersen -- 12. English Word Classes / David Crystal -- 13. A Notional Approach to the Parts of Speech / John Lyons -- 14. Syntactic Categories and Notional Features / John M. Anderson -- 15. Bounded Regions / Ronald W. Langacker -- 16. The Discourse Basis for Lexical Categories in Universal Grammar / Paul J. Hopper and Sandra A. Thompson -- 17. Grammatical Categories / John Taylor -- Pt. IV. Gradience in Grammar -- 18. Gradience / Dwight Bolinger -- 19. Degrees of Grammaticalness / Noam Chomsky -- 20. Descriptive Statement and Serial Relationship / Randolph Quirk -- 21. On the Analysis of Linguistic Vagueness / Jiri V. Neustupny -- 22. Nouniness / John Robert Ross -- 23. The Coordination-Subordination Gradient / Randolph Quirk, Sidney Greenbaum, Geoffrey Leech and Jan Svartvik -- 24. The Nature of Graded Judgments / Carson T. Schutze -- Pt. V. Criticisms and Responses -- 25. Description of Language Design / Martin Joos -- 26. 'Prototypes Save' / Anna Wierzbicka -- 27. Fuzziness and Categorization / Denis Bouchard -- 28. The Discrete Nature of Syntactic Categories: Against a Prototype-based Account / Frederick J. Newmeyer." ],
+                "place" : [ "Oxford ; New York :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990012623490206761" ],
+                "recordid" : [ "alma990012623490206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "001262349-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "1.03021885E-5" ]
+              },
+              "addata" : {
+                "aulast" : [ "Aarts" ],
+                "aufirst" : [ "Bas" ],
+                "auinit" : [ "B" ],
+                "addau" : [ "Aarts, Bas" ],
+                "date" : [ "2004" ],
+                "isbn" : [ "019926256X", "0199262578" ],
+                "notes" : [ "Includes bibliographical references and indexes." ],
+                "cop" : [ "Oxford ;" ],
+                "pub" : [ "Oxford University Press" ],
+                "oclcid" : [ "(mcm)1262349mit01", "(ocolc)53156091" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Fuzzy grammar : a reader" ]
+              },
+              "sort" : {
+                "title" : [ "Fuzzy grammar : a reader / edited by Bas Aarts ... [et al.]." ],
+                "author" : [ "Aarts, Bas, 1961-" ],
+                "creationdate" : [ "2004" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9055918172470320464" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "P158.6.F899 2004",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990012623490206761",
+                "holdId" : "2268993460006761",
+                "holKey" : "HoldingResultKey [mid=2268993460006761, libraryId=161684210006761, locationCode=STACK, callNumber=P158.6.F899 2004]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "P158.6.F899 2004",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990012623490206761",
+                "holdId" : "2268993460006761",
+                "holKey" : "HoldingResultKey [mid=2268993460006761, libraryId=161684210006761, locationCode=STACK, callNumber=P158.6.F899 2004]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "available_in_library" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990012623490206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:019926256X,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "P158.6.F899 2004",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "p\"158.6 f899 2004",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          } ],
+          "timelog" : {
+            "BUILD_RESULTS_RETRIVE_FROM_DB" : "149",
+            "CALL_SOLR_GET_IDS_LIST" : "329",
+            "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "276",
+            "RETRIVE_COLLECTION_DISCOVERY_INFO" : "46",
+            "RETRIVE_FROM_DB_COURSE_INFO" : "2",
+            "RETRIVE_FROM_DB_RECORDS" : "45",
+            "RETRIVE_FROM_DB_RELATIONS" : "30",
+            "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "131",
+            "SET_AVAILABILTY_HOLDING_DEDUPS" : "144",
+            "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "215",
+            "PRIMA_LOCAL_SEARCH_TOTAL" : "982",
+            "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
+            "BUILD_COMBINED_RESULTS_MAP" : 1039,
+            "COMBINED_SEARCH_TIME" : 1043,
+            "PROCESS_COMBINED_RESULTS" : 0,
+            "FEATURED_SEARCH_TIME" : 0
+          },
+          "facets" : [ ]
+        }
+  recorded_at: Fri, 04 Jun 2021 20:50:06 GMT
+recorded_with: VCR 6.0.0

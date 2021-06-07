@@ -155,7 +155,7 @@ http_interactions:
                 "isValidUser" : true,
                 "organization" : "01MIT_INST",
                 "libraryCode" : "LSA",
-                "availabilityStatus" : "unavailable",
+                "availabilityStatus" : "available",
                 "subLocation" : "Off Campus Collection",
                 "subLocationCode" : "OCC",
                 "mainLocation" : "Library Storage Annex",

@@ -25,14 +25,44 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
   end
 
   def physical_book
-    #Note that the availabilityStatus field in the this result has been 
-    # changed from 'available' to 'unavailable'
     VCR.use_cassette('physical book primo', 
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn', 
                                          ENV['PRIMO_BOOK_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 
                                    'Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn')
+    end
+  end
+
+  def unavailable_book
+    VCR.use_cassette('unavailable book primo',
+                     allow_playback_repeats: true) do
+      raw_query = SearchPrimo.new.search('they called us enemy',
+                                         ENV['PRIMO_BOOK_SCOPE'], 5)
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
+                                   'they called us enemy')
+    end
+  end
+
+  def partially_available_book
+    # Note that when this cassette was generated, the first result had 
+    # one volume checked out.
+    VCR.use_cassette('partially available book primo',
+                     allow_playback_repeats: true) do
+      raw_query = SearchPrimo.new.search('works of michael de montaigne',
+                                         ENV['PRIMO_BOOK_SCOPE'], 5)
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
+                                   'works of michael de montaigne')
+    end
+  end
+
+  def multiple_availability_book
+    VCR.use_cassette('multi available book primo', 
+                     allow_playback_repeats: true) do
+      raw_query = SearchPrimo.new.search('chomsky lyons',
+                                         ENV['PRIMO_BOOK_SCOPE'], 5)
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
+                                   'chomsky lyons')
     end
   end
 
@@ -78,17 +108,18 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
                  result.subjects.second
   end
 
-  test 'constructs locations as expected' do
+  test 'constructs location as expected' do
     result = physical_book['results'].first
-    assert_equal [['Library Storage Annex Off Campus Collection', 
-                  'P85.C47.B56166 1998']], result.location
+    assert_equal ['Library Storage Annex Off Campus Collection', 
+                  'P85.C47.B56166 1998'], result.location
   end
 
-  test 'constructs multiple locations' do
+  test 'ignores additional locations' do
     result = multi_location['results'].first
-    assert_equal [['Library Storage Annex Journal Collection (LSA4)', 
-                   'TA.J86.H437'], 
-                  ['Barker Library Microforms', 'FICHE No Call #']], 
+    assert_not_equal ['Barker Library Microforms', 'FICHE No Call #'], 
+                     result.location
+    assert_equal ['Library Storage Annex Journal Collection (LSA4)', 
+                  'TA.J86.H437'], 
                  result.location
   end
 
@@ -115,16 +146,31 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     assert_nil result.openurl
   end
 
-  test 'extracts availabilty status as expected' do
+  test 'extracts availability status as expected' do
     available_result = multi_location['results'].first
-    unavailable_result = physical_book['results'].first
-    assert_equal ['available', 'check_holdings'], available_result.availability_status
-    assert_equal ['unavailable'], unavailable_result.availability_status
+    maybe_available_result = partially_available_book['results'].first
+    unavailable_result = unavailable_book['results'].first
+    assert_equal 'available', available_result.availability
+    assert_equal 'check_holdings', maybe_available_result.availability
+    assert_equal 'unavailable', unavailable_result.availability
+  end
+
+  test 'assesses additional availability as expected' do
+    single_availability = physical_book['results'].first
+    possible_availability = partially_available_book['results'].first
+    no_availability = unavailable_book['results'].first
+    multi_availability = multiple_availability_book['results'].first
+    assert_equal false, single_availability.other_availability
+    assert_equal false, possible_availability.other_availability
+    assert_equal false, no_availability.other_availability
+    assert_equal true, multi_availability.other_availability
   end
 
   test 'handles results without availability status' do
     result = missing_fields_books['results'].first
-    assert_nothing_raised { result.availability_status }
-    assert_nil result.availability_status
+    assert_nothing_raised { result.availability }
+    assert_nothing_raised { result.other_availability }
+    assert_nil result.availability
+    assert_nil result.other_availability
   end
 end

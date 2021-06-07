@@ -1,0 +1,769 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://another_fake_server.example.com/v1/search?apikey=FAKE_PRIMO_API_KEY&limit=5&q=any,contains,works%20of%20michael%20de%20montaigne&scope=FAKE_PRIMO_BOOK_SCOPE&tab=FAKE_PRIMO_TAB&vid=FAKE_PRIMO_VID
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - Keep-Alive
+      Host:
+      - api-na.hosted.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Vary:
+      - accept-encoding
+      X-Exl-Api-Remaining:
+      - '549966'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,POST,DELETE,PUT,OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 04 Jun 2021 20:16:14 GMT
+      Server:
+      - CA-API-Gateway/9.0
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "info" : {
+            "totalResultsLocal" : 4,
+            "totalResultsPC" : -1,
+            "total" : 4,
+            "first" : 1,
+            "last" : 4
+          },
+          "highlights" : {
+            "creator" : [ "Michael" ],
+            "contributor" : [ "Michael" ],
+            "toc" : [ "Montaigne", "Montaigne's", "Michael", "de" ],
+            "description" : [ "works", "Montaigne", "books" ],
+            "title" : [ "Works", "of Michael", "Michael", "de", "Montaigne" ],
+            "termsUnion" : [ "Michael", "Montaigne", "Montaigne's", "de", "works", "books", "Works", "of Michael" ]
+          },
+          "docs" : [ {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990005610540206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Works of Michael de Montaigne, comprising his essays, journey into Italy, and letters, with notes from all the commentators, biographical and bibliographical notices, etc." ],
+                "format" : [ "4 v. 19 cm." ],
+                "identifier" : [ "$$COCLC$$V(OCoLC)02301147" ],
+                "creationdate" : [ "1879 c1859" ],
+                "lds07" : [ "02301147" ],
+                "lds09" : [ "Boston, Houghton, Osgood,   1859   1879  1859   mau" ],
+                "creator" : [ "Montaigne, Michel de, 1533-1592.$$QMontaigne, Michel de" ],
+                "publisher" : [ "Boston, Houghton, Osgood" ],
+                "mms" : [ "990005610540206761" ],
+                "contributor" : [ "Hazlitt, William, 1778-1830.$$QHazlitt, William" ],
+                "place" : [ "Boston," ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990005610540206761" ],
+                "recordid" : [ "alma990005610540206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "000561054-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "1.425974E-4" ]
+              },
+              "addata" : {
+                "aulast" : [ "Montaigne" ],
+                "aufirst" : [ "Michel de" ],
+                "auinit" : [ "M" ],
+                "au" : [ "Montaigne, Michel de" ],
+                "addau" : [ "Hazlitt, William" ],
+                "date" : [ "1879 - 1859", "1879 c1859" ],
+                "cop" : [ "Boston" ],
+                "pub" : [ "Houghton, Osgood" ],
+                "oclcid" : [ "(mcm)561054", "(mcm)561054mit01", "mitb10561054", "(ocolc)2301147", "glis561054" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Works of Michael de Montaigne, comprising his essays, journey into Italy, and letters, with notes from all the commentators, biographical and bibliographical notices, etc." ]
+              },
+              "sort" : {
+                "title" : [ "Works of Michael de Montaigne, comprising his essays, journey into Italy, and letters, with notes from all the commentators, biographical and bibliographical notices, etc. By W. Hazlitt; a new and carefully rev. ed. Ed. by O. W. Wight." ],
+                "author" : [ "Montaigne, Michel de, 1533-1592." ],
+                "creationdate" : [ "1879" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9077687490227715757" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "check_holdings",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "PQ1642.E5.H431 1879",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990005610540206761",
+                "holdId" : "2223888750006761",
+                "holKey" : "HoldingResultKey [mid=2223888750006761, libraryId=161682860006761, locationCode=OCC, callNumber=PQ1642.E5.H431 1879]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "LSA",
+                "availabilityStatus" : "check_holdings",
+                "subLocation" : "Off Campus Collection",
+                "subLocationCode" : "OCC",
+                "mainLocation" : "Library Storage Annex",
+                "callNumber" : "PQ1642.E5.H431 1879",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990005610540206761",
+                "holdId" : "2223888750006761",
+                "holKey" : "HoldingResultKey [mid=2223888750006761, libraryId=161682860006761, locationCode=OCC, callNumber=PQ1642.E5.H431 1879]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "check_holdings" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990005610540206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "PQ1642.E5.H431 1879",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "pq000000001642.e000000000005.h000000000431000000001879",
+                "callNumberBrowseField" : "LOCAL_CL_09X"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990028178740206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Know-it-all society : truth and arrogance in political culture " ],
+                "subject" : [ "Information society -- Political aspects", "Polarization (Social sciences) -- Political aspects", "Social media -- Political aspects", "Internet -- Political aspects", "Identity politics", "Political culture" ],
+                "format" : [ "209 pages ; 22 cm" ],
+                "identifier" : [ "$$CLC$$V  2019014604;$$CISBN$$V9781631493614;$$CISBN$$V1631493612;$$COCLC$$V(OCoLC)1053997548;$$COCLC$$V(OCoLC)1110627469" ],
+                "creationdate" : [ "2019" ],
+                "lds07" : [ "302.23/1 HM851 1110627469 1053997548 1110627469   2019014604 9781631493614 1631493612" ],
+                "lds09" : [ "New York : Liveright Publishing Corporation,  2019   nyu" ],
+                "lds10" : [ "Includes bibliographical references and index." ],
+                "creator" : [ "Lynch, Michael P. (Michael Patrick), 1966- author.$$QLynch, Michael P." ],
+                "publisher" : [ "New York : Liveright Publishing Corporation" ],
+                "description" : [ "Examines how a growing culture of narcissism is behind the fragmented political landscapes of today, drawing on the works of classic philosophers to explain the essential role of truth and humility in democracy." ],
+                "mms" : [ "990028178740206761" ],
+                "edition" : [ "First edition." ],
+                "contents" : [ "Preamble: No ordinary question -- Montaigne's warning -- The outrage factory -- Where the spade turns -- Ideologies of arrogance and the American Right -- Liberalism and the philosophy of identity politics -- Truth and humility as democratic values." ],
+                "place" : [ "New York :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990028178740206761" ],
+                "recordid" : [ "alma990028178740206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "002817874-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "7.406081E-7" ]
+              },
+              "addata" : {
+                "aulast" : [ "Lynch" ],
+                "aufirst" : [ "Michael P." ],
+                "auinit" : [ "M" ],
+                "au" : [ "Lynch, Michael P. (Michael Patrick)" ],
+                "date" : [ "2019" ],
+                "isbn" : [ "9781631493614", "1631493612" ],
+                "notes" : [ "Includes bibliographical references and index." ],
+                "abstract" : [ "Examines how a growing culture of narcissism is behind the fragmented political landscapes of today, drawing on the works of classic philosophers to explain the essential role of truth and humility in democracy." ],
+                "cop" : [ "New York" ],
+                "pub" : [ "Liveright Publishing Corporation" ],
+                "oclcid" : [ "(mcm)2817874mit01", "(ocolc)1053997548", "(ocolc)1110627469", "nhccybp" ],
+                "lccn" : [ "2019014604" ],
+                "edition" : [ "First edition." ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Know-it-all society : truth and arrogance in political culture" ]
+              },
+              "sort" : {
+                "title" : [ "Know-it-all society : truth and arrogance in political culture / Michael Patrick Lynch." ],
+                "author" : [ "Lynch, Michael P. (Michael Patrick), 1966- author." ],
+                "creationdate" : [ "2019" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9033749534253566912" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "DEW",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Dewey Library",
+                "callNumber" : "HM851.L96 2019",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990028178740206761",
+                "holdId" : "229796990006761",
+                "holKey" : "HoldingResultKey [mid=229796990006761, libraryId=161684770006761, locationCode=STACK, callNumber=HM851.L96 2019]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "DEW",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Dewey Library",
+                "callNumber" : "HM851.L96 2019",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990028178740206761",
+                "holdId" : "229796990006761",
+                "holKey" : "HoldingResultKey [mid=229796990006761, libraryId=161684770006761, locationCode=STACK, callNumber=HM851.L96 2019]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "available_in_library" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990028178740206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:1631493612,OCLC:,LCCN:2019014604&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "HM851.L96 2019",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "hm\"851ǂ l96 2019",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990022897100206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "The Cambridge Companion to Autobiography " ],
+                "subject" : [ "Autobiography" ],
+                "format" : [ "xix, 259 pages ; 23 cm." ],
+                "identifier" : [ "$$CLC$$V  2013047704;$$CISBN$$V9781107028104 (hardback);$$CISBN$$V1107028108 (hardback);$$CISBN$$V9781107609181 (paperback);$$CISBN$$V1107609186 (paperback);$$COCLC$$V(OCoLC)866563705" ],
+                "creationdate" : [ "2014" ],
+                "lds07" : [ "809/.93592 CT25.C355 2014 866563705   2013047704 9781107028104 (hardback) 1107028108 (hardback) 9781107609181 (paperback) 1107609186 (paperback)" ],
+                "lds09" : [ "New York : Cambridge University Press,  2014   nyu" ],
+                "lds10" : [ "Includes bibliographical references and index." ],
+                "lds01" : [ "Text in English." ],
+                "publisher" : [ "New York : Cambridge University Press" ],
+                "description" : [ "\"The Cambridge Companion to Autobiography offers a historical overview of the genre from the foundational works of Augustine, Montaigne, and Rousseau through the great autobiographies of the Romantic, Victorian, and modern eras. Seventeen essays from distinguished scholars and critics explore the diverse forms, audiences, styles, and motives of life writings traditionally classified under the rubric of autobiography. Chapters are arranged in chronological order and are grouped to reflect changing views of the psychological status, representative character, and moral authority of the autobiographical text. The volume closes with a group portrait of late-modernist and contemporary autobiographies that, by blurring the dividing line between fiction and non-fiction, expand our understanding of the genre. Accessibly written and comprehensive in scope, the volume will appeal especially to students and teachers of non-fiction narrative, creative writing, and literature more broadly\"-- Provided by publisher." ],
+                "mms" : [ "990022897100206761" ],
+                "contributor" : [ "DiBattista, Maria, 1947- editor.$$QDiBattista, Maria", "Wittman, Emily Ondine, 1971- editor.$$QWittman, Emily Ondine" ],
+                "series" : [ "Cambridge Companions to Literature$$QCambridge Companions to Literature", "Cambridge companions to literature.$$QCambridge companions to literature." ],
+                "contents" : [ "Introduction / Maria DiBattista and Emily O. Wittman -- Part I. Foundations -- Augustine's confessions / Adam Becker -- Medieval European autobiography / John V. Fleming -- Montaigne and the crisis of autobiography / Lawrence D. Kritzman -- Rousseau's autobiographies / Eli Friedlander -- Part II. Consolidations -- Romantic autobiography / Frances Wilson -- Victorian autobiography: sons and fathers / Deborah Epstein Nord -- American autobiography and history / Robert F. Sayre -- Part III. Deflections -- Kierkegaard and Nietzsche / Alastair Hannay -- Pessoa / Alfred MacAdam -- Transgressors: Andre Gide and Jean Genet / Jean-Michel Rabate -- Part IV. Prisms -- The true purpose of autobiography, or the fate of Vladmir Nabokov's Speak, Memory / Leland de la Durantaye -- African American autobiography / Trudier Harris -- Holocaust memoirs: writing forgetfully / Michael Bernard-Donals -- Women's autobiographies / Maria DiBattista -- The 'new' memoir / Patrick Madden -- Wending artifice: creative non-fiction / Mary Cappello." ],
+                "place" : [ "New York :" ],
+                "version" : [ "2" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990022897100206761" ],
+                "recordid" : [ "alma990022897100206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "002289710-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "1.15026275E-7" ]
+              },
+              "addata" : {
+                "aulast" : [ "DiBattista", "Wittman" ],
+                "aufirst" : [ "Maria", "Emily Ondine" ],
+                "auinit" : [ "M", "E" ],
+                "addau" : [ "DiBattista, Maria", "Wittman, Emily Ondine" ],
+                "date" : [ "2014" ],
+                "isbn" : [ "9781107028104", "1107028108", "9781107609181", "1107609186" ],
+                "notes" : [ "Includes bibliographical references and index." ],
+                "abstract" : [ "\"The Cambridge Companion to Autobiography offers a historical overview of the genre from the foundational works of Augustine, Montaigne, and Rousseau through the great autobiographies of the Romantic, Victorian, and modern eras. Seventeen essays from distinguished scholars and critics explore the diverse forms, audiences, styles, and motives of life writings traditionally classified under the rubric of autobiography. Chapters are arranged in chronological order and are grouped to reflect changing views of the psychological status, representative character, and moral authority of the autobiographical text. The volume closes with a group portrait of late-modernist and contemporary autobiographies that, by blurring the dividing line between fiction and non-fiction, expand our understanding of the genre. Accessibly written and comprehensive in scope, the volume will appeal especially to students and teachers of non-fiction narrative, creative writing, and literature more broadly\"-- Provided by publisher." ],
+                "cop" : [ "New York" ],
+                "pub" : [ "Cambridge University Press" ],
+                "oclcid" : [ "(mcm)2289710mit01", "(ocolc)866563705", "nhccybp" ],
+                "lccn" : [ "2013047704" ],
+                "seriestitle" : [ "Cambridge Companions to Literature" ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "The Cambridge Companion to Autobiography" ]
+              },
+              "sort" : {
+                "title" : [ "Cambridge Companion to Autobiography / edited by Maria DiBattista, Emily Wittman." ],
+                "author" : [ "DiBattista, Maria, 1947- editor." ],
+                "creationdate" : [ "2014" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "5" ],
+                "frbrgroupid" : [ "9033758617424065644" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "CT25.C355 2014",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990022897100206761",
+                "holdId" : "2265645930006761",
+                "holKey" : "HoldingResultKey [mid=2265645930006761, libraryId=161684210006761, locationCode=STACK, callNumber=CT25.C355 2014]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "CT25.C355 2014",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990022897100206761",
+                "holdId" : "2265645930006761",
+                "holKey" : "HoldingResultKey [mid=2265645930006761, libraryId=161684210006761, locationCode=STACK, callNumber=CT25.C355 2014]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "available_in_library" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990022897100206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:1107028108,OCLC:,LCCN:2013047704&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "CT25.C355 2014",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "ct!25 c355 2014",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          }, {
+            "context" : "L",
+            "adaptor" : "Local Search Engine",
+            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990025238030206761",
+            "pnx" : {
+              "display" : {
+                "source" : [ "Alma" ],
+                "type" : [ "book" ],
+                "language" : [ "eng" ],
+                "title" : [ "Philosophy : the classics " ],
+                "subject" : [ "Philosophy" ],
+                "format" : [ "xvi, 294 pages ; 21 cm" ],
+                "identifier" : [ "$$CLC$$V  2013028411;$$CISBN$$V9780415534673;$$CISBN$$V0415534674;$$CISBN$$V9780415534666;$$CISBN$$V0415534666;$$CISBN$$V9781315849201;$$CISBN$$V1315849208;$$COCLC$$V(OCoLC)783169006;$$COCLC$$V(OCoLC)864686275;$$COCLC$$V(OCoLC)883615969;$$COCLC$$V(OCoLC)904035192" ],
+                "creationdate" : [ "2014" ],
+                "lds07" : [ "100 B72 864686275 783169006 864686275 883615969 904035192   2013028411 9780415534666 9780415534673 0415534674 9780415534666 0415534666 9781315849201 1315849208" ],
+                "lds09" : [ "London ; Routledge, Taylor & Francis Group,  2014   enk" ],
+                "lds10" : [ "Includes bibliographical references and index." ],
+                "creator" : [ "Warburton, Nigel, 1962-$$QWarburton, Nigel" ],
+                "publisher" : [ "London ; New York : Routledge, Taylor & Francis Group" ],
+                "description" : [ "In his exemplary clear style, Warburton introduces and assesses twenty-seven philosophical classics from Plato s Republic to Rawls A Theory of Justice. For the third edition there is new text design and revised further reading make this the ideal book for all students, while three new chapters on Nietzsche s Beyond Good and Evil, Russell s The Problems of Philosophy and Sartre s Existentialism and Humanism mean that all the A Level set texts are covered. This brisk and invigorating tour through the great books of western philosophy explores the works of Plato, Aristotle, Boethius, Machiavelli, Descartes, Hobbes, Spinoza, Locke, Hume, Rousseau, Kant, Schopenhauer, Mill, Kierkegaard, Marx and Engels, Nietzsche, Russell, Ayer, Sartre, Wittgenstein, and Rawls. Offering twenty-seven guidebooks for the price of one, this is the most comprehensive introduction to philosophers and their texts currently available. -- Provided by publisher." ],
+                "mms" : [ "990025238030206761" ],
+                "edition" : [ "Fourth edition." ],
+                "contents" : [ "Introductions -- 1. Plato The Republic -- 2. Aristotle Nicomachean Ethics -- 3. Boethius The Consolation of Philosophy -- 4. Niccolo Machiavlli The Prince -- 5. Michael Eyquem de Montaigne The Essays -- 6. Rene Descartes Meditations -- 7. Thomas Hobbes Leviathan -- 8. Baruch de Spinoza Ethics -- 9. John Locke An Essay Concerning Human Understanding -- 10. John Locke Second Treatise of Government -- 11. David Hume An Enquiry Concerning Human Understanding -- 12. David Hume Dialogues Concerning Natural Religion -- 13. Jean-Jacques Rousseau The Social Contract -- 14. Immanuel Kant Critique of Pure Reason -- 15. Immanuel Kant Groundwork of the Metaphysic of Morals -- 16. Thomas Paine The Rights of Man -- 17. Arthur Schopenhauer The World as Will and Idea -- 18. John Stuart Mill On Liberty -- 19. John Stuart Mill Utilitarianism -- 20. Søren Kierkegaard Either/Or -- 21. Karl Marx and Friedrich Engels The German Ideology, Part One -- 22. Friedrich Nietzsche Beyond Good and Evil -- 23. Friedrich Nietzsche On the Genealogy of Morality -- 24. Bertrand Russell The Problems of Philosophy -- 25. A.J. Ayer Language, Truth and Logic -- 26. R.G. Collingwood The Principles of Art -- 27. Jean-Paul Sartre Being and Nothingness -- 28. Jean-Paul Starte Existentialism and Humanism -- 29. Karl Popper The Open Society and Its Enemies -- 30. Ludwig Wittgenstein Philosophical Investigations -- 31. Thomas Kuhn The Structure of Scientific Revolutions -- 32. John Rawls A Theory of Justice -- Index." ],
+                "place" : [ "London ; New York :" ],
+                "version" : [ "1" ]
+              },
+              "control" : {
+                "sourcerecordid" : [ "990025238030206761" ],
+                "recordid" : [ "alma990025238030206761" ],
+                "sourceid" : "alma",
+                "originalsourceid" : [ "002523803-MIT01" ],
+                "sourcesystem" : [ "ILS" ],
+                "sourceformat" : [ "MARC21" ],
+                "score" : [ "3.8462055E-8" ]
+              },
+              "addata" : {
+                "aulast" : [ "Warburton" ],
+                "aufirst" : [ "Nigel" ],
+                "auinit" : [ "N" ],
+                "au" : [ "Warburton, Nigel" ],
+                "date" : [ "2014" ],
+                "isbn" : [ "9780415534673", "0415534674", "9780415534666", "0415534666", "9781315849201", "1315849208" ],
+                "notes" : [ "Includes bibliographical references and index." ],
+                "abstract" : [ "In his exemplary clear style, Warburton introduces and assesses twenty-seven philosophical classics from Plato s Republic to Rawls A Theory of Justice. For the third edition there is new text design and revised further reading make this the ideal book for all students, while three new chapters on Nietzsche s Beyond Good and Evil, Russell s The Problems of Philosophy and Sartre s Existentialism and Humanism mean that all the A Level set texts are covered. This brisk and invigorating tour through the great books of western philosophy explores the works of Plato, Aristotle, Boethius, Machiavelli, Descartes, Hobbes, Spinoza, Locke, Hume, Rousseau, Kant, Schopenhauer, Mill, Kierkegaard, Marx and Engels, Nietzsche, Russell, Ayer, Sartre, Wittgenstein, and Rawls. Offering twenty-seven guidebooks for the price of one, this is the most comprehensive introduction to philosophers and their texts currently available. -- Provided by publisher." ],
+                "cop" : [ "London ;" ],
+                "pub" : [ "Routledge, Taylor & Francis Group" ],
+                "oclcid" : [ "(mcm)2523803mit01", "(ocolc)783169006", "(ocolc)864686275", "(ocolc)883615969", "(ocolc)904035192", "nhccybp" ],
+                "lccn" : [ "2013028411" ],
+                "edition" : [ "Fourth edition." ],
+                "format" : [ "book" ],
+                "genre" : [ "book" ],
+                "ristype" : [ "BOOK" ],
+                "btitle" : [ "Philosophy : the classics" ]
+              },
+              "sort" : {
+                "title" : [ "Philosophy : the classics / Nigel Warburton." ],
+                "author" : [ "Warburton, Nigel, 1962-" ],
+                "creationdate" : [ "2014" ]
+              },
+              "facets" : {
+                "frbrtype" : [ "6" ],
+                "frbrgroupid" : [ "9029472991566944962" ]
+              }
+            },
+            "delivery" : {
+              "bestlocation" : {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "B72.W37 2014",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990025238030206761",
+                "holdId" : "2226304300006761",
+                "holKey" : "HoldingResultKey [mid=2226304300006761, libraryId=161684210006761, locationCode=STACK, callNumber=B72.W37 2014]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              },
+              "holding" : [ {
+                "isValidUser" : true,
+                "organization" : "01MIT_INST",
+                "libraryCode" : "HUM",
+                "availabilityStatus" : "available",
+                "subLocation" : "Stacks",
+                "subLocationCode" : "STACK",
+                "mainLocation" : "Hayden Library",
+                "callNumber" : "B72.W37 2014",
+                "callNumberType" : "0",
+                "holdingURL" : "OVP",
+                "adaptorid" : "ALMA_01",
+                "ilsApiId" : "990025238030206761",
+                "holdId" : "2226304300006761",
+                "holKey" : "HoldingResultKey [mid=2226304300006761, libraryId=161684210006761, locationCode=STACK, callNumber=B72.W37 2014]",
+                "matchForHoldings" : [ {
+                  "matchOn" : "MainLocation",
+                  "holdingRecord" : "852##b"
+                } ],
+                "stackMapUrl" : "",
+                "relatedTitle" : null,
+                "yearFilter" : null,
+                "volumeFilter" : null,
+                "singleUnavailableItemProcessType" : null,
+                "boundWith" : false,
+                "@id" : "_:0"
+              } ],
+              "electronicServices" : null,
+              "filteredByGroupServices" : null,
+              "quickAccessService" : null,
+              "deliveryCategory" : [ "Alma-P" ],
+              "serviceMode" : [ "ovp" ],
+              "availability" : [ "available_in_library" ],
+              "availabilityLinks" : [ "detailsgetit1" ],
+              "availabilityLinksUrl" : [ ],
+              "displayedAvailability" : null,
+              "displayLocation" : true,
+              "additionalLocations" : false,
+              "physicalItemTextCodes" : null,
+              "feDisplayOtherLocations" : false,
+              "almaInstitutionsList" : [ ],
+              "recordInstitutionCode" : null,
+              "recordOwner" : "01MIT_INST",
+              "hasFilteredServices" : null,
+              "digitalAuxiliaryMode" : false,
+              "hideResourceSharing" : false,
+              "sharedDigitalCandidates" : null,
+              "GetIt1" : [ {
+                "category" : "Alma-P",
+                "links" : [ {
+                  "isLinktoOnline" : false,
+                  "getItTabText" : "service_getit",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990025238030206761",
+                  "link" : "OVP",
+                  "inst4opac" : "01MIT_INST",
+                  "displayText" : null,
+                  "@id" : "_:0"
+                } ]
+              } ],
+              "physicalServiceId" : null,
+              "link" : [ {
+                "@id" : ":_0",
+                "linkType" : "thumbnail",
+                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:0415534674,OCLC:,LCCN:2013028411&jscmd=viewapi&callback=updateGBSCover",
+                "displayLabel" : "thumbnail"
+              } ],
+              "hasD" : null
+            },
+            "enrichment" : {
+              "virtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "B72.W37 2014",
+                "callNumberBrowseField" : "0"
+              },
+              "bibVirtualBrowseObject" : {
+                "isVirtualBrowseEnabled" : true,
+                "callNumber" : "b!72ǂ w37 2014",
+                "callNumberBrowseField" : "LOC_CL"
+              }
+            }
+          } ],
+          "timelog" : {
+            "BUILD_RESULTS_RETRIVE_FROM_DB" : "73",
+            "CALL_SOLR_GET_IDS_LIST" : "3475",
+            "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "825",
+            "RETRIVE_COLLECTION_DISCOVERY_INFO" : "9",
+            "RETRIVE_FROM_DB_COURSE_INFO" : "20",
+            "RETRIVE_FROM_DB_RECORDS" : "35",
+            "RETRIVE_FROM_DB_RELATIONS" : "6",
+            "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "734",
+            "SET_AVAILABILTY_HOLDING_DEDUPS" : "91",
+            "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "197",
+            "PRIMA_LOCAL_SEARCH_TOTAL" : "4589",
+            "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
+            "BUILD_COMBINED_RESULTS_MAP" : 4669,
+            "COMBINED_SEARCH_TIME" : 4674,
+            "PROCESS_COMBINED_RESULTS" : 0,
+            "FEATURED_SEARCH_TIME" : 0
+          },
+          "facets" : [ ]
+        }
+  recorded_at: Fri, 04 Jun 2021 20:16:16 GMT
+recorded_with: VCR 6.0.0

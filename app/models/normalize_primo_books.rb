@@ -8,10 +8,11 @@ class NormalizePrimoBooks
   def book_metadata(result)
     result.thumbnail = thumbnail
     result.publisher = publisher
-    result.location = location
+    result.location = best_location
     result.subjects = subjects
     result.openurl = openurl
-    result.availability_status = availability_status
+    result.availability = best_availability
+    result.other_availability = other_availability?
     result
   end
 
@@ -43,13 +44,13 @@ class NormalizePrimoBooks
      subj, '&browseScope=subject.1&vid=', ENV['PRIMO_VID']].join('')
   end
 
-  def location
-    return unless @record['delivery']['holding'] && @record['delivery']['bestlocation']
+  # Since we are displaying RTA based on the best location, this is the 
+  # only location data we need
+  def best_location
+    return unless @record['delivery']['bestlocation']
     return if @record['delivery']['bestlocation']['mainLocation'] == 'Internet Resource'
-    @record['delivery']['holding'].map do |holding|
-      return unless holding['mainLocation'] && holding['subLocation'] && holding['callNumber']
-      ["#{holding['mainLocation']} #{holding['subLocation']}", holding['callNumber']]
-    end
+    loc = @record['delivery']['bestlocation']
+    ["#{loc['mainLocation']} #{loc['subLocation']}", loc['callNumber']]
   end
 
   def openurl
@@ -63,10 +64,17 @@ class NormalizePrimoBooks
     end
   end
 
-  def availability_status
+  def best_availability
+    return unless best_location
+    @record['delivery']['bestlocation']['availabilityStatus']
+  end
+
+  def other_availability?
+    return unless @record['delivery']['bestlocation']
     return unless @record['delivery']['holding']
-    @record['delivery']['holding'].map do |loc|
-      loc['availabilityStatus']
+    @record['delivery']['holding'].any? do |holding|
+      next if holding == @record['delivery']['bestlocation']
+      holding['availabilityStatus'] == 'available'
     end
   end
 end
