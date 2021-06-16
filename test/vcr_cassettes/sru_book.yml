@@ -1,0 +1,1844 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/authservice/rest/uidauth
+    body:
+      encoding: UTF-8
+      string: '{"UserId":"FAKE_EDS_USER_ID","Password":"FAKE_EDS_PASSWORD","InterfaceId":"edsapi_ruby_gem"}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - ''
+      X-Authenticationtoken:
+      - ''
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 16 Jun 2021 20:00:44 GMT
+      Server:
+      - Microsoft-IIS/10.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '128'
+    body:
+      encoding: UTF-8
+      string: '{"AuthToken":"FakeAuthenticationtoken","AuthTimeout":"1800"}'
+  recorded_at: Wed, 16 Jun 2021 20:00:45 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=y&profile=FAKE_EDS_PROFILE
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - ''
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 16 Jun 2021 20:00:45 GMT
+      Server:
+      - Microsoft-IIS/10.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 36e81b15-da6b-410c-a736-f02a0f79ada6
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-381234571"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '101'
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"dd97bef9-eab1-4265-89cf-673fa49b90ad.qQgvyQMyAqRIp32LD3kBlGFIHOR62tg\/6pqWhTh1uxc="}'
+  recorded_at: Wed, 16 Jun 2021 20:00:45 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CreateSession?displaydatabasename=y&guest=n&profile=FAKE_EDS_PROFILE
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 16 Jun 2021 20:00:45 GMT
+      Server:
+      - Microsoft-IIS/10.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 11c87ab0-7315-44af-8440-25d29b5a7151
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '766386613'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '100'
+    body:
+      encoding: UTF-8
+      string: '{"SessionToken":"FakeSessiontoken"}'
+  recorded_at: Wed, 16 Jun 2021 20:00:46 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Info
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 16 Jun 2021 20:00:45 GMT
+      Server:
+      - Microsoft-IIS/10.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - f9b678e7-dc80-4e20-b40f-e9f3af404f0d
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-381234571"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '26533'
+    body:
+      encoding: UTF-8
+      string: '{"AvailableSearchCriteria":{"AvailableSorts":[{"Id":"relevance","Label":"Relevance","AddAction":"setsort(relevance)"},{"Id":"date","Label":"Date
+        Newest","AddAction":"setsort(date)"},{"Id":"date2","Label":"Date Oldest","AddAction":"setsort(date2)"}],"AvailableSearchFields":[{"FieldCode":"TX","Label":"All
+        Text"},{"FieldCode":"AU","Label":"Author"},{"FieldCode":"TI","Label":"Title"},{"FieldCode":"SU","Label":"Subject
+        Terms"},{"FieldCode":"SO","Label":"Source"},{"FieldCode":"AB","Label":"Abstract"},{"FieldCode":"IS","Label":"ISSN"},{"FieldCode":"IB","Label":"ISBN"}],"AvailableExpanders":[{"Id":"thesaurus","Label":"Apply
+        related words","AddAction":"addexpander(thesaurus)","DefaultOn":"n"},{"Id":"fulltext","Label":"Also
+        search within the full text of the articles","AddAction":"addexpander(fulltext)","DefaultOn":"y"},{"Id":"relatedsubjects","Label":"Apply
+        equivalent subjects","AddAction":"addexpander(relatedsubjects)","DefaultOn":"n"}],"AvailableLimiters":[{"Id":"FT","Label":"Full
+        Text","Type":"select","AddAction":"addlimiter(FT:value)","DefaultOn":"n","Order":"1"},{"Id":"TI","Label":"Reviewed
+        Book Title","Type":"text","AddAction":"addlimiter(TI:value)","DefaultOn":"n","Order":"2"},{"Id":"FR","Label":"References
+        Available","Type":"select","AddAction":"addlimiter(FR:value)","DefaultOn":"n","Order":"3"},{"Id":"RV","Label":"Peer
+        Reviewed","Type":"select","AddAction":"addlimiter(RV:value)","DefaultOn":"n","Order":"4"},{"Id":"AU","Label":"Author","Type":"text","AddAction":"addlimiter(AU:value)","DefaultOn":"n","Order":"5"},{"Id":"SO","Label":"Journal
+        Name","Type":"text","AddAction":"addlimiter(SO:value)","DefaultOn":"n","Order":"6"},{"Id":"DT1","Label":"Date
+        Published","Type":"ymrange","AddAction":"addlimiter(DT1:value)","DefaultOn":"n","Order":"7"},{"Id":"LB","Label":"Location","Type":"multiselectvalue","LimiterValues":[{"Value":"MIT
+        Barton Catalog","AddAction":"addlimiter(LB:MIT Barton Catalog)","LimiterValues":[{"Value":"Barker
+        Library","AddAction":"addlimiter(LB:MIT Barton Catalog-Barker Library)"},{"Value":"Dewey
+        Library","AddAction":"addlimiter(LB:MIT Barton Catalog-Dewey Library)"},{"Value":"Hayden
+        Library - Humanities","AddAction":"addlimiter(LB:MIT Barton Catalog-Hayden
+        Library - Humanities)"},{"Value":"Hayden Library - Science","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Hayden Library - Science)"},{"Value":"Hayden Reserves","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Hayden Reserves)"},{"Value":"Institute Archives","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Institute Archives)"},{"Value":"Internet Resource","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Internet Resource)"},{"Value":"Lewis Music Library","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Lewis Music Library)"},{"Value":"Library Storage Annex","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Library Storage Annex)"},{"Value":"Physics Dept. Reading Room","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Physics Dept. Reading Room)"},{"Value":"Rotch Library","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Rotch Library)"},{"Value":"Rotch Visual Collections","AddAction":"addlimiter(LB:MIT
+        Barton Catalog-Rotch Visual Collections)"}]},{"Value":"MIT Course Reserves","AddAction":"addlimiter(LB:MIT
+        Course Reserves)","LimiterValues":[{"Value":"Barker Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Barker Library)"},{"Value":"Dewey Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Dewey Library)"},{"Value":"Hayden Library - Humanities","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Hayden Library - Humanities)"},{"Value":"Hayden Library -
+        Science","AddAction":"addlimiter(LB:MIT Course Reserves-Hayden Library - Science)"},{"Value":"Hayden
+        Reserves","AddAction":"addlimiter(LB:MIT Course Reserves-Hayden Reserves)"},{"Value":"Institute
+        Archives","AddAction":"addlimiter(LB:MIT Course Reserves-Institute Archives)"},{"Value":"Internet
+        Resource","AddAction":"addlimiter(LB:MIT Course Reserves-Internet Resource)"},{"Value":"Lewis
+        Music Library","AddAction":"addlimiter(LB:MIT Course Reserves-Lewis Music
+        Library)"},{"Value":"Library Storage Annex","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Library Storage Annex)"},{"Value":"Physics Dept. Reading Room","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Physics Dept. Reading Room)"},{"Value":"Rotch Library","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Rotch Library)"},{"Value":"Rotch Visual Collections","AddAction":"addlimiter(LB:MIT
+        Course Reserves-Rotch Visual Collections)"}]}],"DefaultOn":"n","Order":"8"},{"Id":"FT1","Label":"Available
+        in Library Collection","Type":"select","AddAction":"addlimiter(FT1:value)","DefaultOn":"n","Order":"9"},{"Id":"FC","Label":"Catalog
+        Only","Type":"select","AddAction":"addlimiter(FC:value)","DefaultOn":"n","Order":"10"},{"Id":"LA99","Label":"Language","Type":"multiselectvalue","LimiterValues":[{"Value":"Afrikaans","AddAction":"addlimiter(LA99:Afrikaans)"},{"Value":"Albanian","AddAction":"addlimiter(LA99:Albanian)"},{"Value":"Aleut","AddAction":"addlimiter(LA99:Aleut)"},{"Value":"Arabic","AddAction":"addlimiter(LA99:Arabic)"},{"Value":"Chinese","AddAction":"addlimiter(LA99:Chinese)"},{"Value":"Czech","AddAction":"addlimiter(LA99:Czech)"},{"Value":"Danish","AddAction":"addlimiter(LA99:Danish)"},{"Value":"Dutch;
+        Flemish","AddAction":"addlimiter(LA99:Dutch; Flemish)"},{"Value":"English","AddAction":"addlimiter(LA99:English)"},{"Value":"Finnish","AddAction":"addlimiter(LA99:Finnish)"},{"Value":"French","AddAction":"addlimiter(LA99:French)"},{"Value":"German","AddAction":"addlimiter(LA99:German)"},{"Value":"Haitian;
+        Haitian Creole","AddAction":"addlimiter(LA99:Haitian; Haitian Creole)"},{"Value":"Hebrew","AddAction":"addlimiter(LA99:Hebrew)"},{"Value":"Hmong;
+        Mong","AddAction":"addlimiter(LA99:Hmong; Mong)"},{"Value":"Indonesian","AddAction":"addlimiter(LA99:Indonesian)"},{"Value":"Inupiaq","AddAction":"addlimiter(LA99:Inupiaq)"},{"Value":"Italian","AddAction":"addlimiter(LA99:Italian)"},{"Value":"Japanese","AddAction":"addlimiter(LA99:Japanese)"},{"Value":"Korean","AddAction":"addlimiter(LA99:Korean)"},{"Value":"Lao","AddAction":"addlimiter(LA99:Lao)"},{"Value":"Latin","AddAction":"addlimiter(LA99:Latin)"},{"Value":"Lithuanian","AddAction":"addlimiter(LA99:Lithuanian)"},{"Value":"Navajo;
+        Navaho","AddAction":"addlimiter(LA99:Navajo; Navaho)"},{"Value":"Persian","AddAction":"addlimiter(LA99:Persian)"},{"Value":"Polish","AddAction":"addlimiter(LA99:Polish)"},{"Value":"Portuguese","AddAction":"addlimiter(LA99:Portuguese)"},{"Value":"Pushto;
+        Pashto","AddAction":"addlimiter(LA99:Pushto; Pashto)"},{"Value":"Romanian;
+        Moldavian; Moldovan","AddAction":"addlimiter(LA99:Romanian; Moldavian; Moldovan)"},{"Value":"Russian","AddAction":"addlimiter(LA99:Russian)"},{"Value":"Spanish;
+        Castilian","AddAction":"addlimiter(LA99:Spanish; Castilian)"},{"Value":"Swedish","AddAction":"addlimiter(LA99:Swedish)"},{"Value":"Tagalog","AddAction":"addlimiter(LA99:Tagalog)"},{"Value":"Thai","AddAction":"addlimiter(LA99:Thai)"},{"Value":"Turkish","AddAction":"addlimiter(LA99:Turkish)"},{"Value":"Ukrainian","AddAction":"addlimiter(LA99:Ukrainian)"},{"Value":"Vietnamese","AddAction":"addlimiter(LA99:Vietnamese)"},{"Value":"Croatian","AddAction":"addlimiter(LA99:Croatian)"},{"Value":"Dutch\/Flemish","AddAction":"addlimiter(LA99:Dutch\/Flemish)"},{"Value":"Hungarian","AddAction":"addlimiter(LA99:Hungarian)"},{"Value":"Norwegian","AddAction":"addlimiter(LA99:Norwegian)"},{"Value":"Romanian","AddAction":"addlimiter(LA99:Romanian)"},{"Value":"Serbian","AddAction":"addlimiter(LA99:Serbian)"},{"Value":"Slovak","AddAction":"addlimiter(LA99:Slovak)"},{"Value":"Slovenian","AddAction":"addlimiter(LA99:Slovenian)"},{"Value":"Spanish","AddAction":"addlimiter(LA99:Spanish)"},{"Value":"Swahili","AddAction":"addlimiter(LA99:Swahili)"},{"Value":"Bosnian","AddAction":"addlimiter(LA99:Bosnian)"},{"Value":"Latvian","AddAction":"addlimiter(LA99:Latvian)"},{"Value":"Catalan","AddAction":"addlimiter(LA99:Catalan)"},{"Value":"Abkhazian","AddAction":"addlimiter(LA99:Abkhazian)"},{"Value":"Amharic","AddAction":"addlimiter(LA99:Amharic)"},{"Value":"Armenian","AddAction":"addlimiter(LA99:Armenian)"},{"Value":"Mapudungun;
+        Mapuche","AddAction":"addlimiter(LA99:Mapudungun; Mapuche)"},{"Value":"Asturian;
+        Bable; Leonese; Asturleonese","AddAction":"addlimiter(LA99:Asturian; Bable;
+        Leonese; Asturleonese)"},{"Value":"Australian languages","AddAction":"addlimiter(LA99:Australian
+        languages)"},{"Value":"Basque","AddAction":"addlimiter(LA99:Basque)"},{"Value":"Bengali","AddAction":"addlimiter(LA99:Bengali)"},{"Value":"Breton","AddAction":"addlimiter(LA99:Breton)"},{"Value":"Burmese","AddAction":"addlimiter(LA99:Burmese)"},{"Value":"Central
+        American Indian languages","AddAction":"addlimiter(LA99:Central American Indian
+        languages)"},{"Value":"Catalan; Valencian","AddAction":"addlimiter(LA99:Catalan;
+        Valencian)"},{"Value":"Chechen","AddAction":"addlimiter(LA99:Chechen)"},{"Value":"Coptic","AddAction":"addlimiter(LA99:Coptic)"},{"Value":"English,
+        Middle (1100-1500)","AddAction":"addlimiter(LA99:English\\, Middle \\(1100-1500\\))"},{"Value":"Esperanto","AddAction":"addlimiter(LA99:Esperanto)"},{"Value":"Estonian","AddAction":"addlimiter(LA99:Estonian)"},{"Value":"Faroese","AddAction":"addlimiter(LA99:Faroese)"},{"Value":"Fijian","AddAction":"addlimiter(LA99:Fijian)"},{"Value":"Germanic
+        languages","AddAction":"addlimiter(LA99:Germanic languages)"},{"Value":"Geez","AddAction":"addlimiter(LA99:Geez)"},{"Value":"Irish","AddAction":"addlimiter(LA99:Irish)"},{"Value":"Galician","AddAction":"addlimiter(LA99:Galician)"},{"Value":"Greek,
+        Ancient (to 1453)","AddAction":"addlimiter(LA99:Greek\\, Ancient \\(to 1453\\))"},{"Value":"Greek,
+        Modern (1453-)","AddAction":"addlimiter(LA99:Greek\\, Modern \\(1453-\\))"},{"Value":"Hindi","AddAction":"addlimiter(LA99:Hindi)"},{"Value":"Icelandic","AddAction":"addlimiter(LA99:Icelandic)"},{"Value":"Ido","AddAction":"addlimiter(LA99:Ido)"},{"Value":"Interlingua
+        (International Auxiliary Language Association)","AddAction":"addlimiter(LA99:Interlingua
+        \\(International Auxiliary Language Association\\))"},{"Value":"Javanese","AddAction":"addlimiter(LA99:Javanese)"},{"Value":"Judeo-Arabic","AddAction":"addlimiter(LA99:Judeo-Arabic)"},{"Value":"Kannada","AddAction":"addlimiter(LA99:Kannada)"},{"Value":"Luxembourgish;
+        Letzeburgesch","AddAction":"addlimiter(LA99:Luxembourgish; Letzeburgesch)"},{"Value":"Malayalam","AddAction":"addlimiter(LA99:Malayalam)"},{"Value":"Austronesian
+        languages","AddAction":"addlimiter(LA99:Austronesian languages)"},{"Value":"Malay","AddAction":"addlimiter(LA99:Malay)"},{"Value":"Maltese","AddAction":"addlimiter(LA99:Maltese)"},{"Value":"Mongolian","AddAction":"addlimiter(LA99:Mongolian)"},{"Value":"Nahuatl
+        languages","AddAction":"addlimiter(LA99:Nahuatl languages)"},{"Value":"Neapolitan","AddAction":"addlimiter(LA99:Neapolitan)"},{"Value":"Bokmål,
+        Norwegian; Norwegian Bokmål","AddAction":"addlimiter(LA99:Bokmål\\, Norwegian;
+        Norwegian Bokmål)"},{"Value":"Norse, Old","AddAction":"addlimiter(LA99:Norse\\,
+        Old)"},{"Value":"Occitan (post 1500)","AddAction":"addlimiter(LA99:Occitan
+        \\(post 1500\\))"},{"Value":"Ojibwa","AddAction":"addlimiter(LA99:Ojibwa)"},{"Value":"Philippine
+        languages","AddAction":"addlimiter(LA99:Philippine languages)"},{"Value":"Romany","AddAction":"addlimiter(LA99:Romany)"},{"Value":"Samaritan
+        Aramaic","AddAction":"addlimiter(LA99:Samaritan Aramaic)"},{"Value":"Sanskrit","AddAction":"addlimiter(LA99:Sanskrit)"},{"Value":"Sinhala;
+        Sinhalese","AddAction":"addlimiter(LA99:Sinhala; Sinhalese)"},{"Value":"Sundanese","AddAction":"addlimiter(LA99:Sundanese)"},{"Value":"Sumerian","AddAction":"addlimiter(LA99:Sumerian)"},{"Value":"Classical
+        Syriac","AddAction":"addlimiter(LA99:Classical Syriac)"},{"Value":"Tibetan","AddAction":"addlimiter(LA99:Tibetan)"},{"Value":"Ugaritic","AddAction":"addlimiter(LA99:Ugaritic)"},{"Value":"Welsh","AddAction":"addlimiter(LA99:Welsh)"},{"Value":"Yiddish","AddAction":"addlimiter(LA99:Yiddish)"},{"Value":"Zapotec","AddAction":"addlimiter(LA99:Zapotec)"},{"Value":"Azerbaijani","AddAction":"addlimiter(LA99:Azerbaijani)"},{"Value":"Bulgarian","AddAction":"addlimiter(LA99:Bulgarian)"},{"Value":"Greek","AddAction":"addlimiter(LA99:Greek)"},{"Value":"Serbo-Croatian","AddAction":"addlimiter(LA99:Serbo-Croatian)"},{"Value":"Urdu","AddAction":"addlimiter(LA99:Urdu)"},{"Value":"Belorussian","AddAction":"addlimiter(LA99:Belorussian)"},{"Value":"Dutch","AddAction":"addlimiter(LA99:Dutch)"},{"Value":"Georgian","AddAction":"addlimiter(LA99:Georgian)"},{"Value":"Kazakh","AddAction":"addlimiter(LA99:Kazakh)"},{"Value":"Malayan","AddAction":"addlimiter(LA99:Malayan)"},{"Value":"Moldavian","AddAction":"addlimiter(LA99:Moldavian)"},{"Value":"Ukranian","AddAction":"addlimiter(LA99:Ukranian)"},{"Value":"Uzbek","AddAction":"addlimiter(LA99:Uzbek)"},{"Value":"English,
+        Old (ca.450-1100)","AddAction":"addlimiter(LA99:English\\, Old \\(ca.450-1100\\))"},{"Value":"Belarusian","AddAction":"addlimiter(LA99:Belarusian)"},{"Value":"Church
+        Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic","AddAction":"addlimiter(LA99:Church
+        Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic)"},{"Value":"Creoles
+        and pidgins, English based","AddAction":"addlimiter(LA99:Creoles and pidgins\\,
+        English based)"},{"Value":"French, Middle (ca.1400-1600)","AddAction":"addlimiter(LA99:French\\,
+        Middle \\(ca.1400-1600\\))"},{"Value":"French, Old (842-ca.1400)","AddAction":"addlimiter(LA99:French\\,
+        Old \\(842-ca.1400\\))"},{"Value":"Gaelic; Scottish Gaelic","AddAction":"addlimiter(LA99:Gaelic;
+        Scottish Gaelic)"},{"Value":"Manx","AddAction":"addlimiter(LA99:Manx)"},{"Value":"German,
+        Middle High (ca.1050-1500)","AddAction":"addlimiter(LA99:German\\, Middle
+        High \\(ca.1050-1500\\))"},{"Value":"Gujarati","AddAction":"addlimiter(LA99:Gujarati)"},{"Value":"Hawaiian","AddAction":"addlimiter(LA99:Hawaiian)"},{"Value":"Iloko","AddAction":"addlimiter(LA99:Iloko)"},{"Value":"Uncoded
+        languages","AddAction":"addlimiter(LA99:Uncoded languages)"},{"Value":"Multiple
+        languages","AddAction":"addlimiter(LA99:Multiple languages)"},{"Value":"Turkish,
+        Ottoman (1500-1928)","AddAction":"addlimiter(LA99:Turkish\\, Ottoman \\(1500-1928\\))"},{"Value":"Pangasinan","AddAction":"addlimiter(LA99:Pangasinan)"},{"Value":"Pali","AddAction":"addlimiter(LA99:Pali)"},{"Value":"Prakrit
+        languages","AddAction":"addlimiter(LA99:Prakrit languages)"},{"Value":"Romance
+        languages","AddAction":"addlimiter(LA99:Romance languages)"},{"Value":"Romansh","AddAction":"addlimiter(LA99:Romansh)"},{"Value":"Scots","AddAction":"addlimiter(LA99:Scots)"},{"Value":"Slavic
+        languages","AddAction":"addlimiter(LA99:Slavic languages)"},{"Value":"Samoan","AddAction":"addlimiter(LA99:Samoan)"},{"Value":"Tahitian","AddAction":"addlimiter(LA99:Tahitian)"},{"Value":"Undetermined","AddAction":"addlimiter(LA99:Undetermined)"},{"Value":"Volapük","AddAction":"addlimiter(LA99:Volapük)"},{"Value":"No
+        linguistic content; Not applicable","AddAction":"addlimiter(LA99:No linguistic
+        content; Not applicable)"},{"Value":"FRENCH","AddAction":"addlimiter(LA99:FRENCH)"},{"Value":"PORTUGUESE","AddAction":"addlimiter(LA99:PORTUGUESE)"},{"Value":"RUSSIAN","AddAction":"addlimiter(LA99:RUSSIAN)"},{"Value":"SPANISH","AddAction":"addlimiter(LA99:SPANISH)"},{"Value":"GERMAN","AddAction":"addlimiter(LA99:GERMAN)"},{"Value":"ENGLISH","AddAction":"addlimiter(LA99:ENGLISH)"},{"Value":"CHINESE","AddAction":"addlimiter(LA99:CHINESE)"},{"Value":"Macedonian","AddAction":"addlimiter(LA99:Macedonian)"},{"Value":"Iranian
+        languages","AddAction":"addlimiter(LA99:Iranian languages)"},{"Value":"Marshallese","AddAction":"addlimiter(LA99:Marshallese)"},{"Value":"Nepali","AddAction":"addlimiter(LA99:Nepali)"},{"Value":"Nepal
+        Bhasa; Newari","AddAction":"addlimiter(LA99:Nepal Bhasa; Newari)"},{"Value":"Greek,
+        Modern","AddAction":"addlimiter(LA99:Greek\\, Modern)"},{"Value":"Acoli","AddAction":"addlimiter(LA99:Acoli)"},{"Value":"Afro-Asiatic
+        languages","AddAction":"addlimiter(LA99:Afro-Asiatic languages)"},{"Value":"Ainu","AddAction":"addlimiter(LA99:Ainu)"},{"Value":"Akan","AddAction":"addlimiter(LA99:Akan)"},{"Value":"Algonquian
+        languages","AddAction":"addlimiter(LA99:Algonquian languages)"},{"Value":"Southern
+        Altai","AddAction":"addlimiter(LA99:Southern Altai)"},{"Value":"Apache languages","AddAction":"addlimiter(LA99:Apache
+        languages)"},{"Value":"Avaric","AddAction":"addlimiter(LA99:Avaric)"},{"Value":"Aymara","AddAction":"addlimiter(LA99:Aymara)"},{"Value":"Banda
+        languages","AddAction":"addlimiter(LA99:Banda languages)"},{"Value":"Bamileke
+        languages","AddAction":"addlimiter(LA99:Bamileke languages)"},{"Value":"Baluchi","AddAction":"addlimiter(LA99:Baluchi)"},{"Value":"Bambara","AddAction":"addlimiter(LA99:Bambara)"},{"Value":"Balinese","AddAction":"addlimiter(LA99:Balinese)"},{"Value":"Bemba","AddAction":"addlimiter(LA99:Bemba)"},{"Value":"Berber
+        languages","AddAction":"addlimiter(LA99:Berber languages)"},{"Value":"Bhojpuri","AddAction":"addlimiter(LA99:Bhojpuri)"},{"Value":"Bislama","AddAction":"addlimiter(LA99:Bislama)"},{"Value":"Bantu
+        languages","AddAction":"addlimiter(LA99:Bantu languages)"},{"Value":"Braj","AddAction":"addlimiter(LA99:Braj)"},{"Value":"Batak
+        languages","AddAction":"addlimiter(LA99:Batak languages)"},{"Value":"Buriat","AddAction":"addlimiter(LA99:Buriat)"},{"Value":"Galibi
+        Carib","AddAction":"addlimiter(LA99:Galibi Carib)"},{"Value":"Caucasian languages","AddAction":"addlimiter(LA99:Caucasian
+        languages)"},{"Value":"Chibcha","AddAction":"addlimiter(LA99:Chibcha)"},{"Value":"Corsican","AddAction":"addlimiter(LA99:Corsican)"},{"Value":"Creoles
+        and pidgins, French-based","AddAction":"addlimiter(LA99:Creoles and pidgins\\,
+        French-based)"},{"Value":"Creoles and pidgins, Portuguese-based","AddAction":"addlimiter(LA99:Creoles
+        and pidgins\\, Portuguese-based)"},{"Value":"Creoles and pidgins","AddAction":"addlimiter(LA99:Creoles
+        and pidgins)"},{"Value":"Slave (Athapascan)","AddAction":"addlimiter(LA99:Slave
+        \\(Athapascan\\))"},{"Value":"Duala","AddAction":"addlimiter(LA99:Duala)"},{"Value":"Dutch,
+        Middle (ca.1050-1350)","AddAction":"addlimiter(LA99:Dutch\\, Middle \\(ca.1050-1350\\))"},{"Value":"Dzongkha","AddAction":"addlimiter(LA99:Dzongkha)"},{"Value":"Efik","AddAction":"addlimiter(LA99:Efik)"},{"Value":"Egyptian
+        (Ancient)","AddAction":"addlimiter(LA99:Egyptian \\(Ancient\\))"},{"Value":"Ewe","AddAction":"addlimiter(LA99:Ewe)"},{"Value":"Fang","AddAction":"addlimiter(LA99:Fang)"},{"Value":"Filipino;
+        Pilipino","AddAction":"addlimiter(LA99:Filipino; Pilipino)"},{"Value":"Finno-Ugrian
+        languages","AddAction":"addlimiter(LA99:Finno-Ugrian languages)"},{"Value":"Fulah","AddAction":"addlimiter(LA99:Fulah)"},{"Value":"Ga","AddAction":"addlimiter(LA99:Ga)"},{"Value":"Gilbertese","AddAction":"addlimiter(LA99:Gilbertese)"},{"Value":"German,
+        Old High (ca.750-1050)","AddAction":"addlimiter(LA99:German\\, Old High \\(ca.750-1050\\))"},{"Value":"Gondi","AddAction":"addlimiter(LA99:Gondi)"},{"Value":"Swiss
+        German; Alemannic; Alsatian","AddAction":"addlimiter(LA99:Swiss German; Alemannic;
+        Alsatian)"},{"Value":"Haida","AddAction":"addlimiter(LA99:Haida)"},{"Value":"Hausa","AddAction":"addlimiter(LA99:Hausa)"},{"Value":"Igbo","AddAction":"addlimiter(LA99:Igbo)"},{"Value":"Inuktitut","AddAction":"addlimiter(LA99:Inuktitut)"},{"Value":"Indic
+        languages","AddAction":"addlimiter(LA99:Indic languages)"},{"Value":"Indo-European
+        languages","AddAction":"addlimiter(LA99:Indo-European languages)"},{"Value":"Iroquoian
+        languages","AddAction":"addlimiter(LA99:Iroquoian languages)"},{"Value":"Kabyle","AddAction":"addlimiter(LA99:Kabyle)"},{"Value":"Kalaallisut;
+        Greenlandic","AddAction":"addlimiter(LA99:Kalaallisut; Greenlandic)"},{"Value":"Kamba","AddAction":"addlimiter(LA99:Kamba)"},{"Value":"Karen
+        languages","AddAction":"addlimiter(LA99:Karen languages)"},{"Value":"Khoisan
+        languages","AddAction":"addlimiter(LA99:Khoisan languages)"},{"Value":"Central
+        Khmer","AddAction":"addlimiter(LA99:Central Khmer)"},{"Value":"Kinyarwanda","AddAction":"addlimiter(LA99:Kinyarwanda)"},{"Value":"Kirghiz;
+        Kyrgyz","AddAction":"addlimiter(LA99:Kirghiz; Kyrgyz)"},{"Value":"Kpelle","AddAction":"addlimiter(LA99:Kpelle)"},{"Value":"Kurdish","AddAction":"addlimiter(LA99:Kurdish)"},{"Value":"Ladino","AddAction":"addlimiter(LA99:Ladino)"},{"Value":"Lingala","AddAction":"addlimiter(LA99:Lingala)"},{"Value":"Luba-Katanga","AddAction":"addlimiter(LA99:Luba-Katanga)"},{"Value":"Ganda","AddAction":"addlimiter(LA99:Ganda)"},{"Value":"Lunda","AddAction":"addlimiter(LA99:Lunda)"},{"Value":"Madurese","AddAction":"addlimiter(LA99:Madurese)"},{"Value":"Mandingo","AddAction":"addlimiter(LA99:Mandingo)"},{"Value":"Maori","AddAction":"addlimiter(LA99:Maori)"},{"Value":"Marathi","AddAction":"addlimiter(LA99:Marathi)"},{"Value":"Masai","AddAction":"addlimiter(LA99:Masai)"},{"Value":"Mende","AddAction":"addlimiter(LA99:Mende)"},{"Value":"Mon-Khmer
+        languages","AddAction":"addlimiter(LA99:Mon-Khmer languages)"},{"Value":"Malagasy","AddAction":"addlimiter(LA99:Malagasy)"},{"Value":"Mayan
+        languages","AddAction":"addlimiter(LA99:Mayan languages)"},{"Value":"North
+        American Indian languages","AddAction":"addlimiter(LA99:North American Indian
+        languages)"},{"Value":"Ndebele, North; North Ndebele","AddAction":"addlimiter(LA99:Ndebele\\,
+        North; North Ndebele)"},{"Value":"Niger-Kordofanian languages","AddAction":"addlimiter(LA99:Niger-Kordofanian
+        languages)"},{"Value":"Chichewa; Chewa; Nyanja","AddAction":"addlimiter(LA99:Chichewa;
+        Chewa; Nyanja)"},{"Value":"Nyankole","AddAction":"addlimiter(LA99:Nyankole)"},{"Value":"Papuan
+        languages","AddAction":"addlimiter(LA99:Papuan languages)"},{"Value":"Pampanga;
+        Kapampangan","AddAction":"addlimiter(LA99:Pampanga; Kapampangan)"},{"Value":"Panjabi;
+        Punjabi","AddAction":"addlimiter(LA99:Panjabi; Punjabi)"},{"Value":"Papiamento","AddAction":"addlimiter(LA99:Papiamento)"},{"Value":"Provençal,
+        Old (to 1500);Occitan, Old (to 1500)","AddAction":"addlimiter(LA99:Provençal\\,
+        Old \\(to 1500\\);Occitan\\, Old \\(to 1500\\))"},{"Value":"Quechua","AddAction":"addlimiter(LA99:Quechua)"},{"Value":"Rajasthani","AddAction":"addlimiter(LA99:Rajasthani)"},{"Value":"Rarotongan;
+        Cook Islands Maori","AddAction":"addlimiter(LA99:Rarotongan; Cook Islands
+        Maori)"},{"Value":"Rundi","AddAction":"addlimiter(LA99:Rundi)"},{"Value":"South
+        American Indian languages","AddAction":"addlimiter(LA99:South American Indian
+        languages)"},{"Value":"Salishan languages","AddAction":"addlimiter(LA99:Salishan
+        languages)"},{"Value":"Sino-Tibetan languages","AddAction":"addlimiter(LA99:Sino-Tibetan
+        languages)"},{"Value":"Sami languages","AddAction":"addlimiter(LA99:Sami languages)"},{"Value":"Shona","AddAction":"addlimiter(LA99:Shona)"},{"Value":"Somali","AddAction":"addlimiter(LA99:Somali)"},{"Value":"Sotho,
+        Southern","AddAction":"addlimiter(LA99:Sotho\\, Southern)"},{"Value":"Sardinian","AddAction":"addlimiter(LA99:Sardinian)"},{"Value":"Nilo-Saharan
+        languages","AddAction":"addlimiter(LA99:Nilo-Saharan languages)"},{"Value":"Swati","AddAction":"addlimiter(LA99:Swati)"},{"Value":"Susu","AddAction":"addlimiter(LA99:Susu)"},{"Value":"Syriac","AddAction":"addlimiter(LA99:Syriac)"},{"Value":"Tamil","AddAction":"addlimiter(LA99:Tamil)"},{"Value":"Tatar","AddAction":"addlimiter(LA99:Tatar)"},{"Value":"Telugu","AddAction":"addlimiter(LA99:Telugu)"},{"Value":"Tajik","AddAction":"addlimiter(LA99:Tajik)"},{"Value":"Tigrinya","AddAction":"addlimiter(LA99:Tigrinya)"},{"Value":"Tamashek","AddAction":"addlimiter(LA99:Tamashek)"},{"Value":"Tonga
+        (Nyasa)","AddAction":"addlimiter(LA99:Tonga \\(Nyasa\\))"},{"Value":"Tonga
+        (Tonga Islands)","AddAction":"addlimiter(LA99:Tonga \\(Tonga Islands\\))"},{"Value":"Tok
+        Pisin","AddAction":"addlimiter(LA99:Tok Pisin)"},{"Value":"Tswana","AddAction":"addlimiter(LA99:Tswana)"},{"Value":"Turkmen","AddAction":"addlimiter(LA99:Turkmen)"},{"Value":"Tumbuka","AddAction":"addlimiter(LA99:Tumbuka)"},{"Value":"Altaic
+        languages","AddAction":"addlimiter(LA99:Altaic languages)"},{"Value":"Twi","AddAction":"addlimiter(LA99:Twi)"},{"Value":"Tuvinian","AddAction":"addlimiter(LA99:Tuvinian)"},{"Value":"Uighur;
+        Uyghur","AddAction":"addlimiter(LA99:Uighur; Uyghur)"},{"Value":"Umbundu","AddAction":"addlimiter(LA99:Umbundu)"},{"Value":"Wakashan
+        languages","AddAction":"addlimiter(LA99:Wakashan languages)"},{"Value":"Wolof","AddAction":"addlimiter(LA99:Wolof)"},{"Value":"Xhosa","AddAction":"addlimiter(LA99:Xhosa)"},{"Value":"Yao","AddAction":"addlimiter(LA99:Yao)"},{"Value":"Yoruba","AddAction":"addlimiter(LA99:Yoruba)"},{"Value":"Yupik
+        languages","AddAction":"addlimiter(LA99:Yupik languages)"},{"Value":"Zulu","AddAction":"addlimiter(LA99:Zulu)"},{"Value":"Zaza;
+        Dimili; Dimli; Kirdki; Kirmanjki; Zazaki","AddAction":"addlimiter(LA99:Zaza;
+        Dimili; Dimli; Kirdki; Kirmanjki; Zazaki)"},{"Value":"Venda","AddAction":"addlimiter(LA99:Venda)"},{"Value":"Aragonese","AddAction":"addlimiter(LA99:Aragonese)"}],"DefaultOn":"n","Order":"11"}],"AvailableSearchModes":[{"Mode":"bool","Label":"Boolean\/Phrase","DefaultOn":"n","AddAction":"setsearchmode(bool)"},{"Mode":"all","Label":"Find
+        all my search terms","DefaultOn":"y","AddAction":"setsearchmode(all)"},{"Mode":"any","Label":"Find
+        any of my search terms","DefaultOn":"n","AddAction":"setsearchmode(any)"},{"Mode":"smart","Label":"SmartText
+        Searching","DefaultOn":"n","AddAction":"setsearchmode(smart)"}],"AvailableRelatedContent":[{"Type":"emp","Label":"Exact
+        Match Publication","DefaultOn":"y","AddAction":"includerelatedcontent(emp)"},{"Type":"rs","Label":"Research
+        Starters","DefaultOn":"n","AddAction":"includerelatedcontent(rs)"}],"AvailableDidYouMeanOptions":[{"Id":"AutoSuggest","Label":"Did
+        You Mean","DefaultOn":"y"},{"Id":"AutoCorrect","Label":"Auto Correct","DefaultOn":"n"}]},"ViewResultSettings":{"ResultsPerPage":"20","ResultListView":"brief","IncludeImageQuickView":{"Id":"ImageQuickViewResults","Label":"Image
+        Quick View Results","DefaultOn":"n"}},"ApplicationSettings":{"SessionTimeout":"900"},"ApiSettings":{"MaxRecordJumpAhead":"250"},"ExportFormatSettings":{"AvailableFormats":[{"Id":"RIS","Label":"RIS
+        Format"}]},"CitationStyleSettings":{"AvailableStyles":[{"Id":"abnt","Label":"ABNT"},{"Id":"ama","Label":"AMA
+        11th Edition"},{"Id":"apa","Label":"APA 7th Edition"},{"Id":"chicago","Label":"Chicago
+        17th Edition"},{"Id":"harvard","Label":"Harvard"},{"Id":"harvardaustralian","Label":"Harvard:
+        Australian"},{"Id":"mla","Label":"MLA 8th Edition"},{"Id":"turabian","Label":"Chicago
+        17th Edition"},{"Id":"vancouver","Label":"Vancouver\/ICMJE"}]}}'
+  recorded_at: Wed, 16 Jun 2021 20:00:46 GMT
+- request:
+    method: post
+    uri: https://eds-api.ebscohost.com/edsapi/rest/Retrieve
+    body:
+      encoding: UTF-8
+      string: '{"DbId":"cat00916a","An":"mit.001492509","HighlightTerms":null,"EbookPreferredFormat":"ebook-pdf"}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 16 Jun 2021 20:00:46 GMT
+      Server:
+      - Microsoft-IIS/10.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - bda2e2f5-6778-4234-893d-3b6ab8e78154
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - "-381234571"
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '6623'
+    body:
+      encoding: UTF-8
+      string: '{"Record":{"ResultId":1,"Header":{"DbId":"cat00916a","DbLabel":"MIT
+        Barton Catalog","An":"mit.001492509","RelevancyScore":"1038","AccessLevel":"3","PubType":"Book","PubTypeId":"book"},"PLink":"https:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001492509&authtype=sso&custid=s8978330","ImageInfo":[{"Size":"thumb","Target":"https:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=S&Value=9781841958811"},{"Size":"medium","Target":"https:\/\/contentcafe2.btol.com\/ContentCafe\/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value=9781841958811"}],"CustomLinks":[{"Url":"https:\/\/library.mit.edu\/item\/001492509","Name":"MIT
+        Barton Catalog Full Record (cat00916a)","Category":"libCatalog","Text":"View
+        catalog record","MouseOverText":"Go to Barton catalog to find this at the
+        MIT Libraries"},{"Url":"https:\/\/mit.on.worldcat.org\/oclc\/166367812","Name":"WorldCat
+        customlink","Category":"ill","Text":"Get it in the library","MouseOverText":"Get
+        items from MIT & non-MIT Libraries"}],"FullText":{"Text":{"Availability":"0"}},"Items":[{"Name":"Title","Label":"Title","Group":"Ti","Data":"Bananas
+        : how the United Fruit Company shaped the world \/ Peter Chapman."},{"Name":"Language","Label":"Language","Group":"Lang","Data":"English"},{"Name":"Author","Label":"Authors","Group":"Au","Data":"&lt;searchLink
+        fieldCode=&quot;AR&quot; term=&quot;%22Chapman%2C+Peter%22&quot;&gt;Chapman,
+        Peter&lt;\/searchLink&gt;, 1948-"},{"Name":"PubInfo","Label":"Publication
+        Information","Group":"PubInfo","Data":"Edinburgh ; New York : Canongate ;
+        [Berkeley, Calif.?] : Distributed by Publishers Group West, c2007."},{"Name":"EditionInfo","Label":"Edition","Group":"PubInfo","Data":"1st
+        American ed."},{"Name":"DatePub","Label":"Publication Date","Group":"Date","Data":"2007"},{"Name":"PhysDesc","Label":"Physical
+        Description","Group":"PhysDesc","Data":"xv, 224 p. : map ; 21 cm."},{"Name":"TypePub","Label":"Publication
+        Type","Group":"TypPub","Data":"Book"},{"Name":"TypeDocument","Label":"Document
+        Type","Group":"TypDoc","Data":"Bibliographies; Non-fiction"},{"Name":"Subject","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Banana+trade+--+Central+America+--+History%22&quot;&gt;Banana
+        trade -- Central America -- History&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink
+        fieldCode=&quot;DE&quot; term=&quot;%22Bananas+--+Social+aspects%22&quot;&gt;Bananas
+        -- Social aspects&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22International+business+enterprises+--+Corrupt+practices%22&quot;&gt;International
+        business enterprises -- Corrupt practices&lt;\/searchLink&gt;"},{"Name":"SubjectGeographic","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22Central+America+--+History+--+1951-1979%22&quot;&gt;Central
+        America -- History -- 1951-1979&lt;\/searchLink&gt;"},{"Name":"SubjectCompany","Label":"Subject
+        Terms","Group":"Su","Data":"&lt;searchLink fieldCode=&quot;DE&quot; term=&quot;%22United+Fruit+Company+--+History%22&quot;&gt;United
+        Fruit Company -- History&lt;\/searchLink&gt;&lt;br \/&gt;&lt;searchLink fieldCode=&quot;DE&quot;
+        term=&quot;%22United+Fruit+Company+--+Corrupt+practices%22&quot;&gt;United
+        Fruit Company -- Corrupt practices&lt;\/searchLink&gt;"},{"Name":"Abstract","Label":"Abstract","Group":"Ab","Data":"Summary:
+        In this exploration of corporate maneuvering and subterfuge, journalist Chapman
+        shows how the importer United Fruit set the precedent for the institutionalized
+        power and influence of today&#39;s multinational companies. This infamous
+        company was arguably the most controversial global corporation ever--from
+        the jungles of Costa Rica to the dramatic suicide of its CEO, who leapt from
+        an office on the 44th floor of the Pan Am building in New York City. From
+        the marketing of the banana as the first fast food, to the company&#39;s involvement
+        in an invasion of Honduras, the Bay of Pigs crisis, and a bloody coup in Guatemala,
+        Chapman weaves a tale of big business, political deceit, and outright violence
+        to show how one company wreaked havoc in the &quot;banana republics&quot;
+        of Central America, and how terrifyingly similar the age of United Fruit is
+        to our age of rapid globalization.--From publisher description."},{"Name":"TOC","Label":"Content
+        Notes","Group":"TOC","Data":"1. From the Memory of Men -- 2. Lament for a
+        Dying Fruit -- 3. Roots of Empire -- 4. Monopoly -- 5. The Banana Man -- 6.
+        Taming the Enclave -- 7. Banana Republics -- 8. On the Inside -- 9. Coup --
+        10. &#39;Betrayal&#39; -- 11. Decline and Fall -- 12. Old and Dark Forces
+        -- Epilogue: United Fruit World."},{"Name":"Note","Label":"Notes","Group":"Note","Data":"Originally
+        published as: Jungle capitalists.&lt;br \/&gt;Map on lining papers.&lt;br
+        \/&gt;Includes bibliographical references (p. 211-215) and index."},{"Name":"TitleAlt","Label":"Other
+        Titles","Group":"TiAlt","Data":"&lt;searchLink fieldCode=&quot;TI&quot; term=&quot;%22Jungle+capitalists%22&quot;&gt;Jungle
+        capitalists&lt;\/searchLink&gt;"},{"Name":"ISBN","Label":"ISBN","Group":"ISBN","Data":"9781841958811
+        :&lt;br \/&gt;1841958816 :"},{"Name":"NumberOther","Label":"OCLC","Group":"ID","Data":"166367812"},{"Name":"AN","Label":"Accession
+        Number","Group":"ID","Data":"mit.001492509"}],"RecordInfo":{"BibRecord":{"BibEntity":{"Languages":[{"Text":"English"}],"Subjects":[{"SubjectFull":"United
+        Fruit Company -- History","Type":"general"},{"SubjectFull":"United Fruit Company
+        -- Corrupt practices","Type":"general"},{"SubjectFull":"Banana trade -- Central
+        America -- History","Type":"general"},{"SubjectFull":"Bananas -- Social aspects","Type":"general"},{"SubjectFull":"International
+        business enterprises -- Corrupt practices","Type":"general"},{"SubjectFull":"Central
+        America -- History -- 1951-1979","Type":"general"}],"Titles":[{"TitleFull":"Bananas
+        : how the United Fruit Company shaped the world.","Type":"main"}]},"BibRelationships":{"HasContributorRelationships":[{"PersonEntity":{"Name":{"NameFull":"Chapman,
+        Peter"}}}],"IsPartOfRelationships":[{"BibEntity":{"Dates":[{"D":"01","M":"01","Type":"published","Y":"2007"}],"Identifiers":[{"Type":"isbn-print","Value":"9781841958811"},{"Type":"isbn-print","Value":"1841958816"}],"Titles":[{"TitleFull":"Bananas
+        : how the United Fruit Company shaped the world \/ Peter Chapman.","Type":"main"}]}}]}}},"Holdings":[{"HoldingSimple":{"CopyInformationList":[{"Sublocation":"Hayden
+        Library - Stacks","ShelfLocator":"HD9259.B3.U523 2007b"}]}}],"IllustrationInfo":{}}}'
+  recorded_at: Wed, 16 Jun 2021 20:00:47 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/ExportFormat?an=mit.001492509&dbid=cat00916a&format=all
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 16 Jun 2021 20:00:47 GMT
+      Server:
+      - Microsoft-IIS/10.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      X-Msg-Correlid:
+      - 5d1df7a0-1cd9-4ff0-8fdb-8c89081a25c5
+      X-Powered-By:
+      - ASP.NET
+      X-Sessionno:
+      - '766386613'
+      X-Sessiontoken:
+      - FakeSessiontoken
+      Content-Length:
+      - '2706'
+    body:
+      encoding: UTF-8
+      string: '{"Format":"RIS","Label":"RIS Format","Data":"TY  - Book\u000d\u000aID  -
+        mit.001492509\u000d\u000aAU  - Chapman, Peter\u000d\u000aT1  - Bananas : how
+        the United Fruit Company shaped the world.\u000d\u000aY1  - 2007\/\/\/\u000d\u000aM3  -
+        Bibliographies\u000d\u000aM3  - Non-fiction\u000d\u000aPB  - Edinburgh ; New
+        York : Canongate ; [Berkeley, Calif.?] : Distributed by Publishers Group West,
+        c2007.\u000d\u000aPB  - 1st American ed.\u000d\u000aAV  - Hayden Library -
+        Stacks HD9259.B3.U523 2007b\u000d\u000aSN  - 9781841958811\u000d\u000aSN  -
+        1841958816\u000d\u000aN2  - Summary: In this exploration of corporate maneuvering
+        and subterfuge, journalist Chapman shows how the importer United Fruit set
+        the precedent for the institutionalized power and influence of today''s multinational
+        companies. This infamous company was arguably the most controversial global
+        corporation ever--from the jungles of Costa Rica to the dramatic suicide of
+        its CEO, who leapt from an office on the 44th floor of the Pan Am building
+        in New York City. From the marketing of the banana as the first fast food,
+        to the company''s involvement in an invasion of Honduras, the Bay of Pigs
+        crisis, and a bloody coup in Guatemala, Chapman weaves a tale of big business,
+        political deceit, and outright violence to show how one company wreaked havoc
+        in the \"banana republics\" of Central America, and how terrifyingly similar
+        the age of United Fruit is to our age of rapid globalization.--From publisher
+        description.\u000d\u000aN2  - 1. From the Memory of Men -- 2. Lament for a
+        Dying Fruit -- 3. Roots of Empire -- 4. Monopoly -- 5. The Banana Man -- 6.
+        Taming the Enclave -- 7. Banana Republics -- 8. On the Inside -- 9. Coup --
+        10. ''Betrayal'' -- 11. Decline and Fall -- 12. Old and Dark Forces -- Epilogue:
+        United Fruit World.\u000d\u000aKW  - Banana trade -- Central America -- History\u000d\u000aKW  -
+        Bananas -- Social aspects\u000d\u000aKW  - International business enterprises
+        -- Corrupt practices\u000d\u000aKW  - Central America -- History -- 1951-1979\u000d\u000aKW  -
+        United Fruit Company -- History\u000d\u000aKW  - United Fruit Company -- Corrupt
+        practices\u000d\u000aN1  - Accession Number: mit.001492509; Other Notes: Originally
+        published as: Jungle capitalists.; Map on lining papers.; Includes bibliographical
+        references (p. 211-215) and index.; Publication Type: Book; Physical Description:
+        xv, 224 p. : map ; 21 cm.; Language: English; Other Titles: Jungle capitalists;
+        OCLC: 166367812\u000d\u000aUR  - https:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001492509&authtype=sso&custid=s8978330\u000d\u000aDP  -
+        EBSCOhost\u000d\u000aDB  - cat00916a\u000d\u000aER  - \u000d\u000a"}'
+  recorded_at: Wed, 16 Jun 2021 20:00:47 GMT
+- request:
+    method: get
+    uri: https://eds-api.ebscohost.com/edsapi/rest/CitationStyles?an=mit.001492509&dbid=cat00916a&styles=all
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Accept:
+      - application/json
+      X-Sessiontoken:
+      - FakeSessiontoken
+      X-Authenticationtoken:
+      - FakeAuthenticationtoken
+      User-Agent:
+      - EBSCO EDS GEM v0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 16 Jun 2021 20:00:47 GMT
+      Server:
+      - Microsoft-IIS/10.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Msg-Correlid:
+      - f65e9bbc-cc79-468e-a59e-75fce8a2a1ef
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '4012'
+    body:
+      encoding: UTF-8
+      string: '{"Citations":[{"Id":"abnt","Label":"ABNT","SectionLabel":"References","Data":"CHAPMAN,
+        P. <b>Bananas : how the United Fruit Company shaped the world<\/b>. <i>[s.
+        l.]<\/i>: Edinburgh ; New York : Canongate ; [Berkeley, Calif.?] : Distributed
+        by Publishers Group West, c2007., 2007. ISBN 9781841958811. Disponível em:
+        https:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001492509&authtype=sso&custid=s8978330.
+        Acesso em: 16 jun. 2021.","Caption":"Brazilian National Standards"},{"Id":"ama","Label":"AMA
+        11th Edition","SectionLabel":"Reference List","Data":"Chapman P. <i>Bananas :
+        How the United Fruit Company Shaped the World<\/i>. Edinburgh ; New York :
+        Canongate ; [Berkeley, Calif.?] : Distributed by Publishers Group West, c2007.;
+        2007. Accessed June 16, 2021. https:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001492509&authtype=sso&custid=s8978330","Caption":"American
+        Medical Assoc."},{"Id":"apa","Label":"APA 7th Edition","SectionLabel":"References","Data":"Chapman,
+        P. (2007). <i>Bananas : how the United Fruit Company shaped the world<\/i>.
+        Edinburgh ; New York : Canongate ; [Berkeley, Calif.?] : Distributed by Publishers
+        Group West, c2007. ","Caption":"American Psychological Assoc.","Indent":1},{"Id":"chicago","Label":"Chicago
+        17th Edition","SectionLabel":"Reference List","Data":"Chapman, Peter. 2007.
+        <i>Bananas : How the United Fruit Company Shaped the World<\/i>. Edinburgh ;
+        New York : Canongate ; [Berkeley, Calif.?] : Distributed by Publishers Group
+        West, c2007. https:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001492509&authtype=sso&custid=s8978330.","Caption":"Author-Date","Indent":1},{"Id":"harvard","Label":"Harvard","SectionLabel":"References","Data":"Chapman,
+        P. (2007) <i>Bananas : how the United Fruit Company shaped the world<\/i>.
+        Edinburgh ; New York : Canongate ; [Berkeley, Calif.?] : Distributed by Publishers
+        Group West, c2007. Available at: https:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001492509&authtype=sso&custid=s8978330
+        (Accessed: 16 June 2021)."},{"Id":"harvardaustralian","Label":"Harvard: Australian","SectionLabel":"References","Data":"Chapman,
+        P 2007, <i>Bananas : how the United Fruit Company shaped the world<\/i>, Edinburgh ;
+        New York : Canongate ; [Berkeley, Calif.?] : Distributed by Publishers Group
+        West, c2007., viewed 16 June 2021, <https:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001492509&authtype=sso&custid=s8978330>."},{"Id":"mla","Label":"MLA
+        8th Edition","SectionLabel":"Works Cited","Data":"Chapman, Peter. <i>Bananas :
+        How the United Fruit Company Shaped the World<\/i>. Edinburgh ; New York :
+        Canongate ; [Berkeley, Calif.?] : Distributed by Publishers Group West, c2007.,
+        2007. <i>EBSCOhost<\/i>, search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001492509&authtype=sso&custid=s8978330.","Caption":"Modern
+        Language Assoc.","Indent":1},{"Id":"turabian","Label":"Chicago 17th Edition","SectionLabel":"Bibliography","Data":"Chapman,
+        Peter. <i>Bananas : How the United Fruit Company Shaped the World<\/i>. Edinburgh ;
+        New York : Canongate ; [Berkeley, Calif.?] : Distributed by Publishers Group
+        West, c2007., 2007. https:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001492509&authtype=sso&custid=s8978330.","Caption":"Notes
+        & Bibliography","Indent":1},{"Id":"vancouver","Label":"Vancouver\/ICMJE","SectionLabel":"References","Data":"Chapman
+        P. Bananas : how the United Fruit Company shaped the world [Internet]. Edinburgh ;
+        New York : Canongate ; [Berkeley, Calif.?] : Distributed by Publishers Group
+        West, c2007.; 2007 [cited 2021 Jun 16]. Available from: https:\/\/search.ebscohost.com\/login.aspx?direct=true&site=eds-live&db=cat00916a&AN=mit.001492509&authtype=sso&custid=s8978330"}]}'
+  recorded_at: Wed, 16 Jun 2021 20:00:48 GMT
+- request:
+    method: get
+    uri: https://mit.alma.exlibrisgroup.com/view/sru/01MIT_INST?operation=searchRetrieve&query=alma.all_for_ui=001492509MIT01&recordSchema=marcxml&version=1.2
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - mit.alma.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Set-Cookie:
+      - JSESSIONID="902231F54EA1A3B4678BFA65273F3A64.app03.na06.prod.alma.dc01.hosted.exlibrisgroup.com:1801";
+        Version=1; Path=/; HttpOnly; SameSite=None; Secure
+      - X-Persist=b8a0c1ec2de31237d87845c9a3ab8c22;Path=/;SameSite=None;Secure
+      - urm_se=1623874248577; Path=/; SameSite=None; Secure
+      - urm_st=1623873648577; Path=/; SameSite=None; Secure
+      X-Request-Id:
+      - H0CaWgyl4o
+      Vary:
+      - accept-encoding
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 16 Jun 2021 20:00:48 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?><searchRetrieveResponse xmlns="http://www.loc.gov/zing/srw/">
+          <version>1.2</version>
+          <numberOfRecords>1</numberOfRecords>
+          <records>
+            <record>
+              <recordSchema>marcxml</recordSchema>
+              <recordPacking>xml</recordPacking>
+              <recordData>
+                <record xmlns="http://www.loc.gov/MARC21/slim">
+                  <leader>03348cam  2200541Ia 4500</leader>
+                  <controlfield tag="001">990014925090206761</controlfield>
+                  <controlfield tag="005">20210519003556.0</controlfield>
+                  <controlfield tag="008">070728s2007    enkb     b    001 0 eng d</controlfield>
+                  <datafield ind1=" " ind2=" " tag="020">
+                    <subfield code="a">9781841958811 :</subfield>
+                    <subfield code="c">$24.00</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="020">
+                    <subfield code="a">1841958816 :</subfield>
+                    <subfield code="c">$24.00</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="035">
+                    <subfield code="a">(MCM)001492509MIT01</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="035">
+                    <subfield code="a">(OCoLC)166367812</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="040">
+                    <subfield code="a">BTCTA</subfield>
+                    <subfield code="c">BTCTA</subfield>
+                    <subfield code="d">BAKER</subfield>
+                    <subfield code="d">YDXCP</subfield>
+                    <subfield code="d">OCO</subfield>
+                    <subfield code="d">CPL</subfield>
+                    <subfield code="d">YBM</subfield>
+                    <subfield code="d">BUR</subfield>
+                    <subfield code="d">TBS</subfield>
+                    <subfield code="d">MYG</subfield>
+                    <subfield code="d">OrLoB-B</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="043">
+                    <subfield code="a">nc-----</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="049">
+                    <subfield code="a">MYGG</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="4" tag="050">
+                    <subfield code="a">HD9259.B3.U523 2007b</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="092">
+                    <subfield code="a">338.1</subfield>
+                    <subfield code="b">C466b</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2=" " tag="100">
+                    <subfield code="a">Chapman, Peter,</subfield>
+                    <subfield code="d">1948-</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="0" tag="240">
+                    <subfield code="a">Jungle capitalists</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="0" tag="245">
+                    <subfield code="a">Bananas :</subfield>
+                    <subfield code="b">how the United Fruit Company shaped the world /</subfield>
+                    <subfield code="c">Peter Chapman.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="250">
+                    <subfield code="a">1st American ed.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="260">
+                    <subfield code="a">Edinburgh ;</subfield>
+                    <subfield code="a">New York :</subfield>
+                    <subfield code="b">Canongate ;</subfield>
+                    <subfield code="a">[Berkeley, Calif.?] :</subfield>
+                    <subfield code="b">Distributed by Publishers Group West,</subfield>
+                    <subfield code="c">c2007.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="300">
+                    <subfield code="a">xv, 224 p. :</subfield>
+                    <subfield code="b">map ;</subfield>
+                    <subfield code="c">21 cm.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="336">
+                    <subfield code="a">text</subfield>
+                    <subfield code="b">txt</subfield>
+                    <subfield code="2">rdacontent</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="337">
+                    <subfield code="a">unmediated</subfield>
+                    <subfield code="b">n</subfield>
+                    <subfield code="2">rdamedia</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="338">
+                    <subfield code="a">volume</subfield>
+                    <subfield code="b">nc</subfield>
+                    <subfield code="2">rdacarrier</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="500">
+                    <subfield code="a">Originally published as: Jungle capitalists.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="500">
+                    <subfield code="a">Map on lining papers.</subfield>
+                  </datafield>
+                  <datafield ind1="0" ind2="0" tag="505">
+                    <subfield code="g">1.</subfield>
+                    <subfield code="t">From the Memory of Men --</subfield>
+                    <subfield code="g">2.</subfield>
+                    <subfield code="t">Lament for a Dying Fruit --</subfield>
+                    <subfield code="g">3.</subfield>
+                    <subfield code="t">Roots of Empire --</subfield>
+                    <subfield code="g">4.</subfield>
+                    <subfield code="t">Monopoly --</subfield>
+                    <subfield code="g">5.</subfield>
+                    <subfield code="t">The Banana Man --</subfield>
+                    <subfield code="g">6.</subfield>
+                    <subfield code="t">Taming the Enclave --</subfield>
+                    <subfield code="g">7.</subfield>
+                    <subfield code="t">Banana Republics --</subfield>
+                    <subfield code="g">8.</subfield>
+                    <subfield code="t">On the Inside --</subfield>
+                    <subfield code="g">9.</subfield>
+                    <subfield code="t">Coup --</subfield>
+                    <subfield code="g">10.</subfield>
+                    <subfield code="t">'Betrayal' --</subfield>
+                    <subfield code="g">11.</subfield>
+                    <subfield code="t">Decline and Fall --</subfield>
+                    <subfield code="g">12.</subfield>
+                    <subfield code="t">Old and Dark Forces --</subfield>
+                    <subfield code="t">Epilogue: United Fruit World.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="504">
+                    <subfield code="a">Includes bibliographical references (p. 211-215) and index.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="520">
+                    <subfield code="a">In this exploration of corporate maneuvering and subterfuge, journalist Chapman shows how the importer United Fruit set the precedent for the institutionalized power and influence of today's multinational companies. This infamous company was arguably the most controversial global corporation ever--from the jungles of Costa Rica to the dramatic suicide of its CEO, who leapt from an office on the 44th floor of the Pan Am building in New York City. From the marketing of the banana as the first fast food, to the company's involvement in an invasion of Honduras, the Bay of Pigs crisis, and a bloody coup in Guatemala, Chapman weaves a tale of big business, political deceit, and outright violence to show how one company wreaked havoc in the "banana republics" of Central America, and how terrifyingly similar the age of United Fruit is to our age of rapid globalization.--From publisher description.</subfield>
+                  </datafield>
+                  <datafield ind1="2" ind2="0" tag="610">
+                    <subfield code="a">United Fruit Company</subfield>
+                    <subfield code="x">History.</subfield>
+                  </datafield>
+                  <datafield ind1="2" ind2="0" tag="610">
+                    <subfield code="a">United Fruit Company</subfield>
+                    <subfield code="x">Corrupt practices.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">Banana trade</subfield>
+                    <subfield code="z">Central America</subfield>
+                    <subfield code="x">History.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">Bananas</subfield>
+                    <subfield code="x">Social aspects.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">International business enterprises</subfield>
+                    <subfield code="x">Corrupt practices.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="651">
+                    <subfield code="a">Central America</subfield>
+                    <subfield code="x">History</subfield>
+                    <subfield code="y">1951-1979.</subfield>
+                  </datafield>
+                  <datafield ind1="4" ind2="0" tag="856">
+                    <subfield code="x">IAduringHaydenReno</subfield>
+                    <subfield code="3">Internet Archive</subfield>
+                    <subfield code="u">https://archive.org/details/bananashowunited00chap</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">jm080520</subfield>
+                    <subfield code="i">jm</subfield>
+                    <subfield code="d">080520</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">MARCIVEAUT</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">jm080520</subfield>
+                    <subfield code="i">jm</subfield>
+                    <subfield code="d">080520</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">Baker and Taylor</subfield>
+                    <subfield code="b">BTCP</subfield>
+                    <subfield code="n">BK0007364891</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">Baker &amp; Taylor</subfield>
+                    <subfield code="b">BKTY</subfield>
+                    <subfield code="c">24.00</subfield>
+                    <subfield code="d">18.00</subfield>
+                    <subfield code="i">1841958816</subfield>
+                    <subfield code="n">0007364891</subfield>
+                    <subfield code="s">active</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">YBP Library Services</subfield>
+                    <subfield code="b">YANK</subfield>
+                    <subfield code="n">2734445</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="949">
+                    <subfield code="4">IP</subfield>
+                    <subfield code="a">h</subfield>
+                    <subfield code="b">HUM</subfield>
+                    <subfield code="c">STACK</subfield>
+                    <subfield code="o">0</subfield>
+                    <subfield code="p">39080034192929</subfield>
+                    <subfield code="x">01</subfield>
+                    <subfield code="h">HD9259.B3.U523 2007b</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="961">
+                    <subfield code="a">Edinburgh ; Canongate ;</subfield>
+                    <subfield code="a">2007</subfield>
+                    <subfield code="a">enk</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="969">
+                    <subfield code="a">HD9259.B3.U523 2007b</subfield>
+                    <subfield code="a">166367812</subfield>
+                    <subfield code="a">9781841958811 :</subfield>
+                    <subfield code="a">1841958816 :</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="994">
+                    <subfield code="a">02</subfield>
+                    <subfield code="b">MYG</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="AVA">
+                    <subfield code="0">990014925090206761</subfield>
+                    <subfield code="8">224940810006761</subfield>
+                    <subfield code="a">01MIT_INST</subfield>
+                    <subfield code="b">HUM</subfield>
+                    <subfield code="c">Stacks</subfield>
+                    <subfield code="d">HD9259.B3.U523 2007b</subfield>
+                    <subfield code="e">available</subfield>
+                    <subfield code="f">1</subfield>
+                    <subfield code="g">0</subfield>
+                    <subfield code="j">STACK</subfield>
+                    <subfield code="k">0</subfield>
+                    <subfield code="p">1</subfield>
+                    <subfield code="q">Hayden Library</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="AVE">
+                    <subfield code="8">53404794090006761</subfield>
+                    <subfield code="e">Available</subfield>
+                    <subfield code="t">Internet Archive</subfield>
+                  </datafield>
+                </record>
+              </recordData>
+              <recordIdentifier>990014925090206761</recordIdentifier>
+              <recordPosition>1</recordPosition>
+            </record>
+          </records>
+          <extraResponseData xmlns:xb="http://www.exlibris.com/repository/search/xmlbeans/">
+            <xb:exact>true</xb:exact>
+            <xb:responseDate>2021-06-16T16:00:48-0400</xb:responseDate>
+          </extraResponseData>
+        </searchRetrieveResponse>
+  recorded_at: Wed, 16 Jun 2021 20:00:48 GMT
+- request:
+    method: get
+    uri: https://mit.alma.exlibrisgroup.com/view/sru/01MIT_INST?operation=searchRetrieve&query=alma.all_for_ui=001492509MIT01&recordSchema=marcxml&version=1.2
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - mit.alma.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Set-Cookie:
+      - JSESSIONID="CCAE3D65D62FDE82B26C448C7B1AF7F6.app02.na06.prod.alma.dc01.hosted.exlibrisgroup.com:1801";
+        Version=1; Path=/; HttpOnly; SameSite=None; Secure
+      - X-Persist=c7d4f8ca7386afa6ced80a46b25687b6;Path=/;SameSite=None;Secure
+      - urm_se=1623874249321; Path=/; SameSite=None; Secure
+      - urm_st=1623873649321; Path=/; SameSite=None; Secure
+      X-Request-Id:
+      - GprRrV2yHx
+      Vary:
+      - accept-encoding
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 16 Jun 2021 20:00:49 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?><searchRetrieveResponse xmlns="http://www.loc.gov/zing/srw/">
+          <version>1.2</version>
+          <numberOfRecords>1</numberOfRecords>
+          <records>
+            <record>
+              <recordSchema>marcxml</recordSchema>
+              <recordPacking>xml</recordPacking>
+              <recordData>
+                <record xmlns="http://www.loc.gov/MARC21/slim">
+                  <leader>03348cam  2200541Ia 4500</leader>
+                  <controlfield tag="001">990014925090206761</controlfield>
+                  <controlfield tag="005">20210519003556.0</controlfield>
+                  <controlfield tag="008">070728s2007    enkb     b    001 0 eng d</controlfield>
+                  <datafield ind1=" " ind2=" " tag="020">
+                    <subfield code="a">9781841958811 :</subfield>
+                    <subfield code="c">$24.00</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="020">
+                    <subfield code="a">1841958816 :</subfield>
+                    <subfield code="c">$24.00</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="035">
+                    <subfield code="a">(MCM)001492509MIT01</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="035">
+                    <subfield code="a">(OCoLC)166367812</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="040">
+                    <subfield code="a">BTCTA</subfield>
+                    <subfield code="c">BTCTA</subfield>
+                    <subfield code="d">BAKER</subfield>
+                    <subfield code="d">YDXCP</subfield>
+                    <subfield code="d">OCO</subfield>
+                    <subfield code="d">CPL</subfield>
+                    <subfield code="d">YBM</subfield>
+                    <subfield code="d">BUR</subfield>
+                    <subfield code="d">TBS</subfield>
+                    <subfield code="d">MYG</subfield>
+                    <subfield code="d">OrLoB-B</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="043">
+                    <subfield code="a">nc-----</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="049">
+                    <subfield code="a">MYGG</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="4" tag="050">
+                    <subfield code="a">HD9259.B3.U523 2007b</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="092">
+                    <subfield code="a">338.1</subfield>
+                    <subfield code="b">C466b</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2=" " tag="100">
+                    <subfield code="a">Chapman, Peter,</subfield>
+                    <subfield code="d">1948-</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="0" tag="240">
+                    <subfield code="a">Jungle capitalists</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="0" tag="245">
+                    <subfield code="a">Bananas :</subfield>
+                    <subfield code="b">how the United Fruit Company shaped the world /</subfield>
+                    <subfield code="c">Peter Chapman.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="250">
+                    <subfield code="a">1st American ed.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="260">
+                    <subfield code="a">Edinburgh ;</subfield>
+                    <subfield code="a">New York :</subfield>
+                    <subfield code="b">Canongate ;</subfield>
+                    <subfield code="a">[Berkeley, Calif.?] :</subfield>
+                    <subfield code="b">Distributed by Publishers Group West,</subfield>
+                    <subfield code="c">c2007.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="300">
+                    <subfield code="a">xv, 224 p. :</subfield>
+                    <subfield code="b">map ;</subfield>
+                    <subfield code="c">21 cm.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="336">
+                    <subfield code="a">text</subfield>
+                    <subfield code="b">txt</subfield>
+                    <subfield code="2">rdacontent</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="337">
+                    <subfield code="a">unmediated</subfield>
+                    <subfield code="b">n</subfield>
+                    <subfield code="2">rdamedia</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="338">
+                    <subfield code="a">volume</subfield>
+                    <subfield code="b">nc</subfield>
+                    <subfield code="2">rdacarrier</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="500">
+                    <subfield code="a">Originally published as: Jungle capitalists.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="500">
+                    <subfield code="a">Map on lining papers.</subfield>
+                  </datafield>
+                  <datafield ind1="0" ind2="0" tag="505">
+                    <subfield code="g">1.</subfield>
+                    <subfield code="t">From the Memory of Men --</subfield>
+                    <subfield code="g">2.</subfield>
+                    <subfield code="t">Lament for a Dying Fruit --</subfield>
+                    <subfield code="g">3.</subfield>
+                    <subfield code="t">Roots of Empire --</subfield>
+                    <subfield code="g">4.</subfield>
+                    <subfield code="t">Monopoly --</subfield>
+                    <subfield code="g">5.</subfield>
+                    <subfield code="t">The Banana Man --</subfield>
+                    <subfield code="g">6.</subfield>
+                    <subfield code="t">Taming the Enclave --</subfield>
+                    <subfield code="g">7.</subfield>
+                    <subfield code="t">Banana Republics --</subfield>
+                    <subfield code="g">8.</subfield>
+                    <subfield code="t">On the Inside --</subfield>
+                    <subfield code="g">9.</subfield>
+                    <subfield code="t">Coup --</subfield>
+                    <subfield code="g">10.</subfield>
+                    <subfield code="t">'Betrayal' --</subfield>
+                    <subfield code="g">11.</subfield>
+                    <subfield code="t">Decline and Fall --</subfield>
+                    <subfield code="g">12.</subfield>
+                    <subfield code="t">Old and Dark Forces --</subfield>
+                    <subfield code="t">Epilogue: United Fruit World.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="504">
+                    <subfield code="a">Includes bibliographical references (p. 211-215) and index.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="520">
+                    <subfield code="a">In this exploration of corporate maneuvering and subterfuge, journalist Chapman shows how the importer United Fruit set the precedent for the institutionalized power and influence of today's multinational companies. This infamous company was arguably the most controversial global corporation ever--from the jungles of Costa Rica to the dramatic suicide of its CEO, who leapt from an office on the 44th floor of the Pan Am building in New York City. From the marketing of the banana as the first fast food, to the company's involvement in an invasion of Honduras, the Bay of Pigs crisis, and a bloody coup in Guatemala, Chapman weaves a tale of big business, political deceit, and outright violence to show how one company wreaked havoc in the "banana republics" of Central America, and how terrifyingly similar the age of United Fruit is to our age of rapid globalization.--From publisher description.</subfield>
+                  </datafield>
+                  <datafield ind1="2" ind2="0" tag="610">
+                    <subfield code="a">United Fruit Company</subfield>
+                    <subfield code="x">History.</subfield>
+                  </datafield>
+                  <datafield ind1="2" ind2="0" tag="610">
+                    <subfield code="a">United Fruit Company</subfield>
+                    <subfield code="x">Corrupt practices.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">Banana trade</subfield>
+                    <subfield code="z">Central America</subfield>
+                    <subfield code="x">History.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">Bananas</subfield>
+                    <subfield code="x">Social aspects.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">International business enterprises</subfield>
+                    <subfield code="x">Corrupt practices.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="651">
+                    <subfield code="a">Central America</subfield>
+                    <subfield code="x">History</subfield>
+                    <subfield code="y">1951-1979.</subfield>
+                  </datafield>
+                  <datafield ind1="4" ind2="0" tag="856">
+                    <subfield code="x">IAduringHaydenReno</subfield>
+                    <subfield code="3">Internet Archive</subfield>
+                    <subfield code="u">https://archive.org/details/bananashowunited00chap</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">jm080520</subfield>
+                    <subfield code="i">jm</subfield>
+                    <subfield code="d">080520</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">MARCIVEAUT</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">jm080520</subfield>
+                    <subfield code="i">jm</subfield>
+                    <subfield code="d">080520</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">Baker and Taylor</subfield>
+                    <subfield code="b">BTCP</subfield>
+                    <subfield code="n">BK0007364891</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">Baker &amp; Taylor</subfield>
+                    <subfield code="b">BKTY</subfield>
+                    <subfield code="c">24.00</subfield>
+                    <subfield code="d">18.00</subfield>
+                    <subfield code="i">1841958816</subfield>
+                    <subfield code="n">0007364891</subfield>
+                    <subfield code="s">active</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">YBP Library Services</subfield>
+                    <subfield code="b">YANK</subfield>
+                    <subfield code="n">2734445</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="949">
+                    <subfield code="4">IP</subfield>
+                    <subfield code="a">h</subfield>
+                    <subfield code="b">HUM</subfield>
+                    <subfield code="c">STACK</subfield>
+                    <subfield code="o">0</subfield>
+                    <subfield code="p">39080034192929</subfield>
+                    <subfield code="x">01</subfield>
+                    <subfield code="h">HD9259.B3.U523 2007b</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="961">
+                    <subfield code="a">Edinburgh ; Canongate ;</subfield>
+                    <subfield code="a">2007</subfield>
+                    <subfield code="a">enk</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="969">
+                    <subfield code="a">HD9259.B3.U523 2007b</subfield>
+                    <subfield code="a">166367812</subfield>
+                    <subfield code="a">9781841958811 :</subfield>
+                    <subfield code="a">1841958816 :</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="994">
+                    <subfield code="a">02</subfield>
+                    <subfield code="b">MYG</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="AVA">
+                    <subfield code="0">990014925090206761</subfield>
+                    <subfield code="8">224940810006761</subfield>
+                    <subfield code="a">01MIT_INST</subfield>
+                    <subfield code="b">HUM</subfield>
+                    <subfield code="c">Stacks</subfield>
+                    <subfield code="d">HD9259.B3.U523 2007b</subfield>
+                    <subfield code="e">available</subfield>
+                    <subfield code="f">1</subfield>
+                    <subfield code="g">0</subfield>
+                    <subfield code="j">STACK</subfield>
+                    <subfield code="k">0</subfield>
+                    <subfield code="p">1</subfield>
+                    <subfield code="q">Hayden Library</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="AVE">
+                    <subfield code="8">53404794090006761</subfield>
+                    <subfield code="e">Available</subfield>
+                    <subfield code="t">Internet Archive</subfield>
+                  </datafield>
+                </record>
+              </recordData>
+              <recordIdentifier>990014925090206761</recordIdentifier>
+              <recordPosition>1</recordPosition>
+            </record>
+          </records>
+          <extraResponseData xmlns:xb="http://www.exlibris.com/repository/search/xmlbeans/">
+            <xb:exact>true</xb:exact>
+            <xb:responseDate>2021-06-16T16:00:49-0400</xb:responseDate>
+          </extraResponseData>
+        </searchRetrieveResponse>
+  recorded_at: Wed, 16 Jun 2021 20:00:49 GMT
+- request:
+    method: get
+    uri: https://mit.alma.exlibrisgroup.com/view/sru/01MIT_INST?operation=searchRetrieve&query=alma.all_for_ui=001492509MIT01&recordSchema=marcxml&version=1.2
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - mit.alma.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Set-Cookie:
+      - JSESSIONID="8DE1AFB073739A886C4624ED633C75DC.app04.na06.prod.alma.dc01.hosted.exlibrisgroup.com:1801";
+        Version=1; Path=/; HttpOnly; SameSite=None; Secure
+      - X-Persist=a556d7ef198f1c1dd429ddf70584774a;Path=/;SameSite=None;Secure
+      - urm_se=1623874250202; Path=/; SameSite=None; Secure
+      - urm_st=1623873650202; Path=/; SameSite=None; Secure
+      X-Request-Id:
+      - G5EEOvTvsf
+      Vary:
+      - accept-encoding
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 16 Jun 2021 20:00:49 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?><searchRetrieveResponse xmlns="http://www.loc.gov/zing/srw/">
+          <version>1.2</version>
+          <numberOfRecords>1</numberOfRecords>
+          <records>
+            <record>
+              <recordSchema>marcxml</recordSchema>
+              <recordPacking>xml</recordPacking>
+              <recordData>
+                <record xmlns="http://www.loc.gov/MARC21/slim">
+                  <leader>03348cam  2200541Ia 4500</leader>
+                  <controlfield tag="001">990014925090206761</controlfield>
+                  <controlfield tag="005">20210519003556.0</controlfield>
+                  <controlfield tag="008">070728s2007    enkb     b    001 0 eng d</controlfield>
+                  <datafield ind1=" " ind2=" " tag="020">
+                    <subfield code="a">9781841958811 :</subfield>
+                    <subfield code="c">$24.00</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="020">
+                    <subfield code="a">1841958816 :</subfield>
+                    <subfield code="c">$24.00</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="035">
+                    <subfield code="a">(MCM)001492509MIT01</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="035">
+                    <subfield code="a">(OCoLC)166367812</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="040">
+                    <subfield code="a">BTCTA</subfield>
+                    <subfield code="c">BTCTA</subfield>
+                    <subfield code="d">BAKER</subfield>
+                    <subfield code="d">YDXCP</subfield>
+                    <subfield code="d">OCO</subfield>
+                    <subfield code="d">CPL</subfield>
+                    <subfield code="d">YBM</subfield>
+                    <subfield code="d">BUR</subfield>
+                    <subfield code="d">TBS</subfield>
+                    <subfield code="d">MYG</subfield>
+                    <subfield code="d">OrLoB-B</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="043">
+                    <subfield code="a">nc-----</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="049">
+                    <subfield code="a">MYGG</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="4" tag="050">
+                    <subfield code="a">HD9259.B3.U523 2007b</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="092">
+                    <subfield code="a">338.1</subfield>
+                    <subfield code="b">C466b</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2=" " tag="100">
+                    <subfield code="a">Chapman, Peter,</subfield>
+                    <subfield code="d">1948-</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="0" tag="240">
+                    <subfield code="a">Jungle capitalists</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="0" tag="245">
+                    <subfield code="a">Bananas :</subfield>
+                    <subfield code="b">how the United Fruit Company shaped the world /</subfield>
+                    <subfield code="c">Peter Chapman.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="250">
+                    <subfield code="a">1st American ed.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="260">
+                    <subfield code="a">Edinburgh ;</subfield>
+                    <subfield code="a">New York :</subfield>
+                    <subfield code="b">Canongate ;</subfield>
+                    <subfield code="a">[Berkeley, Calif.?] :</subfield>
+                    <subfield code="b">Distributed by Publishers Group West,</subfield>
+                    <subfield code="c">c2007.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="300">
+                    <subfield code="a">xv, 224 p. :</subfield>
+                    <subfield code="b">map ;</subfield>
+                    <subfield code="c">21 cm.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="336">
+                    <subfield code="a">text</subfield>
+                    <subfield code="b">txt</subfield>
+                    <subfield code="2">rdacontent</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="337">
+                    <subfield code="a">unmediated</subfield>
+                    <subfield code="b">n</subfield>
+                    <subfield code="2">rdamedia</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="338">
+                    <subfield code="a">volume</subfield>
+                    <subfield code="b">nc</subfield>
+                    <subfield code="2">rdacarrier</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="500">
+                    <subfield code="a">Originally published as: Jungle capitalists.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="500">
+                    <subfield code="a">Map on lining papers.</subfield>
+                  </datafield>
+                  <datafield ind1="0" ind2="0" tag="505">
+                    <subfield code="g">1.</subfield>
+                    <subfield code="t">From the Memory of Men --</subfield>
+                    <subfield code="g">2.</subfield>
+                    <subfield code="t">Lament for a Dying Fruit --</subfield>
+                    <subfield code="g">3.</subfield>
+                    <subfield code="t">Roots of Empire --</subfield>
+                    <subfield code="g">4.</subfield>
+                    <subfield code="t">Monopoly --</subfield>
+                    <subfield code="g">5.</subfield>
+                    <subfield code="t">The Banana Man --</subfield>
+                    <subfield code="g">6.</subfield>
+                    <subfield code="t">Taming the Enclave --</subfield>
+                    <subfield code="g">7.</subfield>
+                    <subfield code="t">Banana Republics --</subfield>
+                    <subfield code="g">8.</subfield>
+                    <subfield code="t">On the Inside --</subfield>
+                    <subfield code="g">9.</subfield>
+                    <subfield code="t">Coup --</subfield>
+                    <subfield code="g">10.</subfield>
+                    <subfield code="t">'Betrayal' --</subfield>
+                    <subfield code="g">11.</subfield>
+                    <subfield code="t">Decline and Fall --</subfield>
+                    <subfield code="g">12.</subfield>
+                    <subfield code="t">Old and Dark Forces --</subfield>
+                    <subfield code="t">Epilogue: United Fruit World.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="504">
+                    <subfield code="a">Includes bibliographical references (p. 211-215) and index.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="520">
+                    <subfield code="a">In this exploration of corporate maneuvering and subterfuge, journalist Chapman shows how the importer United Fruit set the precedent for the institutionalized power and influence of today's multinational companies. This infamous company was arguably the most controversial global corporation ever--from the jungles of Costa Rica to the dramatic suicide of its CEO, who leapt from an office on the 44th floor of the Pan Am building in New York City. From the marketing of the banana as the first fast food, to the company's involvement in an invasion of Honduras, the Bay of Pigs crisis, and a bloody coup in Guatemala, Chapman weaves a tale of big business, political deceit, and outright violence to show how one company wreaked havoc in the "banana republics" of Central America, and how terrifyingly similar the age of United Fruit is to our age of rapid globalization.--From publisher description.</subfield>
+                  </datafield>
+                  <datafield ind1="2" ind2="0" tag="610">
+                    <subfield code="a">United Fruit Company</subfield>
+                    <subfield code="x">History.</subfield>
+                  </datafield>
+                  <datafield ind1="2" ind2="0" tag="610">
+                    <subfield code="a">United Fruit Company</subfield>
+                    <subfield code="x">Corrupt practices.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">Banana trade</subfield>
+                    <subfield code="z">Central America</subfield>
+                    <subfield code="x">History.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">Bananas</subfield>
+                    <subfield code="x">Social aspects.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">International business enterprises</subfield>
+                    <subfield code="x">Corrupt practices.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="651">
+                    <subfield code="a">Central America</subfield>
+                    <subfield code="x">History</subfield>
+                    <subfield code="y">1951-1979.</subfield>
+                  </datafield>
+                  <datafield ind1="4" ind2="0" tag="856">
+                    <subfield code="x">IAduringHaydenReno</subfield>
+                    <subfield code="3">Internet Archive</subfield>
+                    <subfield code="u">https://archive.org/details/bananashowunited00chap</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">jm080520</subfield>
+                    <subfield code="i">jm</subfield>
+                    <subfield code="d">080520</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">MARCIVEAUT</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">jm080520</subfield>
+                    <subfield code="i">jm</subfield>
+                    <subfield code="d">080520</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">Baker and Taylor</subfield>
+                    <subfield code="b">BTCP</subfield>
+                    <subfield code="n">BK0007364891</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">Baker &amp; Taylor</subfield>
+                    <subfield code="b">BKTY</subfield>
+                    <subfield code="c">24.00</subfield>
+                    <subfield code="d">18.00</subfield>
+                    <subfield code="i">1841958816</subfield>
+                    <subfield code="n">0007364891</subfield>
+                    <subfield code="s">active</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">YBP Library Services</subfield>
+                    <subfield code="b">YANK</subfield>
+                    <subfield code="n">2734445</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="949">
+                    <subfield code="4">IP</subfield>
+                    <subfield code="a">h</subfield>
+                    <subfield code="b">HUM</subfield>
+                    <subfield code="c">STACK</subfield>
+                    <subfield code="o">0</subfield>
+                    <subfield code="p">39080034192929</subfield>
+                    <subfield code="x">01</subfield>
+                    <subfield code="h">HD9259.B3.U523 2007b</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="961">
+                    <subfield code="a">Edinburgh ; Canongate ;</subfield>
+                    <subfield code="a">2007</subfield>
+                    <subfield code="a">enk</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="969">
+                    <subfield code="a">HD9259.B3.U523 2007b</subfield>
+                    <subfield code="a">166367812</subfield>
+                    <subfield code="a">9781841958811 :</subfield>
+                    <subfield code="a">1841958816 :</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="994">
+                    <subfield code="a">02</subfield>
+                    <subfield code="b">MYG</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="AVA">
+                    <subfield code="0">990014925090206761</subfield>
+                    <subfield code="8">224940810006761</subfield>
+                    <subfield code="a">01MIT_INST</subfield>
+                    <subfield code="b">HUM</subfield>
+                    <subfield code="c">Stacks</subfield>
+                    <subfield code="d">HD9259.B3.U523 2007b</subfield>
+                    <subfield code="e">available</subfield>
+                    <subfield code="f">1</subfield>
+                    <subfield code="g">0</subfield>
+                    <subfield code="j">STACK</subfield>
+                    <subfield code="k">0</subfield>
+                    <subfield code="p">1</subfield>
+                    <subfield code="q">Hayden Library</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="AVE">
+                    <subfield code="8">53404794090006761</subfield>
+                    <subfield code="e">Available</subfield>
+                    <subfield code="t">Internet Archive</subfield>
+                  </datafield>
+                </record>
+              </recordData>
+              <recordIdentifier>990014925090206761</recordIdentifier>
+              <recordPosition>1</recordPosition>
+            </record>
+          </records>
+          <extraResponseData xmlns:xb="http://www.exlibris.com/repository/search/xmlbeans/">
+            <xb:exact>true</xb:exact>
+            <xb:responseDate>2021-06-16T16:00:50-0400</xb:responseDate>
+          </extraResponseData>
+        </searchRetrieveResponse>
+  recorded_at: Wed, 16 Jun 2021 20:00:50 GMT
+- request:
+    method: get
+    uri: https://mit.alma.exlibrisgroup.com/view/sru/01MIT_INST?operation=searchRetrieve&query=alma.all_for_ui=001492509MIT01&recordSchema=marcxml&version=1.2
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - mit.alma.exlibrisgroup.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Set-Cookie:
+      - JSESSIONID="737DD493D3DB5C656CBB45634458BF74.app02.na06.prod.alma.dc01.hosted.exlibrisgroup.com:1801";
+        Version=1; Path=/; HttpOnly; SameSite=None; Secure
+      - X-Persist=c7d4f8ca7386afa6ced80a46b25687b6;Path=/;SameSite=None;Secure
+      - urm_se=1623874251206; Path=/; SameSite=None; Secure
+      - urm_st=1623873651206; Path=/; SameSite=None; Secure
+      X-Request-Id:
+      - oKeC6fIuHJ
+      Vary:
+      - accept-encoding
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 16 Jun 2021 20:00:51 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?><searchRetrieveResponse xmlns="http://www.loc.gov/zing/srw/">
+          <version>1.2</version>
+          <numberOfRecords>1</numberOfRecords>
+          <records>
+            <record>
+              <recordSchema>marcxml</recordSchema>
+              <recordPacking>xml</recordPacking>
+              <recordData>
+                <record xmlns="http://www.loc.gov/MARC21/slim">
+                  <leader>03348cam  2200541Ia 4500</leader>
+                  <controlfield tag="001">990014925090206761</controlfield>
+                  <controlfield tag="005">20210519003556.0</controlfield>
+                  <controlfield tag="008">070728s2007    enkb     b    001 0 eng d</controlfield>
+                  <datafield ind1=" " ind2=" " tag="020">
+                    <subfield code="a">9781841958811 :</subfield>
+                    <subfield code="c">$24.00</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="020">
+                    <subfield code="a">1841958816 :</subfield>
+                    <subfield code="c">$24.00</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="035">
+                    <subfield code="a">(MCM)001492509MIT01</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="035">
+                    <subfield code="a">(OCoLC)166367812</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="040">
+                    <subfield code="a">BTCTA</subfield>
+                    <subfield code="c">BTCTA</subfield>
+                    <subfield code="d">BAKER</subfield>
+                    <subfield code="d">YDXCP</subfield>
+                    <subfield code="d">OCO</subfield>
+                    <subfield code="d">CPL</subfield>
+                    <subfield code="d">YBM</subfield>
+                    <subfield code="d">BUR</subfield>
+                    <subfield code="d">TBS</subfield>
+                    <subfield code="d">MYG</subfield>
+                    <subfield code="d">OrLoB-B</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="043">
+                    <subfield code="a">nc-----</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="049">
+                    <subfield code="a">MYGG</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="4" tag="050">
+                    <subfield code="a">HD9259.B3.U523 2007b</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="092">
+                    <subfield code="a">338.1</subfield>
+                    <subfield code="b">C466b</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2=" " tag="100">
+                    <subfield code="a">Chapman, Peter,</subfield>
+                    <subfield code="d">1948-</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="0" tag="240">
+                    <subfield code="a">Jungle capitalists</subfield>
+                  </datafield>
+                  <datafield ind1="1" ind2="0" tag="245">
+                    <subfield code="a">Bananas :</subfield>
+                    <subfield code="b">how the United Fruit Company shaped the world /</subfield>
+                    <subfield code="c">Peter Chapman.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="250">
+                    <subfield code="a">1st American ed.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="260">
+                    <subfield code="a">Edinburgh ;</subfield>
+                    <subfield code="a">New York :</subfield>
+                    <subfield code="b">Canongate ;</subfield>
+                    <subfield code="a">[Berkeley, Calif.?] :</subfield>
+                    <subfield code="b">Distributed by Publishers Group West,</subfield>
+                    <subfield code="c">c2007.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="300">
+                    <subfield code="a">xv, 224 p. :</subfield>
+                    <subfield code="b">map ;</subfield>
+                    <subfield code="c">21 cm.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="336">
+                    <subfield code="a">text</subfield>
+                    <subfield code="b">txt</subfield>
+                    <subfield code="2">rdacontent</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="337">
+                    <subfield code="a">unmediated</subfield>
+                    <subfield code="b">n</subfield>
+                    <subfield code="2">rdamedia</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="338">
+                    <subfield code="a">volume</subfield>
+                    <subfield code="b">nc</subfield>
+                    <subfield code="2">rdacarrier</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="500">
+                    <subfield code="a">Originally published as: Jungle capitalists.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="500">
+                    <subfield code="a">Map on lining papers.</subfield>
+                  </datafield>
+                  <datafield ind1="0" ind2="0" tag="505">
+                    <subfield code="g">1.</subfield>
+                    <subfield code="t">From the Memory of Men --</subfield>
+                    <subfield code="g">2.</subfield>
+                    <subfield code="t">Lament for a Dying Fruit --</subfield>
+                    <subfield code="g">3.</subfield>
+                    <subfield code="t">Roots of Empire --</subfield>
+                    <subfield code="g">4.</subfield>
+                    <subfield code="t">Monopoly --</subfield>
+                    <subfield code="g">5.</subfield>
+                    <subfield code="t">The Banana Man --</subfield>
+                    <subfield code="g">6.</subfield>
+                    <subfield code="t">Taming the Enclave --</subfield>
+                    <subfield code="g">7.</subfield>
+                    <subfield code="t">Banana Republics --</subfield>
+                    <subfield code="g">8.</subfield>
+                    <subfield code="t">On the Inside --</subfield>
+                    <subfield code="g">9.</subfield>
+                    <subfield code="t">Coup --</subfield>
+                    <subfield code="g">10.</subfield>
+                    <subfield code="t">'Betrayal' --</subfield>
+                    <subfield code="g">11.</subfield>
+                    <subfield code="t">Decline and Fall --</subfield>
+                    <subfield code="g">12.</subfield>
+                    <subfield code="t">Old and Dark Forces --</subfield>
+                    <subfield code="t">Epilogue: United Fruit World.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="504">
+                    <subfield code="a">Includes bibliographical references (p. 211-215) and index.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="520">
+                    <subfield code="a">In this exploration of corporate maneuvering and subterfuge, journalist Chapman shows how the importer United Fruit set the precedent for the institutionalized power and influence of today's multinational companies. This infamous company was arguably the most controversial global corporation ever--from the jungles of Costa Rica to the dramatic suicide of its CEO, who leapt from an office on the 44th floor of the Pan Am building in New York City. From the marketing of the banana as the first fast food, to the company's involvement in an invasion of Honduras, the Bay of Pigs crisis, and a bloody coup in Guatemala, Chapman weaves a tale of big business, political deceit, and outright violence to show how one company wreaked havoc in the "banana republics" of Central America, and how terrifyingly similar the age of United Fruit is to our age of rapid globalization.--From publisher description.</subfield>
+                  </datafield>
+                  <datafield ind1="2" ind2="0" tag="610">
+                    <subfield code="a">United Fruit Company</subfield>
+                    <subfield code="x">History.</subfield>
+                  </datafield>
+                  <datafield ind1="2" ind2="0" tag="610">
+                    <subfield code="a">United Fruit Company</subfield>
+                    <subfield code="x">Corrupt practices.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">Banana trade</subfield>
+                    <subfield code="z">Central America</subfield>
+                    <subfield code="x">History.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">Bananas</subfield>
+                    <subfield code="x">Social aspects.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="650">
+                    <subfield code="a">International business enterprises</subfield>
+                    <subfield code="x">Corrupt practices.</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="651">
+                    <subfield code="a">Central America</subfield>
+                    <subfield code="x">History</subfield>
+                    <subfield code="y">1951-1979.</subfield>
+                  </datafield>
+                  <datafield ind1="4" ind2="0" tag="856">
+                    <subfield code="x">IAduringHaydenReno</subfield>
+                    <subfield code="3">Internet Archive</subfield>
+                    <subfield code="u">https://archive.org/details/bananashowunited00chap</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">jm080520</subfield>
+                    <subfield code="i">jm</subfield>
+                    <subfield code="d">080520</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">MARCIVEAUT</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="910">
+                    <subfield code="a">jm080520</subfield>
+                    <subfield code="i">jm</subfield>
+                    <subfield code="d">080520</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">Baker and Taylor</subfield>
+                    <subfield code="b">BTCP</subfield>
+                    <subfield code="n">BK0007364891</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">Baker &amp; Taylor</subfield>
+                    <subfield code="b">BKTY</subfield>
+                    <subfield code="c">24.00</subfield>
+                    <subfield code="d">18.00</subfield>
+                    <subfield code="i">1841958816</subfield>
+                    <subfield code="n">0007364891</subfield>
+                    <subfield code="s">active</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="938">
+                    <subfield code="a">YBP Library Services</subfield>
+                    <subfield code="b">YANK</subfield>
+                    <subfield code="n">2734445</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2="0" tag="949">
+                    <subfield code="4">IP</subfield>
+                    <subfield code="a">h</subfield>
+                    <subfield code="b">HUM</subfield>
+                    <subfield code="c">STACK</subfield>
+                    <subfield code="o">0</subfield>
+                    <subfield code="p">39080034192929</subfield>
+                    <subfield code="x">01</subfield>
+                    <subfield code="h">HD9259.B3.U523 2007b</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="961">
+                    <subfield code="a">Edinburgh ; Canongate ;</subfield>
+                    <subfield code="a">2007</subfield>
+                    <subfield code="a">enk</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="969">
+                    <subfield code="a">HD9259.B3.U523 2007b</subfield>
+                    <subfield code="a">166367812</subfield>
+                    <subfield code="a">9781841958811 :</subfield>
+                    <subfield code="a">1841958816 :</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="994">
+                    <subfield code="a">02</subfield>
+                    <subfield code="b">MYG</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="AVA">
+                    <subfield code="0">990014925090206761</subfield>
+                    <subfield code="8">224940810006761</subfield>
+                    <subfield code="a">01MIT_INST</subfield>
+                    <subfield code="b">HUM</subfield>
+                    <subfield code="c">Stacks</subfield>
+                    <subfield code="d">HD9259.B3.U523 2007b</subfield>
+                    <subfield code="e">available</subfield>
+                    <subfield code="f">1</subfield>
+                    <subfield code="g">0</subfield>
+                    <subfield code="j">STACK</subfield>
+                    <subfield code="k">0</subfield>
+                    <subfield code="p">1</subfield>
+                    <subfield code="q">Hayden Library</subfield>
+                  </datafield>
+                  <datafield ind1=" " ind2=" " tag="AVE">
+                    <subfield code="8">53404794090006761</subfield>
+                    <subfield code="e">Available</subfield>
+                    <subfield code="t">Internet Archive</subfield>
+                  </datafield>
+                </record>
+              </recordData>
+              <recordIdentifier>990014925090206761</recordIdentifier>
+              <recordPosition>1</recordPosition>
+            </record>
+          </records>
+          <extraResponseData xmlns:xb="http://www.exlibris.com/repository/search/xmlbeans/">
+            <xb:exact>true</xb:exact>
+            <xb:responseDate>2021-06-16T16:00:51-0400</xb:responseDate>
+          </extraResponseData>
+        </searchRetrieveResponse>
+  recorded_at: Wed, 16 Jun 2021 20:00:51 GMT
+recorded_with: VCR 6.0.0
