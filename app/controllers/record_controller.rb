@@ -24,6 +24,11 @@ class RecordController < ApplicationController
   # See https://github.com/ebsco/edsapi-ruby/ . The page which gives all the
   # affordances of the record object is lib/ebsco/eds/record.rb.
   def record
+    if Flipflop.enabled?(:primo_redirects)
+      primo_redirect 
+      return
+    end
+
     with_session_error_handling { fetch_eds_record }
     if @record
       @keywords = extract_eds_text(@record.eds_author_supplied_keywords)
@@ -34,11 +39,7 @@ class RecordController < ApplicationController
       # want.
       @previous = params[:previous]
       rainbowify? if Flipflop.enabled?(:pride)
-      if Flipflop.enabled?(:primo_redirects)
-        primo_redirect
-      else
-        render 'record'
-      end
+      render 'record'
     else
       render 'errors/eds_session_error'
     end
@@ -46,7 +47,10 @@ class RecordController < ApplicationController
 
   # this method should never be cached because we need a fresh expiring URL
   def direct_link
-    primo_redirect if Flipflop.enabled?(:primo_redirects)
+    if Flipflop.enabled?(:primo_redirects)
+      primo_redirect 
+      return
+    end
 
     fetch_eds_record
     redirect_to @record.fulltext_link[:url]
