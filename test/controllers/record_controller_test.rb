@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class RecordControllerTest < ActionDispatch::IntegrationTest
+  def setup
+    @test_strategy = Flipflop::FeatureSet.current.test!
+  end
+
   test 'should get record' do
     VCR.use_cassette('record: bananas', allow_playback_repeats: true) do
       get record_url('cat00916a', 'mit.001492509')
@@ -109,7 +113,7 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'cache_path for pride enabled' do
-    Flipflop.stubs(:enabled?).returns(true)
+    @test_strategy.switch!(:pride, true)
     VCR.use_cassette('record: bananas', allow_playback_repeats: true) do
       get record_url('cat00916a', 'mit.001492509')
       assert_equal(@controller.send(:cache_path),
@@ -133,5 +137,49 @@ class RecordControllerTest < ActionDispatch::IntegrationTest
       get record_url('phl', 'PHL2218518')
       assert_includes(@response.body, 'The requested record was not found.')
     end
+  end
+
+  test 'redirects full record to Primo record if available' do
+    @test_strategy.switch!(:primo_redirects, true)
+    VCR.use_cassette('sru book', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
+      assert_response 308
+      assert_redirected_to 'https://mit.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma990014925090206761&vid=FAKE_PRIMO_VID'
+    end
+    VCR.use_cassette('sru journal', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'cat00916a', an: 'mit.000292123' }
+      assert_response 308
+      assert_redirected_to 'https://mit.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma990002921230206761&vid=FAKE_PRIMO_VID'
+    end
+  end
+
+  test 'redirects direct link to Primo record if available' do
+    @test_strategy.switch!(:primo_redirects, true)
+    VCR.use_cassette('sru book', allow_playback_repeats: true) do
+      get record_direct_link_url, params: { db_source: 'cat00916a', an: 'mit.001492509' }
+      assert_response 308
+      assert_redirected_to 'https://mit.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma990014925090206761&vid=FAKE_PRIMO_VID'
+    end
+    VCR.use_cassette('sru journal', allow_playback_repeats: true) do
+      get record_direct_link_url, params: { db_source: 'cat00916a', an: 'mit.000292123' }
+      assert_response 308
+      assert_redirected_to 'https://mit.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma990002921230206761&vid=FAKE_PRIMO_VID'
+    end
+  end
+
+  test 'redirects full record to splash page if Primo record is not available' do
+    @test_strategy.switch!(:primo_redirects, true)
+    VCR.use_cassette('sru article', allow_playback_repeats: true) do
+      get record_url, params: { db_source: 'aci', an: '123877356' }
+      assert_response 308
+      assert_redirected_to ENV.fetch('PRIMO_SPLASH_PAGE')
+    end
+  end
+
+  test 'redirects direct link to to splash page if Primo record is not available' do
+    @test_strategy.switch!(:primo_redirects, true)
+    get record_direct_link_url, params: { db_source: 'aci', an: '123877356' }
+    assert_response 308
+    assert_redirected_to ENV.fetch('PRIMO_SPLASH_PAGE')
   end
 end

@@ -29,8 +29,10 @@ Rails.application.configure do
   ENV['ALEPH_HINT_SOURCE'] = 'https://fake.example.com/s/fake/getserial_mini.xml?dl=1'
   ENV['FULL_RECORD_TOGGLE_BUTTON'] = 'true'
 
+  ENV['ALMA_SRU'] = 'https://mit.alma.exlibrisgroup.com/view/sru/01MIT_INST?version=1.2&operation=searchRetrieve&recordSchema=marcxml&query=alma.all_for_ui='
   ENV['EXL_INST_ID'] = '01MIT_INST'
   ENV['PRIMO_SEARCH'] = 'true'
+  ENV['PRIMO_REDIRECTS'] = 'false'
   ENV['PRIMO_API_URL'] = 'https://another_fake_server.example.com/v1'
   ENV['PRIMO_API_KEY'] = 'FAKE_PRIMO_API_KEY'
   ENV['PRIMO_VID'] = 'FAKE_PRIMO_VID'
@@ -38,6 +40,7 @@ Rails.application.configure do
   ENV['PRIMO_BOOK_SCOPE'] = 'FAKE_PRIMO_BOOK_SCOPE'
   ENV['PRIMO_ARTICLE_SCOPE'] = 'FAKE_PRIMO_ARTICLE_SCOPE'
   ENV['PRIMO_MAIN_VIEW_TAB'] = 'all'
+  ENV['PRIMO_SPLASH_PAGE'] = 'https://libraries.mit.edu/news/library-platform-before/32066/'
   ENV['MIT_PRIMO_URL'] = 'https://mit.primo.exlibrisgroup.com'
   ENV['SYNDETICS_PRIMO_URL'] = 'https://syndetics.com/index.php?client=primo'
 

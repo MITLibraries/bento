@@ -50,4 +50,8 @@ Flipflop.configure do
   feature :primo_search,
     default: ActiveModel::Type::Boolean.new.cast(ENV.fetch('PRIMO_SEARCH')),
     description: 'Returns results from Primo Search API instead of EDS'
+
+  feature :primo_redirects,
+    default: ActiveModel::Type::Boolean.new.cast(ENV.fetch('PRIMO_REDIRECTS')),
+    description: 'Determines if Bento full record links should be redirected to Primo'
 end

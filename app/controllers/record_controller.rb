@@ -24,6 +24,11 @@ class RecordController < ApplicationController
   # See https://github.com/ebsco/edsapi-ruby/ . The page which gives all the
   # affordances of the record object is lib/ebsco/eds/record.rb.
   def record
+    if Flipflop.enabled?(:primo_redirects)
+      primo_redirect 
+      return
+    end
+
     with_session_error_handling { fetch_eds_record }
     if @record
       @keywords = extract_eds_text(@record.eds_author_supplied_keywords)
@@ -42,6 +47,11 @@ class RecordController < ApplicationController
 
   # this method should never be cached because we need a fresh expiring URL
   def direct_link
+    if Flipflop.enabled?(:primo_redirects)
+      primo_redirect 
+      return
+    end
+
     fetch_eds_record
     redirect_to @record.fulltext_link[:url]
   end
@@ -138,5 +148,32 @@ class RecordController < ApplicationController
     return stuff if stuff.is_a? Array
     parsed_html = Nokogiri::HTML.fragment(CGI.unescapeHTML(stuff))
     parsed_html.search('searchlink').map(&:text).map(&:strip)
+  end
+
+  def alma_sru
+    return unless params[:an].start_with?('mit')
+    alma_system_id = params[:an].split('.').last.concat('MIT01')
+    url = ENV.fetch('ALMA_SRU') + alma_system_id
+    response = HTTP.get(url)
+    Nokogiri::XML.parse(response)
+  end
+
+  def alma_docid
+    return if alma_sru.blank?
+    records = alma_sru.xpath('//srw:searchRetrieveResponse/srw:records/srw:record', 'srw' => 'http://www.loc.gov/zing/srw/')
+
+    # We should attempt a redirect iff there is one record
+    return unless records.length == 1
+    records.xpath('//srw:recordIdentifier', 'srw' => 'http://www.loc.gov/zing/srw/').text().prepend('alma')
+  end
+
+  def primo_redirect
+    redirect_url = if alma_docid.present?
+                     [ENV.fetch('MIT_PRIMO_URL'), '/discovery/fulldisplay?docid=', 
+                      alma_docid, '&vid=', ENV.fetch('PRIMO_VID')].join('')
+                   else
+                     ENV.fetch('PRIMO_SPLASH_PAGE')
+                   end
+    redirect_to redirect_url, status: 308
   end
 end

@@ -68,6 +68,13 @@ custom hint metadata.
 - `GOOGLE_CUSTOM_SEARCH_ID`: your Google Custom Search engine ID
 - `MAX_AUTHORS`: the maximum number of authors displayed in any record.
   If exceeded, 'et al' will be appended after this number.
+- `ALMA_SRU`: URL for Alma SRU query on alma.all_for_ui param. This is 
+used to determine whether to redirect Bento full record links to Primo 
+full records.
+- `PRIMO_REDIRECTS`: toggles feature flag to enable Primo redirects for 
+Bento full records.
+- `PRIMO_SPLASH_PAGE`: URL for Libraries splash page explaining the 
+transition from EDS to Primo.
 - `PRIMO_SEARCH`: toggles feature flag to use Primo instead of EDS.
 - `PRIMO_API_KEY`: the Primo API key.
 - `PRIMO_API_URL`: the server URL for the Primo API.

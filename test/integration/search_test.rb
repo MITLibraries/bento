@@ -1,6 +1,13 @@
 require 'test_helper'
 
 class SearchTest < ActionDispatch::IntegrationTest
+  def setup
+    @test_strategy = Flipflop::FeatureSet.current.test!
+  end
+  def teardown
+    @test_strategy = Flipflop::FeatureSet.current.test!
+  end
+
   test 'blank search term redirects to search' do
     get '/search/bento?q=%20'
     follow_redirect!
@@ -120,7 +127,7 @@ class SearchTest < ActionDispatch::IntegrationTest
   test 'local full_record_link when enabled' do
     VCR.use_cassette('popcorn articles',
                      allow_playback_repeats: true) do
-      get '/toggle?feature=local_full_record' # enable feature
+      @test_strategy.switch!(:local_full_record, true) # enable feature
       get '/search/search_boxed?q=popcorn&target=articles'
       assert_response :success
       assert_select('a.bento-link') do |value|

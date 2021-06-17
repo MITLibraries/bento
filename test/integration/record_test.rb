@@ -1,6 +1,13 @@
 require 'test_helper'
 
 class RecordTest < ActionDispatch::IntegrationTest
+  def setup
+    @test_strategy = Flipflop::FeatureSet.current.test!
+  end
+  def teardown
+    @test_strategy = Flipflop::FeatureSet.current.test!
+  end
+
   test 'article title is shown' do
     VCR.use_cassette('record: article', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'aci', an: '123877356' }
@@ -287,7 +294,7 @@ class RecordTest < ActionDispatch::IntegrationTest
   end
 
   test 'should be able to display rainbows' do
-    get '/toggle/?feature=pride'
+    @test_strategy.switch!(:pride, true)
     VCR.use_cassette('record: rainbows', allow_playback_repeats: true) do
       get record_url, params: { db_source: 'cat00916a', an: 'mit.002613248' }
       assert_response :success
