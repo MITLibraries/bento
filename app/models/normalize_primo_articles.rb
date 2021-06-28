@@ -43,10 +43,24 @@ class NormalizePrimoArticles
   # disambiguation page.
   def openurl
     return unless @record['delivery']['almaOpenurl']
-    primo_openurl = ['https://mit.primo.exlibrisgroup.com/discovery/openurl?institution=',
-                     ENV['EXL_INST_ID'], '&vid=', ENV['PRIMO_VID'],'&'].join('')
-    link_resolver_url = @record['delivery']['almaOpenurl'].gsub('https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?',
-                                                                primo_openurl)
+
+    # It's possible we'll encounter records that use a different server, 
+    # so we want to test against our expected server to guard against 
+    # malformed URLs. This assumes all URL strings begin with https://.
+    openurl_server = ENV['ALMA_OPENURL'][8,4]
+    record_openurl_server = @record['delivery']['almaOpenurl'][8,4]
+    if openurl_server == record_openurl_server
+      primo_openurl = [ENV['MIT_PRIMO_URL'], '/discovery/openurl?institution=',
+                       ENV['EXL_INST_ID'], '&vid=', ENV['PRIMO_VID'], '&'].join('')
+      link_resolver_url = @record['delivery']['almaOpenurl'].gsub(ENV['ALMA_OPENURL'],
+                                                                  primo_openurl)
+    else
+      Rails.logger.warn 'Alma openurl server mismatch. Expected ' +
+                         openurl_server + ', but received ' + 
+                         record_openurl_server + '. (record ID: ' + 
+                         @record['pnx']['control']['recordid'].join('') + ')'
+      link_resolver_url = @record['delivery']['almaOpenurl']
+    end
     [link_resolver_url, '&u.ignore_date_coverage=true'].join('')
   end
 end
