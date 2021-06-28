@@ -29,6 +29,7 @@ Rails.application.configure do
   ENV['ALEPH_HINT_SOURCE'] = 'https://fake.example.com/s/fake/getserial_mini.xml?dl=1'
   ENV['FULL_RECORD_TOGGLE_BUTTON'] = 'true'
 
+  ENV['ALMA_OPENURL'] = 'https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?'
   ENV['ALMA_SRU'] = 'https://mit.alma.exlibrisgroup.com/view/sru/01MIT_INST?version=1.2&operation=searchRetrieve&recordSchema=marcxml&query=alma.all_for_ui='
   ENV['EXL_INST_ID'] = '01MIT_INST'
   ENV['PRIMO_SEARCH'] = 'true'

@@ -68,6 +68,7 @@ custom hint metadata.
 - `GOOGLE_CUSTOM_SEARCH_ID`: your Google Custom Search engine ID
 - `MAX_AUTHORS`: the maximum number of authors displayed in any record.
   If exceeded, 'et al' will be appended after this number.
+- `ALMA_OPENURL`: base URL for Alma openurls found in CDI records.
 - `ALMA_SRU`: URL for Alma SRU query on alma.all_for_ui param. This is 
 used to determine whether to redirect Bento full record links to Primo 
 full records.
