@@ -80,11 +80,6 @@ class SearchEds
       json_result.dig('ErrorDescription') == 'Session Token Invalid'
   end
 
-  # The timeout value is multiplied by 3 in http.rb so we divide by 3
-  # here to end up with the timeout value we actually want.
-  # This is because we are using a global (per request) timeout. It
-  # is possible to instead separate out each phase of the request for
-  # distinct timeouts if we find that is better.
   # https://github.com/httprb/http/wiki/Timeouts
   def http_timeout
     t = if ENV['EDS_TIMEOUT'].present?
