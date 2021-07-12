@@ -40,8 +40,9 @@ class NormalizePrimoBooks
   def subject_link(subj)
     # We need to remove hyphens to accommodate Primo's subject browse
     subj = subj.split('--').map { |el| el.strip }.join(' ') if subj.include?('--')
-    [ENV['MIT_PRIMO_URL'], '/discovery/browse?browseQuery=', 
-     subj, '&browseScope=subject.1&vid=', ENV['PRIMO_VID']].join('')
+    [ENV['MIT_PRIMO_URL'], '/discovery/search?query=subject,exact,', 
+     subj, '&tab=', ENV['PRIMO_MAIN_VIEW_TAB'], '&search_scope=all&vid=', 
+     ENV['PRIMO_VID']].join('')
   end
 
   # Since we are displaying RTA based on the best location, this is the 

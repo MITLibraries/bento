@@ -91,7 +91,7 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
   test 'constructs subjects with links' do
     result = popcorn_books['results'].first
     assert_equal ["Geography",
-                  "https://mit.primo.exlibrisgroup.com/discovery/browse?browseQuery=Geography&browseScope=subject.1&vid=FAKE_PRIMO_VID"],
+                  "https://mit.primo.exlibrisgroup.com/discovery/search?query=subject,exact,Geography&tab=all&search_scope=all&vid=FAKE_PRIMO_VID"],
                   result.subjects.first
   end
 
@@ -104,7 +104,7 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
   test 'removes hyphens from subject links' do
     result = physical_book['results'].first
     assert_equal ['Linguists -- United States',
-                  'https://mit.primo.exlibrisgroup.com/discovery/browse?browseQuery=Linguists United States&browseScope=subject.1&vid=FAKE_PRIMO_VID'],
+                  'https://mit.primo.exlibrisgroup.com/discovery/search?query=subject,exact,Linguists United States&tab=all&search_scope=all&vid=FAKE_PRIMO_VID'],
                  result.subjects.second
   end
 
