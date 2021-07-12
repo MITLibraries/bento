@@ -102,6 +102,7 @@ to construct thumbnail URLs.
   `item-global`. Defaults to `item-hold-request`.
 - `EDS_TIMEOUT`: value to override the 6 second default for EDS timeout
 - `TIMDEX_TIMEOUT`: value to override the 6 second default for TIMDEX timeout.
+- `PRIMO_TIMEOUT`: value to override the 6 second default for Primo timeout
 - `EDS_GEM_HOSTS_LIST`: override list of hosts to use for our full record views
   defaults to the (theoretically) load balanced EDS API endpoint. The protocol
   is not included, so use `example.com` instead of `https://example.com`
