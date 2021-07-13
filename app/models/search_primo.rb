@@ -21,7 +21,8 @@ class SearchPrimo
   end
 
   def search(term, scope, per_page)
-    result = @primo_http.headers(accept: 'application/json')
+    result = @primo_http.timeout(http_timeout)
+                        .headers(accept: 'application/json')
                         .get(search_url(term, scope, per_page))
 
     raise "Primo Error Detected: #{result.status}" unless result.status == 200
@@ -42,5 +43,15 @@ class SearchPrimo
     [PRIMO_API_URL, '/search?q=any,contains,', clean_term(term), '&vid=', 
       PRIMO_VID, '&tab=', PRIMO_TAB, '&scope=', scope, '&limit=', 
       per_page, '&apikey=', PRIMO_API_KEY].join('')
+  end
+
+  # https://github.com/httprb/http/wiki/Timeouts
+  def http_timeout
+    t = if ENV['PRIMO_TIMEOUT'].present?
+          ENV['PRIMO_TIMEOUT'].to_f
+        else
+          6
+        end
+    t
   end
 end

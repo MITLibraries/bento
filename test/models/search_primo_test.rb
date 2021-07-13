@@ -1,6 +1,14 @@
 require 'test_helper'
 
 class SearchPrimoTest < ActiveSupport::TestCase
+  def setup
+    ENV['PRIMO_TIMEOUT'] = nil
+  end
+
+  def after
+    ENV['PRIMO_TIMEOUT'] = nil
+  end
+
   test 'can call Primo API' do
     VCR.use_cassette('popcorn primo books', allow_playback_repeats: true) do
       query = SearchPrimo.new.search('popcorn', ENV['PRIMO_BOOK_SCOPE'], 5)
@@ -46,5 +54,15 @@ class SearchPrimoTest < ActiveSupport::TestCase
         SearchPrimo.new.search('popcorn', ENV['PRIMO_BOOK_SCOPE'], 5)
       end
     end
+  end
+
+  test 'can change timeout value' do
+    assert_equal(6, SearchPrimo.new.send(:http_timeout))
+
+    ENV['PRIMO_TIMEOUT'] = '0.1'
+    assert_equal(0.1, SearchPrimo.new.send(:http_timeout))
+
+    ENV['PRIMO_TIMEOUT'] = '3'
+    assert_equal(3, SearchPrimo.new.send(:http_timeout))
   end
 end
