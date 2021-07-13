@@ -25,11 +25,24 @@ class SearchTimdex
   # @return [Hash] A Hash with search metadata and an Array of {Result}s
   def search(term)
     @query = '{"query":"{search(searchterm: \"' + clean_term(term) + '\", source: \"MIT ArchivesSpace\") {hits records {sourceLink title identifier publicationDate physicalDescription summary contributors { value } } } }"}'
-    results = @timdex_http.post(TIMDEX_URL, :body => @query)
+    results = @timdex_http.timeout(http_timeout)
+                          .post(TIMDEX_URL, :body => @query)
     json_result = JSON.parse(results.to_s)
   end
 
   def clean_term(term)
     term.gsub('"', '\'')
+  end
+
+  private
+
+  # https://github.com/httprb/http/wiki/Timeouts
+  def http_timeout
+    t = if ENV['TIMDEX_TIMEOUT'].present?
+          ENV['TIMDEX_TIMEOUT'].to_f
+        else
+          6
+        end
+    t
   end
 end
