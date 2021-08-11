@@ -1,8 +1,9 @@
 # Tranforms results from {SearchPrimo} into normalized {Result}s
 # for metadata that is relevant for book type results
 class NormalizePrimoBooks
-  def initialize(record)
+  def initialize(record, query)
     @record = record
+    @query = query
   end
 
   def book_metadata(result)
@@ -13,6 +14,7 @@ class NormalizePrimoBooks
     result.openurl = openurl
     result.availability = best_availability
     result.other_availability = other_availability?
+    result.dedup_url = dedup_url
     result
   end
 
@@ -77,5 +79,30 @@ class NormalizePrimoBooks
       next if holding == @record['delivery']['bestlocation']
       holding['availabilityStatus'] == 'available'
     end
+  end
+
+
+  # FRBR type '5' means the record is frbrized. and '6' means it isn't:
+  # https://knowledge.exlibrisgroup.com/Primo/Knowledge_Articles/Primo_Search_API_-_how_to_get_FRBR_Group_members_after_a_search
+  def frbrized?
+    return unless @record['pnx']['facets']
+    return unless @record['pnx']['facets']['frbrtype']
+    @record['pnx']['facets']['frbrtype'].join('') == '5'
+  end
+
+  def dedup_url
+    return unless frbrized?
+    return unless @record['pnx']['facets']['frbrgroupid'] && @record['pnx']['facets']['frbrgroupid'].length == 1
+    frbr_group_id = @record['pnx']['facets']['frbrgroupid'].join('')
+    base = [ENV['MIT_PRIMO_URL'], '/discovery/search?'].join('')
+    query = {
+              query: "any,contains,#{@query}",
+              tab: ENV['PRIMO_TAB'],
+              search_scope: ENV['PRIMO_BOOK_SCOPE'], 
+              sortby: 'date_d',
+              vid: ENV['PRIMO_VID'],
+              facet: "frbrgroupid,include,#{frbr_group_id}"
+            }.to_query
+    [base, query].join('')
   end
 end

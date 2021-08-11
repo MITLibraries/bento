@@ -7,14 +7,15 @@
     <% search_prefix = ENV['EDS_PROFILE_URI'] %>
   <% end %>
 
-  <% if result.thumbnail %>
+  <% if !result.dedup_url && result.thumbnail %>
     <div class="result-image">
       <%= force_https_image_tag(result.thumbnail, alt: "Cover for #{result.title}") %>
     </div>
   <% end %>
 
   <h3 class="result-title">
-    <span class="sr">Title: </span><%= link_to(result.truncated_title.html_safe, full_record_link(result), class: 'bento-link', data: {type: "Title"} ) %>
+    <span class="sr">Title: </span>
+    <%= link_to(result.truncated_title.html_safe, full_record_link(result), class: 'bento-link', data: {type: "Title"} ) %>
   </h3>
   <div class="result-uniform-title">
     <% if result.uniform_title %>
@@ -22,10 +23,10 @@
     <% end %>
   </div>
   <p>
-    <% if result.type %>
+    <% if !result.dedup_url && result.type %>
       <span class="result-type"><span class="sr">Type: </span><%= result.type %></span>
     <% end %>
-    <% if result.year.present? && (params[:target] == 'books' || params[:target] == ENV['PRIMO_BOOK_SCOPE']) %>
+    <% if !result.dedup_url && result.year.present? && (params[:target] == 'books' || params[:target] == ENV['PRIMO_BOOK_SCOPE']) %>
       <span class="result-year">Published <%= result.year %></span>
     <% end %>
   </p>
@@ -127,7 +128,7 @@
   <% end %>
 
   <div class="result-get">
-    <% if result.getit_url.present? %>
+    <% if !result.dedup_url && result.getit_url.present? %>
       <%= link_to("View online", result.getit_url, class: 'online button button-primary green', data: {type: "Get"}) %>
     <% end %>
 
@@ -137,7 +138,9 @@
       <% end %>
     <% end %>
 
-    <%= link_to("Details and requests", full_record_link(result), class: 'details button button-secondary', data: {type: "Detail"}) %>
+    <% if !result.dedup_url %>
+      <%= link_to("Details and requests", full_record_link(result), class: 'details button button-secondary', data: {type: "Detail"}) %>
+    <% end %>
   </div>
 
   <% if Flipflop.enabled?(:debug) %>

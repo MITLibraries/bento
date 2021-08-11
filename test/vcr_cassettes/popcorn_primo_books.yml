@@ -1,575 +1,575 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: https://another_fake_server.example.com/v1/search?apikey=FAKE_PRIMO_API_KEY&limit=5&q=any,contains,popcorn&scope=FAKE_PRIMO_BOOK_SCOPE&tab=FAKE_PRIMO_TAB&vid=FAKE_PRIMO_VID
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Connection:
-      - Keep-Alive
-      Host:
-      - api-na.hosted.exlibrisgroup.com
-      User-Agent:
-      - http.rb/4.4.1
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      P3p:
-      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
-      Vary:
-      - accept-encoding
-      X-Exl-Api-Remaining:
-      - '549966'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,POST,DELETE,PUT,OPTIONS
-      Access-Control-Allow-Headers:
-      - Origin, X-Requested-With, Content-Type, Accept, Authorization
-      Content-Type:
-      - application/json;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Date:
-      - Wed, 19 May 2021 14:50:56 GMT
-      Server:
-      - CA-API-Gateway/9.0
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-          "info" : {
-            "totalResultsLocal" : 132,
-            "totalResultsPC" : -1,
-            "total" : 132,
-            "first" : 1,
-            "last" : 5
-          },
-          "highlights" : {
-            "description" : [ "POPCORN" ],
-            "title" : [ "Popcorn", "POPCORN" ],
-            "termsUnion" : [ "POPCORN", "Popcorn" ]
-          },
-          "docs" : [ {
-            "context" : "L",
-            "adaptor" : "Local Search Engine",
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990022823660206761",
-            "pnx" : {
-              "display" : {
-                "source" : [ "Alma" ],
-                "type" : [ "BKSE" ],
-                "language" : [ "eng" ],
-                "title" : [ "Atmospheric Measurements during POPCORN - Characterisation of the Photochemistry over a Rural Area" ],
-                "subject" : [ "Geography", "Climatic changes" ],
-                "format" : [ "1 online resource (v, 246 pages)" ],
-                "identifier" : [ "$$CISBN$$V9789401708135 (electronic bk.);$$CISBN$$V9401708134 (electronic bk.);$$COCLC$$V(OCoLC)851387712;$$CISBN$$V9789048151585" ],
-                "creationdate" : [ "1998" ],
-                "creator" : [ "Rudolph, J.$$QRudolph, J." ],
-                "publisher" : [ "Dordrecht : Springer Netherlands" ],
-                "description" : [ "Present policy issues concern the reduction of ozone levels by controlling its precursors, NOx and volatile organic compounds (VOC). VOC are emitted from anthropogenic and biogenic sources. Whereas our understanding of VOC emissions from anthropogenic sources has advanced significantly in recent years, there is still a lack of knowledge concerning the contribution of biogenic VOC to the budget of organic trace gases and their impact on the formation of ozone in the troposphere. Improving ozone reduction strategies in the future requires a detailed understanding of the chemical processes in the troposphere. This book comprises the results of atmospheric measurements obtained during the field campaign POPCORN (Photo-Oxidant Formation by Plant Emitted Compounds and OH Radicals in North-Eastern Germany) which was carried out to investigate the role and impact of biogenic trace gases on tropospheric chemistry. This volume describes meteorological situations and origins of air masses during the campaign, and presents measurements of a variety of trace gases, solar radiation and photolysis frequencies. Special attention is given to OH radical measurements and the in-situ comparison of the two OH measurement techniques." ],
-                "mms" : [ "990022823660206761" ],
-                "dedupmemberids" : [ "9933026557106761" ],
-                "contributor" : [ "Koppmann, Ralf.$$QKoppmann, Ralf." ],
-                "place" : [ "Dordrecht :" ],
-                "version" : [ "1" ]
-              },
-              "control" : {
-                "sourcerecordid" : [ "990022823660206761" ],
-                "recordid" : [ "alma990022823660206761" ],
-                "sourceid" : "alma",
-                "originalsourceid" : [ "002282366-MIT01" ],
-                "sourcesystem" : [ "ILS" ],
-                "sourceformat" : [ "MARC21" ],
-                "score" : [ "2.957334E-4" ]
-              },
-              "addata" : {
-                "aulast" : [ "Rudolph" ],
-                "aufirst" : [ "J." ],
-                "auinit" : [ "J" ],
-                "au" : [ "Rudolph, J." ],
-                "addau" : [ "Koppmann, Ralf." ],
-                "date" : [ "1998" ],
-                "isbn" : [ "9789401708135", "9401708134", "9789048151585" ],
-                "abstract" : [ "Present policy issues concern the reduction of ozone levels by controlling its precursors, NOx and volatile organic compounds (VOC). VOC are emitted from anthropogenic and biogenic sources. Whereas our understanding of VOC emissions from anthropogenic sources has advanced significantly in recent years, there is still a lack of knowledge concerning the contribution of biogenic VOC to the budget of organic trace gases and their impact on the formation of ozone in the troposphere. Improving ozone reduction strategies in the future requires a detailed understanding of the chemical processes in the troposphere. This book comprises the results of atmospheric measurements obtained during the field campaign POPCORN (Photo-Oxidant Formation by Plant Emitted Compounds and OH Radicals in North-Eastern Germany) which was carried out to investigate the role and impact of biogenic trace gases on tropospheric chemistry. This volume describes meteorological situations and origins of air masses during the campaign, and presents measurements of a variety of trace gases, solar radiation and photolysis frequencies. Special attention is given to OH radical measurements and the in-situ comparison of the two OH measurement techniques." ],
-                "cop" : [ "Dordrecht" ],
-                "pub" : [ "Springer Netherlands" ],
-                "oclcid" : [ "(mcm)2282366mit01", "(ocolc)851387712" ],
-                "btitle" : [ "Atmospheric Measurements during POPCORN - Characterisation of the Photochemistry over a Rural Area" ]
-              },
-              "sort" : {
-                "title" : [ "Atmospheric Measurements during POPCORN - Characterisation of the Photochemistry over a Rural Area [electronic resource] / edited by J. Rudolph, R. Koppmann." ],
-                "author" : [ "Rudolph, J." ],
-                "creationdate" : [ "1998" ]
-              },
-              "facets" : {
-                "frbrtype" : [ "6" ],
-                "frbrgroupid" : [ "9064564515824186148" ]
-              }
+  - request:
+      method: get
+      uri: https://another_fake_server.example.com/v1/search?apikey=FAKE_PRIMO_API_KEY&limit=5&q=any,contains,popcorn&scope=FAKE_PRIMO_BOOK_SCOPE&tab=FAKE_PRIMO_TAB&vid=FAKE_PRIMO_VID
+      body:
+        encoding: UTF-8
+        string: ""
+      headers:
+        Accept:
+          - application/json
+        Connection:
+          - Keep-Alive
+        Host:
+          - api-na.hosted.exlibrisgroup.com
+        User-Agent:
+          - http.rb/4.4.1
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        P3p:
+          - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+        Vary:
+          - accept-encoding
+        X-Exl-Api-Remaining:
+          - "549966"
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Allow-Methods:
+          - GET,POST,DELETE,PUT,OPTIONS
+        Access-Control-Allow-Headers:
+          - Origin, X-Requested-With, Content-Type, Accept, Authorization
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Date:
+          - Wed, 19 May 2021 14:50:56 GMT
+        Server:
+          - CA-API-Gateway/9.0
+      body:
+        encoding: UTF-8
+        string: |-
+          {
+            "info" : {
+              "totalResultsLocal" : 132,
+              "totalResultsPC" : -1,
+              "total" : 132,
+              "first" : 1,
+              "last" : 5
             },
-            "delivery" : {
-              "bestlocation" : {
-                "isValidUser" : true,
-                "organization" : "01MIT_INST",
-                "libraryCode" : "NET",
-                "availabilityStatus" : "check_holdings",
-                "subLocation" : "UNASSIGNED location",
-                "subLocationCode" : "UNASSIGNED",
-                "mainLocation" : "Internet Resource",
-                "callNumber" : "**See URL(s)",
-                "callNumberType" : "8",
-                "holdingURL" : "OVP",
-                "adaptorid" : "ALMA_01",
-                "ilsApiId" : "990022823660206761",
-                "holdId" : "2267438950006761",
-                "holKey" : "HoldingResultKey [mid=2267438950006761, libraryId=161683420006761, locationCode=UNASSIGNED, callNumber=**See URL(s)]",
-                "matchForHoldings" : [ {
-                  "matchOn" : "MainLocation",
-                  "holdingRecord" : "852##b"
-                } ],
-                "stackMapUrl" : "",
-                "relatedTitle" : null,
-                "yearFilter" : null,
-                "volumeFilter" : null,
-                "singleUnavailableItemProcessType" : null,
-                "boundWith" : false,
-                "@id" : "_:0"
+            "highlights" : {
+              "description" : [ "POPCORN" ],
+              "title" : [ "Popcorn", "POPCORN" ],
+              "termsUnion" : [ "POPCORN", "Popcorn" ]
+            },
+            "docs" : [ {
+              "context" : "L",
+              "adaptor" : "Local Search Engine",
+              "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990022823660206761",
+              "pnx" : {
+                "display" : {
+                  "source" : [ "Alma" ],
+                  "type" : [ "BKSE" ],
+                  "language" : [ "eng" ],
+                  "title" : [ "Atmospheric Measurements during POPCORN - Characterisation of the Photochemistry over a Rural Area" ],
+                  "subject" : [ "Geography", "Climatic changes" ],
+                  "format" : [ "1 online resource (v, 246 pages)" ],
+                  "identifier" : [ "$$CISBN$$V9789401708135 (electronic bk.);$$CISBN$$V9401708134 (electronic bk.);$$COCLC$$V(OCoLC)851387712;$$CISBN$$V9789048151585" ],
+                  "creationdate" : [ "1998" ],
+                  "creator" : [ "Rudolph, J.$$QRudolph, J." ],
+                  "publisher" : [ "Dordrecht : Springer Netherlands" ],
+                  "description" : [ "Present policy issues concern the reduction of ozone levels by controlling its precursors, NOx and volatile organic compounds (VOC). VOC are emitted from anthropogenic and biogenic sources. Whereas our understanding of VOC emissions from anthropogenic sources has advanced significantly in recent years, there is still a lack of knowledge concerning the contribution of biogenic VOC to the budget of organic trace gases and their impact on the formation of ozone in the troposphere. Improving ozone reduction strategies in the future requires a detailed understanding of the chemical processes in the troposphere. This book comprises the results of atmospheric measurements obtained during the field campaign POPCORN (Photo-Oxidant Formation by Plant Emitted Compounds and OH Radicals in North-Eastern Germany) which was carried out to investigate the role and impact of biogenic trace gases on tropospheric chemistry. This volume describes meteorological situations and origins of air masses during the campaign, and presents measurements of a variety of trace gases, solar radiation and photolysis frequencies. Special attention is given to OH radical measurements and the in-situ comparison of the two OH measurement techniques." ],
+                  "mms" : [ "990022823660206761" ],
+                  "dedupmemberids" : [ "9933026557106761" ],
+                  "contributor" : [ "Koppmann, Ralf.$$QKoppmann, Ralf." ],
+                  "place" : [ "Dordrecht :" ],
+                  "version" : [ "1" ]
+                },
+                "control" : {
+                  "sourcerecordid" : [ "990022823660206761" ],
+                  "recordid" : [ "alma990022823660206761" ],
+                  "sourceid" : "alma",
+                  "originalsourceid" : [ "002282366-MIT01" ],
+                  "sourcesystem" : [ "ILS" ],
+                  "sourceformat" : [ "MARC21" ],
+                  "score" : [ "2.957334E-4" ]
+                },
+                "addata" : {
+                  "aulast" : [ "Rudolph" ],
+                  "aufirst" : [ "J." ],
+                  "auinit" : [ "J" ],
+                  "au" : [ "Rudolph, J." ],
+                  "addau" : [ "Koppmann, Ralf." ],
+                  "date" : [ "1998" ],
+                  "isbn" : [ "9789401708135", "9401708134", "9789048151585" ],
+                  "abstract" : [ "Present policy issues concern the reduction of ozone levels by controlling its precursors, NOx and volatile organic compounds (VOC). VOC are emitted from anthropogenic and biogenic sources. Whereas our understanding of VOC emissions from anthropogenic sources has advanced significantly in recent years, there is still a lack of knowledge concerning the contribution of biogenic VOC to the budget of organic trace gases and their impact on the formation of ozone in the troposphere. Improving ozone reduction strategies in the future requires a detailed understanding of the chemical processes in the troposphere. This book comprises the results of atmospheric measurements obtained during the field campaign POPCORN (Photo-Oxidant Formation by Plant Emitted Compounds and OH Radicals in North-Eastern Germany) which was carried out to investigate the role and impact of biogenic trace gases on tropospheric chemistry. This volume describes meteorological situations and origins of air masses during the campaign, and presents measurements of a variety of trace gases, solar radiation and photolysis frequencies. Special attention is given to OH radical measurements and the in-situ comparison of the two OH measurement techniques." ],
+                  "cop" : [ "Dordrecht" ],
+                  "pub" : [ "Springer Netherlands" ],
+                  "oclcid" : [ "(mcm)2282366mit01", "(ocolc)851387712" ],
+                  "btitle" : [ "Atmospheric Measurements during POPCORN - Characterisation of the Photochemistry over a Rural Area" ]
+                },
+                "sort" : {
+                  "title" : [ "Atmospheric Measurements during POPCORN - Characterisation of the Photochemistry over a Rural Area [electronic resource] / edited by J. Rudolph, R. Koppmann." ],
+                  "author" : [ "Rudolph, J." ],
+                  "creationdate" : [ "1998" ]
+                },
+                "facets" : {
+                  "frbrtype" : [ "6" ],
+                  "frbrgroupid" : [ "9064564515824186148" ]
+                }
               },
-              "holding" : [ {
-                "isValidUser" : true,
-                "organization" : "01MIT_INST",
-                "libraryCode" : "NET",
-                "availabilityStatus" : "check_holdings",
-                "subLocation" : "UNASSIGNED location",
-                "subLocationCode" : "UNASSIGNED",
-                "mainLocation" : "Internet Resource",
-                "callNumber" : "**See URL(s)",
-                "callNumberType" : "8",
-                "holdingURL" : "OVP",
-                "adaptorid" : "ALMA_01",
-                "ilsApiId" : "990022823660206761",
-                "holdId" : "2267438950006761",
-                "holKey" : "HoldingResultKey [mid=2267438950006761, libraryId=161683420006761, locationCode=UNASSIGNED, callNumber=**See URL(s)]",
-                "matchForHoldings" : [ {
-                  "matchOn" : "MainLocation",
-                  "holdingRecord" : "852##b"
-                } ],
-                "stackMapUrl" : "",
-                "relatedTitle" : null,
-                "yearFilter" : null,
-                "volumeFilter" : null,
-                "singleUnavailableItemProcessType" : null,
-                "boundWith" : false,
-                "@id" : "_:0"
-              } ],
-              "electronicServices" : null,
-              "filteredByGroupServices" : null,
-              "quickAccessService" : null,
-              "deliveryCategory" : [ "Alma-P", "Alma-E" ],
-              "serviceMode" : [ "ovp", "Viewit" ],
-              "availability" : [ "check_holdings", "not_restricted" ],
-              "availabilityLinks" : [ "detailsgetit1" ],
-              "availabilityLinksUrl" : [ ],
-              "displayedAvailability" : null,
-              "displayLocation" : true,
-              "additionalLocations" : false,
-              "physicalItemTextCodes" : null,
-              "feDisplayOtherLocations" : false,
-              "almaInstitutionsList" : [ ],
-              "recordInstitutionCode" : null,
-              "recordOwner" : "01MIT_INST",
-              "hasFilteredServices" : null,
-              "digitalAuxiliaryMode" : false,
-              "hideResourceSharing" : false,
-              "sharedDigitalCandidates" : null,
-              "GetIt1" : [ {
-                "category" : "Alma-P",
-                "links" : [ {
-                  "isLinktoOnline" : false,
-                  "getItTabText" : "service_getit",
+              "delivery" : {
+                "bestlocation" : {
+                  "isValidUser" : true,
+                  "organization" : "01MIT_INST",
+                  "libraryCode" : "NET",
+                  "availabilityStatus" : "check_holdings",
+                  "subLocation" : "UNASSIGNED location",
+                  "subLocationCode" : "UNASSIGNED",
+                  "mainLocation" : "Internet Resource",
+                  "callNumber" : "**See URL(s)",
+                  "callNumberType" : "8",
+                  "holdingURL" : "OVP",
                   "adaptorid" : "ALMA_01",
                   "ilsApiId" : "990022823660206761",
-                  "link" : "OVP",
-                  "inst4opac" : "01MIT_INST",
-                  "displayText" : null,
+                  "holdId" : "2267438950006761",
+                  "holKey" : "HoldingResultKey [mid=2267438950006761, libraryId=161683420006761, locationCode=UNASSIGNED, callNumber=**See URL(s)]",
+                  "matchForHoldings" : [ {
+                    "matchOn" : "MainLocation",
+                    "holdingRecord" : "852##b"
+                  } ],
+                  "stackMapUrl" : "",
+                  "relatedTitle" : null,
+                  "yearFilter" : null,
+                  "volumeFilter" : null,
+                  "singleUnavailableItemProcessType" : null,
+                  "boundWith" : false,
                   "@id" : "_:0"
-                } ]
-              } ],
-              "physicalServiceId" : null,
-              "link" : [ {
-                "@id" : ":_0",
-                "linkType" : "thumbnail",
-                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:9401708134,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
-                "displayLabel" : "thumbnail"
-              }, {
-                "@id" : ":_1",
-                "linkType" : "linktorsrc",
-                "linkURL" : "http://dx.doi.org/10.1007/978-94-017-0813-5",
-                "displayLabel" : "SpringerLink"
-              } ],
-              "hasD" : null
-            },
-            "enrichment" : {
-              "virtualBrowseObject" : {
-                "isVirtualBrowseEnabled" : true,
-                "callNumber" : "**See URL(s)",
-                "callNumberBrowseField" : "8"
+                },
+                "holding" : [ {
+                  "isValidUser" : true,
+                  "organization" : "01MIT_INST",
+                  "libraryCode" : "NET",
+                  "availabilityStatus" : "check_holdings",
+                  "subLocation" : "UNASSIGNED location",
+                  "subLocationCode" : "UNASSIGNED",
+                  "mainLocation" : "Internet Resource",
+                  "callNumber" : "**See URL(s)",
+                  "callNumberType" : "8",
+                  "holdingURL" : "OVP",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990022823660206761",
+                  "holdId" : "2267438950006761",
+                  "holKey" : "HoldingResultKey [mid=2267438950006761, libraryId=161683420006761, locationCode=UNASSIGNED, callNumber=**See URL(s)]",
+                  "matchForHoldings" : [ {
+                    "matchOn" : "MainLocation",
+                    "holdingRecord" : "852##b"
+                  } ],
+                  "stackMapUrl" : "",
+                  "relatedTitle" : null,
+                  "yearFilter" : null,
+                  "volumeFilter" : null,
+                  "singleUnavailableItemProcessType" : null,
+                  "boundWith" : false,
+                  "@id" : "_:0"
+                } ],
+                "electronicServices" : null,
+                "filteredByGroupServices" : null,
+                "quickAccessService" : null,
+                "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+                "serviceMode" : [ "ovp", "Viewit" ],
+                "availability" : [ "check_holdings", "not_restricted" ],
+                "availabilityLinks" : [ "detailsgetit1" ],
+                "availabilityLinksUrl" : [ ],
+                "displayedAvailability" : null,
+                "displayLocation" : true,
+                "additionalLocations" : false,
+                "physicalItemTextCodes" : null,
+                "feDisplayOtherLocations" : false,
+                "almaInstitutionsList" : [ ],
+                "recordInstitutionCode" : null,
+                "recordOwner" : "01MIT_INST",
+                "hasFilteredServices" : null,
+                "digitalAuxiliaryMode" : false,
+                "hideResourceSharing" : false,
+                "sharedDigitalCandidates" : null,
+                "GetIt1" : [ {
+                  "category" : "Alma-P",
+                  "links" : [ {
+                    "isLinktoOnline" : false,
+                    "getItTabText" : "service_getit",
+                    "adaptorid" : "ALMA_01",
+                    "ilsApiId" : "990022823660206761",
+                    "link" : "OVP",
+                    "inst4opac" : "01MIT_INST",
+                    "displayText" : null,
+                    "@id" : "_:0"
+                  } ]
+                } ],
+                "physicalServiceId" : null,
+                "link" : [ {
+                  "@id" : ":_0",
+                  "linkType" : "thumbnail",
+                  "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:9401708134,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                  "displayLabel" : "thumbnail"
+                }, {
+                  "@id" : ":_1",
+                  "linkType" : "linktorsrc",
+                  "linkURL" : "http://dx.doi.org/10.1007/978-94-017-0813-5",
+                  "displayLabel" : "SpringerLink"
+                } ],
+                "hasD" : null
               },
-              "bibVirtualBrowseObject" : {
-                "isVirtualBrowseEnabled" : true,
-                "callNumber" : "qc\"851-999",
-                "callNumberBrowseField" : "LOC_CL"
+              "enrichment" : {
+                "virtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : true,
+                  "callNumber" : "**See URL(s)",
+                  "callNumberBrowseField" : "8"
+                },
+                "bibVirtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : true,
+                  "callNumber" : "qc\"851-999",
+                  "callNumberBrowseField" : "LOC_CL"
+                }
               }
-            }
-          }, {
-            "context" : "L",
-            "adaptor" : "Local Search Engine",
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724606761",
-            "pnx" : {
-              "display" : {
-                "source" : [ "Alma" ],
-                "type" : [ "journal" ],
-                "language" : [ "fre" ],
-                "title" : [ "Popcorn Industry Profile: Australia" ],
-                "publisher" : [ "Datamonitor Plc" ],
-                "mms" : [ "9933019724606761" ],
-                "version" : [ "1" ]
+            }, {
+              "context" : "L",
+              "adaptor" : "Local Search Engine",
+              "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724606761",
+              "pnx" : {
+                "display" : {
+                  "source" : [ "Alma" ],
+                  "type" : [ "journal" ],
+                  "language" : [ "fre" ],
+                  "title" : [ "Popcorn Industry Profile: Australia" ],
+                  "publisher" : [ "Datamonitor Plc" ],
+                  "mms" : [ "9933019724606761" ],
+                  "version" : [ "1" ]
+                },
+                "control" : {
+                  "sourcerecordid" : [ "9933019724606761" ],
+                  "recordid" : [ "alma9933019724606761" ],
+                  "sourceid" : "alma",
+                  "originalsourceid" : [ "991000000000573049" ],
+                  "sourcesystem" : [ "SFX" ],
+                  "sourceformat" : [ "MARC21" ],
+                  "score" : [ "5.616534E-4" ]
+                },
+                "addata" : {
+                  "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
+                  "pub" : [ "Datamonitor Plc" ],
+                  "oclcid" : [ "(ckb)1000000000573049" ],
+                  "format" : [ "journal" ],
+                  "genre" : [ "journal" ],
+                  "ristype" : [ "JOUR" ],
+                  "jtitle" : [ "Popcorn Industry Profile: Australia" ]
+                },
+                "sort" : {
+                  "title" : [ "Popcorn Industry Profile: Australia" ],
+                  "creationdate" : [ "0000" ]
+                },
+                "facets" : {
+                  "frbrtype" : [ "6" ],
+                  "frbrgroupid" : [ "9059165500462499698" ]
+                }
               },
-              "control" : {
-                "sourcerecordid" : [ "9933019724606761" ],
-                "recordid" : [ "alma9933019724606761" ],
-                "sourceid" : "alma",
-                "originalsourceid" : [ "991000000000573049" ],
-                "sourcesystem" : [ "SFX" ],
-                "sourceformat" : [ "MARC21" ],
-                "score" : [ "5.616534E-4" ]
+              "delivery" : {
+                "bestlocation" : null,
+                "holding" : null,
+                "electronicServices" : null,
+                "filteredByGroupServices" : null,
+                "quickAccessService" : null,
+                "deliveryCategory" : [ "Alma-E" ],
+                "serviceMode" : [ "Viewit" ],
+                "availability" : [ "not_restricted" ],
+                "availabilityLinks" : null,
+                "availabilityLinksUrl" : null,
+                "displayedAvailability" : "Not available",
+                "displayLocation" : null,
+                "additionalLocations" : null,
+                "physicalItemTextCodes" : null,
+                "feDisplayOtherLocations" : null,
+                "almaInstitutionsList" : [ ],
+                "recordInstitutionCode" : null,
+                "recordOwner" : "01MIT_INST",
+                "hasFilteredServices" : null,
+                "digitalAuxiliaryMode" : false,
+                "hideResourceSharing" : false,
+                "sharedDigitalCandidates" : null,
+                "GetIt1" : null,
+                "physicalServiceId" : null,
+                "link" : [ {
+                  "@id" : ":_0",
+                  "linkType" : "thumbnail",
+                  "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                  "displayLabel" : "thumbnail"
+                } ],
+                "hasD" : null
               },
-              "addata" : {
-                "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
-                "pub" : [ "Datamonitor Plc" ],
-                "oclcid" : [ "(ckb)1000000000573049" ],
-                "format" : [ "journal" ],
-                "genre" : [ "journal" ],
-                "ristype" : [ "JOUR" ],
-                "jtitle" : [ "Popcorn Industry Profile: Australia" ]
-              },
-              "sort" : {
-                "title" : [ "Popcorn Industry Profile: Australia" ],
-                "creationdate" : [ "0000" ]
-              },
-              "facets" : {
-                "frbrtype" : [ "6" ],
-                "frbrgroupid" : [ "9059165500462499698" ]
+              "enrichment" : {
+                "virtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : false,
+                  "callNumber" : "",
+                  "callNumberBrowseField" : ""
+                }
               }
-            },
-            "delivery" : {
-              "bestlocation" : null,
-              "holding" : null,
-              "electronicServices" : null,
-              "filteredByGroupServices" : null,
-              "quickAccessService" : null,
-              "deliveryCategory" : [ "Alma-E" ],
-              "serviceMode" : [ "Viewit" ],
-              "availability" : [ "not_restricted" ],
-              "availabilityLinks" : null,
-              "availabilityLinksUrl" : null,
-              "displayedAvailability" : "Not available",
-              "displayLocation" : null,
-              "additionalLocations" : null,
-              "physicalItemTextCodes" : null,
-              "feDisplayOtherLocations" : null,
-              "almaInstitutionsList" : [ ],
-              "recordInstitutionCode" : null,
-              "recordOwner" : "01MIT_INST",
-              "hasFilteredServices" : null,
-              "digitalAuxiliaryMode" : false,
-              "hideResourceSharing" : false,
-              "sharedDigitalCandidates" : null,
-              "GetIt1" : null,
-              "physicalServiceId" : null,
-              "link" : [ {
-                "@id" : ":_0",
-                "linkType" : "thumbnail",
-                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
-                "displayLabel" : "thumbnail"
-              } ],
-              "hasD" : null
-            },
-            "enrichment" : {
-              "virtualBrowseObject" : {
-                "isVirtualBrowseEnabled" : false,
-                "callNumber" : "",
-                "callNumberBrowseField" : ""
+            }, {
+              "context" : "L",
+              "adaptor" : "Local Search Engine",
+              "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724306761",
+              "pnx" : {
+                "display" : {
+                  "source" : [ "Alma" ],
+                  "type" : [ "journal" ],
+                  "language" : [ "fre" ],
+                  "title" : [ "Popcorn Industry Profile: Brazil" ],
+                  "publisher" : [ "Datamonitor Plc" ],
+                  "mms" : [ "9933019724306761" ],
+                  "version" : [ "1" ]
+                },
+                "control" : {
+                  "sourcerecordid" : [ "9933019724306761" ],
+                  "recordid" : [ "alma9933019724306761" ],
+                  "sourceid" : "alma",
+                  "originalsourceid" : [ "991000000000573052" ],
+                  "sourcesystem" : [ "SFX" ],
+                  "sourceformat" : [ "MARC21" ],
+                  "score" : [ "5.616534E-4" ]
+                },
+                "addata" : {
+                  "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
+                  "pub" : [ "Datamonitor Plc" ],
+                  "oclcid" : [ "(ckb)1000000000573052" ],
+                  "format" : [ "journal" ],
+                  "genre" : [ "journal" ],
+                  "ristype" : [ "JOUR" ],
+                  "jtitle" : [ "Popcorn Industry Profile: Brazil" ]
+                },
+                "sort" : {
+                  "title" : [ "Popcorn Industry Profile: Brazil" ],
+                  "creationdate" : [ "0000" ]
+                },
+                "facets" : {
+                  "frbrtype" : [ "6" ],
+                  "frbrgroupid" : [ "9083335249684128851" ]
+                }
+              },
+              "delivery" : {
+                "bestlocation" : null,
+                "holding" : null,
+                "electronicServices" : null,
+                "filteredByGroupServices" : null,
+                "quickAccessService" : null,
+                "deliveryCategory" : [ "Alma-E" ],
+                "serviceMode" : [ "Viewit" ],
+                "availability" : [ "not_restricted" ],
+                "availabilityLinks" : null,
+                "availabilityLinksUrl" : null,
+                "displayedAvailability" : "Not available",
+                "displayLocation" : null,
+                "additionalLocations" : null,
+                "physicalItemTextCodes" : null,
+                "feDisplayOtherLocations" : null,
+                "almaInstitutionsList" : [ ],
+                "recordInstitutionCode" : null,
+                "recordOwner" : "01MIT_INST",
+                "hasFilteredServices" : null,
+                "digitalAuxiliaryMode" : false,
+                "hideResourceSharing" : false,
+                "sharedDigitalCandidates" : null,
+                "GetIt1" : null,
+                "physicalServiceId" : null,
+                "link" : [ {
+                  "@id" : ":_0",
+                  "linkType" : "thumbnail",
+                  "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                  "displayLabel" : "thumbnail"
+                } ],
+                "hasD" : null
+              },
+              "enrichment" : {
+                "virtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : false,
+                  "callNumber" : "",
+                  "callNumberBrowseField" : ""
+                }
               }
-            }
-          }, {
-            "context" : "L",
-            "adaptor" : "Local Search Engine",
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724306761",
-            "pnx" : {
-              "display" : {
-                "source" : [ "Alma" ],
-                "type" : [ "journal" ],
-                "language" : [ "fre" ],
-                "title" : [ "Popcorn Industry Profile: Brazil" ],
-                "publisher" : [ "Datamonitor Plc" ],
-                "mms" : [ "9933019724306761" ],
-                "version" : [ "1" ]
+            }, {
+              "context" : "L",
+              "adaptor" : "Local Search Engine",
+              "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724806761",
+              "pnx" : {
+                "display" : {
+                  "source" : [ "Alma" ],
+                  "type" : [ "journal" ],
+                  "language" : [ "fre" ],
+                  "title" : [ "Popcorn Industry Profile: Argentina" ],
+                  "publisher" : [ "Datamonitor Plc" ],
+                  "mms" : [ "9933019724806761" ],
+                  "version" : [ "1" ]
+                },
+                "control" : {
+                  "sourcerecordid" : [ "9933019724806761" ],
+                  "recordid" : [ "alma9933019724806761" ],
+                  "sourceid" : "alma",
+                  "originalsourceid" : [ "991000000000573047" ],
+                  "sourcesystem" : [ "SFX" ],
+                  "sourceformat" : [ "MARC21" ],
+                  "score" : [ "5.616534E-4" ]
+                },
+                "addata" : {
+                  "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
+                  "pub" : [ "Datamonitor Plc" ],
+                  "oclcid" : [ "(ckb)1000000000573047" ],
+                  "format" : [ "journal" ],
+                  "genre" : [ "journal" ],
+                  "ristype" : [ "JOUR" ],
+                  "jtitle" : [ "Popcorn Industry Profile: Argentina" ]
+                },
+                "sort" : {
+                  "title" : [ "Popcorn Industry Profile: Argentina" ],
+                  "creationdate" : [ "0000" ]
+                },
+                "facets" : {
+                  "frbrtype" : [ "6" ],
+                  "frbrgroupid" : [ "9001959784471604878" ]
+                }
               },
-              "control" : {
-                "sourcerecordid" : [ "9933019724306761" ],
-                "recordid" : [ "alma9933019724306761" ],
-                "sourceid" : "alma",
-                "originalsourceid" : [ "991000000000573052" ],
-                "sourcesystem" : [ "SFX" ],
-                "sourceformat" : [ "MARC21" ],
-                "score" : [ "5.616534E-4" ]
+              "delivery" : {
+                "bestlocation" : null,
+                "holding" : null,
+                "electronicServices" : null,
+                "filteredByGroupServices" : null,
+                "quickAccessService" : null,
+                "deliveryCategory" : [ "Alma-E" ],
+                "serviceMode" : [ "Viewit" ],
+                "availability" : [ "not_restricted" ],
+                "availabilityLinks" : null,
+                "availabilityLinksUrl" : null,
+                "displayedAvailability" : "Not available",
+                "displayLocation" : null,
+                "additionalLocations" : null,
+                "physicalItemTextCodes" : null,
+                "feDisplayOtherLocations" : null,
+                "almaInstitutionsList" : [ ],
+                "recordInstitutionCode" : null,
+                "recordOwner" : "01MIT_INST",
+                "hasFilteredServices" : null,
+                "digitalAuxiliaryMode" : false,
+                "hideResourceSharing" : false,
+                "sharedDigitalCandidates" : null,
+                "GetIt1" : null,
+                "physicalServiceId" : null,
+                "link" : [ {
+                  "@id" : ":_0",
+                  "linkType" : "thumbnail",
+                  "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                  "displayLabel" : "thumbnail"
+                } ],
+                "hasD" : null
               },
-              "addata" : {
-                "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
-                "pub" : [ "Datamonitor Plc" ],
-                "oclcid" : [ "(ckb)1000000000573052" ],
-                "format" : [ "journal" ],
-                "genre" : [ "journal" ],
-                "ristype" : [ "JOUR" ],
-                "jtitle" : [ "Popcorn Industry Profile: Brazil" ]
-              },
-              "sort" : {
-                "title" : [ "Popcorn Industry Profile: Brazil" ],
-                "creationdate" : [ "0000" ]
-              },
-              "facets" : {
-                "frbrtype" : [ "6" ],
-                "frbrgroupid" : [ "9083335249684128851" ]
+              "enrichment" : {
+                "virtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : false,
+                  "callNumber" : "",
+                  "callNumberBrowseField" : ""
+                }
               }
-            },
-            "delivery" : {
-              "bestlocation" : null,
-              "holding" : null,
-              "electronicServices" : null,
-              "filteredByGroupServices" : null,
-              "quickAccessService" : null,
-              "deliveryCategory" : [ "Alma-E" ],
-              "serviceMode" : [ "Viewit" ],
-              "availability" : [ "not_restricted" ],
-              "availabilityLinks" : null,
-              "availabilityLinksUrl" : null,
-              "displayedAvailability" : "Not available",
-              "displayLocation" : null,
-              "additionalLocations" : null,
-              "physicalItemTextCodes" : null,
-              "feDisplayOtherLocations" : null,
-              "almaInstitutionsList" : [ ],
-              "recordInstitutionCode" : null,
-              "recordOwner" : "01MIT_INST",
-              "hasFilteredServices" : null,
-              "digitalAuxiliaryMode" : false,
-              "hideResourceSharing" : false,
-              "sharedDigitalCandidates" : null,
-              "GetIt1" : null,
-              "physicalServiceId" : null,
-              "link" : [ {
-                "@id" : ":_0",
-                "linkType" : "thumbnail",
-                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
-                "displayLabel" : "thumbnail"
-              } ],
-              "hasD" : null
-            },
-            "enrichment" : {
-              "virtualBrowseObject" : {
-                "isVirtualBrowseEnabled" : false,
-                "callNumber" : "",
-                "callNumberBrowseField" : ""
+            }, {
+              "context" : "L",
+              "adaptor" : "Local Search Engine",
+              "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724506761",
+              "pnx" : {
+                "display" : {
+                  "source" : [ "Alma" ],
+                  "type" : [ "journal" ],
+                  "language" : [ "fre" ],
+                  "title" : [ "Popcorn Industry Profile: Austria" ],
+                  "publisher" : [ "Datamonitor Plc" ],
+                  "mms" : [ "9933019724506761" ],
+                  "version" : [ "1" ]
+                },
+                "control" : {
+                  "sourcerecordid" : [ "9933019724506761" ],
+                  "recordid" : [ "alma9933019724506761" ],
+                  "sourceid" : "alma",
+                  "originalsourceid" : [ "991000000000573050" ],
+                  "sourcesystem" : [ "SFX" ],
+                  "sourceformat" : [ "MARC21" ],
+                  "score" : [ "5.616534E-4" ]
+                },
+                "addata" : {
+                  "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
+                  "pub" : [ "Datamonitor Plc" ],
+                  "oclcid" : [ "(ckb)1000000000573050" ],
+                  "format" : [ "journal" ],
+                  "genre" : [ "journal" ],
+                  "ristype" : [ "JOUR" ],
+                  "jtitle" : [ "Popcorn Industry Profile: Austria" ]
+                },
+                "sort" : {
+                  "title" : [ "Popcorn Industry Profile: Austria" ],
+                  "creationdate" : [ "0000" ]
+                },
+                "facets" : {
+                  "frbrtype" : [ "6" ],
+                  "frbrgroupid" : [ "9060146011692305880" ]
+                }
+              },
+              "delivery" : {
+                "bestlocation" : null,
+                "holding" : null,
+                "electronicServices" : null,
+                "filteredByGroupServices" : null,
+                "quickAccessService" : null,
+                "deliveryCategory" : [ "Alma-E" ],
+                "serviceMode" : [ "Viewit" ],
+                "availability" : [ "not_restricted" ],
+                "availabilityLinks" : null,
+                "availabilityLinksUrl" : null,
+                "displayedAvailability" : "Not available",
+                "displayLocation" : null,
+                "additionalLocations" : null,
+                "physicalItemTextCodes" : null,
+                "feDisplayOtherLocations" : null,
+                "almaInstitutionsList" : [ ],
+                "recordInstitutionCode" : null,
+                "recordOwner" : "01MIT_INST",
+                "hasFilteredServices" : null,
+                "digitalAuxiliaryMode" : false,
+                "hideResourceSharing" : false,
+                "sharedDigitalCandidates" : null,
+                "GetIt1" : null,
+                "physicalServiceId" : null,
+                "link" : [ {
+                  "@id" : ":_0",
+                  "linkType" : "thumbnail",
+                  "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                  "displayLabel" : "thumbnail"
+                } ],
+                "hasD" : null
+              },
+              "enrichment" : {
+                "virtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : false,
+                  "callNumber" : "",
+                  "callNumberBrowseField" : ""
+                }
               }
-            }
-          }, {
-            "context" : "L",
-            "adaptor" : "Local Search Engine",
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724806761",
-            "pnx" : {
-              "display" : {
-                "source" : [ "Alma" ],
-                "type" : [ "journal" ],
-                "language" : [ "fre" ],
-                "title" : [ "Popcorn Industry Profile: Argentina" ],
-                "publisher" : [ "Datamonitor Plc" ],
-                "mms" : [ "9933019724806761" ],
-                "version" : [ "1" ]
-              },
-              "control" : {
-                "sourcerecordid" : [ "9933019724806761" ],
-                "recordid" : [ "alma9933019724806761" ],
-                "sourceid" : "alma",
-                "originalsourceid" : [ "991000000000573047" ],
-                "sourcesystem" : [ "SFX" ],
-                "sourceformat" : [ "MARC21" ],
-                "score" : [ "5.616534E-4" ]
-              },
-              "addata" : {
-                "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
-                "pub" : [ "Datamonitor Plc" ],
-                "oclcid" : [ "(ckb)1000000000573047" ],
-                "format" : [ "journal" ],
-                "genre" : [ "journal" ],
-                "ristype" : [ "JOUR" ],
-                "jtitle" : [ "Popcorn Industry Profile: Argentina" ]
-              },
-              "sort" : {
-                "title" : [ "Popcorn Industry Profile: Argentina" ],
-                "creationdate" : [ "0000" ]
-              },
-              "facets" : {
-                "frbrtype" : [ "6" ],
-                "frbrgroupid" : [ "9001959784471604878" ]
-              }
+            } ],
+            "timelog" : {
+              "BUILD_RESULTS_RETRIVE_FROM_DB" : "39",
+              "CALL_SOLR_GET_IDS_LIST" : "779",
+              "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "276",
+              "RETRIVE_COLLECTION_DISCOVERY_INFO" : "20",
+              "RETRIVE_FROM_DB_COURSE_INFO" : "2",
+              "RETRIVE_FROM_DB_RECORDS" : "11",
+              "RETRIVE_FROM_DB_RELATIONS" : "2",
+              "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "166",
+              "SET_AVAILABILTY_HOLDING_DEDUPS" : "110",
+              "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "166",
+              "PRIMA_LOCAL_SEARCH_TOTAL" : "1270",
+              "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
+              "BUILD_COMBINED_RESULTS_MAP" : 1298,
+              "COMBINED_SEARCH_TIME" : 1301,
+              "PROCESS_COMBINED_RESULTS" : 0,
+              "FEATURED_SEARCH_TIME" : 0
             },
-            "delivery" : {
-              "bestlocation" : null,
-              "holding" : null,
-              "electronicServices" : null,
-              "filteredByGroupServices" : null,
-              "quickAccessService" : null,
-              "deliveryCategory" : [ "Alma-E" ],
-              "serviceMode" : [ "Viewit" ],
-              "availability" : [ "not_restricted" ],
-              "availabilityLinks" : null,
-              "availabilityLinksUrl" : null,
-              "displayedAvailability" : "Not available",
-              "displayLocation" : null,
-              "additionalLocations" : null,
-              "physicalItemTextCodes" : null,
-              "feDisplayOtherLocations" : null,
-              "almaInstitutionsList" : [ ],
-              "recordInstitutionCode" : null,
-              "recordOwner" : "01MIT_INST",
-              "hasFilteredServices" : null,
-              "digitalAuxiliaryMode" : false,
-              "hideResourceSharing" : false,
-              "sharedDigitalCandidates" : null,
-              "GetIt1" : null,
-              "physicalServiceId" : null,
-              "link" : [ {
-                "@id" : ":_0",
-                "linkType" : "thumbnail",
-                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
-                "displayLabel" : "thumbnail"
-              } ],
-              "hasD" : null
-            },
-            "enrichment" : {
-              "virtualBrowseObject" : {
-                "isVirtualBrowseEnabled" : false,
-                "callNumber" : "",
-                "callNumberBrowseField" : ""
-              }
-            }
-          }, {
-            "context" : "L",
-            "adaptor" : "Local Search Engine",
-            "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9933019724506761",
-            "pnx" : {
-              "display" : {
-                "source" : [ "Alma" ],
-                "type" : [ "journal" ],
-                "language" : [ "fre" ],
-                "title" : [ "Popcorn Industry Profile: Austria" ],
-                "publisher" : [ "Datamonitor Plc" ],
-                "mms" : [ "9933019724506761" ],
-                "version" : [ "1" ]
-              },
-              "control" : {
-                "sourcerecordid" : [ "9933019724506761" ],
-                "recordid" : [ "alma9933019724506761" ],
-                "sourceid" : "alma",
-                "originalsourceid" : [ "991000000000573050" ],
-                "sourcesystem" : [ "SFX" ],
-                "sourceformat" : [ "MARC21" ],
-                "score" : [ "5.616534E-4" ]
-              },
-              "addata" : {
-                "stitle" : [ "POPCORN INDUSTRY PROFILE" ],
-                "pub" : [ "Datamonitor Plc" ],
-                "oclcid" : [ "(ckb)1000000000573050" ],
-                "format" : [ "journal" ],
-                "genre" : [ "journal" ],
-                "ristype" : [ "JOUR" ],
-                "jtitle" : [ "Popcorn Industry Profile: Austria" ]
-              },
-              "sort" : {
-                "title" : [ "Popcorn Industry Profile: Austria" ],
-                "creationdate" : [ "0000" ]
-              },
-              "facets" : {
-                "frbrtype" : [ "6" ],
-                "frbrgroupid" : [ "9060146011692305880" ]
-              }
-            },
-            "delivery" : {
-              "bestlocation" : null,
-              "holding" : null,
-              "electronicServices" : null,
-              "filteredByGroupServices" : null,
-              "quickAccessService" : null,
-              "deliveryCategory" : [ "Alma-E" ],
-              "serviceMode" : [ "Viewit" ],
-              "availability" : [ "not_restricted" ],
-              "availabilityLinks" : null,
-              "availabilityLinksUrl" : null,
-              "displayedAvailability" : "Not available",
-              "displayLocation" : null,
-              "additionalLocations" : null,
-              "physicalItemTextCodes" : null,
-              "feDisplayOtherLocations" : null,
-              "almaInstitutionsList" : [ ],
-              "recordInstitutionCode" : null,
-              "recordOwner" : "01MIT_INST",
-              "hasFilteredServices" : null,
-              "digitalAuxiliaryMode" : false,
-              "hideResourceSharing" : false,
-              "sharedDigitalCandidates" : null,
-              "GetIt1" : null,
-              "physicalServiceId" : null,
-              "link" : [ {
-                "@id" : ":_0",
-                "linkType" : "thumbnail",
-                "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
-                "displayLabel" : "thumbnail"
-              } ],
-              "hasD" : null
-            },
-            "enrichment" : {
-              "virtualBrowseObject" : {
-                "isVirtualBrowseEnabled" : false,
-                "callNumber" : "",
-                "callNumberBrowseField" : ""
-              }
-            }
-          } ],
-          "timelog" : {
-            "BUILD_RESULTS_RETRIVE_FROM_DB" : "39",
-            "CALL_SOLR_GET_IDS_LIST" : "779",
-            "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "276",
-            "RETRIVE_COLLECTION_DISCOVERY_INFO" : "20",
-            "RETRIVE_FROM_DB_COURSE_INFO" : "2",
-            "RETRIVE_FROM_DB_RECORDS" : "11",
-            "RETRIVE_FROM_DB_RELATIONS" : "2",
-            "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "166",
-            "SET_AVAILABILTY_HOLDING_DEDUPS" : "110",
-            "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "166",
-            "PRIMA_LOCAL_SEARCH_TOTAL" : "1270",
-            "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
-            "BUILD_COMBINED_RESULTS_MAP" : 1298,
-            "COMBINED_SEARCH_TIME" : 1301,
-            "PROCESS_COMBINED_RESULTS" : 0,
-            "FEATURED_SEARCH_TIME" : 0
-          },
-          "facets" : [ ]
-        }
-  recorded_at: Wed, 19 May 2021 14:50:57 GMT
+            "facets" : [ ]
+          }
+    recorded_at: Wed, 19 May 2021 14:50:57 GMT
 recorded_with: VCR 6.0.0

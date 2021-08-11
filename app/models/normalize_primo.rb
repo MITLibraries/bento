@@ -10,7 +10,7 @@ class NormalizePrimo
     norm['total'] = results['info']['total']
     norm['results'] = []
     norm['primo_ui_view_more'] = primo_ui_view_more(q)
-    extract_results(results, norm)
+    extract_results(results, norm, q)
     norm
   rescue NoMethodError => e
     raise NormalizePrimo::InvalidResults,
@@ -25,20 +25,20 @@ class NormalizePrimo
      ENV['PRIMO_VID']].join('')
   end
 
-  def extract_results(results, norm)
+  def extract_results(results, norm, q)
     return unless results['docs']
     results['docs'].each do |record|
-      result = result(record)
+      result = result(record, q)
       norm['results'] << result
     end
   end
 
-  def result(record)
+  def result(record, q)
     common = NormalizePrimoCommon.new(record, @type)
     result = Result.new(common.title, common.link)
     result = common.common_metadata(result)
     result = if @type == ENV['PRIMO_BOOK_SCOPE']
-               NormalizePrimoBooks.new(record).book_metadata(result)
+               NormalizePrimoBooks.new(record, q).book_metadata(result)
              else
                NormalizePrimoArticles.new(record).article_metadata(result)
              end

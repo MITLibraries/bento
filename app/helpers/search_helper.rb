@@ -32,6 +32,8 @@ module SearchHelper
   def full_record_link(result)
     if Flipflop.enabled?(:local_full_record) && ['books','articles'].include?(params[:target])
       record_path(result.db_source.last, result.an)
+    elsif result.dedup_url
+      result.dedup_url
     else
       result.url
     end
