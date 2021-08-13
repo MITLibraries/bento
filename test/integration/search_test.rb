@@ -60,7 +60,7 @@ class SearchTest < ActionDispatch::IntegrationTest
   test 'Primo local results are populated' do
     VCR.use_cassette('popcorn primo books',
                      allow_playback_repeats: true) do
-      get '/search/search_boxed?q=popcorn&target=catalog'
+      get '/search/search_boxed?q=popcorn&target=FAKE_PRIMO_BOOK_SCOPE'
       assert_response :success
       assert_select('a.bento-link') do |value|
         assert value.text.include?('Atmospheric Measurements during POPCORN')
@@ -71,7 +71,7 @@ class SearchTest < ActionDispatch::IntegrationTest
   test 'Primo CDI results are populated' do
     VCR.use_cassette('popcorn primo articles',
                      allow_playback_repeats: true) do
-      get '/search/search_boxed?q=popcorn&target=cdi'
+      get '/search/search_boxed?q=popcorn&target=FAKE_PRIMO_ARTICLE_SCOPE'
       assert_response :success
       assert_select('a.bento-link') do |value|
         assert value.text.include?('Baryonic popcorn')
@@ -145,6 +145,19 @@ class SearchTest < ActionDispatch::IntegrationTest
       assert_select('a.bento-link') do |value|
         assert(value.text.include?('History of northern corn leaf'))
         assert(value.xpath('./@href').text.include?('http://search.ebscohost.com/login.aspx'))
+      end
+    end
+  end
+
+  test 'dedup full_record_link when relevant' do
+    VCR.use_cassette('beloved primo',
+                     allow_playback_repeats: true) do
+      get '/search/search_boxed?q=beloved%20morrison&target=FAKE_PRIMO_BOOK_SCOPE'
+      assert_response :success
+      url = 'https://mit.primo.exlibrisgroup.com/discovery/search?facet=frbrgroupid%2Cinclude%2C9073697300638768684&query=any%2Ccontains%2Cbeloved+morrison&search_scope=FAKE_PRIMO_BOOK_SCOPE&sortby=date_d&tab=FAKE_PRIMO_TAB&vid=FAKE_PRIMO_VID'
+      assert_select 'a.bento-link' do |value|
+        assert(value.text.include?('Beloved'))
+        assert(value.xpath('./@href').text.include?(url))
       end
     end
   end

@@ -47,7 +47,7 @@ class SearchController < ApplicationController
 
   # Array of search endpoints that are supported
   def valid_targets
-    %w[articles books google timdex catalog cdi]
+    %w[articles books google timdex catalog cdi FAKE_PRIMO_BOOK_SCOPE FAKE_PRIMO_ARTICLE_SCOPE]
   end
 
   # Formatted date used in creating cache keys
@@ -85,12 +85,8 @@ class SearchController < ApplicationController
 
   # Searches Primo
   def search_primo(per_page)
-    raw_results = SearchPrimo.new.search(strip_truncate_q, primo_scope, per_page)
+    raw_results = SearchPrimo.new.search(strip_truncate_q, params[:target], per_page)
     NormalizePrimo.new.to_result(raw_results, params[:target], strip_truncate_q)
-  end
-
-  def primo_scope
-    params[:target] == 'catalog' ? ENV['PRIMO_BOOK_SCOPE'] : ENV['PRIMO_ARTICLE_SCOPE']
   end
 
   # Searches Google Custom Search

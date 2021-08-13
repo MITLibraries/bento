@@ -1,0 +1,887 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://another_fake_server.example.com/v1/search?apikey=FAKE_PRIMO_API_KEY&limit=5&q=any,contains,beloved%20morrison&scope=FAKE_PRIMO_BOOK_SCOPE&tab=FAKE_PRIMO_TAB&vid=FAKE_PRIMO_VID
+      body:
+        encoding: UTF-8
+        string: ""
+      headers:
+        Accept:
+          - application/json
+        Connection:
+          - Keep-Alive
+        Host:
+          - api-na.hosted.exlibrisgroup.com
+        User-Agent:
+          - http.rb/5.0.1
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        P3p:
+          - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+        X-Request-Id:
+          - 363voycMOD
+        Vary:
+          - accept-encoding
+        X-Exl-Api-Remaining:
+          - "548957"
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Allow-Methods:
+          - GET,POST,DELETE,PUT,OPTIONS
+        Access-Control-Allow-Headers:
+          - Origin, X-Requested-With, Content-Type, Accept, Authorization
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Date:
+          - Fri, 06 Aug 2021 16:43:36 GMT
+        Server:
+          - CA-API-Gateway/9.0
+      body:
+        encoding: UTF-8
+        string: |-
+          {
+            "info" : {
+              "totalResultsLocal" : 151,
+              "totalResultsPC" : -1,
+              "total" : 151,
+              "first" : 1,
+              "last" : 5
+            },
+            "highlights" : {
+              "creator" : [ "Morrison" ],
+              "contributor" : [ "Morrison" ],
+              "subject" : [ "Morrison", "Beloved" ],
+              "description" : [ "Beloved", "Morrison's" ],
+              "toc" : [ "Beloved" ],
+              "title" : [ "Beloved", "Morrison's", "Morrison" ],
+              "addtitle" : [ "Morrison", "Beloved" ],
+              "termsUnion" : [ "Morrison", "Beloved", "Morrison's" ]
+            },
+            "docs" : [ {
+              "context" : "L",
+              "adaptor" : "Local Search Engine",
+              "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990014759160106761",
+              "pnx" : {
+                "display" : {
+                  "source" : [ "Alma" ],
+                  "type" : [ "video" ],
+                  "language" : [ "eng;fre" ],
+                  "title" : [ "Beloved" ],
+                  "subject" : [ "African Americans -- Ohio -- History -- 19th century", "Slavery -- United States", "Feature films" ],
+                  "format" : [ "1 videodisc (171 min.) : sd., col. ; 4 3/4 in." ],
+                  "identifier" : [ "$$CISBN$$V0788815474;$$CISBN$$V9780788815478;$$CPUBNUM$$V17243;$$COCLC$$V(OCoLC)43439951;$$COCLC$$V(OCoLC)41418670" ],
+                  "creationdate" : [ "1999?" ],
+                  "lds07" : [ "791.43/72 41418670 43439951 41418670 717951002365 0788815474 9780788815478" ],
+                  "lds09" : [ "Burbank, CA : Touchstone Home Video,   1998   1999  1998   cau" ],
+                  "lds11" : [ "Director of photography, Tak Fujimoto ; editors, Carol Littleton, Andy Keir ; music, Rachel Portman.", "Oprah Winfrey, Danny Glover, Thandie Newton, Kimberly Elise, Beah Richards, Lisa Gay Hamilton, Albert Hall, Irma P. Hall." ],
+                  "lds10" : [ "Originally released as a motion picture in 1998.", "Based on the novel by Toni Morrison.", "Includes theatrical trailer and a documentary about the film which includes interviews with cast members and director (5 min.)." ],
+                  "lds01" : [ "In English with optional soundtrack in French.", "Closed-captioned." ],
+                  "publisher" : [ "Burbank, CA : Touchstone Home Video" ],
+                  "description" : [ "After Paul D. finds his old slave friend Sethe in Ohio and moves in with her and her daughter Denver, a strange girl comes along by the name of \"Beloved\". Sethe & Denver take her in and then strange things start to happen." ],
+                  "mms" : [ "990014759160106761" ],
+                  "contributor" : [ "Demme, Jonathan, 1944-2017.$$QDemme, Jonathan", "Busia, Akosua.$$QBusia, Akosua.", "Saxon, Edward.$$QSaxon, Edward.", "Winfrey, Oprah.$$QWinfrey, Oprah.", "Glover, Danny.$$QGlover, Danny.", "Newton, Thandie, 1972-$$QNewton, Thandie", "Elise, Kimberly, 1971-$$QElise, Kimberly", "Richards, Beah E.$$QRichards, Beah E.", "Hamilton, Lisa Gay, 1964-$$QHamilton, Lisa Gay", "Hall, Albert.$$QHall, Albert.", "Hall, Irma P., 1937-$$QHall, Irma P.", "Morrison, Toni.$$QMorrison, Toni.", "Touchstone Pictures.$$QTouchstone Pictures.", "Harpo Films.$$QHarpo Films.", "Clinica Estetico, Ltd.$$QClinica Estetico, Ltd.", "Touchstone Home Video (Firm)$$QTouchstone Home Video (Firm)" ],
+                  "edition" : [ "Widescreen." ],
+                  "genre" : [ "Drama." ],
+                  "relatedwork" : [ "Morrison, Toni. Beloved.$$QMorrison, Toni. Beloved." ],
+                  "place" : [ "Burbank, CA :" ],
+                  "version" : [ "1" ]
+                },
+                "control" : {
+                  "sourcerecordid" : [ "990014759160106761" ],
+                  "recordid" : [ "alma990014759160106761" ],
+                  "sourceid" : "alma",
+                  "originalsourceid" : [ "001475916-MIT01" ],
+                  "sourcesystem" : [ "ILS" ],
+                  "sourceformat" : [ "MARC21" ],
+                  "score" : [ "0.2959688" ],
+                  "isDedup" : false
+                },
+                "addata" : {
+                  "aulast" : [ "Demme", "Busia", "Saxon", "Winfrey", "Glover", "Newton", "Elise", "Richards", "Hamilton", "Hall", "Morrison" ],
+                  "aufirst" : [ "Jonathan", "Akosua.", "Edward.", "Oprah.", "Danny.", "Thandie", "Kimberly", "Beah E.", "Lisa Gay", "Albert.", "Irma P.", "Toni." ],
+                  "auinit" : [ "J", "E", "O", "D", "K", "B", "L", "A", "I", "T" ],
+                  "addau" : [ "Demme, Jonathan", "Busia, Akosua.", "Saxon, Edward.", "Winfrey, Oprah.", "Glover, Danny.", "Newton, Thandie", "Elise, Kimberly", "Richards, Beah E.", "Hamilton, Lisa Gay", "Hall, Albert.", "Hall, Irma P.", "Morrison, Toni." ],
+                  "date" : [ "1999 - 1998", "1999?" ],
+                  "isbn" : [ "0788815474", "9780788815478" ],
+                  "abstract" : [ "After Paul D. finds his old slave friend Sethe in Ohio and moves in with her and her daughter Denver, a strange girl comes along by the name of \"Beloved\". Sethe & Denver take her in and then strange things start to happen." ],
+                  "cop" : [ "Burbank, CA" ],
+                  "pub" : [ "Touchstone Home Video" ],
+                  "oclcid" : [ "(mcm)1475916mit01", "(ocolc)43439951", "(ocolc)41418670" ],
+                  "edition" : [ "Widescreen." ],
+                  "format" : [ "book" ],
+                  "genre" : [ "unknown" ],
+                  "ristype" : [ "VIDEO" ],
+                  "btitle" : [ "Beloved" ]
+                },
+                "sort" : {
+                  "title" : [ "Beloved [videorecording] / directed by Jonathan Demme ; screenplay by Akosua Busia ... [et al.] ; produced by Edward Saxon ... [et al.] ; Touchstone Pictures ; a Harpo Films/Clinica Estetico production." ],
+                  "author" : [ "Demme, Jonathan, 1944-2017." ],
+                  "creationdate" : [ "1999" ]
+                },
+                "facets" : {
+                  "frbrtype" : [ "6" ],
+                  "frbrgroupid" : [ "9083877394220194001" ]
+                }
+              },
+              "delivery" : {
+                "bestlocation" : {
+                  "isValidUser" : true,
+                  "organization" : "01MIT_INST",
+                  "libraryCode" : "HUM",
+                  "availabilityStatus" : "available",
+                  "subLocation" : "Media",
+                  "subLocationCode" : "MEDIA",
+                  "mainLocation" : "Hayden Library",
+                  "callNumber" : "DVD PN1997.B453.A1 1999",
+                  "callNumberType" : "0",
+                  "holdingURL" : "OVP",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990014759160106761",
+                  "holdId" : "22517481370006761",
+                  "holKey" : "HoldingResultKey [mid=22517481370006761, libraryId=161684210006761, locationCode=MEDIA, callNumber=DVD PN1997.B453.A1 1999]",
+                  "matchForHoldings" : [ {
+                    "matchOn" : "MainLocation",
+                    "holdingRecord" : "852##b"
+                  } ],
+                  "stackMapUrl" : "",
+                  "relatedTitle" : null,
+                  "yearFilter" : null,
+                  "volumeFilter" : null,
+                  "singleUnavailableItemProcessType" : null,
+                  "boundWith" : false,
+                  "@id" : "_:0"
+                },
+                "holding" : [ {
+                  "isValidUser" : true,
+                  "organization" : "01MIT_INST",
+                  "libraryCode" : "HUM",
+                  "availabilityStatus" : "available",
+                  "subLocation" : "Media",
+                  "subLocationCode" : "MEDIA",
+                  "mainLocation" : "Hayden Library",
+                  "callNumber" : "DVD PN1997.B453.A1 1999",
+                  "callNumberType" : "0",
+                  "holdingURL" : "OVP",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990014759160106761",
+                  "holdId" : "22517481370006761",
+                  "holKey" : "HoldingResultKey [mid=22517481370006761, libraryId=161684210006761, locationCode=MEDIA, callNumber=DVD PN1997.B453.A1 1999]",
+                  "matchForHoldings" : [ {
+                    "matchOn" : "MainLocation",
+                    "holdingRecord" : "852##b"
+                  } ],
+                  "stackMapUrl" : "",
+                  "relatedTitle" : null,
+                  "yearFilter" : null,
+                  "volumeFilter" : null,
+                  "singleUnavailableItemProcessType" : null,
+                  "boundWith" : false,
+                  "@id" : "_:0"
+                } ],
+                "electronicServices" : null,
+                "filteredByGroupServices" : null,
+                "quickAccessService" : null,
+                "deliveryCategory" : [ "Alma-P" ],
+                "serviceMode" : [ "ovp" ],
+                "availability" : [ "available_in_library" ],
+                "availabilityLinks" : [ "detailsgetit1" ],
+                "availabilityLinksUrl" : [ ],
+                "displayedAvailability" : null,
+                "displayLocation" : true,
+                "additionalLocations" : false,
+                "physicalItemTextCodes" : null,
+                "feDisplayOtherLocations" : false,
+                "almaInstitutionsList" : [ ],
+                "recordInstitutionCode" : null,
+                "recordOwner" : "01MIT_INST",
+                "hasFilteredServices" : null,
+                "digitalAuxiliaryMode" : false,
+                "hideResourceSharing" : false,
+                "sharedDigitalCandidates" : null,
+                "GetIt1" : [ {
+                  "category" : "Alma-P",
+                  "links" : [ {
+                    "isLinktoOnline" : false,
+                    "getItTabText" : "service_getit",
+                    "adaptorid" : "ALMA_01",
+                    "ilsApiId" : "990014759160106761",
+                    "link" : "OVP",
+                    "inst4opac" : "01MIT_INST",
+                    "displayText" : null,
+                    "@id" : "_:0"
+                  } ]
+                } ],
+                "physicalServiceId" : null,
+                "link" : [ {
+                  "@id" : ":_0",
+                  "linkType" : "thumbnail",
+                  "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:9780788815478,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                  "displayLabel" : "thumbnail"
+                } ],
+                "hasD" : null
+              },
+              "enrichment" : {
+                "virtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : true,
+                  "callNumber" : "DVD PN1997.B453.A1 1999",
+                  "callNumberBrowseField" : "0"
+                },
+                "bibVirtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : true,
+                  "callNumber" : "791.43 72",
+                  "callNumberBrowseField" : "DEWEY_DECIMAL_CLASSIFICATION"
+                }
+              }
+            }, {
+              "context" : "L",
+              "adaptor" : "Local Search Engine",
+              "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990013930850106761",
+              "pnx" : {
+                "display" : {
+                  "source" : [ "Alma" ],
+                  "type" : [ "other" ],
+                  "language" : [ "eng" ],
+                  "title" : [ "Beloved" ],
+                  "subject" : [ "African American women", "Women slaves", "Infanticide", "Ohio", "Audiobooks" ],
+                  "format" : [ "10 sound discs (12 hr.) : digital ; 4 3/4 in." ],
+                  "identifier" : [ "$$CISBN$$V9780739342275 :;$$CISBN$$V0739342274 :;$$CPUBNUM$$VRHCD 2045;$$COCLC$$V(OCoLC)86075165" ],
+                  "creationdate" : [ "p1998" ],
+                  "lds07" : [ "86075165 9780739342275 : 0739342274 :" ],
+                  "lds09" : [ "New York : Random House Audio,    1998   nyu" ],
+                  "lds11" : [ "Read by the author." ],
+                  "lds10" : [ "Unabridged.", "Compact discs." ],
+                  "creator" : [ "Morrison, Toni.$$QMorrison, Toni." ],
+                  "publisher" : [ "New York : Random House Audio" ],
+                  "description" : [ "Staring unflinchingly into the abyss of slavery, this spellbinding novel transforms history into a story as powerful as Exodus and as intimate as a lullaby. Sethe, its protagonist, was born a slave and escaped to Ohio, but eighteen years later she is still not free. She has too many memories of Sweet Home, the beautiful farm where so many hideous things happened. And Sethe's new home is haunted by the ghost of her baby, who died nameless and whose tombstone is engraved with a single word: Beloved. Filled with bitter poetry and suspense as taut as a rope, Beloved is a towering achievement. After the Civil War ends, Sethe longingly recalls the two-year-old daughter whom she killed when threatened with recapture after escaping from slavery 18 years before." ],
+                  "mms" : [ "990013930850106761" ],
+                  "genre" : [ "Fiction." ],
+                  "place" : [ "New York :" ],
+                  "version" : [ "4" ]
+                },
+                "control" : {
+                  "sourcerecordid" : [ "990013930850106761" ],
+                  "recordid" : [ "alma990013930850106761" ],
+                  "sourceid" : "alma",
+                  "originalsourceid" : [ "001393085-MIT01" ],
+                  "sourcesystem" : [ "ILS" ],
+                  "sourceformat" : [ "MARC21" ],
+                  "score" : [ "0.29584113" ],
+                  "isDedup" : false
+                },
+                "addata" : {
+                  "aulast" : [ "Morrison" ],
+                  "aufirst" : [ "Toni." ],
+                  "auinit" : [ "T" ],
+                  "au" : [ "Morrison, Toni." ],
+                  "date" : [ "1998", "p1998" ],
+                  "isbn" : [ "9780739342275", "0739342274" ],
+                  "abstract" : [ "Staring unflinchingly into the abyss of slavery, this spellbinding novel transforms history into a story as powerful as Exodus and as intimate as a lullaby. Sethe, its protagonist, was born a slave and escaped to Ohio, but eighteen years later she is still not free. She has too many memories of Sweet Home, the beautiful farm where so many hideous things happened. And Sethe's new home is haunted by the ghost of her baby, who died nameless and whose tombstone is engraved with a single word: Beloved. Filled with bitter poetry and suspense as taut as a rope, Beloved is a towering achievement. After the Civil War ends, Sethe longingly recalls the two-year-old daughter whom she killed when threatened with recapture after escaping from slavery 18 years before." ],
+                  "cop" : [ "New York" ],
+                  "pub" : [ "Random House Audio" ],
+                  "oclcid" : [ "(mcm)1393085mit01", "(ocolc)86075165" ],
+                  "format" : [ "book" ],
+                  "genre" : [ "unknown" ],
+                  "ristype" : [ "gen" ],
+                  "btitle" : [ "Beloved" ]
+                },
+                "sort" : {
+                  "title" : [ "Beloved [sound recording] / by Toni Morrison." ],
+                  "author" : [ "Morrison, Toni." ],
+                  "creationdate" : [ "1998" ]
+                },
+                "facets" : {
+                  "frbrtype" : [ "5" ],
+                  "frbrgroupid" : [ "9073697300638768684" ]
+                }
+              },
+              "delivery" : {
+                "bestlocation" : {
+                  "isValidUser" : true,
+                  "organization" : "01MIT_INST",
+                  "libraryCode" : "HUM",
+                  "availabilityStatus" : "available",
+                  "subLocation" : "Stacks",
+                  "subLocationCode" : "STACK",
+                  "mainLocation" : "Hayden Library",
+                  "callNumber" : "CD PS3563.O8749.B4 1998b",
+                  "callNumberType" : "0",
+                  "holdingURL" : "OVP",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990013930850106761",
+                  "holdId" : "22470539430006761",
+                  "holKey" : "HoldingResultKey [mid=22470539430006761, libraryId=161684210006761, locationCode=STACK, callNumber=CD PS3563.O8749.B4 1998b]",
+                  "matchForHoldings" : [ {
+                    "matchOn" : "MainLocation",
+                    "holdingRecord" : "852##b"
+                  } ],
+                  "stackMapUrl" : "",
+                  "relatedTitle" : null,
+                  "yearFilter" : null,
+                  "volumeFilter" : null,
+                  "singleUnavailableItemProcessType" : null,
+                  "boundWith" : false,
+                  "@id" : "_:0"
+                },
+                "holding" : [ {
+                  "isValidUser" : true,
+                  "organization" : "01MIT_INST",
+                  "libraryCode" : "HUM",
+                  "availabilityStatus" : "available",
+                  "subLocation" : "Stacks",
+                  "subLocationCode" : "STACK",
+                  "mainLocation" : "Hayden Library",
+                  "callNumber" : "CD PS3563.O8749.B4 1998b",
+                  "callNumberType" : "0",
+                  "holdingURL" : "OVP",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990013930850106761",
+                  "holdId" : "22470539430006761",
+                  "holKey" : "HoldingResultKey [mid=22470539430006761, libraryId=161684210006761, locationCode=STACK, callNumber=CD PS3563.O8749.B4 1998b]",
+                  "matchForHoldings" : [ {
+                    "matchOn" : "MainLocation",
+                    "holdingRecord" : "852##b"
+                  } ],
+                  "stackMapUrl" : "",
+                  "relatedTitle" : null,
+                  "yearFilter" : null,
+                  "volumeFilter" : null,
+                  "singleUnavailableItemProcessType" : null,
+                  "boundWith" : false,
+                  "@id" : "_:0"
+                } ],
+                "electronicServices" : null,
+                "filteredByGroupServices" : null,
+                "quickAccessService" : null,
+                "deliveryCategory" : [ "Alma-P" ],
+                "serviceMode" : [ "ovp" ],
+                "availability" : [ "available_in_library" ],
+                "availabilityLinks" : [ "detailsgetit1" ],
+                "availabilityLinksUrl" : [ ],
+                "displayedAvailability" : null,
+                "displayLocation" : true,
+                "additionalLocations" : false,
+                "physicalItemTextCodes" : null,
+                "feDisplayOtherLocations" : false,
+                "almaInstitutionsList" : [ ],
+                "recordInstitutionCode" : null,
+                "recordOwner" : "01MIT_INST",
+                "hasFilteredServices" : null,
+                "digitalAuxiliaryMode" : false,
+                "hideResourceSharing" : false,
+                "sharedDigitalCandidates" : null,
+                "GetIt1" : [ {
+                  "category" : "Alma-P",
+                  "links" : [ {
+                    "isLinktoOnline" : false,
+                    "getItTabText" : "service_getit",
+                    "adaptorid" : "ALMA_01",
+                    "ilsApiId" : "990013930850106761",
+                    "link" : "OVP",
+                    "inst4opac" : "01MIT_INST",
+                    "displayText" : null,
+                    "@id" : "_:0"
+                  } ]
+                } ],
+                "physicalServiceId" : null,
+                "link" : [ {
+                  "@id" : ":_0",
+                  "linkType" : "thumbnail",
+                  "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:0739342274,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                  "displayLabel" : "thumbnail"
+                } ],
+                "hasD" : null
+              },
+              "enrichment" : {
+                "virtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : true,
+                  "callNumber" : "CD PS3563.O8749.B4 1998b",
+                  "callNumberBrowseField" : "0"
+                },
+                "bibVirtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : true,
+                  "callNumber" : "fic",
+                  "callNumberBrowseField" : "LOCAL_CL_09X"
+                }
+              }
+            }, {
+              "context" : "L",
+              "adaptor" : "Local Search Engine",
+              "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990031638150106761",
+              "pnx" : {
+                "display" : {
+                  "source" : [ "Alma" ],
+                  "type" : [ "video" ],
+                  "language" : [ "eng" ],
+                  "title" : [ "PBS newshour. September 29, 1987, Toni Morrison on capturing a mother's \"compulsion\" to nurture in \"Beloved\"." ],
+                  "subject" : [ "Morrison, Toni", "Morrison, Toni Beloved", "African American women authors", "Authors, American" ],
+                  "format" : [ "1 online resource (14 minutes)", "video file" ],
+                  "identifier" : [ "$$COCLC$$V(OCoLC)1126677740" ],
+                  "creationdate" : [ "1987" ],
+                  "lds07" : [ "1126677740" ],
+                  "lds09" : [ "Arlington, VA : NewsHour Productions LLC,  1987   vau" ],
+                  "lds11" : [ "Toni Morrison, interviewee ; Charlayne Hunter-Gault, interviewer." ],
+                  "lds10" : [ "Title from resource description page (viewed October 08, 2019)." ],
+                  "lds01" : [ "In English." ],
+                  "publisher" : [ "Arlington, VA : NewsHour Productions LLC" ],
+                  "description" : [ "To remember Toni Morrison, the PBS NewsHour unearthed this 1987 interview with the celebrated American author. At the time, Morrison's \"Beloved\" had just been published." ],
+                  "mms" : [ "990031638150106761" ],
+                  "dedupmemberids" : [ "9935073179606761" ],
+                  "contributor" : [ "Morrison, Toni, interviewee.$$QMorrison, Toni", "Hunter-Gault, Charlayne, interviewer.$$QHunter-Gault, Charlayne", "NewsHour Productions, production company.$$QNewsHour Productions" ],
+                  "addtitle" : [ "Toni Morrison on capturing a mother's \"compulsion\" to nurture in \"Beloved\"", "In series: PBS newshour." ],
+                  "genre" : [ "Interviews." ],
+                  "place" : [ "Arlington, VA :" ],
+                  "version" : [ "1" ]
+                },
+                "control" : {
+                  "sourcerecordid" : [ "990031638150106761" ],
+                  "recordid" : [ "alma990031638150106761" ],
+                  "sourceid" : "alma",
+                  "originalsourceid" : [ "003163815-MIT01" ],
+                  "sourcesystem" : [ "ILS" ],
+                  "sourceformat" : [ "MARC21" ],
+                  "score" : [ "0.017528364" ],
+                  "isDedup" : true
+                },
+                "addata" : {
+                  "aulast" : [ "Morrison", "Hunter-Gault" ],
+                  "aufirst" : [ "Toni", "Charlayne" ],
+                  "auinit" : [ "T", "C" ],
+                  "addau" : [ "Morrison, Toni", "Hunter-Gault, Charlayne" ],
+                  "addtitle" : [ "Toni Morrison on capturing a mother's \"compulsion\" to nurture in \"Beloved\"" ],
+                  "date" : [ "1987" ],
+                  "abstract" : [ "To remember Toni Morrison, the PBS NewsHour unearthed this 1987 interview with the celebrated American author. At the time, Morrison's \"Beloved\" had just been published." ],
+                  "cop" : [ "Arlington, VA" ],
+                  "pub" : [ "NewsHour Productions LLC" ],
+                  "oclcid" : [ "(mcm)3163815mit01", "(ocolc)1126677740" ],
+                  "format" : [ "book" ],
+                  "genre" : [ "unknown" ],
+                  "ristype" : [ "VIDEO" ],
+                  "btitle" : [ "PBS newshour. September 29, 1987, Toni Morrison on capturing a mother's \"compulsion\" to nurture in \"Beloved\"." ]
+                },
+                "sort" : {
+                  "title" : [ "PBS newshour. September 29, 1987, Toni Morrison on capturing a mother's \"compulsion\" to nurture in \"Beloved\"." ],
+                  "author" : [ "Morrison, Toni, interviewee." ],
+                  "creationdate" : [ "1987" ]
+                },
+                "facets" : {
+                  "frbrtype" : [ "6" ],
+                  "frbrgroupid" : [ "9077809171510199461" ]
+                }
+              },
+              "delivery" : {
+                "bestlocation" : null,
+                "holding" : null,
+                "electronicServices" : null,
+                "filteredByGroupServices" : null,
+                "quickAccessService" : null,
+                "deliveryCategory" : [ "Alma-E" ],
+                "serviceMode" : [ "Viewit" ],
+                "availability" : [ "not_restricted" ],
+                "availabilityLinks" : null,
+                "availabilityLinksUrl" : null,
+                "displayedAvailability" : "Not available",
+                "displayLocation" : null,
+                "additionalLocations" : null,
+                "physicalItemTextCodes" : null,
+                "feDisplayOtherLocations" : null,
+                "almaInstitutionsList" : [ ],
+                "recordInstitutionCode" : null,
+                "recordOwner" : "01MIT_INST",
+                "hasFilteredServices" : null,
+                "digitalAuxiliaryMode" : false,
+                "hideResourceSharing" : false,
+                "sharedDigitalCandidates" : null,
+                "GetIt1" : null,
+                "physicalServiceId" : null,
+                "link" : [ {
+                  "@id" : ":_0",
+                  "linkType" : "thumbnail",
+                  "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:,OCLC:,LCCN:&jscmd=viewapi&callback=updateGBSCover",
+                  "displayLabel" : "thumbnail"
+                }, {
+                  "@id" : ":_1",
+                  "linkType" : "linktorsrc",
+                  "linkURL" : "http://www.aspresolver.com/aspresolver.asp?MARC;4180019",
+                  "displayLabel" : "$$Elinktorsrc"
+                } ],
+                "hasD" : null
+              },
+              "enrichment" : {
+                "virtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : false,
+                  "callNumber" : "",
+                  "callNumberBrowseField" : ""
+                }
+              }
+            }, {
+              "context" : "L",
+              "adaptor" : "Local Search Engine",
+              "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990008837070106761",
+              "pnx" : {
+                "display" : {
+                  "source" : [ "Alma" ],
+                  "type" : [ "book" ],
+                  "language" : [ "eng" ],
+                  "title" : [ "Toni Morrison, Beloved " ],
+                  "subject" : [ "Morrison, Toni Beloved", "Historical fiction, American -- History and criticism", "African American women in literature", "Infanticide in literature", "Slavery in literature", "Ohio -- In literature" ],
+                  "format" : [ "167 p. ; 20 cm." ],
+                  "identifier" : [ "$$CLC$$V   98039506;$$CISBN$$V0231115261 (cloth : alk. paper);$$CISBN$$V023111527X (pbk. : alk. paper);$$COCLC$$V(OCoLC)39677848" ],
+                  "creationdate" : [ "c1998" ],
+                  "lds07" : [ "813/.54 PS3563.O8749 39677848    98039506 0231115261 (cloth : alk. paper) 023111527X (pbk. : alk. paper)" ],
+                  "lds09" : [ "New York : Columbia University Press,    1998   nyu" ],
+                  "lds10" : [ "Includes bibliographical references (p. 158-161) and index." ],
+                  "publisher" : [ "New York : Columbia University Press" ],
+                  "mms" : [ "990008837070106761" ],
+                  "dedupmemberids" : [ "990033603360106761" ],
+                  "contributor" : [ "Plasa, Carl, 1959-$$QPlasa, Carl" ],
+                  "series" : [ "Columbia critical guides$$QColumbia critical guides", "Columbia critical guides.$$QColumbia critical guides." ],
+                  "place" : [ "New York :" ],
+                  "version" : [ "1" ]
+                },
+                "control" : {
+                  "sourcerecordid" : [ "990008837070106761" ],
+                  "recordid" : [ "alma990008837070106761" ],
+                  "sourceid" : "alma",
+                  "originalsourceid" : [ "000883707-MIT01" ],
+                  "sourcesystem" : [ "ILS" ],
+                  "sourceformat" : [ "MARC21" ],
+                  "score" : [ "0.010449614" ],
+                  "isDedup" : true
+                },
+                "addata" : {
+                  "aulast" : [ "Plasa" ],
+                  "aufirst" : [ "Carl" ],
+                  "auinit" : [ "C" ],
+                  "addau" : [ "Plasa, Carl" ],
+                  "date" : [ "1998", "c1998" ],
+                  "isbn" : [ "0231115261", "023111527X" ],
+                  "notes" : [ "Includes bibliographical references (p. 158-161) and index." ],
+                  "cop" : [ "New York" ],
+                  "pub" : [ "Columbia University Press" ],
+                  "oclcid" : [ "(mcm)883707", "(mcm)883707mit01", "(ocolc)39677848" ],
+                  "lccn" : [ "98039506" ],
+                  "seriestitle" : [ "Columbia critical guides" ],
+                  "format" : [ "book" ],
+                  "genre" : [ "book" ],
+                  "ristype" : [ "BOOK" ],
+                  "btitle" : [ "Toni Morrison, Beloved" ]
+                },
+                "sort" : {
+                  "title" : [ "Toni Morrison, Beloved / edited by Carl Plasa." ],
+                  "author" : [ "Plasa, Carl, 1959-" ],
+                  "creationdate" : [ "1998" ]
+                },
+                "facets" : {
+                  "frbrtype" : [ "6" ],
+                  "frbrgroupid" : [ "9019252087667929366" ]
+                }
+              },
+              "delivery" : {
+                "bestlocation" : {
+                  "isValidUser" : true,
+                  "organization" : "01MIT_INST",
+                  "libraryCode" : "HUM",
+                  "availabilityStatus" : "available",
+                  "subLocation" : "Stacks",
+                  "subLocationCode" : "STACK",
+                  "mainLocation" : "Hayden Library",
+                  "callNumber" : "PS3563.O8749.B436 1998",
+                  "callNumberType" : "0",
+                  "holdingURL" : "OVP",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990008837070106761",
+                  "holdId" : "22523949800006761",
+                  "holKey" : "HoldingResultKey [mid=22523949800006761, libraryId=161684210006761, locationCode=STACK, callNumber=PS3563.O8749.B436 1998]",
+                  "matchForHoldings" : [ {
+                    "matchOn" : "MainLocation",
+                    "holdingRecord" : "852##b"
+                  } ],
+                  "stackMapUrl" : "",
+                  "relatedTitle" : null,
+                  "yearFilter" : null,
+                  "volumeFilter" : null,
+                  "singleUnavailableItemProcessType" : null,
+                  "boundWith" : false,
+                  "@id" : "_:0"
+                },
+                "holding" : [ {
+                  "isValidUser" : true,
+                  "organization" : "01MIT_INST",
+                  "libraryCode" : "HUM",
+                  "availabilityStatus" : "available",
+                  "subLocation" : "Stacks",
+                  "subLocationCode" : "STACK",
+                  "mainLocation" : "Hayden Library",
+                  "callNumber" : "PS3563.O8749.B436 1998",
+                  "callNumberType" : "0",
+                  "holdingURL" : "OVP",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990008837070106761",
+                  "holdId" : "22523949800006761",
+                  "holKey" : "HoldingResultKey [mid=22523949800006761, libraryId=161684210006761, locationCode=STACK, callNumber=PS3563.O8749.B436 1998]",
+                  "matchForHoldings" : [ {
+                    "matchOn" : "MainLocation",
+                    "holdingRecord" : "852##b"
+                  } ],
+                  "stackMapUrl" : "",
+                  "relatedTitle" : null,
+                  "yearFilter" : null,
+                  "volumeFilter" : null,
+                  "singleUnavailableItemProcessType" : null,
+                  "boundWith" : false,
+                  "@id" : "_:0"
+                } ],
+                "electronicServices" : null,
+                "filteredByGroupServices" : null,
+                "quickAccessService" : null,
+                "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+                "serviceMode" : [ "ovp", "Viewit" ],
+                "availability" : [ "available_in_library", "not_restricted" ],
+                "availabilityLinks" : [ "detailsgetit1" ],
+                "availabilityLinksUrl" : [ ],
+                "displayedAvailability" : null,
+                "displayLocation" : true,
+                "additionalLocations" : false,
+                "physicalItemTextCodes" : null,
+                "feDisplayOtherLocations" : false,
+                "almaInstitutionsList" : [ ],
+                "recordInstitutionCode" : null,
+                "recordOwner" : "01MIT_INST",
+                "hasFilteredServices" : null,
+                "digitalAuxiliaryMode" : false,
+                "hideResourceSharing" : false,
+                "sharedDigitalCandidates" : null,
+                "GetIt1" : [ {
+                  "category" : "Alma-P",
+                  "links" : [ {
+                    "isLinktoOnline" : false,
+                    "getItTabText" : "service_getit",
+                    "adaptorid" : "ALMA_01",
+                    "ilsApiId" : "990008837070106761",
+                    "link" : "OVP",
+                    "inst4opac" : "01MIT_INST",
+                    "displayText" : null,
+                    "@id" : "_:0"
+                  } ]
+                } ],
+                "physicalServiceId" : null,
+                "link" : [ {
+                  "@id" : ":_0",
+                  "linkType" : "thumbnail",
+                  "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:0231115261,OCLC:,LCCN:98039506&jscmd=viewapi&callback=updateGBSCover",
+                  "displayLabel" : "thumbnail"
+                } ],
+                "hasD" : null
+              },
+              "enrichment" : {
+                "virtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : true,
+                  "callNumber" : "PS3563.O8749.B436 1998",
+                  "callNumberBrowseField" : "0"
+                },
+                "bibVirtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : true,
+                  "callNumber" : "ps#3563 o8749ǂb436 1998",
+                  "callNumberBrowseField" : "LOC_CL"
+                }
+              }
+            }, {
+              "context" : "L",
+              "adaptor" : "Local Search Engine",
+              "@id" : "https://na06.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/990009231350106761",
+              "pnx" : {
+                "display" : {
+                  "source" : [ "Alma" ],
+                  "type" : [ "book" ],
+                  "language" : [ "eng" ],
+                  "title" : [ "Understanding Toni Morrison's Beloved and Sula : selected essays and criticisms of the works by the Nobel Prize-winning author " ],
+                  "subject" : [ "Morrison, Toni -- Criticism and interpretation", "Morrison, Toni Beloved", "Morrison, Toni Sula" ],
+                  "format" : [ "xxiii, 381 p. ; 23 cm." ],
+                  "identifier" : [ "$$CLC$$V   99073816;$$CISBN$$V0878755187 (pbk.);$$CISBN$$V0878755144;$$COCLC$$V(OCoLC)43362101" ],
+                  "creationdate" : [ "2000" ],
+                  "lds07" : [ "43362101    99073816 0878755187 (pbk.) 0878755144" ],
+                  "lds09" : [ "Troy, N.Y. : Whitston Publishing Co.,    2000   nyu" ],
+                  "lds10" : [ "Includes bibliographical references and index." ],
+                  "publisher" : [ "Troy, N.Y. : Whitston Publishing Co." ],
+                  "mms" : [ "990009231350106761" ],
+                  "dedupmemberids" : [ "990033646250106761" ],
+                  "contributor" : [ "Iyasẹre, Solomon Ogbede, 1940-$$QIyasẹre, Solomon Ogbede", "Iyasere, Marla W.$$QIyasere, Marla W." ],
+                  "contents" : [ "Acknowledgements -- Introduction -- The tripled plot and center of Sula / Maureen T. Reddy -- Who cares? Women-centered psychology in Sula / Diane Gillespie and Missy Dehn Kubitschek -- Toni Morrison's Sula: a black woman's epic / Karen F. Stein -- The telling of Beloved / Eusebio L. Rodrigues -- Toni Morrison's Beloved: history, \"rememory,\" and a \"clamor for a kiss\" / Caroline Rody -- Belonging and freedom in Morrison's Beloved: slavery, sentimentality, and the evolution of consciousness / Howard W. Fulweiler -- \"will the parts hold?\": the journey toward a coherent self in Beloved / Betty Jane Powell -- The bonds of love and the boundaries of self in Toni Morrison's Beloved / Barbara Schapiro -- \"I love to tell the story\": biblical revisions in Beloved / Carolyn A. Mitchell -- Mixed genres and the logic of slavery in Toni Morrison's Beloved / Carl D. Malmgren -- Narrative control and subjectivity: dismantling safety in Toni Morrison's Beloved / Andrew Schopp -- Giving body to the word: the maternal symbolic in Toni Morrison's Beloved / Jean Wyatt -- Pain and the unmaking of self in Toni Morrison's Beloved / Kristin Boudreau -- Missing peace in Toni Morrison's Sula and Beloved / Rachel C. Lee -- The force outside/the force inside: mother-love and regenerative spaces in Sula and Beloved / Laurie Vickroy -- A blessing and a burden: the relation to the past in Sula, Song of Solomon and Beloved / Deborah Guth -- Sula and Beloved: images of Cain in the novels of Toni Morrison / Carolyn M. Jones -- Selected bibliography -- Contributors -- Index." ],
+                  "place" : [ "Troy, N.Y. :" ],
+                  "version" : [ "1" ]
+                },
+                "control" : {
+                  "sourcerecordid" : [ "990009231350106761" ],
+                  "recordid" : [ "alma990009231350106761" ],
+                  "sourceid" : "alma",
+                  "originalsourceid" : [ "000923135-MIT01" ],
+                  "sourcesystem" : [ "ILS" ],
+                  "sourceformat" : [ "MARC21" ],
+                  "score" : [ "0.009979993" ],
+                  "isDedup" : true
+                },
+                "addata" : {
+                  "aulast" : [ "Iyasẹre", "Iyasere" ],
+                  "aufirst" : [ "Solomon Ogbede", "Marla W." ],
+                  "auinit" : [ "S", "M" ],
+                  "addau" : [ "Iyasẹre, Solomon Ogbede", "Iyasere, Marla W." ],
+                  "date" : [ "2000" ],
+                  "isbn" : [ "0878755187", "0878755144" ],
+                  "notes" : [ "Includes bibliographical references and index." ],
+                  "cop" : [ "Troy, N.Y" ],
+                  "pub" : [ "Whitston Publishing Co." ],
+                  "oclcid" : [ "(mcm)923135", "(mcm)923135mit01", "(ocolc)43362101" ],
+                  "lccn" : [ "99073816" ],
+                  "format" : [ "book" ],
+                  "genre" : [ "book" ],
+                  "ristype" : [ "BOOK" ],
+                  "btitle" : [ "Understanding Toni Morrison's Beloved and Sula : selected essays and criticisms of the works by the Nobel Prize-winning author" ]
+                },
+                "sort" : {
+                  "title" : [ "Understanding Toni Morrison's Beloved and Sula : selected essays and criticisms of the works by the Nobel Prize-winning author / edited by Solomon O. Iyasere, Marla W. Iyasere." ],
+                  "author" : [ "Iyasẹre, Solomon Ogbede, 1940-" ],
+                  "creationdate" : [ "2000" ]
+                },
+                "facets" : {
+                  "frbrtype" : [ "6" ],
+                  "frbrgroupid" : [ "9076278965252904343" ]
+                }
+              },
+              "delivery" : {
+                "bestlocation" : {
+                  "isValidUser" : true,
+                  "organization" : "01MIT_INST",
+                  "libraryCode" : "HUM",
+                  "availabilityStatus" : "available",
+                  "subLocation" : "Stacks",
+                  "subLocationCode" : "STACK",
+                  "mainLocation" : "Hayden Library",
+                  "callNumber" : "PS3563.O8749.Z95 2000",
+                  "callNumberType" : "0",
+                  "holdingURL" : "OVP",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990009231350106761",
+                  "holdId" : "22489567880006761",
+                  "holKey" : "HoldingResultKey [mid=22489567880006761, libraryId=161684210006761, locationCode=STACK, callNumber=PS3563.O8749.Z95 2000]",
+                  "matchForHoldings" : [ {
+                    "matchOn" : "MainLocation",
+                    "holdingRecord" : "852##b"
+                  } ],
+                  "stackMapUrl" : "",
+                  "relatedTitle" : null,
+                  "yearFilter" : null,
+                  "volumeFilter" : null,
+                  "singleUnavailableItemProcessType" : null,
+                  "boundWith" : false,
+                  "@id" : "_:0"
+                },
+                "holding" : [ {
+                  "isValidUser" : true,
+                  "organization" : "01MIT_INST",
+                  "libraryCode" : "HUM",
+                  "availabilityStatus" : "available",
+                  "subLocation" : "Stacks",
+                  "subLocationCode" : "STACK",
+                  "mainLocation" : "Hayden Library",
+                  "callNumber" : "PS3563.O8749.Z95 2000",
+                  "callNumberType" : "0",
+                  "holdingURL" : "OVP",
+                  "adaptorid" : "ALMA_01",
+                  "ilsApiId" : "990009231350106761",
+                  "holdId" : "22489567880006761",
+                  "holKey" : "HoldingResultKey [mid=22489567880006761, libraryId=161684210006761, locationCode=STACK, callNumber=PS3563.O8749.Z95 2000]",
+                  "matchForHoldings" : [ {
+                    "matchOn" : "MainLocation",
+                    "holdingRecord" : "852##b"
+                  } ],
+                  "stackMapUrl" : "",
+                  "relatedTitle" : null,
+                  "yearFilter" : null,
+                  "volumeFilter" : null,
+                  "singleUnavailableItemProcessType" : null,
+                  "boundWith" : false,
+                  "@id" : "_:0"
+                } ],
+                "electronicServices" : null,
+                "filteredByGroupServices" : null,
+                "quickAccessService" : null,
+                "deliveryCategory" : [ "Alma-P", "Alma-E" ],
+                "serviceMode" : [ "ovp", "Viewit" ],
+                "availability" : [ "available_in_library", "not_restricted" ],
+                "availabilityLinks" : [ "detailsgetit1" ],
+                "availabilityLinksUrl" : [ ],
+                "displayedAvailability" : null,
+                "displayLocation" : true,
+                "additionalLocations" : false,
+                "physicalItemTextCodes" : null,
+                "feDisplayOtherLocations" : false,
+                "almaInstitutionsList" : [ ],
+                "recordInstitutionCode" : null,
+                "recordOwner" : "01MIT_INST",
+                "hasFilteredServices" : null,
+                "digitalAuxiliaryMode" : false,
+                "hideResourceSharing" : false,
+                "sharedDigitalCandidates" : null,
+                "GetIt1" : [ {
+                  "category" : "Alma-P",
+                  "links" : [ {
+                    "isLinktoOnline" : false,
+                    "getItTabText" : "service_getit",
+                    "adaptorid" : "ALMA_01",
+                    "ilsApiId" : "990009231350106761",
+                    "link" : "OVP",
+                    "inst4opac" : "01MIT_INST",
+                    "displayText" : null,
+                    "@id" : "_:0"
+                  } ]
+                } ],
+                "physicalServiceId" : null,
+                "link" : [ {
+                  "@id" : ":_0",
+                  "linkType" : "thumbnail",
+                  "linkURL" : "https://proxy-na.hosted.exlibrisgroup.com/exl_rewrite/books.google.com/books?bibkeys=ISBN:0878755187,OCLC:,LCCN:99073816&jscmd=viewapi&callback=updateGBSCover",
+                  "displayLabel" : "thumbnail"
+                } ],
+                "hasD" : null
+              },
+              "enrichment" : {
+                "virtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : true,
+                  "callNumber" : "PS3563.O8749.Z95 2000",
+                  "callNumberBrowseField" : "0"
+                },
+                "bibVirtualBrowseObject" : {
+                  "isVirtualBrowseEnabled" : true,
+                  "callNumber" : "ps000000003563.o000000000756z000000000095000000002000",
+                  "callNumberBrowseField" : "LOCAL_CL_09X"
+                }
+              }
+            } ],
+            "timelog" : {
+              "BUILD_RESULTS_RETRIVE_FROM_DB" : "114",
+              "CALL_SOLR_GET_IDS_LIST" : "124",
+              "PRIMA_LOCAL_SEARCH_SET_AVALIABILITY" : "289",
+              "RETRIVE_COLLECTION_DISCOVERY_INFO" : "32",
+              "RETRIVE_FROM_DB_COURSE_INFO" : "3",
+              "RETRIVE_FROM_DB_RECORDS" : "43",
+              "RETRIVE_FROM_DB_RELATIONS" : "17",
+              "SET_AVAILABILTY_GET_LIBRARY_DETAILS" : "211",
+              "SET_AVAILABILTY_HOLDING_DEDUPS" : "78",
+              "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "217",
+              "PRIMA_LOCAL_SEARCH_TOTAL" : "759",
+              "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
+              "BUILD_COMBINED_RESULTS_MAP" : 0,
+              "COMBINED_SEARCH_TIME" : 5,
+              "PROCESS_COMBINED_RESULTS" : 0,
+              "FEATURED_SEARCH_TIME" : 1
+            },
+            "facets" : [ ]
+          }
+    recorded_at: Fri, 06 Aug 2021 16:43:36 GMT
+recorded_with: VCR 6.0.0

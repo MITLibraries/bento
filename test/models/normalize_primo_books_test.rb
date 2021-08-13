@@ -15,6 +15,8 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     # Note that this cassette has been manually edited to remove the 
     # following fields from the first result: publisher, subject, holding, 
     # bestlocation, isbn
+    # If regenerated, the first result of this cassette may also need to be manually edited to remove the 'isDedup' 
+    # field, assuming that feature is enabled in Primo.
     VCR.use_cassette('missing fields primo books', 
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('popcorn', 
@@ -73,6 +75,13 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
                                           ENV['PRIMO_BOOK_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
                                    'Journal of heat transfer')
+    end
+  end
+
+  def dedup
+    VCR.use_cassette('beloved primo', allow_playback_repeats: true) do
+      raw_query = SearchPrimo.new.search('beloved morrison', ENV['PRIMO_BOOK_SCOPE'], 5)
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 'beloved morrison')
     end
   end
 
@@ -172,5 +181,21 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     assert_nothing_raised { result.other_availability }
     assert_nil result.availability
     assert_nil result.other_availability
+  end
+
+  test 'handles results without dedup status' do
+    result = missing_fields_books['results'].first
+    assert_nothing_raised { result.dedup_url }
+    assert_nil result.dedup_url
+  end
+
+  test 'generates dedup URLs as expected' do
+    non_dedup_result = dedup['results'].first
+    assert_nothing_raised { non_dedup_result.dedup_url }
+    assert_nil non_dedup_result.dedup_url
+
+    dedup_result = dedup['results'].second
+    assert_equal 'https://mit.primo.exlibrisgroup.com/discovery/search?facet=frbrgroupid%2Cinclude%2C9073697300638768684&query=any%2Ccontains%2Cbeloved+morrison&search_scope=FAKE_PRIMO_BOOK_SCOPE&sortby=date_d&tab=FAKE_PRIMO_TAB&vid=FAKE_PRIMO_VID',
+                 dedup_result.dedup_url
   end
 end
