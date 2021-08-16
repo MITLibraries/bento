@@ -1,6 +1,10 @@
 class SearchController < ApplicationController
   before_action :validate_q!, only: %i[bento search search_boxed]
 
+  class NoSuchTargetError < StandardError; end
+
+  rescue_from NoSuchTargetError, with: :no_such_target
+
   def index; end
 
   def bento; end
@@ -8,7 +12,6 @@ class SearchController < ApplicationController
   def search_boxed
     @per_box = (ENV['RESULTS_PER_BOX'] || 5).to_i
     @results = search_results(1, @per_box)
-    return redirect_to root_url unless @results
     render layout: false
   end
 
@@ -16,7 +19,6 @@ class SearchController < ApplicationController
     page = params[:page] || 1
     per_page = params[:per_page] || ENV['PER_PAGE'] || 20
     @results = search_results(page, per_page)
-    return redirect_to root_url unless @results
     @pageable_results = paginate_results(page, per_page)
     render 'search_boxed'
   end
@@ -30,7 +32,6 @@ class SearchController < ApplicationController
   # Instead, we'll rely on the cache itself to expire the oldest cached
   # items when necessary.
   def search_results(page, per_page)
-    return unless valid_target?
     Rails.cache.fetch(cache_key(page, per_page), expires_in: 1.day) do
       search_target(page, per_page)
     end
@@ -38,16 +39,6 @@ class SearchController < ApplicationController
 
   def cache_key(page, per_page)
     "#{params[:target]}_#{strip_truncate_q}_#{page}_#{per_page}_#{today}"
-  end
-
-  # Boolean check of whether param passed in is a valid search endpoint
-  def valid_target?
-    valid_targets.include?(params[:target])
-  end
-
-  # Array of search endpoints that are supported
-  def valid_targets
-    %w[articles books google timdex catalog cdi FAKE_PRIMO_BOOK_SCOPE FAKE_PRIMO_ARTICLE_SCOPE]
   end
 
   # Formatted date used in creating cache keys
@@ -62,8 +53,10 @@ class SearchController < ApplicationController
       search_timdex
     elsif params[:target] == 'articles' || params[:target] == 'books'
       search_eds(page, per_page)
-    else
+    elsif params[:target] == ENV['PRIMO_BOOK_SCOPE'] || params[:target] == ENV['PRIMO_ARTICLE_SCOPE']
       search_primo(per_page)
+    else
+      raise SearchController::NoSuchTargetError
     end
   end
 
@@ -123,5 +116,9 @@ class SearchController < ApplicationController
       @results['results'],
       total_count: max
     ).page(page).per(per_page)
+  end
+
+  def no_such_target
+    render 'errors/not_found', status: 404
   end
 end
