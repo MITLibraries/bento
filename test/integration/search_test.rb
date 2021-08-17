@@ -98,10 +98,9 @@ class SearchTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'invalid target' do
+  test 'raise 404 on invalid target' do
     get '/search/search_boxed?q=popcorn&target=hackor'
-    follow_redirect!
-    assert_response :success
+    assert_response :not_found
   end
 
   test 'pagination' do
