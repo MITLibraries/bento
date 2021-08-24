@@ -1,12 +1,12 @@
 <% if current_page?(:controller => 'search', :action => 'search') %>
   <div class="gridband layout-4q title-area">
     <h2 class="title title-page has-subline">More
-      <% if params[:target] == 'books' %>
+      <% if params[:target] == ENV['PRIMO_BOOK_SCOPE'] %>
         <% id = 'books_content' %>
         books and media
-      <% elsif params[:target] == 'articles' %>
+      <% elsif params[:target] == ENV['PRIMO_ARTICLE_SCOPE'] %>
         <% id = 'articles_content' %>
-        articles and journals
+        articles and book chapters
       <% end %>
 
       for
@@ -35,12 +35,6 @@
 
     <%= render partial: "view_all_link" %>
 
-    <% if current_page?(:controller => 'search', :action => 'search') %>
-      <div class="results-pagination">
-        <%= paginate(@pageable_results) %>
-      </div>
-    <% end %>
-
 <% if current_page?(:controller => 'search', :action => 'search') %>
     </div>
     <div class="col1q-r">
@@ -55,9 +49,4 @@
     </div>
     </div>
   </div>
-
-  <script>
-    RealtimeStatus( '#<%= id %>' );
-    TrackLinks( $( '#<%= id %>' ).find( 'a' ) );
-  </script>
 <% end %>

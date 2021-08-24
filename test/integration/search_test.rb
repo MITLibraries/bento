@@ -35,28 +35,6 @@ class SearchTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'article results are populated' do
-    VCR.use_cassette('popcorn articles',
-                     allow_playback_repeats: true) do
-      get '/search/search_boxed?q=popcorn&target=articles'
-      assert_response :success
-      assert_select('a.bento-link') do |value|
-        assert(value.text.include?('History of northern corn leaf'))
-      end
-    end
-  end
-
-  test 'book results are populated' do
-    VCR.use_cassette('popcorn non articles',
-                     allow_playback_repeats: true) do
-      get '/search/search_boxed?q=popcorn&target=books'
-      assert_response :success
-      assert_select('a.bento-link') do |value|
-        assert(value.text.include?('fifty years of rock'))
-      end
-    end
-  end
-
   test 'Primo local results are populated' do
     VCR.use_cassette('popcorn primo books',
                      allow_playback_repeats: true) do
@@ -103,51 +81,6 @@ class SearchTest < ActionDispatch::IntegrationTest
     assert_response :not_found
   end
 
-  test 'pagination' do
-    VCR.use_cassette('popcorn books paginated',
-                     allow_playback_repeats: true) do
-      get '/search?q=popcorn&target=books'
-      assert_response :success
-      assert_select('a.bento-link') do |value|
-        assert(value.text.include?('fifty years of rock'))
-      end
-      assert_select('span.page.current') do |value|
-        assert_equal(1, value.text.to_i)
-      end
-      assert_select('span.next a') do |value|
-        assert_equal(
-          '/search?page=2&q=popcorn&target=books',
-          value.first['href']
-        )
-      end
-    end
-  end
-
-  test 'local full_record_link when enabled' do
-    VCR.use_cassette('popcorn articles',
-                     allow_playback_repeats: true) do
-      @test_strategy.switch!(:local_full_record, true) # enable feature
-      get '/search/search_boxed?q=popcorn&target=articles'
-      assert_response :success
-      assert_select('a.bento-link') do |value|
-        assert(value.text.include?('History of northern corn leaf'))
-        assert(value.xpath('./@href').text.exclude?('http://search.ebscohost.com/login.aspx'))
-      end
-    end
-  end
-
-  test 'remote full_record_link when local not enabled' do
-    VCR.use_cassette('popcorn articles',
-                     allow_playback_repeats: true) do
-      get '/search/search_boxed?q=popcorn&target=articles'
-      assert_response :success
-      assert_select('a.bento-link') do |value|
-        assert(value.text.include?('History of northern corn leaf'))
-        assert(value.xpath('./@href').text.include?('http://search.ebscohost.com/login.aspx'))
-      end
-    end
-  end
-
   test 'dedup full_record_link when relevant' do
     VCR.use_cassette('beloved primo',
                      allow_playback_repeats: true) do
@@ -158,15 +91,6 @@ class SearchTest < ActionDispatch::IntegrationTest
         assert(value.text.include?('Beloved'))
         assert(value.xpath('./@href').text.include?(url))
       end
-    end
-  end
-
-  test 'multiple item types can be displayed' do
-    VCR.use_cassette('why only us',
-                     allow_playback_repeats: true) do
-      get '/search/search_boxed?q=why+only+us&target=books'
-      assert_response :success
-      assert_select 'span.result-type', { text: 'Type: Book; eBook' }
     end
   end
 end

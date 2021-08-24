@@ -7,33 +7,15 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
-  ENV['EDS_URL'] = 'https://eds-api.ebscohost.com'
-  ENV['EDS_USER_ID'] = 'FAKE_EDS_USER_ID'
-  ENV['EDS_PASSWORD'] = 'FAKE_EDS_PASSWORD'
-  ENV['EDS_PROFILE'] = 'apiwhatnot'
   ENV['GOOGLE_API_KEY'] = 'FAKE_GOOGLE_API_KEY'
   ENV['GOOGLE_CUSTOM_SEARCH_ID'] = 'FAKE_GOOGLE_CUSTOM_SEARCH_ID'
-  ENV['WORLDCAT_URI'] = 'http://www.worldcat.org/webservices/catalog/search/worldcat/'
-  ENV['WORLDCAT_API_KEY'] = 'FAKE_WORLDCAT_KEY'
-  ENV['ENABLED_BOXES'] = 'website,books,articles,worldcat'
   ENV['MAX_AUTHORS'] = '3'
-  ENV['EDS_PROFILE_URI'] = 'http://libproxy.mit.edu/login?url=https%3A%2F%2Fsearch.ebscohost.com%2Flogin.aspx%3Fdirect%3Dtrue%26AuthType%3Dcookie%2Csso%2Cip%2Cuid%26type%3D0%26group%3Dedstest%26site%3Dedswhatnot%26profile%3Dedswhatnot%26bquery%3D'
-  ENV['EDS_BOOK_FACETS'] = '&facetfilter=1,SourceType:Books,SourceType:eBooks,SourceType:Audiobooks,SourceType:Dissertations,SourceType:Music+Scores,SourceType:Audio,SourceType:Videos'
-  ENV['EDS_ARTICLE_FACETS'] = '&facetfilter=1,SourceType:Academic+Journals,SourceType:Magazines,SourceType:Conference+Materials'
-  ENV['FEEDBACK_MAIL_TO'] = 'test@example.com'
-  ENV['ALEPH_API_URI'] = 'https://fake_server.example.com/rest-dlf/'
-  ENV['ALEPH_KEY'] = 'FAKE_KEY'
   ENV['PER_PAGE'] = '10'
   ENV['FLIPFLOP_KEY'] = 'yoyo'
-  ENV['ALEPH_HINT_SOURCE'] = 'https://fake.example.com/s/fake/getserial_mini.xml?dl=1'
-  ENV['FULL_RECORD_TOGGLE_BUTTON'] = 'true'
-
   ENV['ALMA_OPENURL'] = 'https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?'
   ENV['ALMA_SRU'] = 'https://mit.alma.exlibrisgroup.com/view/sru/01MIT_INST?version=1.2&operation=searchRetrieve&recordSchema=marcxml&query=alma.all_for_ui='
   ENV['EXL_INST_ID'] = '01MIT_INST'
   ENV['PRIMO_SEARCH'] = 'true'
-  ENV['PRIMO_REDIRECTS'] = 'false'
   ENV['PRIMO_API_URL'] = 'https://another_fake_server.example.com/v1'
   ENV['PRIMO_API_KEY'] = 'FAKE_PRIMO_API_KEY'
   ENV['PRIMO_VID'] = 'FAKE_PRIMO_VID'
@@ -44,11 +26,7 @@ Rails.application.configure do
   ENV['PRIMO_SPLASH_PAGE'] = 'https://libraries.mit.edu/news/library-platform-before/32066/'
   ENV['MIT_PRIMO_URL'] = 'https://mit.primo.exlibrisgroup.com'
   ENV['SYNDETICS_PRIMO_URL'] = 'https://syndetics.com/index.php?client=primo'
-
-  ENV['SCAN_EXCLUSIONS']='Materials -- Standards -- United States -- Periodicals;Materials -- Standards -- United States -- Periodicals;Standards, Engineering;Standards, Engineering -- Periodicals'
-
   ENV['TIMDEX_URL']='https://timdex.mit.edu/graphql'
-  ENV['SFX_HOST']='https://sfx.mit.edu/sfx_test'
 
   config.cache_classes = true
 

@@ -7,17 +7,19 @@ digraph G {
   "Hints app" -> "Hints Results"
   "Hints Results" -> "Results Page"
 
-  "Search Term" -> "EDS API Articles Search"
-  "EDS API Articles Search" -> "Articles Results"
-  "Articles Results" -> "Results Page"
+  "Search Term" -> "Primo Search API CDI Search"
+  "Primo Search API CDI Search" -> "Articles + Chapters Results"
+  "Articles + Chapters Results" -> "Results Page"
 
-  "Search Term" -> "EDS API Books Search"
-  "EDS API Books Search" -> "Books Results"
-  "Books Results" -> "Aleph API Realtime Availability Check"
-  "Aleph API Realtime Availability Check" -> "Books Results"
-  "Books Results" -> "Results Page"
+  "Search Term" -> "Primo Search API Local Search"
+  "Primo Search API Local Search" -> "Catalog Results"
+  "Catalog Results" -> "Results Page"
 
   "Search Term" -> "Google Custom Search API"
   "Google Custom Search API" -> "Site Results"
   "Site Results" -> "Results Page"
+
+  "Search Term" -> "TIMDEX API"
+  "TIMDEX API" -> "ArchivesSpace Results"
+  "ArchivesSpace Results" -> "Results Page"
 }

@@ -201,18 +201,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-validation-rails (1.19.0)
     jwt (2.2.3)
-    kaminari (1.2.1)
-      activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.1)
-      kaminari-activerecord (= 1.2.1)
-      kaminari-core (= 1.2.1)
-    kaminari-actionview (1.2.1)
-      actionview
-      kaminari-core (= 1.2.1)
-    kaminari-activerecord (1.2.1)
-      activerecord
-      kaminari-core (= 1.2.1)
-    kaminari-core (1.2.1)
     latex-decode (0.3.2)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -409,7 +397,6 @@ DEPENDENCIES
   ipaddr_range_set
   jquery-rails
   jquery-validation-rails
-  kaminari
   listen
   lograge
   minitest-rails
