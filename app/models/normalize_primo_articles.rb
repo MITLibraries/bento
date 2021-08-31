@@ -52,15 +52,13 @@ class NormalizePrimoArticles
     if openurl_server == record_openurl_server
       primo_openurl = [ENV['MIT_PRIMO_URL'], '/discovery/openurl?institution=',
                        ENV['EXL_INST_ID'], '&vid=', ENV['PRIMO_VID'], '&'].join('')
-      link_resolver_url = @record['delivery']['almaOpenurl'].gsub(ENV['ALMA_OPENURL'],
-                                                                  primo_openurl)
+      @record['delivery']['almaOpenurl'].gsub(ENV['ALMA_OPENURL'], primo_openurl)
     else
       Rails.logger.warn 'Alma openurl server mismatch. Expected ' +
                          openurl_server + ', but received ' + 
                          record_openurl_server + '. (record ID: ' + 
                          @record['pnx']['control']['recordid'].join('') + ')'
-      link_resolver_url = @record['delivery']['almaOpenurl']
+      @record['delivery']['almaOpenurl']
     end
-    [link_resolver_url, '&u.ignore_date_coverage=true'].join('')
   end
 end
