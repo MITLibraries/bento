@@ -81,7 +81,6 @@ class NormalizePrimoBooks
     end
   end
 
-
   # FRBR type '5' means the record is frbrized. and '6' means it isn't:
   # https://knowledge.exlibrisgroup.com/Primo/Knowledge_Articles/Primo_Search_API_-_how_to_get_FRBR_Group_members_after_a_search
   def frbrized?
