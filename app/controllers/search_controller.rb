@@ -19,7 +19,6 @@ class SearchController < ApplicationController
     page = params[:page] || 1
     per_page = params[:per_page] || ENV['PER_PAGE'] || 20
     @results = search_results(page, per_page)
-    @pageable_results = paginate_results(page, per_page)
     render 'search_boxed'
   end
 
@@ -51,28 +50,10 @@ class SearchController < ApplicationController
       search_google
     elsif params[:target] == 'timdex'
       search_timdex
-    elsif params[:target] == 'articles' || params[:target] == 'books'
-      search_eds(page, per_page)
     elsif params[:target] == ENV['PRIMO_BOOK_SCOPE'] || params[:target] == ENV['PRIMO_ARTICLE_SCOPE']
       search_primo(per_page)
     else
       raise SearchController::NoSuchTargetError
-    end
-  end
-
-  # Seaches EDS
-  def search_eds(page, per_page)
-    raw_results = SearchEds.new.search(
-      strip_truncate_q, ENV['EDS_PROFILE'], eds_facets, page, per_page
-    )
-    NormalizeEds.new.to_result(raw_results, params[:target], strip_truncate_q)
-  end
-
-  def eds_facets
-    if params[:target] == 'articles'
-      ENV['EDS_ARTICLE_FACETS']
-    elsif params[:target] == 'books'
-      ENV['EDS_BOOK_FACETS']
     end
   end
 
@@ -106,16 +87,6 @@ class SearchController < ApplicationController
     return if params[:q].present? && strip_truncate_q.present?
     flash[:error] = 'A search term is required.'
     redirect_to root_url
-  end
-
-  # Turns search results into a format that can be used by the paginator.
-  def paginate_results(page, per_page)
-    # EDS API Limits retrieving results past about 250
-    max = [@results['total'], 250].min
-    Kaminari.paginate_array(
-      @results['results'],
-      total_count: max
-    ).page(page).per(per_page)
   end
 
   def no_such_target

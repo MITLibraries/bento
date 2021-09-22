@@ -1,16 +1,9 @@
 <% if current_page?(:controller => 'search', :action => 'search_boxed') %>
   <div class="results-more">
   <% if @results['total'] > 0 %>
-    <% if Flipflop.enabled?(:local_browse) && @results['local_view_more'] %>
-      <% view_more_url = @results['local_view_more'] %>
-    <% elsif Flipflop.enabled?(:primo_search) && (params[:target] == ENV.fetch('PRIMO_BOOK_SCOPE') || params[:target] == ENV.fetch('PRIMO_ARTICLE_SCOPE')) %>
-      <% view_more_url = @results['primo_ui_view_more'] %>
-    <% else %>
-      <% view_more_url = @results['eds_ui_view_more'] %>
-    <% end %>
     <%= link_to(
       "View more #{view_more_text} results",
-      view_more_url,
+      @results['view_more'],
       data: {count: number_with_delimiter(@results['total']), type: 'view all results'}, class: "button button-primary #{ 'hidden' if @results['total'] <= @per_box }") %>
   <% else %>
     No results found.

@@ -1,10 +1,6 @@
 <div class="wrap-result">
-  <% if Flipflop.enabled?(:local_browse) %>
-    <% search_prefix = '/search/bento?q=' %>
-  <% elsif 'timdex' == params[:target] %>
+  <% if 'timdex' == params[:target] %>
     <% search_prefix = ENV['ASPACE_SEARCH_URI'] %>
-  <% else %>
-    <% search_prefix = ENV['EDS_PROFILE_URI'] %>
   <% end %>
 
   <% if !result.dedup_url && result.thumbnail %>
@@ -17,11 +13,6 @@
     <span class="sr">Title: </span>
     <%= link_to(result.truncated_title.html_safe, full_record_link(result), class: 'bento-link', data: {type: "Title"} ) %>
   </h3>
-  <div class="result-uniform-title">
-    <% if result.uniform_title %>
-      <span class="sr">Alternate Title: </span><%= safe_output(result.uniform_title) %>
-    <% end %>
-  </div>
   <p>
     <% if !result.dedup_url && result.type %>
       <span class="result-type"><span class="sr">Type: </span><%= result.type %></span>
@@ -94,37 +85,6 @@
 
   <% if result.location.present? && params[:target] == ENV['PRIMO_BOOK_SCOPE'] %>
     <%= render partial: "primo_rta", locals: { result: result } %>
-  <% elsif result.location.present? %>
-    <div id="stale_locations_<%= result.clean_an %>" class="result-local-locations">
-      <p class="sr">Library locations: </p>
-      <ul class="list-local-locations">
-      <% result.location.each do |location| %>
-        <li class="result-local-location">
-          <%= location[0] %>: <%= location[1] %> (not realtime)
-        </li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <% if result.aleph_record? && params[:target] == 'books' %>
-    <div id="<%= result.clean_an %>" class='realtime_status result-local-locations' data-an="<%= result.clean_an %>">
-      Loading realtime status...
-      <i class="fa fa-spinner fa-spin"></i>
-    </div>
-  <% end %>
-
-  <% if result.aleph_cr_record? && params[:target] == 'books' %>
-    <div id="<%= result.clean_an %>" class='realtime_status result-local-locations' data-an="<%= result.clean_an %>">
-      Loading realtime status...
-      <i class="fa fa-spinner fa-spin"></i>
-    </div>
-  <% end %>
-
-  <% if result.db_source.present? && Flipflop.enabled?(:debug) %>
-    <p class="result-pubinfo">
-      Source DB: <%= result.db_source[0] %> (<%= result.db_source[1] %>)
-    </p>
   <% end %>
 
   <div class="result-get">
@@ -132,18 +92,8 @@
       <%= link_to("View online", result.getit_url, class: 'online button button-primary green', data: {type: "Get"}) %>
     <% end %>
 
-    <% if Flipflop.enabled?(:check_online) %>
-      <% if result.getit_url.blank? && result.check_sfx_url.present? %>
-        <%= link_to("Check for online access", result.check_sfx_url, class: 'online button-secondary', data: {type: "Check"}) %>
-      <% end %>
-    <% end %>
-
     <% if !result.dedup_url %>
       <%= link_to("Details and requests", full_record_link(result), class: 'details button button-secondary', data: {type: "Detail"}) %>
     <% end %>
   </div>
-
-  <% if Flipflop.enabled?(:debug) %>
-    <%= render partial: "debug", locals: { result: result } %>
-  <% end %>
 </div>

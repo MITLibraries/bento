@@ -3,9 +3,7 @@ $.ajax({
   context: $('#<%= id %>')
 }).done(function( msg ) {
   $('#<%= id %>').html( msg );
-  TrackLinks( $( this ).find( 'a' ) );
   ReportSummary( '<%= target %>', $( this ).find('[data-count]').data('count') );
-  RealtimeStatus( '#<%= id %>' );
 }).fail(function( xhr, textStatus ) {
   console.log(xhr);
   $('#<%= id %>').html( 'Sorry, an error has occurred loading results at this time.' ).addClass('alert error');

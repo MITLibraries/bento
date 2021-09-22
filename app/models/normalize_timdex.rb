@@ -6,7 +6,7 @@ class NormalizeTimdex
     norm = {}
     norm['total'] = results['data']['search']['hits']
     norm['results'] = []
-    norm['eds_ui_view_more'] = view_more(q)
+    norm['view_more'] = view_more(q)
     extract_results(results, norm)
     norm
   end

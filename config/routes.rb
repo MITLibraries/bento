@@ -11,13 +11,12 @@ Rails.application.routes.draw do
 
   get 'session/toggle_boxes', to: 'session#box_toggler'
 
-  get 'item_status', to: 'aleph#item_status'
-  get 'full_item_status', to: 'aleph#full_item_status'
-
   get 'hint', to: 'hint#hint'
   get 'toggle', to: 'feature#toggle'
   get 'full_record_toggle', to: 'feature#full_record_toggle'
 
+  # The two record controller routes exist solely to redirect full record links, which were once considered permalinks, 
+  # to their corresponding Primo records. This is why they now route to the same method, because they do the same thing.
   get 'record/(:db_source)/(:an)', to: 'record#record',
                                    as: :record,
                                    # Normal URL routing disallows periods in
@@ -27,9 +26,8 @@ Rails.application.routes.draw do
                                    # allow for all legal URL characters, except
                                    # those which are reserved.
                                    :constraints  => { :an => /[0-z\.\-\_~\(\)]+/ }
-
   get 'record/direct_link/(:db_source)/(:an)',
-                                   to: 'record#direct_link',
+                                   to: 'record#record',
                                    as: :record_direct_link,
                                    :constraints  => { :an => /[0-z\.\-\_~\(\)]+/ }
 
