@@ -126,7 +126,7 @@ GEM
       namae (~> 1.0)
     csl-styles (1.0.1.10)
       csl (~> 1.0)
-    dalli (2.7.11)
+    dalli (3.0.1)
     debug_inspector (1.1.0)
     declarative (0.0.20)
     docile (1.3.5)
