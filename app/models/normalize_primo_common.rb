@@ -69,11 +69,30 @@ class NormalizePrimoCommon
     end
   end
 
+  # We've altered this method slightly to address bugs introduced in the Primo VE November 2021 release. The search_scope
+  # param is now required for CDI fulldisplay links, and the context param is now required for local (catalog)
+  # fulldisplay links.
+  #
+  # In order to avoid more surprises, we're adding all of the params included in the fulldisplay exmaple links provided
+  # here, even though not all of them are actually required at present:
+  # https://developers.exlibrisgroup.com/primo/apis/deep-links-new-ui/
+  #
+  # We should keep an eye on this over subsequent Primo reeleases and revert it to something more minimalist/sensible
+  # when Ex Libris fixes this issue.
   def link
     return unless @record['pnx']['control']['recordid']
+    return unless @record['context']
     record_id = @record['pnx']['control']['recordid'].join('')
-    [ENV['MIT_PRIMO_URL'], '/discovery/fulldisplay?docid=', record_id, 
-     '&vid=', ENV['PRIMO_VID']].join('')
+    base = [ENV.fetch('MIT_PRIMO_URL'), '/discovery/fulldisplay?'].join('')
+    query = {
+      docid: record_id,
+      vid: ENV.fetch('PRIMO_VID'),
+      context: @record['context'],
+      search_scope: 'all',
+      lang: 'en',
+      tab: ENV.fetch('PRIMO_MAIN_VIEW_TAB')
+    }.to_query
+    [base, query].join('')
   end
 
   def type
