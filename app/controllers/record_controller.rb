@@ -9,6 +9,7 @@ class RecordController < ApplicationController
   private
 
   def alma_sru
+    return unless params[:an]
     return unless params[:an].start_with?('mit')
     alma_system_id = params[:an].split('.').last.concat('MIT01')
     url = ENV.fetch('ALMA_SRU') + alma_system_id
