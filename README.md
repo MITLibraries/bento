@@ -112,3 +112,7 @@ reflected immediately in the running container.
 
 `docker-compose` will load your `.env` file automatically for your config and
 we use `/config/environment/test.rb` for test env stuff.
+
+## Testing
+
+Hello
