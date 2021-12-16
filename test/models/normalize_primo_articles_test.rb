@@ -99,7 +99,7 @@ class NormalizePrimoArticlesTest < ActiveSupport::TestCase
   # call and will change with each API call.
   test 'constructs full-text links as expected' do
     regular_result = popcorn_articles['results'].first
-    assert_equal 'https://mit.primo.exlibrisgroup.com/discovery/openurl?institution=01MIT_INST&vid=FAKE_PRIMO_VID&ctx_enc=info:ofi/enc:UTF-8&ctx_id=10_1&ctx_tim=2021-05-19 10:51:07&ctx_ver=Z39.88-2004&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&rfr_id=info:sid/primo.exlibrisgroup.com-crossref&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.genre=article&rft.atitle=Popcorn&rft.jtitle=Physics+world&rft.date=2016-11&rft.volume=29&rft.issue=11&rft.spage=42&rft.epage=42&rft.pages=42-42&rft.issn=0953-8585&rft.eissn=2058-7058&rft_id=info:doi/10.1088%2F2058-7058%2F29%2F11%2F46&rft_dat=<crossref>10_1088_2058_7058_29_11_46</crossref>&svc_dat=viewit',
+    assert_equal 'https://mit.primo.exlibrisgroup.com/discovery/openurl?institution=01MIT_INST&rfr_id=info:sid/primo.exlibrisgroup.com-crossref&rft.atitle=Popcorn&rft.date=2016-11&rft.eissn=2058-7058&rft.epage=42&rft.genre=article&rft.issn=0953-8585&rft.issue=11&rft.jtitle=Physics+world&rft.pages=42-42&rft.spage=42&rft.volume=29&rft_dat=<crossref>10_1088_2058_7058_29_11_46</crossref>&rft_id=info:doi/10.1088/2058-7058/29/11/46&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&svc_dat=viewit&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&url_ver=Z39.88-2004&vid=FAKE_PRIMO_VID',
                  regular_result.openurl
 
     irregular_result = missing_fields_articles['results'].last
