@@ -18,8 +18,8 @@ gem 'puma'
 gem 'rack-attack'
 gem 'rails', '~> 6.1.0'
 gem 'sass-rails'
-gem 'sentry-ruby'
 gem 'sentry-rails'
+gem 'sentry-ruby'
 gem 'skylight'
 gem 'stringex'
 gem 'uglifier'
@@ -41,6 +41,7 @@ group :development do
   gem 'dotenv-rails'
   gem 'listen'
   gem 'rubocop'
+  gem 'rubocop-rails'
   gem 'web-console'
 end
 
