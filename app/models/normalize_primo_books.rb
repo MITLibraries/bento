@@ -24,13 +24,13 @@ class NormalizePrimoBooks
     # A record can have multiple ISBNs, so we are assuming here that
     # the thumbnail URL can be constructed from the first occurrence
     isbn = @record['pnx']['addata']['isbn'].first
-    [ENV['SYNDETICS_PRIMO_URL'], '&isbn=', isbn, '/sc.jpg'].join('')
+    [ENV['SYNDETICS_PRIMO_URL'], '&isbn=', isbn, '/sc.jpg'].join
   end
 
   def publisher
     return unless @record['pnx']['display']['publisher']
 
-    @record['pnx']['display']['publisher'].join('')
+    @record['pnx']['display']['publisher'].join
   end
 
   def subjects
@@ -46,7 +46,7 @@ class NormalizePrimoBooks
     subj = subj.split('--').map { |el| el.strip }.join(' ') if subj.include?('--')
     [ENV['MIT_PRIMO_URL'], '/discovery/search?query=subject,exact,',
      subj, '&tab=', ENV['PRIMO_MAIN_VIEW_TAB'], '&search_scope=all&vid=',
-     ENV['PRIMO_VID']].join('')
+     ENV['PRIMO_VID']].join
   end
 
   # Since we are displaying RTA based on the best location, this is the
@@ -67,7 +67,7 @@ class NormalizePrimoBooks
     if @record['delivery']['deliveryCategory'].include?('Alma-E')
       [ENV['MIT_PRIMO_URL'], '/discovery/openurl?institution=',
        ENV['EXL_INST_ID'], '&vid=', ENV['PRIMO_VID'], '&rft.mms_id=', mms_id,
-       '&u.ignore_date_coverage=true'].join('')
+       '&u.ignore_date_coverage=true'].join
     end
   end
 
@@ -94,15 +94,15 @@ class NormalizePrimoBooks
     return unless @record['pnx']['facets']
     return unless @record['pnx']['facets']['frbrtype']
 
-    @record['pnx']['facets']['frbrtype'].join('') == '5'
+    @record['pnx']['facets']['frbrtype'].join == '5'
   end
 
   def dedup_url
     return unless frbrized?
     return unless @record['pnx']['facets']['frbrgroupid'] && @record['pnx']['facets']['frbrgroupid'].length == 1
 
-    frbr_group_id = @record['pnx']['facets']['frbrgroupid'].join('')
-    base = [ENV['MIT_PRIMO_URL'], '/discovery/search?'].join('')
+    frbr_group_id = @record['pnx']['facets']['frbrgroupid'].join
+    base = [ENV['MIT_PRIMO_URL'], '/discovery/search?'].join
     query = {
       query: "any,contains,#{@query}",
       tab: ENV['PRIMO_TAB'],
@@ -111,6 +111,6 @@ class NormalizePrimoBooks
       vid: ENV['PRIMO_VID'],
       facet: "frbrgroupid,include,#{frbr_group_id}"
     }.to_query
-    [base, query].join('')
+    [base, query].join
   end
 end

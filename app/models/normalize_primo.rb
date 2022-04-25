@@ -22,7 +22,7 @@ class NormalizePrimo
   def view_more(q)
     [ENV['MIT_PRIMO_URL'], '/discovery/search?query=any,contains,', q,
      '&tab=', ENV['PRIMO_MAIN_VIEW_TAB'], '&search_scope=', @type, '&vid=',
-     ENV['PRIMO_VID']].join('')
+     ENV['PRIMO_VID']].join
   end
 
   def extract_results(results, norm, q)

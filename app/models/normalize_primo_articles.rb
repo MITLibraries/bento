@@ -15,22 +15,22 @@ class NormalizePrimoArticles
   def journal_title
     return unless @record['pnx']['addata']['jtitle']
 
-    @record['pnx']['addata']['jtitle'].join('')
+    @record['pnx']['addata']['jtitle'].join
   end
 
   def book_title
     return unless @record['pnx']['addata']['btitle']
 
-    @record['pnx']['addata']['btitle'].join('')
+    @record['pnx']['addata']['btitle'].join
   end
 
   def numbering
     return unless @record['pnx']['addata']['volume']
 
     if @record['pnx']['addata']['issue'].present?
-      "volume #{@record['pnx']['addata']['volume'].join('')} issue #{@record['pnx']['addata']['issue'].join('')}"
+      "volume #{@record['pnx']['addata']['volume'].join} issue #{@record['pnx']['addata']['issue'].join}"
     else
-      "volume #{@record['pnx']['addata']['volume'].join('')}"
+      "volume #{@record['pnx']['addata']['volume'].join}"
     end
   end
 
@@ -38,7 +38,7 @@ class NormalizePrimoArticles
     return unless @record['pnx']['addata']['btitle']
     return unless @record['pnx']['addata']['date'] && @record['pnx']['addata']['pages']
 
-    "#{@record['pnx']['addata']['date'].join('')}, pp. #{@record['pnx']['addata']['pages'].join('')}"
+    "#{@record['pnx']['addata']['date'].join}, pp. #{@record['pnx']['addata']['pages'].join}"
   end
 
   def openurl
@@ -55,7 +55,7 @@ class NormalizePrimoArticles
       Rails.logger.warn 'Alma openurl server mismatch. Expected ' +
                         openurl_server + ', but received ' +
                         record_openurl_server + '. (record ID: ' +
-                        @record['pnx']['control']['recordid'].join('') + ')'
+                        @record['pnx']['control']['recordid'].join + ')'
       @record['delivery']['almaOpenurl']
     end
   end
@@ -68,7 +68,7 @@ class NormalizePrimoArticles
     return unless @record['delivery']['almaOpenurl']
 
     primo_openurl_base = [ENV['MIT_PRIMO_URL'], '/discovery/openurl?institution=', ENV['EXL_INST_ID'], '&vid=',
-                          ENV['PRIMO_VID'], '&'].join('')
+                          ENV['PRIMO_VID'], '&'].join
     primo_openurl = @record['delivery']['almaOpenurl'].gsub(ENV['ALMA_OPENURL'], primo_openurl_base)
 
     # The ctx params appear to break Primo openurls, so we need to remove them.

@@ -17,7 +17,7 @@ class NormalizePrimoCommon
 
   def title
     if @record['pnx']['display']['title'].present?
-      @record['pnx']['display']['title'].join('')
+      @record['pnx']['display']['title'].join
     else
       'unknown title'
     end
@@ -55,16 +55,16 @@ class NormalizePrimoCommon
   def author_link(author)
     [ENV['MIT_PRIMO_URL'], '/discovery/search?query=creator,exact,',
      author, '&tab=', ENV['PRIMO_MAIN_VIEW_TAB'], '&search_scope=all&vid=',
-     ENV['PRIMO_VID']].join('')
+     ENV['PRIMO_VID']].join
   end
 
   def year
     if @record['pnx']['display']['creationdate'].present?
-      @record['pnx']['display']['creationdate'].join('')
+      @record['pnx']['display']['creationdate'].join
     else
       return unless @record['pnx']['search'] && @record['pnx']['search']['creationdate']
 
-      @record['pnx']['search']['creationdate'].join('')
+      @record['pnx']['search']['creationdate'].join
     end
   end
 
@@ -82,8 +82,8 @@ class NormalizePrimoCommon
     return unless @record['pnx']['control']['recordid']
     return unless @record['context']
 
-    record_id = @record['pnx']['control']['recordid'].join('')
-    base = [ENV.fetch('MIT_PRIMO_URL'), '/discovery/fulldisplay?'].join('')
+    record_id = @record['pnx']['control']['recordid'].join
+    base = [ENV.fetch('MIT_PRIMO_URL'), '/discovery/fulldisplay?'].join
     query = {
       docid: record_id,
       vid: ENV.fetch('PRIMO_VID'),
@@ -92,19 +92,19 @@ class NormalizePrimoCommon
       lang: 'en',
       tab: ENV.fetch('PRIMO_MAIN_VIEW_TAB')
     }.to_query
-    [base, query].join('')
+    [base, query].join
   end
 
   def type
     return unless @record['pnx']['display']['type']
 
-    normalize_type(@record['pnx']['display']['type'].join(''))
+    normalize_type(@record['pnx']['display']['type'].join)
   end
 
   def recordid
     return unless @record['pnx']['control']['recordid']
 
-    @record['pnx']['control']['recordid'].join('')
+    @record['pnx']['control']['recordid'].join
   end
 
   def normalize_type(type)

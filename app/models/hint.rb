@@ -53,7 +53,7 @@ class Hint < ApplicationRecord
     depunctuate!(searchterm)
 
     # Tokenize.
-    term_array = searchterm.split(' ')
+    term_array = searchterm.split
 
     # Remove duplicates and sort.
     term_array.uniq!

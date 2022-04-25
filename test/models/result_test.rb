@@ -67,7 +67,7 @@ class ResultTest < ActiveSupport::TestCase
 
   test 'long title not trucated mid word' do
     r = Result.new('title ' * 100, 'http://example.com')
-    assert_equal('title...', r.truncated_title.split(' ').last)
+    assert_equal('title...', r.truncated_title.split.last)
   end
 
   test 'long physical description truncated' do

@@ -32,7 +32,7 @@ class RecordController < ApplicationController
   def primo_redirect
     redirect_url = if alma_docid.present?
                      [ENV.fetch('MIT_PRIMO_URL'), '/discovery/fulldisplay?docid=',
-                      alma_docid, '&vid=', ENV.fetch('PRIMO_VID')].join('')
+                      alma_docid, '&vid=', ENV.fetch('PRIMO_VID')].join
                    else
                      ENV.fetch('PRIMO_SPLASH_PAGE')
                    end

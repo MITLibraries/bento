@@ -42,7 +42,7 @@ class SearchPrimo
   def search_url(term, scope, per_page)
     [PRIMO_API_URL, '/search?q=any,contains,', clean_term(term), '&vid=',
      PRIMO_VID, '&tab=', PRIMO_TAB, '&scope=', scope, '&limit=',
-     per_page, '&apikey=', PRIMO_API_KEY].join('')
+     per_page, '&apikey=', PRIMO_API_KEY].join
   end
 
   # https://github.com/httprb/http/wiki/Timeouts
