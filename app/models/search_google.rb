@@ -12,6 +12,7 @@
 # - https://github.com/google/google-api-ruby-client
 class SearchGoogle
   attr_reader :results
+
   require 'google/apis/customsearch_v1'
 
   def initialize

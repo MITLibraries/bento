@@ -15,7 +15,7 @@ class SearchGoogleTest < ActiveSupport::TestCase
         SearchGoogle.new.search('endnote')
       end
       assert_equal('badRequest: API key not valid. Please pass a valid API key.',
-                    msg.message)
+                   msg.message)
     end
   end
 end

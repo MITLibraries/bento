@@ -23,6 +23,7 @@ class FeatureController < ApplicationController
   # Ensure the feature parameter was included
   def validate_feature!
     return if params[:feature].present? && legit_feature?
+
     flash[:error] = failure_message
     redirect_to root_url
   end
@@ -35,6 +36,7 @@ class FeatureController < ApplicationController
   # method is worthwhile.
   def legit_feature
     return unless legit_feature?
+
     params[:feature]
   end
 

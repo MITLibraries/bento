@@ -19,6 +19,7 @@ class NormalizeTimdex
 
   def extract_results(results, norm)
     return unless results['data']['search']['records']
+
     results['data']['search']['records'].first(5).each do |record|
       result_title = extract_title(record)
       result = Result.new(result_title, record['sourceLink'])
@@ -32,23 +33,21 @@ class NormalizeTimdex
 
   def extract_title(record)
     title = record['title']
-    if record['identifier'].present?
-      title << ' (' + record['identifier'].to_s.gsub('MIT:archivespace:','') + ')'
-    end
-    return title
+    title << (' (' + record['identifier'].to_s.gsub('MIT:archivespace:', '') + ')') if record['identifier'].present?
+    title
   end
 
   def extract_list(contributors)
     contributors&.map do |creator|
-      [creator['value'], "&field[]=creators_text&q[]=" << URI.encode_www_form_component(creator['value'])]
+      [creator['value'], '&field[]=creators_text&q[]=' << URI.encode_www_form_component(creator['value'])]
     end
   end
 
   def extract_field(value)
-    ( value.present? ) ? value : false
+    value.present? ? value : false
   end
 
   def extract_first_from_list(list)
-    ( list.present? ) ? list[0] : false
+    list.present? ? list[0] : false
   end
 end

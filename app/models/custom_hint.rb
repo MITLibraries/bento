@@ -17,7 +17,7 @@ class CustomHint
 
   # Load csv hint source.
   def csv
-    open(@url, 'rb', &:read).force_encoding("UTF-8")
+    open(@url, 'rb', &:read).force_encoding('UTF-8')
   end
 
   # Make sure the csv has the headers we expect. (More headers are fine - we'll
@@ -27,7 +27,7 @@ class CustomHint
   def validate_csv
     mycsv = CSV.new(@csv, headers: true).read
     raise 'Invalid CSV - wrong headers' unless \
-      %w(Title URL Example\ search).all? \
+      ['Title', 'URL', 'Example search'].all? \
         { |header| mycsv.headers.include? header }
   end
 
@@ -37,7 +37,7 @@ class CustomHint
   def process_records
     validate_csv
     CSV.parse(@csv, headers: true) do |record|
-      if %w(Title URL Example\ search).all? { |header| record[header].present? }
+      if ['Title', 'URL', 'Example search'].all? { |header| record[header].present? }
         record['Fingerprint'] = Hint.fingerprint(record['Example search'])
         Hint.upsert(title: record['Title'], url: record['URL'],
                     fingerprint: record['Fingerprint'], source: @source)

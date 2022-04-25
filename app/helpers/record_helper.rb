@@ -21,6 +21,7 @@ module RecordHelper
   def force_https(url)
     uri = URI(url)
     return url unless uri.scheme == 'http'
+
     uri.scheme = 'https'
     uri.to_s
   end

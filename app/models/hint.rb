@@ -62,12 +62,10 @@ class Hint < ApplicationRecord
     # Rejoin tokens.
     fingerprint = term_array.join(' ')
 
-    # rubocop:disable AsciiComments
     # Normalize to ASCII (e.g. gödel and godel are liable to be intended to
     # find the same thing). (Yes, to_ascii lacks a to_ascii! equivalent,
     # but that's okay as this is the last line so we just need to return
     # output.)
-    # rubocop:enable AsciiComments
     fingerprint.to_ascii
   end
 

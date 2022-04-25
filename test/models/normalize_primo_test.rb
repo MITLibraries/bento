@@ -4,9 +4,9 @@ class NormalizePrimoTest < ActiveSupport::TestCase
   def popcorn
     VCR.use_cassette('popcorn primo',
                      allow_playback_repeats: true) do
-      raw_query = SearchPrimo.new.search('popcorn', 
+      raw_query = SearchPrimo.new.search('popcorn',
                                          ENV['PRIMO_BOOK_SCOPE'], 5)
-      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
                                    'popcorn')
     end
   end
@@ -16,20 +16,20 @@ class NormalizePrimoTest < ActiveSupport::TestCase
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('monkeys',
                                          ENV['PRIMO_ARTICLE_SCOPE'], 5)
-      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_ARTICLE_SCOPE'], 
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_ARTICLE_SCOPE'],
                                    'monkeys')
     end
   end
 
   def missing_fields
-    # Note that this cassette has been manually edited to remove the 
-    # following fields from the result: creationdate, title, creator, 
+    # Note that this cassette has been manually edited to remove the
+    # following fields from the result: creationdate, title, creator,
     # contributor, type, recordid
-    VCR.use_cassette('missing fields primo', 
+    VCR.use_cassette('missing fields primo',
                      allow_playback_repeats: true) do
-      raw_query = SearchPrimo.new.search('Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn', 
+      raw_query = SearchPrimo.new.search('Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn',
                                          ENV['PRIMO_BOOK_SCOPE'], 5)
-      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
                                    'Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn')
     end
   end
@@ -77,9 +77,9 @@ class NormalizePrimoTest < ActiveSupport::TestCase
 
   test 'authors are normalized and linked' do
     result = popcorn['results'].first
-    assert_not_equal "Rudolph, J.$$QRudolph, J.", result.authors.first.first
-    assert_equal ["Rudolph, J.",
-                  "https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Rudolph, J.&tab=all&search_scope=all&vid=FAKE_PRIMO_VID"],
+    assert_not_equal 'Rudolph, J.$$QRudolph, J.', result.authors.first.first
+    assert_equal ['Rudolph, J.',
+                  'https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Rudolph, J.&tab=all&search_scope=all&vid=FAKE_PRIMO_VID'],
                  result.authors.first
   end
 

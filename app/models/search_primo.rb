@@ -37,21 +37,20 @@ class SearchPrimo
     URI.encode(term.strip.tr(' ', '+').delete(',').tr(':', '+'))
   end
 
-  # This is subject to change. Right now we are just using the required 
+  # This is subject to change. Right now we are just using the required
   # params and assuming that no operators are used.
   def search_url(term, scope, per_page)
-    [PRIMO_API_URL, '/search?q=any,contains,', clean_term(term), '&vid=', 
-      PRIMO_VID, '&tab=', PRIMO_TAB, '&scope=', scope, '&limit=', 
-      per_page, '&apikey=', PRIMO_API_KEY].join('')
+    [PRIMO_API_URL, '/search?q=any,contains,', clean_term(term), '&vid=',
+     PRIMO_VID, '&tab=', PRIMO_TAB, '&scope=', scope, '&limit=',
+     per_page, '&apikey=', PRIMO_API_KEY].join('')
   end
 
   # https://github.com/httprb/http/wiki/Timeouts
   def http_timeout
-    t = if ENV['PRIMO_TIMEOUT'].present?
-          ENV['PRIMO_TIMEOUT'].to_f
-        else
-          6
-        end
-    t
+    if ENV['PRIMO_TIMEOUT'].present?
+      ENV['PRIMO_TIMEOUT'].to_f
+    else
+      6
+    end
   end
 end

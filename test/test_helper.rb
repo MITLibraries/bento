@@ -7,7 +7,7 @@ SimpleCov.formatters = [
 ]
 SimpleCov.start('rails')
 ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path('../config/environment', __dir__)
 require 'rails/test_help'
 require 'mocha/minitest'
 
@@ -25,7 +25,7 @@ VCR.configure do |config|
   end
 
   # Filter Primo Search API credentials and params.
-  # The only sensitive data here is the API key, but filtering these makes 
+  # The only sensitive data here is the API key, but filtering these makes
   # for less frequent cassette regeneration and thus less test suite maintenance.
   config.filter_sensitive_data('https://another_fake_server.example.com/v1') do
     (ENV['PRIMO_API_URL']).to_s

@@ -45,7 +45,7 @@ class SearchController < ApplicationController
     Time.zone.today.strftime('%Y%m%d')
   end
 
-  def search_target(page, per_page)
+  def search_target(_page, per_page)
     if params[:target] == 'google'
       search_google
     elsif params[:target] == 'timdex'
@@ -85,6 +85,7 @@ class SearchController < ApplicationController
 
   def validate_q!
     return if params[:q].present? && strip_truncate_q.present?
+
     flash[:error] = 'A search term is required.'
     redirect_to root_url
   end

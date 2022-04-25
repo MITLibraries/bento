@@ -12,11 +12,10 @@ class SearchTimdex
 
   def initialize
     @timdex_http = HTTP.persistent(TIMDEX_URL)
-      .headers(accept: 'application/json',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Content-Type': 'application/json',
-        'Origin': 'https://lib.mit.edu'
-      )
+                       .headers(accept: 'application/json',
+                                'Accept-Encoding': 'gzip, deflate, br',
+                                'Content-Type': 'application/json',
+                                Origin: 'https://lib.mit.edu')
     @results = {}
   end
 
@@ -26,7 +25,7 @@ class SearchTimdex
   def search(term)
     @query = '{"query":"{search(searchterm: \"' + clean_term(term) + '\", source: \"MIT ArchivesSpace\") {hits records {sourceLink title identifier publicationDate physicalDescription summary contributors { value } } } }"}'
     results = @timdex_http.timeout(http_timeout)
-                          .post(TIMDEX_URL, :body => @query)
+                          .post(TIMDEX_URL, body: @query)
     json_result = JSON.parse(results.to_s)
   end
 
@@ -38,11 +37,10 @@ class SearchTimdex
 
   # https://github.com/httprb/http/wiki/Timeouts
   def http_timeout
-    t = if ENV['TIMDEX_TIMEOUT'].present?
-          ENV['TIMDEX_TIMEOUT'].to_f
-        else
-          6
-        end
-    t
+    if ENV['TIMDEX_TIMEOUT'].present?
+      ENV['TIMDEX_TIMEOUT'].to_f
+    else
+      6
+    end
   end
 end

@@ -12,10 +12,6 @@ module SearchHelper
   end
 
   def full_record_link(result)
-    if result.dedup_url
-      result.dedup_url
-    else
-      result.url
-    end
+    result.dedup_url || result.url
   end
 end

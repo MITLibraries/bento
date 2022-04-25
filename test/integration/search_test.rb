@@ -4,6 +4,7 @@ class SearchTest < ActionDispatch::IntegrationTest
   def setup
     @test_strategy = Flipflop::FeatureSet.current.test!
   end
+
   def teardown
     @test_strategy = Flipflop::FeatureSet.current.test!
   end
