@@ -43,6 +43,6 @@ class Result
   end
 
   def alma_record?
-    an.present? && an.start_with?('alma') ? true : false
+    an.present? && an.start_with?('alma')
   end
 end
