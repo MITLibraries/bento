@@ -52,10 +52,7 @@ class NormalizePrimoArticles
     if openurl_server == record_openurl_server
       construct_primo_openurl
     else
-      Rails.logger.warn 'Alma openurl server mismatch. Expected ' +
-                        openurl_server + ', but received ' +
-                        record_openurl_server + '. (record ID: ' +
-                        @record['pnx']['control']['recordid'].join + ')'
+      Rails.logger.warn "Alma openurl server mismatch. Expected #{openurl_server}, but received #{record_openurl_server}. (record ID: #{@record['pnx']['control']['recordid'].join})"
       @record['delivery']['almaOpenurl']
     end
   end

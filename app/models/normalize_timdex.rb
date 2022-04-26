@@ -33,7 +33,7 @@ class NormalizeTimdex
 
   def extract_title(record)
     title = record['title']
-    title << (' (' + record['identifier'].to_s.gsub('MIT:archivespace:', '') + ')') if record['identifier'].present?
+    title << (" (#{record['identifier'].to_s.gsub('MIT:archivespace:', '')})") if record['identifier'].present?
     title
   end
 
