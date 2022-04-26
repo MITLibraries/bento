@@ -1,21 +1,18 @@
 module SearchHelper
   def view_more_text
-    if params[:target] == 'google'
+    case params[:target]
+    when 'google'
       'website'
-    elsif params[:target] == 'timdex'
+    when 'timdex'
       'archives and manuscripts'
-    elsif params[:target] == ENV.fetch('PRIMO_BOOK_SCOPE')
+    when ENV.fetch('PRIMO_BOOK_SCOPE')
       'books and media'
-    elsif params[:target] == ENV.fetch('PRIMO_ARTICLE_SCOPE')
+    when ENV.fetch('PRIMO_ARTICLE_SCOPE')
       'articles and chapters'
     end
   end
 
   def full_record_link(result)
-    if result.dedup_url
-      result.dedup_url
-    else
-      result.url
-    end
+    result.dedup_url || result.url
   end
 end

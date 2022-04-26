@@ -4,34 +4,34 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
   def popcorn_books
     VCR.use_cassette('popcorn primo books',
                      allow_playback_repeats: true) do
-      raw_query = SearchPrimo.new.search('popcorn', 
+      raw_query = SearchPrimo.new.search('popcorn',
                                          ENV['PRIMO_BOOK_SCOPE'], 5)
-      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
                                    'popcorn')
     end
   end
 
   def missing_fields_books
-    # Note that this cassette has been manually edited to remove the 
-    # following fields from the first result: publisher, subject, holding, 
+    # Note that this cassette has been manually edited to remove the
+    # following fields from the first result: publisher, subject, holding,
     # bestlocation, isbn
-    # If regenerated, the first result of this cassette may also need to be manually edited to remove the 'isDedup' 
+    # If regenerated, the first result of this cassette may also need to be manually edited to remove the 'isDedup'
     # field, assuming that feature is enabled in Primo.
-    VCR.use_cassette('missing fields primo books', 
+    VCR.use_cassette('missing fields primo books',
                      allow_playback_repeats: true) do
-      raw_query = SearchPrimo.new.search('popcorn', 
+      raw_query = SearchPrimo.new.search('popcorn',
                                          ENV['PRIMO_BOOK_SCOPE'], 5)
-      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
                                    'popcorn')
     end
   end
 
   def physical_book
-    VCR.use_cassette('physical book primo', 
+    VCR.use_cassette('physical book primo',
                      allow_playback_repeats: true) do
-      raw_query = SearchPrimo.new.search('Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn', 
+      raw_query = SearchPrimo.new.search('Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn',
                                          ENV['PRIMO_BOOK_SCOPE'], 5)
-      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'], 
+      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
                                    'Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn')
     end
   end
@@ -47,7 +47,7 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
   end
 
   def partially_available_book
-    # Note that when this cassette was generated, the first result had 
+    # Note that when this cassette was generated, the first result had
     # one volume checked out.
     VCR.use_cassette('partially available book primo',
                      allow_playback_repeats: true) do
@@ -59,7 +59,7 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
   end
 
   def multiple_availability_book
-    VCR.use_cassette('multi available book primo', 
+    VCR.use_cassette('multi available book primo',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('chomsky lyons',
                                          ENV['PRIMO_BOOK_SCOPE'], 5)
@@ -72,7 +72,7 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
     VCR.use_cassette('local journal primo',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('Journal of heat transfer',
-                                          ENV['PRIMO_BOOK_SCOPE'], 5)
+                                         ENV['PRIMO_BOOK_SCOPE'], 5)
       NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
                                    'Journal of heat transfer')
     end
@@ -99,9 +99,9 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
 
   test 'constructs subjects with links' do
     result = popcorn_books['results'].first
-    assert_equal ["Geography",
-                  "https://mit.primo.exlibrisgroup.com/discovery/search?query=subject,exact,Geography&tab=all&search_scope=all&vid=FAKE_PRIMO_VID"],
-                  result.subjects.first
+    assert_equal ['Geography',
+                  'https://mit.primo.exlibrisgroup.com/discovery/search?query=subject,exact,Geography&tab=all&search_scope=all&vid=FAKE_PRIMO_VID'],
+                 result.subjects.first
   end
 
   test 'handles results without subjects' do
@@ -119,16 +119,16 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
 
   test 'constructs location as expected' do
     result = physical_book['results'].first
-    assert_equal ['Library Storage Annex Off Campus Collection', 
+    assert_equal ['Library Storage Annex Off Campus Collection',
                   'P85.C47.B56166 1998'], result.location
   end
 
   test 'ignores additional locations' do
     result = multi_location['results'].first
-    assert_not_equal ['Barker Library Microforms', 'FICHE No Call #'], 
+    assert_not_equal ['Barker Library Microforms', 'FICHE No Call #'],
                      result.location
-    assert_equal ['Library Storage Annex Journal Collection (LSA4)', 
-                  'TA.J86.H437'], 
+    assert_equal ['Library Storage Annex Journal Collection (LSA4)',
+                  'TA.J86.H437'],
                  result.location
   end
 
@@ -145,7 +145,7 @@ class NormalizePrimoBooksTest < ActiveSupport::TestCase
 
   test 'constructs full-text links as expected' do
     result = popcorn_books['results'].first
-    assert_equal "https://mit.primo.exlibrisgroup.com/discovery/openurl?institution=01MIT_INST&vid=FAKE_PRIMO_VID&rft.mms_id=990022823660206761&u.ignore_date_coverage=true",
+    assert_equal 'https://mit.primo.exlibrisgroup.com/discovery/openurl?institution=01MIT_INST&vid=FAKE_PRIMO_VID&rft.mms_id=990022823660206761&u.ignore_date_coverage=true',
                  result.openurl
   end
 

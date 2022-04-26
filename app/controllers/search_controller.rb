@@ -45,12 +45,13 @@ class SearchController < ApplicationController
     Time.zone.today.strftime('%Y%m%d')
   end
 
-  def search_target(page, per_page)
-    if params[:target] == 'google'
+  def search_target(_page, per_page)
+    case params[:target]
+    when 'google'
       search_google
-    elsif params[:target] == 'timdex'
+    when 'timdex'
       search_timdex
-    elsif params[:target] == ENV['PRIMO_BOOK_SCOPE'] || params[:target] == ENV['PRIMO_ARTICLE_SCOPE']
+    when ENV['PRIMO_BOOK_SCOPE'], ENV['PRIMO_ARTICLE_SCOPE']
       search_primo(per_page)
     else
       raise SearchController::NoSuchTargetError
@@ -85,6 +86,7 @@ class SearchController < ApplicationController
 
   def validate_q!
     return if params[:q].present? && strip_truncate_q.present?
+
     flash[:error] = 'A search term is required.'
     redirect_to root_url
   end

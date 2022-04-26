@@ -21,12 +21,13 @@ class NormalizePrimo
 
   def view_more(q)
     [ENV['MIT_PRIMO_URL'], '/discovery/search?query=any,contains,', q,
-     '&tab=', ENV['PRIMO_MAIN_VIEW_TAB'],'&search_scope=', @type, '&vid=', 
-     ENV['PRIMO_VID']].join('')
+     '&tab=', ENV['PRIMO_MAIN_VIEW_TAB'], '&search_scope=', @type, '&vid=',
+     ENV['PRIMO_VID']].join
   end
 
   def extract_results(results, norm, q)
     return unless results['docs']
+
     results['docs'].each do |record|
       result = result(record, q)
       norm['results'] << result
@@ -37,11 +38,10 @@ class NormalizePrimo
     common = NormalizePrimoCommon.new(record, @type)
     result = Result.new(common.title, common.link)
     result = common.common_metadata(result)
-    result = if @type == ENV['PRIMO_BOOK_SCOPE']
-               NormalizePrimoBooks.new(record, q).book_metadata(result)
-             else
-               NormalizePrimoArticles.new(record).article_metadata(result)
-             end
-    result
+    if @type == ENV['PRIMO_BOOK_SCOPE']
+      NormalizePrimoBooks.new(record, q).book_metadata(result)
+    else
+      NormalizePrimoArticles.new(record).article_metadata(result)
+    end
   end
 end

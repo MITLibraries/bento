@@ -2,7 +2,6 @@ require 'csv'
 require 'test_helper'
 
 class CustomHintTest < ActiveSupport::TestCase
-
   setup do
     @url = 'https://example.com/whatever.csv'
   end

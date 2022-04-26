@@ -22,6 +22,7 @@ class NormalizeGoogle
   # return them as an array of {result}s
   def extract_results(results, norm)
     return unless results.items
+
     results.items.each do |item|
       result = Result.new(item.title, item.link)
       result.blurb = item.html_snippet

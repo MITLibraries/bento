@@ -17,18 +17,18 @@ class NormalizePrimoCommon
 
   def title
     if @record['pnx']['display']['title'].present?
-      title = @record['pnx']['display']['title'].join('')
+      @record['pnx']['display']['title'].join
     else
-      title = 'unknown title'
+      'unknown title'
     end
-    title
   end
 
   def authors
     return unless @record['pnx']['display']['creator'] || @record['pnx']['display']['contributor']
+
     author_list = []
 
-    if @record['pnx']['display']['creator'] 
+    if @record['pnx']['display']['creator']
       creators = sanitize_authors(@record['pnx']['display']['creator'])
       creators.each do |creator|
         author_list << [creator, author_link(creator)]
@@ -47,25 +47,24 @@ class NormalizePrimoCommon
 
   # This method is required to clean up bad data in the API response
   def sanitize_authors(authors)
-    if authors.any? { |author| author.include?(';') }
-      authors.map! { |author| author.split(';') }.flatten!
-    end
+    authors.map! { |author| author.split(';') }.flatten! if authors.any? { |author| author.include?(';') }
 
     authors.map { |author| author.strip.gsub(/\$\$Q.*$/, '') }
   end
 
   def author_link(author)
-    [ENV['MIT_PRIMO_URL'], '/discovery/search?query=creator,exact,', 
-     author, '&tab=', ENV['PRIMO_MAIN_VIEW_TAB'], '&search_scope=all&vid=', 
-     ENV['PRIMO_VID']].join('')
+    [ENV['MIT_PRIMO_URL'], '/discovery/search?query=creator,exact,',
+     author, '&tab=', ENV['PRIMO_MAIN_VIEW_TAB'], '&search_scope=all&vid=',
+     ENV['PRIMO_VID']].join
   end
 
   def year
     if @record['pnx']['display']['creationdate'].present?
-      @record['pnx']['display']['creationdate'].join('')
+      @record['pnx']['display']['creationdate'].join
     else
       return unless @record['pnx']['search'] && @record['pnx']['search']['creationdate']
-      @record['pnx']['search']['creationdate'].join('')
+
+      @record['pnx']['search']['creationdate'].join
     end
   end
 
@@ -82,8 +81,9 @@ class NormalizePrimoCommon
   def link
     return unless @record['pnx']['control']['recordid']
     return unless @record['context']
-    record_id = @record['pnx']['control']['recordid'].join('')
-    base = [ENV.fetch('MIT_PRIMO_URL'), '/discovery/fulldisplay?'].join('')
+
+    record_id = @record['pnx']['control']['recordid'].join
+    base = [ENV.fetch('MIT_PRIMO_URL'), '/discovery/fulldisplay?'].join
     query = {
       docid: record_id,
       vid: ENV.fetch('PRIMO_VID'),
@@ -92,24 +92,26 @@ class NormalizePrimoCommon
       lang: 'en',
       tab: ENV.fetch('PRIMO_MAIN_VIEW_TAB')
     }.to_query
-    [base, query].join('')
+    [base, query].join
   end
 
   def type
     return unless @record['pnx']['display']['type']
-    normalize_type(@record['pnx']['display']['type'].join(''))
+
+    normalize_type(@record['pnx']['display']['type'].join)
   end
 
   def recordid
     return unless @record['pnx']['control']['recordid']
-    @record['pnx']['control']['recordid'].join('')
+
+    @record['pnx']['control']['recordid'].join
   end
 
   def normalize_type(type)
     r_types = {
-      "BKSE" => "eBook",
-      "reference_entry" => "Reference Entry",
-      "Book_chapter" => "Book Chapter"
+      'BKSE' => 'eBook',
+      'reference_entry' => 'Reference Entry',
+      'Book_chapter' => 'Book Chapter'
     }
     r_types[type] || type.capitalize
   end

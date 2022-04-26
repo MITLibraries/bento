@@ -19,10 +19,10 @@ class SearchTimdexTest < ActiveSupport::TestCase
 
   test 'timdex quoted terms do not error' do
     VCR.use_cassette('quoted timdex',
-      allow_playback_repeats: true) do
-        query = SearchTimdex.new.search('"kevin lynch"')
-        refute(query['status'] == 400)
-      end
+                     allow_playback_repeats: true) do
+      query = SearchTimdex.new.search('"kevin lynch"')
+      refute(query['status'] == 400)
+    end
   end
 
   test 'can change timeout value' do

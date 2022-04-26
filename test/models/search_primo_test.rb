@@ -39,18 +39,18 @@ class SearchPrimoTest < ActiveSupport::TestCase
   test 'search results are limited accordingly' do
     VCR.use_cassette('popcorn primo books', allow_playback_repeats: true) do
       query = SearchPrimo.new.search('popcorn', ENV['PRIMO_BOOK_SCOPE'], 5)
-      assert_equal 5, query['info']['last'] 
+      assert_equal 5, query['info']['last']
     end
 
     VCR.use_cassette('popcorn primo articles', allow_playback_repeats: true) do
       query = SearchPrimo.new.search('popcorn', ENV['PRIMO_ARTICLE_SCOPE'], 5)
-      assert_equal 5, query['info']['last'] 
+      assert_equal 5, query['info']['last']
     end
   end
 
   test 'handles error states as expected' do
     VCR.use_cassette('bad primo response', allow_playback_repeats: true) do
-      assert_raises "Primo Error Detected: 500 Internal Server Error" do 
+      assert_raises 'Primo Error Detected: 500 Internal Server Error' do
         SearchPrimo.new.search('popcorn', ENV['PRIMO_BOOK_SCOPE'], 5)
       end
     end
