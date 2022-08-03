@@ -293,9 +293,6 @@ GEM
       sentry-ruby (~> 5.4.1)
     sentry-ruby (5.4.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-    sentry-ruby-core (5.4.1)
-      concurrent-ruby
-      sentry-ruby (= 5.4.1)
     signet (0.16.1)
       addressable (~> 2.8)
       faraday (>= 0.17.5, < 3.0)
@@ -396,7 +393,7 @@ DEPENDENCIES
   webmock
 
 RUBY VERSION
-   ruby 2.6.10p210
+   ruby 2.7.6p219
 
 BUNDLED WITH
    2.3.17

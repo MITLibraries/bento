@@ -71,6 +71,6 @@ class NormalizePrimoArticles
     # The ctx params appear to break Primo openurls, so we need to remove them.
     params = Rack::Utils.parse_nested_query(primo_openurl)
     filtered = params.delete_if { |key, _value| key.starts_with?('ctx') }
-    URI.decode(filtered.to_param)
+    URI::DEFAULT_PARSER.unescape(filtered.to_param)
   end
 end
