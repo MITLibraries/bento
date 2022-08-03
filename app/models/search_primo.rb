@@ -34,7 +34,7 @@ class SearchPrimo
 
   # Initial search term sanitization.
   def clean_term(term)
-    URI.encode(term.strip.tr(' ', '+').delete(',').tr(':', '+'))
+    URI::Parser.new.escape(term.strip.tr(' ', '+').delete(',').tr(':', '+'))
   end
 
   # This is subject to change. Right now we are just using the required

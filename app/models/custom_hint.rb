@@ -17,7 +17,7 @@ class CustomHint
 
   # Load csv hint source.
   def csv
-    open(@url, 'rb', &:read).force_encoding('UTF-8')
+    URI.open(@url, 'rb', &:read).force_encoding('UTF-8')
   end
 
   # Make sure the csv has the headers we expect. (More headers are fine - we'll
