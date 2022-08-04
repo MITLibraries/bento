@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.7.6'
+ruby '3.1.2'
 
 gem 'actionpack-action_caching', github: 'rails/actionpack-action_caching', branch: 'master'
 gem 'barnes'
@@ -13,6 +13,9 @@ gem 'jquery-rails'
 gem 'jquery-validation-rails'
 gem 'lograge'
 gem 'mitlibraries-theme'
+gem 'net-imap', require: false
+gem 'net-pop', require: false
+gem 'net-smtp', require: false
 gem 'nokogiri'
 gem 'puma'
 gem 'rack-attack'
