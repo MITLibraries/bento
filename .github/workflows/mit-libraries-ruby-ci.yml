@@ -1,0 +1,10 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  shared:
+    uses: mitlibraries/.github/.github/workflows/ruby-shared-ci.yml@main

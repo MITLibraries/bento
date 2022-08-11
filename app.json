@@ -1,5 +1,6 @@
 {
   "name": "bento",
+  "stack": "heroku-22",
   "scripts": {},
   "formation": {
     "web": {
