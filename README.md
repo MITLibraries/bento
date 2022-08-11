@@ -80,6 +80,7 @@ to construct thumbnail URLs.
   development make sure to [enable the dev cache](https://guides.rubyonrails.org/caching_with_rails.html#caching-in-development)
 - `RESULTS_PER_BOX`: defaults to 3
 - `SENTRY_DSN`: logs exceptions to Sentry
+- `SENTRY_ENV`: Sentry environment for the application. Defaults to 'unknown' if unset.
 - `TIMDEX_TIMEOUT`: value to override the 6 second default for TIMDEX timeout.
 
 ## Developing locally with Docker
