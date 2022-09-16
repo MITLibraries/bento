@@ -12,6 +12,7 @@ gem 'ipaddr_range_set'
 gem 'jquery-rails'
 gem 'jquery-validation-rails'
 gem 'lograge'
+gem 'mitlibraries-theme', '1.0.0', path: "~/git/blorgh/mitlibraries-theme"
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
@@ -24,7 +25,6 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'skylight'
 gem 'stringex'
-gem 'tesseract', tag: '0.5.0', git: 'https://github.com/matt-bernhardt/tesseract.git'
 gem 'uglifier'
 
 group :production do
