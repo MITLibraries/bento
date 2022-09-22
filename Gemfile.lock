@@ -195,7 +195,7 @@ GEM
     mitlibraries-theme (0.8.0)
       rails (>= 5, < 8)
       sassc (~> 2)
-    mocha (1.14.0)
+    mocha (1.15.0)
     msgpack (1.5.6)
     multi_json (1.15.0)
     net-imap (0.2.3)
