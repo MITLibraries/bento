@@ -36,6 +36,6 @@ class RecordController < ApplicationController
                    else
                      ENV.fetch('PRIMO_SPLASH_PAGE')
                    end
-    redirect_to redirect_url, status: 308
+    redirect_to redirect_url, status: 308, allow_other_host: true
   end
 end
