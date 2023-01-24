@@ -61,7 +61,7 @@ main search view. (This is used for links to Primo searches.)
 - `PRIMO_VID`: our Primo 'view ID'.
 - `SYNDETICS_PRIMO_URL`: the Syndetics API URL for Primo. This is used 
 to construct thumbnail URLs.
-- `TIMDEX_URL`: The GraphQL endpoint for Timdex/ArchiveSpace
+- `TIMDEX_URL`: The GraphQL endpoint for Timdex/ArchiveSpace.
 
 ## Optional Environment Variables
 
@@ -82,6 +82,7 @@ to construct thumbnail URLs.
 - `SENTRY_DSN`: logs exceptions to Sentry
 - `SENTRY_ENV`: Sentry environment for the application. Defaults to 'unknown' if unset.
 - `TIMDEX_TIMEOUT`: value to override the 6 second default for TIMDEX timeout.
+- `TIMDEX_V2`: if set to `true`, the application will query V2 of the TIMDEX API. (Defaults to `false` if unset.)
 
 ## Developing locally with Docker
 

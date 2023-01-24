@@ -49,6 +49,7 @@ group :development do
 end
 
 group :test do
+  gem 'climate_control'
   gem 'minitest-rails'
   gem 'mocha', require: false
   gem 'simplecov', require: false

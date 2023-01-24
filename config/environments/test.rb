@@ -26,7 +26,8 @@ Rails.application.configure do
   ENV['PRIMO_SPLASH_PAGE'] = 'https://libraries.mit.edu/news/library-platform-before/32066/'
   ENV['MIT_PRIMO_URL'] = 'https://mit.primo.exlibrisgroup.com'
   ENV['SYNDETICS_PRIMO_URL'] = 'https://syndetics.com/index.php?client=primo'
-  ENV['TIMDEX_URL']='https://timdex.mit.edu/graphql'
+  ENV['TIMDEX_URL'] = 'https://timdex.mit.edu/graphql'
+  ENV['TIMDEX_V2'] = 'false'
 
   config.cache_classes = true
 

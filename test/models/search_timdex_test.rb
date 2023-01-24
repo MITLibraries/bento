@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'climate_control'
 
 class SearchTimdexTest < ActiveSupport::TestCase
   def setup
@@ -14,6 +15,19 @@ class SearchTimdexTest < ActiveSupport::TestCase
                      allow_playback_repeats: true) do
       query = SearchTimdex.new.search('popcorn')
       assert_equal(Hash, query.class)
+    end
+  end
+
+  test 'can search timdexv2' do
+    ClimateControl.modify(TIMDEX_URL: 'https://timdex-api-prod-v2.herokuapp.com/graphql') do
+      VCR.use_cassette('popcorn timdex v2',
+                       allow_playback_repeats: true) do
+        test_strategy = Flipflop::FeatureSet.current.test!
+        test_strategy.switch!(:timdex_v2, true)
+        results = SearchTimdex.new.search('chomsky')
+        assert_equal Hash, results.class
+        assert results['data']['search']['hits'] > 0
+      end
     end
   end
 

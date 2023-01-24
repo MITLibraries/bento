@@ -23,7 +23,11 @@ class SearchTimdex
   # @param term [string] The string we are searching for
   # @return [Hash] A Hash with search metadata and an Array of {Result}s
   def search(term)
-    @query = '{"query":"{search(searchterm: \"' + clean_term(term) + '\", source: \"MIT ArchivesSpace\") {hits records {sourceLink title identifier publicationDate physicalDescription summary contributors { value } } } }"}'
+    @query = if Flipflop.timdex_v2?
+               '{"query":"{search(searchterm: \"' + clean_term(term) + '\", sourceFacet: \"MIT ArchivesSpace\") {hits records {sourceLink title identifier publicationDate physicalDescription summary contributors { value } } } }"}'
+             else
+               '{"query":"{search(searchterm: \"' + clean_term(term) + '\", source: \"MIT ArchivesSpace\") {hits records {sourceLink title identifier publicationDate physicalDescription summary contributors { value } } } }"}'
+             end
     results = @timdex_http.timeout(http_timeout)
                           .post(TIMDEX_URL, body: @query)
     json_result = JSON.parse(results.to_s)

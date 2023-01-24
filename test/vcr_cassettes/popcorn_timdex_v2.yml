@@ -1,0 +1,112 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://timdex-api-prod-v2.herokuapp.com/graphql
+    body:
+      encoding: UTF-8
+      string: '{"query":"{search(searchterm: \"chomsky\", sourceFacet: \"MIT ArchivesSpace\")
+        {hits records {sourceLink title identifier publicationDate physicalDescription
+        summary contributors { value } } } }"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Content-Type:
+      - application/json
+      Origin:
+      - https://lib.mit.edu
+      Connection:
+      - Keep-Alive
+      Host:
+      - timdex-api-prod-v2.herokuapp.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 25 Jan 2023 15:11:09 GMT
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - ''
+      Access-Control-Max-Age:
+      - '7200'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept, Origin
+      Etag:
+      - W/"6978ef1adff5b2c24d9df2fa86690e92"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ca33cce6-9f14-47a4-bb34-27c8e1babcdf
+      X-Runtime:
+      - '3.321995'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Content-Length:
+      - '3334'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"search":{"hits":5,"records":[{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/307","title":"Massachusetts
+        Institute of Technology, Technology and Culture Seminar records","identifier":"aspace:repositories-2-resources-307","publicationDate":null,"physicalDescription":"9.4
+        Cubic Feet (7 record cartons, 5 manuscript boxes, 1 flat box)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Technology and Culture Seminar"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/298","title":"Massachusetts
+        Institute of Technology, Social Action Coordinating Committee records","identifier":"aspace:repositories-2-resources-298","publicationDate":null,"physicalDescription":"3.6
+        Cubic Feet (3 record cartons, 1 manuscript box, 1 oversize box)","summary":["The
+        Science Action Coordinating Committee (SACC) , founded at MIT, was active
+        between 1969 and 1973 in protests against the Vietnam war and military research
+        on campus. In 1970 SACC changed its name to the Social Action Coordinating
+        Committee and became involved in a broader range of social causes. Records
+        in the collection include minutes, anti-war leaflets, information about the
+        work stoppage and teach in on March 4, 1969, faculty position papers on the
+        Institute''s relationship with special laboratories, and sound recordings
+        of the 1969 National Conference on Social and Economic Conversion."],"contributors":[{"value":"Massachusetts
+        Institute of Technology. Social Action Coordinating Committee"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/622","title":"Margaret
+        Bullowa papers","identifier":"aspace:repositories-2-resources-622","publicationDate":null,"physicalDescription":"12
+        Cubic Feet (12 record cartons)","summary":null,"contributors":[{"value":"Bullowa,
+        Margaret"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/795","title":"Giorgio
+        Diaz de Santillana papers","identifier":"aspace:repositories-2-resources-795","publicationDate":null,"physicalDescription":"60
+        Cubic Feet (60 record cartons)","summary":null,"contributors":[{"value":"de
+        Santillana, Giorgio, 1902-1974"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/538","title":"Committee
+        on Race and Diversity records","identifier":"aspace:repositories-2-resources-538","publicationDate":null,"physicalDescription":"3
+        Cubic Feet (3 record cartons)","summary":["The Massachusetts Institute of
+        Technology (MIT) Committee on Race and Diversity records document the activities
+        of the Committee on Race and Diversity, as well as its predecessor, the Committee
+        on Campus Race Relations before it merged with the Martin Luther King Committee
+        in October 2007. The records date from 1986 to 2009 and include meeting minutes
+        and agendas, correspondence, membership lists, newspaper articles, grant proposals,
+        and information on events sponsored by the Committee. The Committee sponsored
+        publications, including a guide of all subjects taught at MIT related to race
+        relations distributed to all incoming freshmen, movies, panels, talks, and
+        presentations which were aimed at fostering positive race relations and improving
+        minority experiences on the MIT campus."],"contributors":[{"value":"Massachusetts
+        Institute of Technology. Committee on Race and Diversity"}]}]}}}'
+  recorded_at: Wed, 25 Jan 2023 15:11:09 GMT
+recorded_with: VCR 6.1.0
