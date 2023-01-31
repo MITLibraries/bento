@@ -1,4 +1,4 @@
-require "active_support/core_ext/integer/time"
+require 'active_support/core_ext/integer/time'
 
 # The test environment is used exclusively to run your application's
 # test suite. You never need to work with it otherwise. Remember that
@@ -14,6 +14,7 @@ Rails.application.configure do
   ENV['FLIPFLOP_KEY'] = 'yoyo'
   ENV['ALMA_OPENURL'] = 'https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?'
   ENV['ALMA_SRU'] = 'https://mit.alma.exlibrisgroup.com/view/sru/01MIT_INST?version=1.2&operation=searchRetrieve&recordSchema=marcxml&query=alma.all_for_ui='
+  ENV['ASPACE_SEARCH_URI'] = 'https://archivesspace.mit.edu/search?op[]=&field[]=creators_text&q[]='
   ENV['EXL_INST_ID'] = '01MIT_INST'
   ENV['PRIMO_SEARCH'] = 'true'
   ENV['PRIMO_API_URL'] = 'https://another_fake_server.example.com/v1'
@@ -26,7 +27,7 @@ Rails.application.configure do
   ENV['PRIMO_SPLASH_PAGE'] = 'https://libraries.mit.edu/news/library-platform-before/32066/'
   ENV['MIT_PRIMO_URL'] = 'https://mit.primo.exlibrisgroup.com'
   ENV['SYNDETICS_PRIMO_URL'] = 'https://syndetics.com/index.php?client=primo'
-  ENV['TIMDEX_URL']='https://timdex.mit.edu/graphql'
+  ENV['TIMDEX_URL'] = 'https://timdex.mit.edu/graphql'
 
   # Turn false under Spring and add config.action_view.cache_template_loading = true.
   config.cache_classes = true
