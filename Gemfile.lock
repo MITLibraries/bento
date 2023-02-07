@@ -212,7 +212,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.14.0)
+    nokogiri (1.14.1)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     os (1.1.4)
@@ -302,10 +302,10 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sentry-rails (5.7.0)
+    sentry-rails (5.8.0)
       railties (>= 5.0)
-      sentry-ruby (~> 5.7.0)
-    sentry-ruby (5.7.0)
+      sentry-ruby (~> 5.8.0)
+    sentry-ruby (5.8.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
     signet (0.17.0)
       addressable (~> 2.8)
