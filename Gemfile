@@ -12,14 +12,14 @@ gem 'ipaddr_range_set'
 gem 'jquery-rails'
 gem 'jquery-validation-rails'
 gem 'lograge'
-gem 'mitlibraries-theme'
+gem 'mitlibraries-theme', git: 'https://github.com/mitlibraries/mitlibraries-theme', tag: 'v1.0.0'
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
 gem 'nokogiri'
 gem 'puma'
 gem 'rack-attack'
-gem 'rails', '~> 6.1.0'
+gem 'rails', '~> 7.0.0'
 gem 'sass-rails'
 gem 'sentry-rails'
 gem 'sentry-ruby'
