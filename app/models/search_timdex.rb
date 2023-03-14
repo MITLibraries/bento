@@ -23,7 +23,7 @@ class SearchTimdex
   # @param term [string] The string we are searching for
   # @return [Hash] A Hash with search metadata and an Array of {Result}s
   def search(term)
-    @query = '{"query":"{search(searchterm: \"' + clean_term(term) + '\", source: \"MIT ArchivesSpace\") {hits records {sourceLink title identifier publicationDate physicalDescription summary contributors { value } } } }"}'
+    @query = '{ "query": "{ search(searchterm: \"' + clean_term(term) + '\", sourceFilter: \"MIT ArchivesSpace\") { hits records { sourceLink title identifiers { kind value } dates { kind value range { gte lte } } physicalDescription summary contributors { value } } } }"}'
     results = @timdex_http.timeout(http_timeout)
                           .post(TIMDEX_URL, body: @query)
     json_result = JSON.parse(results.to_s)

@@ -10,10 +10,11 @@ class SearchTimdexTest < ActiveSupport::TestCase
   end
 
   test 'can search timdex' do
-    VCR.use_cassette('popcorn timdex',
+    VCR.use_cassette('aspace timdex',
                      allow_playback_repeats: true) do
-      query = SearchTimdex.new.search('popcorn')
-      assert_equal(Hash, query.class)
+      response = SearchTimdex.new.search('archives')
+      assert_equal Hash, response.class
+      assert response['data']['search']['hits'] > 0
     end
   end
 

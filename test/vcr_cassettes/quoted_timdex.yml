@@ -5,9 +5,10 @@ http_interactions:
     uri: https://timdex.mit.edu/graphql
     body:
       encoding: UTF-8
-      string: '{"query":"{search(searchterm: \"''kevin lynch''\", source: \"MIT ArchivesSpace\")
-        {hits records {sourceLink title identifier publicationDate physicalDescription
-        summary contributors { value } } } }"}'
+      string: '{ "query": "{ search(searchterm: \"''kevin lynch''\", sourceFilter:
+        \"MIT ArchivesSpace\") { hits records { sourceLink title identifiers { kind
+        value } dates { kind value range { gte lte } } physicalDescription summary
+        contributors { value } } } }"}'
     headers:
       Accept:
       - application/json
@@ -22,7 +23,7 @@ http_interactions:
       Host:
       - timdex.mit.edu
       User-Agent:
-      - http.rb/4.4.1
+      - http.rb/5.1.1
   response:
     status:
       code: 200
@@ -31,7 +32,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 07 Apr 2020 15:26:20 GMT
+      - Tue, 14 Mar 2023 13:40:48 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
@@ -45,7 +46,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
-      - 1; mode=block
+      - '0'
       X-Content-Type-Options:
       - nosniff
       X-Download-Options:
@@ -56,41 +57,129 @@ http_interactions:
       - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
+      Vary:
+      - Accept
+      - Origin
       Etag:
-      - W/"2fa4ba5bebd9eedbe59b6d6fec88e45e"
+      - W/"b5cdae5a452cf2109c9f75f821020730"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 938a7c7a-5c62-4a83-8843-be4e586017e4
+      - 61df4fd0-9f28-40e1-a1c8-1b6908b49d4e
       X-Runtime:
-      - '0.816869'
+      - '0.175495'
       Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - Origin
-      Transfer-Encoding:
-      - chunked
+      - max-age=63072000; includeSubDomains
+      Content-Length:
+      - '9315'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"search":{"hits":3,"records":[{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/739","title":"Kevin
-        Lynch papers","identifier":"MIT:archivespace:MC.0208","publicationDate":"1934-1988","physicalDescription":"16.5
-        Cubic Feet; 12 record cartons, 8 manuscript boxes, 1 half manuscript box,
+      string: '{"data":{"search":{"hits":4,"records":[{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/739","title":"Kevin
+        Lynch papers","identifiers":[{"kind":"Collection Identifier","value":"MC.0208"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1934","lte":"1988"}}],"physicalDescription":"16.5
+        Cubic Feet (12 record cartons, 8 manuscript boxes, 1 half manuscript box,
         4 medium flat boxes, 1 large flat box, 3 small media boxes, 1 slide box and
-        2 loose drawings, 10 oversize folders","summary":["This collection documents
+        2 loose drawings, 10 oversize folders)","summary":["This collection documents
         the career of Kevin Lynch. Lynch was a member of the faculty at the Massachusetts
         Institute of Technology from 1948 to 1978 in the Department of City and Regional
         Planning, and was a leader in the field of city planning and urban redevelopment.
         Material in this collection covers research data, correspondence, course material,
         trip diaries, and manuscripts."],"contributors":[{"value":"Lynch, Kevin, 1918-1984"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1143","title":"Louise
-        Chawla research papers on the Growing Up in Cities project","identifier":"MIT:archivespace:MC.0651","publicationDate":"1972-2018","physicalDescription":"2.5
-        Cubic Feet; 7 document boxes, 1 flat box","summary":null,"contributors":[{"value":"Chawla,
-        Louise"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/581","title":"Massachusetts
-        Institute of Technology, News Office records","identifier":"MIT:archivespace:AC.0069","publicationDate":"1920-2007","physicalDescription":"55.5
-        Cubic Feet; 53 record cartons, 5 manuscript boxes, 4 half manuscript boxes,
-        1 flat storage box","summary":null,"contributors":[{"value":"Massachusetts
-        Institute of Technology. News Office"}]}]}}}'
-    http_version: null
-  recorded_at: Tue, 07 Apr 2020 15:26:20 GMT
-recorded_with: VCR 5.1.0
+        Chawla research papers on the Growing Up in Cities project","identifiers":[{"kind":"Collection
+        Identifier","value":"MC.0651"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1972","lte":"2018"}}],"physicalDescription":"2.5
+        Cubic Feet (7 document boxes, 1 flat box); 5.5 Gigabytes (10 digital files,
+        including 1 disk image)","summary":["The Louise Chawla research papers on
+        the Growing Up in Cities project collection contains materials documenting
+        the Growing up in Cities (GUIC) international program of UNESCO. The collection
+        is arranged into three series. Series 1, Records and Related Materials, includes
+        notes, reports, proposals, and background information. Series 2, Articles
+        and Publications, contains articles and other writings about the Growing Up
+        in Cities revival project. Series 3, David Driskell files contains records
+        created by Driskell while he served as the UNESCO Chair for Growing Up in
+        Cities at Cornell University."],"contributors":[{"value":"Chawla, Louise"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/362","title":"Massachusetts
+        Institute of Technology, School of Architecture, Office of the Associate Dean
+        records","identifiers":[{"kind":"Collection Identifier","value":"AC.0418"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"1
+        Cubic Feet (1 record carton)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. School of Architecture and Planning"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1349","title":"Experimental
+        Music Studio recordings","identifiers":[{"kind":"Collection Identifier","value":"AC.0662"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1973","lte":"1988"}},{"kind":"creation","value":null,"range":{"gte":"1979","lte":"1986"}}],"physicalDescription":"8.8
+        Linear Feet (17 boxes); 182 Gigabytes","summary":["The Experimental Music
+        Studio recordings is a collection of reel to reel audio tapes produced by
+        students and staff involved with MIT''s Experimental Music Studio and with
+        the New England Conservatory. The physical materials in the collection are
+        reel to reel audio tapes in 7\" and 10.5\" reels, using ¼\", ½\", and 1\"
+        tape. Some recordings have been digitized thank to a CLIR Recordings at Risk
+        grant in 2020."],"contributors":[{"value":"Massachusetts Institute of Technology.
+        Experimental Music Studio"},{"value":"Massachusetts Institute of Technology.
+        Media Laboratory"},{"value":"Massachusetts Institute of Technology. Department
+        of Architecture"},{"value":"Massachusetts Institute of Technology. Department
+        of Architecture and Planning"},{"value":"Program in Media Arts and Sciences
+        (Massachusetts Institute of Technology)"},{"value":"Massachusetts Institute
+        of Technology. Electronic Music Studio"},{"value":"Massachusetts Institute
+        of Technology. Experimental Electronic Music Studio"},{"value":"Albright,
+        William (Composer)"},{"value":"Allen, Susan, 1951-2015 (Musician, Harpist)"},{"value":"Ames,
+        Charles (Composer)"},{"value":"Amin, Martin (Musician, Pianist)"},{"value":"Anderson,
+        Nancy (Musician, Singer)"},{"value":"Balaban, Elliot (Composer)"},{"value":"Bamberger,
+        Jeanne Shapiro"},{"value":"Bartlett, Greg (Composer)"},{"value":"Bellatoni,
+        Leo (Composer)"},{"value":"Bodony, Larry (Composer)"},{"value":"Boulanger,
+        Richard Charles, 1956- (Composer)"},{"value":"Brinkman, Alexander Russell
+        (Composer)"},{"value":"Brody, Martin, 1949- (Composer)"},{"value":"Buell,
+        Timothy John (Composer)"},{"value":"Burger, Eric William (Composer)"},{"value":"Campbell,
+        Arthur, 1922- (Composer)"},{"value":"Campion, Thomas, 1567-1620 (Poet)"},{"value":"Carnes,
+        Michael, 1950- (Composer)"},{"value":"Chang, Jeff (Composer)"},{"value":"Charry,
+        Eric S. (Composer, Ethnomusicologist)"},{"value":"Chasalow, Eric, 1955- (Composer)"},{"value":"Child,
+        Peter, 1953- (Composer)"},{"value":"Chowning, John M. (Composer)"},{"value":"Clark,
+        David W. (Composer)"},{"value":"Clynes, Manfred, 1925- (Composer)"},{"value":"Cote,
+        Jean-Joseph (Composer)"},{"value":"Cumming, David (Composer)"},{"value":"Curtis,
+        John (Composer)"},{"value":"Curtis, Madelyn (Composer)"},{"value":"Dashow,
+        James, 1944- (Composer)"},{"value":"Daugherty, Michael, 1954- (Composer)"},{"value":"Davidovsky,
+        Mario, 1934-2019 (Composer)"},{"value":"Davis, Anthony, 1951- (Composer)"},{"value":"Day,
+        Pamela (Composer)"},{"value":"Deschanes, Teresa (Composer)"},{"value":"Dillon,
+        Dennis (Composer)"},{"value":"Dodge, Charles, 1942- (Composer)"},{"value":"Duesenberry,
+        John, 1950- (Composer)"},{"value":"Dusse, Stephen (Composer)"},{"value":"Dworak,
+        Paul E., 1951- (Composer)"},{"value":"Eissenberg, Judith (Musician, Violinist)"},{"value":"Essegulian,
+        Mihran (Composer)"},{"value":"Friedman, Joel Phillip (Composer)"},{"value":"Gandolfi,
+        Michael (Composer)"},{"value":"Goldhaber, David (Composer)"},{"value":"Gonzalez,
+        Jose (Composer)"},{"value":"Grazzo, Anthony (Composer)"},{"value":"Gross,
+        Robert, 1914-1983 (Composer)"},{"value":"Hair, Graham (Composer)"},{"value":"Haman,
+        Kristin (Composer)"},{"value":"Hamel, Peter Michael, 1947- (Composer)"},{"value":"Harrison,
+        Michael (Composer)"},{"value":"Harvey, Jonathan, 1939-2012 (Composer)"},{"value":"Hermann,
+        Byron (Composer)"},{"value":"Hoffmann, Richard, 1925- (Composer)"},{"value":"Hopkins,
+        Nick (Composer)"},{"value":"Horner, Andrew (Composer)"},{"value":"Imlay, Timothy,
+        1951- (Composer)"},{"value":"Jaczko, Rob (Composer)"},{"value":"Jaeger, Denny
+        (Composer)"},{"value":"James, Stephen (Composer)"},{"value":"Jones, Kevin
+        (Composer)"},{"value":"Kaske, Stephan, 1951- (Composer)"},{"value":"Kayman,
+        William (Composer)"},{"value":"Kenney, Diana (Composer)"},{"value":"Kildiss,
+        Ike (Composer)"},{"value":"Kopp, David (Musician, Pianist)"},{"value":"Koto,
+        Takashi, 1946- (Composer)"},{"value":"Kyr, Robert (Composer)"},{"value":"La
+        Barbara, Joan, 1947- (Musician, Singer)"},{"value":"Lansky, Paul, 1944- (Composer)"},{"value":"Le
+        Poulin, Edward (Composer)"},{"value":"Leary, Dan (Composer)"},{"value":"Lewis,
+        John-Peter (Composer)"},{"value":"LoCascio, Marc (Composer)"},{"value":"Lunn,
+        John, 1956- (Composer)"},{"value":"Machover, Tod (Composer)"},{"value":"Mackay,
+        Hannah (Actress)"},{"value":"Malsky, Ken (Composer)"},{"value":"Marshall,
+        Pamela J., 1954- (Composer)"},{"value":"Melkley, Donald James (Composer)"},{"value":"Morrill,
+        Dexter (Composer)"},{"value":"Murphy, Kevin (Composer)"},{"value":"Nelson,
+        Jon Christopher (Composer)"},{"value":"Nelson, Peter, 1951- (Composer)"},{"value":"Nies,
+        Eric (Composer)"},{"value":"Oldfather, Christopher (Musician, Pianist)"},{"value":"Opie,
+        Lyman (Composer)"},{"value":"Opie, Ralph (Composer)"},{"value":"Patterson,
+        Nick (Nick J.) (Composer)"},{"value":"Pelts, Charles (Conductor)"},{"value":"Piatt,
+        Edith (Composer)"},{"value":"Place, David (Composer)"},{"value":"Puckette,
+        Miller, 1959- (Composer)"},{"value":"Ray, Mary Ruth (Musician, Violist)"},{"value":"Rider,
+        Rhonda (Musician, Cellist)"},{"value":"Rimmer, John, 1939- (Composer)"},{"value":"Riopel,
+        Chris (Composer)"},{"value":"Roads, Curtis (Composer)"},{"value":"Roos, Peter
+        (Composer)"},{"value":"Roseborough, James (Composer)"},{"value":"Rubini, Michael
+        (Michel) (Composer)"},{"value":"Sawyer, Eric (Composer)"},{"value":"Sebring,
+        Ellen, 1953- (Composer)"},{"value":"Sharifi, Jamshied (Composer)"},{"value":"Sherman,
+        Alan T. (Alan Theodore) (Composer)"},{"value":"Smith, Edith (Composer)"},{"value":"Smith,
+        Wilma (Musician, Violinist)"},{"value":"Sorenson, Jim (Systems engineer)"},{"value":"Spencer,
+        Aaron (Composer)"},{"value":"Spjut, R. Erik (Composer)"},{"value":"Stautner,
+        John (Composer)"},{"value":"Stevens, Cyrus (Musician, Violinist)"},{"value":"Thompson,
+        Marcus, 1946- (Musician, Violist)"},{"value":"Thorman, Marc (Composer)"},{"value":"Togashi,
+        Kou (Composer)"},{"value":"Trobaugh, Tom (Composer)"},{"value":"Tucker, Greg
+        (Systems engineer)"},{"value":"Veltfort, Nikki (Composer)"},{"value":"Vercoe,
+        Barry (Composer, Founder of the EMS)"},{"value":"Wright, Geoffrey (Composer)"},{"value":"Yim,
+        Jay Alan, 1958- (Composer)"},{"value":"York, Wes (Wesley) (Composer)"},{"value":"Yoshpe,
+        Yonatan (Composer)"},{"value":"Ziolo, Paul (Composer)"},{"value":"Zvonar,
+        Richard (Composer)"},{"value":"Vercoe, Barry (Composer, Founder of the EMS)"}]}]}}}'
+  recorded_at: Tue, 14 Mar 2023 13:40:49 GMT
+recorded_with: VCR 6.1.0

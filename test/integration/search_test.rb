@@ -70,10 +70,13 @@ class SearchTest < ActionDispatch::IntegrationTest
   end
 
   test 'timdex results are populated' do
-    VCR.use_cassette('popcorn timdex',
+    VCR.use_cassette('aspace timdex',
                      allow_playback_repeats: true) do
-      get '/search/search_boxed?q=popcorn&target=timdex'
+      get '/search/search_boxed?q=archives&target=timdex'
       assert_response :success
+      assert_select 'a.bento-link' do |value|
+        assert value.text.include? 'Paul Earls'
+      end
     end
   end
 
