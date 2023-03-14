@@ -38,17 +38,18 @@ class NormalizeTimdex
   end
 
   def extract_dates(dates)
-    # It is unlikely for a record to have more than one creation date, but just in case...
-    relevant_dates = dates.select { |date| date['kind'] == 'creation' }
+    # It is unlikely for a record to have more than one creation or publication date, but just in case...
+    relevant_dates = dates.select { |date| date['kind'] == 'creation' || date['kind'] == 'publication' }
 
-    # If the record *does* have more than one creation date, it's probably not worth determining which to display.
-    return if relevant_dates.count > 1
+    # If the record has no creation or publication date, stop here.
+    return if relevant_dates.empty?
 
+    # If the record *does* have more than one creation/pub date, just take the first one.
     relevant_date = relevant_dates.first
 
-    # We are only concerned with creation dates that are ranges, since we harvest ASpace metadata at the collection
+    # We are only concerned with creation/pub dates that are ranges, since we harvest ASpace metadata at the collection
     # level.
-    return unless relevant_date['kind'] == 'creation' && relevant_date['range'].present?
+    return unless relevant_date['range'].present?
 
     "#{relevant_date['range']['gte']}-#{relevant_date['range']['lte']}"
   end
