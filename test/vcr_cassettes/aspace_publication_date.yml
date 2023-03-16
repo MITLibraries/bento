@@ -1,0 +1,252 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://timdex.mit.edu/graphql
+    body:
+      encoding: UTF-8
+      string: '{ "query": "{ search(searchterm: \"SOVEREIGN INTIMACY: PRIVATE MEDIA
+        AND THE TRACES OF COLONIAL VIOLENCE\", sourceFilter: \"MIT ArchivesSpace\")
+        { hits records { sourceLink title identifiers { kind value } dates { kind
+        value range { gte lte } } physicalDescription summary contributors { value
+        } } } }"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Content-Type:
+      - application/json
+      Origin:
+      - https://lib.mit.edu
+      Connection:
+      - Keep-Alive
+      Host:
+      - timdex.mit.edu
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 14 Mar 2023 20:52:10 GMT
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - ''
+      Access-Control-Max-Age:
+      - '7200'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      - Origin
+      Etag:
+      - W/"ee8af17355f179d71eed5fd6399c5ca1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1a80b7dd-e5c7-482f-8af4-6e1321494a79
+      X-Runtime:
+      - '0.232255'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Content-Length:
+      - '17095'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"search":{"hits":1282,"records":[{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1253","title":"Iraqi
+        engineering and art journals collection","identifiers":[{"kind":"Collection
+        Identifier","value":"AKDC.2017.0004"}],"dates":[{"kind":"publication","value":null,"range":{"gte":"1940","lte":"1983"}}],"physicalDescription":".418
+        Linear Feet Two 2.5 inch width document boxes, legal size. 22 journals Each
+        box is 15.25 x 2.5 x 10.25 inches.","summary":null,"contributors":[{"value":"Private
+        Collector"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/531","title":"Massachusetts
+        Institute of Technology, Comparative Media Studies records","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0592"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1989","lte":"2008"}},{"kind":"creation","value":null,"range":null}],"physicalDescription":"2.3
+        Cubic Feet (2 record cartons, 1 manuscript box); 2 item(s) (2 archived websites)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Department of Comparative Media Studies"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/594","title":"Records
+        of Howe, Manning \u0026 Almy, Inc. and the papers of Lois Lilley Howe, Eleanor
+        Manning O''Connor, and Mary Almy","identifiers":[{"kind":"Collection Identifier","value":"MC.0009"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1883","lte":"1972"}}],"physicalDescription":"25
+        Cubic Feet (21 record cartons, 4 manuscript boxes, 1 half manuscript box,  6
+        flat storage boxes, 1 small box, 1 roll, 54 oversize folders)","summary":["The
+        firm of Howe, Manning \u0026 Almy is believed to be the first architectural
+        firm in Boston founded by women and the second in the United States. Lois
+        Lilley Howe (Massachusetts Institute of Technology, SB 1890), whose commissions
+        began in 1894, established her own firm in 1900 and asked Eleanor Manning
+        (Massachusetts Institute of Technology, SB 1906), one of her draftsmen, to
+        be her partner in 1913, creating the firm of Lois Lilley Howe \u0026 Manning.
+        In 1926, another draftsman from the office, Mary Almy (Radcliffe College,
+        1905, and Massachusetts Institute of Technology, SB 1922) became a partner,
+        assuming responsibility for the business aspects of the firm. Manning focused
+        on the technical architectural work and design problems, and Howe continued
+        to concentrate on design. The firm dissolved in 1937 when Howe retired, and
+        Manning and Almy started separate practices.\n\nThe emphasis of the firm was
+        on domestic architecture and the partners did both building and remodeling.
+        They were interested in urban housing problems and worked with the Architects''
+        Small House Service Bureau of Massachusetts and the Boston Housing Association
+        throughout the 1920s and 1930s. They submitted small house designs to the
+        Department of the Interior for the Subsistence Homestead Communities, remodeled
+        apartments for the Lynn Slum Clearance Project, and developed housing in Mariemont,
+        Ohio. Materials of the firm include correspondence, financial data, reports,
+        specifications, photographs, blueprints, drawings, and research materials
+        that document the firm''s projects and commissions.\n\nThe collection also
+        includes personal papers of the three architects including illustrated travel
+        diaries, watercolors, sketchbooks, and architecural scrapbooks. Records from
+        Eleanor Manning O''Connor''s  private architectural work after 1937 and material
+        from the Seventeen Associated Architects are included. There are a number
+        of documents about the Howe family in the personal papers of Lois Lilley Howe."],"contributors":[{"value":"Howe,
+        Manning \u0026 Almy"},{"value":"Howe, Lois Lilley, 1864-1964"},{"value":"Manning,
+        Eleanor, 1884-1973"},{"value":"Almy, Mary, 1883-1953"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/196","title":"Massachusetts
+        Institute of Technology, Communications Forum records","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0235"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1985","lte":"1996"}}],"physicalDescription":"5.95
+        Cubic Feet (3 record cartons, 8 manuscript boxes, 1 large flat box)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Communications Forum"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/244","title":"Muriel
+        Cooper personal archives","identifiers":[{"kind":"Collection Identifier","value":"MC.0739"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"78
+        Cubic Feet (78 record cartons)","summary":null,"contributors":[{"value":"Cooper,
+        Muriel"},{"value":"Visible Language Workshop (Massachusetts Institute of Technology)"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/457","title":"Massachusetts
+        Institute of Technology, News in the Future Research Group, records of Fishwrap
+        Ask Joe!","identifiers":[{"kind":"Collection Identifier","value":"AC.0518"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1994","lte":"1995"}}],"physicalDescription":"0.3
+        Cubic Feet (1 manuscript box)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Media Laboratory"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1197","title":"Pauline
+        Maier papers","identifiers":[{"kind":"Collection Identifier","value":"MC.0705"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1960","lte":"2013"}}],"physicalDescription":"15
+        Cubic Feet (15 record cartons)","summary":null,"contributors":[{"value":"Maier,
+        Pauline, 1938-2013"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1043","title":"Paul
+        Earls archives","identifiers":[{"kind":"Collection Identifier","value":"MC.0552"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1914","lte":"1998"}}],"physicalDescription":"16.3
+        Cubic Feet (16 record cartons, 1 manuscript box)","summary":["The Paul Earls
+        archives contains a large number of music manuscripts and recordings of his
+        compositions, as well as slides of multi-media laser and sound works he created
+        in venues in the United States and Europe.\n\nfrom: \"What''s the Score: Spring
+        2000,\"  MIT Music Library newsletter\nPaul Earls was a fellow at the Massachusetts
+        Institute of Technology Center for Advanced Visual Studies (CAVS) from 1970
+        until his death in 1998. He was a composer known mostly for theatrical and
+        multi-media works that included his laser art such as The Death of King Phillip,
+        Icarus: a Sky Opera (with Otto Piene, Ian Strasfogel and Guenther Schneider-Siemssen),
+        and Mozart and Cosmology (with Beth Soll). He also wrote symphonic, choral,
+        chamber and electronic music. Examples include Brevis Mass, And On the Seventh
+        Day for full orchestra, Nun Danket Fantasy for organ, and Five Notables for
+        solo violin."],"contributors":[{"value":"Earls, Paul, 1934-1998"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1356","title":"Massachusetts
+        Institute of Technology, Visible Language Workshop records","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0665"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1973","lte":"1994"}}],"physicalDescription":"8
+        Linear Feet 8 boxes","summary":["The Massachusetts Institute of Technology,
+        Visible Language Workshop records is a collection of materials pertaining
+        to the subject of design within the framework of MIT''s arts-science-technology
+        academics. The collection focuses primarily on the work of Muriel Cooper at
+        MIT. \n\nThe materials include a binder of collected materials demonstrating
+        the activities, practice, and published output of the Visible Language Workshop,
+        as well as teaching slides, audio and videotape, and presentation materials
+        from a 1994 TED5 conference talk given by Muriel Cooper."],"contributors":[{"value":"Cooper,
+        Muriel"},{"value":"Massachusetts Institute of Technology. Media Laboratory"},{"value":"Visible
+        Language Workshop (Massachusetts Institute of Technology)"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/157","title":"Massachusetts
+        Institute of Technology, Department of Humanities, Writing Program student
+        records","identifiers":[{"kind":"Collection Identifier","value":"AC.0187"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1980","lte":"1987"}}],"physicalDescription":"1
+        Cubic Feet (2 manuscript boxes, 1 half manuscript box)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Program in Comparative Media Studies/Writing"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/211","title":"Massachusetts
+        Institute of Technology, Office of the Assistant to the Chair of the Corporation
+        and to the President, records of Walter L. Milne","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0250"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1962","lte":"1990"}}],"physicalDescription":"145.8
+        Cubic Feet (145 record cartons, 2 manuscript boxes, 1 half manuscript box)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Office of the Assistant to the Chairman of the Corporation
+        and to the President"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1226","title":"Isfahan
+        Urban History Project","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2015.0004"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"11.5
+        Linear Feet; 11 box(es) 5 record cartons (boxes 1-5); \n1 legal-size documents
+        box, 2.5\" width (box 6); \n1 portfolio box (box 7); \n2 triangular tubes
+        (tubes 1-2); \n2 extra-large flat files (xl ff A \u0026 B)","summary":["The
+        contents of the Isfahan Urban History Project Archive are the culminating
+        efforts of Lisa Golombek, Renata Holod, Claus Breede, and Juliette Yaghubi-Nassab,
+        which document the research team''s fieldwork and subsequent projects related
+        to the study of Isfahan''s pre-modern urban development. Comprising the fieldwork
+        are notebooks, sketchbooks, research indexes and files, maps, drawings, photography
+        and color slides depicting the city''s street patterns, service nodes, monuments
+        and domestic architecture. Also included are unpublished writings, articles,
+        and speeches authored by Golombek and Holod, as well as the foundational work
+        for a computer program designed to organize and analyze project findings.
+        Several districts of Isfahan are represented in the studies, including Jubareh,
+        Dar-Dasht, and Kara''an. Specific locations of interest include the Ali Quli
+        Agha complex, Masjid-i Kirmani, and Old Maydan. The majority of the Archive''s
+        contents were created during two seasons of field work in 1974 and 1976."],"contributors":[{"value":"Golombek,
+        Lisa"},{"value":"Yaghubi-Nassab, Juliette"},{"value":"Holod, Renata"},{"value":"Breede,
+        Claus, 1944-"},{"value":"Royal Ontario Museum"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/480","title":"Massachusetts
+        Institute of Technology, Student Art Association records","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0541"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1960","lte":"2000"}}],"physicalDescription":"1
+        Cubic Feet (1 record carton)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Student Art Association"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/326","title":"Massachusetts
+        Institute of Technology, Office of the Vice President and Dean of the Graduate
+        School, records of Kenneth R. Wadleigh","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0378"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1950","lte":"1983"}}],"physicalDescription":"29.3
+        Cubic Feet (29 record cartons, 1 manuscript box)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Office of the Vice President and Dean of the Graduate
+        School"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/352","title":"Massachusetts
+        Institute of Technology, Office of the Assistant to the President for Government
+        and Community Relations records","identifiers":[{"kind":"Collection Identifier","value":"AC.0408"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1968","lte":"1994"}}],"physicalDescription":"16
+        Cubic Feet (16 record cartons)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Office of the Assistant to the President for Government
+        and Community Relations"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/9","title":"Massachusetts
+        Institute of Technology, Office of the President and Chancellor, records of
+        Jerome B. Wiesner","identifiers":[{"kind":"Collection Identifier","value":"AC.0008"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1960","lte":"1984"}}],"physicalDescription":"84.6
+        Cubic Feet (254 manuscript boxes)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Office of the President and Chancellor"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/498","title":"Massachusetts
+        Institute of Technology, Office of the President and Chancellor, Records of
+        the Assistant to the President and Provost, Norman C. Dahl","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0559"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"6
+        Cubic Feet (6 record cartons)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Office of the President and Chancellor"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/334","title":"Massachusetts
+        Institute of Technology, Office of the President and Chancellor, records of
+        Barbara Scott Nelson, assistant to the president and chancellor","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0387"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1972","lte":"1979"}}],"physicalDescription":"18
+        Cubic Feet (18 record cartons)","summary":["Barbara Scott Nelson was assistant
+        to Massachusetts Institute of Technology President Jerome B. Wiesner and Chancellor
+        Paul E. Gray between 1972 and 1978. Wiesner and Gray served as president and
+        chancellor from 1971 to 1980.  The collection contains notes, reports, printed
+        material, and other files on administrative issues including affirmative action;
+        the Institute''s involvement in outside professional associations such as
+        the American Association of University Administrators and the National Association
+        of State Land Grant Colleges, and relations with government and other universities;
+        and educational programs at MIT. There are also records about faculty committees,
+        budget and finance, fund raising, the MIT Corporation Development Committee,
+        and the Whitehead Institute for Biomedical Research."],"contributors":[{"value":"Massachusetts
+        Institute of Technology. Office of the President and Chancellor"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/342","title":"Massachusetts
+        Institute of Technology, Office of the President and Chancellor, records of
+        Chancellor Paul E. Gray","identifiers":[{"kind":"Collection Identifier","value":"AC.0397"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1965","lte":"1981"}}],"physicalDescription":"63
+        Cubic Feet (189 manuscript boxes)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Office of the President and Chancellor"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1244","title":"Ali
+        Tayar Archive","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2017.0003"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1983","lte":"2016"}},{"kind":"creation","value":null,"range":{"gte":"1994","lte":"2014"}}],"physicalDescription":"44
+        Linear Feet Currently, there are a single 5-drawer flat file cabinet; 28 tubes
+        of rolled oversize material and drawings; 15 flat boxes; 2 record cartons;
+        71 document boxes.  The majority will stay in this configuration, some of
+        the large drawings may eventually be rehoused following removal from the Center
+        in March of 2020, to be housed with other archival collections in the Department
+        of Distinctive Collections'' storage spaces.; Most of the contents of this
+        archive (drawings, printed matter, photographs, mixed materials, publications,
+        photocopies, and original documents) arrived in very good condition. However,
+        there were many documents throughout the project files which were on fax paper
+        and fading. Most of these have been reformatted on photocopy paper for preservation
+        purposes.","summary":["The Ali Tayar Archive covers many of the works of the
+        late architect and designer Ali Tayar. Present in the collection are records
+        concerning works of architecture, interior design, and furniture/product design.
+        Also included are works from design competitions, special projects, publicity
+        materials, ephemera, and photographic materials."],"contributors":[{"value":"Tayar,
+        Ali"},{"value":"Parallel Design Partnership"}]}]}}}'
+  recorded_at: Tue, 14 Mar 2023 20:52:11 GMT
+recorded_with: VCR 6.1.0

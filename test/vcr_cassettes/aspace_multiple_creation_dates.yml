@@ -1,0 +1,252 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://timdex.mit.edu/graphql
+    body:
+      encoding: UTF-8
+      string: '{ "query": "{ search(searchterm: \"Timurid Architecture Research Archive\",
+        sourceFilter: \"MIT ArchivesSpace\") { hits records { sourceLink title identifiers
+        { kind value } dates { kind value range { gte lte } } physicalDescription
+        summary contributors { value } } } }"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Content-Type:
+      - application/json
+      Origin:
+      - https://lib.mit.edu
+      Connection:
+      - Keep-Alive
+      Host:
+      - timdex.mit.edu
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 16 Mar 2023 15:16:39 GMT
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - ''
+      Access-Control-Max-Age:
+      - '7200'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      - Origin
+      Etag:
+      - W/"c90476b23343da3650eb2eb488e616d7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5389c817-1e7e-47e5-a97a-3fd58024cf80
+      X-Runtime:
+      - '0.108109'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Content-Length:
+      - '17402'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"search":{"hits":630,"records":[{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1227","title":"Timurid
+        Architecture Research Archive","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2015.0005"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1966","lte":"1981"}},{"kind":"creation","value":null,"range":{"gte":"1966","lte":"1967"}}],"physicalDescription":"18
+        box(es) Document boxes: three 5\" letter size; nine 2.5\" letter size; one
+        5\" legal size; one 5\" Tall legal size; and, two single drawer card file
+        boxes; one small CD size box; and one triangular tube for architectural drawings
+        (which measure 63 x 14 x 12 centimetres); 9 Linear Feet; 2 folder(s) 2 extra
+        large files for architectural drawings/maps","summary":["Materials in this
+        collection are the creations of Lisa Golombek and Donald Wilber.  The collection
+        consists of extensive field notes, photographs, architectural drawings, and
+        slides.  Sites featured in the materials are found in a number of Middle Eastern
+        and Central Asian countries, both within modern cities and in rural areas.  Sites
+        featured include a wide array of building types such as mosques, madrassas,
+        khanaqahs, and palaces.  Some sites are associated with Timurid rulers, while
+        others are associated with religious figures.  The majority of the materials
+        in the collection were created during field expeditions in 1966.  Images and
+        notes contributed to Golombek and Wilber''s two-volume work on the Timurid
+        architecture of Iran and Central Asia."],"contributors":[{"value":"Wilber,
+        Donald Newton"},{"value":"Golombek, Lisa"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1226","title":"Isfahan
+        Urban History Project","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2015.0004"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"11.5
+        Linear Feet; 11 box(es) 5 record cartons (boxes 1-5); \n1 legal-size documents
+        box, 2.5\" width (box 6); \n1 portfolio box (box 7); \n2 triangular tubes
+        (tubes 1-2); \n2 extra-large flat files (xl ff A \u0026 B)","summary":["The
+        contents of the Isfahan Urban History Project Archive are the culminating
+        efforts of Lisa Golombek, Renata Holod, Claus Breede, and Juliette Yaghubi-Nassab,
+        which document the research team''s fieldwork and subsequent projects related
+        to the study of Isfahan''s pre-modern urban development. Comprising the fieldwork
+        are notebooks, sketchbooks, research indexes and files, maps, drawings, photography
+        and color slides depicting the city''s street patterns, service nodes, monuments
+        and domestic architecture. Also included are unpublished writings, articles,
+        and speeches authored by Golombek and Holod, as well as the foundational work
+        for a computer program designed to organize and analyze project findings.
+        Several districts of Isfahan are represented in the studies, including Jubareh,
+        Dar-Dasht, and Kara''an. Specific locations of interest include the Ali Quli
+        Agha complex, Masjid-i Kirmani, and Old Maydan. The majority of the Archive''s
+        contents were created during two seasons of field work in 1974 and 1976."],"contributors":[{"value":"Golombek,
+        Lisa"},{"value":"Yaghubi-Nassab, Juliette"},{"value":"Holod, Renata"},{"value":"Breede,
+        Claus, 1944-"},{"value":"Royal Ontario Museum"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1224","title":"Hisham
+        Munir Archive","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2014.0001"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":".41
+        Linear Feet (two 2.5 inch document boxes)","summary":null,"contributors":[{"value":"Munir,
+        Hisham"},{"value":"Munir, Hisham"},{"value":"Hisham Munir \u0026 Associates"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1225","title":"Yasser
+        Tabbaa Archive","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2015.0002"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"5
+        Linear Feet Five table top, 5-drawer, metal slide cabinets. 5-Drawer, Metal,
+        Table-Top, Slide Cabinet, extent measured by width. Depth 12.25, height 13,
+        width 15.5 inches.; 25,000 item(s) estimated quantity Color, or black and
+        white. 35mm slides; 2 item(s) 2 journals; 50 folder(s) estimated quantity,
+        will revise Folders of photographs, notes, textual documents. Folders are
+        circa 9 x 12 inches.; 10 Linear Feet","summary":null,"contributors":[{"value":"Yasser,
+        Tabbaa"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1247","title":"Aga
+        Khan Visual Archive","identifiers":[{"kind":"Collection Identifier","value":"AKDC.1980.001"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"209
+        box(es) Document boxes containing slides in sleeve pages with related documentation
+        209 Boxes, various sizes. Some have been combined to save space, but retain
+        their numbers both on the joint box. Document boxes vary in size from 14 inch
+        legal or 12 inch letter (depth), and 2.5 or 5 inches (width), and are 10.5
+        inches in height","summary":null,"contributors":null},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1260","title":"Bing
+        and Harrington Balkan Archives","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2013.0001"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"10  box(es)
+        Boxes I - VIII (1 - 8) are photographs enclosed in glass plates.\nBox IX (9)
+        is a triangular tube of drawings by Jonathan Harrington\nBox X (10) encloses
+        the reference volume from Sarajevo AKDC.2013.0001.0001rf (rf = reference material)\n10
+        boxes of files of slides arranged by the donors","summary":null,"contributors":[{"value":"Bing,
+        Judith"},{"value":"Bing, Judith"},{"value":"Bing, Judith"},{"value":"Harrington,
+        J. Brooke"},{"value":"Harrington, J. Brooke"},{"value":"Harrington, J. Brooke"},{"value":"Harrington,
+        J. Brooke"},{"value":"Bing, Judith"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1258","title":"Besim
+        Hakim Archive","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2017.0005"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1930","lte":"2015"}}],"physicalDescription":"26
+        box(es) 26 containers housing rolls of drawings and maps, including 25 long
+        boxes, and one cylinder. unknown; 7 volume(s) ca. 7 printed texts in 1 legal
+        size 5\" document box","summary":null,"contributors":[{"value":"Hakim, Besim
+        S."},{"value":"Hakim, Besim S."}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1323","title":"Melanie
+        Michailidis Archive","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2013.0003"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1995","lte":"2013"}}],"physicalDescription":"5
+        box(es)","summary":["The Melanie Michailidis Archive covers a range of Michailidis''s
+        scholarly writing and curatorial work concerning Islamic art and architecture,
+        with particular strengths in her areas of expertise including Iranian and
+        Central Asian mausolea to transcultural ceramics, metalwork, and textiles.
+        This archive encompasses Melanie''s essays, articles, dissertation, thesis,
+        and other materials, which Melanie gathered during her Fulbright fieldwork
+        in Iran and Central Asia in 2003 and 2005, and in Russia and India in 2012.
+        It further covers didactics, press and publications for her installations
+        and exhibitions at St. Louis Art Museum and Harvard Art Museums, respectively,
+        with additional notes from collections research in Spain."],"contributors":[{"value":"Michailidis,
+        Melanie"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/721","title":"Albert
+        G. Ingalls pseudoscience collection","identifiers":[{"kind":"Collection Identifier","value":"MC.0187"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1900","lte":"1990"}}],"physicalDescription":"8.91
+        Cubic Feet (15 legal manuscript boxes, 6 manuscript boxes)","summary":null,"contributors":[{"value":"Ingalls,
+        Albert G. (Albert Graham)"},{"value":"Ingalls, Albert G. (Albert Graham)"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1244","title":"Ali
+        Tayar Archive","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2017.0003"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1983","lte":"2016"}},{"kind":"creation","value":null,"range":{"gte":"1994","lte":"2014"}}],"physicalDescription":"44
+        Linear Feet Currently, there are a single 5-drawer flat file cabinet; 28 tubes
+        of rolled oversize material and drawings; 15 flat boxes; 2 record cartons;
+        71 document boxes.  The majority will stay in this configuration, some of
+        the large drawings may eventually be rehoused following removal from the Center
+        in March of 2020, to be housed with other archival collections in the Department
+        of Distinctive Collections'' storage spaces.; Most of the contents of this
+        archive (drawings, printed matter, photographs, mixed materials, publications,
+        photocopies, and original documents) arrived in very good condition. However,
+        there were many documents throughout the project files which were on fax paper
+        and fading. Most of these have been reformatted on photocopy paper for preservation
+        purposes.","summary":["The Ali Tayar Archive covers many of the works of the
+        late architect and designer Ali Tayar. Present in the collection are records
+        concerning works of architecture, interior design, and furniture/product design.
+        Also included are works from design competitions, special projects, publicity
+        materials, ephemera, and photographic materials."],"contributors":[{"value":"Tayar,
+        Ali"},{"value":"Parallel Design Partnership"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1228","title":"Adrienne
+        Minassian Archive","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2015.0009"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1920","lte":"1960"}}],"physicalDescription":"3
+        box(es) 16 folders Toxic negatives kept a separate box, photographs taken
+        to preserve what was possible of the content of these.; 2 Linear Feet contained
+        in 3 archival document boxes, one of which is stored horizontally.","summary":null,"contributors":[{"value":"Jenkins,
+        Marilyn (Marilyn Jenkins-Madina)"},{"value":"Minassian, Adrienne"},{"value":"Minassian,
+        Kirkor"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1317","title":"Unlocking
+        History Research Group archives","identifiers":[{"kind":"Collection Identifier","value":"MC.0760"}],"dates":[{"kind":"creation","value":null,"range":null},{"kind":"creation","value":null,"range":{"gte":"2000","lte":"2021"}}],"physicalDescription":"55
+        box(es)","summary":["The Unlocking History Research Group archives document
+        the development of the field of letterlocking,including related document security
+        techniques used on archival bindings and other manuscripts. Materials include
+        documentation of the process and evolution of this novel field of study dating
+        from 2000 to 2020. Materials in the collection include archival research materials,
+        original historical manuscripts from 1490s to 2021, notes, drawings, models,
+        teaching materials, and digital assets."],"contributors":[{"value":"Unlocking
+        History Research Group"},{"value":"Dambrogio, Jana"},{"value":"Smith, Daniel
+        Starza"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1314","title":"Collection
+        on Community Activism at MIT","identifiers":[{"kind":"Collection Identifier","value":"MC.0758"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"2016","lte":"2020"}}],"physicalDescription":"3
+        Cubic Feet (6 oversize boxes, 1 oversize folder, 1 legal half manuscript box);
+        1.95 Gigabytes (163 digital files); 1 item(s) (1 website)","summary":["The
+        Collection on Community Activism is an artificial collection created to include
+        records from multiple activist events and organizations in the MIT community.
+        The records consist of posters, digital photographs, digital videos, and social
+        media and document a range of political and social issues, including sexual
+        assault, gender equality, and immigration. Events are related to the 2016
+        Presidential Election, the March for Science, Executive Order 13769, the Stephen
+        A. Schwarzman College of Computing, and MIT''s involvement with Jeffrey Epstein
+        and Charles and David Koch."],"contributors":[{"value":"Massachusetts Institute
+        of Technology. Libraries. Department of Distinctive Collections"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/84","title":"Architecture
+        Education Study records","identifiers":[{"kind":"Collection Identifier","value":"AC.0108"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1972","lte":"1982"}}],"physicalDescription":"6
+        Cubic Feet (6 record cartons)","summary":null,"contributors":[{"value":"Architecture
+        Education Study"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1230","title":"Rifat
+        Chadirji Archive","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2016.0001"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"40
+        Linear Feet Architectural drawings and prints, and maps make up the vast majority
+        of this archive.  Well over a half of this resource is not in final housing
+        or containers.  Some materials are currently in flat boxes, other materials
+        are in variously sized files, or in various types and sizes of tubes or boxes
+        for rolled materials.  Therefore, total linear feet can only be estimated,
+        currently. Circa 1500 original and/or copies of architectural and urban planning
+        drawings, maps, photographs, prints, and Boxed numbered limited edition sets
+        of etchings of drawings (12) and photographs (8).  7 mounted photographs,
+        and circa 5 large loose photographic prints. Graphic material dimensions vary
+        from letter size or smaller, to a 2-piece map, 12 x 8 feet. Boxed sets are
+        circa 1 x 22 x 24 inches. Photographs are circa 8 x 10 inches and mounted
+        on board.  Large loose unmounted photographs are circa 16 x 20 inches.","summary":null,"contributors":[{"value":"Chadirji,
+        Rifat"},{"value":"Chadirji, Rifat"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/206","title":"Massachusetts
+        Institute of Technology, Aga Khan Program for Islamic Architecture records","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0245"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1979","lte":"2000"}},{"kind":"creation","value":null,"range":null}],"physicalDescription":"18
+        Cubic Feet (11 record cartons, 22 manuscript boxes, 1 half manuscript box,
+        1 folio); 1 item(s) (1 archived website); .155 Megabytes (11 digital files)","summary":null,"contributors":[{"value":"Aga
+        Khan Program for Islamic Architecture"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1113","title":"George
+        Charles Manning papers","identifiers":[{"kind":"Collection Identifier","value":"MC.0621"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1889","lte":"1942"}}],"physicalDescription":"4
+        Cubic Feet (4 record cartons)","summary":null,"contributors":[{"value":"Manning,
+        George Charles, 1892-1964"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1229","title":"Marilyn
+        Jenkins-Madina Archive","identifiers":[{"kind":"Collection Identifier","value":"AKDC.2015.0010"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"1.5
+        Linear Feet 7 metal slide boxes with slides; 1 green cloth bag with CD and
+        4 small plastic boxes that housed additional slides (now empty).  Box 8: record
+        carton 8 boxes and one cloth bag:  7 metal slide boxes with slides, 1 cloth
+        bag with a CD and small empty slide boxes.  Those slides were moved, and given
+        labelled dividers in with the slides which arrived in box 7.  Box 8 contains
+        envelopes of developed negatives and prints, 7 more small slide boxes, and
+        a folder of negatives. Slides are all 35mm.  Metal boxes: depth 20.5 x width
+        36.8 x height 5.5 centimetres; bag, circa depth 20 x width 13 x height 25
+        centimetres.  Record carton depth15.5, height 10, width 12.5 inches. Photographs
+        are 4 x 6 inches, negatives are 35mm.","summary":null,"contributors":[{"value":"Jenkins,
+        Marilyn (Marilyn Jenkins-Madina)"},{"value":"Jenkins, Marilyn (Marilyn Jenkins-Madina)"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/324","title":"Massachusetts
+        Institute of Technology, Department of Urban Studies and Planning student
+        records","identifiers":[{"kind":"Collection Identifier","value":"AC.0376"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1967","lte":"2003"}}],"physicalDescription":"73.3
+        Cubic Feet (73 record cartons, 1 manuscript box)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Department of Urban Studies and Planning"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/323","title":"Massachusetts
+        Institute of Technology, Department of Urban Studies and Planning faculty
+        and staff personnel records","identifiers":[{"kind":"Collection Identifier","value":"AC.0375"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1973","lte":"1990"}}],"physicalDescription":"3.6
+        Cubic Feet (3 record cartons, 2 manuscript boxes)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Department of Urban Studies and Planning"}]}]}}}'
+  recorded_at: Thu, 16 Mar 2023 15:16:40 GMT
+recorded_with: VCR 6.1.0
