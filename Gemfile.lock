@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/mitlibraries/mitlibraries-theme
-  revision: f53eb6ec1f4e6c43fe39c86544e48c355e04c992
-  tag: v1.0.0
+  revision: bd1b8bdbe49df5deeafeb8b245b95f78674e119d
+  tag: v1.0.1
   specs:
     mitlibraries-theme (1.0.0)
       rails (>= 6, < 8)
