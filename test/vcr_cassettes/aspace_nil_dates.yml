@@ -1,0 +1,188 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://timdex.mit.edu/graphql
+    body:
+      encoding: UTF-8
+      string: '{ "query": "{ search(searchterm: \"MIT Science Fiction Society collection
+        of fanzines\", sourceFilter: \"MIT ArchivesSpace\") { hits records { sourceLink
+        title identifiers { kind value } dates { kind value range { gte lte } } physicalDescription
+        summary contributors { value } } } }"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Content-Type:
+      - application/json
+      Origin:
+      - https://lib.mit.edu
+      Connection:
+      - Keep-Alive
+      Host:
+      - timdex.mit.edu
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 30 Mar 2023 20:26:16 GMT
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Expose-Headers:
+      - ''
+      Access-Control-Max-Age:
+      - '7200'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"bb83cdd12ed5a782275a806d39fb2407"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 45bf2e04-4c50-4eb8-aa8e-e5f825e2d561
+      X-Runtime:
+      - '0.074809'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept, Origin
+      Content-Length:
+      - '11804'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"search":{"hits":1282,"records":[{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1350","title":"MIT
+        Science Fiction Society collection of fanzines","identifiers":[{"kind":"Collection
+        Identifier","value":"MC.0769"}],"dates":null,"physicalDescription":"60 box(es)","summary":null,"contributors":[{"value":"MIT
+        Science Fiction Society"},{"value":"MIT Science Fiction Society"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/285","title":"Massachusetts
+        Institute of Technology, Science Fiction Society records","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0331"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"0.3
+        Cubic Feet (1 manuscript box)","summary":null,"contributors":[{"value":"MIT
+        Science Fiction Society"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/468","title":"Ten
+        Club records","identifiers":[{"kind":"Collection Identifier","value":"AC.0529"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1936","lte":"1969"}}],"physicalDescription":"0.3
+        Cubic Feet (1 manuscript box)","summary":null,"contributors":[{"value":"Ten
+        Club (Massachusetts Institute of Technology)"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/617","title":"Eric
+        Hodgins papers","identifiers":[{"kind":"Collection Identifier","value":"MC.0054"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1946","lte":"1958"}}],"physicalDescription":"1
+        Cubic Feet (1 record carton)","summary":null,"contributors":[{"value":"Hodgins,
+        Eric, 1899-1971"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/816","title":"Bertha
+        Sanford Dodge papers","identifiers":[{"kind":"Collection Identifier","value":"MC.0311"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1928","lte":"1994"}}],"physicalDescription":"9.3
+        Cubic Feet (9 record cartons, 1 manuscript box)","summary":null,"contributors":[{"value":"Dodge,
+        Bertha S. (Bertha Sanford), 1902-1995"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1337","title":"MIT
+        Student Notes Collection","identifiers":[{"kind":"Collection Identifier","value":"MC.0766"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1927","lte":"1985"}}],"physicalDescription":"5.21
+        Cubic Feet 4 record cartons, 3 manuscript boxes, 1 half manuscript box","summary":["The
+        collection contains materials that document the academic student experience
+        on the MIT campus. The collection includes handwritten and printed notebooks,
+        exams, assignments, p-sets, and notes created by those teaching the class
+        and by those taking the class."],"contributors":[{"value":"Krokosky, Edward
+        M. (Edward Mark)"},{"value":"Geiger, Gordon H."},{"value":"Scher, Mark J."},{"value":"Melnick,
+        Martin"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/549","title":"Society
+        of Women Engineers, records of the MIT section (MITSWE)","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0610"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1952","lte":"1999"}},{"kind":"creation","value":null,"range":{"gte":"1988","lte":"1999"}}],"physicalDescription":"3
+        Cubic Feet (3 record cartons)","summary":null,"contributors":[{"value":"Society
+        of Women Engineers. Massachusetts Institute of Technology Section"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/312","title":"Massachusetts
+        Institute of Technology, Program in Science, Technology, and Society records","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0363"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1973","lte":"2002"}}],"physicalDescription":"4
+        Cubic Feet (3 record cartons, 3 manuscript boxes)","summary":null,"contributors":[{"value":"Massachusetts
+        Institute of Technology. Technology Studies Program"},{"value":"Massachusetts
+        Institute of Technology. Program in Science, Technology, and Society"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/12","title":"Massachusetts
+        Institute of Technology, Society of Arts records","identifiers":[{"kind":"Collection
+        Identifier","value":"AC.0011"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1862","lte":"1941"}},{"kind":"creation","value":null,"range":{"gte":"1863","lte":"1908"}}],"physicalDescription":"4
+        Cubic Feet (11 manuscript boxes including 10 volumes, 2 small boxes)","summary":["The
+        Society of Arts of the Massachusetts Institute of Technology (MIT) was formed
+        in 1862. It consisted of seventeen people who met to read the 1861 Act of
+        Incorporation of the Massachusetts Institute of Technology and enact the first
+        by-laws of the Institute. The Society was to be one component of MIT, the
+        others being a school and a museum. Between 1862 and 1865, however, the Society
+        of Arts was the only element of Massachusetts Institute of Technology extant.
+        Meetings consisted of discussions of Institute business followed by a lecture
+        on a scientific or technical topic. After the school opened in 1865, and the
+        Society was no longer responsible for governing the Institute, its meetings
+        focused on lectures on a wide range of subjects and demonstrations of inventions.
+        Records in the collection include the minutes of meetings of the Society,
+        which include the reports of the Executive Committee and officers, and abstracts
+        or transcripts of lectures, demonstrations, and exhibits presented before
+        the Society."],"contributors":[{"value":"Massachusetts Institute of Technology.
+        Society of Arts"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/741","title":"Gregory
+        Tucker scores and sound recordings","identifiers":[{"kind":"Collection Identifier","value":"MC.0210"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1938","lte":"1966"}}],"physicalDescription":"4.6
+        Cubic Feet (2 record cartons, 8 manuscript boxes)","summary":null,"contributors":[{"value":"Tucker,
+        Gregory, 1908-1971"},{"value":"Massachusetts Institute of Technology. Office
+        of Public Relations"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1314","title":"Collection
+        on Community Activism at MIT","identifiers":[{"kind":"Collection Identifier","value":"MC.0758"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"2016","lte":"2020"}}],"physicalDescription":"3
+        Cubic Feet (6 oversize boxes, 1 oversize folder, 1 legal half manuscript box);
+        1.95 Gigabytes (163 digital files); 1 item(s) (1 website)","summary":["The
+        Collection on Community Activism is an artificial collection created to include
+        records from multiple activist events and organizations in the MIT community.
+        The records consist of posters, digital photographs, digital videos, and social
+        media and document a range of political and social issues, including sexual
+        assault, gender equality, and immigration. Events are related to the 2016
+        Presidential Election, the March for Science, Executive Order 13769, the Stephen
+        A. Schwarzman College of Computing, and MIT''s involvement with Jeffrey Epstein
+        and Charles and David Koch."],"contributors":[{"value":"Massachusetts Institute
+        of Technology. Libraries. Department of Distinctive Collections"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1265","title":"Massachusetts
+        Institute of Technology, Tapes of Tech Square (ToTS) collection","identifiers":[{"kind":"Collection
+        Identifier","value":"MC.0741"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1970","lte":"1995"}},{"kind":"creation","value":null,"range":{"gte":"1960","lte":"2017"}}],"physicalDescription":"1.3
+        Terabytes (13,424,283 digital files); 3.33 Cubic Feet (3 record cartons; 1
+        letter manuscript box)","summary":["The Tapes of Tech Square (ToTS) collection
+        contains digital copies of the raw data (images) on the backup tapes and extracted
+        directories of the files of the Artificial Intelligence (AI) Lab and Laboratory
+        for Computer Science (LCS) from 1973 to the early 1990s. There is also a small
+        amount of contextual analog content related to this material. Additionally,
+        there are associated software tools used in and documentation about the ToTS
+        project, from the early 1990s to 2017."],"contributors":[{"value":"Massachusetts
+        Institute of Technology. Computer Science and Artificial Intelligence Laboratory"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/167","title":"Science,
+        Technology and Human Values records","identifiers":[{"kind":"Collection Identifier","value":"AC.0201"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1979","lte":"1987"}}],"physicalDescription":"23
+        Cubic Feet 23 record cartons","summary":null,"contributors":[{"value":"John
+        F. Kennedy School of Government"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1161","title":"Leo
+        Marx papers","identifiers":[{"kind":"Collection Identifier","value":"MC.0669"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"12.3
+        Cubic Feet (12 record cartons, 1half- manuscript box); 224.2 Megabytes (17
+        digital files)","summary":null,"contributors":[{"value":"Marx, Leo, 1919-"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/794","title":"Collection
+        on Mildred Dresselhaus","identifiers":[{"kind":"Collection Identifier","value":"MC.0281"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1974","lte":"2017"}}],"physicalDescription":"3.0
+        Cassette(s) 1 cassette; .6 Cubic Feet 6 folders","summary":null,"contributors":[{"value":"Dresselhaus,
+        Mildred S."}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1039","title":"Robert
+        Payne Bigelow papers regarding A Short History of Science","identifiers":[{"kind":"Collection
+        Identifier","value":"MC.0548"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1931","lte":"1941"}}],"physicalDescription":"1
+        Cubic Feet (1 record carton)","summary":null,"contributors":[{"value":"Bigelow,
+        Robert Payne, 1863-1955"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/625","title":"Society
+        for Technical Communication, Boston Chapter records","identifiers":[{"kind":"Collection
+        Identifier","value":"MC.0063"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1953","lte":"1994"}}],"physicalDescription":"9
+        Cubic Feet in 8 record cartons, 3 manuscript boxes","summary":null,"contributors":[{"value":"Society
+        of Technical Writers and Editors"},{"value":"Technical Publishing Society"},{"value":"Society
+        for Technical Communication"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/962","title":"Collection
+        of Autographs Gathered by Bryant Nichols, MIT Class of 1907.","identifiers":[{"kind":"Collection
+        Identifier","value":"MC.0469"}],"dates":[{"kind":"creation","value":null,"range":{"gte":"1904","lte":"1908"}}],"physicalDescription":"0.1
+        Cubic Feet (2 autograph albums in 1 folder)","summary":null,"contributors":[{"value":"Nichols,
+        Bryant, 1885-1959"}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/2/resources/1131","title":"Rosalind
+        H. Williams papers","identifiers":[{"kind":"Collection Identifier","value":"MC.0639"}],"dates":[{"kind":"creation","value":null,"range":null}],"physicalDescription":"2.6
+        Cubic Feet (8 manuscript boxes)","summary":null,"contributors":[{"value":"Williams,
+        Rosalind H."}]},{"sourceLink":"https://archivesspace.mit.edu/repositories/5/resources/1253","title":"Iraqi
+        engineering and art journals collection","identifiers":[{"kind":"Collection
+        Identifier","value":"AKDC.2017.0004"}],"dates":[{"kind":"publication","value":null,"range":{"gte":"1940","lte":"1983"}}],"physicalDescription":".418
+        Linear Feet Two 2.5 inch width document boxes, legal size. 22 journals Each
+        box is 15.25 x 2.5 x 10.25 inches.","summary":null,"contributors":[{"value":"Private
+        Collector"}]}]}}}'
+  recorded_at: Thu, 30 Mar 2023 20:26:16 GMT
+recorded_with: VCR 6.1.0

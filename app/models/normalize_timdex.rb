@@ -38,6 +38,8 @@ class NormalizeTimdex
   end
 
   def extract_dates(dates)
+    return unless dates
+
     # It is unlikely for a record to have more than one creation or publication date, but just in case...
     relevant_dates = dates.select { |date| date['kind'] == 'creation' || date['kind'] == 'publication' }
 
