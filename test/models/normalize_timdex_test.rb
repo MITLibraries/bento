@@ -45,7 +45,8 @@ class NormalizeTimdexTest < ActiveSupport::TestCase
       raw_query = SearchTimdex.new.search('SOVEREIGN INTIMACY: PRIVATE MEDIA AND THE TRACES OF COLONIAL VIOLENCE')
       assert_not raw_query['data']['search']['records'].first['dates'].first['kind'] == 'creation'
       assert_nothing_raised do
-        NormalizeTimdex.new.to_result(raw_query, 'SOVEREIGN INTIMACY: PRIVATE MEDIA AND THE TRACES OF COLONIAL VIOLENCE')
+        NormalizeTimdex.new.to_result(raw_query,
+                                      'SOVEREIGN INTIMACY: PRIVATE MEDIA AND THE TRACES OF COLONIAL VIOLENCE')
       end
     end
   end
@@ -56,7 +57,8 @@ class NormalizeTimdexTest < ActiveSupport::TestCase
     VCR.use_cassette('aspace publication date',
                      allow_playback_repeats: true) do
       raw_query = SearchTimdex.new.search('SOVEREIGN INTIMACY: PRIVATE MEDIA AND THE TRACES OF COLONIAL VIOLENCE')
-      normalized = NormalizeTimdex.new.to_result(raw_query, 'SOVEREIGN INTIMACY: PRIVATE MEDIA AND THE TRACES OF COLONIAL VIOLENCE')
+      normalized = NormalizeTimdex.new.to_result(raw_query,
+                                                 'SOVEREIGN INTIMACY: PRIVATE MEDIA AND THE TRACES OF COLONIAL VIOLENCE')
 
       assert_equal 'publication', raw_query['data']['search']['records'].first['dates'].first['kind']
       assert_equal '1940', raw_query['data']['search']['records'].first['dates'].first['range']['gte']
@@ -76,6 +78,16 @@ class NormalizeTimdexTest < ActiveSupport::TestCase
       end_date = raw_query['data']['search']['records'].first['dates'].first['range']['lte']
       normalized = NormalizeTimdex.new.to_result(raw_query, 'Timurid Architecture Research Archive')
       assert_equal "#{start_date}-#{end_date}", normalized['results'][0].year
+    end
+  end
+
+  test 'results with no dates do not error' do
+    VCR.use_cassette('aspace nil dates') do
+      raw_query = SearchTimdex.new.search('MIT Science Fiction Society collection of fanzines')
+      assert raw_query['data']['search']['records'].first['dates'].nil?
+      assert_nothing_raised do
+        NormalizeTimdex.new.to_result(raw_query, 'MIT Science Fiction Society collection of fanzines')
+      end
     end
   end
 end
