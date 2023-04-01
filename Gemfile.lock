@@ -128,7 +128,7 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    flipflop (2.7.0)
+    flipflop (2.7.1)
       activesupport (>= 4.0)
       terminal-table (>= 1.8)
     gems (1.2.0)
