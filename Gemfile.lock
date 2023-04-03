@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/mitlibraries/mitlibraries-theme
-  revision: bd1b8bdbe49df5deeafeb8b245b95f78674e119d
-  tag: v1.0.1
+  revision: bbd5bb9f8f977251651a41be47b59aa5bd1b22c1
+  tag: v1.0.2
   specs:
-    mitlibraries-theme (1.0.0)
+    mitlibraries-theme (1.0.2)
       rails (>= 6, < 8)
       sassc-rails (~> 2)
 
