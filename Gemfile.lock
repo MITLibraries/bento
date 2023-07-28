@@ -211,7 +211,7 @@ GEM
     minitest-rails (7.0.0)
       minitest (~> 5.10)
       railties (~> 7.0.0)
-    mocha (2.0.4)
+    mocha (2.1.0)
       ruby2_keywords (>= 0.0.5)
     msgpack (1.7.1)
     multi_json (1.15.0)
