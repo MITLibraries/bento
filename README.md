@@ -83,33 +83,14 @@ to construct thumbnail URLs.
 - `SENTRY_ENV`: Sentry environment for the application. Defaults to 'unknown' if unset.
 - `TIMDEX_TIMEOUT`: value to override the 6 second default for TIMDEX timeout.
 
-## Developing locally with Docker
+## Confirming functionality after updating dependencies
 
-A Dockerfile is provided that is intended solely for development work as it is
-not optimized for production environments (and in fact doesn't install
-production required dependencies so for real don't use it for anything else).
+This application has good code coverage, so most issues are detected by just running tests normally:
 
-To build the container:
+```shell
+bin/rails test
+```
 
-`docker build -t bento .`
+The following additional manual testing should be performed in the PR build on Heroku.
 
-To run the application while actively developing:
-
-`docker run -it -p 3000:3000 --mount type=bind,source=$(pwd),target=/bento bento`
-should mount your local copy of the code in a way in which
-your changes are immediately reflected in the running app.
-
-To run the tests it seems useful to mount your local code into a bash shell to
-pick up changes live:
-
-`docker run -it --mount type=bind,source=$(pwd),target=/bento --entrypoint /bin/bash bento`
-
-Once in the containers shell:
-
-`bundle exec rails test` should do the trick
-
-If you just leave those running, you should see changes you make locally
-reflected immediately in the running container.
-
-`docker-compose` will load your `.env` file automatically for your config and
-we use `/config/environment/test.rb` for test env stuff.
+- search for a few different terms and confirm results return and are displayed in each of the boxes as appropriate. Not all boxes should return results for all searches, but comparing to production should lead to the same results (although there is a cache in production so if results don't match you might want to first clear the production cache before being overly concerned)
