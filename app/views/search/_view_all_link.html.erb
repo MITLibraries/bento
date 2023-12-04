@@ -1,10 +1,10 @@
 <% if current_page?(:controller => 'search', :action => 'search_boxed') %>
   <div class="results-more">
-  <% if @results['total'] > 0 %>
+  <% if @results['total'].to_i.present? %>
     <%= link_to(
       "View more #{view_more_text} results",
       @results['view_more'],
-      data: {count: number_with_delimiter(@results['total']), type: 'view all results'}, class: "button button-primary #{ 'hidden' if @results['total'] <= @per_box }") %>
+      data: {count: number_with_delimiter(@results['total']), type: 'view all results'}, class: "button button-primary #{ 'hidden' if @results['total'].to_i <= @per_box }") %>
   <% else %>
     No results found.
   <% end %>
