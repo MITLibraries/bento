@@ -72,6 +72,7 @@ to construct thumbnail URLs.
   - Hints will only be displayed to the user if they are in `HINT_SOURCES`.
 - `LOG_LEVEL`: set log level for development, default is `:debug`
 - `LOG_LIKE_PROD`: uses prod-like logging in development if set
+- `PLATFORM_NAME`: The value set is added to the header after the MIT Libraries logo. The logic and CSS for this comes from our theme gem.
 - `PRIMO_TIMEOUT`: value to override the 6 second default for Primo timeout.
 - `REQUESTS_PER_PERIOD`: number of requests per time period we allow from a
   single non-MIT IP address. Defaults to 100. Example: "100".
