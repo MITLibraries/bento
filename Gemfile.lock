@@ -107,7 +107,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
-    dalli (3.2.6)
+    dalli (3.2.8)
     date (3.3.4)
     debug_inspector (1.2.0)
     declarative (0.0.20)
