@@ -184,7 +184,7 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     jquery-validation-rails (1.19.0)
-    json (2.7.1)
+    json (2.7.2)
     jwt (2.8.1)
       base64
     language_server-protocol (3.17.0.3)
@@ -297,7 +297,7 @@ GEM
     retriable (3.1.2)
     rexml (3.2.6)
     rouge (4.2.1)
-    rubocop (1.62.1)
+    rubocop (1.63.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
