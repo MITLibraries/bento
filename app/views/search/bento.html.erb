@@ -55,4 +55,9 @@
   <%= render partial: "trigger_search", locals: { target: 'timdex', id: 'aspace_content'} %>
 
   <%= render partial: "trigger_hint" %>
+
+  <% if ENV.has_key?('TACOS_URL') %>
+    <%= render partial: "trigger_tacos" %>
+  <% end %>
+
 </script>

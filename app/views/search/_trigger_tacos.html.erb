@@ -1,0 +1,12 @@
+$.ajax({
+  type: "POST",
+  url: "<%= ENV.fetch('TACOS_URL', '') %>",
+  contentType: 'application/json',
+  data: '{ "query": "{ logSearchEvent( searchTerm: \\"<%= params[:q] %>\\" sourceSystem: \\"bento\\" ) { phrase source } }" }',
+  dataType: 'json'
+}).success(function (msg) {
+  console.log(msg.data.logSearchEvent);
+}).fail(function (xhr, textStatus ) {
+  console.log('Failure looking up search in Tacos:');
+  console.log(xhr);
+});
