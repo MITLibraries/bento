@@ -82,6 +82,7 @@ to construct thumbnail URLs.
 - `RESULTS_PER_BOX`: defaults to 3
 - `SENTRY_DSN`: logs exceptions to Sentry
 - `SENTRY_ENV`: Sentry environment for the application. Defaults to 'unknown' if unset.
+- `TACOS_URL`: The GraphQL endpoint for the [TACOS](https://github.com/mitlibraries/tacos/) application.
 - `TIMDEX_TIMEOUT`: value to override the 6 second default for TIMDEX timeout.
 
 ## Confirming functionality after updating dependencies
@@ -94,4 +95,5 @@ bin/rails test
 
 The following additional manual testing should be performed in the PR build on Heroku.
 
-- search for a few different terms and confirm results return and are displayed in each of the boxes as appropriate. Not all boxes should return results for all searches, but comparing to production should lead to the same results (although there is a cache in production so if results don't match you might want to first clear the production cache before being overly concerned)
+- Search for a few different terms and confirm results return and are displayed in each of the boxes as appropriate. Not all boxes should return results for all searches, but comparing to production should lead to the same results (although there is a cache in production so if results don't match you might want to first clear the production cache before being overly concerned)
+- If the app is integrated with TACOS, the browser console should include a response from that system confirming the search string and source system.
