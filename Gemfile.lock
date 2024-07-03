@@ -211,7 +211,7 @@ GEM
     method_source (1.1.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.7)
-    minitest (5.24.0)
+    minitest (5.24.1)
     minitest-rails (7.0.1)
       minitest (~> 5.10)
       railties (~> 7.0.0)
@@ -328,10 +328,10 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sentry-rails (5.18.0)
+    sentry-rails (5.18.1)
       railties (>= 5.0)
-      sentry-ruby (~> 5.18.0)
-    sentry-ruby (5.18.0)
+      sentry-ruby (~> 5.18.1)
+    sentry-ruby (5.18.1)
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
     signet (0.19.0)
