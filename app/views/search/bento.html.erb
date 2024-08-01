@@ -23,6 +23,8 @@
   <p>Not finding what you need? <%= link_to('Ask us', 'https://libraries.mit.edu/ask/') %></p>
 </div>
 
+<%= render partial: "nps_feedback" if ENV.fetch('NPS_URL', false).present? %>
+
 <div id="hint"></div>
 
 <div class="gridband layout-2c">
