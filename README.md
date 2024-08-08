@@ -85,6 +85,12 @@ to construct thumbnail URLs.
 - `TACOS_URL`: The GraphQL endpoint for the [TACOS](https://github.com/mitlibraries/tacos/) application.
 - `TIMDEX_TIMEOUT`: value to override the 6 second default for TIMDEX timeout.
 
+### NPS Survey Environment Variables (optional)
+
+- `NPS_BLURB`: Text to display before the survey link. Survey link will still display if not provided.
+- `NPS_LINK_TEXT`: Survey link text. If not present, survey does not display.
+- `NPS_URL`: Survey link URL. If not present, survey does not display.
+
 ## Confirming functionality after updating dependencies
 
 This application has good code coverage, so most issues are detected by just running tests normally:
