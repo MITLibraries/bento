@@ -1,7 +1,7 @@
 <% return unless ENV.fetch('NPS_URL', false).present? %>
 <% return unless ENV.fetch('NPS_LINK_TEXT', false).present? %>
 
-<div class="nps-feedback box-content copy-lead">
-  <%= ENV.fetch('NPS_BLURB', nil) %>
-  <a href="<%= ENV.fetch('NPS_URL')%>"><%= ENV.fetch('NPS_LINK_TEXT') %></a>
+<div class="nps-feedback">
+  <span class="nps-blurb"><%= ENV.fetch('NPS_BLURB', nil) %></span>
+  <a class="nps-link" href="<%= ENV.fetch('NPS_URL')%>"><%= ENV.fetch('NPS_LINK_TEXT') %></a>
 </div>
