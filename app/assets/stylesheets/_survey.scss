@@ -1,18 +1,25 @@
 .nps-feedback {
-    margin-top: 1em;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
+  margin-top: 1em;
+  padding: 20px 10px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  font-size: $fs-large;
+  display: block;
 
-    a {
-      color: #00C8FF
-    }
+  a {
+    color: #00C8FF;
+  }
 
-    a:hover {
-      color: #00C800
-    }
+  a:hover {
+    color: #00C800
+  }
 
-    a:active {
-      color: #FF00FF
-    }
+  a:active {
+    color: #FF00FF
+  }
+
+  @media (max-width: $bp-screen-md) {
+    font-size: $fs-base;
+  }
 }
