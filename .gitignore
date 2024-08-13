@@ -27,3 +27,5 @@ doc/
 # Ignore personal notes
 todo.md
 .env.development
+db/test.sqlite3-wal
+db/test.sqlite3-shm
