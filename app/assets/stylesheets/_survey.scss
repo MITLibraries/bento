@@ -8,15 +8,13 @@
   display: block;
 
   a {
-    color: #00C8FF;
-  }
-
-  a:hover {
-    color: #00C800
-  }
-
-  a:active {
-    color: #FF00FF
+    color: $blue-bright;
+    &:hover {
+      color: $green;
+    }
+    &:active {
+      color: $magenta;
+    }
   }
 
   @media (max-width: $bp-screen-md) {
