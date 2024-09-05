@@ -2,8 +2,10 @@ $.ajax({
   type: "POST",
   url: "<%= ENV.fetch('TACOS_URL', '') %>",
   contentType: 'application/json',
-  data: '{ "query": "{ logSearchEvent( searchTerm: \\"<%= params[:q] %>\\" sourceSystem: \\"bento\\" ) { phrase } }" }',
+  data: '{ "query": "{ logSearchEvent( searchTerm: \\"<%= params[:q] %>\\" sourceSystem: \\"bento\\" ) { phrase detectors { suggestedResources { title url } } } }" }',
   dataType: 'json'
+}).done(function(msg) {
+  console.log(msg);
 }).fail(function (xhr, textStatus ) {
   console.log(xhr);
 });
