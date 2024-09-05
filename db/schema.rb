@@ -10,17 +10,5 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_17_143219) do
-  create_table "hints", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "url", null: false
-    t.string "fingerprint", null: false
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.string "source", null: false
-    t.index ["fingerprint", "source"], name: "index_hints_on_fingerprint_and_source", unique: true
-    t.index ["fingerprint"], name: "index_hints_on_fingerprint"
-    t.index ["source"], name: "index_hints_on_source"
-  end
-
+ActiveRecord::Schema[7.0].define(version: 2024_09_06_170837) do
 end

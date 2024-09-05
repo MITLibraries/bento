@@ -1,0 +1,14 @@
+<% if @suggested_resources.present? %>
+  <div class="wrap-suggested-resources-box">
+    <div class="suggested-resources-box">
+      <p class="type">Popular result</p>
+      <h3 class="title"><%= link_to @suggested_resources.first['title'], @suggested_resources.first['url'] %></h3>
+
+      <% if @suggested_resources.first['url'].include?('libguides.mit.edu') %>
+        <p class="desc">
+          <%= link_to @suggested_resources.first['url'], @suggested_resources.first['url'] %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+<% end %>

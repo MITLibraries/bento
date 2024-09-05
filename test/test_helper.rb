@@ -46,6 +46,17 @@ VCR.configure do |config|
   config.filter_sensitive_data('FAKE_PRIMO_ARTICLE_SCOPE') do
     (ENV['PRIMO_ARTICLE_SCOPE']).to_s
   end
+
+  # Filter TACOS API URL and origins.
+  # As mentioned above with Primo Search API params, these aren't secrets, but filtering will require less to
+  # regenerate cassettes less frequently.
+  config.filter_sensitive_data('FAKE_TACOS_URL') do
+    (ENV['TACOS_URL']).to_s
+  end
+
+  config.filter_sensitive_data('FAKE_ORIGINS') do
+    (ENV['ORIGINS']).to_s
+  end
 end
 
 module ActiveSupport
