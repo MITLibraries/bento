@@ -1,5 +1,5 @@
 $.ajax({
-  url: "/tacos?q=<%= URI.encode_www_form_component(params[:q]) %>"
+  url: "/suggested_resources?q=<%= URI.encode_www_form_component(params[:q]) %>"
 }).done(function( msg ) {
   console.log(msg);
   $('#suggested-resource').html( msg );
