@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'session/toggle_boxes', to: 'session#box_toggler'
 
-  get 'tacos', to: 'tacos#tacos'
+  get 'tacos/suggested_resources', to: 'tacos#tacos'
   get 'toggle', to: 'feature#toggle'
   get 'full_record_toggle', to: 'feature#full_record_toggle'
 
