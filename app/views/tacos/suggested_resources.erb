@@ -1,1 +1,8 @@
-<p>Hello world</p>
+<% if @suggested_resources %>
+  <div class="wrap-hint-box" data-region="Hint">
+    <div class="hint-box">
+      <p class="type">Were you looking for...</p>
+      <h3 class="title"><%= link_to @suggested_resources.first.title, @suggested_resources.first.url %></h3>
+    </div>
+  </div>
+<% end %>
