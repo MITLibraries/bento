@@ -1,11 +1,8 @@
 $.ajax({
-  type: "POST",
-  url: "<%= ENV.fetch('TACOS_URL', '') %>",
-  contentType: 'application/json',
-  data: '{ "query": "{ logSearchEvent( searchTerm: \\"<%= params[:q] %>\\" sourceSystem: \\"bento\\" ) { phrase detectors { suggestedResources { title url } } } }" }',
-  dataType: 'json'
-}).done(function(msg) {
+  url: "/tacos?q=<%= URI.encode_www_form_component(params[:q]) %>"
+}).done(function( msg ) {
   console.log(msg);
-}).fail(function (xhr, textStatus ) {
+  $('#suggested-resource').html( msg );
+}).fail(function( xhr, textStatus ) {
   console.log(xhr);
 });

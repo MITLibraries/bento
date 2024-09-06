@@ -23,7 +23,7 @@
   <p>Not finding what you need? <%= link_to('Ask us', 'https://libraries.mit.edu/ask/') %></p>
 </div>
 
-<div id="hint"></div>
+<div id="suggested-resource"></div>
 
 <div class="gridband layout-2c">
   <% if Flipflop.enabled? :primo_search %>
@@ -53,8 +53,6 @@
   <%= render partial: "trigger_search", locals: { target: 'google', id: 'website_content'} %>
 
   <%= render partial: "trigger_search", locals: { target: 'timdex', id: 'aspace_content'} %>
-
-  <%= render partial: "trigger_hint" %>
 
   <% if ENV.has_key?('TACOS_URL') %>
     <%= render partial: "trigger_tacos" %>
