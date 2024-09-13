@@ -1,0 +1,23 @@
+.nps-feedback {
+  margin-top: 1em;
+  padding: 20px 10px;
+  background-color: $gray-d1;
+  color: $white;
+  text-align: center;
+  font-size: $fs-large;
+  display: block;
+
+  a {
+    color: $blue-bright;
+    &:hover {
+      color: $green;
+    }
+    &:active {
+      color: $magenta;
+    }
+  }
+
+  @media (max-width: $bp-screen-md) {
+    font-size: $fs-base;
+  }
+}
