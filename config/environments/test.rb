@@ -28,6 +28,8 @@ Rails.application.configure do
   ENV['MIT_PRIMO_URL'] = 'https://mit.primo.exlibrisgroup.com'
   ENV['SYNDETICS_PRIMO_URL'] = 'https://syndetics.com/index.php?client=primo'
   ENV['TIMDEX_URL'] = 'https://timdex.mit.edu/graphql'
+  ENV['TACOS_URL'] = 'https://tacos.libraries.mit.edu/graphql/'
+  ENV['ORIGINS'] = 'https://tacos.libraries.mit.edu'
 
   # Turn false under Spring and add config.action_view.cache_template_loading = true.
   config.cache_classes = true

@@ -33,7 +33,7 @@ group :production do
 end
 
 group :development, :test do
-  gem 'pry-rails'
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'sqlite3'
 end
 
@@ -49,6 +49,7 @@ group :development do
 end
 
 group :test do
+  gem 'climate_control'
   gem 'minitest-rails'
   gem 'mocha', require: false
   gem 'simplecov', require: false

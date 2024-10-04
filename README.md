@@ -15,25 +15,6 @@ for some of these APIs (see below).
 
 ![alt text](docs/charts/bento_overview.png "Bento system overview chart")
 
-## Loading Hints
-
-Tasks exist to reload hints from supported sources. To reload custom hints in a development environment:
-
-```
-heroku local:run bin/rails reloadhints:custom[https://www.dropbox.com/blah/blah]
-```
-
-To reload custom hints in a heroku environment:
-
-```
-heroku run bin/rails reloadhints:custom['https://www.dropbox.com/blah/blah'] --app your-appname-staging
-```
-
-Depending on your shell, you may need single-quotes around the URL.
-
-This expects to find a world-readable CSV file at the Dropbox location. Instructions for generating that file are in the 
-Google sheet where we gather custom hint metadata.
-
 ## Required Environment Variables
 
 - `ALMA_OPENURL`: base URL for Alma openurls found in CDI records.
@@ -72,6 +53,7 @@ to construct thumbnail URLs.
   - Hints will only be displayed to the user if they are in `HINT_SOURCES`.
 - `LOG_LEVEL`: set log level for development, default is `:debug`
 - `LOG_LIKE_PROD`: uses prod-like logging in development if set
+- `ORIGINS`: sets origins for CORS (currently used only for TACOS API calls).
 - `PLATFORM_NAME`: The value set is added to the header after the MIT Libraries logo. The logic and CSS for this comes from our theme gem.
 - `PRIMO_TIMEOUT`: value to override the 6 second default for Primo timeout.
 - `REQUESTS_PER_PERIOD`: number of requests per time period we allow from a
@@ -82,7 +64,8 @@ to construct thumbnail URLs.
 - `RESULTS_PER_BOX`: defaults to 3
 - `SENTRY_DSN`: logs exceptions to Sentry
 - `SENTRY_ENV`: Sentry environment for the application. Defaults to 'unknown' if unset.
-- `TACOS_URL`: The GraphQL endpoint for the [TACOS](https://github.com/mitlibraries/tacos/) application.
+- `TACOS_URL`: The GraphQL endpoint for the [TACOS API](https://github.com/mitlibraries/tacos/). When set, the
+application will log search terms to TACOS and return suggested resources detected in search terms.
 - `TIMDEX_TIMEOUT`: value to override the 6 second default for TIMDEX timeout.
 
 ### NPS Survey Environment Variables (optional)
