@@ -303,7 +303,7 @@ GEM
     request_store (1.7.0)
       rack (>= 1.4)
     retriable (3.1.2)
-    rexml (3.3.8)
+    rexml (3.3.9)
     rouge (4.3.0)
     rubocop (1.66.1)
       json (~> 2.3)
