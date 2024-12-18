@@ -444,7 +444,7 @@ DEPENDENCIES
   simplecov
   simplecov-lcov
   skylight
-  sqlite3 (< 2)
+  sqlite3
   stringex
   uglifier
   vcr
