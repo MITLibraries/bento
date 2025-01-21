@@ -52,10 +52,16 @@ class NormalizePrimoCommon
     authors.map { |author| author.strip.gsub(/\$\$Q.*$/, '') }
   end
 
+  # author_link constructs a link to Primo as an exact creator search
   def author_link(author)
-    [ENV['MIT_PRIMO_URL'], '/discovery/search?query=creator,exact,',
-     author, '&tab=', ENV['PRIMO_MAIN_VIEW_TAB'], '&search_scope=all&vid=',
-     ENV['PRIMO_VID']].join
+    [ENV.fetch('MIT_PRIMO_URL', nil), '/discovery/search?query=creator,exact,',
+     encode_author(author), '&tab=', ENV.fetch('PRIMO_MAIN_VIEW_TAB', nil), '&search_scope=all&vid=',
+     ENV.fetch('PRIMO_VID', nil)].join
+  end
+
+  # encode_author ensures author components are URI encoded
+  def encode_author(author)
+    URI.encode_uri_component(author)
   end
 
   def year
