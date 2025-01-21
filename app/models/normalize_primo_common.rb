@@ -53,9 +53,13 @@ class NormalizePrimoCommon
   end
 
   def author_link(author)
-    [ENV['MIT_PRIMO_URL'], '/discovery/search?query=creator,exact,',
-     author, '&tab=', ENV['PRIMO_MAIN_VIEW_TAB'], '&search_scope=all&vid=',
-     ENV['PRIMO_VID']].join
+    [ENV.fetch('MIT_PRIMO_URL', nil), '/discovery/search?query=creator,exact,',
+     clean_author(author), '&tab=', ENV.fetch('PRIMO_MAIN_VIEW_TAB', nil), '&search_scope=all&vid=',
+     ENV.fetch('PRIMO_VID', nil)].join
+  end
+
+  def clean_author(author)
+    URI.encode_uri_component(author)
   end
 
   def year

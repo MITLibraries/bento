@@ -5,8 +5,8 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     VCR.use_cassette('popcorn primo',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('popcorn',
-                                         ENV['PRIMO_BOOK_SCOPE'], 5)
-      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
+                                         ENV.fetch('PRIMO_BOOK_SCOPE', nil), 5)
+      NormalizePrimo.new.to_result(raw_query, ENV.fetch('PRIMO_BOOK_SCOPE', nil),
                                    'popcorn')
     end
   end
@@ -15,8 +15,8 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     VCR.use_cassette('monkeys primo articles',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('monkeys',
-                                         ENV['PRIMO_ARTICLE_SCOPE'], 5)
-      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_ARTICLE_SCOPE'],
+                                         ENV.fetch('PRIMO_ARTICLE_SCOPE', nil), 5)
+      NormalizePrimo.new.to_result(raw_query, ENV.fetch('PRIMO_ARTICLE_SCOPE', nil),
                                    'monkeys')
     end
   end
@@ -28,8 +28,8 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     VCR.use_cassette('missing fields primo',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn',
-                                         ENV['PRIMO_BOOK_SCOPE'], 5)
-      NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
+                                         ENV.fetch('PRIMO_BOOK_SCOPE', nil), 5)
+      NormalizePrimo.new.to_result(raw_query, ENV.fetch('PRIMO_BOOK_SCOPE', nil),
                                    'Chʻomsŭkʻi, kkŭt ŏmnŭn tojŏn')
     end
   end
@@ -38,8 +38,8 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     VCR.use_cassette('no results primo',
                      allow_playback_repeats: true) do
       raw_query = SearchPrimo.new.search('popcornandorangejuice',
-                                         ENV['PRIMO_BOOK_SCOPE'], 5)
-      query = NormalizePrimo.new.to_result(raw_query, ENV['PRIMO_BOOK_SCOPE'],
+                                         ENV.fetch('PRIMO_BOOK_SCOPE', nil), 5)
+      query = NormalizePrimo.new.to_result(raw_query, ENV.fetch('PRIMO_BOOK_SCOPE', nil),
                                            'popcornandorangejuice')
       assert_equal(0, query['total'])
     end
@@ -79,7 +79,7 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     result = popcorn['results'].first
     assert_not_equal 'Rudolph, J.$$QRudolph, J.', result.authors.first.first
     assert_equal ['Rudolph, J.',
-                  'https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Rudolph, J.&tab=all&search_scope=all&vid=FAKE_PRIMO_VID'],
+                  'https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Rudolph%2C%20J.&tab=all&search_scope=all&vid=FAKE_PRIMO_VID'],
                  result.authors.first
   end
 
@@ -87,39 +87,39 @@ class NormalizePrimoTest < ActiveSupport::TestCase
     result = monkeys['results'].second
     assert_not_equal ['Beran, Michael J ; Smith, J. David'], result.authors.first.first
     assert_equal ['Beran, Michael J',
-                  'https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Beran, Michael J&tab=all&search_scope=all&vid=FAKE_PRIMO_VID'],
+                  'https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Beran%2C%20Michael%20J&tab=all&search_scope=all&vid=FAKE_PRIMO_VID'],
                  result.authors.first
     assert_equal ['Smith, J. David',
-                  'https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Smith, J. David&tab=all&search_scope=all&vid=FAKE_PRIMO_VID'],
+                  'https://mit.primo.exlibrisgroup.com/discovery/search?query=creator,exact,Smith%2C%20J.%20David&tab=all&search_scope=all&vid=FAKE_PRIMO_VID'],
                  result.authors.second
   end
 
   test 'cleans up single author data in the expected Alma format' do
-    normalizer = NormalizePrimoCommon.new('record', ENV['PRIMO_BOOK_SCOPE'])
+    normalizer = NormalizePrimoCommon.new('record', ENV.fetch('PRIMO_BOOK_SCOPE', nil))
     authors = ['Evans, Bill$$QEvans, Bill']
     assert_equal ['Evans, Bill'], normalizer.sanitize_authors(authors)
   end
 
   test 'cleans up multiple author data in the expected Alma format' do
-    normalizer = NormalizePrimoCommon.new('record', ENV['PRIMO_BOOK_SCOPE'])
+    normalizer = NormalizePrimoCommon.new('record', ENV.fetch('PRIMO_BOOK_SCOPE', nil))
     authors = ['Blakey, Art$$QBlakey, Art', 'Shorter, Wayne$$QShorter, Wayne']
     assert_equal ['Blakey, Art', 'Shorter, Wayne'], normalizer.sanitize_authors(authors)
   end
 
   test 'cleans up multiple author data in the expected CDI format' do
-    normalizer = NormalizePrimoCommon.new('record', ENV['PRIMO_ARTICLE_SCOPE'])
+    normalizer = NormalizePrimoCommon.new('record', ENV.fetch('PRIMO_ARTICLE_SCOPE', nil))
     authors = ['Blakey, Art ; Shorter, Wayne']
     assert_equal ['Blakey, Art', 'Shorter, Wayne'], normalizer.sanitize_authors(authors)
   end
 
   test 'does not attempt to clean up acceptable single author data' do
-    normalizer = NormalizePrimoCommon.new('record', ENV['PRIMO_BOOK_SCOPE'])
+    normalizer = NormalizePrimoCommon.new('record', ENV.fetch('PRIMO_BOOK_SCOPE', nil))
     authors = ['Redman, Joshua']
     assert_equal ['Redman, Joshua'], normalizer.sanitize_authors(authors)
   end
 
   test 'does not attempt to clean up acceptable multiple author data' do
-    normalizer = NormalizePrimoCommon.new('record', ENV['PRIMO_BOOK_SCOPE'])
+    normalizer = NormalizePrimoCommon.new('record', ENV.fetch('PRIMO_BOOK_SCOPE', nil))
     authors = ['Redman, Joshua', 'Mehldau, Brad']
     assert_equal ['Redman, Joshua', 'Mehldau, Brad'], normalizer.sanitize_authors(authors)
   end
@@ -132,7 +132,7 @@ class NormalizePrimoTest < ActiveSupport::TestCase
 
   test 'can handle bad results' do
     assert_raises NormalizePrimo::InvalidResults do
-      NormalizePrimo.new.to_result('', ENV['PRIMO_BOOK_SCOPE'], 'popcorn')
+      NormalizePrimo.new.to_result('', ENV.fetch('PRIMO_BOOK_SCOPE', nil), 'popcorn')
     end
   end
 end
