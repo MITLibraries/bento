@@ -9,7 +9,12 @@ Bundler.require(*Rails.groups)
 module MitBento
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+    config.load_defaults 7.1
+
+    # Please, add to the `ignore` list any other `lib` subdirectories that do
+    # not contain `.rb` files, or that should not be reloaded or eager loaded.
+    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    config.autoload_lib(ignore: %w(assets tasks))
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -18,10 +23,6 @@ module MitBento
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-
-    # Replace with a lambda or method name defined in ApplicationController
-    # to implement access control for the Flipflop dashboard.
-    config.flipflop.dashboard_access_filter = :flipflop_access_control
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

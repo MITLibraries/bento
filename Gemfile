@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
-ruby '3.2.2'
+ruby '3.2.6'
 
 gem 'actionpack-action_caching', github: 'rails/actionpack-action_caching', branch: 'master'
 gem 'barnes'
 gem 'bootsnap'
-gem 'flipflop'
 gem 'google-api-client'
 gem 'http'
 gem 'http_logger'
@@ -19,13 +18,13 @@ gem 'net-smtp', require: false
 gem 'nokogiri'
 gem 'puma'
 gem 'rack-attack'
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 7.1.0'
 gem 'sass-rails'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'skylight'
 gem 'stringex'
-gem 'uglifier'
+gem 'terser'
 
 group :production do
   gem 'dalli'

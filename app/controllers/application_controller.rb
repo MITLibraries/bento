@@ -4,19 +4,4 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper Mitlibraries::Theme::Engine.helpers
-
-  def flipflop_access_control
-    return if session[:flipflop_user]
-
-    head :forbidden unless valid_flipflop_key?
-    session[:flipflop_user] = true
-  end
-
-  private
-
-  def valid_flipflop_key?
-    return if params[:flipflop_key].blank?
-
-    params[:flipflop_key] == ENV['FLIPFLOP_KEY']
-  end
 end

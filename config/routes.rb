@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  mount Flipflop::Engine => "/flipflop"
-
   root to: 'search#index'
   get 'search/index', to: 'search#index'
   get 'search/bento', to: 'search#bento', as: :search_bento
@@ -12,10 +10,8 @@ Rails.application.routes.draw do
   get 'session/toggle_boxes', to: 'session#box_toggler'
 
   get 'suggested_resources', to: 'tacos#suggested_resources'
-  get 'toggle', to: 'feature#toggle'
-  get 'full_record_toggle', to: 'feature#full_record_toggle'
 
-  # The two record controller routes exist solely to redirect full record links, which were once considered permalinks, 
+  # The two record controller routes exist solely to redirect full record links, which were once considered permalinks,
   # to their corresponding Primo records. This is why they now route to the same method, because they do the same thing.
   get 'record/(:db_source)/(:an)', to: 'record#record',
                                    as: :record,

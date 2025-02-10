@@ -16,7 +16,7 @@ class Result
 
   # Prioritizes the best link to use for the "get it" button in the UI
   def getit_url
-    openurl if Flipflop.enabled? :primo_search
+    openurl
   end
 
   # View-type method for returning a truncated list of authors.
