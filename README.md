@@ -36,7 +36,6 @@ API endpoint to limit  the search to CDI (Articles+) results.
 API endpoint to limit the search to local/Alma (Books+) results.
 - `PRIMO_MAIN_VIEW_TAB` the value of the `tab` param for the Primo UI 
 main search view. (This is used for links to Primo searches.)
-- `PRIMO_SEARCH`: toggles feature flag to search the Primo API.
 - `PRIMO_SPLASH_PAGE`: URL for Libraries splash page explaining the transition from EDS to Primo.
 - `PRIMO_TAB`: the value of the Primo `tab` param for Bento.
 - `PRIMO_VID`: our Primo 'view ID'.
@@ -46,7 +45,6 @@ to construct thumbnail URLs.
 
 ## Optional Environment Variables
 
-- `FLIPFLOP_KEY`: set this to enable access to the flipflop dashboard
 - `GLOBAL_ALERT`: html message to display as a global header
 - `HINT_SOURCES`: Comma-separated Hint source names, in descending order of priority. (If unset, will default to `custom`).
 - `JS_EXCEPTION_LOGGER_KEY`: Enables and logs JavaScript errors.

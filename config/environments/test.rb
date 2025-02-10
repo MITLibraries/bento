@@ -11,7 +11,6 @@ Rails.application.configure do
   ENV['GOOGLE_CUSTOM_SEARCH_ID'] = 'FAKE_GOOGLE_CUSTOM_SEARCH_ID'
   ENV['MAX_AUTHORS'] = '3'
   ENV['PER_PAGE'] = '10'
-  ENV['FLIPFLOP_KEY'] = 'yoyo'
   ENV['ALMA_OPENURL'] = 'https://na06.alma.exlibrisgroup.com/view/uresolver/01MIT_INST/openurl?'
   ENV['ALMA_SRU'] = 'https://mit.alma.exlibrisgroup.com/view/sru/01MIT_INST?version=1.2&operation=searchRetrieve&recordSchema=marcxml&query=alma.all_for_ui='
   ENV['ASPACE_SEARCH_URI'] = 'https://archivesspace.mit.edu/search?op[]=&field[]=creators_text&q[]='

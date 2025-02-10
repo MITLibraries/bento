@@ -150,9 +150,6 @@ GEM
     ffi-compiler (1.3.2)
       ffi (>= 1.15.5)
       rake
-    flipflop (2.8.0)
-      activesupport (>= 4.0)
-      terminal-table (>= 1.8)
     gems (1.3.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -394,8 +391,6 @@ GEM
     statsd-ruby (1.5.0)
     stringex (2.8.6)
     stringio (3.1.2)
-    terminal-table (3.0.2)
-      unicode-display_width (>= 1.1.1, < 3)
     thor (1.3.2)
     tilt (2.4.0)
     timeout (0.4.3)
@@ -438,7 +433,6 @@ DEPENDENCIES
   dalli
   debug
   dotenv-rails
-  flipflop
   google-api-client
   http
   http_logger
