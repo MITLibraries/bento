@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '3.2.2'
+ruby '3.2.7'
 
 gem 'actionpack-action_caching', github: 'rails/actionpack-action_caching', branch: 'master'
 gem 'barnes'
@@ -24,7 +24,7 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'skylight'
 gem 'stringex'
-gem 'uglifier'
+gem 'terser'
 
 group :production do
   gem 'dalli'
