@@ -1,4 +1,4 @@
-FROM ruby:3.2.8@sha256:6eed4fb9b9ebc0bf7d18be17d0515768b223a61f17206bcdb1a2bee2b4284bf2
+FROM ruby:3.2.8@sha256:429d783d507f7bc9e609ec8cfe065578ef94c580ad868c7d71458dd6c3f9a6c1
 RUN mkdir /bento
 WORKDIR /bento
 COPY Gemfile /bento/Gemfile
