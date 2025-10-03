@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '3.2.9'
+ruby '3.4.6'
 
 gem 'actionpack-action_caching', github: 'rails/actionpack-action_caching', branch: 'master'
 gem 'barnes'
