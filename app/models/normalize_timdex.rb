@@ -68,7 +68,7 @@ class NormalizeTimdex
 
   def extract_list(contributors)
     contributors&.map do |creator|
-      [creator['value'], '&field[]=creators_text&q[]=' << URI.encode_www_form_component(creator['value'])]
+      [creator['value'], "&field[]=creators_text&q[]=#{URI.encode_www_form_component(creator['value'])}"]
     end
   end
 
