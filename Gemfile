@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '3.4.6'
+ruby '3.4.8'
 
 gem 'actionpack-action_caching', github: 'rails/actionpack-action_caching', branch: 'master'
 gem 'barnes'
@@ -27,6 +27,7 @@ gem 'stringex'
 gem 'terser'
 
 group :production do
+  gem 'connection_pool', '< 3'   # 3.x requires keyword args; pin to 2.x for Rails 7.2.3
   gem 'dalli'
   gem 'pg'
 end
@@ -49,7 +50,7 @@ end
 
 group :test do
   gem 'climate_control'
-  gem 'minitest-rails'
+  gem 'minitest',  '< 6' # required for Rails 7.2.3
   gem 'mocha', require: false
   gem 'simplecov', require: false
   gem 'simplecov-lcov', require: false
