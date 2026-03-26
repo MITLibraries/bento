@@ -50,7 +50,7 @@ end
 
 group :test do
   gem 'climate_control'
-  gem 'minitest',  '< 6' # required for Rails 7.2.3
+  gem 'minitest',  '< 7' # required for Rails 7.2.3
   gem 'mocha', require: false
   gem 'simplecov', require: false
   gem 'simplecov-lcov', require: false
