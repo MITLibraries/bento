@@ -24,9 +24,26 @@
   margin-bottom: 15%;
 }
 
-.wrap-notices .title {
-  font-size: 1.2rem;
-  line-height: 1.4;
+.wrap-notices {
+  background-color: #007899;
+
+  .title {
+    color: #e5f9ff;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.4;
+
+    a {
+      text-underline-offset: 0.5rem;
+      text-decoration-color: #00c8ff;
+      color: #fff;
+
+      &:hover,
+      &:focus {
+        text-decoration-color: #99E9FF;
+      }
+    }
+  }
 }
 
 .wrap-outer-header-local {
