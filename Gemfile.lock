@@ -456,7 +456,7 @@ DEPENDENCIES
   jquery-validation-rails
   listen
   lograge
-  minitest (< 6)
+  minitest (< 7)
   mitlibraries-theme!
   mocha
   multi_json
