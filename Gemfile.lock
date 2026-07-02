@@ -236,6 +236,7 @@ GEM
     mocha (3.1.0)
       ruby2_keywords (>= 0.0.5)
     msgpack (1.8.3)
+    multi_json (1.21.1)
     mutex_m (0.3.0)
     net-http (0.9.1)
       uri (>= 0.11.1)
@@ -458,6 +459,7 @@ DEPENDENCIES
   minitest (< 6)
   mitlibraries-theme!
   mocha
+  multi_json
   net-imap
   net-pop
   net-smtp
