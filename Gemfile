@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'jquery-validation-rails'
 gem 'lograge'
 gem 'mitlibraries-theme', git: 'https://github.com/mitlibraries/mitlibraries-theme', tag: 'v1.4'
+gem 'multi_json'
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
@@ -27,7 +28,7 @@ gem 'stringex'
 gem 'terser'
 
 group :production do
-  gem 'connection_pool', '< 4'   # 3.x requires keyword args; pin to 2.x for Rails 7.2.3
+  gem 'connection_pool', '~> 2.4'  # 3.x requires keyword args; pin to 2.x for Rails 7.2.3
   gem 'dalli'
   gem 'pg'
 end
