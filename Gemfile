@@ -11,7 +11,7 @@ gem 'ipaddr_range_set'
 gem 'jquery-rails'
 gem 'jquery-validation-rails'
 gem 'lograge'
-gem 'mitlibraries-theme', git: 'https://github.com/mitlibraries/mitlibraries-theme', tag: 'v1.4'
+gem 'mitlibraries-theme', git: 'https://github.com/mitlibraries/mitlibraries-theme', tag: 'v1.5'
 gem 'multi_json'
 gem 'net-imap', require: false
 gem 'net-pop', require: false
